@@ -1,0 +1,674 @@
+
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><!-- is_embed=False -->
+<script>
+  const observer = new PerformanceObserver((list) => {
+    list.getEntries().forEach((entry) => {
+      console.log('%o', entry);
+    })
+  });
+  observer.observe({type: "navigation", buffered: true});
+</script>
+<script src="//archive.org/includes/athena.js" type="text/javascript"></script>
+<script type="text/javascript">window.addEventListener('DOMContentLoaded',function(){var v=archive_analytics.values;v.service='wb';v.server_name='wwwb-app221.us.archive.org';v.server_ms=291;archive_analytics.send_pageview({});});</script>
+<script type="text/javascript" src="/_static/js/bundle-playback.js?v=krFivnjJ" charset="utf-8"></script>
+<script type="text/javascript" src="/_static/js/wombat.js?v=txqj7nKC" charset="utf-8"></script>
+<script>window.RufflePlayer=window.RufflePlayer||{};window.RufflePlayer.config={"autoplay":"on","unmuteOverlay":"hidden"};</script>
+<script type="text/javascript" src="/_static/js/ruffle/ruffle.js"></script>
+<script type="text/javascript">
+    __wm.init("https://web.archive.org/web");
+  __wm.wombat("http://ez.no:80/ezpublish/documentation/development/libraries/ez_db","20071217085623","https://web.archive.org/","web","/_static/",
+	      "1197881783");
+</script>
+<link rel="stylesheet" type="text/css" href="/_static/css/banner-styles.css?v=S1zqJCYt" />
+<link rel="stylesheet" type="text/css" href="/_static/css/iconochive.css?v=3PDvdIFv" />
+<!-- End Wayback Rewrite JS Include -->
+
+<style type="text/css">
+    @import url(https://doc.core.ezpublish.se7enx.com/ezno2005/design/ezno2005/stylesheets/core.css);
+    @import url(https://doc.core.ezpublish.se7enx.com/ezno2005/design/ezno2005/stylesheets/pagelayout.css);
+    @import url(https://doc.core.ezpublish.se7enx.com/ezno2005/design/ezno2005/stylesheets/classes.css);
+    @import url(https://doc.core.ezpublish.se7enx.com/ezno2005/design/ezno2005/stylesheets/monitor.css);
+</style>
+
+<link type="text/css" rel="stylesheet" href="https://web.archive.org/web/20071217085623cs_/http://ez.no/extension/ezno2005/design/ezno2005/stylesheets/print.css" media="print"/>
+
+    <link rel="alternate" title="ez.no News" href="https://web.archive.org/web/20071217085623/http://ez.no/rss/feed/news" type="application/rss+xml"/><link rel="alternate" title="ez.no Developer News" href="/web/20071217085623/http://ez.no/rss/feed/communitynews" type="application/rss+xml"/>
+<link rel="alternate" title="ez.no Developer Articles" href="https://web.archive.org/web/20071217085623/http://ez.no/rss/feed/community_articles" type="application/rss+xml"/>
+<link rel="alternate" title="ez.no Forum" href="https://web.archive.org/web/20071217085623/http://ez.no/rss/feed/forum" type="application/rss+xml"/>
+<link rel="alternate" title="ez.no Contributions" href="https://web.archive.org/web/20071217085623/http://ez.no/rss/feed/contribs" type="application/rss+xml"/>
+<link rel="alternate" title="ez.no Open Funding" href="https://web.archive.org/web/20071217085623/http://ez.no/rss/feed/openfunding_suggestions" type="application/rss+xml"/>
+
+
+<!-- IE conditional comments; for bug fixes for different IE versions -->
+<!--[if IE 5]>     <style type="text/css"> @import url(/extension/ezno2005/design/ezno2005/stylesheets/ie5.css);    </style> <![endif]-->
+<!--[if lte IE 6]> <style type="text/css"> @import url(/extension/ezno2005/design/ezno2005/stylesheets/ie6lte.css); </style> <![endif]-->
+<!--[if gte IE 6]> <style type="text/css"> @import url(/extension/ezno2005/design/ezno2005/stylesheets/ie6gte.css); </style> <![endif]-->
+
+<!-- Load special stylesheet (if necessary) for newer Netscape decendants, Mozilla and Firefox, using the Gecko renderer -->
+<script type="text/javascript"><!-- if ((navigator.userAgent.indexOf("Gecko") != -1)&&(navigator.userAgent.indexOf("KHTML") == -1)) document.write("<style type=\"text/css\">@import url(/extension/ezno2005/design/ezno2005/stylesheets/gecko.css);</style>");--></script>
+                                                                                    
+<title>
+            eZ db     /         Libraries     /         Development                    </title>
+<meta http-equiv="Content-Language" content="en-GB"/>
+    <meta name="author" content="eZ Systems"/>
+    <meta name="copyright" content="eZ Systems as"/>
+    <meta name="description" content="eZ Publish is an open source content management system (CMS) and an open source content management framework (CMF)."/>
+    <meta name="keywords" content="cms, publish, e-commerce, content management, development framework"/>
+
+<meta name="MSSmartTagsPreventParsing" content="TRUE"/>
+<meta name="generator" content="eZ Publish"/>
+
+<script type="text/javascript" src="https://doc.core.ezpublish.se7enx.com/ezno2005/design/ezno2005/javascripts/tools.js"></script>
+<script type="text/javascript" src="https://doc.core.ezpublish.se7enx.com/ezno2005/design/ezno2005/javascripts/dropdownmenu.js"></script>
+</head>    <body onload="menuInit();"><!-- BEGIN WAYBACK TOOLBAR INSERT -->
+<script>__wm.rw(0);</script>
+<div id="wm-ipp-base" lang="en" style="display:none;direction:ltr;">
+<div id="wm-ipp" style="position:fixed;left:0;top:0;right:0;">
+<div id="donato" style="position:relative;width:100%;">
+  <div id="donato-base">
+    <iframe id="donato-if" src="https://archive.org/includes/donate.php?as_page=1&amp;platform=wb&amp;referer=https%3A//web.archive.org/web/20071217085623/http%3A//ez.no/ezpublish/documentation/development/libraries/ez_db"
+	    scrolling="no" frameborder="0" style="width:100%; height:100%">
+    </iframe>
+  </div>
+</div><div id="wm-ipp-inside">
+  <div id="wm-toolbar" style="position:relative;display:flex;flex-flow:row nowrap;justify-content:space-between;">
+    <div id="wm-logo" style="/*width:110px;*/padding-top:12px;">
+      <a href="https://web.archive.org/web/" title="Wayback Machine home page"><img src="/_static/images/toolbar/wayback-toolbar-logo-200.png" srcset="/_static/images/toolbar/wayback-toolbar-logo-100.png, /_static/images/toolbar/wayback-toolbar-logo-150.png 1.5x, /_static/images/toolbar/wayback-toolbar-logo-200.png 2x" alt="Wayback Machine" style="width:100px" border="0" /></a>
+    </div>
+    <div class="c" style="display:flex;flex-flow:column nowrap;justify-content:space-between;flex:1;">
+      <form class="u" style="display:flex;flex-direction:row;flex-wrap:nowrap;" target="_top" method="get" action="/web/submit" name="wmtb" id="wmtb"><input type="text" name="url" id="wmtbURL" value="http://ez.no/ezpublish/documentation/development/libraries/ez_db" onfocus="this.focus();this.select();" style="flex:1;"/><input type="hidden" name="type" value="replay" /><input type="hidden" name="date" value="20071217085623" /><input type="submit" value="Go" />
+      </form>
+      <div style="display:flex;flex-flow:row nowrap;align-items:flex-end;">
+                <div class="s" id="wm-nav-captures" style="flex:1;">
+                    <a class="t" href="https://web.archive.org/web/20071217085623*/http://ez.no/ezpublish/documentation/development/libraries/ez_db" title="See a list of every capture for this URL">18 captures</a>
+          <div class="r" title="Timespan for captures of this URL">24 Mar 2007 - 23 Apr 2011</div>
+          </div>
+        <div class="k">
+          <a href="" id="wm-graph-anchor">
+            <div id="wm-ipp-sparkline" title="Explore captures for this URL" style="position: relative">
+              <canvas id="wm-sparkline-canvas" width="725" height="27" border="0"></canvas>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="n">
+      <table>
+        <tbody>
+          <!-- NEXT/PREV MONTH NAV AND MONTH INDICATOR -->
+          <tr class="m">
+            <td class="b" nowrap="nowrap"><a href="https://web.archive.org/web/20071014110824/http://ez.no:80/ezpublish/documentation/development/libraries/ez_db" title="14 Oct 2007"><strong>Oct</strong></a></td>
+            <td class="c" id="displayMonthEl" title="You are here: 08:56:23 Dec 17, 2007">DEC</td>
+            <td class="f" nowrap="nowrap"><a href="https://web.archive.org/web/20080217201450/http://ez.no:80/ezpublish/documentation/development/libraries/ez_db" title="17 Feb 2008"><strong>Feb</strong></a></td>
+          </tr>
+          <!-- NEXT/PREV CAPTURE NAV AND DAY OF MONTH INDICATOR -->
+          <tr class="d">
+            <td class="b" nowrap="nowrap"><a href="https://web.archive.org/web/20071014110824/http://ez.no:80/ezpublish/documentation/development/libraries/ez_db" title="11:08:24 Oct 14, 2007"><img src="/_static/images/toolbar/wm_tb_prv_on.png" alt="Previous capture" width="14" height="16" border="0" /></a></td>
+            <td class="c" id="displayDayEl" style="width:34px;font-size:22px;white-space:nowrap;" title="You are here: 08:56:23 Dec 17, 2007">17</td>
+            <td class="f" nowrap="nowrap"><a href="https://web.archive.org/web/20080217201450/http://ez.no:80/ezpublish/documentation/development/libraries/ez_db" title="20:14:50 Feb 17, 2008"><img src="/_static/images/toolbar/wm_tb_nxt_on.png" alt="Next capture" width="14" height="16" border="0" /></a></td>
+          </tr>
+          <!-- NEXT/PREV YEAR NAV AND YEAR INDICATOR -->
+          <tr class="y">
+            <td class="b" nowrap="nowrap">2006</td>
+            <td class="c" id="displayYearEl" title="You are here: 08:56:23 Dec 17, 2007">2007</td>
+            <td class="f" nowrap="nowrap"><a href="https://web.archive.org/web/20090305125626/http://ez.no:80/ezpublish/documentation/development/libraries/ez_db" title="05 Mar 2009"><strong>2009</strong></a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="r" style="display:flex;flex-flow:column nowrap;align-items:flex-end;justify-content:space-between;">
+      <div id="wm-btns" style="text-align:right;height:23px;">
+                <span class="xxs">
+          <div id="wm-save-snapshot-success">success</div>
+          <div id="wm-save-snapshot-fail">fail</div>
+          <a id="wm-save-snapshot-open" href="#" title="Share via My Web Archive" >
+            <span class="iconochive-web"></span>
+          </a>
+          <a href="https://archive.org/account/login.php" title="Sign In" id="wm-sign-in">
+            <span class="iconochive-person"></span>
+          </a>
+          <span id="wm-save-snapshot-in-progress" class="iconochive-web"></span>
+        </span>
+                <a class="xxs" href="http://faq.web.archive.org/" title="Get some help using the Wayback Machine" style="top:-6px;"><span class="iconochive-question" style="color:rgb(87,186,244);font-size:160%;"></span></a>
+        <a id="wm-tb-close" href="#close" style="top:-2px;" title="Close the toolbar"><span class="iconochive-remove-circle" style="color:#888888;font-size:240%;"></span></a>
+      </div>
+      <div id="wm-share" class="xxs">
+        <a href="https://web.archive.org/web/20071217085623/http://web.archive.org/screenshot/http://ez.no/ezpublish/documentation/development/libraries/ez_db"
+           id="wm-screenshot"
+           title="screenshot">
+          <span class="wm-icon-screen-shot"></span>
+        </a>
+        <a href="#" id="wm-video" title="video">
+          <span class="iconochive-movies"></span>
+        </a>
+        <a id="wm-share-facebook" href="#" data-url="https://web.archive.org/web/20071217085623/http://ez.no:80/ezpublish/documentation/development/libraries/ez_db" title="Share on Facebook" style="margin-right:5px;" target="_blank"><span class="iconochive-facebook" style="color:#3b5998;font-size:160%;"></span></a>
+        <a id="wm-share-twitter" href="#" data-url="https://web.archive.org/web/20071217085623/http://ez.no:80/ezpublish/documentation/development/libraries/ez_db" title="Share on Twitter" style="margin-right:5px;" target="_blank"><span class="iconochive-twitter" style="color:#1dcaff;font-size:160%;"></span></a>
+      </div>
+      <div style="padding-right:2px;text-align:right;white-space:nowrap;">
+        <a id="wm-expand" class="wm-btn wm-closed" href="#expand"><span id="wm-expand-icon" class="iconochive-down-solid"></span> <span class="xxs" style="font-size:80%;">About this capture</span></a>
+      </div>
+    </div>
+  </div>
+    <div id="wm-capinfo" style="border-top:1px solid #777;display:none; overflow: hidden">
+        <div id="wm-capinfo-notice" source="api"></div>
+                <div id="wm-capinfo-collected-by">
+    <div style="background-color:#666;color:#fff;font-weight:bold;text-align:center">COLLECTED BY</div>
+    <div style="padding:3px;position:relative" id="wm-collected-by-content">
+            <div style="display:inline-block;vertical-align:top;width:50%;">
+			<span class="c-logo" style="background-image:url(https://archive.org/services/img/alexacrawls);"></span>
+		Organization: <a style="color:#33f;" href="https://archive.org/details/alexacrawls" target="_new"><span class="wm-title">Alexa Crawls</span></a>
+		<div style="max-height:75px;overflow:hidden;position:relative;">
+	  <div style="position:absolute;top:0;left:0;width:100%;height:75px;background:linear-gradient(to bottom,rgba(255,255,255,0) 0%,rgba(255,255,255,0) 90%,rgba(255,255,255,255) 100%);"></div>
+	  Starting in 1996, <a href="http://www.alexa.com/">Alexa Internet</a> has been donating their crawl data to the Internet Archive.  Flowing in every day, these data are added to the <a href="http://web.archive.org/">Wayback Machine</a> after an embargo period.
+	</div>
+	      </div>
+      <div style="display:inline-block;vertical-align:top;width:49%;">
+			<span class="c-logo" style="background-image:url(https://archive.org/services/img/52_crawl)"></span>
+		<div>Collection: <a style="color:#33f;" href="https://archive.org/details/52_crawl" target="_new"><span class="wm-title">52_crawl</span></a></div>
+		<div style="max-height:75px;overflow:hidden;position:relative;">
+	  <div style="position:absolute;top:0;left:0;width:100%;height:75px;background:linear-gradient(to bottom,rgba(255,255,255,0) 0%,rgba(255,255,255,0) 90%,rgba(255,255,255,255) 100%);"></div>
+	  this data is currently not publicly accessible.
+	</div>
+	      </div>
+    </div>
+    </div>
+    <div id="wm-capinfo-timestamps">
+    <div style="background-color:#666;color:#fff;font-weight:bold;text-align:center" title="Timestamps for the elements of this page">TIMESTAMPS</div>
+    <div>
+      <div id="wm-capresources" style="margin:0 5px 5px 5px;max-height:250px;overflow-y:scroll !important"></div>
+      <div id="wm-capresources-loading" style="text-align:left;margin:0 20px 5px 5px;display:none"><img src="/_static/images/loading.gif" alt="loading" /></div>
+    </div>
+    </div>
+  </div></div></div></div><div id="wm-ipp-print">The Wayback Machine - https://web.archive.org/web/20071217085623/http://ez.no:80/ezpublish/documentation/development/libraries/ez_db</div>
+<script type="text/javascript">//<![CDATA[
+__wm.bt(725,27,25,2,"web","http://ez.no/ezpublish/documentation/development/libraries/ez_db","20071217085623",1996,"/_static/",["/_static/css/banner-styles.css?v=S1zqJCYt","/_static/css/iconochive.css?v=3PDvdIFv"], false);
+  __wm.rw(1);
+//]]></script>
+<!-- END WAYBACK TOOLBAR INSERT -->
+ 
+
+<!-- Complete page area: START -->
+<div id="page">
+
+<!-- Header area: START -->
+<div id="header">
+<div id="header-insert">
+
+<!-- User menu area: START -->
+<div id="usermenu">
+
+<div id="page-width1">
+
+<div id="logo">
+<h1><a href="https://doc.core.ezpublish.se7enx.com/"><span class="hide">eZ Systems - The Content Management Ecosystem</span></a></h1>
+</div>
+
+
+
+<p class="hide"><a href="#main">Skip to main content</a></p>
+
+<hr class="hide"/>
+<div id="searchbox">
+<form action="/web/20071217085623/http://ez.no/ezsearchredirect/action" method="get">
+
+<div class="block">
+<div class="element">
+<input id="searchbutton" class="button" type="submit" value="Search"/>
+</div>
+
+<div class="element searchstring">
+    <label for="searchtext" class="hide">Search text:</label>
+    <input id="searchtext" name="SearchText" type="text" size="12"/><br/>
+    
+
+            <div class="section">
+            <label for="searcharea" class="hide">Search area:</label>
+            <select id="searcharea" name="SubTreeArray[]">
+                <option value="2" selected="selected">All ez.no</option>
+                <option value="306">Bug reports</option>
+                <option value="21358">Contributions</option>
+                <option value="documentation">Documentation</option>
+                <option value="308">Forum</option>
+            </select>
+            </div>
+    </div>
+
+</div>
+</form>
+</div>
+
+<hr class="hide"/>
+<h2 class="hide">User menu</h2>
+
+<!-- User menu content: START -->
+<ul>
+            <li><a href="https://web.archive.org/web/20071217085623/http://ez.no/download"><span>Downloads</span></a></li>
+    <li><a href="https://web.archive.org/web/20071217085623/http://ez.no/company/contact"><span>Contact</span></a></li>
+            <li><a href="https://web.archive.org/web/20071217085623/http://ez.no/user/login"><span>Log in</span></a></li>
+        <li><a href="https://web.archive.org/web/20071217085623/http://ez.no/user/register"><span>Register</span></a></li>
+    
+    <li id="language-menu">
+        <a class="highlighted" title="English" href="https://web.archive.org/web/20071217085623/http://ez.no/ezpublish/documentation/development/libraries/ez_db"><img src="/ezno2005/design/ezno2005/images/eng-GB.gif" width="18" height="12" alt="English"/></a>
+        <a title="Deutsch" href="https://web.archive.org/web/20071217085623/http://ez.no/de/ezpublish/documentation/development/libraries/ez_db"><img src="/ezno2005/design/ezno2005/images/ger-DE.gif" width="18" height="12" alt="Deutsch"/></a>
+        <a title="Português" href="https://web.archive.org/web/20071217085623/http://ez.no/br/ezpublish/documentation/development/libraries/ez_db"><img src="/ezno2005/design/ezno2005/images/por-BR.gif" width="18" height="12" alt="Português"/></a>
+        <a title="Français" href="https://web.archive.org/web/20071217085623/http://ez.no/fr/ezpublish/documentation/development/libraries/ez_db"><img src="/ezno2005/design/ezno2005/images/fre-FR.gif" width="18" height="12" alt="Français"/></a>
+        <a title="日本語" href="https://web.archive.org/web/20071217085623/http://ez.no/jp/ezpublish/documentation/development/libraries/ez_db"><img src="/ezno2005/design/ezno2005/images/jpn-JP.gif" width="18" height="12" alt="日本語"/></a>        
+        <a title="中文" href="https://web.archive.org/web/20071217085623/http://ez.no/tw/ezpublish/documentation/development/libraries/ez_db"><img src="/ezno2005/design/ezno2005/images/chi-TW.gif" width="18" height="12" alt="中文"/></a>        
+        <a title="Norsk" href="https://web.archive.org/web/20071217085623/http://ez.no/no/ezpublish/documentation/development/libraries/ez_db"><img src="/ezno2005/design/ezno2005/images/nor-NO.gif" width="18" height="12" alt="Norsk"/></a>        
+    </li>
+</ul>
+<!-- User menu content: END -->
+
+</div>
+
+</div>
+<!-- User menu area: END -->
+
+</div>
+</div>
+<!-- Header area: END --><script type="text/javascript">
+<!--
+var menu = new Array();
+
+menu[0] = ['eZ Publish', '/ezpublish', 'eZ Publish Premium', '/ezpublish/premium', 'eZ Publish Now', '/ezpublish/now', 'eZ Publish On Demand', '/ezpublish/on_demand', 'Proprietary license options', '/products/proprietary_license_options', 'Certified extensions', '/products/certified_extensions', 'eZ Flow', '/ezflow', 'eZ Components', '/ezcomponents', 'eZ Find', '/ezfind', 'eZ Newsletter', '/eznewsletter', 'Expert consulting services', '/products/expert_consulting_services', 'Support', '/products/support'];
+menu[1] = ['Documentation', '/doc', 'Articles', '/community/articles', 'Books', '/store/books', 'Training', '/education/training', 'Certification', '/education/certification'];
+menu[2] = ['Case studies', '/customers/case_studies', 'References', '/customers/references', 'User quotes', '/customers/user_quotes', 'eZ for media', '/customers/ez_for_media'];
+menu[3] = ['Worldwide Partners', '/partner/worldwide_partners', 'eZ Partner program', '/partner/ez_partner_program', 'Knowledge centre', '/partner/knowledge_centre'];
+menu[4] = ['Downloads', '/download', 'Documentation', '/doc', 'News', '/developer/news', 'Developer information', '/developer/developer_information', 'Projects & contributions', '/developer/contribs', 'Forum', '/developer/forum', 'Issue tracker', '/bugs/redirect', 'Open Funding', '/developer/open_funding', 'Security', '/developer/security', 'User groups', '/developer/user_groups'];
+menu[5] = ['Total Product Responsibility from eZ', '/support/total_product_responsibility_from_ez'];
+menu[6] = ['Software solutions', '/store/software', 'Training', '/services/training', 'Certification', '/services/certification', 'Books', '/store/books', 'Services', '/store/services'];
+menu[7] = ['News', '/company/news', 'Media & press', '/company/media_press', 'Events', '/company/events', 'Career', '/company/career', 'eZ Conference & Awards', '/company/ez_conference_awards', 'Board of Directors', '/company/board', 'eZ Crew', '/company/ez_crew', 'Contact', '/company/contact'];
+
+-->
+</script>
+<div id="menuborder">
+
+<!-- Main menu area: START -->
+<div id="menu" onmouseover="menuHover();" onmouseout="tryHideSubMenues();">
+
+<div id="mainmenu" class="float-break">
+<div id="page-width2">
+    <ul id="mainmenulist" class="float-break">
+<li class="current"><a href="https://web.archive.org/web/20071217085623/http://ez.no/products" onmouseover="switchSubMenu( this );">Products &amp; services</a></li>
+<li><a href="https://web.archive.org/web/20071217085623/http://ez.no/education" onmouseover="switchSubMenu( this );">Education</a></li>
+<li><a href="https://web.archive.org/web/20071217085623/http://ez.no/customers" onmouseover="switchSubMenu( this );">Customers</a></li>
+<li><a href="https://web.archive.org/web/20071217085623/http://ez.no/partner" onmouseover="switchSubMenu( this );">Partners</a></li>
+<li><a href="https://web.archive.org/web/20071217085623/http://ez.no/developer" onmouseover="switchSubMenu( this );">Developer</a></li>
+<li><a href="https://web.archive.org/web/20071217085623/http://ez.no/support" onmouseover="switchSubMenu( this );">Support</a></li>
+<li><a href="https://web.archive.org/web/20071217085623/http://ez.no/store" onmouseover="switchSubMenu( this );">Store</a></li>
+<li class="last"><a href="https://web.archive.org/web/20071217085623/http://ez.no/company" onmouseover="switchSubMenu( this );">Company</a></li>
+</ul>
+
+</div>
+</div>
+
+
+<div id="submenu">
+<div id="page-width3">
+    <ul class="float-break">
+                        <li><a href="https://web.archive.org/web/20071217085623/http://ez.no/ezpublish">eZ Publish</a></li>
+                                <li><a href="https://web.archive.org/web/20071217085623/http://ez.no/ezpublish/premium">eZ Publish Premium</a></li>
+                                <li><a href="https://web.archive.org/web/20071217085623/http://ez.no/ezpublish/now">eZ Publish Now</a></li>
+                                <li><a href="https://web.archive.org/web/20071217085623/http://ez.no/ezpublish/on_demand">eZ Publish On Demand</a></li>
+                                <li><a href="https://web.archive.org/web/20071217085623/http://ez.no/products/proprietary_license_options">Proprietary license options</a></li>
+                                <li><a href="https://web.archive.org/web/20071217085623/http://ez.no/products/certified_extensions">Certified extensions</a></li>
+                                <li><a href="https://web.archive.org/web/20071217085623/http://ez.no/ezflow">eZ Flow</a></li>
+                                <li><a href="https://web.archive.org/web/20071217085623/http://ez.no/ezcomponents">eZ Components</a></li>
+                                <li><a href="https://web.archive.org/web/20071217085623/http://ez.no/ezfind">eZ Find</a></li>
+                                <li><a href="https://web.archive.org/web/20071217085623/http://ez.no/eznewsletter">eZ Newsletter</a></li>
+                                <li><a href="https://web.archive.org/web/20071217085623/http://ez.no/products/expert_consulting_services">Expert consulting services</a></li>
+                                <li class="last"><a href="https://web.archive.org/web/20071217085623/http://ez.no/products/support">Support</a></li>
+                </ul>
+</div>
+</div>
+
+<script type="text/javascript"><!--
+    document.getElementById('submenu').style.display = 'none';
+--></script>
+
+</div>
+<!-- Main menu area: END -->
+
+</div>
+
+<hr class="hide"/><!-- Path area: START -->
+<div id="path">
+
+<div id="page-width4">
+<h2 class="hide">Path</h2>
+
+<!-- Path content: START -->
+<p>
+                        <a href="https://web.archive.org/web/20071217085623/http://ez.no/">ez.no</a>
+        
+                        /
+                            <a href="https://web.archive.org/web/20071217085623/http://ez.no/ezpublish">ezpublish</a>
+        
+                        /
+                            <a href="toc.html">documentation</a>
+        
+                        /
+                            <a href="development.html">development</a>
+        
+                        /
+                            <a href="development/libraries.html">libraries</a>
+        
+                        /
+                            ez db
+        
+            </p>
+<!-- Path content: END -->
+
+</div>
+
+</div>
+<!-- Path area: END -->
+
+<hr class="hide"/>
+
+<!-- Main area: START -->
+
+<div id="page-width5">
+<div id="main" class="float-break">
+
+<!-- Main area content: START -->
+
+
+
+
+<div class="template-design area-main-normal">
+<div class="template-module content-view-full">
+<div class="template-object class-documentation">
+
+
+<div class="attribute-heading">
+    <h1>eZ db</h1>
+</div>
+
+<p><strong>These documentation pages are no longer maintained. Please visit the <a href="https://doc.ezpublishlegacy.se7enx.com">new documentation site.</a></strong></p>
+
+<div class="attribute-long">
+    
+
+<p>
+
+eZ db is a database abstraction library. It provides a uniform interface to MySQL and PostgreSQL by default.<br/>The eZ db library provides a database independent framework for SQL databases. The current supported databases are:
+</p>
+
+<ul>
+
+<li>PostgreSQL</li>
+
+<li>MySQL</li>
+
+</ul>
+
+<p>
+To make it easier to support the different databases we have defined a subset of SQL data types to use. The types used are:
+</p>
+
+<ul>
+
+<li>int - integers, date and time as UNIX timestamp, enums and boolean</li>
+
+<li>float - float and prices</li>
+
+<li>varchar - short text strings (less than 255 characters)</li>
+
+<li>text - large text objects like article contents</li>
+
+</ul>
+
+<p>
+To store date and time values ints are used. eZ locale is used to present the date and times on a localized format. That way we don't have to worry about the different date and time formats used in the different databases.
+</p>
+
+<p>
+Auto incrementing numbers, sequences, are used to generate unique ids for a table row. This functionality is abstracted as it works differently in the different databases.
+</p>
+
+<p>
+Limit and offset functionality is also abstracted by the eZ db library.
+</p>
+
+<p>
+eZ db is designed to use lowercase in all table/column names. This is done to prevent errors as the different databases handle this differently, especially when returning the data as an associative array.
+</p>
+
+<a name="eztoc80942_1" id="eztoc80942_1"></a><h2>Dependencies</h2>
+<p>
+
+eZ db uses the following eZ publish libraries. <br/>
+</p>
+
+<ul>
+
+<li>eZ utils</li>
+
+<li><a href="development/libraries/ez_i18n.html">eZ i18n</a></li>
+
+</ul>
+
+<a name="eztoc80942_2" id="eztoc80942_2"></a><h2>Useful links</h2>
+<ul>
+
+<li><a href="https://web.archive.org/web/20071217085623/http://www.mysql.com/">MySQL</a></li>
+
+<li><a href="https://web.archive.org/web/20071217085623/http://ez.no/">PostgreSQL</a></li>
+
+</ul>
+</div>
+
+
+<div class="content-view-children">
+<div class="class-comment">
+    <h1 id="comments">Comments</h1>
+
+
+    
+
+ 
+
+
+</div>
+</div>
+
+<div class="block float-break">
+            <form method="post" action="/web/20071217085623/http://ez.no/content/action">
+            <input class="button" type="submit" name="NewButton" value="New comment"/>
+            <input type="hidden" name="RedirectURIAfterPublish" value="ezpublish/documentation/development/libraries/ez_db#comments"/>
+            <input type="hidden" name="NodeID" value="29352"/>
+                           <input type="hidden" name="ClassIdentifier" value="article_comment"/>
+                        <input type="hidden" name="ContentLanguageCode" value="eng-GB"/>
+        </form>
+    </div>
+
+</div>
+</div>
+</div>
+
+
+<div class="template-design area-sidebar-normal">
+<div class="template-module content-view-sidebar">
+<div class="template-object class-documentation">
+
+<div class="attribute-heading">
+    <h2 class="bullet">Contents</h2>
+</div>
+<h3><a href="development.html">Development</a></h3>
+<p>
+        
+        
+            
+                    <a href="development/extensions.html">Extensions</a><br/>
+          
+	
+            
+                    <a href="development/ez_publish_datamodel.html">eZ publish datamodel</a><br/>
+          
+	
+            
+                    <a href="development/ez_publish_tuning_and_stability.html">eZ publish tuning and stability</a><br/>
+          
+	
+            
+                    <a href="development/importing_attribute_data.html">Importing attribute data</a><br/>
+          
+	
+            
+                    <a href="development/kernel.html">Kernel</a><br/>
+          
+	
+            
+                    <a href="development/libraries.html">Libraries</a><br/>
+          
+	
+            &nbsp;&nbsp;&nbsp;
+                    <a href="development/libraries/ez_xml.html">eZ xml</a><br/>
+          
+	
+            &nbsp;&nbsp;&nbsp;
+                    <a href="development/libraries/ez_db.html"><b>eZ db</b></a><br/>
+          
+	
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a href="development/libraries/ez_db/data_retrieval.html">Data retrieval</a><br/>
+          
+	
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a href="development/libraries/ez_db/data_storage.html">Data storage</a><br/>
+          
+	
+            &nbsp;&nbsp;&nbsp;
+                    <a href="development/libraries/ez_i18n.html">eZ i18n</a><br/>
+          
+	
+            &nbsp;&nbsp;&nbsp;
+                    <a href="development/libraries/ez_soap.html">eZ soap</a><br/>
+          
+	
+            &nbsp;&nbsp;&nbsp;
+                    <a href="development/libraries/ez_template.html">eZ template</a><br/>
+          
+	
+            &nbsp;&nbsp;&nbsp;
+                    <a href="development/libraries/ez_webdav.html">eZ webdav</a><br/>
+          
+	
+            
+                    <a href="development/scripting.html">Scripting</a><br/>
+          
+	
+            
+                    <a href="development/standards.html">Standards</a><br/>
+          
+	
+            
+                    <a href="development/system_overview.html">System overview</a><br/>
+          
+	
+            
+                    <a href="development/test_suite.html">Test Suite</a><br/>
+          
+	
+            
+                    <a href="development/using_doxygen_to_create_api_documentation.html">Using Doxygen to create API documenta...</a><br/>
+          
+	
+        </p>
+
+
+<hr class="docsplit"/>
+<h3>Created</h3>
+<p>
+04/07/2003<br/>
+10:37:52 am<br/>
+by Bård Farstad
+</p>
+<h3>Last updated</h3>
+<p>
+19/03/2007<br/>
+9:40:22 am<br/>
+by Ole Morten Halvorsen
+</p>
+<h3>Authors</h3>
+<p class="rendered">Bård Farstad<br/>Ole Morten Halvorsen<br/></p>
+
+<br/>
+<hr class="docsplit"/>
+
+<p>This page is part of the eZ Publish documentation. The documentation is available under the <a href="https://web.archive.org/web/20071217085623/http://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License.</a> All contributions will be released under the terms of this license.</p>
+
+</div>
+</div>
+</div>
+
+
+
+
+
+<!-- Main area content: END -->
+
+</div>
+</div>
+
+<!-- Main area: END -->
+
+<hr class="hide"/>
+
+<!-- Footer area: START -->
+<div id="footer-design">
+<div id="page-width6">
+<div id="footer">
+
+<address>Powered by eZ Publish&reg; Content Management System.<br/>
+Copyright &copy;1999 - 2024 7x and 2007 eZ Systems AS (except where otherwise noted). All rights reserved.</address>
+
+</div>
+</div>
+</div>
+<!-- Footer area: END -->
+
+</div>
+<!-- Complete page area: END -->
+
+
+    
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TFEDSZJYH0"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-TFEDSZJYH0');
+</script>
+
+
+</body>
+</html>
+
+<!-- th[eZ] 20050804 --><!--
+     FILE ARCHIVED ON 08:56:23 Dec 17, 2007 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 11:19:17 Oct 31, 2024.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  captures_list: 0.528
+  exclusion.robots: 0.026
+  exclusion.robots.policy: 0.015
+  esindex: 0.01
+  cdx.remote: 10.943
+  LoadShardBlock: 119.109 (3)
+  PetaboxLoader3.datanode: 137.94 (4)
+  load_resource: 131.641
+  PetaboxLoader3.resolve: 89.44
+-->

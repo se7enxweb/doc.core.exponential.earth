@@ -1,0 +1,861 @@
+
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style type="text/css">
+    @import url(https://doc.core.ezpublish.se7enx.com/ezno2005/design/ezno2005/stylesheets/core.css);
+    @import url(https://doc.core.ezpublish.se7enx.com/ezno2005/design/ezno2005/stylesheets/pagelayout.css);
+    @import url(https://doc.core.ezpublish.se7enx.com/ezno2005/design/ezno2005/stylesheets/classes.css);
+    @import url(https://doc.core.ezpublish.se7enx.com/ezno2005/design/ezno2005/stylesheets/monitor.css);
+</style>
+
+<link type="text/css" rel="stylesheet" href="https://web.archive.org/web/20071224055736cs_/http://ez.no/extension/ezno2005/design/ezno2005/stylesheets/print.css" media="print"/>
+
+    <link rel="alternate" title="ez.no News" href="https://web.archive.org/web/20071224055736/http://ez.no/rss/feed/news" type="application/rss+xml"/><link rel="alternate" title="ez.no Developer News" href="/web/20071224055736/http://ez.no/rss/feed/communitynews" type="application/rss+xml"/>
+<link rel="alternate" title="ez.no Developer Articles" href="https://web.archive.org/web/20071224055736/http://ez.no/rss/feed/community_articles" type="application/rss+xml"/>
+<link rel="alternate" title="ez.no Forum" href="https://web.archive.org/web/20071224055736/http://ez.no/rss/feed/forum" type="application/rss+xml"/>
+<link rel="alternate" title="ez.no Contributions" href="https://web.archive.org/web/20071224055736/http://ez.no/rss/feed/contribs" type="application/rss+xml"/>
+<link rel="alternate" title="ez.no Open Funding" href="https://web.archive.org/web/20071224055736/http://ez.no/rss/feed/openfunding_suggestions" type="application/rss+xml"/>
+
+
+<!-- IE conditional comments; for bug fixes for different IE versions -->
+<!--[if IE 5]>     <style type="text/css"> @import url(/extension/ezno2005/design/ezno2005/stylesheets/ie5.css);    </style> <![endif]-->
+<!--[if lte IE 6]> <style type="text/css"> @import url(/extension/ezno2005/design/ezno2005/stylesheets/ie6lte.css); </style> <![endif]-->
+<!--[if gte IE 6]> <style type="text/css"> @import url(/extension/ezno2005/design/ezno2005/stylesheets/ie6gte.css); </style> <![endif]-->
+
+<!-- Load special stylesheet (if necessary) for newer Netscape decendants, Mozilla and Firefox, using the Gecko renderer -->
+<script type="text/javascript"><!-- if ((navigator.userAgent.indexOf("Gecko") != -1)&&(navigator.userAgent.indexOf("KHTML") == -1)) document.write("<style type=\"text/css\">@import url(/extension/ezno2005/design/ezno2005/stylesheets/gecko.css);</style>");--></script>
+                                                                    
+<title>
+            XML tags     /         Reference     /         Documentation                    </title>
+<meta http-equiv="Content-Language" content="en-GB"/>
+    <meta name="author" content="eZ Systems"/>
+    <meta name="copyright" content="eZ Systems as"/>
+    <meta name="description" content="eZ Publish is an open source content management system (CMS) and an open source content management framework (CMF)."/>
+    <meta name="keywords" content="cms, publish, e-commerce, content management, development framework"/>
+
+<meta name="MSSmartTagsPreventParsing" content="TRUE"/>
+<meta name="generator" content="eZ Publish"/>
+
+<script type="text/javascript" src="https://doc.core.ezpublish.se7enx.com/ezno2005/design/ezno2005/javascripts/tools.js"></script>
+<script type="text/javascript" src="https://doc.core.ezpublish.se7enx.com/ezno2005/design/ezno2005/javascripts/dropdownmenu.js"></script>
+</head>    <body onload="menuInit();">
+
+<!-- Complete page area: START -->
+<div id="page">
+
+<!-- Header area: START -->
+<div id="header">
+<div id="header-insert">
+
+<!-- User menu area: START -->
+<div id="usermenu">
+
+<div id="page-width1">
+
+<div id="logo">
+<h1><a href="https://doc.core.ezpublish.se7enx.com/"><span class="hide">eZ Systems - The Content Management Ecosystem</span></a></h1>
+</div>
+
+
+
+<p class="hide"><a href="#main">Skip to main content</a></p>
+
+<hr class="hide"/>
+<div id="searchbox">
+<form action="/web/20071224055736/http://ez.no/ezsearchredirect/action" method="get">
+
+<div class="block">
+<div class="element">
+<input id="searchbutton" class="button" type="submit" value="Search"/>
+</div>
+
+<div class="element searchstring">
+    <label for="searchtext" class="hide">Search text:</label>
+    <input id="searchtext" name="SearchText" type="text" size="12"/><br/>
+    
+
+            <div class="section">
+            <label for="searcharea" class="hide">Search area:</label>
+            <select id="searcharea" name="SubTreeArray[]">
+                <option value="2" selected="selected">All ez.no</option>
+                <option value="306">Bug reports</option>
+                <option value="21358">Contributions</option>
+                <option value="documentation">Documentation</option>
+                <option value="308">Forum</option>
+            </select>
+            </div>
+    </div>
+
+</div>
+</form>
+</div>
+
+<hr class="hide"/>
+<h2 class="hide">User menu</h2>
+
+<!-- User menu content: START -->
+<ul>
+            <li><a href="https://web.archive.org/web/20071224055736/http://ez.no/download"><span>Downloads</span></a></li>
+    <li><a href="https://web.archive.org/web/20071224055736/http://ez.no/company/contact"><span>Contact</span></a></li>
+            <li><a href="https://web.archive.org/web/20071224055736/http://ez.no/user/login"><span>Log in</span></a></li>
+        <li><a href="https://web.archive.org/web/20071224055736/http://ez.no/user/register"><span>Register</span></a></li>
+    
+    <li id="language-menu">
+        <a class="highlighted" title="English" href="https://web.archive.org/web/20071224055736/http://ez.no/ezpublish/documentation/reference/xml_tags"><img src="/ezno2005/design/ezno2005/images/eng-GB.gif" width="18" height="12" alt="English"/></a>
+        <a title="Deutsch" href="https://web.archive.org/web/20071224055736/http://ez.no/de/ezpublish/documentation/reference/xml_tags"><img src="/ezno2005/design/ezno2005/images/ger-DE.gif" width="18" height="12" alt="Deutsch"/></a>
+        <a title="Português" href="https://web.archive.org/web/20071224055736/http://ez.no/br/ezpublish/documentation/reference/xml_tags"><img src="/ezno2005/design/ezno2005/images/por-BR.gif" width="18" height="12" alt="Português"/></a>
+        <a title="Français" href="https://web.archive.org/web/20071224055736/http://ez.no/fr/ezpublish/documentation/reference/xml_tags"><img src="/ezno2005/design/ezno2005/images/fre-FR.gif" width="18" height="12" alt="Français"/></a>
+        <a title="日本語" href="https://web.archive.org/web/20071224055736/http://ez.no/jp/ezpublish/documentation/reference/xml_tags"><img src="/ezno2005/design/ezno2005/images/jpn-JP.gif" width="18" height="12" alt="日本語"/></a>        
+        <a title="中文" href="https://web.archive.org/web/20071224055736/http://ez.no/tw/ezpublish/documentation/reference/xml_tags"><img src="/ezno2005/design/ezno2005/images/chi-TW.gif" width="18" height="12" alt="中文"/></a>        
+        <a title="Norsk" href="https://web.archive.org/web/20071224055736/http://ez.no/no/ezpublish/documentation/reference/xml_tags"><img src="/ezno2005/design/ezno2005/images/nor-NO.gif" width="18" height="12" alt="Norsk"/></a>        
+    </li>
+</ul>
+<!-- User menu content: END -->
+
+</div>
+
+</div>
+<!-- User menu area: END -->
+
+</div>
+</div>
+<!-- Header area: END --><script type="text/javascript">
+<!--
+var menu = new Array();
+
+menu[0] = ['eZ Publish', '/ezpublish', 'eZ Publish Premium', '/ezpublish/premium', 'eZ Publish Now', '/ezpublish/now', 'eZ Publish On Demand', '/ezpublish/on_demand', 'Proprietary license options', '/products/proprietary_license_options', 'Certified extensions', '/products/certified_extensions', 'eZ Flow', '/ezflow', 'eZ Components', '/ezcomponents', 'eZ Find', '/ezfind', 'eZ Newsletter', '/eznewsletter', 'Expert consulting services', '/products/expert_consulting_services', 'Support', '/products/support'];
+menu[1] = ['Documentation', '/doc', 'Articles', '/community/articles', 'Books', '/store/books', 'Training', '/education/training', 'Certification', '/education/certification'];
+menu[2] = ['Case studies', '/customers/case_studies', 'References', '/customers/references', 'User quotes', '/customers/user_quotes', 'eZ for media', '/customers/ez_for_media'];
+menu[3] = ['Worldwide Partners', '/partner/worldwide_partners', 'eZ Partner program', '/partner/ez_partner_program', 'Knowledge centre', '/partner/knowledge_centre'];
+menu[4] = ['Downloads', '/download', 'Documentation', '/doc', 'News', '/developer/news', 'Developer information', '/developer/developer_information', 'Projects & contributions', '/developer/contribs', 'Forum', '/developer/forum', 'Issue tracker', '/bugs/redirect', 'Open Funding', '/developer/open_funding', 'Security', '/developer/security', 'User groups', '/developer/user_groups'];
+menu[5] = ['Total Product Responsibility from eZ', '/support/total_product_responsibility_from_ez'];
+menu[6] = ['Software solutions', '/store/software', 'Training', '/services/training', 'Certification', '/services/certification', 'Books', '/store/books', 'Services', '/store/services'];
+menu[7] = ['News', '/company/news', 'Media & press', '/company/media_press', 'Events', '/company/events', 'Career', '/company/career', 'eZ Conference & Awards', '/company/ez_conference_awards', 'Board of Directors', '/company/board', 'eZ Crew', '/company/ez_crew', 'Contact', '/company/contact'];
+
+-->
+</script>
+<div id="menuborder">
+
+<!-- Main menu area: START -->
+<div id="menu" onmouseover="menuHover();" onmouseout="tryHideSubMenues();">
+
+<div id="mainmenu" class="float-break">
+<div id="page-width2">
+    <ul id="mainmenulist" class="float-break">
+<li class="current"><a href="https://web.archive.org/web/20071224055736/http://ez.no/products" onmouseover="switchSubMenu( this );">Products &amp; services</a></li>
+<li><a href="https://web.archive.org/web/20071224055736/http://ez.no/education" onmouseover="switchSubMenu( this );">Education</a></li>
+<li><a href="https://web.archive.org/web/20071224055736/http://ez.no/customers" onmouseover="switchSubMenu( this );">Customers</a></li>
+<li><a href="https://web.archive.org/web/20071224055736/http://ez.no/partner" onmouseover="switchSubMenu( this );">Partners</a></li>
+<li><a href="https://web.archive.org/web/20071224055736/http://ez.no/developer" onmouseover="switchSubMenu( this );">Developer</a></li>
+<li><a href="https://web.archive.org/web/20071224055736/http://ez.no/support" onmouseover="switchSubMenu( this );">Support</a></li>
+<li><a href="https://web.archive.org/web/20071224055736/http://ez.no/store" onmouseover="switchSubMenu( this );">Store</a></li>
+<li class="last"><a href="https://web.archive.org/web/20071224055736/http://ez.no/company" onmouseover="switchSubMenu( this );">Company</a></li>
+</ul>
+
+</div>
+</div>
+
+
+<div id="submenu">
+<div id="page-width3">
+    <ul class="float-break">
+                        <li><a href="https://web.archive.org/web/20071224055736/http://ez.no/ezpublish">eZ Publish</a></li>
+                                <li><a href="https://web.archive.org/web/20071224055736/http://ez.no/ezpublish/premium">eZ Publish Premium</a></li>
+                                <li><a href="https://web.archive.org/web/20071224055736/http://ez.no/ezpublish/now">eZ Publish Now</a></li>
+                                <li><a href="https://web.archive.org/web/20071224055736/http://ez.no/ezpublish/on_demand">eZ Publish On Demand</a></li>
+                                <li><a href="https://web.archive.org/web/20071224055736/http://ez.no/products/proprietary_license_options">Proprietary license options</a></li>
+                                <li><a href="https://web.archive.org/web/20071224055736/http://ez.no/products/certified_extensions">Certified extensions</a></li>
+                                <li><a href="https://web.archive.org/web/20071224055736/http://ez.no/ezflow">eZ Flow</a></li>
+                                <li><a href="https://web.archive.org/web/20071224055736/http://ez.no/ezcomponents">eZ Components</a></li>
+                                <li><a href="https://web.archive.org/web/20071224055736/http://ez.no/ezfind">eZ Find</a></li>
+                                <li><a href="https://web.archive.org/web/20071224055736/http://ez.no/eznewsletter">eZ Newsletter</a></li>
+                                <li><a href="https://web.archive.org/web/20071224055736/http://ez.no/products/expert_consulting_services">Expert consulting services</a></li>
+                                <li class="last"><a href="https://web.archive.org/web/20071224055736/http://ez.no/products/support">Support</a></li>
+                </ul>
+</div>
+</div>
+
+<script type="text/javascript"><!--
+    document.getElementById('submenu').style.display = 'none';
+--></script>
+
+</div>
+<!-- Main menu area: END -->
+
+</div>
+
+<hr class="hide"/><!-- Path area: START -->
+<div id="path">
+
+<div id="page-width4">
+<h2 class="hide">Path</h2>
+
+<!-- Path content: START -->
+<p>
+                        <a href="https://web.archive.org/web/20071224055736/http://ez.no/">ez.no</a>
+        
+                        /
+                            <a href="https://web.archive.org/web/20071224055736/http://ez.no/ezpublish">ezpublish</a>
+        
+                        /
+                            <a href="toc.html">documentation</a>
+        
+                        /
+                            <a href="reference.html">reference</a>
+        
+                        /
+                            xml tags
+        
+            </p>
+<!-- Path content: END -->
+
+</div>
+
+</div>
+<!-- Path area: END -->
+
+<hr class="hide"/>
+
+<!-- Main area: START -->
+
+<div id="page-width5">
+<div id="main" class="float-break">
+
+<!-- Main area content: START -->
+
+
+
+
+<div class="template-design area-main-normal">
+<div class="template-module content-view-full">
+<div class="template-object class-documentation">
+
+
+<div class="attribute-heading">
+    <h1>XML tags</h1>
+</div>
+
+<p><strong>These documentation pages are no longer maintained. Please visit the <a href="https://doc.ezpublishlegacy.se7enx.com">new documentation site.</a></strong></p>
+
+<div class="attribute-long">
+    
+
+<p>
+A content class may have an XML text field attribute. Although there are no immediate visual clues, the XML text field attribute is quite different compared to the regular text field attribute. The XML text field attribute is much more powerful. In particular, it can be used to contain formatted instead of just plain text. This means that it is possible to use a collection of predefined (and also custom) tags in order to dictate how the content within the XML text field attribute should be rendered. These tags can be input directly in edit mode.
+</p>
+
+<p>
+Inputting XML tags manually might not be the best solution for everyone. This is why eZ systems has developed the <a href="https://web.archive.org/web/20071224055736/http://ez.no/products/online_editor">&quot;Online Editor&quot;</a>, which is a WYSIWYG frontend for the XML field. In a nutshell, the Online Editor can be thought of as an XML editor which provides a nice frontend for people who don't wish to bother with inputting the tags manually. The current version of the OE works with 5.5 or later versions of Internet Explorer and Mozilla based browsers.
+</p>
+
+<p>
+The following text sheds light on the available/standard XML tags that can be used in eZ publish.
+</p>
+
+<a name="eztoc142030_1" id="eztoc142030_1"></a><h2>Emphasized/italic text</h2>
+<p>
+
+Emphasized text can be achieved by using one of the following tags: &quot;i&quot;, &quot;em&quot; or &quot;emphasize&quot;. The example below demonstrates these tags. It is possible to use the optional &quot;class&quot; parameter to specify the desired class that should be used when the text inside the tag is rendered.<br/>
+</p>
+    <pre class="wordwrap"><span class="line">&lt;i [class=&quot;test&quot;]&gt;Italic text.&lt;/i&gt;</span>
+
+<span class="line">&lt;em [class=&quot;test&quot;]&gt;Emphasized text.&lt;/em&gt;</span>
+
+<span class="line">&lt;emphasize [class=&quot;test&quot;]&gt;Emphasized text.&lt;/emphasize&gt;</span></pre>
+    
+<a name="eztoc142030_2" id="eztoc142030_2"></a><h2>Bold/thick text</h2>
+<p>
+
+Bold text can be achieved by using one of the following tags: &quot;b&quot;, &quot;bold&quot; or &quot;strong&quot;. The example box below demonstrates these tags. It is possible to use the optional &quot;class&quot; parameter to specify the desired class that should be used when the text inside the tag is rendered.<br/>
+</p>
+    <pre class="wordwrap"><span class="line">&lt;b [class=&quot;test&quot;]&gt;Bold text.&lt;/b&gt;</span>
+
+<span class="line">&lt;bold [class=&quot;test&quot;]&gt;Bold text.&lt;/bold&gt;</span>
+
+<span class="line">&lt;strong [class=&quot;test&quot;]&gt;Bold text.&lt;/strong&gt;</span></pre>
+    
+<a name="eztoc142030_3" id="eztoc142030_3"></a><h2>Unformatted text</h2>
+<p>
+
+The &quot;literal&quot; tag can be used to output unformatted text, for example program source code, HTML code, XML source, etc. Everything that is inside an a literal block will be rendered in the same way (character by character) as it was input into the XML field.<br/>
+</p>
+    <pre class="wordwrap"><span class="line">&lt;literal [class=&quot;example&quot;]&gt;Unformatted text/code/HTML/XML/etc.</span></pre>
+    
+<p>
+Please note that in the example above, the slash is in the wrong way within the tag that terminates the literal block. This was done in order to make the tag appear on the documentation page (since we're using literal tags to make code blocks). In other words, it should be terminated with a frontslash instead of a backslash.
+</p>
+
+<a name="eztoc142030_4" id="eztoc142030_4"></a><h2>Lists</h2>
+<p>
+It is possible to create lists in the same way as in HTML; that is, by making use of the &quot;ol&quot;, &quot;ul&quot; and &quot;li&quot; tags. Nesting lists is not possible. By making use of the optional &quot;class&quot; parameter, it is possible to specify which CSS class that should be used when the content inside the &quot;ol&quot; / &quot;ul&quot; tags should be rendered. The following text demonstrates how to create ordered and unordered lists.
+</p>
+
+<a name="eztoc142030_4_1" id="eztoc142030_4_1"></a><h3>Ordered lists</h3>    <pre class="wordwrap"><span class="line">&lt;ol [class=&quot;test&quot;]&gt;</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&lt;li&gt;List element 1&lt;/li&gt;</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&lt;li&gt;List element 2&lt;/li&gt;</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&lt;li&gt;List element 3&lt;/li&gt;</span>
+
+<span class="line">&lt;/ol&gt;</span></pre>
+    
+<a name="eztoc142030_4_2" id="eztoc142030_4_2"></a><h3>Unordered lists</h3>    <pre class="wordwrap"><span class="line">&lt;ul [class=&quot;test&quot;]&gt;</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&lt;li&gt;List element 1&lt;/li&gt;</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&lt;li&gt;List element 2&lt;/li&gt;</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&lt;li&gt;List element 3&lt;/li&gt;</span>
+
+<span class="line">&lt;/ul&gt;</span></pre>
+    
+<a name="eztoc142030_5" id="eztoc142030_5"></a><h2>Headings</h2>
+<p>
+Headings/titles can be achieved by making use of either the &quot;h&quot; or the &quot;header&quot; tag. There are two optional parameters: level and class. The level parameter can be used to define the size/level of the heading. The class parameter can be used to specify which CSS class that should be used when the heading is rendered.
+</p>
+    <pre class="wordwrap"><span class="line">&lt;h [level=&quot;1-6&quot;] [class=&quot;test&quot;]&gt;Heading/title&lt;/h&gt;</span>
+
+<span class="line">&lt;header [level=&quot;1-6&quot;] [class=&quot;test&quot;]&gt;Heading/title&lt;/header&gt;</span></pre>
+    
+<a name="eztoc142030_6" id="eztoc142030_6"></a><h2>Hyperlinks</h2>
+<p>
+
+Hyperlinks can be inserted by making use of the &quot;a&quot; or the &quot;link&quot; tags. The following example demonstrates these tags:<br/>
+</p>
+    <pre class="wordwrap"><span class="line">&lt;a href=&quot;URL&quot; [target=&quot;_self|_blank&quot;] [ class=&quot;test&quot;]&gt;Link name&lt;/a&gt;</span>
+
+<span class="line">&lt;link href=&quot;URL&quot; [target=&quot;_self|_blank&quot;] [class=&quot;test&quot;]&gt;Link name&lt;/link&gt;</span></pre>
+    
+<p>
+The &quot;href&quot; parameter is required and it must be set to a valid URL. The &quot;target&quot; parameter can be used to determine where the target URL should be shown (inside the existing/active browser window or within a new one/popup). The &quot;class&quot; parameter can be used to specify a CSS class that should be used when the link is rendered.
+</p>
+
+<p>
+Every link that is used in an XML field or stored using the link datatype will automatically be put inside the &quot;ezurl&quot; table within the database. It is possible to make use of the internal URL list when creating links. This can be done by using &quot;id&quot; instead of &quot;href&quot; within either the &quot;a&quot; or the &quot;link&quot; tag. The ID must be a valid eZ URL ID. The following example demonstrates this technique:
+</p>
+    <pre class="wordwrap"><span class="line">&lt;a id=&quot;id&quot; [target=&quot;_self|_blank&quot;] [class=&quot;test&quot;]&gt;Link name&lt;/a&gt;</span>
+
+<span class="line">&lt;link id=&quot;id&quot; [target=&quot;_self|_blank&quot;] [class=&quot;test&quot;]&gt;Link name&lt;/link&gt;</span></pre>
+    
+<a name="eztoc142030_7" id="eztoc142030_7"></a><h2>Anchors</h2>
+<p>
+
+The &quot;anchor&quot; tag makes it possible to insert HTML anchors inside the XML field. The inserted anchors will work just like standard HTML anchors. The following example demonstrates how to insert an anchor.<br/>
+</p>
+    <pre class="wordwrap"><span class="line">&lt;anchor name=&quot;name_of_anchor&quot; /&gt;</span></pre>
+    
+<p>
+The name parameter must be set to a text string that is unique within the collections of anchors (if more than one) that will exist within the page that the XML field is a part of. Anchors can be reached by appending the hash character (#) followed directly by the name of the anchor that the browser should jump/scroll to. Example: http://www.example.com/hobbies#music
+</p>
+
+<a name="eztoc142030_8" id="eztoc142030_8"></a><h2>Tables</h2>
+<p>
+It is possible to create tables in the same way as in HTML; that is, by making use of the &quot;table&quot;, &quot;tr&quot; and &quot;th&quot; and &quot;td&quot; tags. Tables can be nested. The following text demonstrates the syntax for setting up a table.
+</p>
+    <pre class="wordwrap"><span class="line">&lt;table [ class=&quot;test&quot;                    ]</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ border=&quot;number&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ width=&quot;1-100%|size (in pixels)&quot; ]&gt;</span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">...</span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">&lt;/table&gt;</span></pre>
+    
+<p>
+The attributes 'class', 'border' and 'width' are optional. Table content should be written according to normal HTML table syntax with &quot;tr&quot;, &quot;th&quot; and &quot;td&quot; tags. See below.
+</p>
+
+<a name="eztoc142030_8_1" id="eztoc142030_8_1"></a><h3>Table rows</h3>
+<p>
+
+Table rows can be defied just like in HTML:<br/>
+</p>
+    <pre class="wordwrap"><span class="line">&lt;tr&gt; Table row content goes here. &lt;/tr&gt;</span></pre>
+    
+<a name="eztoc142030_8_2" id="eztoc142030_8_2"></a><h3>Table headers</h3>
+<p>
+Table headers can be defined just like in HTML:
+</p>
+    <pre class="wordwrap"><span class="line">&lt;th [ class=&quot;test&quot;     ]</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;[ width=&quot;number&quot;&nbsp;&nbsp;]</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;[ rowspan=&quot;number&quot; ]</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;[ colspan=&quot;number&quot; ]&gt;</span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">Table column header/title text goes here.</span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">&lt;/th&gt;</span></pre>
+    
+<p>
+All parameters are optional. Class can be used to dictate a desired CSS class. Width can be used to set the width (either as precentage or number of pixels). Rowspan and colspan are the same as in HTML.
+</p>
+
+<a name="eztoc142030_8_3" id="eztoc142030_8_3"></a><h3>Table data/cell</h3>
+<p>
+Table data/cell can be specified using the td tag, just like in HTML:
+</p>
+    <pre class="wordwrap"><span class="line">&lt;td [ class=&quot;example&quot;  ]</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;[ width=&quot;number&quot;&nbsp;&nbsp;]</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;[ rowspan=&quot;number&quot; ]</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;[ colspan=&quot;number&quot; ]&gt;</span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">Table cell content goes here.</span></pre>
+    
+<p>
+All parameters are optional. Class can be used to dictate a desired CSS class. Width can be used to set the width (either as precentage or number of pixels). Rowspan and colspan are the same as in HTML.
+<a name="objects"></a>
+</p>
+
+<a name="eztoc142030_9" id="eztoc142030_9"></a><h2>Objects</h2>
+<p>
+The &quot;object&quot; tag makes it possible to insert an arbitrary object that exists inside the content structure of eZ publish (given that the user who is trying to use it has the proper permissions). This is a very useful tag. For instance, it makes it possible to embed images, links, lists, etc. directly in the XML field. The following box reveals the syntax for this tag:
+</p>
+    <pre class="wordwrap"><span class="line">&lt;object id=&quot;object_id_number&quot;</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ align=&quot;left|right|center&quot; ]</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ size=&quot;small|medium|large&quot; ]</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ class=&quot;test&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ view=&quot;embed|text_linked&quot;&nbsp;]</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ href=&quot;destination_url&quot;&nbsp;&nbsp;&nbsp;]</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ target=&quot;_self|_blank&quot;&nbsp;&nbsp;&nbsp;&nbsp;] /&gt;</span></pre>
+    
+<p>
+The &quot;id&quot; should be an existing/valid content object id. All other attributes are optional. Attributes &quot;href&quot; and &quot;target&quot; parameters can be used to render the object as a link.
+</p>
+
+<a name="eztoc142030_10" id="eztoc142030_10"></a><h2>Custom tags</h2>
+<p>
+
+It is possible to make use of custom XML tags; like this:<br/>
+</p>
+    <pre class="wordwrap"><span class="line">&lt;custom name=&quot;name_of_custom_tag&quot;&gt;Content goes here...&lt;/custom&gt;</span></pre>
+    
+<p>
+A custom tag could either be block or inline. This should be defined inside [CustomTagSettings] in an override for the content.ini configuration file.
+</p>
+</div>
+
+
+<div class="content-view-children">
+<div class="class-comment">
+    <h1 id="comments">Comments</h1>    <div class="block float-break">
+              <form method="post" action="/web/20071224055736/http://ez.no/content/action">
+             <input class="button" type="submit" name="NewButton" value="New comment"/>
+             <input type="hidden" name="RedirectURIAfterPublish" value="ezpublish/documentation/reference/xml_tags#comments"/>
+             <input type="hidden" name="NodeID" value="47157"/>
+                             <input type="hidden" name="ClassIdentifier" value="article_comment"/>
+                          <input type="hidden" name="ContentLanguageCode" value="eng-GB"/>
+         </form>
+         </div>
+
+
+        
+
+<div class="content-view-line">
+<div class="class-comment bglight">
+
+    
+    <div id="msg142241" class="attribute-heading">
+        <h2>nesting headers and links</h2>
+    </div>
+
+<div class="attribute-byline float-break">
+    <p class="author">*- pike</p>
+    <p class="date">Friday 27 July 2007 11:09:42 am</p>
+</div>
+
+
+<div class="attribute-short">
+            it's not allowed to nest a link in a header, or a header in a link. is there any way to change that behaviour ?
+
+    </div>
+
+
+</div>
+</div>
+    
+
+<div class="content-view-line">
+<div class="class-comment bgdark">
+
+    
+    <div id="msg67802" class="attribute-heading">
+        <h2>Factbox</h2>
+    </div>
+
+<div class="attribute-byline float-break">
+    <p class="author">Hans-Henry Jakobsen</p>
+    <p class="date">Friday 04 February 2005 9:16:12 am</p>
+</div>
+
+
+<div class="attribute-short">
+            The syntax to make a factbox is :<br/>
+<br/>
+&lt;custom name='factbox' title='title'&gt;<br/>
+This is the text in my factbox<br/>
+&lt;/custom&gt;<br/>
+<br/>
+Info about making a factbox can be found in this forum thread :<br/>
+<a href="https://web.archive.org/web/20071224055736/http://ez.no/community/forum/install_configuration/factbox_in_ezp_3" title="http://ez.no/community/forum/install_configuration/factbox_in_ezp_3">http://ez.no/community/forum/install_configuration/factbox_in_ezp_3</a>
+
+    </div>
+
+
+</div>
+</div>
+    
+
+<div class="content-view-line">
+<div class="class-comment bglight">
+
+    
+    <div id="msg66516" class="attribute-heading">
+        <h2>Nested lists</h2>
+    </div>
+
+<div class="attribute-byline float-break">
+    <p class="author">Frederik Holljen</p>
+    <p class="date">Friday 14 January 2005 11:58:45 am</p>
+</div>
+
+
+<div class="attribute-short">
+            eZ publish 3.5 allows nested lists.
+
+    </div>
+
+
+</div>
+</div>
+    
+
+<div class="content-view-line">
+<div class="class-comment bgdark">
+
+    
+    <div id="msg66485" class="attribute-heading">
+        <h2>Why No Nested Lists?</h2>
+    </div>
+
+<div class="attribute-byline float-break">
+    <p class="author">Jeffrey Dunster</p>
+    <p class="date">Thursday 13 January 2005 5:51:36 pm</p>
+</div>
+
+
+<div class="attribute-short">
+            What is the reason for not allowing nested lists? This breaks the outlining feature that outlines are often used for. HTML handles it. What is EZ's problem?
+
+    </div>
+
+
+</div>
+</div>
+    
+
+<div class="content-view-line">
+<div class="class-comment bglight">
+
+    
+    <div id="msg62629" class="attribute-heading">
+        <h2>Doubts about Links</h2>
+    </div>
+
+<div class="attribute-byline float-break">
+    <p class="author">willy jansen</p>
+    <p class="date">Wednesday 10 November 2004 5:55:16 pm</p>
+</div>
+
+
+<div class="attribute-short">
+            You write:<br/>
+<br/>
+&quot;Every link that is used in an XML field or stored using the <br/>
+link datatype will automatically be put inside the &quot;ezurl&quot; <br/>
+table within the database. It is possible to make use of <br/>
+the internal URL list when creating links. This can be <br/>
+done by using &quot;id&quot; instead of &quot;href&quot; within either the &quot;a&quot; <br/>
+or the &quot;link&quot; tag. The ID must be a valid eZ URL ID. <br/>
+The following example demonstrates this technique:&quot;<br/>
+<br/>
+My questions are:<br/>
+- what is &quot;the link datatype&quot;?<br/>
+- where can one see this &quot;ezurl&quot; table (without entering the DB)?<br/>
+- where can one find the ID of this URL? <br/>
+- what does &quot;valid eZ URL ID&quot; mean?
+
+    </div>
+
+
+</div>
+</div>
+    
+
+<div class="content-view-line">
+<div class="class-comment bgdark">
+
+    
+    <div id="msg62628" class="attribute-heading">
+        <h2>anchor problem</h2>
+    </div>
+
+<div class="attribute-byline float-break">
+    <p class="author">willy jansen</p>
+    <p class="date">Wednesday 10 November 2004 5:46:10 pm</p>
+</div>
+
+
+<div class="attribute-short">
+            that is not a &quot;silly&quot; question: it is a question about something that does not work correctly in ezpublish. <br/>
+<br/>
+the problem with the anchor is explained in this post : <a href="https://web.archive.org/web/20071224055736/http://ez.no/community/forum/setup_design/anchor_tag" title="http://ez.no/community/forum/setup_design/anchor_tag">http://ez.no/community/forum/setup_design/anchor_tag</a>
+
+    </div>
+
+
+</div>
+</div>
+    
+
+<div class="content-view-line">
+<div class="class-comment bglight">
+
+    
+    <div id="msg56257" class="attribute-heading">
+        <h2>silly question---anchor in eZ</h2>
+    </div>
+
+<div class="attribute-byline float-break">
+    <p class="author">Kevin Myles</p>
+    <p class="date">Wednesday 04 August 2004 5:17:13 pm</p>
+</div>
+
+
+<div class="attribute-short">
+            I'd like to create a FAQ.<br/>
+<br/>
+I've been able to successfully use a full link to go to an anchor, but i'd like to just have the intial link with the href tag to directly point to the anchor, without reloading the page. However, using something like<br/>
+<pre class="wordwrap"><span class="line">
+</span>
+
+<span class="line">&lt;a href=&quot;#test&quot;&gt;What is your organization's name?&lt;/a&gt;
+</span>
+
+<span class="line"></span></pre><br/>
+sends the browser to www.mysite.com/path/index.php/news/news/#test<br/>
+<br/>
+any suggestions?<br/>
+
+
+    </div>
+
+
+</div>
+</div>
+    
+
+<div class="content-view-line">
+<div class="class-comment bgdark">
+
+    
+    <div id="msg55908" class="attribute-heading">
+        <h2>Hyperlinks don't work</h2>
+    </div>
+
+<div class="attribute-byline float-break">
+    <p class="author">Kai Winnem</p>
+    <p class="date">Thursday 29 July 2004 1:21:32 pm</p>
+</div>
+
+
+<div class="attribute-short">
+            None of the hyperlink tags seem to work for me. Could you give a more concrete example? When I use a URL, eg. &lt;link href='projects/project_dost'&gt;Project DOST&lt;/link&gt;, it comes up with an error in the debug.<br/>
+When I use an ID, eg. &lt;link ID='218'&gt;Project DOST&lt;/link&gt;, it doesnt accept the number...<br/>
+<br/>
+I'm using the corporate template in 3.3. The debug output is:<br/>
+Warning: eZTemplate:gt	Jul 29 2004 12:21:17	<br/>
+Unsupported type: boolean(  ), must be either array, attribute object or numerical
+
+    </div>
+
+
+</div>
+</div>
+
+
+ 
+
+
+</div>
+</div>
+
+<div class="block float-break">
+            <form method="post" action="/web/20071224055736/http://ez.no/content/action">
+            <input class="button" type="submit" name="NewButton" value="New comment"/>
+            <input type="hidden" name="RedirectURIAfterPublish" value="ezpublish/documentation/reference/xml_tags#comments"/>
+            <input type="hidden" name="NodeID" value="47157"/>
+                           <input type="hidden" name="ClassIdentifier" value="article_comment"/>
+                        <input type="hidden" name="ContentLanguageCode" value="eng-GB"/>
+        </form>
+    </div>
+
+</div>
+</div>
+</div>
+
+
+<div class="template-design area-sidebar-normal">
+<div class="template-module content-view-sidebar">
+<div class="template-object class-documentation">
+
+<div class="attribute-heading">
+    <h2 class="bullet">Contents</h2>
+</div>
+<h3><a href="reference.html">Reference</a></h3>
+<p>
+        
+        
+            
+                    <a href="reference/database_diagram.html">Database diagram</a><br/>
+          
+	
+            
+                    <a href="reference/template_operators.html">Template operators</a><br/>
+          
+	
+            
+                    <a href="reference/template_functions.html">Template functions</a><br/>
+          
+	
+            
+                    <a href="reference/data_fetching.html">Data fetching</a><br/>
+          
+	
+            
+                    <a href="reference/modules.html">Modules</a><br/>
+          
+	
+            
+                    <a href="reference/xml_tags.html"><b>XML tags</b></a><br/>
+          
+	
+        </p>
+
+
+<hr class="docsplit"/>
+<h3>Created</h3>
+<p>
+18/03/2004<br/>
+2:29:13 pm<br/>
+by Balazs Halasy
+</p>
+<h3>Last updated</h3>
+<p>
+16/08/2006<br/>
+11:55:45 am<br/>
+by Svitlana Shatokhina
+</p>
+<h3>Authors</h3>
+<p class="rendered">Balazs Halasy<br/>Ole Morten Halvorsen<br/>Frederik Holljen<br/>Luc Chase<br/>Svitlana Shatokhina<br/></p>
+
+<br/>
+<hr class="docsplit"/>
+
+<p>This page is part of the eZ Publish documentation. The documentation is available under the <a href="https://web.archive.org/web/20071224055736/http://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License.</a> All contributions will be released under the terms of this license.</p>
+
+</div>
+</div>
+</div>
+
+
+
+
+
+<!-- Main area content: END -->
+
+</div>
+</div>
+
+<!-- Main area: END -->
+
+<hr class="hide"/>
+
+<!-- Footer area: START -->
+<div id="footer-design">
+<div id="page-width6">
+<div id="footer">
+
+<address>Powered by eZ Publish&reg; Content Management System.<br/>
+Copyright &copy;1999 - 2024 7x and 2007 eZ Systems AS (except where otherwise noted). All rights reserved.</address>
+
+</div>
+</div>
+</div>
+<!-- Footer area: END -->
+
+</div>
+<!-- Complete page area: END -->
+
+
+    
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TFEDSZJYH0"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-TFEDSZJYH0');
+</script>
+
+
+</body>
+</html>
+
+<!-- th[eZ] 20050804 --><!--
+     FILE ARCHIVED ON 05:57:36 Dec 24, 2007 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 11:21:33 Oct 31, 2024.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  captures_list: 1.747
+  exclusion.robots: 0.041
+  exclusion.robots.policy: 0.017
+  esindex: 0.018
+  cdx.remote: 6.159
+  LoadShardBlock: 90.447 (3)
+  PetaboxLoader3.resolve: 91.794 (2)
+  PetaboxLoader3.datanode: 78.137 (4)
+  load_resource: 88.012
+-->

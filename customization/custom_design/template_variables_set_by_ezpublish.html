@@ -1,0 +1,1296 @@
+
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style type="text/css">
+    @import url(https://doc.core.ezpublish.se7enx.com/ezno2005/design/ezno2005/stylesheets/core.css);
+    @import url(https://doc.core.ezpublish.se7enx.com/ezno2005/design/ezno2005/stylesheets/pagelayout.css);
+    @import url(https://doc.core.ezpublish.se7enx.com/ezno2005/design/ezno2005/stylesheets/classes.css);
+    @import url(https://doc.core.ezpublish.se7enx.com/ezno2005/design/ezno2005/stylesheets/monitor.css);
+</style>
+
+<link type="text/css" rel="stylesheet" href="https://web.archive.org/web/20071223171612cs_/http://ez.no/extension/ezno2005/design/ezno2005/stylesheets/print.css" media="print"/>
+
+    <link rel="alternate" title="ez.no News" href="https://web.archive.org/web/20071223171612/http://ez.no/rss/feed/news" type="application/rss+xml"/><link rel="alternate" title="ez.no Developer News" href="/web/20071223171612/http://ez.no/rss/feed/communitynews" type="application/rss+xml"/>
+<link rel="alternate" title="ez.no Developer Articles" href="https://web.archive.org/web/20071223171612/http://ez.no/rss/feed/community_articles" type="application/rss+xml"/>
+<link rel="alternate" title="ez.no Forum" href="https://web.archive.org/web/20071223171612/http://ez.no/rss/feed/forum" type="application/rss+xml"/>
+<link rel="alternate" title="ez.no Contributions" href="https://web.archive.org/web/20071223171612/http://ez.no/rss/feed/contribs" type="application/rss+xml"/>
+<link rel="alternate" title="ez.no Open Funding" href="https://web.archive.org/web/20071223171612/http://ez.no/rss/feed/openfunding_suggestions" type="application/rss+xml"/>
+
+
+<!-- IE conditional comments; for bug fixes for different IE versions -->
+<!--[if IE 5]>     <style type="text/css"> @import url(/extension/ezno2005/design/ezno2005/stylesheets/ie5.css);    </style> <![endif]-->
+<!--[if lte IE 6]> <style type="text/css"> @import url(/extension/ezno2005/design/ezno2005/stylesheets/ie6lte.css); </style> <![endif]-->
+<!--[if gte IE 6]> <style type="text/css"> @import url(/extension/ezno2005/design/ezno2005/stylesheets/ie6gte.css); </style> <![endif]-->
+
+<!-- Load special stylesheet (if necessary) for newer Netscape decendants, Mozilla and Firefox, using the Gecko renderer -->
+<script type="text/javascript"><!-- if ((navigator.userAgent.indexOf("Gecko") != -1)&&(navigator.userAgent.indexOf("KHTML") == -1)) document.write("<style type=\"text/css\">@import url(/extension/ezno2005/design/ezno2005/stylesheets/gecko.css);</style>");--></script>
+                                                                                    
+<title>
+            Template variables set by ezPublish     /         Custom design     /         Customization                    </title>
+<meta http-equiv="Content-Language" content="en-GB"/>
+    <meta name="author" content="eZ Systems"/>
+    <meta name="copyright" content="eZ Systems as"/>
+    <meta name="description" content="eZ Publish is an open source content management system (CMS) and an open source content management framework (CMF)."/>
+    <meta name="keywords" content="cms, publish, e-commerce, content management, development framework"/>
+
+<meta name="MSSmartTagsPreventParsing" content="TRUE"/>
+<meta name="generator" content="eZ Publish"/>
+
+<script type="text/javascript" src="https://doc.core.ezpublish.se7enx.com/ezno2005/design/ezno2005/javascripts/tools.js"></script>
+<script type="text/javascript" src="https://doc.core.ezpublish.se7enx.com/ezno2005/design/ezno2005/javascripts/dropdownmenu.js"></script>
+</head>    <body onload="menuInit();">
+
+<!-- Complete page area: START -->
+<div id="page">
+
+<!-- Header area: START -->
+<div id="header">
+<div id="header-insert">
+
+<!-- User menu area: START -->
+<div id="usermenu">
+
+<div id="page-width1">
+
+<div id="logo">
+<h1><a href="https://doc.core.ezpublish.se7enx.com/"><span class="hide">eZ Systems - The Content Management Ecosystem</span></a></h1>
+</div>
+
+
+
+<p class="hide"><a href="#main">Skip to main content</a></p>
+
+<hr class="hide"/>
+<div id="searchbox">
+<form action="/web/20071223171612/http://ez.no/ezsearchredirect/action" method="get">
+
+<div class="block">
+<div class="element">
+<input id="searchbutton" class="button" type="submit" value="Search"/>
+</div>
+
+<div class="element searchstring">
+    <label for="searchtext" class="hide">Search text:</label>
+    <input id="searchtext" name="SearchText" type="text" size="12"/><br/>
+    
+
+            <div class="section">
+            <label for="searcharea" class="hide">Search area:</label>
+            <select id="searcharea" name="SubTreeArray[]">
+                <option value="2" selected="selected">All ez.no</option>
+                <option value="306">Bug reports</option>
+                <option value="21358">Contributions</option>
+                <option value="documentation">Documentation</option>
+                <option value="308">Forum</option>
+            </select>
+            </div>
+    </div>
+
+</div>
+</form>
+</div>
+
+<hr class="hide"/>
+<h2 class="hide">User menu</h2>
+
+<!-- User menu content: START -->
+<ul>
+            <li><a href="https://web.archive.org/web/20071223171612/http://ez.no/download"><span>Downloads</span></a></li>
+    <li><a href="https://web.archive.org/web/20071223171612/http://ez.no/company/contact"><span>Contact</span></a></li>
+            <li><a href="https://web.archive.org/web/20071223171612/http://ez.no/user/login"><span>Log in</span></a></li>
+        <li><a href="https://web.archive.org/web/20071223171612/http://ez.no/user/register"><span>Register</span></a></li>
+    
+    <li id="language-menu">
+        <a class="highlighted" title="English" href="https://web.archive.org/web/20071223171612/http://ez.no/ezpublish/documentation/customization/custom_design/template_variables_set_by_ezpublish"><img src="/ezno2005/design/ezno2005/images/eng-GB.gif" width="18" height="12" alt="English"/></a>
+        <a title="Deutsch" href="https://web.archive.org/web/20071223171612/http://ez.no/de/ezpublish/documentation/customization/custom_design/template_variables_set_by_ezpublish"><img src="/ezno2005/design/ezno2005/images/ger-DE.gif" width="18" height="12" alt="Deutsch"/></a>
+        <a title="Português" href="https://web.archive.org/web/20071223171612/http://ez.no/br/ezpublish/documentation/customization/custom_design/template_variables_set_by_ezpublish"><img src="/ezno2005/design/ezno2005/images/por-BR.gif" width="18" height="12" alt="Português"/></a>
+        <a title="Français" href="https://web.archive.org/web/20071223171612/http://ez.no/fr/ezpublish/documentation/customization/custom_design/template_variables_set_by_ezpublish"><img src="/ezno2005/design/ezno2005/images/fre-FR.gif" width="18" height="12" alt="Français"/></a>
+        <a title="日本語" href="https://web.archive.org/web/20071223171612/http://ez.no/jp/ezpublish/documentation/customization/custom_design/template_variables_set_by_ezpublish"><img src="/ezno2005/design/ezno2005/images/jpn-JP.gif" width="18" height="12" alt="日本語"/></a>        
+        <a title="中文" href="https://web.archive.org/web/20071223171612/http://ez.no/tw/ezpublish/documentation/customization/custom_design/template_variables_set_by_ezpublish"><img src="/ezno2005/design/ezno2005/images/chi-TW.gif" width="18" height="12" alt="中文"/></a>        
+        <a title="Norsk" href="https://web.archive.org/web/20071223171612/http://ez.no/no/ezpublish/documentation/customization/custom_design/template_variables_set_by_ezpublish"><img src="/ezno2005/design/ezno2005/images/nor-NO.gif" width="18" height="12" alt="Norsk"/></a>        
+    </li>
+</ul>
+<!-- User menu content: END -->
+
+</div>
+
+</div>
+<!-- User menu area: END -->
+
+</div>
+</div>
+<!-- Header area: END --><script type="text/javascript">
+<!--
+var menu = new Array();
+
+menu[0] = ['eZ Publish', '/ezpublish', 'eZ Publish Premium', '/ezpublish/premium', 'eZ Publish Now', '/ezpublish/now', 'eZ Publish On Demand', '/ezpublish/on_demand', 'Proprietary license options', '/products/proprietary_license_options', 'Certified extensions', '/products/certified_extensions', 'eZ Flow', '/ezflow', 'eZ Components', '/ezcomponents', 'eZ Find', '/ezfind', 'eZ Newsletter', '/eznewsletter', 'Expert consulting services', '/products/expert_consulting_services', 'Support', '/products/support'];
+menu[1] = ['Documentation', '/doc', 'Articles', '/community/articles', 'Books', '/store/books', 'Training', '/education/training', 'Certification', '/education/certification'];
+menu[2] = ['Case studies', '/customers/case_studies', 'References', '/customers/references', 'User quotes', '/customers/user_quotes', 'eZ for media', '/customers/ez_for_media'];
+menu[3] = ['Worldwide Partners', '/partner/worldwide_partners', 'eZ Partner program', '/partner/ez_partner_program', 'Knowledge centre', '/partner/knowledge_centre'];
+menu[4] = ['Downloads', '/download', 'Documentation', '/doc', 'News', '/developer/news', 'Developer information', '/developer/developer_information', 'Projects & contributions', '/developer/contribs', 'Forum', '/developer/forum', 'Issue tracker', '/bugs/redirect', 'Open Funding', '/developer/open_funding', 'Security', '/developer/security', 'User groups', '/developer/user_groups'];
+menu[5] = ['Total Product Responsibility from eZ', '/support/total_product_responsibility_from_ez'];
+menu[6] = ['Software solutions', '/store/software', 'Training', '/services/training', 'Certification', '/services/certification', 'Books', '/store/books', 'Services', '/store/services'];
+menu[7] = ['News', '/company/news', 'Media & press', '/company/media_press', 'Events', '/company/events', 'Career', '/company/career', 'eZ Conference & Awards', '/company/ez_conference_awards', 'Board of Directors', '/company/board', 'eZ Crew', '/company/ez_crew', 'Contact', '/company/contact'];
+
+-->
+</script>
+<div id="menuborder">
+
+<!-- Main menu area: START -->
+<div id="menu" onmouseover="menuHover();" onmouseout="tryHideSubMenues();">
+
+<div id="mainmenu" class="float-break">
+<div id="page-width2">
+    <ul id="mainmenulist" class="float-break">
+<li class="current"><a href="https://web.archive.org/web/20071223171612/http://ez.no/products" onmouseover="switchSubMenu( this );">Products &amp; services</a></li>
+<li><a href="https://web.archive.org/web/20071223171612/http://ez.no/education" onmouseover="switchSubMenu( this );">Education</a></li>
+<li><a href="https://web.archive.org/web/20071223171612/http://ez.no/customers" onmouseover="switchSubMenu( this );">Customers</a></li>
+<li><a href="https://web.archive.org/web/20071223171612/http://ez.no/partner" onmouseover="switchSubMenu( this );">Partners</a></li>
+<li><a href="https://web.archive.org/web/20071223171612/http://ez.no/developer" onmouseover="switchSubMenu( this );">Developer</a></li>
+<li><a href="https://web.archive.org/web/20071223171612/http://ez.no/support" onmouseover="switchSubMenu( this );">Support</a></li>
+<li><a href="https://web.archive.org/web/20071223171612/http://ez.no/store" onmouseover="switchSubMenu( this );">Store</a></li>
+<li class="last"><a href="https://web.archive.org/web/20071223171612/http://ez.no/company" onmouseover="switchSubMenu( this );">Company</a></li>
+</ul>
+
+</div>
+</div>
+
+
+<div id="submenu">
+<div id="page-width3">
+    <ul class="float-break">
+                        <li><a href="https://web.archive.org/web/20071223171612/http://ez.no/ezpublish">eZ Publish</a></li>
+                                <li><a href="https://web.archive.org/web/20071223171612/http://ez.no/ezpublish/premium">eZ Publish Premium</a></li>
+                                <li><a href="https://web.archive.org/web/20071223171612/http://ez.no/ezpublish/now">eZ Publish Now</a></li>
+                                <li><a href="https://web.archive.org/web/20071223171612/http://ez.no/ezpublish/on_demand">eZ Publish On Demand</a></li>
+                                <li><a href="https://web.archive.org/web/20071223171612/http://ez.no/products/proprietary_license_options">Proprietary license options</a></li>
+                                <li><a href="https://web.archive.org/web/20071223171612/http://ez.no/products/certified_extensions">Certified extensions</a></li>
+                                <li><a href="https://web.archive.org/web/20071223171612/http://ez.no/ezflow">eZ Flow</a></li>
+                                <li><a href="https://web.archive.org/web/20071223171612/http://ez.no/ezcomponents">eZ Components</a></li>
+                                <li><a href="https://web.archive.org/web/20071223171612/http://ez.no/ezfind">eZ Find</a></li>
+                                <li><a href="https://web.archive.org/web/20071223171612/http://ez.no/eznewsletter">eZ Newsletter</a></li>
+                                <li><a href="https://web.archive.org/web/20071223171612/http://ez.no/products/expert_consulting_services">Expert consulting services</a></li>
+                                <li class="last"><a href="https://web.archive.org/web/20071223171612/http://ez.no/products/support">Support</a></li>
+                </ul>
+</div>
+</div>
+
+<script type="text/javascript"><!--
+    document.getElementById('submenu').style.display = 'none';
+--></script>
+
+</div>
+<!-- Main menu area: END -->
+
+</div>
+
+<hr class="hide"/><!-- Path area: START -->
+<div id="path">
+
+<div id="page-width4">
+<h2 class="hide">Path</h2>
+
+<!-- Path content: START -->
+<p>
+                        <a href="https://web.archive.org/web/20071223171612/http://ez.no/">ez.no</a>
+        
+                        /
+                            <a href="https://web.archive.org/web/20071223171612/http://ez.no/ezpublish">ezpublish</a>
+        
+                        /
+                            <a href="toc.html">documentation</a>
+        
+                        /
+                            <a href="customization.html">customization</a>
+        
+                        /
+                            <a href="customization/custom_design.html">custom design</a>
+        
+                        /
+                            template variables set by ezpublish
+        
+            </p>
+<!-- Path content: END -->
+
+</div>
+
+</div>
+<!-- Path area: END -->
+
+<hr class="hide"/>
+
+<!-- Main area: START -->
+
+<div id="page-width5">
+<div id="main" class="float-break">
+
+<!-- Main area content: START -->
+
+
+
+
+<div class="template-design area-main-normal">
+<div class="template-module content-view-full">
+<div class="template-object class-documentation">
+
+
+<div class="attribute-heading">
+    <h1>Template variables set by ezPublish</h1>
+</div>
+
+<p><strong>These documentation pages are no longer maintained. Please visit the <a href="https://doc.ezpublishlegacy.se7enx.com">new documentation site.</a></strong></p>
+
+<div class="attribute-long">
+    
+
+<p>
+
+This document is an explaination of some of the variables that can be<br/>used in templates.
+</p>
+
+<p>
+Both these variable are safe to use when view caching is on.
+</p>
+
+<a name="eztoc89920_1" id="eztoc89920_1"></a><h2>1 Pagelayout (or overrides)</h2>
+<p>
+The following can be used in <b>pagelayout templates</b> to display the values of these variables:
+</p>
+    <pre class="wordwrap"><span class="line">module_result &lt;br /&gt;{$module_result|attribute(show,5)}</span>
+
+<span class="line">designkeys &lt;br /&gt;{$DesignKeys:used|attribute(show,5)}</span>
+
+<span class="line">view_parameters &lt;br /&gt;{$view_parameters|attribute(show)}</span>
+
+<span class="line">uri_string {$uri_string} &lt;br /&gt;</span>
+
+<span class="line">requested_uri_string {$requested_uri_string} &lt;br /&gt;</span>
+
+<span class="line">site &lt;br /&gt;{$site|attribute(show)}</span>
+
+<span class="line">ezinfo &lt;br /&gt; {$ezinfo|attribute(show)}</span></pre>
+    
+<a name="eztoc89920_1_1" id="eztoc89920_1_1"></a><h3>1.1 $module_result</h3>
+<p>
+The attributes that are available may differ depending on view caching is on. Below the most safe ones to use.
+</p>
+    <pre class="wordwrap"><span class="line">view_parameters (array=Array)</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;offset (integer=0)</span>
+
+<span class="line">path (array=Array)</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;0 (array=Array)</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text (string=Root folder)</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;url (string=/content/view/full/2)</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;url_alias (string=)</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;node_id (string=2)</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;1 (array=Array)</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text (string=Products)</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;url (boolean=)</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;url_alias (boolean=)</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;node_id (string=556)</span>
+
+<span class="line">title_path (array=Array)</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;0 (array=Array)</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text (string=Products)</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;url (boolean=)</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;url_alias (boolean=)</span>
+
+<span class="line">section_id (string=1)</span>
+
+<span class="line">node_id (string=556)</span>
+
+<span class="line">navigation_part (string=ezcontentnavigationpart)</span>
+
+<span class="line">uri (string=/products)</span></pre>
+    
+<a name="eztoc89920_1_1_1" id="eztoc89920_1_1_1"></a><h4>1.1.1 $module_result.content</h4>
+<p>
+This attribute holds the content that the module called in the URL generated.
+</p>
+
+<p>
+For instance when you run the module content/view/full/2 the module will fetch a template and set the result in module_result under the attribute content.
+</p>
+
+<p>
+The template variable {$module_result.content} is usually found in pagelayout.tpl templates and holds the main page content.
+</p>
+
+<a name="eztoc89920_1_1_2" id="eztoc89920_1_1_2"></a><h4>1.1.2 $module_result.view_parameters</h4>
+<p>
+
+&gt;offset integer<br/>
+The view_parameters attribute is an array. I have only seen this<br/>contain the &quot;offset&quot; element. This element is used for paged content.
+</p>
+
+<a name="eztoc89920_1_1_3" id="eztoc89920_1_1_3"></a><h4>1.1.3 $module_result.path</h4>
+<p>
+
+&gt;0 array <br/>
+&gt;&gt;text string 'Root folder'<br/>
+&gt;&gt;url boolean false<br/>
+&gt;&gt;url_alias boolean false<br/>
+&gt;&gt;node_id string 2<br/>This attribute is an array and provides information about the current location within the node tree. It has many uses, such as:
+</p>
+
+<ul>
+
+<li>
+Generation of Breadcrumbs (see<br/><a href="https://web.archive.org/web/20071223171612/http://ez.no/developer/ez_publish_3/documentation/customization/custom_design/examples/creating_a_navigation_path" target="_blank">http://ez.no/developer/ez_publish_3/documentation/customization/custom_design/examples/creating_a_navigation_path</a>)</li>
+
+<li>Determining what branch of the node tree you are in ( useful if you have different display logic for different branches )</li>
+
+</ul>
+
+<p>
+
+Element '0' should always be the root node, and the last element will be<br/>the current node.
+</p>
+
+<p>
+The attributes of each element are:
+</p>
+
+<ul>
+
+<li>text - Name of the node </li>
+
+<li>url - URL of the node or false if current node </li>
+
+<li>url_alias - Nice URL of the node or false if current node </li>
+
+<li>node_id - The node_id of the node</li>
+
+</ul>
+
+<a name="eztoc89920_1_1_4" id="eztoc89920_1_1_4"></a><h4>1.1.4 $module_result.title_path </h4>
+<p>
+Like the path <b>array</b> this attribute is also an array. I am not sure the purpose of this attribute and how it differs from the <b>path</b> attribute.
+</p>
+
+<a name="eztoc89920_1_1_5" id="eztoc89920_1_1_5"></a><h4>1.1.5 $module_result.section_id </h4>
+<p>
+What section does the current node belong to. Not set for some modules, such as search or login.
+</p>
+
+<a name="eztoc89920_1_1_6" id="eztoc89920_1_1_6"></a><h4>1.1.6 $module_result.node_id</h4>
+<p>
+The node_id of the current node. Not set for some modules.
+</p>
+
+<a name="eztoc89920_1_1_7" id="eztoc89920_1_1_7"></a><h4>1.1.7 $module_result.navigation_part</h4>
+<p>
+The navigation part assigned to the current node. Associated with the section the current node is assigned to.
+</p>
+
+<a name="eztoc89920_1_1_8" id="eztoc89920_1_1_8"></a><h4>1.1.8 $module_result.uri</h4>
+<p>
+The URI used to access this node.
+</p>
+
+<a name="eztoc89920_1_2" id="eztoc89920_1_2"></a><h3>1.2 $DesignKeys:used</h3>
+<p>
+This variable is set in all(?) modules, however the attributes that are available may differ.
+</p>
+    <pre class="wordwrap"><span class="line">section (string=1)</span>
+
+<span class="line">object (string=564)</span>
+
+<span class="line">node (string=556)</span>
+
+<span class="line">parent_node (string=2)</span>
+
+<span class="line">class (string=1)</span>
+
+<span class="line">view_offset (integer=0)</span>
+
+<span class="line">viewmode (string=full)</span>
+
+<span class="line">depth (string=2)</span></pre>
+    
+<div align="center">
+<table bgcolor="#eeeeee">
+<tr>
+    <td>
+    
+<p>
+Fetching and displaying content will alter the value of this variable. So if you are getting strange values in the variable add debugging to check the value at the top of the template and at the bottom. You may need to store attribute values in other variables.
+</p>
+
+    </td>
+</tr>
+</table>
+</div>
+<a name="eztoc89920_1_2_1" id="eztoc89920_1_2_1"></a><h4>1.2.1 section</h4>
+<p>
+The section ID assigned to the current node.
+</p>
+
+<a name="eztoc89920_1_2_2" id="eztoc89920_1_2_2"></a><h4>1.2.2 object</h4>
+<p>
+The object ID of the object associated with the current node.
+</p>
+
+<a name="eztoc89920_1_2_3" id="eztoc89920_1_2_3"></a><h4>1.2.3 node </h4>
+<p>
+The Node ID of the current node
+</p>
+
+<a name="eztoc89920_1_2_4" id="eztoc89920_1_2_4"></a><h4>1.2.4 parent_node</h4>
+<p>
+The Node Id of the current node's parent.
+</p>
+
+<a name="eztoc89920_1_2_5" id="eztoc89920_1_2_5"></a><h4>1.2.5 class</h4>
+<p>
+The Class ID of the current node
+</p>
+
+<a name="eztoc89920_1_2_6" id="eztoc89920_1_2_6"></a><h4>1.2.6 view_offset </h4>
+<p>
+Same as $module_result.view_parameters['offset']
+</p>
+
+<a name="eztoc89920_1_2_7" id="eztoc89920_1_2_7"></a><h4>1.2.7 viewmode</h4>
+<p>
+The view mode used to display the current node.
+</p>
+
+<a name="eztoc89920_1_2_8" id="eztoc89920_1_2_8"></a><h4>1.2.8 depth</h4>
+<p>
+The depth of the current node with in the node tree. Should be equal to the number of elements in $module_result.path.
+</p>
+
+<a name="eztoc89920_1_3" id="eztoc89920_1_3"></a><h3>1.3 Get the current user $current_user</h3>
+<p>
+First you will need to fetch it
+</p>
+    <pre class="wordwrap"><span class="line">{let current_user=fetch('user','current_user') }</span></pre>
+    
+<a name="eztoc89920_1_3_1" id="eztoc89920_1_3_1"></a><h4>1.3.1 Which is the main group of the current logged in user</h4>    <pre class="wordwrap"><span class="line">....</span>
+
+<span class="line">{let current_user=fetch('user','current_user') }</span>
+
+<span class="line">...</span>
+
+<span class="line">&lt;p&gt; I belong to the group with ID {$current_user.contentobject.main_parent_node_id}&lt;/p&gt;</span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">{/let}</span></pre>
+    
+<a name="eztoc89920_2" id="eztoc89920_2"></a><h2>2 Inside view templates for classes/objects</h2>
+<a name="eztoc89920_2_1" id="eztoc89920_2_1"></a><h3>2.1 The base variable of &quot;everything&quot;: $node</h3>
+<p>
+Here you basically have one variable to do it all
+</p>
+    <pre class="wordwrap"><span class="line">$node</span></pre>
+    
+<p>
+Don't worry about view caching or not: when cached, the template isn't used anyway.
+</p>
+
+<a name="eztoc89920_2_2" id="eztoc89920_2_2"></a><h3>2.2 Object attributes</h3>
+<p>
+Now for fun, put {$node|attribute(show,3)} inside a template for an existing object (and not a production site of course). You will see plenty of nice stuff contained inside $node.
+</p>
+
+<p>
+For example
+</p>
+    
+<table class="renderedtable" cellspacing="0" border="1" width="100%">
+<tr>
+<td valign="top">  
+<p>
+$node.node_id
+</p>
+
+  </td>
+
+<td valign="top">  
+<p>
+the ID of the node
+</p>
+
+  </td>
+</tr>
+<tr class="bglight">
+<td valign="top">  
+<p>
+$node.object
+</p>
+
+  </td>
+
+<td valign="top">  
+<p>
+the content object which lives in this node
+</p>
+
+  </td>
+</tr>
+<tr class="bgdark">
+<td valign="top">  
+<p>
+$node.sort_array
+</p>
+
+  </td>
+
+<td valign="top">  
+<p>
+the default sorting method as specified in teh admin interface. You should use that in fetch() functions to get the default sort method (but you may have reasons to change that)
+</p>
+
+  </td>
+</tr>
+<tr class="bglight">
+<td valign="top">  
+<p>
+$node.data_map
+</p>
+
+  </td>
+
+<td valign="top">  
+<p>
+an array of all the attributes associated with the object
+</p>
+
+  </td>
+</tr>
+<tr class="bgdark">
+<td valign="top">  
+<p>
+$node.name
+</p>
+
+  </td>
+
+<td valign="top">  
+<p>
+the name of the node (object)
+</p>
+
+  </td>
+</tr>
+
+</table>
+
+<p>
+Of particular importance is the data_map array, since the attributes contain the content that you want to display. How to to this is mostly simple, but some special data types have their own stuff:
+</p>
+    
+<table class="renderedtable" cellspacing="0" border="1" width="100%">
+<tr>
+<td valign="top">  
+<p>
+<b>Datatype</b>
+</p>
+
+  </td>
+
+<td valign="top">  
+<p>
+<b>method to use</b>
+</p>
+
+  </td>
+
+<td valign="top">  
+<p>
+<b>output</b>
+</p>
+
+  </td>
+</tr>
+<tr class="bglight">
+<td valign="top">  
+<p>
+<i>most attributes</i>
+</p>
+
+  </td>
+
+<td valign="top">  
+<p>
+$node.data_map..content
+</p>
+
+  </td>
+
+<td valign="top">  
+<p>
+well, exactly what's in there
+</p>
+
+  </td>
+</tr>
+<tr class="bgdark">
+<td valign="top">  
+<p>
+<i>image</i>
+</p>
+
+  </td>
+
+<td valign="top">  
+<p>
+$node.data_map.content[image_size].full_path
+</p>
+
+  </td>
+
+<td valign="top">  
+<p>
+the url of the image to use in tags. Replace image_size by small, medium, large, reference or your custom defined size (ezp3.2)
+</p>
+
+  </td>
+</tr>
+<tr class="bglight">
+<td valign="top">  
+<p>
+<i>XML text field</i>
+</p>
+
+  </td>
+
+<td valign="top">  
+<p>
+$node.data_map..output.output_text
+</p>
+
+  </td>
+
+<td valign="top">  
+<p>
+the xhtml converted xml content. Use this with mofifying operators (like the contributed glossary operator)
+</p>
+
+  </td>
+</tr>
+
+</table>
+
+<a name="eztoc89920_2_3" id="eztoc89920_2_3"></a><h3>2.3 More fun stuff</h3>
+<a name="eztoc89920_2_3_1" id="eztoc89920_2_3_1"></a><h4>2.3.1 Can the current user edit the current object?</h4>
+<p>
+You don't need to fetch the current user into an object for this
+</p>
+    <pre class="wordwrap"><span class="line">&lt;form name=&quot;fullview&quot; method=&quot;post&quot; action={&quot;content/action&quot;|ezurl}&gt;</span>
+
+<span class="line">{switch match=$node.object.can_edit}</span>
+
+<span class="line">{case match=1}</span>
+
+<span class="line">&lt;input type=&quot;hidden&quot; name=&quot;ContentObjectID&quot; </span>
+
+<span class="line">value=&quot;{$node.object.id}&quot; /&gt;</span>
+
+<span class="line">&lt;input class=&quot;button&quot; type=&quot;submit&quot; name=&quot;EditButton&quot; </span>
+
+<span class="line">value=&quot;{'Edit'|i18n('design/standard/node/view')}&quot; /&gt;</span>
+
+<span class="line">{/case}</span>
+
+<span class="line">{case match=0}</span>
+
+<span class="line">{/case}</span>
+
+<span class="line">{/switch}</span>
+
+<span class="line">{/form}</span></pre>
+    
+<a name="eztoc89920_2_3_2" id="eztoc89920_2_3_2"></a><h4>2.3.2 Who is the one that modified the current version?</h4>
+<p>
+Use the contentobject_version_object!
+</p>
+    <pre class="wordwrap"><span class="line">{$node.contentobject_version_object.creator.name}</span></pre>
+    
+<a name="eztoc89920_2_3_3" id="eztoc89920_2_3_3"></a><h4>2.3.3 And when did he do that??</h4>    <pre class="wordwrap"><span class="line">last modified: {$node.contentobject_version_object.modified|l10n(shortdatetime)}</span></pre>
+    
+<a name="eztoc89920_2_3_4" id="eztoc89920_2_3_4"></a><h4>2.3.4 Can I email the one that modified it? </h4>
+<p>
+Don't be afraid to dig a few levels deeper into $node :-)
+</p>
+    <pre class="wordwrap"><span class="line">&lt;a </span>
+
+<span class="line">href=&quot;mailto:{$node.contentobject_version_object.creator.&lt;remove linebreak&gt;</span>
+
+<span class="line">contentobject_attributes.2.content.email}&quot;&gt;</span>
+
+<span class="line">Send Email&lt;/a&gt;</span></pre>
+    </div>
+
+
+<div class="content-view-children">
+<div class="class-comment">
+    <h1 id="comments">Comments</h1>    <div class="block float-break">
+              <form method="post" action="/web/20071223171612/http://ez.no/content/action">
+             <input class="button" type="submit" name="NewButton" value="New comment"/>
+             <input type="hidden" name="RedirectURIAfterPublish" value="ezpublish/documentation/customization/custom_design/template_variables_set_by_ezpublish#comments"/>
+             <input type="hidden" name="NodeID" value="32420"/>
+                             <input type="hidden" name="ClassIdentifier" value="article_comment"/>
+                          <input type="hidden" name="ContentLanguageCode" value="eng-GB"/>
+         </form>
+         </div>
+
+
+        
+
+<div class="content-view-line">
+<div class="class-comment bglight">
+
+    
+    <div id="msg68168" class="attribute-heading">
+        <h2>Some other template variables</h2>
+    </div>
+
+<div class="attribute-byline float-break">
+    <p class="author">Kristof Coomans</p>
+    <p class="date">Thursday 10 February 2005 9:03:12 am</p>
+</div>
+
+
+<div class="attribute-short">
+            Some other template variables set by index.php are:<br/>
+<br/>
+current_user<br/>
+anonymous_user_id<br/>
+access_type (usefull: access_type.name contains the name of the siteaccess)<br/>
+...<br/>
+<br/>
+If you want to have a full list, just search index.php for &quot;$tpl-&gt;setVariable(&quot;.
+
+    </div>
+
+
+</div>
+</div>
+    
+
+<div class="content-view-line">
+<div class="class-comment bgdark">
+
+    
+    <div id="msg62720" class="attribute-heading">
+        <h2>data_map attribute</h2>
+    </div>
+
+<div class="attribute-byline float-break">
+    <p class="author">Betsy Gamrat</p>
+    <p class="date">Friday 12 November 2004 6:13:16 am</p>
+</div>
+
+
+<div class="attribute-short">
+            Thank you for the $parent.data_map.[day].data_int example!!!!<br/>
+<br/>
+Without it, I would never figure this stuff out.<br/>
+<br/>
+:)
+
+    </div>
+
+
+</div>
+</div>
+    
+
+<div class="content-view-line">
+<div class="class-comment bglight">
+
+    
+    <div id="msg56126" class="attribute-heading">
+        <h2>pagelayout.tpl seems to have no effect</h2>
+    </div>
+
+<div class="attribute-byline float-break">
+    <p class="author">Gustave Stresen-Reuter</p>
+    <p class="date">Monday 02 August 2004 7:45:54 pm</p>
+</div>
+
+
+<div class="attribute-short">
+            Hi,<br/>
+<br/>
+Using 3.4.1, adding pagelayout.tpl to the design/mysite/templates doesn't appear to have any effect. I also tried adding it in design/mysite/override/templates with no success.<br/>
+<br/>
+I noticed that in settings/siteaccess/mysite/site.ini.append.php there is the following:<br/>
+<br/>
+[DesignSettings]<br/>
+SiteDesign=mysite<br/>
+AdditionalSiteDesignList[]=base<br/>
+<br/>
+&quot;base&quot; is definitely being used. How do we override this and why is it even there?<br/>
+<br/>
+Help!
+
+    </div>
+
+
+</div>
+</div>
+    
+
+<div class="content-view-line">
+<div class="class-comment bgdark">
+
+    
+    <div id="msg55270" class="attribute-heading">
+        <h2>Clarify the data_map stuff, please</h2>
+    </div>
+
+<div class="attribute-byline float-break">
+    <p class="author">Marco Zinn</p>
+    <p class="date">Sunday 18 July 2004 7:11:36 pm</p>
+</div>
+
+
+<div class="attribute-short">
+            Hi,<br/>
+<br/>
+please extend the documentation on how to access the value of data through the datamap!<br/>
+The little table does not help a newbie much, for example, it does NOT mention, that you need the attribute identifier behind the .data_map. part!<br/>
+Print some example.<br/>
+And add &quot;date&quot; and &quot;datetime&quot; datatypes, as .content does not work here, but has to be $node.data_map.[attribute identifier].data_int<br/>
+
+
+    </div>
+
+
+</div>
+</div>
+    
+
+<div class="content-view-line">
+<div class="class-comment bglight">
+
+    
+    <div id="msg49488" class="attribute-heading">
+        <h2>Re: I am lost...Where's the documentation??</h2>
+    </div>
+
+<div class="attribute-byline float-break">
+    <p class="author">Balazs Halasy</p>
+    <p class="date">Monday 26 April 2004 1:04:52 pm</p>
+</div>
+
+
+<div class="attribute-short">
+            If you're new to eZ publish, I would strongly advise you to check out the following chapters (from the docs):<br/>
+<br/>
+<a href="https://web.archive.org/web/20071223171612/http://ez.no/ez_publish/documentation/ez_publish_basics" title="http://ez.no/ez_publish/documentation/ez_publish_basics">http://ez.no/ez_publish/documentation/ez_publish_basics</a><br/>
+<br/>
+<a href="https://web.archive.org/web/20071223171612/http://ez.no/ez_publish/documentation/building_an_ez_publish_site" title="http://ez.no/ez_publish/documentation/building_an_ez_publish_site">http://ez.no/ez_publish/documentation/building_an_ez_publish_site</a><br/>
+<br/>
+<br/>
+Cheers!<br/>
+<br/>
+Balazs
+
+    </div>
+
+
+</div>
+</div>
+    
+
+<div class="content-view-line">
+<div class="class-comment bgdark">
+
+    
+    <div id="msg49421" class="attribute-heading">
+        <h2>I am lost...Where's the documentation??</h2>
+    </div>
+
+<div class="attribute-byline float-break">
+    <p class="author">Alex Ovalle</p>
+    <p class="date">Saturday 24 April 2004 8:21:28 pm</p>
+</div>
+
+
+<div class="attribute-short">
+            I have installed it and it works. But how can I customize it?  I tried to add pictures and stuff and it does not take html coding.  I signed in and tried to read, but it does not make sense to me. EZ???? if this is ez how it is if it was hard to do.  Help!! where can I learn all this. I am sure it is cool once you learn it, but where???
+
+    </div>
+
+
+</div>
+</div>
+    
+
+<div class="content-view-line">
+<div class="class-comment bglight">
+
+    
+    <div id="msg48776" class="attribute-heading">
+        <h2>How do i cahnge and add new layout /design</h2>
+    </div>
+
+<div class="attribute-byline float-break">
+    <p class="author">ashok ashok</p>
+    <p class="date">Friday 16 April 2004 9:33:34 am</p>
+</div>
+
+
+<div class="attribute-short">
+            Hello,<br/>
+I have installed the ezpublish-3[2].3-4 on my local.After installing it gave me two links <a href="https://web.archive.org/web/20071223171612/http://localhost/ezpublish/index.php/corporate" title="http://localhost/ezpublish/index.php/corporate">http://localhost/ezpublish/index.php/corporate</a> for user and <br/>
+<a href="https://web.archive.org/web/20071223171612/http://localhost/ezpublish/index.php/corporate_admin" title="http://localhost/ezpublish/index.php/corporate_admin">http://localhost/ezpublish/index.php/corporate_admin</a> for admin it is working with the default layout. Now how do i change/ added the layout/design to ezpublish.i tried to add new layout as per the instaruction given on <a href="https://web.archive.org/web/20071223171612/http://www.sitepoint.com/article/ez-publish-3-1-take-spin/3.But" title="http://www.sitepoint.com/article/ez-publish-3-1-take-spin/3.But">http://www.sitepoint.com/article/ez-publish-3-1-take-spin/3.But</a> i am not able to add my site design on the list of active sitedesign.I Don't know where i did mistake.<br/>
+Thanks<br/>
+Ashok Naidu
+
+    </div>
+
+
+</div>
+</div>
+    
+
+<div class="content-view-line">
+<div class="class-comment bgdark">
+
+    
+    <div id="msg37100" class="attribute-heading">
+        <h2>Apache Crashing - More Info</h2>
+    </div>
+
+<div class="attribute-byline float-break">
+    <p class="author">Jason M</p>
+    <p class="date">Thursday 23 October 2003 10:28:51 pm</p>
+</div>
+
+
+<div class="attribute-short">
+            I found that Apache's current thread dies when using the following syntax on a Windows setup:<br/>
+<br/>
+{$node|attribute(show,3)}   <br/>
+<br/>
+I changed the 3 to a 4 and it still occurred which I found out to mean the number of levels down to drill: <a href="https://web.archive.org/web/20071223171612/http://ez.no/developer/ez_publish_3/documentation/customization/tips_tricks/debugging_templates" title="http://ez.no/developer/ez_publish_3/documentation/customization/tips_tricks/debugging_templates">http://ez.no/developer/ez_publish...tion/tips_tricks/debugging_templates</a><br/>
+<br/>
+Then I changed it to 2 and it output some very nice information.  So I'm halfway to figuring out this strange issue.  Anyone have any ideas?<br/>
+<br/>
+
+
+    </div>
+
+
+</div>
+</div>
+    
+
+<div class="content-view-line">
+<div class="class-comment bglight">
+
+    
+    <div id="msg37098" class="attribute-heading">
+        <h2>Apache Crashing</h2>
+    </div>
+
+<div class="attribute-byline float-break">
+    <p class="author">Jason M</p>
+    <p class="date">Thursday 23 October 2003 10:10:56 pm</p>
+</div>
+
+
+<div class="attribute-short">
+            Sorry - pointing to section 2.2 in this document.
+
+    </div>
+
+
+</div>
+</div>
+    
+
+<div class="content-view-line">
+<div class="class-comment bgdark">
+
+    
+    <div id="msg37097" class="attribute-heading">
+        <h2>Crashed Apache Every Time</h2>
+    </div>
+
+<div class="attribute-byline float-break">
+    <p class="author">Jason M</p>
+    <p class="date">Thursday 23 October 2003 10:09:52 pm</p>
+</div>
+
+
+<div class="attribute-short">
+            <i>Now for fun, put {$node|attribute(show,3)} inside a template for an existing object (and not a production site of course). </i><br/>
+<br/>
+I'm using 3.2 on a Windows machine with the install package and everytime I try access an object with that line of code in it's template Apache crashes and Windows alerts me.  Anyone else having that issue?  Pretty strange.<br/>
+<br/>
+ 
+
+    </div>
+
+
+</div>
+</div>
+    
+
+<div class="content-view-line">
+<div class="class-comment bglight">
+
+    
+    <div id="msg33227" class="attribute-heading">
+        <h2>What do you mean no programming?</h2>
+    </div>
+
+<div class="attribute-byline float-break">
+    <p class="author">Steve Jackson</p>
+    <p class="date">Sunday 31 August 2003 8:23:50 pm</p>
+</div>
+
+
+<div class="attribute-short">
+            I look at the text throughout this documentation and see little if any explanation on how to modify the system to get it to look how you want it to look. I tried to remove it after spending a day trying to figure out template variables. What is that if it's not programming? give me ordinary PHP any day! I figured it might use TPL files with a header and footer which you simply go in modify to suit and away you go but it appears there are hundreds of files to modify. Is there anywhere which explains step by step how to begin changing the system to suit your own needs?
+
+    </div>
+
+
+</div>
+</div>
+
+
+ 
+
+
+</div>
+</div>
+
+<div class="block float-break">
+            <form method="post" action="/web/20071223171612/http://ez.no/content/action">
+            <input class="button" type="submit" name="NewButton" value="New comment"/>
+            <input type="hidden" name="RedirectURIAfterPublish" value="ezpublish/documentation/customization/custom_design/template_variables_set_by_ezpublish#comments"/>
+            <input type="hidden" name="NodeID" value="32420"/>
+                           <input type="hidden" name="ClassIdentifier" value="article_comment"/>
+                        <input type="hidden" name="ContentLanguageCode" value="eng-GB"/>
+        </form>
+    </div>
+
+</div>
+</div>
+</div>
+
+
+<div class="template-design area-sidebar-normal">
+<div class="template-module content-view-sidebar">
+<div class="template-object class-documentation">
+
+<div class="attribute-heading">
+    <h2 class="bullet">Contents</h2>
+</div>
+<h3><a href="customization.html">Customization</a></h3>
+<p>
+        
+        
+            
+                    <a href="customization/access_control.html">Access control</a><br/>
+          
+	
+            
+                    <a href="customization/ez_publish_api_documentation.html">eZ publish API Documentation</a><br/>
+          
+	
+            
+                    <a href="customization/content_structure.html">Content structure</a><br/>
+          
+	
+            
+                    <a href="customization/custom_design.html">Custom design</a><br/>
+          
+	
+            &nbsp;&nbsp;&nbsp;
+                    <a href="customization/custom_design/user_specified_parameters.html">User specified parameters</a><br/>
+          
+	
+            &nbsp;&nbsp;&nbsp;
+                    <a href="customization/custom_design/template_variables_set_by_ezpublish.html"><b>Template variables set by ezPublish</b></a><br/>
+          
+	
+            &nbsp;&nbsp;&nbsp;
+                    <a href="customization/custom_design/introduction.html">Introduction</a><br/>
+          
+	
+            &nbsp;&nbsp;&nbsp;
+                    <a href="customization/custom_design/variables_arrays_and_objects.html">Variables, arrays and objects</a><br/>
+          
+	
+            &nbsp;&nbsp;&nbsp;
+                    <a href="customization/custom_design/node.html">Node</a><br/>
+          
+	
+            &nbsp;&nbsp;&nbsp;
+                    <a href="customization/custom_design/database_connectivity.html">Database connectivity</a><br/>
+          
+	
+            &nbsp;&nbsp;&nbsp;
+                    <a href="customization/custom_design/sections.html">Sections</a><br/>
+          
+	
+            &nbsp;&nbsp;&nbsp;
+                    <a href="customization/custom_design/file_placement.html">File placement</a><br/>
+          
+	
+            &nbsp;&nbsp;&nbsp;
+                    <a href="customization/custom_design/override_templates.html">Override templates</a><br/>
+          
+	
+            &nbsp;&nbsp;&nbsp;
+                    <a href="customization/custom_design/node_view_gui.html">node_view_gui</a><br/>
+          
+	
+            &nbsp;&nbsp;&nbsp;
+                    <a href="customization/custom_design/pagination.html">Pagination</a><br/>
+          
+	
+            &nbsp;&nbsp;&nbsp;
+                    <a href="customization/custom_design/caching.html">Caching</a><br/>
+          
+	
+            &nbsp;&nbsp;&nbsp;
+                    <a href="customization/custom_design/stylesheets.html">Stylesheets</a><br/>
+          
+	
+            &nbsp;&nbsp;&nbsp;
+                    <a href="customization/custom_design/pagelayout.html">Pagelayout</a><br/>
+          
+	
+            &nbsp;&nbsp;&nbsp;
+                    <a href="customization/custom_design/printable_pages.html">Printable pages</a><br/>
+          
+	
+            &nbsp;&nbsp;&nbsp;
+                    <a href="customization/custom_design/examples.html">Examples</a><br/>
+          
+	
+            
+                    <a href="customization/components.html">Components</a><br/>
+          
+	
+            
+                    <a href="customization/tips_tricks.html">Tips &amp; Tricks</a><br/>
+          
+	
+            
+                    <a href="customization/troubleshooting.html">Troubleshooting</a><br/>
+          
+	
+        </p>
+
+
+<hr class="docsplit"/>
+<h3>Created</h3>
+<p>
+19/08/2003<br/>
+4:28:07 am<br/>
+by Paul Borgermans
+</p>
+<h3>Last updated</h3>
+<p>
+29/09/2004<br/>
+1:58:20 am<br/>
+by Björn Dieding@xrow.de
+</p>
+<h3>Authors</h3>
+<p class="rendered">Paul Borgermans<br/>Björn Dieding@xrow.de<br/></p>
+
+<br/>
+<hr class="docsplit"/>
+
+<p>This page is part of the eZ Publish documentation. The documentation is available under the <a href="https://web.archive.org/web/20071223171612/http://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License.</a> All contributions will be released under the terms of this license.</p>
+
+</div>
+</div>
+</div>
+
+
+
+
+
+<!-- Main area content: END -->
+
+</div>
+</div>
+
+<!-- Main area: END -->
+
+<hr class="hide"/>
+
+<!-- Footer area: START -->
+<div id="footer-design">
+<div id="page-width6">
+<div id="footer">
+
+<address>Powered by eZ Publish&reg; Content Management System.<br/>
+Copyright &copy;1999 - 2024 7x and 2007 eZ Systems AS (except where otherwise noted). All rights reserved.</address>
+
+</div>
+</div>
+</div>
+<!-- Footer area: END -->
+
+</div>
+<!-- Complete page area: END -->
+
+
+    
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TFEDSZJYH0"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-TFEDSZJYH0');
+</script>
+
+
+</body>
+</html>
+
+<!-- th[eZ] 20050804 --><!--
+     FILE ARCHIVED ON 17:16:12 Dec 23, 2007 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 11:19:33 Oct 31, 2024.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  captures_list: 0.431
+  exclusion.robots: 0.014
+  exclusion.robots.policy: 0.007
+  esindex: 0.013
+  cdx.remote: 7.348
+  LoadShardBlock: 85.234 (3)
+  PetaboxLoader3.datanode: 111.449 (4)
+  load_resource: 140.333
+  PetaboxLoader3.resolve: 90.116
+-->

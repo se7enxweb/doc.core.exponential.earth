@@ -1,0 +1,822 @@
+
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style type="text/css">
+    @import url(https://doc.core.ezpublish.se7enx.com/ezno2005/design/ezno2005/stylesheets/core.css);
+    @import url(https://doc.core.ezpublish.se7enx.com/ezno2005/design/ezno2005/stylesheets/pagelayout.css);
+    @import url(https://doc.core.ezpublish.se7enx.com/ezno2005/design/ezno2005/stylesheets/classes.css);
+    @import url(https://doc.core.ezpublish.se7enx.com/ezno2005/design/ezno2005/stylesheets/monitor.css);
+</style>
+
+<link type="text/css" rel="stylesheet" href="https://web.archive.org/web/20071224102258cs_/http://ez.no/extension/ezno2005/design/ezno2005/stylesheets/print.css" media="print"/>
+
+    <link rel="alternate" title="ez.no News" href="https://web.archive.org/web/20071224102258/http://ez.no/rss/feed/news" type="application/rss+xml"/><link rel="alternate" title="ez.no Developer News" href="/web/20071224102258/http://ez.no/rss/feed/communitynews" type="application/rss+xml"/>
+<link rel="alternate" title="ez.no Developer Articles" href="https://web.archive.org/web/20071224102258/http://ez.no/rss/feed/community_articles" type="application/rss+xml"/>
+<link rel="alternate" title="ez.no Forum" href="https://web.archive.org/web/20071224102258/http://ez.no/rss/feed/forum" type="application/rss+xml"/>
+<link rel="alternate" title="ez.no Contributions" href="https://web.archive.org/web/20071224102258/http://ez.no/rss/feed/contribs" type="application/rss+xml"/>
+<link rel="alternate" title="ez.no Open Funding" href="https://web.archive.org/web/20071224102258/http://ez.no/rss/feed/openfunding_suggestions" type="application/rss+xml"/>
+
+
+<!-- IE conditional comments; for bug fixes for different IE versions -->
+<!--[if IE 5]>     <style type="text/css"> @import url(/extension/ezno2005/design/ezno2005/stylesheets/ie5.css);    </style> <![endif]-->
+<!--[if lte IE 6]> <style type="text/css"> @import url(/extension/ezno2005/design/ezno2005/stylesheets/ie6lte.css); </style> <![endif]-->
+<!--[if gte IE 6]> <style type="text/css"> @import url(/extension/ezno2005/design/ezno2005/stylesheets/ie6gte.css); </style> <![endif]-->
+
+<!-- Load special stylesheet (if necessary) for newer Netscape decendants, Mozilla and Firefox, using the Gecko renderer -->
+<script type="text/javascript"><!-- if ((navigator.userAgent.indexOf("Gecko") != -1)&&(navigator.userAgent.indexOf("KHTML") == -1)) document.write("<style type=\"text/css\">@import url(/extension/ezno2005/design/ezno2005/stylesheets/gecko.css);</style>");--></script>
+                                                                                    
+<title>
+            WebDAV setup     /         Configuration     /         Configuration                    </title>
+<meta http-equiv="Content-Language" content="en-GB"/>
+    <meta name="author" content="eZ Systems"/>
+    <meta name="copyright" content="eZ Systems as"/>
+    <meta name="description" content="eZ Publish is an open source content management system (CMS) and an open source content management framework (CMF)."/>
+    <meta name="keywords" content="cms, publish, e-commerce, content management, development framework"/>
+
+<meta name="MSSmartTagsPreventParsing" content="TRUE"/>
+<meta name="generator" content="eZ Publish"/>
+
+<script type="text/javascript" src="https://doc.core.ezpublish.se7enx.com/ezno2005/design/ezno2005/javascripts/tools.js"></script>
+<script type="text/javascript" src="https://doc.core.ezpublish.se7enx.com/ezno2005/design/ezno2005/javascripts/dropdownmenu.js"></script>
+</head>    <body onload="menuInit();">
+
+<!-- Complete page area: START -->
+<div id="page">
+
+<!-- Header area: START -->
+<div id="header">
+<div id="header-insert">
+
+<!-- User menu area: START -->
+<div id="usermenu">
+
+<div id="page-width1">
+
+<div id="logo">
+<h1><a href="https://doc.core.ezpublish.se7enx.com/"><span class="hide">eZ Systems - The Content Management Ecosystem</span></a></h1>
+</div>
+
+
+
+<p class="hide"><a href="#main">Skip to main content</a></p>
+
+<hr class="hide"/>
+<div id="searchbox">
+<form action="/web/20071224102258/http://ez.no/ezsearchredirect/action" method="get">
+
+<div class="block">
+<div class="element">
+<input id="searchbutton" class="button" type="submit" value="Search"/>
+</div>
+
+<div class="element searchstring">
+    <label for="searchtext" class="hide">Search text:</label>
+    <input id="searchtext" name="SearchText" type="text" size="12"/><br/>
+    
+
+            <div class="section">
+            <label for="searcharea" class="hide">Search area:</label>
+            <select id="searcharea" name="SubTreeArray[]">
+                <option value="2" selected="selected">All ez.no</option>
+                <option value="306">Bug reports</option>
+                <option value="21358">Contributions</option>
+                <option value="documentation">Documentation</option>
+                <option value="308">Forum</option>
+            </select>
+            </div>
+    </div>
+
+</div>
+</form>
+</div>
+
+<hr class="hide"/>
+<h2 class="hide">User menu</h2>
+
+<!-- User menu content: START -->
+<ul>
+            <li><a href="https://web.archive.org/web/20071224102258/http://ez.no/download"><span>Downloads</span></a></li>
+    <li><a href="https://web.archive.org/web/20071224102258/http://ez.no/company/contact"><span>Contact</span></a></li>
+            <li><a href="https://web.archive.org/web/20071224102258/http://ez.no/user/login"><span>Log in</span></a></li>
+        <li><a href="https://web.archive.org/web/20071224102258/http://ez.no/user/register"><span>Register</span></a></li>
+    
+    <li id="language-menu">
+        <a class="highlighted" title="English" href="https://web.archive.org/web/20071224102258/http://ez.no/ezpublish/documentation/configuration/configuration/webdav_setup"><img src="/ezno2005/design/ezno2005/images/eng-GB.gif" width="18" height="12" alt="English"/></a>
+        <a title="Deutsch" href="https://web.archive.org/web/20071224102258/http://ez.no/de/ezpublish/documentation/configuration/configuration/webdav_setup"><img src="/ezno2005/design/ezno2005/images/ger-DE.gif" width="18" height="12" alt="Deutsch"/></a>
+        <a title="Português" href="https://web.archive.org/web/20071224102258/http://ez.no/br/ezpublish/documentation/configuration/configuration/webdav_setup"><img src="/ezno2005/design/ezno2005/images/por-BR.gif" width="18" height="12" alt="Português"/></a>
+        <a title="Français" href="https://web.archive.org/web/20071224102258/http://ez.no/fr/ezpublish/documentation/configuration/configuration/webdav_setup"><img src="/ezno2005/design/ezno2005/images/fre-FR.gif" width="18" height="12" alt="Français"/></a>
+        <a title="日本語" href="https://web.archive.org/web/20071224102258/http://ez.no/jp/ezpublish/documentation/configuration/configuration/webdav_setup"><img src="/ezno2005/design/ezno2005/images/jpn-JP.gif" width="18" height="12" alt="日本語"/></a>        
+        <a title="中文" href="https://web.archive.org/web/20071224102258/http://ez.no/tw/ezpublish/documentation/configuration/configuration/webdav_setup"><img src="/ezno2005/design/ezno2005/images/chi-TW.gif" width="18" height="12" alt="中文"/></a>        
+        <a title="Norsk" href="https://web.archive.org/web/20071224102258/http://ez.no/no/ezpublish/documentation/configuration/configuration/webdav_setup"><img src="/ezno2005/design/ezno2005/images/nor-NO.gif" width="18" height="12" alt="Norsk"/></a>        
+    </li>
+</ul>
+<!-- User menu content: END -->
+
+</div>
+
+</div>
+<!-- User menu area: END -->
+
+</div>
+</div>
+<!-- Header area: END --><script type="text/javascript">
+<!--
+var menu = new Array();
+
+menu[0] = ['eZ Publish', '/ezpublish', 'eZ Publish Premium', '/ezpublish/premium', 'eZ Publish Now', '/ezpublish/now', 'eZ Publish On Demand', '/ezpublish/on_demand', 'Proprietary license options', '/products/proprietary_license_options', 'Certified extensions', '/products/certified_extensions', 'eZ Flow', '/ezflow', 'eZ Components', '/ezcomponents', 'eZ Find', '/ezfind', 'eZ Newsletter', '/eznewsletter', 'Expert consulting services', '/products/expert_consulting_services', 'Support', '/products/support'];
+menu[1] = ['Documentation', '/doc', 'Articles', '/community/articles', 'Books', '/store/books', 'Training', '/education/training', 'Certification', '/education/certification'];
+menu[2] = ['Case studies', '/customers/case_studies', 'References', '/customers/references', 'User quotes', '/customers/user_quotes', 'eZ for media', '/customers/ez_for_media'];
+menu[3] = ['Worldwide Partners', '/partner/worldwide_partners', 'eZ Partner program', '/partner/ez_partner_program', 'Knowledge centre', '/partner/knowledge_centre'];
+menu[4] = ['Downloads', '/download', 'Documentation', '/doc', 'News', '/developer/news', 'Developer information', '/developer/developer_information', 'Projects & contributions', '/developer/contribs', 'Forum', '/developer/forum', 'Issue tracker', '/bugs/redirect', 'Open Funding', '/developer/open_funding', 'Security', '/developer/security', 'User groups', '/developer/user_groups'];
+menu[5] = ['Total Product Responsibility from eZ', '/support/total_product_responsibility_from_ez'];
+menu[6] = ['Software solutions', '/store/software', 'Training', '/services/training', 'Certification', '/services/certification', 'Books', '/store/books', 'Services', '/store/services'];
+menu[7] = ['News', '/company/news', 'Media & press', '/company/media_press', 'Events', '/company/events', 'Career', '/company/career', 'eZ Conference & Awards', '/company/ez_conference_awards', 'Board of Directors', '/company/board', 'eZ Crew', '/company/ez_crew', 'Contact', '/company/contact'];
+
+-->
+</script>
+<div id="menuborder">
+
+<!-- Main menu area: START -->
+<div id="menu" onmouseover="menuHover();" onmouseout="tryHideSubMenues();">
+
+<div id="mainmenu" class="float-break">
+<div id="page-width2">
+    <ul id="mainmenulist" class="float-break">
+<li class="current"><a href="https://web.archive.org/web/20071224102258/http://ez.no/products" onmouseover="switchSubMenu( this );">Products &amp; services</a></li>
+<li><a href="https://web.archive.org/web/20071224102258/http://ez.no/education" onmouseover="switchSubMenu( this );">Education</a></li>
+<li><a href="https://web.archive.org/web/20071224102258/http://ez.no/customers" onmouseover="switchSubMenu( this );">Customers</a></li>
+<li><a href="https://web.archive.org/web/20071224102258/http://ez.no/partner" onmouseover="switchSubMenu( this );">Partners</a></li>
+<li><a href="https://web.archive.org/web/20071224102258/http://ez.no/developer" onmouseover="switchSubMenu( this );">Developer</a></li>
+<li><a href="https://web.archive.org/web/20071224102258/http://ez.no/support" onmouseover="switchSubMenu( this );">Support</a></li>
+<li><a href="https://web.archive.org/web/20071224102258/http://ez.no/store" onmouseover="switchSubMenu( this );">Store</a></li>
+<li class="last"><a href="https://web.archive.org/web/20071224102258/http://ez.no/company" onmouseover="switchSubMenu( this );">Company</a></li>
+</ul>
+
+</div>
+</div>
+
+
+<div id="submenu">
+<div id="page-width3">
+    <ul class="float-break">
+                        <li><a href="https://web.archive.org/web/20071224102258/http://ez.no/ezpublish">eZ Publish</a></li>
+                                <li><a href="https://web.archive.org/web/20071224102258/http://ez.no/ezpublish/premium">eZ Publish Premium</a></li>
+                                <li><a href="https://web.archive.org/web/20071224102258/http://ez.no/ezpublish/now">eZ Publish Now</a></li>
+                                <li><a href="https://web.archive.org/web/20071224102258/http://ez.no/ezpublish/on_demand">eZ Publish On Demand</a></li>
+                                <li><a href="https://web.archive.org/web/20071224102258/http://ez.no/products/proprietary_license_options">Proprietary license options</a></li>
+                                <li><a href="https://web.archive.org/web/20071224102258/http://ez.no/products/certified_extensions">Certified extensions</a></li>
+                                <li><a href="https://web.archive.org/web/20071224102258/http://ez.no/ezflow">eZ Flow</a></li>
+                                <li><a href="https://web.archive.org/web/20071224102258/http://ez.no/ezcomponents">eZ Components</a></li>
+                                <li><a href="https://web.archive.org/web/20071224102258/http://ez.no/ezfind">eZ Find</a></li>
+                                <li><a href="https://web.archive.org/web/20071224102258/http://ez.no/eznewsletter">eZ Newsletter</a></li>
+                                <li><a href="https://web.archive.org/web/20071224102258/http://ez.no/products/expert_consulting_services">Expert consulting services</a></li>
+                                <li class="last"><a href="https://web.archive.org/web/20071224102258/http://ez.no/products/support">Support</a></li>
+                </ul>
+</div>
+</div>
+
+<script type="text/javascript"><!--
+    document.getElementById('submenu').style.display = 'none';
+--></script>
+
+</div>
+<!-- Main menu area: END -->
+
+</div>
+
+<hr class="hide"/><!-- Path area: START -->
+<div id="path">
+
+<div id="page-width4">
+<h2 class="hide">Path</h2>
+
+<!-- Path content: START -->
+<p>
+                        <a href="https://web.archive.org/web/20071224102258/http://ez.no/">ez.no</a>
+        
+                        /
+                            <a href="https://web.archive.org/web/20071224102258/http://ez.no/ezpublish">ezpublish</a>
+        
+                        /
+                            <a href="toc.html">documentation</a>
+        
+                        /
+                            <a href="configuration.html">configuration</a>
+        
+                        /
+                            <a href="configuration/configuration.html">configuration</a>
+        
+                        /
+                            webdav setup
+        
+            </p>
+<!-- Path content: END -->
+
+</div>
+
+</div>
+<!-- Path area: END -->
+
+<hr class="hide"/>
+
+<!-- Main area: START -->
+
+<div id="page-width5">
+<div id="main" class="float-break">
+
+<!-- Main area content: START -->
+
+
+
+
+<div class="template-design area-main-normal">
+<div class="template-module content-view-full">
+<div class="template-object class-documentation">
+
+
+<div class="attribute-heading">
+    <h1>WebDAV setup</h1>
+</div>
+
+<p><strong>These documentation pages are no longer maintained. Please visit the <a href="https://doc.ezpublishlegacy.se7enx.com">new documentation site.</a></strong></p>
+
+<div class="attribute-long">
+    
+
+<p>
+This document explains how to set up and use the beta version of the eZ WebDAV content administration sub-system. The functionality described here is new and will appear in eZ publish 3.2 (also in beta releases).
+</p>
+
+<a name="eztoc90335_1" id="eztoc90335_1"></a><h2>A few words about WebDAV</h2>
+<p>
+WebDAV is an abbreviation for &quot;Web-based Distributed Authoring and Versioning&quot;. It is a set of extensions to the HTTP protocol which allows users to collaboratively edit and manage files on remote web servers using WebDAV enabled clients. For example, you can use recent versions of KDE's Konqueror or Microsoft's Internet Explorer to browse/manage the content of a WebDAV compatible web server (similar to browsing/managing local filesystems). DAV is an IETF Proposed Standard (published as RFC 2518). This means that it is an entirely open standard.
+</p>
+
+<a name="eztoc90335_2" id="eztoc90335_2"></a><h2>eZ publish and WebDAV</h2>
+<p>
+The beta version of eZ publish 3.2 contains a WebDAV server library. This library provides a basic framework and takes care of the cubersome low level communication between a WebDAV client and the server itself. In other words, people can use this library to implement their own serveres very easily, since most of the dirty work is already done (and will be available under the GPL license).
+</p>
+
+<p>
+In addition to the base library, there also exists a server (named eZWebDAVContentServer) which can be used to remotely administer the actual content of an eZ publish site. This means that from now on, it will be possible to browse and manage the content (folders, articles, images, files, etc.) in the same fashion as when browsing a local filesystem. If you're running a recent version of Windows or KDE, you'll be able to log in and manage your content in a matter of seconds. The browsers of these systems already have built-in WebDAV support. There is no need to worry about firewalls since WebDAV is plain bi-directional HTTP traffic. If you are able to browse/surf the site from your workstation, you can use WebDAV to administer it.
+</p>
+
+<a name="eztoc90335_3" id="eztoc90335_3"></a><h2>Features</h2>
+<p>
+The WebDAV subsystem has just been implemented, it is therefore a bit limited. The user accessing the WebDAV interface must have administrator privileges in order to be able to browse and administer the content. For now, only the following operations are supported:
+</p>
+
+<p>
+
+- Content browsing (navigation)<br/>
+- File upload<br/>
+- File download<br/>
+- Folder creation<br/>- Renaming
+</p>
+
+<p>
+
+<b>Content browsing</b><br/>The WebDAV content server provides an interface for browsing the content of the site. Folders are displayed as folders/directories while binary files and images are displayed as regular files. For now / by default, everything else is displayed as folders.
+</p>
+
+<p>
+
+<b>File upload</b><br/>From within a WebDAV enabled client running on some workstation, any kind of file may be uploaded to the server. If an image is uploaded, the content server subsystem will recognize it as an image and will automatically create an ezimage object. All other filetypes will be stored as ezbinary files.
+</p>
+
+<p>
+
+<b>File download</b><br/>It is possible to download two things from the server to the local filesystem of the host running the WebDAV client: images and binary files.
+</p>
+
+<p>
+
+<b>Folder creation</b><br/>It is possible to create folders. These will be created as regular folders within the site.
+</p>
+
+<p>
+
+<b>Folder/file renaming</b><br/>It is possible to rename files and folders. There are currently some bugs in this feature. The second or third, and the following rename operations usually fail. This is due to a database issue that will be fixed later on.
+</p>
+
+<p>
+Some of functionality mentioned above may be configured from within the WebDAV settings file (settings/webdav.ini).
+</p>
+
+<p>
+
+Possible future features:<br/>
+Copy operation (copy things from one location to another)<br/>
+Move operation (move things from one location to another)<br/>
+Delete operation (recursive removal of stuff)<br/>
+Attribute manipulation (manipulation of certain attributes)<br/>
+Multi user support (support for multiple users, with permissions, etc.)<br/>Support &amp; automatic parsing/processing + storage of common/various filetypes.
+</p>
+
+<a name="eztoc90335_4" id="eztoc90335_4"></a><h2>Setting it up</h2>
+<p>
+First of all, please keep in mind that the WebDAV subsystem of eZ publish is still in the beta stage, it may not work correctly with every client. Secondly, please be patient and follow the setup instructions carefully, step-by-step. The WebDAV server has only been tested on the Linux platform, running Apache 1.3, PHP 4.3.2 and MySQL 4.1.0-alpha. Clients used for testing during development: various versions of Internet Explorer (mainly under Win2K and XP), the latest version of KDE's konqueror and a text mode client called nd. The following five steps describe how to set up the WebDAV content server.
+</p>
+
+<p>
+
+<b>(1) Enabling WebDAV functionality</b><br/>The WebDAV functionality has to be enabled. Bring up the settings/webdav.ini file in your favourite editor and change the EnableWebDAV setting from false to true.
+</p>
+
+<p>
+
+<b>(2) DNS entry (optional)</b><br/>Set up a subdomain as an alias for the hostname you use to access the site. For example, you could use &quot;webdav.yoursite.net&quot;, which will have to point to the same IP address as www.yoursite.net. As the headline points out, this is optional - it isn't needed if you only want to test &amp; see how the WebDAV system works. If omitted, you should simply replace &quot;webdav.yoursite.net&quot; with only &quot;yoursite.net&quot; in the following steps. You will still be able to test the WebDAV interface, however - the rewrite rule may mess up normal site browsing.
+</p>
+
+<p>
+
+<b>(3) Apache configuration</b><br/>
+There is a &quot;webdav.php&quot; file in the root directory of the eZ publish installation. This is the file that provides the WebDAV interface to the site content. The web server has to automatically execute this file whenever a WebDAV client issues a command to the server (browsing, upload, download, etc.). A virtual host section in httpd.conf should take care of this (look at the example below).<br/>
+</p>
+    <pre class="wordwrap">
+<span class="line">NameVirtualHost 192.168.101.1</span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">#</span>
+
+<span class="line"># WebDAV setup for eZ publish 3.4 (and pre 3.4)</span>
+
+<span class="line">#</span>
+
+<span class="line">&lt;Virtualhost 192.168.101.1&gt;</span>
+
+<span class="line">&nbsp;&lt;Directory /path/to/your/ezpublish/installation&gt;</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;Options FollowSymLinks Indexes ExecCGI</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;AllowOverride None</span>
+
+<span class="line">&nbsp;&lt;/Directory&gt;</span>
+
+<span class="line">&nbsp;RewriteEngine On</span>
+
+<span class="line">&nbsp;RewriteRule !\.(css|jar|js|html|php)$ /webdav.php</span>
+
+<span class="line">&nbsp;ServerAdmin root@localhost</span>
+
+<span class="line">&nbsp;ServerName webdav.yoursite.net</span>
+
+<span class="line">&lt;/VirtualHost&gt;</span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">#</span>
+
+<span class="line"># WebDAV setup for eZ publish 3.5</span>
+
+<span class="line">#</span>
+
+<span class="line">&lt;Virtualhost 192.168.101.1&gt;</span>
+
+<span class="line">&nbsp;&lt;Directory /path/to/your/ezpublish/installation&gt;</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;Options FollowSymLinks Indexes ExecCGI</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;AllowOverride None</span>
+
+<span class="line">&nbsp;&lt;/Directory&gt;</span>
+
+<span class="line">&nbsp;DocumentRoot /path/to/your/ezpublish/installation</span>
+
+<span class="line">&nbsp;RewriteEngine On</span>
+
+<span class="line">&nbsp;RewriteRule . /webdav.php</span>
+
+<span class="line">&nbsp;ServerAdmin root@localhost</span>
+
+<span class="line">&nbsp;ServerName webdav.yoursite.net</span>
+
+<span class="line">&lt;/VirtualHost&gt;</span></pre>
+    
+<p>
+If everything is running locally: it is still possible to set up and test WebDAV. In this case, the following line should be added to the local hosts file: &quot;xxx.xxx.xxx.xxx webdav&quot;, where xxx.xxx.xxx.xxx is the real IP address of the computer. In addition, the ServerName setting in the VirtualHost declaration (see above) should be set to &quot;webdav&quot;.
+</p>
+
+<p>
+
+<b>(4) Testing</b><br/>Fire up a WebDAV enabled client and try to browse the site(s) using the WebDAV-URL.
+</p>
+
+<p>
+
+Windows:<br/>Should work okay from within Win2K and XP. However, sometimes it just fails under XP (will be fixed later). Make sure you have a recent version of Internet Explorer (6.0.2800.1106 or above) and attempt to connect to a so-called &quot;Web Folder&quot; (either from within IE's file menu -&gt; open and check the &quot;open as webfolder&quot; box; or use &quot;My Network Places&quot;). Try to connect/browse using the following syntax: <i>http://webdav.yoursite.net/</i>
+</p>
+
+<p>
+If everything is running on one computer (testing it locally with &quot;xxx.xxx.xxx.xxx webdav&quot; added to the local host file), the URL would be the following: <i>http://webdav/</i>
+</p>
+
+<p>
+
+KDE/Konqueror:<br/>Make sure you have a recent version of Konqueror (preferably 3.1.3 or later). Attempt to browse the WebDAV server using the following syntax: <i>webdav://webdav.yoursite.net/</i>
+</p>
+
+<p>
+If everything is running on one computer (testing it locally with &quot;xxx.xxx.xxx.xxx webdav&quot; added to the local host file), the URL would be the following: <i>webdav://webdav/</i>
+</p>
+
+<p>
+Please remember that you will need to log in with an eZ publish user who has administrator privileges.
+</p>
+</div>
+
+
+<div class="content-view-children">
+<div class="class-comment">
+    <h1 id="comments">Comments</h1>    <div class="block float-break">
+              <form method="post" action="/web/20071224102258/http://ez.no/content/action">
+             <input class="button" type="submit" name="NewButton" value="New comment"/>
+             <input type="hidden" name="RedirectURIAfterPublish" value="ezpublish/documentation/configuration/configuration/webdav_setup#comments"/>
+             <input type="hidden" name="NodeID" value="32564"/>
+                             <input type="hidden" name="ClassIdentifier" value="article_comment"/>
+                          <input type="hidden" name="ContentLanguageCode" value="eng-GB"/>
+         </form>
+         </div>
+
+
+        
+
+<div class="content-view-line">
+<div class="class-comment bglight">
+
+    
+    <div id="msg79427" class="attribute-heading">
+        <h2>&quot;All other filetypes will be stored as ezbinary files.&quot;</h2>
+    </div>
+
+<div class="attribute-byline float-break">
+    <p class="author">Oree Eyo</p>
+    <p class="date">Monday 18 July 2005 2:23:37 am</p>
+</div>
+
+
+<div class="attribute-short">
+            Why?<br/>
+What about html? or txt? <br/>
+I want to save my MS-word &quot;Save As HTML&quot; into the webdav folder...<br/>
+<br/>
+So I had to write my own &quot;upload handler&quot; for text/html myme type.<br/>
+Not that eZ but works.( not to mention charset problems)<br/>
+<br/>
+<br/>
+
+
+    </div>
+
+
+</div>
+</div>
+    
+
+<div class="content-view-line">
+<div class="class-comment bgdark">
+
+    
+    <div id="msg71053" class="attribute-heading">
+        <h2>An object containing an image attribute is displayed as an image</h2>
+    </div>
+
+<div class="attribute-byline float-break">
+    <p class="author">Xavier Dutoit</p>
+    <p class="date">Thursday 17 March 2005 5:43:38 pm</p>
+</div>
+
+
+<div class="attribute-short">
+            And the name has a .jpg at the end.<br/>
+<br/>
+Took me a while to understand why one of my object was displayed as an image.
+
+    </div>
+
+
+</div>
+</div>
+    
+
+<div class="content-view-line">
+<div class="class-comment bglight">
+
+    
+    <div id="msg68686" class="attribute-heading">
+        <h2>Some tips in ezp 3.3-2 and XP</h2>
+    </div>
+
+<div class="attribute-byline float-break">
+    <p class="author">Jan Klooster</p>
+    <p class="date">Thursday 17 February 2005 1:57:14 pm</p>
+</div>
+
+
+<div class="attribute-short">
+            Got it working under ezp 3.3-2 with WinXP. Some tips to consider:<br/>
+- Don't forget &quot;NameVirtualHost&quot; in httpd.conf, otherwise your second (webdav-) virtualhost will never be reached.<br/>
+- The variable SiteList[] in site.ini should be filled with the sitenames you'd like to connect to with webdav.<br/>
+- Under windows XP, connecting to the webdav-virtualhost only worked using NetDrive.<br/>
+- Connecting to the admin-site causes recursive &quot;content&quot; folders to appear. Use the actual sitename instead.
+
+    </div>
+
+
+</div>
+</div>
+    
+
+<div class="content-view-line">
+<div class="class-comment bgdark">
+
+    
+    <div id="msg60359" class="attribute-heading">
+        <h2>Change rewrite rule?</h2>
+    </div>
+
+<div class="attribute-byline float-break">
+    <p class="author">Silke Fox</p>
+    <p class="date">Wednesday 06 October 2004 2:16:55 pm</p>
+</div>
+
+
+<div class="attribute-short">
+            As pointed out by Paul Borgermans the rewrite rule for webdav.php should possibly not exclude any type of file, i.e. should be<br/>
+   RewriteRule (.*) /webdav.php<br/>
+<br/>
+That way all file types could be uploaded, that might make sense for some users.
+
+    </div>
+
+
+</div>
+</div>
+    
+
+<div class="content-view-line">
+<div class="class-comment bglight">
+
+    
+    <div id="msg34633" class="attribute-heading">
+        <h2>WebDAV reference</h2>
+    </div>
+
+<div class="attribute-byline float-break">
+    <p class="author">Tony Wood</p>
+    <p class="date">Friday 19 September 2003 9:55:45 am</p>
+</div>
+
+
+<div class="attribute-short">
+            Here are a few site I found interesting when looking into WebDAV<br/>
+<br/>
+Official WebDAV page - <a href="https://web.archive.org/web/20071224102258/http://www.webdav.org/" title="http://www.webdav.org/">http://www.webdav.org/</a><br/>
+Overview -<a href="https://web.archive.org/web/20071224102258/http://www.atarex.com/services/webdav.shtml" title="http://www.atarex.com/services/webdav.shtml">http://www.atarex.com/services/webdav.shtml</a><br/>
+MS and WebDAV - <a href="https://web.archive.org/web/20071224102258/http://www.atarex.com/services/support/webdav-msft.shtml" title="http://www.atarex.com/services/support/webdav-msft.shtml">http://www.atarex.com/services/support/webdav-msft.shtml</a><br/>
+<br/>
+
+
+    </div>
+
+
+</div>
+</div>
+    
+
+<div class="content-view-line">
+<div class="class-comment bgdark">
+
+    
+    <div id="msg33295" class="attribute-heading">
+        <h2>optional http.conf change</h2>
+    </div>
+
+<div class="attribute-byline float-break">
+    <p class="author">Tony Wood</p>
+    <p class="date">Monday 01 September 2003 7:59:26 pm</p>
+</div>
+
+
+<div class="attribute-short">
+            The above virtual host setup did not work for me as it is.<br/>
+I needed to change to rewrite rule to<br/>
+RewriteRule !\.(css|jar|js|html|php)$ /path/to/the/root/of/your/ezpublish/installation/index_webdav.php
+
+    </div>
+
+
+</div>
+</div>
+
+
+ 
+
+
+</div>
+</div>
+
+<div class="block float-break">
+            <form method="post" action="/web/20071224102258/http://ez.no/content/action">
+            <input class="button" type="submit" name="NewButton" value="New comment"/>
+            <input type="hidden" name="RedirectURIAfterPublish" value="ezpublish/documentation/configuration/configuration/webdav_setup#comments"/>
+            <input type="hidden" name="NodeID" value="32564"/>
+                           <input type="hidden" name="ClassIdentifier" value="article_comment"/>
+                        <input type="hidden" name="ContentLanguageCode" value="eng-GB"/>
+        </form>
+    </div>
+
+</div>
+</div>
+</div>
+
+
+<div class="template-design area-sidebar-normal">
+<div class="template-module content-view-sidebar">
+<div class="template-object class-documentation">
+
+<div class="attribute-heading">
+    <h2 class="bullet">Contents</h2>
+</div>
+<h3><a href="configuration.html">Configuration</a></h3>
+<p>
+        
+        
+            
+                    <a href="configuration/configuration.html">Configuration</a><br/>
+          
+	
+            &nbsp;&nbsp;&nbsp;
+                    <a href="configuration/configuration/webdav_setup.html"><b>WebDAV setup</b></a><br/>
+          
+	
+            &nbsp;&nbsp;&nbsp;
+                    <a href="configuration/configuration/ez_publish_running_on_a_cgi_version_of_php.html">eZ publish running on a CGI version o...</a><br/>
+          
+	
+            &nbsp;&nbsp;&nbsp;
+                    <a href="configuration/configuration/path_prefix.html">Path prefix</a><br/>
+          
+	
+            &nbsp;&nbsp;&nbsp;
+                    <a href="configuration/configuration/locale_settings.html">Locale Settings</a><br/>
+          
+	
+            &nbsp;&nbsp;&nbsp;
+                    <a href="configuration/configuration/introduction.html">Introduction</a><br/>
+          
+	
+            &nbsp;&nbsp;&nbsp;
+                    <a href="configuration/configuration/configuration_files.html">Configuration files</a><br/>
+          
+	
+            &nbsp;&nbsp;&nbsp;
+                    <a href="configuration/configuration/site_access.html">Site access</a><br/>
+          
+	
+            &nbsp;&nbsp;&nbsp;
+                    <a href="configuration/configuration/common_settings.html">Common settings</a><br/>
+          
+	
+            &nbsp;&nbsp;&nbsp;
+                    <a href="configuration/configuration/multi_site.html">Multi Site</a><br/>
+          
+	
+            &nbsp;&nbsp;&nbsp;
+                    <a href="configuration/configuration/directory_structure.html">Directory structure</a><br/>
+          
+	
+            &nbsp;&nbsp;&nbsp;
+                    <a href="configuration/configuration/language_and_charset.html">Language and charset</a><br/>
+          
+	
+            &nbsp;&nbsp;&nbsp;
+                    <a href="configuration/configuration/cron_jobs.html">Cron jobs</a><br/>
+          
+	
+            &nbsp;&nbsp;&nbsp;
+                    <a href="configuration/configuration/login_handler.html">Login handler</a><br/>
+          
+	
+            &nbsp;&nbsp;&nbsp;
+                    <a href="configuration/configuration/search_engine.html">Search engine</a><br/>
+          
+	
+            &nbsp;&nbsp;&nbsp;
+                    <a href="configuration/configuration/tips_tricks.html">Tips &amp; Tricks</a><br/>
+          
+	
+            
+                    <a href="configuration/security.html">Security</a><br/>
+          
+	
+            
+                    <a href="configuration/optimization.html">Optimization</a><br/>
+          
+	
+            
+                    <a href="configuration/backup_restore.html">Backup &amp; Restore</a><br/>
+          
+	
+            
+                    <a href="configuration/troubleshooting.html">Troubleshooting</a><br/>
+          
+	
+        </p>
+
+
+<hr class="docsplit"/>
+<h3>Created</h3>
+<p>
+21/08/2003<br/>
+9:23:18 am<br/>
+by Balazs Halasy
+</p>
+<h3>Last updated</h3>
+<p>
+04/12/2004<br/>
+3:17:47 pm<br/>
+by Balazs Halasy
+</p>
+<h3>Authors</h3>
+<p class="rendered">Balazs Halasy<br/></p>
+
+<br/>
+<hr class="docsplit"/>
+
+<p>This page is part of the eZ Publish documentation. The documentation is available under the <a href="https://web.archive.org/web/20071224102258/http://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License.</a> All contributions will be released under the terms of this license.</p>
+
+</div>
+</div>
+</div>
+
+
+
+
+
+<!-- Main area content: END -->
+
+</div>
+</div>
+
+<!-- Main area: END -->
+
+<hr class="hide"/>
+
+<!-- Footer area: START -->
+<div id="footer-design">
+<div id="page-width6">
+<div id="footer">
+
+<address>Powered by eZ Publish&reg; Content Management System.<br/>
+Copyright &copy;1999 - 2024 7x and 2007 eZ Systems AS (except where otherwise noted). All rights reserved.</address>
+
+</div>
+</div>
+</div>
+<!-- Footer area: END -->
+
+</div>
+<!-- Complete page area: END -->
+
+
+    
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TFEDSZJYH0"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-TFEDSZJYH0');
+</script>
+
+
+</body>
+</html>
+
+<!-- th[eZ] 20050804 --><!--
+     FILE ARCHIVED ON 10:22:58 Dec 24, 2007 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 11:18:45 Oct 31, 2024.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  captures_list: 1.04
+  exclusion.robots: 0.021
+  exclusion.robots.policy: 0.009
+  esindex: 0.01
+  cdx.remote: 7.132
+  LoadShardBlock: 74.553 (3)
+  PetaboxLoader3.datanode: 70.938 (4)
+  load_resource: 52.83
+  PetaboxLoader3.resolve: 34.575
+-->

@@ -1,0 +1,620 @@
+
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style type="text/css">
+    @import url(https://doc.core.ezpublish.se7enx.com/ezno2005/design/ezno2005/stylesheets/core.css);
+    @import url(https://doc.core.ezpublish.se7enx.com/ezno2005/design/ezno2005/stylesheets/pagelayout.css);
+    @import url(https://doc.core.ezpublish.se7enx.com/ezno2005/design/ezno2005/stylesheets/classes.css);
+    @import url(https://doc.core.ezpublish.se7enx.com/ezno2005/design/ezno2005/stylesheets/monitor.css);
+</style>
+
+<link type="text/css" rel="stylesheet" href="https://web.archive.org/web/20071224053919cs_/http://ez.no/extension/ezno2005/design/ezno2005/stylesheets/print.css" media="print"/>
+
+    <link rel="alternate" title="ez.no News" href="https://web.archive.org/web/20071224053919/http://ez.no/rss/feed/news" type="application/rss+xml"/><link rel="alternate" title="ez.no Developer News" href="/web/20071224053919/http://ez.no/rss/feed/communitynews" type="application/rss+xml"/>
+<link rel="alternate" title="ez.no Developer Articles" href="https://web.archive.org/web/20071224053919/http://ez.no/rss/feed/community_articles" type="application/rss+xml"/>
+<link rel="alternate" title="ez.no Forum" href="https://web.archive.org/web/20071224053919/http://ez.no/rss/feed/forum" type="application/rss+xml"/>
+<link rel="alternate" title="ez.no Contributions" href="https://web.archive.org/web/20071224053919/http://ez.no/rss/feed/contribs" type="application/rss+xml"/>
+<link rel="alternate" title="ez.no Open Funding" href="https://web.archive.org/web/20071224053919/http://ez.no/rss/feed/openfunding_suggestions" type="application/rss+xml"/>
+
+
+<!-- IE conditional comments; for bug fixes for different IE versions -->
+<!--[if IE 5]>     <style type="text/css"> @import url(/extension/ezno2005/design/ezno2005/stylesheets/ie5.css);    </style> <![endif]-->
+<!--[if lte IE 6]> <style type="text/css"> @import url(/extension/ezno2005/design/ezno2005/stylesheets/ie6lte.css); </style> <![endif]-->
+<!--[if gte IE 6]> <style type="text/css"> @import url(/extension/ezno2005/design/ezno2005/stylesheets/ie6gte.css); </style> <![endif]-->
+
+<!-- Load special stylesheet (if necessary) for newer Netscape decendants, Mozilla and Firefox, using the Gecko renderer -->
+<script type="text/javascript"><!-- if ((navigator.userAgent.indexOf("Gecko") != -1)&&(navigator.userAgent.indexOf("KHTML") == -1)) document.write("<style type=\"text/css\">@import url(/extension/ezno2005/design/ezno2005/stylesheets/gecko.css);</style>");--></script>
+                                                                                    
+<title>
+            Cron jobs     /         Configuration     /         Configuration                    </title>
+<meta http-equiv="Content-Language" content="en-GB"/>
+    <meta name="author" content="eZ Systems"/>
+    <meta name="copyright" content="eZ Systems as"/>
+    <meta name="description" content="eZ Publish is an open source content management system (CMS) and an open source content management framework (CMF)."/>
+    <meta name="keywords" content="cms, publish, e-commerce, content management, development framework"/>
+
+<meta name="MSSmartTagsPreventParsing" content="TRUE"/>
+<meta name="generator" content="eZ Publish"/>
+
+<script type="text/javascript" src="https://doc.core.ezpublish.se7enx.com/ezno2005/design/ezno2005/javascripts/tools.js"></script>
+<script type="text/javascript" src="https://doc.core.ezpublish.se7enx.com/ezno2005/design/ezno2005/javascripts/dropdownmenu.js"></script>
+</head>    <body onload="menuInit();">
+
+<!-- Complete page area: START -->
+<div id="page">
+
+<!-- Header area: START -->
+<div id="header">
+<div id="header-insert">
+
+<!-- User menu area: START -->
+<div id="usermenu">
+
+<div id="page-width1">
+
+<div id="logo">
+<h1><a href="https://doc.core.ezpublish.se7enx.com/"><span class="hide">eZ Systems - The Content Management Ecosystem</span></a></h1>
+</div>
+
+
+
+<p class="hide"><a href="#main">Skip to main content</a></p>
+
+<hr class="hide"/>
+<div id="searchbox">
+<form action="/web/20071224053919/http://ez.no/ezsearchredirect/action" method="get">
+
+<div class="block">
+<div class="element">
+<input id="searchbutton" class="button" type="submit" value="Search"/>
+</div>
+
+<div class="element searchstring">
+    <label for="searchtext" class="hide">Search text:</label>
+    <input id="searchtext" name="SearchText" type="text" size="12"/><br/>
+    
+
+            <div class="section">
+            <label for="searcharea" class="hide">Search area:</label>
+            <select id="searcharea" name="SubTreeArray[]">
+                <option value="2" selected="selected">All ez.no</option>
+                <option value="306">Bug reports</option>
+                <option value="21358">Contributions</option>
+                <option value="documentation">Documentation</option>
+                <option value="308">Forum</option>
+            </select>
+            </div>
+    </div>
+
+</div>
+</form>
+</div>
+
+<hr class="hide"/>
+<h2 class="hide">User menu</h2>
+
+<!-- User menu content: START -->
+<ul>
+            <li><a href="https://web.archive.org/web/20071224053919/http://ez.no/download"><span>Downloads</span></a></li>
+    <li><a href="https://web.archive.org/web/20071224053919/http://ez.no/company/contact"><span>Contact</span></a></li>
+            <li><a href="https://web.archive.org/web/20071224053919/http://ez.no/user/login"><span>Log in</span></a></li>
+        <li><a href="https://web.archive.org/web/20071224053919/http://ez.no/user/register"><span>Register</span></a></li>
+    
+    <li id="language-menu">
+        <a class="highlighted" title="English" href="https://web.archive.org/web/20071224053919/http://ez.no/ezpublish/documentation/configuration/configuration/cron_jobs"><img src="/ezno2005/design/ezno2005/images/eng-GB.gif" width="18" height="12" alt="English"/></a>
+        <a title="Deutsch" href="https://web.archive.org/web/20071224053919/http://ez.no/de/ezpublish/documentation/configuration/configuration/cron_jobs"><img src="/ezno2005/design/ezno2005/images/ger-DE.gif" width="18" height="12" alt="Deutsch"/></a>
+        <a title="Português" href="https://web.archive.org/web/20071224053919/http://ez.no/br/ezpublish/documentation/configuration/configuration/cron_jobs"><img src="/ezno2005/design/ezno2005/images/por-BR.gif" width="18" height="12" alt="Português"/></a>
+        <a title="Français" href="https://web.archive.org/web/20071224053919/http://ez.no/fr/ezpublish/documentation/configuration/configuration/cron_jobs"><img src="/ezno2005/design/ezno2005/images/fre-FR.gif" width="18" height="12" alt="Français"/></a>
+        <a title="日本語" href="https://web.archive.org/web/20071224053919/http://ez.no/jp/ezpublish/documentation/configuration/configuration/cron_jobs"><img src="/ezno2005/design/ezno2005/images/jpn-JP.gif" width="18" height="12" alt="日本語"/></a>        
+        <a title="中文" href="https://web.archive.org/web/20071224053919/http://ez.no/tw/ezpublish/documentation/configuration/configuration/cron_jobs"><img src="/ezno2005/design/ezno2005/images/chi-TW.gif" width="18" height="12" alt="中文"/></a>        
+        <a title="Norsk" href="https://web.archive.org/web/20071224053919/http://ez.no/no/ezpublish/documentation/configuration/configuration/cron_jobs"><img src="/ezno2005/design/ezno2005/images/nor-NO.gif" width="18" height="12" alt="Norsk"/></a>        
+    </li>
+</ul>
+<!-- User menu content: END -->
+
+</div>
+
+</div>
+<!-- User menu area: END -->
+
+</div>
+</div>
+<!-- Header area: END --><script type="text/javascript">
+<!--
+var menu = new Array();
+
+menu[0] = ['eZ Publish', '/ezpublish', 'eZ Publish Premium', '/ezpublish/premium', 'eZ Publish Now', '/ezpublish/now', 'eZ Publish On Demand', '/ezpublish/on_demand', 'Proprietary license options', '/products/proprietary_license_options', 'Certified extensions', '/products/certified_extensions', 'eZ Flow', '/ezflow', 'eZ Components', '/ezcomponents', 'eZ Find', '/ezfind', 'eZ Newsletter', '/eznewsletter', 'Expert consulting services', '/products/expert_consulting_services', 'Support', '/products/support'];
+menu[1] = ['Documentation', '/doc', 'Articles', '/community/articles', 'Books', '/store/books', 'Training', '/education/training', 'Certification', '/education/certification'];
+menu[2] = ['Case studies', '/customers/case_studies', 'References', '/customers/references', 'User quotes', '/customers/user_quotes', 'eZ for media', '/customers/ez_for_media'];
+menu[3] = ['Worldwide Partners', '/partner/worldwide_partners', 'eZ Partner program', '/partner/ez_partner_program', 'Knowledge centre', '/partner/knowledge_centre'];
+menu[4] = ['Downloads', '/download', 'Documentation', '/doc', 'News', '/developer/news', 'Developer information', '/developer/developer_information', 'Projects & contributions', '/developer/contribs', 'Forum', '/developer/forum', 'Issue tracker', '/bugs/redirect', 'Open Funding', '/developer/open_funding', 'Security', '/developer/security', 'User groups', '/developer/user_groups'];
+menu[5] = ['Total Product Responsibility from eZ', '/support/total_product_responsibility_from_ez'];
+menu[6] = ['Software solutions', '/store/software', 'Training', '/services/training', 'Certification', '/services/certification', 'Books', '/store/books', 'Services', '/store/services'];
+menu[7] = ['News', '/company/news', 'Media & press', '/company/media_press', 'Events', '/company/events', 'Career', '/company/career', 'eZ Conference & Awards', '/company/ez_conference_awards', 'Board of Directors', '/company/board', 'eZ Crew', '/company/ez_crew', 'Contact', '/company/contact'];
+
+-->
+</script>
+<div id="menuborder">
+
+<!-- Main menu area: START -->
+<div id="menu" onmouseover="menuHover();" onmouseout="tryHideSubMenues();">
+
+<div id="mainmenu" class="float-break">
+<div id="page-width2">
+    <ul id="mainmenulist" class="float-break">
+<li class="current"><a href="https://web.archive.org/web/20071224053919/http://ez.no/products" onmouseover="switchSubMenu( this );">Products &amp; services</a></li>
+<li><a href="https://web.archive.org/web/20071224053919/http://ez.no/education" onmouseover="switchSubMenu( this );">Education</a></li>
+<li><a href="https://web.archive.org/web/20071224053919/http://ez.no/customers" onmouseover="switchSubMenu( this );">Customers</a></li>
+<li><a href="https://web.archive.org/web/20071224053919/http://ez.no/partner" onmouseover="switchSubMenu( this );">Partners</a></li>
+<li><a href="https://web.archive.org/web/20071224053919/http://ez.no/developer" onmouseover="switchSubMenu( this );">Developer</a></li>
+<li><a href="https://web.archive.org/web/20071224053919/http://ez.no/support" onmouseover="switchSubMenu( this );">Support</a></li>
+<li><a href="https://web.archive.org/web/20071224053919/http://ez.no/store" onmouseover="switchSubMenu( this );">Store</a></li>
+<li class="last"><a href="https://web.archive.org/web/20071224053919/http://ez.no/company" onmouseover="switchSubMenu( this );">Company</a></li>
+</ul>
+
+</div>
+</div>
+
+
+<div id="submenu">
+<div id="page-width3">
+    <ul class="float-break">
+                        <li><a href="https://web.archive.org/web/20071224053919/http://ez.no/ezpublish">eZ Publish</a></li>
+                                <li><a href="https://web.archive.org/web/20071224053919/http://ez.no/ezpublish/premium">eZ Publish Premium</a></li>
+                                <li><a href="https://web.archive.org/web/20071224053919/http://ez.no/ezpublish/now">eZ Publish Now</a></li>
+                                <li><a href="https://web.archive.org/web/20071224053919/http://ez.no/ezpublish/on_demand">eZ Publish On Demand</a></li>
+                                <li><a href="https://web.archive.org/web/20071224053919/http://ez.no/products/proprietary_license_options">Proprietary license options</a></li>
+                                <li><a href="https://web.archive.org/web/20071224053919/http://ez.no/products/certified_extensions">Certified extensions</a></li>
+                                <li><a href="https://web.archive.org/web/20071224053919/http://ez.no/ezflow">eZ Flow</a></li>
+                                <li><a href="https://web.archive.org/web/20071224053919/http://ez.no/ezcomponents">eZ Components</a></li>
+                                <li><a href="https://web.archive.org/web/20071224053919/http://ez.no/ezfind">eZ Find</a></li>
+                                <li><a href="https://web.archive.org/web/20071224053919/http://ez.no/eznewsletter">eZ Newsletter</a></li>
+                                <li><a href="https://web.archive.org/web/20071224053919/http://ez.no/products/expert_consulting_services">Expert consulting services</a></li>
+                                <li class="last"><a href="https://web.archive.org/web/20071224053919/http://ez.no/products/support">Support</a></li>
+                </ul>
+</div>
+</div>
+
+<script type="text/javascript"><!--
+    document.getElementById('submenu').style.display = 'none';
+--></script>
+
+</div>
+<!-- Main menu area: END -->
+
+</div>
+
+<hr class="hide"/><!-- Path area: START -->
+<div id="path">
+
+<div id="page-width4">
+<h2 class="hide">Path</h2>
+
+<!-- Path content: START -->
+<p>
+                        <a href="https://web.archive.org/web/20071224053919/http://ez.no/">ez.no</a>
+        
+                        /
+                            <a href="https://web.archive.org/web/20071224053919/http://ez.no/ezpublish">ezpublish</a>
+        
+                        /
+                            <a href="toc.html">documentation</a>
+        
+                        /
+                            <a href="configuration.html">configuration</a>
+        
+                        /
+                            <a href="configuration/configuration.html">configuration</a>
+        
+                        /
+                            cron jobs
+        
+            </p>
+<!-- Path content: END -->
+
+</div>
+
+</div>
+<!-- Path area: END -->
+
+<hr class="hide"/>
+
+<!-- Main area: START -->
+
+<div id="page-width5">
+<div id="main" class="float-break">
+
+<!-- Main area content: START -->
+
+
+
+
+<div class="template-design area-main-normal">
+<div class="template-module content-view-full">
+<div class="template-object class-documentation">
+
+
+<div class="attribute-heading">
+    <h1>Cron jobs</h1>
+</div>
+
+<p><strong>These documentation pages are no longer maintained. Please visit the <a href="https://doc.ezpublishlegacy.se7enx.com">new documentation site.</a></strong></p>
+
+<div class="attribute-long">
+    
+
+<p>
+Cron jobs in eZ publish are used to run workflows, notifications and other jobs which should be run periodically.
+</p>
+
+<a name="eztoc81599_1" id="eztoc81599_1"></a><h2>Running the cronjobs from shell</h2>
+<p>
+
+You can run cronjobs in eZ publish with PHP compiled as CGI. Example of cronjob execution (linux) is shown below.<br/>
+</p>
+    <pre class="wordwrap"><span class="line">/usr/bin/php -C runcronjobs.php</span></pre>
+    
+<p>
+<i>This is the most comon place for the php executeable. If you have troubles finding your PHP executeable use:</i>
+</p>
+    <pre class="wordwrap"><span class="line">whereis php</span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">sample output: php: /usr/bin/php /etc/php.ini /usr/lib/php /usr/include/php /usr/share/php /usr/share/man/man1/php.1</span></pre>
+    
+<p>
+You can configure which cronjobs should be executed in settings/cronjobs.ini. Cron job scripts are placed in cronjobs/ in the eZ publish root.
+</p>
+
+<a name="eztoc81599_2" id="eztoc81599_2"></a><h2>Starting the cronjob using HTTP (via Webbrowser)</h2>
+<p>
+
+If you do not have PHP compiled as a command-line-version, but only as a webserver module, you must run your cronjobs by calling the runcronjobs.php by a HTTP request from a webbrowser. You can do this manually or scheduled by a cronjob on the same or some other server, using lynx or wget or w3m to call the URL.<br/>
+Note that this is <b>not secure</b>, as someone could call the URL very often and overload the server.<br/>You can combine the setup with a shell-driven call in order to be able to call the cronjobs, whenever you need them (for testing workflows, RSS imports etc etc).
+</p>
+
+<p>
+So, you need to call &quot;runcronjobs.php&quot; by a HTTP request. In a &quot;virtual host&quot; ezPublish setup, this will not be possible, because the rewrite rule will always redirect you to &quot;index.php&quot;. In order to re-gain access to &quot;runcronjobs.php, you can change the existing rule to &quot;not change request to *.php&quot; or introduce an additional RewriteRule.
+</p>
+
+<p>
+First option would look somehow like this:
+</p>
+    <pre class="wordwrap"><span class="line">   RewriteRule !\.(php|gif|css|jpg|png) /path/to/ezpublish/index.php</span></pre>
+    
+<p>
+This will allow execution of any PHP script and so, should not be used.
+</p>
+
+<p>
+Better, but still not perfect, is to introduce a rewrite rule to call the runcronjobs.php:
+</p>
+    <pre class="wordwrap"><span class="line">RewriteRule ^/mySecretCronURL$ /path/to/ezpublish/runcronjobs.php [L]</span>
+
+<span class="line">RewriteRule !\.(gif|css|jpg|png)$ /path/to/ezpublish/index.php</span></pre>
+    
+<p>
+The first line will look for a HTTP request to /mySecretCronURL and start the runcronjobs.php script; other requests are handled as usual (2nd line). This should do all the scheduled things and print some information about what it's doing to your webbrowser window. As this is no HTML, it will be ugly, so switch to &quot;source code view&quot; to see, what happened.
+</p>
+
+<p>
+While this works, it's not secure, as everyone can call the URL, once it is know. I think, RewriteRules can be &quot;conditional&quot;, which could secure that a bit by only using the RewriteRule for a know, static IP-Adress or so, but I'm not into this. Someone please add to this post, when he has more knowledge about it.
+</p>
+
+<p>
+Finally, there is another method if you do not have cronjobs installed or CGI enabled php:
+</p>
+
+<a name="eztoc81599_3" id="eztoc81599_3"></a><h2>Automaticlly run the cronjob using HTTP (via Webbrowser)</h2>
+<p>
+
+As long as your site is visited by your users, the index.php will always run each time a user request something from your eZ site. Ok, then let's make index.php to automatically invoke the cronjobs, add these two line to the bottom of index.php, just before the line: eZExecution::cleanup();<br/>
+</p>
+    <pre class="wordwrap">
+<span class="line">&nbsp;include_once( 'kernel/classes/notification/eznotificationeventfilter.php' );</span>
+
+<span class="line">&nbsp;eZNotificationEventFilter::process();</span></pre>
+    
+<p>
+
+Using this method, you do not need to change the rewrite rule so it is as secure as before.<br/>But still there is the problem of serious performance impacts: every time your user request a page, the cronjobs will run.
+</p>
+
+<p>
+
+This can be solved if we only run the cronjobs every, say 2 hours, so we will extend above two lines to followings:<br/>
+</p>
+    <pre class="wordwrap">
+<span class="line">/* Run Notification Filters */</span>
+
+<span class="line">$notifyFilterLastRunTimeFile = 'ezfilternotify_last_runtime';</span>
+
+<span class="line">$filterAutoRunInterval = 7200; //2 hours</span>
+
+<span class="line">$runFilter = false;</span>
+
+<span class="line">if( file_exists($notifyFilterLastRunTimeFile) )</span>
+
+<span class="line">{</span>
+
+<span class="line">&nbsp;if( time() - filemtime( $notifyFilterLastRunTimeFile ) &gt; $filterAutoRunInterval )</span>
+
+<span class="line">&nbsp;{</span>
+
+<span class="line">$runFilter = true;</span>
+
+<span class="line">&nbsp;}</span>
+
+<span class="line">}</span>
+
+<span class="line">else</span>
+
+<span class="line">&nbsp;$runFilter = true;</span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">if( $runFilter )</span>
+
+<span class="line">{</span>
+
+<span class="line">&nbsp;include_once( 'kernel/classes/notification/eznotificationeventfilter.php' );</span>
+
+<span class="line">&nbsp;touch($notifyFilterLastRunTimeFile);</span>
+
+<span class="line">&nbsp;eZNotificationEventFilter::process();</span>
+
+<span class="line">}</span></pre>
+    
+<p>
+That's it. As long as your site is visited every 2 hours, your cronjobs will be executed properly (of course, if no one visit your site, you can not expect anything coming out from these piece of code).
+</p>
+</div>
+
+
+<div class="content-view-children">
+<div class="class-comment">
+    <h1 id="comments">Comments</h1>
+
+
+        
+
+<div class="content-view-line">
+<div class="class-comment bglight">
+
+    
+    <div id="msg65233" class="attribute-heading">
+        <h2>run the cronjob using HTTP did not work for me</h2>
+    </div>
+
+<div class="attribute-byline float-break">
+    <p class="author">nigel dodd</p>
+    <p class="date">Wednesday 22 December 2004 8:38:15 pm</p>
+</div>
+
+
+<div class="attribute-short">
+            I included the relevant code at the appropriate place in index.php but it did not appear to do anything. Certainly the approved guestbook entries in the tscm example did not appear on the frontend. I know the script was run because the file ezfilternotify_last_runtime was correctly timestamped.<br/>
+<br/>
+A solution that did work for me is described in <a href="https://web.archive.org/web/20071224053919/http://ez.no/community/bugs/patch_for_systems_without_phpcli" title="http://ez.no/community/bugs/patch_for_systems_without_phpcli">http://ez.no/community/bugs/patch_for_systems_without_phpcli</a><br/>
+<br/>
+I would be intrigued to know why the solution described here ( <a href="https://web.archive.org/web/20071224053919/http://www.ez.no/ez_publish/documentation/configuration/configuration/cron_jobs" title="http://www.ez.no/ez_publish/documentation/configuration/configuration/cron_jobs">http://www.ez.no/ez_publish/docum...onfiguration/configuration/cron_jobs</a> ) did not work. It obviously runs eZNotificationEventFilter::process() but what does that do and why does it appear not to work for me?<br/>
+<br/>
+
+
+    </div>
+
+
+</div>
+</div>
+
+
+ 
+
+
+</div>
+</div>
+
+<div class="block float-break">
+            <form method="post" action="/web/20071224053919/http://ez.no/content/action">
+            <input class="button" type="submit" name="NewButton" value="New comment"/>
+            <input type="hidden" name="RedirectURIAfterPublish" value="ezpublish/documentation/configuration/configuration/cron_jobs#comments"/>
+            <input type="hidden" name="NodeID" value="29570"/>
+                           <input type="hidden" name="ClassIdentifier" value="article_comment"/>
+                        <input type="hidden" name="ContentLanguageCode" value="eng-GB"/>
+        </form>
+    </div>
+
+</div>
+</div>
+</div>
+
+
+<div class="template-design area-sidebar-normal">
+<div class="template-module content-view-sidebar">
+<div class="template-object class-documentation">
+
+<div class="attribute-heading">
+    <h2 class="bullet">Contents</h2>
+</div>
+<h3><a href="configuration.html">Configuration</a></h3>
+<p>
+        
+        
+            
+                    <a href="configuration/configuration.html">Configuration</a><br/>
+          
+	
+            &nbsp;&nbsp;&nbsp;
+                    <a href="configuration/configuration/webdav_setup.html">WebDAV setup</a><br/>
+          
+	
+            &nbsp;&nbsp;&nbsp;
+                    <a href="configuration/configuration/ez_publish_running_on_a_cgi_version_of_php.html">eZ publish running on a CGI version o...</a><br/>
+          
+	
+            &nbsp;&nbsp;&nbsp;
+                    <a href="configuration/configuration/path_prefix.html">Path prefix</a><br/>
+          
+	
+            &nbsp;&nbsp;&nbsp;
+                    <a href="configuration/configuration/locale_settings.html">Locale Settings</a><br/>
+          
+	
+            &nbsp;&nbsp;&nbsp;
+                    <a href="configuration/configuration/introduction.html">Introduction</a><br/>
+          
+	
+            &nbsp;&nbsp;&nbsp;
+                    <a href="configuration/configuration/configuration_files.html">Configuration files</a><br/>
+          
+	
+            &nbsp;&nbsp;&nbsp;
+                    <a href="configuration/configuration/site_access.html">Site access</a><br/>
+          
+	
+            &nbsp;&nbsp;&nbsp;
+                    <a href="configuration/configuration/common_settings.html">Common settings</a><br/>
+          
+	
+            &nbsp;&nbsp;&nbsp;
+                    <a href="configuration/configuration/multi_site.html">Multi Site</a><br/>
+          
+	
+            &nbsp;&nbsp;&nbsp;
+                    <a href="configuration/configuration/directory_structure.html">Directory structure</a><br/>
+          
+	
+            &nbsp;&nbsp;&nbsp;
+                    <a href="configuration/configuration/language_and_charset.html">Language and charset</a><br/>
+          
+	
+            &nbsp;&nbsp;&nbsp;
+                    <a href="configuration/configuration/cron_jobs.html"><b>Cron jobs</b></a><br/>
+          
+	
+            &nbsp;&nbsp;&nbsp;
+                    <a href="configuration/configuration/login_handler.html">Login handler</a><br/>
+          
+	
+            &nbsp;&nbsp;&nbsp;
+                    <a href="configuration/configuration/search_engine.html">Search engine</a><br/>
+          
+	
+            &nbsp;&nbsp;&nbsp;
+                    <a href="configuration/configuration/tips_tricks.html">Tips &amp; Tricks</a><br/>
+          
+	
+            
+                    <a href="configuration/security.html">Security</a><br/>
+          
+	
+            
+                    <a href="configuration/optimization.html">Optimization</a><br/>
+          
+	
+            
+                    <a href="configuration/backup_restore.html">Backup &amp; Restore</a><br/>
+          
+	
+            
+                    <a href="configuration/troubleshooting.html">Troubleshooting</a><br/>
+          
+	
+        </p>
+
+
+<hr class="docsplit"/>
+<h3>Created</h3>
+<p>
+08/07/2003<br/>
+11:03:57 am<br/>
+by Bård Farstad
+</p>
+<h3>Last updated</h3>
+<p>
+11/03/2004<br/>
+5:55:05 pm<br/>
+by liu spider
+</p>
+<h3>Authors</h3>
+<p class="rendered">Bård Farstad<br/>Björn Dieding@xrow.de<br/>Marco Zinn<br/>liu spider<br/></p>
+
+<br/>
+<hr class="docsplit"/>
+
+<p>This page is part of the eZ Publish documentation. The documentation is available under the <a href="https://web.archive.org/web/20071224053919/http://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License.</a> All contributions will be released under the terms of this license.</p>
+
+</div>
+</div>
+</div>
+
+
+
+
+
+<!-- Main area content: END -->
+
+</div>
+</div>
+
+<!-- Main area: END -->
+
+<hr class="hide"/>
+
+<!-- Footer area: START -->
+<div id="footer-design">
+<div id="page-width6">
+<div id="footer">
+
+<address>Powered by eZ Publish&reg; Content Management System.<br/>
+Copyright &copy;1999 - 2024 7x and 2007 eZ Systems AS (except where otherwise noted). All rights reserved.</address>
+
+</div>
+</div>
+</div>
+<!-- Footer area: END -->
+
+</div>
+<!-- Complete page area: END -->
+
+
+    
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TFEDSZJYH0"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-TFEDSZJYH0');
+</script>
+
+
+</body>
+</html>
+
+<!-- th[eZ] 20050804 --><!--
+     FILE ARCHIVED ON 05:39:19 Dec 24, 2007 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 11:18:54 Oct 31, 2024.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  captures_list: 0.673
+  exclusion.robots: 0.029
+  exclusion.robots.policy: 0.018
+  esindex: 0.012
+  cdx.remote: 35.544
+  LoadShardBlock: 269.567 (3)
+  PetaboxLoader3.datanode: 106.754 (4)
+  PetaboxLoader3.resolve: 303.35 (3)
+  load_resource: 240.275
+-->

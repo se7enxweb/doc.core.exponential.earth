@@ -1,0 +1,37 @@
+/* This is the print stylesheet to hide the Flash headlines from the browser... regular browser text headlines will now print as normal */
+
+.sIFR-flash, .sIFR-flash object, .sIFR-flash embed {
+	display: none !important;
+	height: 0;
+	width: 0;
+	position: absolute;
+	overflow: hidden;
+}
+
+span.sIFR-alternate {
+	visibility: visible !important;
+	display: block !important;
+	position: static !important;
+	left: auto !important;
+	top: auto !important;
+}
+/*
+     FILE ARCHIVED ON 14:26:56 Mar 29, 2007 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 11:19:29 Oct 31, 2024.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+*/
+/*
+playback timings (ms):
+  captures_list: 0.504
+  exclusion.robots: 0.017
+  exclusion.robots.policy: 0.008
+  esindex: 0.013
+  cdx.remote: 8.62
+  LoadShardBlock: 250.071 (3)
+  PetaboxLoader3.datanode: 243.437 (4)
+  PetaboxLoader3.resolve: 135.006 (2)
+  load_resource: 139.755
+*/

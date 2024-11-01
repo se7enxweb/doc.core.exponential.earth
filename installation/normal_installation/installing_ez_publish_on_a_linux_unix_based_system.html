@@ -1,0 +1,1088 @@
+
+
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style type="text/css">
+    @import url(https://doc.core.ezpublish.se7enx.com/ezno2005/design/ezno2005/stylesheets/core.css);
+    @import url(https://doc.core.ezpublish.se7enx.com/ezno2005/design/ezno2005/stylesheets/pagelayout.css);
+    @import url(https://doc.core.ezpublish.se7enx.com/ezno2005/design/ezno2005/stylesheets/classes.css);
+    @import url(https://doc.core.ezpublish.se7enx.com/ezno2005/design/ezno2005/stylesheets/monitor.css);
+</style>
+
+<link type="text/css" rel="stylesheet" href="https://web.archive.org/web/20071213082013cs_/http://ez.no/extension/ezno2005/design/ezno2005/stylesheets/print.css" media="print"/>
+
+    <link rel="alternate" title="ez.no News" href="https://web.archive.org/web/20071213082013/http://ez.no/rss/feed/news" type="application/rss+xml"/><link rel="alternate" title="ez.no Developer News" href="/web/20071213082013/http://ez.no/rss/feed/communitynews" type="application/rss+xml"/>
+<link rel="alternate" title="ez.no Developer Articles" href="https://web.archive.org/web/20071213082013/http://ez.no/rss/feed/community_articles" type="application/rss+xml"/>
+<link rel="alternate" title="ez.no Forum" href="https://web.archive.org/web/20071213082013/http://ez.no/rss/feed/forum" type="application/rss+xml"/>
+<link rel="alternate" title="ez.no Contributions" href="https://web.archive.org/web/20071213082013/http://ez.no/rss/feed/contribs" type="application/rss+xml"/>
+<link rel="alternate" title="ez.no Open Funding" href="https://web.archive.org/web/20071213082013/http://ez.no/rss/feed/openfunding_suggestions" type="application/rss+xml"/>
+
+
+<!-- IE conditional comments; for bug fixes for different IE versions -->
+<!--[if IE 5]>     <style type="text/css"> @import url(/extension/ezno2005/design/ezno2005/stylesheets/ie5.css);    </style> <![endif]-->
+<!--[if lte IE 6]> <style type="text/css"> @import url(/extension/ezno2005/design/ezno2005/stylesheets/ie6lte.css); </style> <![endif]-->
+<!--[if gte IE 6]> <style type="text/css"> @import url(/extension/ezno2005/design/ezno2005/stylesheets/ie6gte.css); </style> <![endif]-->
+
+<!-- Load special stylesheet (if necessary) for newer Netscape decendants, Mozilla and Firefox, using the Gecko renderer -->
+<script type="text/javascript"><!-- if ((navigator.userAgent.indexOf("Gecko") != -1)&&(navigator.userAgent.indexOf("KHTML") == -1)) document.write("<style type=\"text/css\">@import url(/extension/ezno2005/design/ezno2005/stylesheets/gecko.css);</style>");--></script>
+                                                                                    
+<title>
+            Installing eZ publish on a Linux/UNIX based system     /         Normal installation     /         Installation                    </title>
+<meta http-equiv="Content-Language" content="en-GB"/>
+    <meta name="author" content="eZ Systems"/>
+    <meta name="copyright" content="eZ Systems as"/>
+    <meta name="description" content="eZ Publish is an open source content management system (CMS) and an open source content management framework (CMF)."/>
+    <meta name="keywords" content="cms, publish, e-commerce, content management, development framework"/>
+
+<meta name="MSSmartTagsPreventParsing" content="TRUE"/>
+<meta name="generator" content="eZ Publish"/>
+
+<script type="text/javascript" src="https://doc.core.ezpublish.se7enx.com/ezno2005/design/ezno2005/javascripts/tools.js"></script>
+<script type="text/javascript" src="https://doc.core.ezpublish.se7enx.com/ezno2005/design/ezno2005/javascripts/dropdownmenu.js"></script>
+</head>    <body onload="menuInit();">
+
+<!-- Complete page area: START -->
+<div id="page">
+
+<!-- Header area: START -->
+<div id="header">
+<div id="header-insert">
+
+<!-- User menu area: START -->
+<div id="usermenu">
+
+<div id="page-width1">
+
+<div id="logo">
+<h1><a href="https://doc.core.ezpublish.se7enx.com/"><span class="hide">eZ Systems - The Content Management Ecosystem</span></a></h1>
+</div>
+
+
+
+<p class="hide"><a href="#main">Skip to main content</a></p>
+
+<hr class="hide"/>
+<div id="searchbox">
+<form action="/web/20071213082013/http://ez.no/ezsearchredirect/action" method="get">
+
+<div class="block">
+<div class="element">
+<input id="searchbutton" class="button" type="submit" value="Search"/>
+</div>
+
+<div class="element searchstring">
+    <label for="searchtext" class="hide">Search text:</label>
+    <input id="searchtext" name="SearchText" type="text" size="12"/><br/>
+    
+
+            <div class="section">
+            <label for="searcharea" class="hide">Search area:</label>
+            <select id="searcharea" name="SubTreeArray[]">
+                <option value="2" selected="selected">All ez.no</option>
+                <option value="306">Bug reports</option>
+                <option value="21358">Contributions</option>
+                <option value="documentation">Documentation</option>
+                <option value="308">Forum</option>
+            </select>
+            </div>
+    </div>
+
+</div>
+</form>
+</div>
+
+<hr class="hide"/>
+<h2 class="hide">User menu</h2>
+
+<!-- User menu content: START -->
+<ul>
+            <li><a href="https://web.archive.org/web/20071224070727/http://ez.no/download"><span>Downloads</span></a></li>
+    <li><a href="https://web.archive.org/web/20071224070727/http://ez.no/company/contact"><span>Contact</span></a></li>
+            <li><a href="https://web.archive.org/web/20071224070727/http://ez.no/user/login"><span>Log in</span></a></li>
+        <li><a href="https://web.archive.org/web/20071224070727/http://ez.no/user/register"><span>Register</span></a></li>
+    
+    <li id="language-menu">
+        <a class="highlighted" title="English" href="https://web.archive.org/web/20071213082013/http://ez.no/ezpublish/documentation/installation/normal_installation/installing_ez_publish_on_a_linux_unix_based_system"><img src="/ezno2005/design/ezno2005/images/eng-GB.gif" width="18" height="12" alt="English"/></a>
+        <a title="Deutsch" href="https://web.archive.org/web/20071213082013/http://ez.no/de/ezpublish/documentation/installation/normal_installation/installing_ez_publish_on_a_linux_unix_based_system"><img src="/ezno2005/design/ezno2005/images/ger-DE.gif" width="18" height="12" alt="Deutsch"/></a>
+        <a title="Português" href="https://web.archive.org/web/20071213082013/http://ez.no/br/ezpublish/documentation/installation/normal_installation/installing_ez_publish_on_a_linux_unix_based_system"><img src="/ezno2005/design/ezno2005/images/por-BR.gif" width="18" height="12" alt="Português"/></a>
+        <a title="Français" href="https://web.archive.org/web/20071213082013/http://ez.no/fr/ezpublish/documentation/installation/normal_installation/installing_ez_publish_on_a_linux_unix_based_system"><img src="/ezno2005/design/ezno2005/images/fre-FR.gif" width="18" height="12" alt="Français"/></a>
+        <a title="日本語" href="https://web.archive.org/web/20071213082013/http://ez.no/jp/ezpublish/documentation/installation/normal_installation/installing_ez_publish_on_a_linux_unix_based_system"><img src="/ezno2005/design/ezno2005/images/jpn-JP.gif" width="18" height="12" alt="日本語"/></a>        
+        <a title="中文" href="https://web.archive.org/web/20071213082013/http://ez.no/tw/ezpublish/documentation/installation/normal_installation/installing_ez_publish_on_a_linux_unix_based_system"><img src="/ezno2005/design/ezno2005/images/chi-TW.gif" width="18" height="12" alt="中文"/></a>        
+        <a title="Norsk" href="https://web.archive.org/web/20071213082013/http://ez.no/no/ezpublish/documentation/installation/normal_installation/installing_ez_publish_on_a_linux_unix_based_system"><img src="/ezno2005/design/ezno2005/images/nor-NO.gif" width="18" height="12" alt="Norsk"/></a>        
+    </li>
+</ul>
+<!-- User menu content: END -->
+
+</div>
+
+</div>
+<!-- User menu area: END -->
+
+</div>
+</div>
+<!-- Header area: END --><script type="text/javascript">
+<!--
+var menu = new Array();
+
+menu[0] = ['eZ Publish', '/ezpublish', 'eZ Publish Premium', '/ezpublish/premium', 'eZ Publish Now', '/ezpublish/now', 'eZ Publish On Demand', '/ezpublish/on_demand', 'Proprietary license options', '/products/proprietary_license_options', 'Certified extensions', '/products/certified_extensions', 'eZ Flow', '/ezflow', 'eZ Components', '/ezcomponents', 'eZ Find', '/ezfind', 'eZ Newsletter', '/eznewsletter', 'Expert consulting services', '/products/expert_consulting_services', 'Support', '/products/support'];
+menu[1] = ['Documentation', '/doc', 'Articles', '/community/articles', 'Books', '/store/books', 'Training', '/education/training', 'Certification', '/education/certification'];
+menu[2] = ['Case studies', '/customers/case_studies', 'References', '/customers/references', 'User quotes', '/customers/user_quotes', 'eZ for media', '/customers/ez_for_media'];
+menu[3] = ['Worldwide Partners', '/partner/worldwide_partners', 'eZ Partner program', '/partner/ez_partner_program', 'Knowledge centre', '/partner/knowledge_centre'];
+menu[4] = ['Downloads', '/download', 'Documentation', '/doc', 'News', '/developer/news', 'Developer information', '/developer/developer_information', 'Projects & contributions', '/developer/contribs', 'Forum', '/developer/forum', 'Issue tracker', '/bugs/redirect', 'Open Funding', '/developer/open_funding', 'Security', '/developer/security', 'User groups', '/developer/user_groups'];
+menu[5] = ['Total Product Responsibility from eZ', '/support/total_product_responsibility_from_ez'];
+menu[6] = ['Software solutions', '/store/software', 'Training', '/services/training', 'Certification', '/services/certification', 'Books', '/store/books', 'Services', '/store/services'];
+menu[7] = ['News', '/company/news', 'Media & press', '/company/media_press', 'Events', '/company/events', 'Career', '/company/career', 'eZ Conference & Awards', '/company/ez_conference_awards', 'Board of Directors', '/company/board', 'eZ Crew', '/company/ez_crew', 'Contact', '/company/contact'];
+
+-->
+</script>
+<div id="menuborder">
+
+<!-- Main menu area: START -->
+<div id="menu" onmouseover="menuHover();" onmouseout="tryHideSubMenues();">
+
+<div id="mainmenu" class="float-break">
+<div id="page-width2">
+    <ul id="mainmenulist" class="float-break">
+<li class="current"><a href="https://web.archive.org/web/20071224070727/http://ez.no/products" onmouseover="switchSubMenu( this );">Products &amp; services</a></li>
+<li><a href="https://web.archive.org/web/20071224070727/http://ez.no/education" onmouseover="switchSubMenu( this );">Education</a></li>
+<li><a href="https://web.archive.org/web/20071224070727/http://ez.no/customers" onmouseover="switchSubMenu( this );">Customers</a></li>
+<li><a href="https://web.archive.org/web/20071224070727/http://ez.no/partner" onmouseover="switchSubMenu( this );">Partners</a></li>
+<li><a href="https://web.archive.org/web/20071224070727/http://ez.no/developer" onmouseover="switchSubMenu( this );">Developer</a></li>
+<li><a href="https://web.archive.org/web/20071224070727/http://ez.no/support" onmouseover="switchSubMenu( this );">Support</a></li>
+<li><a href="https://web.archive.org/web/20071224070727/http://ez.no/store" onmouseover="switchSubMenu( this );">Store</a></li>
+<li class="last"><a href="https://web.archive.org/web/20071224070727/http://ez.no/company" onmouseover="switchSubMenu( this );">Company</a></li>
+</ul>
+
+</div>
+</div>
+
+
+<div id="submenu">
+<div id="page-width3">
+    <ul class="float-break">
+                        <li><a href="https://web.archive.org/web/20071224070727/http://ez.no/ezpublish">eZ Publish</a></li>
+                                <li><a href="https://web.archive.org/web/20071224070727/http://ez.no/ezpublish/premium">eZ Publish Premium</a></li>
+                                <li><a href="https://web.archive.org/web/20071224070727/http://ez.no/ezpublish/now">eZ Publish Now</a></li>
+                                <li><a href="https://web.archive.org/web/20071224070727/http://ez.no/ezpublish/on_demand">eZ Publish On Demand</a></li>
+                                <li><a href="https://web.archive.org/web/20071224070727/http://ez.no/products/proprietary_license_options">Proprietary license options</a></li>
+                                <li><a href="https://web.archive.org/web/20071224070727/http://ez.no/products/certified_extensions">Certified extensions</a></li>
+                                <li><a href="https://web.archive.org/web/20071224070727/http://ez.no/ezflow">eZ Flow</a></li>
+                                <li><a href="https://web.archive.org/web/20071224070727/http://ez.no/ezcomponents">eZ Components</a></li>
+                                <li><a href="https://web.archive.org/web/20071224070727/http://ez.no/ezfind">eZ Find</a></li>
+                                <li><a href="https://web.archive.org/web/20071224070727/http://ez.no/eznewsletter">eZ Newsletter</a></li>
+                                <li><a href="https://web.archive.org/web/20071224070727/http://ez.no/products/expert_consulting_services">Expert consulting services</a></li>
+                                <li class="last"><a href="https://web.archive.org/web/20071224070727/http://ez.no/products/support">Support</a></li>
+                </ul>
+</div>
+</div>
+
+<script type="text/javascript"><!--
+    document.getElementById('submenu').style.display = 'none';
+--></script>
+
+</div>
+<!-- Main menu area: END -->
+
+</div>
+
+<hr class="hide"/><!-- Path area: START -->
+<div id="path">
+
+<div id="page-width4">
+<h2 class="hide">Path</h2>
+
+<!-- Path content: START -->
+<p>
+                        <a href="https://web.archive.org/web/20071224070727/http://ez.no/">ez.no</a>
+        
+                        /
+                            <a href="https://web.archive.org/web/20071224070727/http://ez.no/ezpublish">ezpublish</a>
+        
+                        /
+                            <a href="https://doc.core.ezpublish.se7enx.com/toc.html">documentation</a>
+        
+                        /
+                            <a href="../installation.html">Installation</a>
+        
+                        /
+                            <a href="normal_installation.html">normal installation</a>
+        
+                        /
+                            installing ez publish on a linux/unix based system
+        
+            </p>
+<!-- Path content: END -->
+
+</div>
+
+</div>
+<!-- Path area: END -->
+
+<hr class="hide"/>
+
+<!-- Main area: START -->
+
+<div id="page-width5">
+<div id="main" class="float-break">
+
+<!-- Main area content: START -->
+
+
+
+
+<div class="template-design area-main-normal">
+<div class="template-module content-view-full">
+<div class="template-object class-documentation">
+
+
+<div class="attribute-heading">
+    <h1>Installing eZ publish on a Linux/UNIX based system</h1>
+</div>
+
+<p><strong>These documentation pages are no longer maintained. Please visit the <a href="https://doc.ezpublishlegacy.se7enx.com">new documentation site.</a></strong></p>
+
+<div class="attribute-long">
+    
+
+<p>
+The requirements for doing a normal installation must be met. Please read the previous section if you're not sure about the requirements. Proceed only if you have access to a UNIX based environment with Apache, PHP, MySQL or PostgreSQL (and ImageMagick or GD) already installed and running. As mentioned earlier, the database server may run on a different computer. This text will guide you through the following steps:
+</p>
+
+<p>
+
+- Setting up a database (MySQL or PostgreSQL).<br/>
+- Downloading eZ publish.<br/>
+- Unpacking eZ publish.<br/>- Initiating the setup wizard.
+</p>
+
+<p>
+
+<b>Setting up a database</b><br/>If no database is set up, then one must be manually created before the setup wizard is initiated. The following text explains how to do this with the supported database engines:
+</p>
+
+<p>
+
+MySQL<br/>
+</p>
+    <pre class="wordwrap">
+<span class="line">1. Login as root:</span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">mysql -u &lt;mysql_username&gt; -p &lt;mysql_password&gt;</span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">2. The MySQL client should display a &quot;mysql&gt;&quot; prompt; create a new database:</span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">mysql&gt; create database &lt;database&gt;;</span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">3. Grant permissions:</span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">mysql&gt; grant all on &lt;database&gt;.* to &lt;username&gt;@&lt;host&gt; identified by '&lt;password&gt;';</span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">&lt;mysql_username&gt;: The MySQL user (if no user is set up, use &quot;root&quot;).</span>
+
+<span class="line">&lt;mysql_password&gt;: The password that belongs to the mysql_username.</span>
+
+<span class="line">&lt;username&gt;: The username that will be used to access the database.</span>
+
+<span class="line">&lt;password&gt;: The password you wish to set in order to limit access to the database.</span>
+
+<span class="line">&lt;database&gt;: The name of the database, for example &quot;my_new_database&quot;.</span>
+
+<span class="line">&lt;host&gt;: The hostname of the server on which eZ publish will be running.</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(may be 'localhost' if MySQL is installed on the same server).</span></pre>
+    
+<p>
+
+PostgreSQL<br/>
+</p>
+    <pre class="wordwrap">
+<span class="line">1. Become the PostgreSQL super user (normally called postgres):</span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">$ su &lt;postgres_super_user&gt;</span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">2. Create a postgresql user:</span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">$ createuser &lt;username&gt;</span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">3. Create a database:</span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">$ createdb &lt;database&gt;</span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">&lt;username&gt;: The username that will be used to access the database.</span>
+
+<span class="line">&lt;database&gt;: The name of the database, for example &quot;my_new_database&quot;.</span></pre>
+    
+<p>
+
+<b>Downloading eZ publish</b><br/>The latest stable version of eZ publish can be downloaded from: <a href="https://web.archive.org/web/20071213082013/http://ez.no/developer/download">http://ez.no/developer/download</a>
+</p>
+
+<p>
+
+<b>Unpacking eZ publish</b><br/>Use your favourite tool to unpack the downloaded eZ publish package to a web-served directory (a directory that is reachable from within a web browser). The following example shows how to do this using the tar utility (to unpack a tar.gz file, assuming that gzip is installed on the system):
+</p>
+    <pre class="wordwrap">
+<span class="line">$ tar xvfz ezpublish-&lt;some_version_number&gt;.tar.gz -C &lt;web_served_directory&gt;</span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">&lt;some_version_number&gt; : The version number of eZ publish that was downloaded.</span>
+
+<span class="line">&lt;web_served_directory&gt;: Full path to a directory that is served by the web server.</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This can be the path to the document root of the web server, or a</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;personal web-directory (usually called &quot;public_html&quot; or &quot;www&quot;, and</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;located inside a user's home directory).</span></pre>
+    
+<p>
+The extraction utility will unpack eZ publish into a subdirectory called &quot;ezpublish-3.x.x&quot;. This directory should be renamed to something more meaningful, for example &quot;my_site&quot;.
+</p>
+
+<p>
+
+<b>Initiating the setup wizard</b><br/>The setup wizard can be started using a web browser immediately after the previous steps (described in this section) are completed. It will be automatically run the first time someone tries to access/browse the index.php file located in the eZ publish directory. Let's assume that we are using a server with the hostname &quot;www.example.com&quot; and that after unpacking, the eZ publish directory was renamed to &quot;my_site&quot;.
+</p>
+
+<p>
+
+Document root example<br/>If eZ publish was unpacked into a directory called &quot;my_site&quot; under the document root, the setup wizard can be initiated by browsing the following URL: http://www.example.com/my_site/index.php.
+</p>
+
+<p>
+
+Home directory example<br/>If eZ publish was unpacked to a web-served directory located inside the home directory of a user with the username &quot;peter&quot;, (usually called &quot;public_html&quot;, &quot;www&quot;, &quot;http&quot;, &quot;html&quot; or &quot;web&quot;), the setup wizard can be initiated by browsing the following URL: http://www.example.com/~peter/my_site/index.php.
+</p>
+
+<p>
+Please refer to <a href="https://web.archive.org/web/20071213082013/http://ez.no/developer/ez_publish_3/documentation/installation/the_setup_wizard">&quot;The setup wizard&quot;</a> section for a detailed description of the web based setup wizard.
+</p>
+</div>
+
+
+<div class="content-view-children">
+<div class="class-comment">
+    <h1 id="comments">Comments</h1>    <div class="block float-break">
+              <form method="post" action="/web/20071213082013/http://ez.no/content/action">
+             <input class="button" type="submit" name="NewButton" value="New comment"/>
+             <input type="hidden" name="RedirectURIAfterPublish" value="ezpublish/documentation/installation/normal_installation/installing_ez_publish_on_a_linux_unix_based_system#comments"/>
+             <input type="hidden" name="NodeID" value="34409"/>
+                             <input type="hidden" name="ClassIdentifier" value="article_comment"/>
+                          <input type="hidden" name="ContentLanguageCode" value="eng-GB"/>
+         </form>
+         </div>
+
+
+        
+
+<div class="content-view-line">
+<div class="class-comment bglight">
+
+    
+    <div id="msg100902" class="attribute-heading">
+        <h2>Kernel (20)</h2>
+    </div>
+
+<div class="attribute-byline float-break">
+    <p class="author">Kathleen Mcdonough</p>
+    <p class="date">Monday 22 May 2006 6:27:13 am</p>
+</div>
+
+
+<div class="attribute-short">
+            How to fix this error? v3.8<br/>
+<br/>
+Module not found<br/>
+<br/>
+The requested module setup could not be found.<br/>
+<br/>
+Possible reasons for this are:<br/>
+<br/>
+    * The module name was misspelled, try changing the URL.<br/>
+    * The module does not exist on this site.<br/>
+    * This site uses siteaccess matching in the URL and you didn't supply one, try inserting a siteaccess name before the module in the URL .<br/>
+<br/>
+
+
+    </div>
+
+
+</div>
+</div>
+    
+
+<div class="content-view-line">
+<div class="class-comment bgdark">
+
+    
+    <div id="msg93612" class="attribute-heading">
+        <h2>Cannot install, index.php generates Fatal error!</h2>
+    </div>
+
+<div class="attribute-byline float-break">
+    <p class="author">Oskari Saloheimo</p>
+    <p class="date">Wednesday 08 February 2006 2:01:47 pm</p>
+</div>
+
+
+<div class="attribute-short">
+            Please help. I receive the following error message upon trying to access index.php for installation:<br/>
+<br/>
+Fatal error: Allowed memory size of 8388608 bytes exhausted (tried to allocate 16 bytes) in /usr/home/web/wse42450/nti/lib/ezutils/classes/ezdebug.php on line 133<br/>
+<br/>
+What can I do, where is the problem?<br/>
+<br/>
+Thank you in advance.<br/>
+Oskari Saloheimo
+
+    </div>
+
+
+</div>
+</div>
+    
+
+<div class="content-view-line">
+<div class="class-comment bglight">
+
+    
+    <div id="msg80430" class="attribute-heading">
+        <h2>Failed to Add Content</h2>
+    </div>
+
+<div class="attribute-byline float-break">
+    <p class="author">James Ashley</p>
+    <p class="date">Thursday 04 August 2005 5:27:24 am</p>
+</div>
+
+
+<div class="attribute-short">
+            Cosmin Ghiu:<br/>
+<br/>
+I ran into precisely the same problem.  PHP 4.3.<br/>
+<br/>
+I finally managed to get a bare-bones manual installation done (yes, it was a bugger that wound up with me digging through the database and the PHP code to figure out how to set the password by hand).  Now I guess it's a matter of learning how to use it and building my site from the ground up.<br/>
+<br/>
+Should be fun :)
+
+    </div>
+
+
+</div>
+</div>
+    
+
+<div class="content-view-line">
+<div class="class-comment bgdark">
+
+    
+    <div id="msg78186" class="attribute-heading">
+        <h2>Could not install addon package</h2>
+    </div>
+
+<div class="attribute-byline float-break">
+    <p class="author">Cosmin Ghiu</p>
+    <p class="date">Wednesday 29 June 2005 9:45:50 pm</p>
+</div>
+
+
+<div class="attribute-short">
+            Hello,<br/>
+<br/>
+when trying to first install it wont get pass this error message when trying to setup the site. I CHMODed all dir. correctly. Why wont it get pass this step and install the site?<br/>
+<br/>
+-----------------<br/>
+<br/>
+The setup wizard was not able to complete the creation of your selected sites. <br/>
+<br/>
+The following errors were detected: <br/>
+<br/>
+EZSW-051<br/>
+Could not install addon package named contact_us <br/>
+EZSW-040<br/>
+Failed to initialize site package plain <br/>
+If you think you have fixed the errors you can try and click the &quot;Retry&quot; button. <br/>
+
+
+    </div>
+
+
+</div>
+</div>
+    
+
+<div class="content-view-line">
+<div class="class-comment bglight">
+
+    
+    <div id="msg75881" class="attribute-heading">
+        <h2>Fatal error</h2>
+    </div>
+
+<div class="attribute-byline float-break">
+    <p class="author">Giorgio Rolfini</p>
+    <p class="date">Wednesday 25 May 2005 1:28:50 pm</p>
+</div>
+
+
+<div class="attribute-short">
+            Hi,<br/>
+I have the same problem too,<br/>
+On my system with FC3 Apache 1.3.33 MySQL 4.1.10 PHP 4.3.9 the error log reports to me that he can't find compat.php and return a blank page. Why?<br/>
+<br/>
+Best regards Giorgio
+
+    </div>
+
+
+</div>
+</div>
+    
+
+<div class="content-view-line">
+<div class="class-comment bgdark">
+
+    
+    <div id="msg67471" class="attribute-heading">
+        <h2>Nothing displayed when running index.php</h2>
+    </div>
+
+<div class="attribute-byline float-break">
+    <p class="author">osjak osjak</p>
+    <p class="date">Monday 31 January 2005 7:53:08 am</p>
+</div>
+
+
+<div class="attribute-short">
+            When running index.php for the first time, nothing is displayed. No errors, no background, nothing at all. I have no clue where to look for a problem. Did anybody have this? Thank you.<br/>
+<br/>
+System:<br/>
+Trustix Linux server<br/>
+Apache 1.3.33<br/>
+PHP 4.3.10<br/>
+
+
+    </div>
+
+
+</div>
+</div>
+    
+
+<div class="content-view-line">
+<div class="class-comment bglight">
+
+    
+    <div id="msg63227" class="attribute-heading">
+        <h2>FATAL ERROR</h2>
+    </div>
+
+<div class="attribute-byline float-break">
+    <p class="author">Alexey Malishevsky</p>
+    <p class="date">Sunday 21 November 2004 7:08:11 pm</p>
+</div>
+
+
+<div class="attribute-short">
+            I have follow problems at the last step installation:<br/>
+Fatal error: eZ publish did not finish its request<br/>
+<br/>
+The execution of eZ publish was abruptly ended, the debug output is present below.<br/>
+<br/>
+Parametrs: <br/>
+Linux Slackware 10<br/>
+Apache 1.3.3<br/>
+Php 4.3.7<br/>
+PostgreSQL 7.4.2<br/>
+
+
+    </div>
+
+
+</div>
+</div>
+    
+
+<div class="content-view-line">
+<div class="class-comment bgdark">
+
+    
+    <div id="msg62983" class="attribute-heading">
+        <h2>Error when accessing page</h2>
+    </div>
+
+<div class="attribute-byline float-break">
+    <p class="author">Per Axbom</p>
+    <p class="date">Tuesday 16 November 2004 10:39:02 pm</p>
+</div>
+
+
+<div class="attribute-short">
+            Just tried installing and get the following error message when accessing index.php:<br/>
+<br/>
+-------<br/>
+<br/>
+Fatal error: Call to undefined function: file_get_contents() in /home/userB/b0294700/public_html/boksmedjan.se/go/lib/eztemplate/classes/eztemplatefileresource.php on line 245<br/>
+Fatal error: eZ publish did not finish its request<br/>
+<br/>
+The execution of eZ publish was abruptly ended, the debug output is present below.<br/>
+<br/>
+-------<br/>
+<br/>
+Nothing more,
+
+    </div>
+
+
+</div>
+</div>
+    
+
+<div class="content-view-line">
+<div class="class-comment bglight">
+
+    
+    <div id="msg61889" class="attribute-heading">
+        <h2>Apache 2.0</h2>
+    </div>
+
+<div class="attribute-byline float-break">
+    <p class="author">Frederik Holljen</p>
+    <p class="date">Friday 29 October 2004 4:18:02 pm</p>
+</div>
+
+
+<div class="attribute-short">
+            Is not supported (due to problems with PHP and apache 2)
+
+    </div>
+
+
+</div>
+</div>
+    
+
+<div class="content-view-line">
+<div class="class-comment bgdark">
+
+    
+    <div id="msg61886" class="attribute-heading">
+        <h2>FATAL ERROR</h2>
+    </div>
+
+<div class="attribute-byline float-break">
+    <p class="author">Ricardo Frydman</p>
+    <p class="date">Friday 29 October 2004 4:02:40 pm</p>
+</div>
+
+
+<div class="attribute-short">
+            Hi! I made all the installation and when I pont my browser to index.php i get this message:<br/>
+Fatal error: eZ publish did not finish its request<br/>
+<br/>
+The execution of eZ publish was abruptly ended, the debug output is present below.<br/>
+ <br/>
+That&amp;#347; all! I have Apache 2.0.40, mysql  3.23.58, PHP Version 4.2.2 under RedHat Linux 9.<br/>
+<br/>
+I've tride in 3.4 and 3.5alpha versionm with the same results.<br/>
+<br/>
+Thanks in advance
+
+    </div>
+
+
+</div>
+</div>
+    
+
+<div class="content-view-line">
+<div class="class-comment bglight">
+
+    
+    <div id="msg60817" class="attribute-heading">
+        <h2>What exactly is required for installation? This .dir is 30mb!</h2>
+    </div>
+
+<div class="attribute-byline float-break">
+    <p class="author">semiotics 101</p>
+    <p class="date">Wednesday 13 October 2004 9:06:42 pm</p>
+</div>
+
+
+<div class="attribute-short">
+            Hi, I just finished uploading the cms to my webserver, but it's 30mb! I have 100mb for my webserver and now I only have 5% left of web space after adding these files. How much space is required for installation, and which files/directories are ONLY required for installation? Please advise, because I don't think I'll use this great CMS if it takes up 30mb of disk space. Thanks! E-mail: <a href="https://web.archive.org/web/20071213082013/mailto:semiotics101@hotmail.com">semiotics101@hotmail.com</a>
+
+    </div>
+
+
+</div>
+</div>
+    
+
+<div class="content-view-line">
+<div class="class-comment bgdark">
+
+    
+    <div id="msg59534" class="attribute-heading">
+        <h2>Your are using PHP 5</h2>
+    </div>
+
+<div class="attribute-byline float-break">
+    <p class="author">Ekkehard Dörre</p>
+    <p class="date">Friday 24 September 2004 2:58:13 pm</p>
+</div>
+
+
+<div class="attribute-short">
+            @Radoslav Horák:<br/>
+Your are using PHP 5<br/>
+<a href="https://web.archive.org/web/20071213082013/http://www.ez.no/ez_publish/documentation/faq/general/does_ez_publish_run_on_php_5" title="http://www.ez.no/ez_publish/documentation/faq/general/does_ez_publish_run_on_php_5">http://www.ez.no/ez_publish/docum...general/does_ez_publish_run_on_php_5</a><br/>
+<br/>
+Greetings, ekke
+
+    </div>
+
+
+</div>
+</div>
+    
+
+<div class="content-view-line">
+<div class="class-comment bglight">
+
+    
+    <div id="msg59527" class="attribute-heading">
+        <h2>Fatal error: Cannot re-assign $this in ezdebug.php on line 194</h2>
+    </div>
+
+<div class="attribute-byline float-break">
+    <p class="author">Radoslav Horák</p>
+    <p class="date">Friday 24 September 2004 12:49:05 pm</p>
+</div>
+
+
+<div class="attribute-short">
+            when trying to initiate the setup wizard, I get this error <br/>
+<br/>
+Fatal error: Cannot re-assign $this in ezpublish/lib/ezutils/classes/ezdebug.php on line 194<br/>
+<br/>
+config:<br/>
+eZ publish 3.4<br/>
+PHP Version 5.0.1<br/>
+Apache Tomcat/5.0<br/>
+more here: <a href="https://web.archive.org/web/20071213082013/http://horacio.info/info.php" title="http://horacio.info/info.php">http://horacio.info/info.php</a><br/>
+
+
+    </div>
+
+
+</div>
+</div>
+    
+
+<div class="content-view-line">
+<div class="class-comment bgdark">
+
+    
+    <div id="msg54107" class="attribute-heading">
+        <h2>Error</h2>
+    </div>
+
+<div class="attribute-byline float-break">
+    <p class="author">Roger Andersen</p>
+    <p class="date">Thursday 01 July 2004 8:57:45 am</p>
+</div>
+
+
+<div class="attribute-short">
+            I have uploaded all the files via ftp to my server and when I run the www.myside.com/index.php I get this error:<br/>
+<br/>
+Warning: main(lib/ezutils/classes/ezdebug.php): failed to open stream: No such file or directory in /home/librariu/public_html/boguiden/index.php on line 81<br/>
+<br/>
+Warning: main(): Failed opening 'lib/ezutils/classes/ezdebug.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/librariu/public_html/boguiden/index.php on line 81<br/>
+<br/>
+Warning: main(lib/ezutils/classes/ezini.php): failed to open stream: No such file or directory in /home/librariu/public_html/boguiden/index.php on line 82<br/>
+<br/>
+Warning: main(): Failed opening 'lib/ezutils/classes/ezini.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/librariu/public_html/boguiden/index.php on line 82<br/>
+<br/>
+Warning: main(lib/ezutils/classes/ezdebugsetting.php): failed to open stream: No such file or directory in /home/librariu/public_html/boguiden/index.php on line 83<br/>
+<br/>
+Warning: main(): Failed opening 'lib/ezutils/classes/ezdebugsetting.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/librariu/public_html/boguiden/index.php on line 83<br/>
+<br/>
+Fatal error: Undefined class name 'ezini' in /home/librariu/public_html/boguiden/index.php on line 85<br/>
+<br/>
+<br/>
+<br/>
+Someone please help me out here!!
+
+    </div>
+
+
+</div>
+</div>
+    
+
+<div class="content-view-line">
+<div class="class-comment bglight">
+
+    
+    <div id="msg46171" class="attribute-heading">
+        <h2>Re: Error on loading index.php</h2>
+    </div>
+
+<div class="attribute-byline float-break">
+    <p class="author">Balazs Halasy</p>
+    <p class="date">Wednesday 03 March 2004 11:09:38 am</p>
+</div>
+
+
+<div class="attribute-short">
+            Hi,<br/>
+<br/>
+Which version of eZ publish are you using? PHP version? Apache version? etc. Would be great if you posted this on the forum instead (under installation) - that way you'll reach more people = better chance of getting help.<br/>
+<br/>
+Balazs<br/>
+
+
+    </div>
+
+
+</div>
+</div>
+    
+
+<div class="content-view-line">
+<div class="class-comment bgdark">
+
+    
+    <div id="msg46153" class="attribute-heading">
+        <h2>Error on loading index.php</h2>
+    </div>
+
+<div class="attribute-byline float-break">
+    <p class="author">Pierre Johnson</p>
+    <p class="date">Wednesday 03 March 2004 1:14:49 am</p>
+</div>
+
+
+<div class="attribute-short">
+            I get the following error when I load the index.php file in my web browser as described.  I have FTP'd the extracted files to my web server.<br/>
+<br/>
+What should I do ? :<br/>
+<br/>
+<br/>
+Fatal error: Undefined class name 'ezsection' in index.php on line 354<br/>
+Fatal error: eZ publish did not finish it's request<br/>
+<br/>
+<br/>
+The execution of eZ publish was abruptly ended, the debug output is present below
+
+    </div>
+
+
+</div>
+</div>
+
+
+ 
+
+
+</div>
+</div>
+
+<div class="block float-break">
+            <form method="post" action="/web/20071213082013/http://ez.no/content/action">
+            <input class="button" type="submit" name="NewButton" value="New comment"/>
+            <input type="hidden" name="RedirectURIAfterPublish" value="ezpublish/documentation/installation/normal_installation/installing_ez_publish_on_a_linux_unix_based_system#comments"/>
+            <input type="hidden" name="NodeID" value="34409"/>
+                           <input type="hidden" name="ClassIdentifier" value="article_comment"/>
+                        <input type="hidden" name="ContentLanguageCode" value="eng-GB"/>
+        </form>
+    </div>
+
+</div>
+</div>
+</div>
+
+
+<div class="template-design area-sidebar-normal">
+<div class="template-module content-view-sidebar">
+<div class="template-object class-documentation">
+
+<div class="attribute-heading">
+    <h2 class="bullet">Contents</h2>
+</div>
+<h3><a href="../installation.html">Installation</a></h3>
+<p>
+        
+        
+            
+                    <a href="normal_installation.html">Normal installation</a><br/>
+          
+	
+            &nbsp;&nbsp;&nbsp;
+                    <a href="requirements_for_doing_a_normal_installation.html">Requirements for doing a normal insta...</a><br/>
+          
+	
+            &nbsp;&nbsp;&nbsp;
+                    <a href="installing_ez_publish_on_a_linux_unix_based_system.html"><b>Installing eZ publish on a Linux/UNIX...</b></a><br/>
+          
+	
+            &nbsp;&nbsp;&nbsp;
+                    <a href="installing_ez_publish_on_a_windows_based_system.html">Installing eZ publish on a Windows ba...</a><br/>
+          
+	
+            
+                    <a href="../bundled_installation.html">Bundled installation</a><br/>
+          
+	
+            
+                    <a href="../manual_installation.html">Manual installation</a><br/>
+          
+	
+            
+                    <a href="../the_setup_wizard.html">The setup wizard</a><br/>
+          
+	
+            
+                    <a href="../the_cronjob_script.html">The cronjob script</a><br/>
+          
+	
+            
+                    <a href="../virtual_host_setup.html">Virtual Host setup</a><br/>
+          
+	
+            
+                    <a href="../upgrading.html">Upgrading</a><br/>
+          
+	
+            
+                    <a href="../adding_extensions.html">Adding extensions</a><br/>
+          
+	
+            
+                    <a href="../removing_ez_publish.html">Removing eZ publish</a><br/>
+          
+	
+        </p>
+
+
+<hr class="docsplit"/>
+<h3>Created</h3>
+<p>
+17/09/2003<br/>
+10:37:15 am<br/>
+by Balazs Halasy
+</p>
+<h3>Last updated</h3>
+<p>
+19/06/2004<br/>
+12:37:16 pm<br/>
+by Mahmoud Abu-Wardeh
+</p>
+<h3>Authors</h3>
+<p class="rendered">Balazs Halasy<br/>Ole Morten Halvorsen<br/>Guttorm Flatabø<br/>Mahmoud Abu-Wardeh<br/></p>
+
+<br/>
+<hr class="docsplit"/>
+
+<p>This page is part of the eZ Publish documentation. The documentation is available under the <a href="https://web.archive.org/web/20071213082013/http://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License.</a> All contributions will be released under the terms of this license.</p>
+
+</div>
+</div>
+</div>
+
+
+
+
+
+<!-- Main area content: END -->
+
+</div>
+</div>
+
+<!-- Main area: END -->
+
+<hr class="hide"/>
+
+<!-- Footer area: START -->
+<div id="footer-design">
+<div id="page-width6">
+<div id="footer">
+
+<address>Powered by eZ Publish&reg; Content Management System.<br/>
+Copyright &copy;1999 - 2024 7x and 2007 eZ Systems AS (except where otherwise noted). All rights reserved.</address>
+
+</div>
+</div>
+</div>
+<!-- Footer area: END -->
+
+</div>
+<!-- Complete page area: END -->
+
+
+    
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TFEDSZJYH0"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-TFEDSZJYH0');
+</script>
+
+
+</body>
+</html>
+
+<!-- th[eZ] 20050804 --><!--
+     FILE ARCHIVED ON 08:20:13 Dec 13, 2007 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 12:43:23 Oct 31, 2024.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  captures_list: 0.455
+  exclusion.robots: 0.016
+  exclusion.robots.policy: 0.007
+  esindex: 0.01
+  cdx.remote: 5.144
+  LoadShardBlock: 152.353 (3)
+  PetaboxLoader3.datanode: 231.931 (4)
+  load_resource: 177.418
+  PetaboxLoader3.resolve: 67.099
+-->

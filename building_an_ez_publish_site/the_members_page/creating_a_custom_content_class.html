@@ -1,0 +1,773 @@
+
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style type="text/css">
+    @import url(https://doc.core.ezpublish.se7enx.com/ezno2005/design/ezno2005/stylesheets/core.css);
+    @import url(https://doc.core.ezpublish.se7enx.com/ezno2005/design/ezno2005/stylesheets/pagelayout.css);
+    @import url(https://doc.core.ezpublish.se7enx.com/ezno2005/design/ezno2005/stylesheets/classes.css);
+    @import url(https://doc.core.ezpublish.se7enx.com/ezno2005/design/ezno2005/stylesheets/monitor.css);
+</style>
+
+<link type="text/css" rel="stylesheet" href="https://web.archive.org/web/20071223082531cs_/http://ez.no/extension/ezno2005/design/ezno2005/stylesheets/print.css" media="print"/>
+
+    <link rel="alternate" title="ez.no News" href="https://web.archive.org/web/20071223082531/http://ez.no/rss/feed/news" type="application/rss+xml"/><link rel="alternate" title="ez.no Developer News" href="/web/20071223082531/http://ez.no/rss/feed/communitynews" type="application/rss+xml"/>
+<link rel="alternate" title="ez.no Developer Articles" href="https://web.archive.org/web/20071223082531/http://ez.no/rss/feed/community_articles" type="application/rss+xml"/>
+<link rel="alternate" title="ez.no Forum" href="https://web.archive.org/web/20071223082531/http://ez.no/rss/feed/forum" type="application/rss+xml"/>
+<link rel="alternate" title="ez.no Contributions" href="https://web.archive.org/web/20071223082531/http://ez.no/rss/feed/contribs" type="application/rss+xml"/>
+<link rel="alternate" title="ez.no Open Funding" href="https://web.archive.org/web/20071223082531/http://ez.no/rss/feed/openfunding_suggestions" type="application/rss+xml"/>
+
+
+<!-- IE conditional comments; for bug fixes for different IE versions -->
+<!--[if IE 5]>     <style type="text/css"> @import url(/extension/ezno2005/design/ezno2005/stylesheets/ie5.css);    </style> <![endif]-->
+<!--[if lte IE 6]> <style type="text/css"> @import url(/extension/ezno2005/design/ezno2005/stylesheets/ie6lte.css); </style> <![endif]-->
+<!--[if gte IE 6]> <style type="text/css"> @import url(/extension/ezno2005/design/ezno2005/stylesheets/ie6gte.css); </style> <![endif]-->
+
+<!-- Load special stylesheet (if necessary) for newer Netscape decendants, Mozilla and Firefox, using the Gecko renderer -->
+<script type="text/javascript"><!-- if ((navigator.userAgent.indexOf("Gecko") != -1)&&(navigator.userAgent.indexOf("KHTML") == -1)) document.write("<style type=\"text/css\">@import url(/extension/ezno2005/design/ezno2005/stylesheets/gecko.css);</style>");--></script>
+                                                                                    
+<title>
+            Creating a custom content class     /         The members page     /         Building an eZ publish site                    </title>
+<meta http-equiv="Content-Language" content="en-GB"/>
+    <meta name="author" content="eZ Systems"/>
+    <meta name="copyright" content="eZ Systems as"/>
+    <meta name="description" content="eZ Publish is an open source content management system (CMS) and an open source content management framework (CMF)."/>
+    <meta name="keywords" content="cms, publish, e-commerce, content management, development framework"/>
+
+<meta name="MSSmartTagsPreventParsing" content="TRUE"/>
+<meta name="generator" content="eZ Publish"/>
+
+<script type="text/javascript" src="https://doc.core.ezpublish.se7enx.com/ezno2005/design/ezno2005/javascripts/tools.js"></script>
+<script type="text/javascript" src="https://doc.core.ezpublish.se7enx.com/ezno2005/design/ezno2005/javascripts/dropdownmenu.js"></script>
+</head>    <body onload="menuInit();">
+
+<!-- Complete page area: START -->
+<div id="page">
+
+<!-- Header area: START -->
+<div id="header">
+<div id="header-insert">
+
+<!-- User menu area: START -->
+<div id="usermenu">
+
+<div id="page-width1">
+
+<div id="logo">
+<h1><a href="https://doc.core.ezpublish.se7enx.com/"><span class="hide">eZ Systems - The Content Management Ecosystem</span></a></h1>
+</div>
+
+
+
+<p class="hide"><a href="#main">Skip to main content</a></p>
+
+<hr class="hide"/>
+<div id="searchbox">
+<form action="/web/20071223082531/http://ez.no/ezsearchredirect/action" method="get">
+
+<div class="block">
+<div class="element">
+<input id="searchbutton" class="button" type="submit" value="Search"/>
+</div>
+
+<div class="element searchstring">
+    <label for="searchtext" class="hide">Search text:</label>
+    <input id="searchtext" name="SearchText" type="text" size="12"/><br/>
+    
+
+            <div class="section">
+            <label for="searcharea" class="hide">Search area:</label>
+            <select id="searcharea" name="SubTreeArray[]">
+                <option value="2" selected="selected">All ez.no</option>
+                <option value="306">Bug reports</option>
+                <option value="21358">Contributions</option>
+                <option value="documentation">Documentation</option>
+                <option value="308">Forum</option>
+            </select>
+            </div>
+    </div>
+
+</div>
+</form>
+</div>
+
+<hr class="hide"/>
+<h2 class="hide">User menu</h2>
+
+<!-- User menu content: START -->
+<ul>
+            <li><a href="https://web.archive.org/web/20071223082531/http://ez.no/download"><span>Downloads</span></a></li>
+    <li><a href="https://web.archive.org/web/20071223082531/http://ez.no/company/contact"><span>Contact</span></a></li>
+            <li><a href="https://web.archive.org/web/20071223082531/http://ez.no/user/login"><span>Log in</span></a></li>
+        <li><a href="https://web.archive.org/web/20071223082531/http://ez.no/user/register"><span>Register</span></a></li>
+    
+    <li id="language-menu">
+        <a class="highlighted" title="English" href="https://web.archive.org/web/20071223082531/http://ez.no/ezpublish/documentation/building_an_ez_publish_site/the_members_page/creating_a_custom_content_class"><img src="/ezno2005/design/ezno2005/images/eng-GB.gif" width="18" height="12" alt="English"/></a>
+        <a title="Deutsch" href="https://web.archive.org/web/20071223082531/http://ez.no/de/ezpublish/documentation/building_an_ez_publish_site/the_members_page/creating_a_custom_content_class"><img src="/ezno2005/design/ezno2005/images/ger-DE.gif" width="18" height="12" alt="Deutsch"/></a>
+        <a title="Português" href="https://web.archive.org/web/20071223082531/http://ez.no/br/ezpublish/documentation/building_an_ez_publish_site/the_members_page/creating_a_custom_content_class"><img src="/ezno2005/design/ezno2005/images/por-BR.gif" width="18" height="12" alt="Português"/></a>
+        <a title="Français" href="https://web.archive.org/web/20071223082531/http://ez.no/fr/ezpublish/documentation/building_an_ez_publish_site/the_members_page/creating_a_custom_content_class"><img src="/ezno2005/design/ezno2005/images/fre-FR.gif" width="18" height="12" alt="Français"/></a>
+        <a title="日本語" href="https://web.archive.org/web/20071223082531/http://ez.no/jp/ezpublish/documentation/building_an_ez_publish_site/the_members_page/creating_a_custom_content_class"><img src="/ezno2005/design/ezno2005/images/jpn-JP.gif" width="18" height="12" alt="日本語"/></a>        
+        <a title="中文" href="https://web.archive.org/web/20071223082531/http://ez.no/tw/ezpublish/documentation/building_an_ez_publish_site/the_members_page/creating_a_custom_content_class"><img src="/ezno2005/design/ezno2005/images/chi-TW.gif" width="18" height="12" alt="中文"/></a>        
+        <a title="Norsk" href="https://web.archive.org/web/20071223082531/http://ez.no/no/ezpublish/documentation/building_an_ez_publish_site/the_members_page/creating_a_custom_content_class"><img src="/ezno2005/design/ezno2005/images/nor-NO.gif" width="18" height="12" alt="Norsk"/></a>        
+    </li>
+</ul>
+<!-- User menu content: END -->
+
+</div>
+
+</div>
+<!-- User menu area: END -->
+
+</div>
+</div>
+<!-- Header area: END --><script type="text/javascript">
+<!--
+var menu = new Array();
+
+menu[0] = ['eZ Publish', '/ezpublish', 'eZ Publish Premium', '/ezpublish/premium', 'eZ Publish Now', '/ezpublish/now', 'eZ Publish On Demand', '/ezpublish/on_demand', 'Proprietary license options', '/products/proprietary_license_options', 'Certified extensions', '/products/certified_extensions', 'eZ Flow', '/ezflow', 'eZ Components', '/ezcomponents', 'eZ Find', '/ezfind', 'eZ Newsletter', '/eznewsletter', 'Expert consulting services', '/products/expert_consulting_services', 'Support', '/products/support'];
+menu[1] = ['Documentation', '/doc', 'Articles', '/community/articles', 'Books', '/store/books', 'Training', '/education/training', 'Certification', '/education/certification'];
+menu[2] = ['Case studies', '/customers/case_studies', 'References', '/customers/references', 'User quotes', '/customers/user_quotes', 'eZ for media', '/customers/ez_for_media'];
+menu[3] = ['Worldwide Partners', '/partner/worldwide_partners', 'eZ Partner program', '/partner/ez_partner_program', 'Knowledge centre', '/partner/knowledge_centre'];
+menu[4] = ['Downloads', '/download', 'Documentation', '/doc', 'News', '/developer/news', 'Developer information', '/developer/developer_information', 'Projects & contributions', '/developer/contribs', 'Forum', '/developer/forum', 'Issue tracker', '/bugs/redirect', 'Open Funding', '/developer/open_funding', 'Security', '/developer/security', 'User groups', '/developer/user_groups'];
+menu[5] = ['Total Product Responsibility from eZ', '/support/total_product_responsibility_from_ez'];
+menu[6] = ['Software solutions', '/store/software', 'Training', '/services/training', 'Certification', '/services/certification', 'Books', '/store/books', 'Services', '/store/services'];
+menu[7] = ['News', '/company/news', 'Media & press', '/company/media_press', 'Events', '/company/events', 'Career', '/company/career', 'eZ Conference & Awards', '/company/ez_conference_awards', 'Board of Directors', '/company/board', 'eZ Crew', '/company/ez_crew', 'Contact', '/company/contact'];
+
+-->
+</script>
+<div id="menuborder">
+
+<!-- Main menu area: START -->
+<div id="menu" onmouseover="menuHover();" onmouseout="tryHideSubMenues();">
+
+<div id="mainmenu" class="float-break">
+<div id="page-width2">
+    <ul id="mainmenulist" class="float-break">
+<li class="current"><a href="https://web.archive.org/web/20071223082531/http://ez.no/products" onmouseover="switchSubMenu( this );">Products &amp; services</a></li>
+<li><a href="https://web.archive.org/web/20071223082531/http://ez.no/education" onmouseover="switchSubMenu( this );">Education</a></li>
+<li><a href="https://web.archive.org/web/20071223082531/http://ez.no/customers" onmouseover="switchSubMenu( this );">Customers</a></li>
+<li><a href="https://web.archive.org/web/20071223082531/http://ez.no/partner" onmouseover="switchSubMenu( this );">Partners</a></li>
+<li><a href="https://web.archive.org/web/20071223082531/http://ez.no/developer" onmouseover="switchSubMenu( this );">Developer</a></li>
+<li><a href="https://web.archive.org/web/20071223082531/http://ez.no/support" onmouseover="switchSubMenu( this );">Support</a></li>
+<li><a href="https://web.archive.org/web/20071223082531/http://ez.no/store" onmouseover="switchSubMenu( this );">Store</a></li>
+<li class="last"><a href="https://web.archive.org/web/20071223082531/http://ez.no/company" onmouseover="switchSubMenu( this );">Company</a></li>
+</ul>
+
+</div>
+</div>
+
+
+<div id="submenu">
+<div id="page-width3">
+    <ul class="float-break">
+                        <li><a href="https://web.archive.org/web/20071223082531/http://ez.no/ezpublish">eZ Publish</a></li>
+                                <li><a href="https://web.archive.org/web/20071223082531/http://ez.no/ezpublish/premium">eZ Publish Premium</a></li>
+                                <li><a href="https://web.archive.org/web/20071223082531/http://ez.no/ezpublish/now">eZ Publish Now</a></li>
+                                <li><a href="https://web.archive.org/web/20071223082531/http://ez.no/ezpublish/on_demand">eZ Publish On Demand</a></li>
+                                <li><a href="https://web.archive.org/web/20071223082531/http://ez.no/products/proprietary_license_options">Proprietary license options</a></li>
+                                <li><a href="https://web.archive.org/web/20071223082531/http://ez.no/products/certified_extensions">Certified extensions</a></li>
+                                <li><a href="https://web.archive.org/web/20071223082531/http://ez.no/ezflow">eZ Flow</a></li>
+                                <li><a href="https://web.archive.org/web/20071223082531/http://ez.no/ezcomponents">eZ Components</a></li>
+                                <li><a href="https://web.archive.org/web/20071223082531/http://ez.no/ezfind">eZ Find</a></li>
+                                <li><a href="https://web.archive.org/web/20071223082531/http://ez.no/eznewsletter">eZ Newsletter</a></li>
+                                <li><a href="https://web.archive.org/web/20071223082531/http://ez.no/products/expert_consulting_services">Expert consulting services</a></li>
+                                <li class="last"><a href="https://web.archive.org/web/20071223082531/http://ez.no/products/support">Support</a></li>
+                </ul>
+</div>
+</div>
+
+<script type="text/javascript"><!--
+    document.getElementById('submenu').style.display = 'none';
+--></script>
+
+</div>
+<!-- Main menu area: END -->
+
+</div>
+
+<hr class="hide"/><!-- Path area: START -->
+<div id="path">
+
+<div id="page-width4">
+<h2 class="hide">Path</h2>
+
+<!-- Path content: START -->
+<p>
+                        <a href="https://web.archive.org/web/20071223082531/http://ez.no/">ez.no</a>
+        
+                        /
+                            <a href="https://web.archive.org/web/20071223082531/http://ez.no/ezpublish">ezpublish</a>
+        
+                        /
+                            <a href="toc.html">documentation</a>
+        
+                        /
+                            <a href="building_an_ez_publish_site.html">building an ez publish site</a>
+        
+                        /
+                            <a href="building_an_ez_publish_site/the_members_page.html">the members page</a>
+        
+                        /
+                            creating a custom content class
+        
+            </p>
+<!-- Path content: END -->
+
+</div>
+
+</div>
+<!-- Path area: END -->
+
+<hr class="hide"/>
+
+<!-- Main area: START -->
+
+<div id="page-width5">
+<div id="main" class="float-break">
+
+<!-- Main area content: START -->
+
+
+
+
+<div class="template-design area-main-normal">
+<div class="template-module content-view-full">
+<div class="template-object class-documentation">
+
+
+<div class="attribute-heading">
+    <h1>Creating a custom content class</h1>
+</div>
+
+<p><strong>These documentation pages are no longer maintained. Please visit the <a href="https://doc.ezpublishlegacy.se7enx.com">new documentation site.</a></strong></p>
+
+<div class="attribute-long">
+    
+
+<p>
+As pointed out in the previous section, we'll use the CMS to store information about the members. Lets say that we would like to store the following information (for each member):
+</p>
+
+<ul>
+
+<li>Name</li>
+
+<li>Nickname</li>
+
+<li>Date of birth</li>
+
+<li>Gender (Male/Female)</li>
+
+<li>Telephone number</li>
+
+<li>E-mail address</li>
+
+<li>Facial photo</li>
+
+</ul>
+
+<p>
+But wait! How can we store all this custom information? If you take a look at the list of the built-in content classes, you'll discover that none of them is even close to being suitable for storing information about TSCM members. What we have here is a typical content management problem. Fortunately, unlike other content management systems, eZ publish allows the users to create their own content classes. Instead of having to fit our data into a predefined, rigid structure, we have the power to create our own custom structure. The following list of steps explains how to do this.
+</p>
+
+<ol>
+
+<li>Make sure that you're logged into the administration interface.</li>
+
+<li>Click on the &quot;Setup&quot; tab.</li>
+
+<li>
+Click on &quot;Classes&quot; - from within the menu on the left hand side.<br/>A list of class groups will appear.</li>
+
+<li>
+Click on &quot;Content&quot; (from within the list).<br/>A list of available classes will appear.</li>
+
+<li>
+Click on the &quot;New class&quot; button.<br/>The class edit page will appear.</li>
+
+</ol>
+
+<p>
+eZ publish will then start the creation process of a new, custom content class. We'll need to specify a name for this class, lets just call it &quot;Member&quot;. An identifier will also have to be specified. Each content class may be identified using its ID number or identifier string. The identifier is a friendly string. It is easier to remember and more flexible than an ID number.
+</p>
+
+<ol>
+
+<li>Type &quot;Member&quot; into the name filed.</li>
+
+<li>Type &quot;member&quot; into the identifier filed.</li>
+
+<li>Leave the &quot;Object name pattern&quot; empty.</li>
+
+</ol>
+
+<p>
+We will now start adding attributes to our new &quot;Member&quot; content class. The following text explains how to add the desired attributes.
+</p>
+
+<p>
+
+<b>The &quot;Real name&quot; attribute.</b><br/>This attribute will be used to store the real name of a member. We'll use the built in &quot;Text line&quot; datatype for this attribute. Since we can't have a member without a name, we'll set the required flag. This means that every time somebody tries to add or modify a member, the system will not update that member as long as the name field is empty.
+</p>
+
+<ol>
+
+<li>Select &quot;Text line&quot; from the &quot;Datatypes&quot; dropdown box.</li>
+
+<li>
+Click the &quot;New&quot; button (adjacent to the &quot;Datatypes&quot; dropdown box).<br/>A new attribute will appear.</li>
+
+<li>Type &quot;Real name&quot; into the name field.</li>
+
+<li>Type &quot;realname&quot; into the identifier field.</li>
+
+<li>Make sure that the &quot;Required&quot; and &quot;Searchable&quot; checkboxes are checked. The rest of the checkboxes should be unchecked.</li>
+
+</ol>
+
+<p>
+You've now added the first attribute to the &quot;Member&quot; class. Since the &quot;Searchable&quot; checkbox is checked, this attribute will be searchable by the built-in search engine. In other words, it will be possible to search for members (by name). This functionality will be revealed and explained at a later stage.
+</p>
+
+<p>
+
+<b>The &quot;Nickname&quot; attribute.</b><br/>Some chess fanatics tend to have lame nicknames such as &quot;King&quot;, &quot;Knight-rider&quot;, &quot;Rookie&quot; etc. The nickname attribute will be used to store a possible nickname.
+</p>
+
+<ol>
+
+<li>Select &quot;Text line&quot; from the &quot;Datatypes&quot; dropdown box.</li>
+
+<li>
+Click the &quot;New&quot; button (adjacent to the &quot;Datatypes&quot; dropdown box).<br/>A new attribute will appear.</li>
+
+<li>Type &quot;Nickname&quot; into the name field.</li>
+
+<li>Type &quot;nickname&quot; into the identifier field.</li>
+
+<li>Type &quot;Nickname missing.&quot; into the default field.</li>
+
+<li>Make sure that the &quot;Searchable&quot; checkbox is checked. The rest of the checkboxes should be unchecked.</li>
+
+</ol>
+
+<p>
+
+<b>The &quot;Date of birth&quot; attribute.</b><br/>
+This attribute will be used to store the birthdate of a member. We'll use the built-in &quot;Date field&quot; datatype.<br/>
+</p>
+
+<ol>
+
+<li>Select &quot;Date field&quot; from the &quot;Datatype&quot; dropdown box.</li>
+
+<li>
+Click the &quot;New&quot; button (adjacent to the &quot;Datatypes&quot; dropdown box).<br/>A new attribute will appear.</li>
+
+<li>Type &quot;Date of birth&quot; into the name field.</li>
+
+<li>Type &quot;birthdate&quot; into the identifier field.</li>
+
+<li>Make sure that the &quot;Required&quot; checkbox is checked. The rest of the checkboxes should be unchecked.</li>
+
+</ol>
+
+<p>
+
+<b>The &quot;Gender&quot; attribute.</b><br/>This attribute will be used to specify whether a member is a male or a female person. The &quot;Selection&quot; datatype will be used. This datatype is perfect for quick'n dirty single and multiple choice scenarios.
+</p>
+
+<ol>
+
+<li>Select &quot;Selection&quot; from the &quot;Datatype&quot; dropdown box.</li>
+
+<li>
+Click the &quot;New&quot; button (adjacent to the &quot;Datatypes&quot; dropdown box).<br/>A new attribute will appear.</li>
+
+<li>Type &quot;Gender&quot; into the name field.</li>
+
+<li>Type &quot;gender&quot; into the identifier field.</li>
+
+<li>
+Click on the &quot;New option&quot; button.<br/>You'll now have two options.</li>
+
+<li>
+Type &quot;Male&quot; into the first option field.<br/>Type &quot;Female into the second option field.</li>
+
+<li>Make sure that the &quot;Required&quot; checkbox is checked. The rest of the checkboxes should be unchecked.</li>
+
+</ol>
+
+<p>
+
+<b>The &quot;Telephone number&quot; attribute.</b><br/>
+This attribute will be used to store a member's telephone number. Since some people don't have a phone, we'll not mark this attribute as required. We'll use the &quot;Text line&quot; attribute to store phone numbers.<br/>
+</p>
+
+<ol>
+
+<li>Select &quot;Text line&quot; from the &quot;Datatype&quot; dropdown box.</li>
+
+<li>
+Click the &quot;New&quot; button (adjacent to the &quot;Datatypes&quot; dropdown box).<br/>A new attribute will appear.</li>
+
+<li>Type &quot;Telephone number&quot; into the name field.</li>
+
+<li>Type &quot;phone&quot; into the identifier field.</li>
+
+<li>Type &quot;Phone number missing.&quot; into the default field.</li>
+
+<li>Leave the default checkbox settings.</li>
+
+</ol>
+
+<p>
+
+<b>The &quot;E-mail address&quot; attribute.</b><br/>
+This attribute will be used to store a member's electronic mail address. Since some people don't have an E-mail address, we'll not mark this attribute as required. We'll use the &quot;E-mail address&quot; attribute to store the members e-mail addresses.<br/>
+</p>
+
+<ol>
+
+<li>Select &quot;Email&quot; from the &quot;Datatype&quot; dropdown box.</li>
+
+<li>
+Click the &quot;New&quot; button (adjacent to the &quot;Datatypes&quot; dropdown box).<br/>A new attribute will appear.</li>
+
+<li>Type &quot;E-mail&quot; into the name field.</li>
+
+<li>Leave the default checkbox settings.</li>
+
+</ol>
+
+<p>
+
+<b>The &quot;Picture&quot; attribute.</b><br/>
+This attribute will be used to store a digitized photograph of a member's face. We'll only allow image files that are smaller than one megabyte.<br/>
+</p>
+
+<ol>
+
+<li>Select &quot;Image&quot; from the &quot;Datatype&quot; dropdown box.</li>
+
+<li>
+Click the &quot;New&quot; button (adjacent to the &quot;Datatypes&quot; dropdown box).<br/>A new attribute will appear.</li>
+
+<li>Type &quot;Picture&quot; into the name field.</li>
+
+<li>Type &quot;picture&quot; into the identifier field.</li>
+
+<li>Set the maximum file size to 1 MB.</li>
+
+</ol>
+
+<p>
+That's it. The &quot;Member&quot; class is now made up of exactly those seven attributes that we wished for at the beginning. Click the &quot;Store&quot; button; eZ publish will then store the class definition in the database. The next section explains how to add member objects.
+</p>
+</div>
+
+
+<div class="content-view-children">
+<div class="class-comment">
+    <h1 id="comments">Comments</h1>    <div class="block float-break">
+              <form method="post" action="/web/20071223082531/http://ez.no/content/action">
+             <input class="button" type="submit" name="NewButton" value="New comment"/>
+             <input type="hidden" name="RedirectURIAfterPublish" value="ezpublish/documentation/building_an_ez_publish_site/the_members_page/creating_a_custom_content_class#comments"/>
+             <input type="hidden" name="NodeID" value="38234"/>
+                             <input type="hidden" name="ClassIdentifier" value="article_comment"/>
+                          <input type="hidden" name="ContentLanguageCode" value="eng-GB"/>
+         </form>
+         </div>
+
+
+        
+
+<div class="content-view-line">
+<div class="class-comment bglight">
+
+    
+    <div id="msg81369" class="attribute-heading">
+        <h2>E-mail vs email</h2>
+    </div>
+
+<div class="attribute-byline float-break">
+    <p class="author">James Ashley</p>
+    <p class="date">Thursday 18 August 2005 12:56:59 am</p>
+</div>
+
+
+<div class="attribute-short">
+            I'm not sure about this (I'm just reading through documentation at this point), but, based upon previous experience with other systems, I'm guessing 'email' and 'E-mail' are being used correctly here.<br/>
+<br/>
+email is a name the computer recognizes (most systems have problems with names like E-mail, because they think you're trying to subtract).  I don't have your post in front of me now (which is annoying), and I don't remember the details.<br/>
+<br/>
+But, basically, you had something like:<br/>
+<br/>
+long.bunch.of.classes.and.attributes.to.get.to.email.details.attribute_name<br/>
+                                               ^^^^^<br/>
+inside some other stuff.<br/>
+<br/>
+'email' here should be the identifier you entered when you were defining your class.<br/>
+<br/>
+Getting to email's &quot;attribute_name&quot; (or whatever it was actually called in your post) *ought* to return the name you entered when you were defining the class (in this case, E-mail).<br/>
+<br/>
+Of course, that may not be the way it works.  If I'm wrong, please correct me.<br/>
+<br/>
+
+
+    </div>
+
+
+</div>
+</div>
+    
+
+<div class="content-view-line">
+<div class="class-comment bgdark">
+
+    
+    <div id="msg68372" class="attribute-heading">
+        <h2>Typo that will cause problems in the following template</h2>
+    </div>
+
+<div class="attribute-byline float-break">
+    <p class="author">Kevin Cook</p>
+    <p class="date">Sunday 13 February 2005 5:55:52 pm</p>
+</div>
+
+
+<div class="attribute-short">
+            in the instructions to add the email attribute:<br/>
+&quot;Type &quot;E-mail&quot; into the name field.&quot;<br/>
+<br/>
+is a typo error in the sense that in the following page(s)where the user is asked to create an override template called: full_view_member_class; in that template (if the user copies and pastes the code, as I did) the 'E-mail' attribute is referred to as 'email' not 'e-mail'. <br/>
+<br/>
+from the template example: &quot;...&lt;td&gt;<b>{$node.object.data_map.email.contentclass_attribute.name}:</b>&lt;/td&gt;<br/>
+&lt;td&gt;{attribute_view_gui attribute=$node.object.data_map.email}&lt;/td&gt;....&quot;<br/>
+<br/>
+So be warned, either you need to change the attribute name or the template references to have your members emails show up.<br/>
+<br/>
+krc<br/>
+
+
+    </div>
+
+
+</div>
+</div>
+    
+
+<div class="content-view-line">
+<div class="class-comment bglight">
+
+    
+    <div id="msg66967" class="attribute-heading">
+        <h2>Attribute suggestions</h2>
+    </div>
+
+<div class="attribute-byline float-break">
+    <p class="author">Steve Brown</p>
+    <p class="date">Saturday 22 January 2005 4:19:22 am</p>
+</div>
+
+
+<div class="attribute-short">
+            When creating custom classes such as members or customers, some common attributes are 'country' and 'state' or 'province' (the latter two mostly in the US and Canada).  Most websites make you select these from drop-down lists.  It would be helpful to have an 'option' field with the state and country names and/or abbreviations pre-loaded.  Perhaps doing this with an .ini file would allow customization.<br/>
+<br/>
+Also, some sort of simple pattern validation in text fields such as zip codes (#####[-####]), Canada postal codes ('A#A #A#') and phone numbers (###-###-####) would help reduce data entry errors and help keep data consistent.
+
+    </div>
+
+
+</div>
+</div>
+
+
+ 
+
+
+</div>
+</div>
+
+<div class="block float-break">
+            <form method="post" action="/web/20071223082531/http://ez.no/content/action">
+            <input class="button" type="submit" name="NewButton" value="New comment"/>
+            <input type="hidden" name="RedirectURIAfterPublish" value="ezpublish/documentation/building_an_ez_publish_site/the_members_page/creating_a_custom_content_class#comments"/>
+            <input type="hidden" name="NodeID" value="38234"/>
+                           <input type="hidden" name="ClassIdentifier" value="article_comment"/>
+                        <input type="hidden" name="ContentLanguageCode" value="eng-GB"/>
+        </form>
+    </div>
+
+</div>
+</div>
+</div>
+
+
+<div class="template-design area-sidebar-normal">
+<div class="template-module content-view-sidebar">
+<div class="template-object class-documentation">
+
+<div class="attribute-heading">
+    <h2 class="bullet">Contents</h2>
+</div>
+<h3><a href="building_an_ez_publish_site.html">Building an eZ publish site</a></h3>
+<p>
+        
+        
+            
+                    <a href="building_an_ez_publish_site/prerequisits.html">Prerequisits</a><br/>
+          
+	
+            
+                    <a href="building_an_ez_publish_site/situation.html">Situation</a><br/>
+          
+	
+            
+                    <a href="building_an_ez_publish_site/creating_the_tscm_site.html">Creating the TSCM site</a><br/>
+          
+	
+            
+                    <a href="building_an_ez_publish_site/testing_the_interfaces.html">Testing the interfaces</a><br/>
+          
+	
+            
+                    <a href="building_an_ez_publish_site/setting_up_the_main_layout.html">Setting up the main layout</a><br/>
+          
+	
+            
+                    <a href="building_an_ez_publish_site/creating_sections.html">Creating sections</a><br/>
+          
+	
+            
+                    <a href="building_an_ez_publish_site/the_welcome_page.html">The welcome page</a><br/>
+          
+	
+            
+                    <a href="building_an_ez_publish_site/the_news_page.html">The news page</a><br/>
+          
+	
+            
+                    <a href="building_an_ez_publish_site/the_members_page.html">The members page</a><br/>
+          
+	
+            &nbsp;&nbsp;&nbsp;
+                    <a href="building_an_ez_publish_site/the_members_page/creating_a_custom_content_class.html"><b>Creating a custom content class</b></a><br/>
+          
+	
+            &nbsp;&nbsp;&nbsp;
+                    <a href="building_an_ez_publish_site/the_members_page/adding_members.html">Adding members</a><br/>
+          
+	
+            &nbsp;&nbsp;&nbsp;
+                    <a href="building_an_ez_publish_site/the_members_page/list_of_members.html">List of members</a><br/>
+          
+	
+            &nbsp;&nbsp;&nbsp;
+                    <a href="building_an_ez_publish_site/the_members_page/member_info_page.html">Member info page</a><br/>
+          
+	
+            
+                    <a href="building_an_ez_publish_site/the_guestbook.html">The guestbook</a><br/>
+          
+	
+            
+                    <a href="building_an_ez_publish_site/the_links_page.html">The links page</a><br/>
+          
+	
+        </p>
+
+
+<hr class="docsplit"/>
+<h3>Created</h3>
+<p>
+07/11/2003<br/>
+2:47:56 pm<br/>
+by Balazs Halasy
+</p>
+<h3>Last updated</h3>
+<p>
+23/11/2004<br/>
+4:58:24 pm<br/>
+by Ole Morten Halvorsen
+</p>
+<h3>Authors</h3>
+<p class="rendered">Balazs Halasy<br/>Simen Sandberg<br/>Guttorm Flatabø<br/>Raymond Bosman<br/>Ole Morten Halvorsen<br/></p>
+
+<br/>
+<hr class="docsplit"/>
+
+<p>This page is part of the eZ Publish documentation. The documentation is available under the <a href="https://web.archive.org/web/20071223082531/http://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License.</a> All contributions will be released under the terms of this license.</p>
+
+</div>
+</div>
+</div>
+
+
+
+
+
+<!-- Main area content: END -->
+
+</div>
+</div>
+
+<!-- Main area: END -->
+
+<hr class="hide"/>
+
+<!-- Footer area: START -->
+<div id="footer-design">
+<div id="page-width6">
+<div id="footer">
+
+<address>Powered by eZ Publish&reg; Content Management System.<br/>
+Copyright &copy;1999 - 2024 7x and 2007 eZ Systems AS (except where otherwise noted). All rights reserved.</address>
+
+</div>
+</div>
+</div>
+<!-- Footer area: END -->
+
+</div>
+<!-- Complete page area: END -->
+
+
+    
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TFEDSZJYH0"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-TFEDSZJYH0');
+</script>
+
+
+</body>
+</html>
+
+<!-- th[eZ] 20050804 --><!--
+     FILE ARCHIVED ON 08:25:31 Dec 23, 2007 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 11:18:06 Oct 31, 2024.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  captures_list: 0.494
+  exclusion.robots: 0.022
+  exclusion.robots.policy: 0.012
+  esindex: 0.01
+  cdx.remote: 4.323
+  LoadShardBlock: 75.548 (3)
+  PetaboxLoader3.datanode: 87.649 (4)
+  load_resource: 113.078
+  PetaboxLoader3.resolve: 82.162
+-->

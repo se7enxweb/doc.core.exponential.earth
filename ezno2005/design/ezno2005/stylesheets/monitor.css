@@ -1,0 +1,192 @@
+/*NEW CSS , ADDED BY VIVIEN*/
+
+/*main box*/
+
+div.template-design-bottom
+{
+    background-image: url(/ezno2005/design/ezno2005/images/network/box-tb.gif);
+    background-repeat: repeat-x;
+    background-position: bottom;
+}
+
+div.template-module-lbox
+{
+    background-image: url(/ezno2005/design/ezno2005/images/network/box-tv.gif);
+    background-repeat: repeat-y;
+    background-position: top left;
+}
+
+div.template-module-rbox
+{
+    background-image: url(/ezno2005/design/ezno2005/images/network/box-tvr.gif);
+    background-repeat: repeat-y;
+    background-position: top right;
+    padding: 0.5em 12px 1.5em 12px;
+}
+
+div.status-bottom {width:100px; margin-left:25px; margin-top:-1px; background-color:#fff; border-bottom: 1px solid #D2D2D2; border-left: 1px solid #D2D2D2; border-right: 1px solid #D2D2D2; padding:10px 0 2px 10px;}
+
+/*left-right alignment in one div for titles*/
+div.left-right-title ul{text-align:right;margin:0;padding:0;height: 25px;}
+div.left-right-title ul li{display:inline;white-space:nowrap; margin:0;padding:0; list-style-type:none; background-image: none; vertical-align: middle;}
+div.left-right-title ul li.prev{float:left}
+div.left-right-title>ul{display:table;width:100%}
+div.left-right-title>ul li{display:table-cell}
+div.left-right-title>ul li.prev{float:none;text-align:left}
+div.left-right-title>ul li.next{text-align:right}
+
+div.extra-spacing {height: 1.5em;}
+
+
+div.image-icon {float: left; width:38px;}
+div.text-desc {float:right; width: 150px;}
+div.item-desc {padding-bottom:3px; margin-bottom:10px; border-bottom: 1px solid #D2D2D2;}
+div.image-text-nobg {padding-top: 1.5em;}
+div.image-text-bg {padding-top: 1.5em; background-image: url(/ezno2005/design/ezno2005/images/network/text_desc_bg.gif); background-repeat: repeat-x;}
+
+div.clear {clear: both;}
+
+.orange-highlight {color: #F15E22;}
+
+
+
+.grey-highlight {color: #999;}
+
+div.orange-highlight hr {text-align:left;}
+
+div.two-sub-columns {}
+div.system-data{float: left; width:150px;}
+div.system-graphs {float:right; width: 235px;margin-bottom:1.5em;}
+
+div.graph-title {margin-bottom:10px;}
+div.right-align-more, div.right-align-all {text-align:right; margin-top:1.5em; }
+div.right-align-more hr {width:170px; margin-left: 65px;}
+div.right-align-more a, div.right-align-all a {text-decoration:none;}
+div.right-align-all hr {width:170px; margin-left: 35px;}
+
+/*the following code overwrites the default settings in core.css*/
+div.split-three-left-network
+{
+    width: 210px;
+    float: left;
+}
+
+div.split-three-right-network
+{
+    width: 210px;
+    float: right;
+}
+
+div.split-three-center-network
+{
+    width: 390px;
+    margin: auto;
+    border-bottom: 1px solid #ffffff; /* Bugfix for IE */
+}
+/*end of the code overwrite*/
+
+div.tickets-cases {border-top: 1px solid #D2D2D2; border-bottom: 1px solid #D2D2D2; padding:10px;}
+div.tickets-box {float: left; width: 35%; border-right: 1px solid #D2D2D2; margin-right: 10px;}
+div.cases-box {}
+
+
+div.account-management {float: left; width:100%;}
+div.contract-details {float:right; margin-bottom:1.5em; width: 140px;}
+
+div.left-half-col {float: left; width:45%; }
+div.right-half-col {float: right; width:45%; }
+
+.img-left {float:left; padding-right: 5px;}
+
+.update-box-bg {background-color:#f5f5f5; border-top: 1px solid #D2D2D2; border-bottom: 1px solid #D2D2D2; padding:5px;}
+
+
+
+/*for the 2nd page:*/
+
+/*div.system-graphs-m2 {width: 350px;margin-bottom:1.5em;}*/
+
+div.template-object-m2 {
+background-image:url(/ezno2005/design/ezno2005/images/box-tr.gif);
+background-position:right top;
+background-repeat:no-repeat;
+padding:0.5em 0 0 0;
+}
+
+div.area-main-leftm {
+width:240px;
+}
+
+div.area-main-centertm {
+width:400px;
+}
+
+div.area-main-rightm
+{
+
+    width:210px;
+}
+
+
+div.split-three-left-m2
+{
+    width: 240px;
+    float: left;
+}
+
+div.split-three-right-m2
+{
+    width: 210px;
+    float: right;
+}
+
+div.split-three-center-m2
+{
+    width: 380px;
+    margin: auto;
+    border-bottom: 1px solid #ffffff; /* Bugfix for IE */
+    padding-left: 30px;
+}
+
+div.right-align-m2 hr {
+margin-left:70px;
+width:170px;
+}
+
+/*extension codes*/
+li.ext-a {list-style-image: url(/ezno2005/design/ezno2005/images/network/extensions_a.gif)}
+li.ext-b {list-style-image: url(/ezno2005/design/ezno2005/images/network/extensions_b.gif)}
+li.ext-c {list-style-image: url(/ezno2005/design/ezno2005/images/network/extensions_c.gif)}
+li.ext-d {list-style-image: url(/ezno2005/design/ezno2005/images/network/extensions_d.gif)}
+
+div.template-design ul.list-extensions li {background-image: none;  border-bottom: 1px solid #D2D2D2;}
+
+div.template-design ul.list-extensions {margin: 1.5em 0.5em 0.5em 1.4em;}
+
+/*disk space*/
+div.disk-space-box {background-color:#f5f5f5; border: 1px solid #D2D2D2; padding: 15px;}
+div.disk-space-img {float:right;}
+div.disk-space-notices {float: left; width: 140px;}
+
+.float-left {float:left;}
+.float-right {float:right;}
+/*
+     FILE ARCHIVED ON 03:00:18 Oct 13, 2007 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 10:43:52 Oct 31, 2024.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+*/
+/*
+playback timings (ms):
+  captures_list: 0.677
+  exclusion.robots: 0.025
+  exclusion.robots.policy: 0.01
+  esindex: 0.012
+  cdx.remote: 21.931
+  LoadShardBlock: 61.392 (3)
+  PetaboxLoader3.datanode: 89.429 (4)
+  load_resource: 100.367
+  PetaboxLoader3.resolve: 43.731
+*/

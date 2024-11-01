@@ -1,0 +1,1239 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><!-- is_embed=False -->
+<script>
+  const observer = new PerformanceObserver((list) => {
+    list.getEntries().forEach((entry) => {
+      console.log('%o', entry);
+    })
+  });
+  observer.observe({type: "navigation", buffered: true});
+</script>
+<script src="section_files/athena.js" type="text/javascript"></script>
+<script type="text/javascript">window.addEventListener('DOMContentLoaded',function(){var v=archive_analytics.values;v.service='wb';v.server_name='wwwb-app204.us.archive.org';v.server_ms=337;archive_analytics.send_pageview({});});</script>
+<script type="text/javascript" src="section_files/bundle-playback.js" charset="utf-8"></script>
+<script type="text/javascript" src="section_files/wombat.js" charset="utf-8"></script>
+<script>window.RufflePlayer=window.RufflePlayer||{};window.RufflePlayer.config={"autoplay":"on","unmuteOverlay":"hidden"};</script>
+<script type="text/javascript" src="section_files/ruffle.js"></script>
+<script type="text/javascript">
+    __wm.init("https://web.archive.org/web");
+  __wm.wombat("http://ez.no:80/ezpublish/documentation/development/libraries/ez_template/functions/section","20080104233008","https://web.archive.org/","web","/_static/",
+	      "1199489408");
+</script>
+<link rel="stylesheet" type="text/css" href="section_files/banner-styles.css">
+<link rel="stylesheet" type="text/css" href="section_files/iconochive.css">
+<!-- End Wayback Rewrite JS Include -->
+
+<style type="text/css">
+    @import url(https://doc.core.ezpublish.se7enx.com/ezno2005/design/ezno2005/stylesheets/core.css);
+    @import url(https://doc.core.ezpublish.se7enx.com/ezno2005/design/ezno2005/stylesheets/pagelayout.css);
+    @import url(https://doc.core.ezpublish.se7enx.com/ezno2005/design/ezno2005/stylesheets/classes.css);
+    @import url(https://doc.core.ezpublish.se7enx.com/ezno2005/design/ezno2005/stylesheets/monitor.css);
+</style>
+
+<link type="text/css" rel="stylesheet" href="section_files/print.css" media="print">
+
+    <link rel="alternate" title="ez.no News" href="https://web.archive.org/web/20080104233008/http://ez.no/rss/feed/news" type="application/rss+xml"><link rel="alternate" title="ez.no Developer News" href="https://web.archive.org/web/20080104233008/http://ez.no/rss/feed/communitynews" type="application/rss+xml">
+<link rel="alternate" title="ez.no Developer Articles" href="https://web.archive.org/web/20080104233008/http://ez.no/rss/feed/community_articles" type="application/rss+xml">
+<link rel="alternate" title="ez.no Forum" href="https://web.archive.org/web/20080104233008/http://ez.no/rss/feed/forum" type="application/rss+xml">
+<link rel="alternate" title="ez.no Contributions" href="https://web.archive.org/web/20080104233008/http://ez.no/rss/feed/contribs" type="application/rss+xml">
+<link rel="alternate" title="ez.no Open Funding" href="https://web.archive.org/web/20080104233008/http://ez.no/rss/feed/openfunding_suggestions" type="application/rss+xml">
+
+
+<!-- IE conditional comments; for bug fixes for different IE versions -->
+<!--[if IE 5]>     <style type="text/css"> @import url(/extension/ezno2005/design/ezno2005/stylesheets/ie5.css);    </style> <![endif]-->
+<!--[if lte IE 6]> <style type="text/css"> @import url(/extension/ezno2005/design/ezno2005/stylesheets/ie6lte.css); </style> <![endif]-->
+<!--[if gte IE 6]> <style type="text/css"> @import url(/extension/ezno2005/design/ezno2005/stylesheets/ie6gte.css); </style> <![endif]-->
+
+<!-- Load special stylesheet (if necessary) for newer Netscape decendants, Mozilla and Firefox, using the Gecko renderer -->
+<script type="text/javascript"><!-- if ((navigator.userAgent.indexOf("Gecko") != -1)&&(navigator.userAgent.indexOf("KHTML") == -1)) document.write("<style type=\"text/css\">@import url(/extension/ezno2005/design/ezno2005/stylesheets/gecko.css);</style>");--></script>
+                                                                                                                    
+<title>
+            Section     /         Functions     /         eZ template                    </title>
+<meta http-equiv="Content-Language" content="en-GB">
+    <meta name="author" content="eZ Systems">
+    <meta name="copyright" content="eZ Systems as">
+    <meta name="description" content="eZ Publish is an open source content management system (CMS) and an open source content management framework (CMF).">
+    <meta name="keywords" content="cms, publish, e-commerce, content management, development framework">
+
+<meta name="MSSmartTagsPreventParsing" content="TRUE">
+<meta name="generator" content="eZ Publish">
+
+<script type="text/javascript" src="section_files/tools.js"></script>
+<script type="text/javascript" src="section_files/dropdownmenu.js"></script>
+</head>    <body onload="menuInit();"><!-- BEGIN WAYBACK TOOLBAR INSERT -->
+<script>__wm.rw(0);</script>
+<div id="wm-ipp-base" lang="en" style="display: block; direction: ltr; height: 107px;">
+</div><div id="wm-ipp-print">The Wayback Machine - 
+https://web.archive.org/web/20080104233008/http://ez.no:80/ezpublish/
+documentation/development/libraries/ez_template/functions/section</div>
+<script type="text/javascript">//<![CDATA[
+__wm.bt(725,27,25,2,"web","http://ez.no/ezpublish/documentation/development/libraries/ez_template/functions/section","20080104233008",1996,"/_static/",["/_static/css/banner-styles.css?v=S1zqJCYt","/_static/css/iconochive.css?v=3PDvdIFv"], false);
+  __wm.rw(1);
+//]]></script>
+<!-- END WAYBACK TOOLBAR INSERT -->
+ 
+
+<!-- Complete page area: START -->
+<div id="page">
+
+<!-- Header area: START -->
+<div id="header">
+<div id="header-insert">
+
+<!-- User menu area: START -->
+<div id="usermenu">
+
+<div id="page-width1">
+
+<div id="logo">
+<h1><a href="https://doc.core.ezpublish.se7enx.com/"><span class="hide">eZ Systems - The Content Management Ecosystem</span></a></h1>
+</div>
+
+
+
+<p class="hide"><a href="#main">Skip to main content</a></p>
+
+<hr class="hide">
+<div id="searchbox">
+<form action="/web/20080104233008/http://ez.no/ezsearchredirect/action" method="get">
+
+<div class="block">
+<div class="element">
+<input id="searchbutton" class="button" type="submit" value="Search">
+</div>
+
+<div class="element searchstring">
+    <label for="searchtext" class="hide">Search text:</label>
+    <input id="searchtext" name="SearchText" type="text" size="12"><br>
+    
+
+            <div class="section">
+            <label for="searcharea" class="hide">Search area:</label>
+            <select id="searcharea" name="SubTreeArray[]">
+                <option value="2" selected="selected">All ez.no</option>
+                <option value="306">Bug reports</option>
+                <option value="21358">Contributions</option>
+                <option value="documentation">Documentation</option>
+                <option value="308">Forum</option>
+            </select>
+            </div>
+    </div>
+
+</div>
+</form>
+</div>
+
+<hr class="hide">
+<h2 class="hide">User menu</h2>
+
+<!-- User menu content: START -->
+<ul>
+            <li><a href="https://web.archive.org/web/20080104233008/http://ez.no/download"><span>Downloads</span></a></li>
+    <li><a href="https://web.archive.org/web/20080104233008/http://ez.no/company/contact"><span>Contact</span></a></li>
+            <li><a href="https://web.archive.org/web/20080104233008/http://ez.no/user/login"><span>Log in</span></a></li>
+        <li><a href="https://web.archive.org/web/20080104233008/http://ez.no/user/register"><span>Register</span></a></li>
+    
+    <li id="language-menu">
+        <a class="highlighted" title="English" href="https://web.archive.org/web/20080104233008/http://ez.no/ezpublish/documentation/development/libraries/ez_template/functions/section"><img src="section_files/eng-gb.gif" width="18" height="12" alt="English"></a>
+        <a title="Deutsch" href="https://web.archive.org/web/20080104233008/http://ez.no/de/ezpublish/documentation/development/libraries/ez_template/functions/section"><img src="section_files/ger-de.gif" width="18" height="12" alt="Deutsch"></a>
+        <a title="Português" href="https://web.archive.org/web/20080104233008/http://ez.no/br/ezpublish/documentation/development/libraries/ez_template/functions/section"><img src="section_files/por-br.gif" width="18" height="12" alt="Português"></a>
+        <a title="Français" href="https://web.archive.org/web/20080104233008/http://ez.no/fr/ezpublish/documentation/development/libraries/ez_template/functions/section"><img src="section_files/fre-fr.gif" width="18" height="12" alt="Français"></a>
+        <a title="日本語" href="https://web.archive.org/web/20080104233008/http://ez.no/jp/ezpublish/documentation/development/libraries/ez_template/functions/section"><img src="section_files/jpn-jp.gif" width="18" height="12" alt="日本語"></a>        
+        <a title="中文" href="https://web.archive.org/web/20080104233008/http://ez.no/tw/ezpublish/documentation/development/libraries/ez_template/functions/section"><img src="section_files/chi-tw.gif" width="18" height="12" alt="中文"></a>        
+        <a title="Norsk" href="https://web.archive.org/web/20080104233008/http://ez.no/no/ezpublish/documentation/development/libraries/ez_template/functions/section"><img src="section_files/nor-NO.gif" width="18" height="12" alt="Norsk"></a>        
+    </li>
+</ul>
+<!-- User menu content: END -->
+
+</div>
+
+</div>
+<!-- User menu area: END -->
+
+</div>
+</div>
+<!-- Header area: END --><script type="text/javascript">
+<!--
+var menu = new Array();
+
+menu[0] = ['eZ Publish', '/ezpublish', 'eZ Publish Premium', '/ezpublish/premium', 'eZ Publish Now', '/ezpublish/now', 'eZ Publish On Demand', '/ezpublish/on_demand', 'Proprietary license options', '/products/proprietary_license_options', 'Certified extensions', '/products/certified_extensions', 'eZ Flow', '/ezflow', 'eZ Components', '/ezcomponents', 'eZ Find', '/ezfind', 'eZ Newsletter', '/eznewsletter', 'Expert consulting services', '/products/expert_consulting_services', 'Support', '/products/support'];
+menu[1] = ['Documentation', '/doc', 'Articles', '/community/articles', 'Books', '/store/books', 'Training', '/education/training', 'Certification', '/education/certification'];
+menu[2] = ['Case studies', '/customers/case_studies', 'References', '/customers/references', 'User quotes', '/customers/user_quotes', 'eZ for media', '/customers/ez_for_media'];
+menu[3] = ['Worldwide Partners', '/partner/worldwide_partners', 'eZ Partner program', '/partner/ez_partner_program', 'Knowledge centre', '/partner/knowledge_centre'];
+menu[4] = ['Downloads', '/download', 'Documentation', '/doc', 'News', '/developer/news', 'Developer information', '/developer/developer_information', 'Projects & contributions', '/developer/contribs', 'Forum', '/developer/forum', 'Issue tracker', '/bugs/redirect', 'Open Funding', '/developer/open_funding', 'Security', '/developer/security', 'User groups', '/developer/user_groups'];
+menu[5] = ['Total Product Responsibility from eZ', '/support/total_product_responsibility_from_ez'];
+menu[6] = ['Software solutions', '/store/software', 'Training', '/services/training', 'Certification', '/services/certification', 'Books', '/store/books', 'Services', '/store/services'];
+menu[7] = ['News', '/company/news', 'Media & press', '/company/media_press', 'Events', '/company/events', 'Career', '/company/career', 'eZ Conference & Awards', '/company/ez_conference_awards', 'Board of Directors', '/company/board', 'eZ Crew', '/company/ez_crew', 'Contact', '/company/contact'];
+
+-->
+</script>
+<div id="menuborder">
+
+<!-- Main menu area: START -->
+<div id="menu" onmouseover="menuHover();" onmouseout="tryHideSubMenues();">
+
+<div id="mainmenu" class="float-break">
+<div id="page-width2">
+    <ul id="mainmenulist" class="float-break">
+<li class="current"><a href="https://web.archive.org/web/20080104233008/http://ez.no/products" onmouseover="switchSubMenu( this );">Products &amp; services</a><div id="submenuID0" class="dropdownmenu"><ul><li><div><a href="https://web.archive.org/web/20080104233008mp_/http://ez.no/ezpublish">eZ Publish</a></div></li><li><div><a href="https://web.archive.org/web/20080104233008mp_/http://ez.no/ezpublish/premium">eZ Publish Premium</a></div></li><li><div><a href="https://web.archive.org/web/20080104233008mp_/http://ez.no/ezpublish/now">eZ Publish Now</a></div></li><li><div><a href="https://web.archive.org/web/20080104233008mp_/http://ez.no/ezpublish/on_demand">eZ Publish On Demand</a></div></li><li><div><a href="https://web.archive.org/web/20080104233008mp_/http://ez.no/products/proprietary_license_options">Proprietary license options</a></div></li><li><div><a href="https://web.archive.org/web/20080104233008mp_/http://ez.no/products/certified_extensions">Certified extensions</a></div></li><li><div><a href="https://web.archive.org/web/20080104233008mp_/http://ez.no/ezflow">eZ Flow</a></div></li><li><div><a href="https://web.archive.org/web/20080104233008mp_/http://ez.no/ezcomponents">eZ Components</a></div></li><li><div><a href="https://web.archive.org/web/20080104233008mp_/http://ez.no/ezfind">eZ Find</a></div></li><li><div><a href="https://web.archive.org/web/20080104233008mp_/http://ez.no/eznewsletter">eZ Newsletter</a></div></li><li><div><a href="https://web.archive.org/web/20080104233008mp_/http://ez.no/products/expert_consulting_services">Expert consulting services</a></div></li><li><div><a href="https://web.archive.org/web/20080104233008mp_/http://ez.no/products/support">Support</a></div></li></ul></div></li>
+<li><a href="https://doc.ezpublishlegacy.se7enx.com">Documentation</a></div></li><li><div><a href="https://web.archive.org/web/20080104233008mp_/http://ez.no/community/articles">Articles</a></div></li><li><div><a href="https://web.archive.org/web/20080104233008mp_/http://ez.no/store/books">Books</a></div></li><li><div><a href="https://web.archive.org/web/20080104233008mp_/http://ez.no/education/training">Training</a></div></li><li><div><a href="https://web.archive.org/web/20080104233008mp_/http://ez.no/education/certification">Certification</a></div></li></ul></div></li>
+<li><a href="https://web.archive.org/web/20080104233008/http://ez.no/customers" onmouseover="switchSubMenu( this );">Customers</a><div id="submenuID2" class="dropdownmenu"><ul><li><div><a href="https://web.archive.org/web/20080104233008mp_/http://ez.no/customers/case_studies">Case studies</a></div></li><li><div><a href="https://web.archive.org/web/20080104233008mp_/http://ez.no/customers/references">References</a></div></li><li><div><a href="https://web.archive.org/web/20080104233008mp_/http://ez.no/customers/user_quotes">User quotes</a></div></li><li><div><a href="https://web.archive.org/web/20080104233008mp_/http://ez.no/customers/ez_for_media">eZ for media</a></div></li></ul></div></li>
+<li><a href="https://web.archive.org/web/20080104233008/http://ez.no/partner" onmouseover="switchSubMenu( this );">Partners</a><div id="submenuID3" class="dropdownmenu"><ul><li><div><a href="https://web.archive.org/web/20080104233008mp_/http://ez.no/partner/worldwide_partners">Worldwide Partners</a></div></li><li><div><a href="https://web.archive.org/web/20080104233008mp_/http://ez.no/partner/ez_partner_program">eZ Partner program</a></div></li><li><div><a href="https://web.archive.org/web/20080104233008mp_/http://ez.no/partner/knowledge_centre">Knowledge centre</a></div></li></ul></div></li>
+<li><a href="https://doc.ezpublishlegacy.se7enx.com">Documentation</a></div></li><li><div><a href="https://web.archive.org/web/20080104233008mp_/http://ez.no/developer/news">News</a></div></li><li><div><a href="https://web.archive.org/web/20080104233008mp_/http://ez.no/developer/developer_information">Developer information</a></div></li><li><div><a href="https://web.archive.org/web/20080104233008mp_/http://ez.no/developer/contribs">Projects &amp; contributions</a></div></li><li><div><a href="https://web.archive.org/web/20080104233008mp_/http://ez.no/developer/forum">Forum</a></div></li><li><div><a href="https://web.archive.org/web/20080104233008mp_/http://ez.no/bugs/redirect">Issue tracker</a></div></li><li><div><a href="https://web.archive.org/web/20080104233008mp_/http://ez.no/developer/open_funding">Open Funding</a></div></li><li><div><a href="https://web.archive.org/web/20080104233008mp_/http://ez.no/developer/security">Security</a></div></li><li><div><a href="https://web.archive.org/web/20080104233008mp_/http://ez.no/developer/user_groups">User groups</a></div></li></ul></div></li>
+<li><a href="https://web.archive.org/web/20080104233008/http://ez.no/support" onmouseover="switchSubMenu( this );">Support</a><div id="submenuID5" class="dropdownmenu"><ul><li><div><a href="https://web.archive.org/web/20080104233008mp_/http://ez.no/support/total_product_responsibility_from_ez">Total Product Responsibility from eZ</a></div></li></ul></div></li>
+<li><a href="https://web.archive.org/web/20080104233008/http://ez.no/store" onmouseover="switchSubMenu( this );">Store</a><div id="submenuID6" class="dropdownmenu"><ul><li><div><a href="https://web.archive.org/web/20080104233008mp_/http://ez.no/store/software">Software solutions</a></div></li><li><div><a href="https://web.archive.org/web/20080104233008mp_/http://ez.no/services/training">Training</a></div></li><li><div><a href="https://web.archive.org/web/20080104233008mp_/http://ez.no/services/certification">Certification</a></div></li><li><div><a href="https://web.archive.org/web/20080104233008mp_/http://ez.no/store/books">Books</a></div></li><li><div><a href="https://web.archive.org/web/20080104233008mp_/http://ez.no/store/services">Services</a></div></li></ul></div></li>
+<li class="last"><a href="https://web.archive.org/web/20080104233008/http://ez.no/company" onmouseover="switchSubMenu( this );">Company</a><div id="submenuID7" class="dropdownmenu"><ul><li><div><a href="https://web.archive.org/web/20080104233008mp_/http://ez.no/company/news">News</a></div></li><li><div><a href="https://web.archive.org/web/20080104233008mp_/http://ez.no/company/media_press">Media &amp; press</a></div></li><li><div><a href="https://web.archive.org/web/20080104233008mp_/http://ez.no/company/events">Events</a></div></li><li><div><a href="https://web.archive.org/web/20080104233008mp_/http://ez.no/company/career">Career</a></div></li><li><div><a href="https://web.archive.org/web/20080104233008mp_/http://ez.no/company/ez_conference_awards">eZ Conference &amp; Awards</a></div></li><li><div><a href="https://web.archive.org/web/20080104233008mp_/http://ez.no/company/board">Board of Directors</a></div></li><li><div><a href="https://web.archive.org/web/20080104233008mp_/http://ez.no/company/ez_crew">eZ Crew</a></div></li><li><div><a href="https://web.archive.org/web/20080104233008mp_/http://ez.no/company/contact">Contact</a></div></li></ul></div></li>
+</ul>
+
+</div>
+</div>
+
+
+<div id="submenu" style="display: none;">
+<div id="page-width3">
+    <ul class="float-break">
+                        <li><a href="https://web.archive.org/web/20080104233008/http://ez.no/ezpublish">eZ Publish</a></li>
+                                <li><a href="https://web.archive.org/web/20080104233008/http://ez.no/ezpublish/premium">eZ Publish Premium</a></li>
+                                <li><a href="https://web.archive.org/web/20080104233008/http://ez.no/ezpublish/now">eZ Publish Now</a></li>
+                                <li><a href="https://web.archive.org/web/20080104233008/http://ez.no/ezpublish/on_demand">eZ Publish On Demand</a></li>
+                                <li><a href="https://web.archive.org/web/20080104233008/http://ez.no/products/proprietary_license_options">Proprietary license options</a></li>
+                                <li><a href="https://web.archive.org/web/20080104233008/http://ez.no/products/certified_extensions">Certified extensions</a></li>
+                                <li><a href="https://web.archive.org/web/20080104233008/http://ez.no/ezflow">eZ Flow</a></li>
+                                <li><a href="https://web.archive.org/web/20080104233008/http://ez.no/ezcomponents">eZ Components</a></li>
+                                <li><a href="https://web.archive.org/web/20080104233008/http://ez.no/ezfind">eZ Find</a></li>
+                                <li><a href="https://web.archive.org/web/20080104233008/http://ez.no/eznewsletter">eZ Newsletter</a></li>
+                                <li><a href="https://web.archive.org/web/20080104233008/http://ez.no/products/expert_consulting_services">Expert consulting services</a></li>
+                                <li class="last"><a href="https://web.archive.org/web/20080104233008/http://ez.no/products/support">Support</a></li>
+                </ul>
+</div>
+</div>
+
+<script type="text/javascript"><!--
+    document.getElementById('submenu').style.display = 'none';
+--></script>
+
+</div>
+<!-- Main menu area: END -->
+
+</div>
+
+<hr class="hide"><!-- Path area: START -->
+<div id="path">
+
+<div id="page-width4">
+<h2 class="hide">Path</h2>
+
+<!-- Path content: START -->
+<p>
+                        <a href="https://web.archive.org/web/20080104233008/http://ez.no/">ez.no</a>
+        
+                        /
+                            <a href="https://web.archive.org/web/20080104233008/http://ez.no/ezpublish">ezpublish</a>
+        
+                        /
+                            <a href="toc.html">documentation</a>
+        
+                        /
+                            <a href="development.html">development</a>
+        
+                        /
+                            <a href="development/libraries.html">libraries</a>
+        
+                        /
+                            <a href="development/libraries/ez_template.html">ez template</a>
+        
+                        /
+                            <a href="development/libraries/ez_template/functions.html">functions</a>
+        
+                        /
+                            section
+        
+            </p>
+<!-- Path content: END -->
+
+</div>
+
+</div>
+<!-- Path area: END -->
+
+<hr class="hide">
+
+<!-- Main area: START -->
+
+<div id="page-width5">
+<div id="main" class="float-break">
+
+<!-- Main area content: START -->
+
+
+
+
+<div class="template-design area-main-normal">
+<div class="template-module content-view-full">
+<div class="template-object class-documentation">
+
+
+<div class="attribute-heading">
+    <h1>Section</h1>
+</div>
+
+<p><strong>These documentation pages are no longer maintained. Please visit the <a href="https://doc.ezpublishlegacy.se7enx.com">new documentation site.</a></strong></p>
+
+<div class="attribute-long">
+    
+
+<p>
+The section is the most versatile and most used function in the template
+ engine. It allows for looping over arrays and numeric ranges, and 
+conditional control of blocks and sequences. It is controlled by a 
+series of input parameter and sub functions.
+</p>
+
+<a name="eztoc81345_1" id="eztoc81345_1"></a><h2>Explanation of input parameters</h2>
+<a name="eztoc81345_1_1" id="eztoc81345_1_1"></a><h3>name</h3>
+<p>
+Defines the namespace for all generated template variables, see loop and sequence for a list of generated variables.
+</p>
+
+<a name="eztoc81345_1_2" id="eztoc81345_1_2"></a><h3>loop</h3>
+<p>
+Defines the data that the section should loop over, each the time the 
+section loops it sets a template variable and appends the result of all 
+its children to the output. The data can either be an array, in which 
+case each item in the array is traversed, or a number that determines 
+the number of iterations (a negative number makes the iteration go 
+backwards).
+</p>
+
+<p>
+It's possible to constrain the number of elements that is iterated as 
+well as single elements, see parameters max and offset and sub-children 
+section-exclude and section-include.
+</p>
+
+<p>
+Each time the section iterates it sets four template variables in the 
+new namespace. The variables are index, number, key and item.
+</p>
+
+<ul>
+
+<li>index - is a number which starts at 0 and increases for each iteration.</li>
+
+<li>number - same as index but starts at 1</li>
+
+<li>key - if an array is iterated the key of the current item is set, if a number it will be the same as item</li>
+
+<li>item - if an array is iterated the current item is set, if a number the current iteration index is set (same as index)</li>
+
+</ul>
+
+<a name="eztoc81345_1_3" id="eztoc81345_1_3"></a><h3>show</h3>
+<p>
+This parameter determines whether the section block should be shown or 
+not. If the parameter is not present or is true (either a boolean true, 
+non-empty array or non-zero value) the section block is shown, otherwise
+ the section-else block is shown. This is quite useful for conditional 
+inclusion of template code depending on a variable. When the 
+section-else block is used no looping is done.
+</p>
+
+<a name="eztoc81345_1_4" id="eztoc81345_1_4"></a><h3>sequence</h3>
+<p>
+Defines a sequence which is iterated as the normal loop parameter, the 
+difference is that the sequence will wrap and only supports arrays. The 
+current item will be set in the sequence template variable. This 
+parameter is useful if you want to create alternating colors in lists, 
+for instance.
+</p>
+
+<a name="eztoc81345_1_5" id="eztoc81345_1_5"></a><h3>max</h3>
+<p>
+Determines the maximum number of iterations, the value must be an 
+integer or an array, if it's an array the count of the array is used.
+</p>
+
+<a name="eztoc81345_1_6" id="eztoc81345_1_6"></a><h3>offset</h3>
+<p>
+Determines the start of the loop array for the iterations, the value 
+must be an integer or an array, if it's an array the count of the array 
+is used.
+</p>
+
+<a name="eztoc81345_2" id="eztoc81345_2"></a><h2>Explanation of sub children functions</h2>
+<a name="eztoc81345_2_1" id="eztoc81345_2_1"></a><h3>section-else</h3>
+<p>
+Determines the start of the alternative block which is shown when show is false. See above.
+</p>
+
+<a name="eztoc81345_2_2" id="eztoc81345_2_2"></a><h3>delimiter</h3>
+<p>
+Determines a block of template elements which should be placed in between two iterations.
+</p>
+
+<a name="eztoc81345_2_3" id="eztoc81345_2_3"></a><h3>section-exclude and section-include</h3>
+<p>
+Adds a new filter rule for excluding or including a loop item, the rules
+ will be run after one-another as they are found. The rule will read the
+ match parameter and change the current accept/reject state for the 
+current item, the default is to accept all items. The match parameter 
+can match any template variable available including loop iterators, keys
+ and items, but not the loop sequence.
+</p>
+
+<p>
+Sequences and iteration counts will not be advanced if the loop item is discarded.
+</p>
+
+<a name="eztoc81345_3" id="eztoc81345_3"></a><h2>Examples</h2>    <pre class="wordwrap"><span class="line">&lt;h2&gt;Showing the template variables for </span>
+
+<span class="line">different loop types&lt;/h2&gt;</span>
+
+<span class="line">&lt;p&gt;For each iteration you can see the template</span>
+
+<span class="line">&nbsp;variables which are set by the section function,</span>
+
+<span class="line">they are</span>
+
+<span class="line">&lt;b&gt;index&lt;/b&gt;:&lt;b&gt;number&lt;/b&gt;:&lt;b&gt;key&lt;/b&gt;&lt;/p&gt;</span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">&lt;h3&gt;Looping an array of numbers&lt;/h3&gt;</span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">{section name=Num loop=$numbers offset=2 max=2}</span>
+
+<span class="line">{$Num:index}:{$Num:number}:{$Num:key} Number: {$Num:item}&lt;br/&gt;</span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">{/section}</span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">&lt;h3&gt;Looping an associative array&lt;/h3&gt;</span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">{section name=Num loop=$assoc}</span>
+
+<span class="line">{$Num:index}:{$Num:number}:{$Num:key} Text: {$Num:item}&lt;br/&gt;</span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">{/section}</span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">&lt;h3&gt;Iterating 5 times&lt;/h3&gt;</span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">{section name=Num loop=5 sequence=array(red,blue)}</span>
+
+<span class="line">{section-exclude match=$Num:item|gt(3)}</span>
+
+<span class="line">{section-exclude match=$Num:item|lt(3)}</span>
+
+<span class="line">{section-include match=$Num:item|lt(2)}</span>
+
+<span class="line">{$Num:sequence}-{$Num:index}:</span>
+
+<span class="line">{$Num:number}:{$Num:key} Number: {$Num:item}&lt;br/&gt;</span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">{/section}</span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">&lt;h3&gt;Iterating 5 times, backwards&lt;/h3&gt;</span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">{section name=Num loop=-5}</span>
+
+<span class="line">{$Num:index}:{$Num:number}:{$Num:key} Number: {$Num:item}&lt;br/&gt;</span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">{/section}</span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">&lt;br/&gt;</span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">&lt;h3&gt;Looping over a multi-dim array&lt;/h3&gt;</span>
+
+<span class="line">{* Looping over a multi-dim array and with a sequence *}</span>
+
+<span class="line">&lt;table&gt;</span>
+
+<span class="line">&lt;th&gt;URI&lt;/th&gt;&lt;th&gt;Name&lt;/th&gt;</span>
+
+<span class="line">{section name=Loop loop=$menu:items sequence=array(odd,even)}</span>
+
+<span class="line">&lt;tr&gt;</span>
+
+<span class="line">&nbsp;&lt;td&gt;{$Loop:sequence} - {$Loop:item.uri}&lt;/td&gt;</span>
+
+<span class="line">&nbsp;&lt;td class={$Loop:sequence}&gt;{$Loop:item.name}&lt;/td&gt;</span>
+
+<span class="line">&lt;/tr&gt;</span>
+
+<span class="line">{/section}</span>
+
+<span class="line">&lt;/table&gt;</span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">{* This section is controlled by the show parameter,</span>
+
+<span class="line">&nbsp;if true the section is used (in this case false) *}</span>
+
+<span class="line">&lt;p&gt;Show list={$show_list|choose('off','on')}&lt;/p&gt;</span>
+
+<span class="line">&lt;p&gt;{section name=Loop loop=$menu:items show=$show_list}</span>
+
+<span class="line">{$Loop:item.uri} : {$Loop:item.name}&lt;br /&gt;</span>
+
+<span class="line">{/section}&lt;/p&gt;</span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">{* This section will only show the {section-else}</span>
+
+<span class="line">&nbsp;part since the show item is false *}</span>
+
+<span class="line">{section name=Loop show=0}</span>
+
+<span class="line">&lt;p&gt;abc {$Loop:item} def&lt;/p&gt;</span>
+
+<span class="line">{section-else}</span>
+
+<span class="line">&lt;p&gt;Shown for zero or empty vars&lt;/p&gt;</span>
+
+<span class="line">{/section}</span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">{* Numeric looping, also shows the use of the {delimiter} function *}</span>
+
+<span class="line">&lt;h2&gt;Loop 5 times&lt;/h2&gt;</span>
+
+<span class="line">{section name=Loop loop=5}</span>
+
+<span class="line">{$Loop:item}</span>
+
+<span class="line">{delimiter}.{/delimiter}</span>
+
+<span class="line">{/section}</span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">&lt;h2&gt;Loop 5 times negative&lt;/h2&gt;</span>
+
+<span class="line">{section name=Loop loop=-5}</span>
+
+<span class="line">{$Loop:key}</span>
+
+<span class="line">{delimiter}::{/delimiter}</span>
+
+<span class="line">{/section}</span></pre>
+    
+<a name="eztoc81345_4" id="eztoc81345_4"></a><h2>Results</h2>
+<a name="eztoc81345_4_1" id="eztoc81345_4_1"></a><h3>Showing the template variables for different loop types</h3>
+<p>
+
+For each iteration you can see the template variables<br> which are set by the section function, they are index:number:key
+</p>
+
+<a name="eztoc81345_4_1_1" id="eztoc81345_4_1_1"></a><h4>Looping an array of numbers</h4>
+<p>
+0:1:2 Number: 1003
+</p>
+
+<a name="eztoc81345_4_1_2" id="eztoc81345_4_1_2"></a><h4>Looping an associative array</h4>
+<p>
+
+0:1:red Text: Red<br>
+1:2:green Text: Green<br>2:3:blue Text: Blue
+</p>
+
+<a name="eztoc81345_4_1_3" id="eztoc81345_4_1_3"></a><h4>Iterating 5 times</h4>
+<p>
+
+red-0:1:0 Number: 1<br> blue-1:2:2 Number: 3
+</p>
+
+<a name="eztoc81345_4_1_4" id="eztoc81345_4_1_4"></a><h4>Iterating 5 times, backwards</h4>
+<p>
+
+0:1:0 Number: -1<br>
+ 1:2:-1 Number: -2<br>
+ 2:3:-2 Number: -3<br>
+ 3:4:-3 Number: -4<br> 4:5:-4 Number: -5
+</p>
+
+<a name="eztoc81345_4_1_5" id="eztoc81345_4_1_5"></a><h4>Looping over a multi-dim array</h4>    
+<table class="renderedtable" cellspacing="0" border="0" width="100%">
+<tbody><tr>
+<td valign="top">  
+<p>
+<b>URI</b>
+</p>
+
+  </td>
+
+<td valign="top">  
+<p>
+<b>Name</b>
+</p>
+
+  </td>
+</tr>
+<tr class="bglight">
+<td valign="top">  
+<p>
+odd - http://ez.no
+</p>
+
+  </td>
+
+<td valign="top">  
+<p>
+eZ home
+</p>
+
+  </td>
+</tr>
+<tr class="bgdark">
+<td valign="top">  
+<p>
+even - http://zez.org
+</p>
+
+  </td>
+
+<td valign="top">  
+<p>
+ZeZ
+</p>
+
+  </td>
+</tr>
+<tr class="bglight">
+<td valign="top">  
+<p>
+odd - http://.ez.no/developer
+</p>
+
+  </td>
+
+<td valign="top">  
+<p>
+eZ developer
+</p>
+
+  </td>
+</tr>
+
+</tbody></table>
+
+<p>
+
+Show list=off<br>Shown for zero or empty vars
+</p>
+
+<a name="eztoc81345_4_1_5_1" id="eztoc81345_4_1_5_1"></a><h5>Loop 5 times</h5>
+<p>
+1.2.3.4.5
+</p>
+
+<a name="eztoc81345_4_1_5_1_1" id="eztoc81345_4_1_5_1_1"></a><h6>Loop 5 times negative</h6>
+<p>
+0::-1::-2::-3::-4
+</p>
+</div>
+
+
+<div class="content-view-children">
+<div class="class-comment">
+    <h1 id="comments">Comments</h1>    <div class="block float-break">
+              <form method="post" action="/web/20080104233008/http://ez.no/content/action">
+             <input class="button" type="submit" name="NewButton" value="New comment">
+             <input type="hidden" name="RedirectURIAfterPublish" value="ezpublish/documentation/development/libraries/ez_template/functions/section#comments">
+             <input type="hidden" name="NodeID" value="29486">
+                             <input type="hidden" name="ClassIdentifier" value="article_comment">
+                          <input type="hidden" name="ContentLanguageCode" value="eng-GB">
+         </form>
+         </div>
+
+
+        
+
+<div class="content-view-line">
+<div class="class-comment bglight">
+
+    
+    <div id="msg79338" class="attribute-heading">
+        <h2>How to use section show with different datatypes</h2>
+    </div>
+
+<div class="attribute-byline float-break">
+    <p class="author">Helle Andersen</p>
+    <p class="date">Friday 15 July 2005 9:47:58 am</p>
+</div>
+
+
+<div class="attribute-short">
+            Note that different code is used for different datatypes (it
+ would be a good idea to change this in the future releases ...):<br>
+<br>
+* XML text attribute:<br>
+<pre class="wordwrap"><span class="line">
+</span>
+
+<span class="line">{section show=$node.object.data_map.xxx.content.is_empty|not}
+</span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">&lt;h1&gt;xxx:&lt;/h1&gt;
+</span>
+
+<span class="line">{attribute_view_gui attribute=$node.object.data_map.xxx}
+</span>
+
+<span class="line">{/section}
+</span>
+
+<span class="line"></span></pre><br>
+<br>
+* Text line, images and URL attributes:<br>
+<pre class="wordwrap"><span class="line">
+</span>
+
+<span class="line">{section show=$node.object.data_map.xxx.content}
+</span>
+
+<span class="line">xxx: {attribute_view_gui attribute=$node.object.data_map.xxx}
+</span>
+
+<span class="line">{/section}
+</span>
+
+<span class="line"></span></pre><br>
+<br>
+* Matrix attribute<br>
+<pre class="wordwrap"><span class="line">
+</span>
+
+<span class="line">{section show=$node.object.data_map.xx.content.rows.sequential}
+</span>
+
+<span class="line">{attribute_view_gui attribute=$node.object.data_map.xx}
+</span>
+
+<span class="line">{/section}
+</span>
+
+<span class="line"></span></pre><br>
+<br>
+* Time-date field<br>
+<br>
+E.g. 12.40 - 12.45<br>
+<pre class="wordwrap"><span class="line">
+</span>
+
+<span class="line">{section show=$node.object.data_map.xxx.content.is_valid} - {attribute_view_gui attribute=$node.object.data_map.xxx}
+</span>
+
+<span class="line">{/section}
+</span>
+
+<span class="line"></span></pre>
+
+    </div>
+
+
+</div>
+</div>
+    
+
+<div class="content-view-line">
+<div class="class-comment bgdark">
+
+    
+    <div id="msg77061" class="attribute-heading">
+        <h2>A padding column</h2>
+    </div>
+
+<div class="attribute-byline float-break">
+    <p class="author">Norman Leutner</p>
+    <p class="date">Friday 10 June 2005 6:18:38 pm</p>
+</div>
+
+
+<div class="attribute-short">
+            You can also add a pinnd column without using the delimeter by:<br>
+<pre class="wordwrap"><span class="line">
+</span>
+
+<span class="line">&lt;table border="1"&gt;
+</span>
+
+<span class="line">&nbsp;&lt;tr&gt;
+</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{section var=item loop=10}
+</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;
+</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Cell
+ nr: {$:item.number}
+</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/td&gt;
+</span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+{section show=$:item.number|mod(5)|eq(0)}
+</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/tr&gt;
+</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;tr&gt;
+</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{section-else}
+</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;&amp;nbsp;&lt;/
+td&gt;
+</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{/section}
+</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {/section}
+</span>
+
+<span class="line">&nbsp;&lt;/tr&gt;
+</span>
+
+<span class="line">&lt;/table&gt;
+</span>
+
+<span class="line"></span></pre><br>
+<br>
+This adds a padding colums after each TD and a TR after five TD`s...<br>
+<br>
+
+
+    </div>
+
+
+</div>
+</div>
+    
+
+<div class="content-view-line">
+<div class="class-comment bglight">
+
+    
+    <div id="msg71965" class="attribute-heading">
+        <h2>if-then-else statements</h2>
+    </div>
+
+<div class="attribute-byline float-break">
+    <p class="author">Frey Staso</p>
+    <p class="date">Thursday 31 March 2005 8:37:07 pm</p>
+</div>
+
+
+<div class="attribute-short">
+            For anyone out there that needs to do an if statment:<br>
+<br>
+<br>
+{let usernum=5}<br>
+{section name=if show=eq($usernum, 5)}<br>
+usernum equals 5<br>
+{/section}<br>
+{section-else}<br>
+usernum does not equal 5<br>
+{/section}<br>
+<br>
+The nice part about this code, is whatever you put before {/section} 
+will not show up unless $usernum = 5. So you can put HTML code in there 
+and only some people can see a picture or something. Hope this helps 
+someone!
+
+    </div>
+
+
+</div>
+</div>
+    
+
+<div class="content-view-line">
+<div class="class-comment bgdark">
+
+    
+    <div id="msg50322" class="attribute-heading">
+        <h2>Different results on different platforms?</h2>
+    </div>
+
+<div class="attribute-byline float-break">
+    <p class="author">Kristof Coomans</p>
+    <p class="date">Friday 07 May 2004 2:46:54 pm</p>
+</div>
+
+
+<div class="attribute-short">
+            On Windows XP {section show=$emptyArray}test{/section} where
+ $emptyArray is an empty array, the word "test" will not display. But on
+ Linux, it is displayed, regardless of the empty array $emptyArray.
+
+    </div>
+
+
+</div>
+</div>
+    
+
+<div class="content-view-line">
+<div class="class-comment bglight">
+
+    
+    <div id="msg49874" class="attribute-heading">
+        <h2>A padding column</h2>
+    </div>
+
+<div class="attribute-byline float-break">
+    <p class="author">Eirik Johansen</p>
+    <p class="date">Friday 30 April 2004 9:23:33 am</p>
+</div>
+
+
+<div class="attribute-short">
+            Here's how one might add a padding column to a two-columned table:<br>
+<br>
+&lt;table border="1"&gt;<br>
+&lt;tr&gt;<br>
+{section var=item loop=10}<br>
+    &lt;td&gt;Cell nr {$item}<br>
+    &lt;/td&gt;<br>
+    {delimiter modulo=1}<br>
+        {section show=$item.number|mod(2)|eq(0)}<br>
+         &lt;td&gt;&amp;nbsp;&lt;/td&gt;<br>
+        {section-else}<br>
+           &lt;/tr&gt;<br>
+           &lt;tr&gt;<br>
+        {/section}<br>
+    {/delimiter}<br>
+{/section}<br>
+&lt;/tr&gt;<br>
+&lt;/table&gt;<br>
+<br>
+Sincerely,<br>
+<br>
+Eirik Johansen
+
+    </div>
+
+
+</div>
+</div>
+    
+
+<div class="content-view-line">
+<div class="class-comment bgdark">
+
+    
+    <div id="msg46446" class="attribute-heading">
+        <h2>how to display info from a database to a &lt;select&gt; using {section and loop}</h2>
+    </div>
+
+<div class="attribute-byline float-break">
+    <p class="author">javier  sanchez</p>
+    <p class="date">Saturday 06 March 2004 10:47:50 pm</p>
+</div>
+
+
+<div class="attribute-short">
+            i want to display contents from a table which has 2 fields, each row will be an &lt;option&gt; of the &lt;select&gt;<br>
+<br>
+table = (country | city)<br>
+<br>
+i fetch the db, an array return as result, this array will have field 
+names as keys pointing to arrays of data, my main problem is how i loop 
+elements from an array, with different keys<br>
+<br>
+my code is something like this:<br>
+$elements == resulting array from db fetch<br>
+<br>
+         &lt;select name="sel"&gt;<br>
+	      {section name=seccion loop=$elements}	<br>
+		<br>
+		&lt;option value="{$seccion:item.city}"&gt;{$seccion:item.country}&lt;/option&gt;<br>
+		<br>
+	      {/section}<br>
+         &lt;/select&gt;<br>
+<br>
+<br>
+aany help on this topic or in "how to loop an bi-dimensional array with keys" will be great<br>
+<br>
+thx, javier sanchez-galan<br>
+
+
+    </div>
+
+
+</div>
+</div>
+
+
+ 
+
+
+</div>
+</div>
+
+<div class="block float-break">
+            <form method="post" action="/web/20080104233008/http://ez.no/content/action">
+            <input class="button" type="submit" name="NewButton" value="New comment">
+            <input type="hidden" name="RedirectURIAfterPublish" value="ezpublish/documentation/development/libraries/ez_template/functions/section#comments">
+            <input type="hidden" name="NodeID" value="29486">
+                           <input type="hidden" name="ClassIdentifier" value="article_comment">
+                        <input type="hidden" name="ContentLanguageCode" value="eng-GB">
+        </form>
+    </div>
+
+</div>
+</div>
+</div>
+
+
+<div class="template-design area-sidebar-normal">
+<div class="template-module content-view-sidebar">
+<div class="template-object class-documentation">
+
+<div class="attribute-heading">
+    <h2 class="bullet">Contents</h2>
+</div>
+<h3><a href="development.html">Development</a></h3>
+<p>
+        
+        
+            
+                    <a href="development/extensions.html">Extensions</a><br>
+          
+	
+            
+                    <a href="development/ez_publish_datamodel.html">eZ publish datamodel</a><br>
+          
+	
+            
+                    <a href="development/ez_publish_tuning_and_stability.html">eZ publish tuning and stability</a><br>
+          
+	
+            
+                    <a href="development/importing_attribute_data.html">Importing attribute data</a><br>
+          
+	
+            
+                    <a href="development/kernel.html">Kernel</a><br>
+          
+	
+            
+                    <a href="development/libraries.html">Libraries</a><br>
+          
+	
+            &nbsp;&nbsp;&nbsp;
+                    <a href="development/libraries/ez_xml.html">eZ xml</a><br>
+          
+	
+            &nbsp;&nbsp;&nbsp;
+                    <a href="development/libraries/ez_db.html">eZ db</a><br>
+          
+	
+            &nbsp;&nbsp;&nbsp;
+                    <a href="development/libraries/ez_i18n.html">eZ i18n</a><br>
+          
+	
+            &nbsp;&nbsp;&nbsp;
+                    <a href="development/libraries/ez_soap.html">eZ soap</a><br>
+          
+	
+            &nbsp;&nbsp;&nbsp;
+                    <a href="development/libraries/ez_template.html">eZ template</a><br>
+          
+	
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a href="development/libraries/ez_template/basics.html">Basics</a><br>
+          
+	
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a href="development/libraries/ez_template/functions.html">Functions</a><br>
+          
+	
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a href="development/libraries/ez_template/functions/function_list.html">Function list</a><br>
+          
+	
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a href="development/libraries/ez_template/functions/section.html"><b>Section</b></a><br>
+          
+	
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a href="development/libraries/ez_template/functions/sequence.html">Sequence</a><br>
+          
+	
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a href="development/libraries/ez_template/functions/delimiter.html">Delimiter</a><br>
+          
+	
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a href="development/libraries/ez_template/functions/switch.html">Switch</a><br>
+          
+	
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a href="development/libraries/ez_template/functions/include.html">Include</a><br>
+          
+	
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a href="development/libraries/ez_template/operators.html">Operators</a><br>
+          
+	
+            &nbsp;&nbsp;&nbsp;
+                    <a href="development/libraries/ez_webdav.html">eZ webdav</a><br>
+          
+	
+            
+                    <a href="development/scripting.html">Scripting</a><br>
+          
+	
+            
+                    <a href="development/standards.html">Standards</a><br>
+          
+	
+            
+                    <a href="development/system_overview.html">System overview</a><br>
+          
+	
+            
+                    <a href="development/test_suite.html">Test Suite</a><br>
+          
+	
+            
+                    <a href="development/using_doxygen_to_create_api_documentation.html">Using Doxygen to create API documenta...</a><br>
+          
+	
+        </p>
+
+
+<hr class="docsplit">
+<h3>Created</h3>
+<p>
+07/07/2003<br>
+3:12:01 pm<br>
+by Bård Farstad
+</p>
+<h3>Last updated</h3>
+<p>
+07/07/2003<br>
+3:16:07 pm<br>
+by Bård Farstad
+</p>
+<h3>Authors</h3>
+<p class="rendered">Bård Farstad<br></p>
+
+<br>
+<hr class="docsplit">
+
+<p>This page is part of the eZ Publish documentation. The documentation is available under the <a href="https://web.archive.org/web/20080104233008/http://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License.</a> All contributions will be released under the terms of this license.</p>
+
+</div>
+</div>
+</div>
+
+
+
+
+
+<!-- Main area content: END -->
+
+</div>
+</div>
+
+<!-- Main area: END -->
+
+<hr class="hide">
+
+<!-- Footer area: START -->
+<div id="footer-design">
+<div id="page-width6">
+<div id="footer">
+
+<address>Powered by eZ Publish® Content Management System.<br>
+Copyright © 2008 eZ Systems AS (except where otherwise noted). All rights reserved.</address>
+
+</div>
+</div>
+</div>
+<!-- Footer area: END -->
+
+</div>
+<!-- Complete page area: END -->
+
+
+
+<script type="text/javascript">
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://web.archive.org/web/20080104233008/https://ssl." : "https://web.archive.org/web/20080104233008/http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script src="section_files/ga.js" type="text/javascript"></script>
+<script type="text/javascript">
+    var pageTracker = _gat._getTracker("UA-303624-1");
+    pageTracker._initData();
+    pageTracker._trackPageview();
+</script>
+
+
+
+
+
+</body></html>
+<!-- th[eZ] 20050804 -->
+<!--
+     FILE ARCHIVED ON 23:30:08 Jan 04, 2008 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 11:33:03 Oct 31, 2024.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  captures_list: 0.566
+  exclusion.robots: 0.025
+  exclusion.robots.policy: 0.014
+  esindex: 0.01
+  cdx.remote: 4.833
+  LoadShardBlock: 110.536 (3)
+  PetaboxLoader3.datanode: 91.101 (4)
+  load_resource: 181.747
+  PetaboxLoader3.resolve: 134.086
+-->

@@ -1,0 +1,510 @@
+/* PAGELAYOUT CSS - th[eZ]20070125 */
+
+
+/* FULL PAGE */
+
+body
+{
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+div#page
+{
+    width: auto;
+    margin: 0 auto 0 auto;
+    padding: 0;
+}
+
+div#page-width1, div#page-width2, div#page-width3, div#page-width4, div#page-width5, div#page-width6
+{
+    /* width: 870px; */
+    margin: 0 auto 0 auto;
+    text-align: left;
+}
+
+div#page-width1, div#page-width2, div#page-width3
+{
+    position: relative; 
+}
+
+
+/* HEADER */
+
+div#header
+{
+    background-image: url(/ezno2005/design/ezno2005/images/header-bg.gif);
+    background-repeat: repeat-x;
+    background-position: bottom;
+    position: relative;
+}
+
+div#header-insert
+{
+    height: 100px;
+    background-image: url(/ezno2005/design/ezno2005/images/header-main-bg.gif);
+    background-repeat: no-repeat;
+    background-position: center bottom;
+}
+
+div#logo
+{
+    position: absolute;
+    top: 42px;
+    left: 0;
+    background-image: url(/ezno2005/design/ezno2005/images/ezsystems-logo.gif);
+    background-repeat: no-repeat;
+    background-position: top left;
+}
+
+div#logo h1
+{
+    margin: 0;
+}
+
+div#logo a
+{
+    color: #000000;
+    height: 40px;
+    width: 377px;
+    text-decoration: none;
+    display: block;
+}
+
+h2#slogan 
+{
+    font-size: 0.85em;
+    font-weight: normal;
+    color: #a0a0a0;
+    margin: 0;
+    padding: 0.25em 0 0.25em 0;
+    float: left;
+}
+  
+div#searchbox
+{
+    width: 24em;
+    position: absolute;
+    top: 32px;
+    right: 0;
+    text-align: right;
+}
+
+div#searchbox div.block div.element
+{
+    float: right;
+    padding-right: 0;
+}
+
+div#searchbox div.searchstring
+{
+    margin-right: 0.25em;
+}
+
+input#searchtext
+{
+    font-size: 0.9em;
+    width: 12em;
+    margin-bottom: 0.25em;
+    border: 1px solid;
+    border-color: #3d3d3d #8e8e8e #8e8e8e #3d3d3d;
+}
+
+input#searchbutton
+{
+    font-size: 0.9em;
+    color: #ffffff;
+    background-color: #9c9c9c;
+    background-image: url(/ezno2005/design/ezno2005/images/mainbutton-bg.gif);
+    background-repeat: repeat-x;
+    background-position: top;
+    margin-top: 1px;
+    padding: 0 0.5em 0 0.5em;
+    border: 1px solid;
+    border-color: #8e8e8e #3d3d3d #3d3d3d #8e8e8e;
+}
+
+div#searchbox label.hide
+{
+    display: none;
+}
+
+div#searchbox label
+{
+    font-size: 0.85em;
+    font-weight: normal;
+    color: #ffffff;
+    margin: 0 0 0 0.5em;
+    display: inline;
+    vertical-align: middle;
+}
+
+div#searchbox label input, div#searchbox div.section input
+{
+    margin: 0 4px 0 0;
+    padding: 0;
+    vertical-align: middle;
+}
+
+div#searchbox div.section input
+{
+    margin-right: 0;
+}
+
+div#searchbox div.section
+{
+    font-size: 1em;
+    display: inline;
+    vertical-align: top;
+}
+
+div#searchbox select
+{
+    color: #000000;
+    background-color: #f8f8f8;
+    width: 12.8em;
+    border: 1px solid; 
+    border-color: #8e8e8e #3d3d3d #3d3d3d #8e8e8e;
+}
+
+div#searchbox select option
+{
+}
+
+
+/* USER MENU */
+
+div#usermenu
+{
+}
+
+div#usermenu ul
+{
+    font-size: 0.85em;
+    margin: 0;
+    padding: 0;
+    text-align: right;
+}
+
+div#usermenu li
+{
+    background: url(/ezno2005/design/ezno2005/images/usermenu-tick.gif) no-repeat top right;
+    margin: 0 0 0 6px; /* Modified in IE 6+ stylesheet */
+    display: inline;
+}
+
+div#usermenu li a
+{
+    color: #f15e22;
+    padding-right: 8px; /* Modified in IE 6+ stylesheet */
+    font-weight: normal;
+    text-decoration: none;
+    position: relative;
+    top: 2px;
+}
+
+div#usermenu li a:hover
+{
+    text-decoration: underline;
+}
+ 
+div#usermenu li a span
+{
+    color: #888888;
+}
+
+div#usermenu form
+{
+    display: inline;
+}
+
+div#usermenu form select
+{
+    font-size: 0.85em;
+}
+
+div#usermenu li img
+{
+    vertical-align: middle;
+}
+
+div#usermenu li#language-menu
+{
+    color: #898989;
+    background-image: none;
+}
+
+div#usermenu li#language-menu a
+{
+    background-image: none;
+    padding: 0;
+}
+
+div#usermenu li#language-menu a.highlighted
+{
+    color: #ffffff;
+}
+
+div#usermenu li#language-menu img
+{
+    padding-left: 4px;
+}
+
+div.dynamicwidth ul#language-menu
+{
+    right: 1.5em;
+}
+
+ul#language-menu li img
+{
+    vertical-align: middle;
+}
+
+li#language-menu span.disabled
+{
+    position: relative;
+    top: 2px;
+}
+
+
+/* MAIN MENU */
+
+div#mainmenu
+{
+    background: url(/ezno2005/design/ezno2005/images/mainmenu-bg.gif) repeat-x bottom left;
+    background-color: #fdfdfd;
+    position: relative;
+    z-index: 1;
+}
+
+div#mainmenu iframe /* Only used for IE 6 */
+{
+    position: absolute;
+    top: 0;
+    z-index: 0;
+}
+
+div#mainmenu div.dropdownmenu
+{
+    min-width: 10em;
+    position: absolute;
+    top: 1.85em;
+    left: -1px;
+    display: none;
+    z-index: 1;
+}
+
+div#submenu
+{
+    background-color: #f9f9f9;
+    border-bottom: 1px #cacaca solid;
+}
+
+div#mainmenu ul, div#submenu ul
+{
+    margin: 0;
+    padding: 0;
+    position: relative;
+    z-index: 1;
+}
+
+div#mainmenu ul ul
+{
+    border: 1px #cacaca;
+    border-style: none solid solid solid;
+}
+
+div#mainmenu li, div#submenu li
+{
+    margin: 0 0 0 -1px;
+    padding: 0;
+    float: left;
+    list-style-type: none;
+    position: relative;
+}
+
+div#mainmenu li li
+{
+    margin: 0;
+    float: none;
+}
+
+div#mainmenu a, div#submenu a
+{
+    background: url(/ezno2005/design/ezno2005/images/mainmenu-tick.gif) no-repeat bottom right;
+}
+
+div#mainmenu a, div#submenu a
+{
+    color: #000000;
+    padding: 4px 12px 4px 12px;
+    text-decoration: none;
+    display: block;
+    white-space: nowrap;
+    position: relative;
+}
+
+div#mainmenu li.last a, div#mainmenu li li a, div#submenu li.last a
+{
+    background-image: none;
+}
+
+div#mainmenu li.current a
+{
+    background: url(/ezno2005/design/ezno2005/images/mainmenu-selected-bg.gif) repeat-x bottom;
+    background-color: #e3e3e3;
+}
+
+div#mainmenu ul ul, div#mainmenu li.current a.menuhover, div#mainmenu a.menuhover, div#mainmenu li.current li a, div#mainmenu li.current a:hover
+{
+    background-image: none;
+    background-color: #f9f9f9;
+}
+
+div#mainmenu a:hover, div#mainmenu li.current a:hover, div#submenu a:hover, div#mainmenu li.current a.menuhover:hover, div#mainmenu a.menuhover:hover, div#mainmenu li.current li a:hover
+{
+    color: #ffffff;
+    background-color: #f15e22;
+    background-image: none;
+}
+
+/* PATH */
+
+div#path
+{
+    margin: 1.5em 0 0.75em 0;
+}
+
+div#path p
+{
+    color: #9d9d9d;
+    font-size: 0.85em;
+    margin: 0.25em 0 0.25em 0;
+    padding-left: 10px;
+    background-image: url(/ezno2005/design/ezno2005/images/path-bullet.gif);
+    background-repeat: no-repeat;
+    background-position: 0 0.3em;
+}
+
+div#path a
+{
+    color: #888888;
+    text-decoration: none;
+    border-bottom: 1px solid #d4d4d4;
+}
+
+div#path a:hover
+{
+    color: #000000;
+    border-color: #000000;
+}
+
+
+/* MAIN AREA */
+
+div#main
+{
+    margin: 1em 0 0.5em 0;
+}
+
+div.area-main-normal
+{
+    float: left;
+    clear: left;
+    width: 65%;
+}
+
+div.area-sidebar-normal
+{
+    float: right;
+    clear: right;
+    width: 34%;
+}
+
+div.area-main-full, div.area-main-full-padding
+{
+    width: 100%;
+    clear: both;
+}
+
+div.area-main-left
+{
+    float: left;
+    clear: left;
+    width: 50%;
+}
+
+div.area-main-right
+{
+    float: right;
+    clear: right;
+    width: 49%;
+}
+
+
+/* FOOTER */
+
+div#footer
+{
+    color: #9d9d9d;
+    margin: 0.25em 0 1em 0;
+    text-align: center;
+/*
+    background-image: url(/ezno2005/design/ezno2005/images/box-be.gif);
+    background-repeat: repeat-x;
+    background-position: bottom;
+*/
+}
+
+div#footer-design
+{
+    margin-top: 0.5em;
+    border-top: 1px solid #cacaca;
+    background-image: url(/ezno2005/design/ezno2005/images/footer-bg.gif);
+    background-repeat: repeat-x;
+    background-position: top;
+/*
+    background-image: url(/ezno2005/design/ezno2005/images/box-bl.gif);
+    background-repeat: no-repeat;
+    background-position: bottom left;
+*/
+}
+
+div#footer address
+{
+    font-size: 0.85em;
+    font-style: normal;
+    padding: 1em 0 1.25em 0;
+/*
+    background-image: url(/ezno2005/design/ezno2005/images/box-br.gif);
+    background-repeat: no-repeat;
+    background-position: bottom right;
+*/
+}
+
+div#footer a
+{
+    color: #888888;
+}
+
+/*
+     FILE ARCHIVED ON 03:00:46 Oct 13, 2007 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 10:43:51 Oct 31, 2024.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+*/
+/*
+playback timings (ms):
+  captures_list: 0.484
+  exclusion.robots: 0.023
+  exclusion.robots.policy: 0.014
+  esindex: 0.01
+  cdx.remote: 9.254
+  LoadShardBlock: 186.314 (3)
+  PetaboxLoader3.datanode: 138.327 (4)
+  PetaboxLoader3.resolve: 224.729 (2)
+  load_resource: 210.333
+*/

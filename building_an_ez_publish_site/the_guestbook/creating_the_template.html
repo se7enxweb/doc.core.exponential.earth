@@ -1,0 +1,742 @@
+
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style type="text/css">
+    @import url(https://doc.core.ezpublish.se7enx.com/ezno2005/design/ezno2005/stylesheets/core.css);
+    @import url(https://doc.core.ezpublish.se7enx.com/ezno2005/design/ezno2005/stylesheets/pagelayout.css);
+    @import url(https://doc.core.ezpublish.se7enx.com/ezno2005/design/ezno2005/stylesheets/classes.css);
+    @import url(https://doc.core.ezpublish.se7enx.com/ezno2005/design/ezno2005/stylesheets/monitor.css);
+</style>
+
+<link type="text/css" rel="stylesheet" href="https://web.archive.org/web/20071221025510cs_/http://ez.no/extension/ezno2005/design/ezno2005/stylesheets/print.css" media="print"/>
+
+    <link rel="alternate" title="ez.no News" href="https://web.archive.org/web/20071221025510/http://ez.no/rss/feed/news" type="application/rss+xml"/><link rel="alternate" title="ez.no Developer News" href="/web/20071221025510/http://ez.no/rss/feed/communitynews" type="application/rss+xml"/>
+<link rel="alternate" title="ez.no Developer Articles" href="https://web.archive.org/web/20071221025510/http://ez.no/rss/feed/community_articles" type="application/rss+xml"/>
+<link rel="alternate" title="ez.no Forum" href="https://web.archive.org/web/20071221025510/http://ez.no/rss/feed/forum" type="application/rss+xml"/>
+<link rel="alternate" title="ez.no Contributions" href="https://web.archive.org/web/20071221025510/http://ez.no/rss/feed/contribs" type="application/rss+xml"/>
+<link rel="alternate" title="ez.no Open Funding" href="https://web.archive.org/web/20071221025510/http://ez.no/rss/feed/openfunding_suggestions" type="application/rss+xml"/>
+
+
+<!-- IE conditional comments; for bug fixes for different IE versions -->
+<!--[if IE 5]>     <style type="text/css"> @import url(/extension/ezno2005/design/ezno2005/stylesheets/ie5.css);    </style> <![endif]-->
+<!--[if lte IE 6]> <style type="text/css"> @import url(/extension/ezno2005/design/ezno2005/stylesheets/ie6lte.css); </style> <![endif]-->
+<!--[if gte IE 6]> <style type="text/css"> @import url(/extension/ezno2005/design/ezno2005/stylesheets/ie6gte.css); </style> <![endif]-->
+
+<!-- Load special stylesheet (if necessary) for newer Netscape decendants, Mozilla and Firefox, using the Gecko renderer -->
+<script type="text/javascript"><!-- if ((navigator.userAgent.indexOf("Gecko") != -1)&&(navigator.userAgent.indexOf("KHTML") == -1)) document.write("<style type=\"text/css\">@import url(/extension/ezno2005/design/ezno2005/stylesheets/gecko.css);</style>");--></script>
+                                                                                    
+<title>
+            Creating the template     /         The guestbook     /         Building an eZ publish site                    </title>
+<meta http-equiv="Content-Language" content="en-GB"/>
+    <meta name="author" content="eZ Systems"/>
+    <meta name="copyright" content="eZ Systems as"/>
+    <meta name="description" content="eZ Publish is an open source content management system (CMS) and an open source content management framework (CMF)."/>
+    <meta name="keywords" content="cms, publish, e-commerce, content management, development framework"/>
+
+<meta name="MSSmartTagsPreventParsing" content="TRUE"/>
+<meta name="generator" content="eZ Publish"/>
+
+<script type="text/javascript" src="https://doc.core.ezpublish.se7enx.com/ezno2005/design/ezno2005/javascripts/tools.js"></script>
+<script type="text/javascript" src="https://doc.core.ezpublish.se7enx.com/ezno2005/design/ezno2005/javascripts/dropdownmenu.js"></script>
+</head>    <body onload="menuInit();">
+
+<!-- Complete page area: START -->
+<div id="page">
+
+<!-- Header area: START -->
+<div id="header">
+<div id="header-insert">
+
+<!-- User menu area: START -->
+<div id="usermenu">
+
+<div id="page-width1">
+
+<div id="logo">
+<h1><a href="https://doc.core.ezpublish.se7enx.com/"><span class="hide">eZ Systems - The Content Management Ecosystem</span></a></h1>
+</div>
+
+
+
+<p class="hide"><a href="#main">Skip to main content</a></p>
+
+<hr class="hide"/>
+<div id="searchbox">
+<form action="/web/20071221025510/http://ez.no/ezsearchredirect/action" method="get">
+
+<div class="block">
+<div class="element">
+<input id="searchbutton" class="button" type="submit" value="Search"/>
+</div>
+
+<div class="element searchstring">
+    <label for="searchtext" class="hide">Search text:</label>
+    <input id="searchtext" name="SearchText" type="text" size="12"/><br/>
+    
+
+            <div class="section">
+            <label for="searcharea" class="hide">Search area:</label>
+            <select id="searcharea" name="SubTreeArray[]">
+                <option value="2" selected="selected">All ez.no</option>
+                <option value="306">Bug reports</option>
+                <option value="21358">Contributions</option>
+                <option value="documentation">Documentation</option>
+                <option value="308">Forum</option>
+            </select>
+            </div>
+    </div>
+
+</div>
+</form>
+</div>
+
+<hr class="hide"/>
+<h2 class="hide">User menu</h2>
+
+<!-- User menu content: START -->
+<ul>
+            <li><a href="https://web.archive.org/web/20071224070727/http://ez.no/download"><span>Downloads</span></a></li>
+    <li><a href="https://web.archive.org/web/20071224070727/http://ez.no/company/contact"><span>Contact</span></a></li>
+            <li><a href="https://web.archive.org/web/20071224070727/http://ez.no/user/login"><span>Log in</span></a></li>
+        <li><a href="https://web.archive.org/web/20071224070727/http://ez.no/user/register"><span>Register</span></a></li>
+    
+    <li id="language-menu">
+        <a class="highlighted" title="English" href="https://web.archive.org/web/20071221025510/http://ez.no/ezpublish/documentation/building_an_ez_publish_site/the_guestbook/creating_the_template"><img src="/web/20071221025510im_/http://ez.no/extension/ezno2005/design/ezno2005/images/eng-GB.gif" width="18" height="12" alt="English"/></a>
+        <a title="Deutsch" href="https://web.archive.org/web/20071221025510/http://ez.no/de/ezpublish/documentation/building_an_ez_publish_site/the_guestbook/creating_the_template"><img src="/web/20071221025510im_/http://ez.no/extension/ezno2005/design/ezno2005/images/ger-DE.gif" width="18" height="12" alt="Deutsch"/></a>
+        <a title="Português" href="https://web.archive.org/web/20071221025510/http://ez.no/br/ezpublish/documentation/building_an_ez_publish_site/the_guestbook/creating_the_template"><img src="/web/20071221025510im_/http://ez.no/extension/ezno2005/design/ezno2005/images/por-BR.gif" width="18" height="12" alt="Português"/></a>
+        <a title="Français" href="https://web.archive.org/web/20071221025510/http://ez.no/fr/ezpublish/documentation/building_an_ez_publish_site/the_guestbook/creating_the_template"><img src="/web/20071221025510im_/http://ez.no/extension/ezno2005/design/ezno2005/images/fre-FR.gif" width="18" height="12" alt="Français"/></a>
+        <a title="日本語" href="https://web.archive.org/web/20071221025510/http://ez.no/jp/ezpublish/documentation/building_an_ez_publish_site/the_guestbook/creating_the_template"><img src="/web/20071221025510im_/http://ez.no/extension/ezno2005/design/ezno2005/images/jpn-JP.gif" width="18" height="12" alt="日本語"/></a>        
+        <a title="中文" href="https://web.archive.org/web/20071221025510/http://ez.no/tw/ezpublish/documentation/building_an_ez_publish_site/the_guestbook/creating_the_template"><img src="/web/20071221025510im_/http://ez.no/extension/ezno2005/design/ezno2005/images/chi-TW.gif" width="18" height="12" alt="中文"/></a>        
+        <a title="Norsk" href="https://web.archive.org/web/20071221025510/http://ez.no/no/ezpublish/documentation/building_an_ez_publish_site/the_guestbook/creating_the_template"><img src="/web/20071221025510im_/http://ez.no/extension/ezno2005/design/ezno2005/images/nor-NO.gif" width="18" height="12" alt="Norsk"/></a>        
+    </li>
+</ul>
+<!-- User menu content: END -->
+
+</div>
+
+</div>
+<!-- User menu area: END -->
+
+</div>
+</div>
+<!-- Header area: END --><script type="text/javascript">
+<!--
+var menu = new Array();
+
+menu[0] = ['eZ Publish', '/ezpublish', 'eZ Publish Premium', '/ezpublish/premium', 'eZ Publish Now', '/ezpublish/now', 'eZ Publish On Demand', '/ezpublish/on_demand', 'Proprietary license options', '/products/proprietary_license_options', 'Certified extensions', '/products/certified_extensions', 'eZ Flow', '/ezflow', 'eZ Components', '/ezcomponents', 'eZ Find', '/ezfind', 'eZ Newsletter', '/eznewsletter', 'Expert consulting services', '/products/expert_consulting_services', 'Support', '/products/support'];
+menu[1] = ['Documentation', '/doc', 'Articles', '/community/articles', 'Books', '/store/books', 'Training', '/education/training', 'Certification', '/education/certification'];
+menu[2] = ['Case studies', '/customers/case_studies', 'References', '/customers/references', 'User quotes', '/customers/user_quotes', 'eZ for media', '/customers/ez_for_media'];
+menu[3] = ['Worldwide Partners', '/partner/worldwide_partners', 'eZ Partner program', '/partner/ez_partner_program', 'Knowledge centre', '/partner/knowledge_centre'];
+menu[4] = ['Downloads', '/download', 'Documentation', '/doc', 'News', '/developer/news', 'Developer information', '/developer/developer_information', 'Projects & contributions', '/developer/contribs', 'Forum', '/developer/forum', 'Issue tracker', '/bugs/redirect', 'Open Funding', '/developer/open_funding', 'Security', '/developer/security', 'User groups', '/developer/user_groups'];
+menu[5] = ['Total Product Responsibility from eZ', '/support/total_product_responsibility_from_ez'];
+menu[6] = ['Software solutions', '/store/software', 'Training', '/services/training', 'Certification', '/services/certification', 'Books', '/store/books', 'Services', '/store/services'];
+menu[7] = ['News', '/company/news', 'Media & press', '/company/media_press', 'Events', '/company/events', 'Career', '/company/career', 'eZ Conference & Awards', '/company/ez_conference_awards', 'Board of Directors', '/company/board', 'eZ Crew', '/company/ez_crew', 'Contact', '/company/contact'];
+
+-->
+</script>
+<div id="menuborder">
+
+<!-- Main menu area: START -->
+<div id="menu" onmouseover="menuHover();" onmouseout="tryHideSubMenues();">
+
+<div id="mainmenu" class="float-break">
+<div id="page-width2">
+    <ul id="mainmenulist" class="float-break">
+<li class="current"><a href="https://web.archive.org/web/20071224070727/http://ez.no/products" onmouseover="switchSubMenu( this );">Products &amp; services</a></li>
+<li><a href="https://web.archive.org/web/20071224070727/http://ez.no/education" onmouseover="switchSubMenu( this );">Education</a></li>
+<li><a href="https://web.archive.org/web/20071224070727/http://ez.no/customers" onmouseover="switchSubMenu( this );">Customers</a></li>
+<li><a href="https://web.archive.org/web/20071224070727/http://ez.no/partner" onmouseover="switchSubMenu( this );">Partners</a></li>
+<li><a href="https://web.archive.org/web/20071224070727/http://ez.no/developer" onmouseover="switchSubMenu( this );">Developer</a></li>
+<li><a href="https://web.archive.org/web/20071224070727/http://ez.no/support" onmouseover="switchSubMenu( this );">Support</a></li>
+<li><a href="https://web.archive.org/web/20071224070727/http://ez.no/store" onmouseover="switchSubMenu( this );">Store</a></li>
+<li class="last"><a href="https://web.archive.org/web/20071224070727/http://ez.no/company" onmouseover="switchSubMenu( this );">Company</a></li>
+</ul>
+
+</div>
+</div>
+
+
+<div id="submenu">
+<div id="page-width3">
+    <ul class="float-break">
+                        <li><a href="https://web.archive.org/web/20071224070727/http://ez.no/ezpublish">eZ Publish</a></li>
+                                <li><a href="https://web.archive.org/web/20071224070727/http://ez.no/ezpublish/premium">eZ Publish Premium</a></li>
+                                <li><a href="https://web.archive.org/web/20071224070727/http://ez.no/ezpublish/now">eZ Publish Now</a></li>
+                                <li><a href="https://web.archive.org/web/20071224070727/http://ez.no/ezpublish/on_demand">eZ Publish On Demand</a></li>
+                                <li><a href="https://web.archive.org/web/20071224070727/http://ez.no/products/proprietary_license_options">Proprietary license options</a></li>
+                                <li><a href="https://web.archive.org/web/20071224070727/http://ez.no/products/certified_extensions">Certified extensions</a></li>
+                                <li><a href="https://web.archive.org/web/20071224070727/http://ez.no/ezflow">eZ Flow</a></li>
+                                <li><a href="https://web.archive.org/web/20071224070727/http://ez.no/ezcomponents">eZ Components</a></li>
+                                <li><a href="https://web.archive.org/web/20071224070727/http://ez.no/ezfind">eZ Find</a></li>
+                                <li><a href="https://web.archive.org/web/20071224070727/http://ez.no/eznewsletter">eZ Newsletter</a></li>
+                                <li><a href="https://web.archive.org/web/20071224070727/http://ez.no/products/expert_consulting_services">Expert consulting services</a></li>
+                                <li class="last"><a href="https://web.archive.org/web/20071224070727/http://ez.no/products/support">Support</a></li>
+                </ul>
+</div>
+</div>
+
+<script type="text/javascript"><!--
+    document.getElementById('submenu').style.display = 'none';
+--></script>
+
+</div>
+<!-- Main menu area: END -->
+
+</div>
+
+<hr class="hide"/><!-- Path area: START -->
+<div id="path">
+
+<div id="page-width4">
+<h2 class="hide">Path</h2>
+
+<!-- Path content: START -->
+<p>
+                        <a href="https://web.archive.org/web/20071224070727/http://ez.no/">ez.no</a>
+        
+                        /
+                            <a href="https://web.archive.org/web/20071224070727/http://ez.no/ezpublish">ezpublish</a>
+        
+                        /
+                            <a href="https://doc.core.ezpublish.se7enx.com/toc.html">documentation</a>
+        
+                        /
+                            <a href="building_an_ez_publish_site.html">building an ez publish site</a>
+        
+                        /
+                            <a href="building_an_ez_publish_site/the_guestbook.html">the guestbook</a>
+        
+                        /
+                            creating the template
+        
+            </p>
+<!-- Path content: END -->
+
+</div>
+
+</div>
+<!-- Path area: END -->
+
+<hr class="hide"/>
+
+<!-- Main area: START -->
+
+<div id="page-width5">
+<div id="main" class="float-break">
+
+<!-- Main area content: START -->
+
+
+
+
+<div class="template-design area-main-normal">
+<div class="template-module content-view-full">
+<div class="template-object class-documentation">
+
+
+<div class="attribute-heading">
+    <h1>Creating the template</h1>
+</div>
+
+<p><strong>These documentation pages are no longer maintained. Please visit the <a href="https://doc.ezpublishlegacy.se7enx.com">new documentation site.</a></strong></p>
+
+<div class="attribute-long">
+    
+
+<p>
+Use the administration interface to create a template override for the guestbook folder. Hints: Remember to assign the guestbook folder to the guestbook section. Override the &quot;/node/view/full.tpl&quot; template for the folder class within section &quot;Guestbook&quot;. Name the new template &quot;full_view_guestbook_folder&quot;. Base the template on an empty file. In addition, you should also make sure that the &quot;guestbook&quot; link in the main menu actually points to the guestbook. When you're finished with all this, attempt to write your own template code that takes care of displaying the following elements:
+</p>
+
+<ul>
+
+<li>The guestbook folder's description </li>
+
+<li>A list of all the guestbook entries</li>
+
+</ul>
+
+<p>
+Put your code into the newly generated/empty &quot;design/tscm/override/templates/full.tpl&quot; file. If you're unsure about the template code (or if you're simply just lazy), feel free to peek at (or copy) the template code that is provided below.
+</p>
+    <pre class="wordwrap"><span class="line">&lt;div class=&quot;pagetitle&quot;&gt;</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;{$node.name}</span>
+
+<span class="line">&lt;/div&gt;</span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">&lt;table class=&quot;guestbook&quot;&gt;</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&lt;tr&gt;&lt;td&gt;</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{$node.object.data_map.description.content.output.output_text}</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&lt;/td&gt;&lt;td&gt;</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;img src={&quot;guestbook.png&quot;|ezimage}&gt;</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&lt;/td&gt;&lt;/tr&gt;</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&lt;tr&gt;&lt;td&gt;</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;!-- The button will be here! --&gt;</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&lt;/td&gt;&lt;td&gt;</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&lt;/td&gt;&lt;/tr&gt;</span>
+
+<span class="line">&lt;/table&gt;</span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">{* Grab all the guestbook entries. *}</span>
+
+<span class="line">{let name=test counter=0 children=fetch( content,</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;list,</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;hash( parent_node_id,</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$node.node_id,</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sort_by,</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$node.sort_array</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)</span>
+
+<span class="line">}</span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">&lt;table class=&quot;news_archive&quot;&gt;</span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">{* Loop through all the entries. *}</span>
+
+<span class="line">{section loop=$:children}</span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;{* Increment the counter by one. *}</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;{set counter=$:counter|inc}</span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&lt;tr&gt;&lt;td&gt;</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;hr /&gt;</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Submitted by &lt;b&gt;{$:item.object.data_map.name.content|wash}&lt;/b&gt;</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;on {$:item.object.published|l10n(shortdate)}:</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;br /&gt;</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;br /&gt;</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;i&gt;{$:item.object.data_map.entry.content|wash}&lt;/i&gt;</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&lt;/td&gt;&lt;/tr&gt;</span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">{* End of loop. *}</span>
+
+<span class="line">{/section}</span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&lt;tr&gt;&lt;td&gt;&lt;hr /&gt;&lt;/td&gt;&lt;/tr&gt;</span>
+
+<span class="line">&lt;/table&gt;</span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">&lt;div class=&quot;center&quot;&gt;</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;Number of entries in the guestbook: {$:counter}</span>
+
+<span class="line">&lt;/div&gt;</span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">{* Release the counter and the children variable. *}</span>
+
+<span class="line">{/let}</span></pre>
+    
+<p>
+Notice the use of the &quot;wash&quot; operator. It takes care of translating bogus strings into friendly ones. The wash operator will make sure that HTML tags found inside guestbook entries don't mess up the output. In other words, people who submit text with HTML tags will not be able to destroy the original page layout. Tags will be displayed as normal text (they will not be interpreted by the browser).
+</p>
+
+<p>
+The template code above makes use of an image called &quot;guestbook.png&quot;. Feel free to use the following icon/image: <a href="https://web.archive.org/web/20071221025510/http://www.ez.no/content/download/42951/109653/file/guestbook.png">guestbook.png</a>. This image is non-content specific (it belongs to layout/design), so therefore, we'll place it inside the TSCM design directory. Download and place the image into the &quot;design/tscm/images/&quot; directory.
+</p>
+
+<p>
+Some of the HTML code that was presented above also makes use of some additional CSS. Make sure you put the following lines into the TSCM CSS file (things might look a bit ugly without).
+</p>
+    <pre class="wordwrap"><span class="line">.guestbook</span>
+
+<span class="line">{</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;margin-left: auto;</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;margin-right: auto;</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;width: 95%;</span>
+
+<span class="line">}</span></pre>
+    
+<p>
+If you've used the example data and the example code, you should be looking at something that resembles the following screenshot (when accessing the guestbook page from the main menu).
+</p>
+                            <div class="object-right">
+        <div class="content-view-embeddedmedia">
+    <div class="class-image">
+
+    <div class="attribute-image">
+                                                                                  
+
+    
+        
+    
+    <a href="https://web.archive.org/web/20071224070727/http://ez.no/var/ezno/storage/images/images/documentation/building_an_ez_publish_site/guestbook_01png/109650-1-eng-GB/guestbook_01png1.png" width="400" height="439" border="0" alt="" title=""/></a>
+    
+    
+            </div>
+        </div>
+</div>
+
+    </div>
+
+
+</div>
+
+
+<div class="content-view-children">
+<div class="class-comment">
+    <h1 id="comments">Comments</h1>    <div class="block float-break">
+              <form method="post" action="/web/20071221025510/http://ez.no/content/action">
+             <input class="button" type="submit" name="NewButton" value="New comment"/>
+             <input type="hidden" name="RedirectURIAfterPublish" value="ezpublish/documentation/building_an_ez_publish_site/the_guestbook/creating_the_template#comments"/>
+             <input type="hidden" name="NodeID" value="38857"/>
+                             <input type="hidden" name="ClassIdentifier" value="article_comment"/>
+                          <input type="hidden" name="ContentLanguageCode" value="eng-GB"/>
+         </form>
+         </div>
+
+
+        
+
+<div class="content-view-line">
+<div class="class-comment bglight">
+
+    
+    <div id="msg74635" class="attribute-heading">
+        <h2>Mistake</h2>
+    </div>
+
+<div class="attribute-byline float-break">
+    <p class="author">Marat M.</p>
+    <p class="date">Friday 06 May 2005 11:29:17 pm</p>
+</div>
+
+
+<div class="attribute-short">
+            Here:<br/>
+<br/>
+&quot;Put your code into the newly generated/empty &quot;design/tscm/override/templates/full.tpl&quot; file.&quot;<br/>
+<br/>
+While actually the template name is: <br/>
+<br/>
+&quot;design/tscm/override/templates/full_view_guestbook_folder.tpl&quot;<br/>
+<br/>
+and is created through the overriding, then editing on the server.
+
+    </div>
+
+
+</div>
+</div>
+    
+
+<div class="content-view-line">
+<div class="class-comment bgdark">
+
+    
+    <div id="msg71861" class="attribute-heading">
+        <h2>Namespaces</h2>
+    </div>
+
+<div class="attribute-byline float-break">
+    <p class="author">Kirill Subbotin</p>
+    <p class="date">Wednesday 30 March 2005 4:44:18 pm</p>
+</div>
+
+
+<div class="attribute-short">
+            It's because of using name spaces. Here is the link to explanation:<br/>
+<a href="https://web.archive.org/web/20071221025510/http://ez.no/ez_publish/documentation/development/libraries/ez_template/basics/namespaces" title="http://ez.no/ez_publish/documentation/development/libraries/ez_template/basics/namespaces">http://ez.no/ez_publish/documenta...raries/ez_template/basics/namespaces</a>
+
+    </div>
+
+
+</div>
+</div>
+    
+
+<div class="content-view-line">
+<div class="class-comment bglight">
+
+    
+    <div id="msg64418" class="attribute-heading">
+        <h2>Explain the colon after the dollar sign</h2>
+    </div>
+
+<div class="attribute-byline float-break">
+    <p class="author">Dave Myron</p>
+    <p class="date">Friday 10 December 2004 12:30:58 pm</p>
+</div>
+
+
+<div class="attribute-short">
+            This is the first time in the tutorial that a colon appears after the dollar sign when referencing variables. What does it do differently? Why do we need it?
+
+    </div>
+
+
+</div>
+</div>
+
+
+ 
+
+
+</div>
+</div>
+
+<div class="block float-break">
+            <form method="post" action="/web/20071221025510/http://ez.no/content/action">
+            <input class="button" type="submit" name="NewButton" value="New comment"/>
+            <input type="hidden" name="RedirectURIAfterPublish" value="ezpublish/documentation/building_an_ez_publish_site/the_guestbook/creating_the_template#comments"/>
+            <input type="hidden" name="NodeID" value="38857"/>
+                           <input type="hidden" name="ClassIdentifier" value="article_comment"/>
+                        <input type="hidden" name="ContentLanguageCode" value="eng-GB"/>
+        </form>
+    </div>
+
+</div>
+</div>
+</div>
+
+
+<div class="template-design area-sidebar-normal">
+<div class="template-module content-view-sidebar">
+<div class="template-object class-documentation">
+
+<div class="attribute-heading">
+    <h2 class="bullet">Contents</h2>
+</div>
+<h3><a href="building_an_ez_publish_site.html">Building an eZ publish site</a></h3>
+<p>
+        
+        
+            
+                    <a href="building_an_ez_publish_site/prerequisits.html">Prerequisits</a><br/>
+          
+	
+            
+                    <a href="building_an_ez_publish_site/situation.html">Situation</a><br/>
+          
+	
+            
+                    <a href="building_an_ez_publish_site/creating_the_tscm_site.html">Creating the TSCM site</a><br/>
+          
+	
+            
+                    <a href="building_an_ez_publish_site/testing_the_interfaces.html">Testing the interfaces</a><br/>
+          
+	
+            
+                    <a href="building_an_ez_publish_site/setting_up_the_main_layout.html">Setting up the main layout</a><br/>
+          
+	
+            
+                    <a href="building_an_ez_publish_site/creating_sections.html">Creating sections</a><br/>
+          
+	
+            
+                    <a href="building_an_ez_publish_site/the_welcome_page.html">The welcome page</a><br/>
+          
+	
+            
+                    <a href="building_an_ez_publish_site/the_news_page.html">The news page</a><br/>
+          
+	
+            
+                    <a href="building_an_ez_publish_site/the_members_page.html">The members page</a><br/>
+          
+	
+            
+                    <a href="building_an_ez_publish_site/the_guestbook.html">The guestbook</a><br/>
+          
+	
+            &nbsp;&nbsp;&nbsp;
+                    <a href="building_an_ez_publish_site/the_guestbook/creating_the_content_class.html">Creating the content class</a><br/>
+          
+	
+            &nbsp;&nbsp;&nbsp;
+                    <a href="building_an_ez_publish_site/the_guestbook/adding_content.html">Adding content</a><br/>
+          
+	
+            &nbsp;&nbsp;&nbsp;
+                    <a href="building_an_ez_publish_site/the_guestbook/creating_the_template.html"><b>Creating the template</b></a><br/>
+          
+	
+            &nbsp;&nbsp;&nbsp;
+                    <a href="building_an_ez_publish_site/the_guestbook/adding_an_action_button.html">Adding an action button</a><br/>
+          
+	
+            &nbsp;&nbsp;&nbsp;
+                    <a href="building_an_ez_publish_site/the_guestbook/making_the_button_work.html">Making the button work</a><br/>
+          
+	
+            &nbsp;&nbsp;&nbsp;
+                    <a href="building_an_ez_publish_site/the_guestbook/the_input_template.html">The input template</a><br/>
+          
+	
+            &nbsp;&nbsp;&nbsp;
+                    <a href="building_an_ez_publish_site/the_guestbook/testing_the_guestbook.html">Testing the guestbook</a><br/>
+          
+	
+            &nbsp;&nbsp;&nbsp;
+                    <a href="building_an_ez_publish_site/the_guestbook/implementing_an_approval_mechanism.html">Implementing an approval mechanism</a><br/>
+          
+	
+            &nbsp;&nbsp;&nbsp;
+                    <a href="building_an_ez_publish_site/the_guestbook/modifying_the_entry_page.html">Modifying the entry page</a><br/>
+          
+	
+            &nbsp;&nbsp;&nbsp;
+                    <a href="building_an_ez_publish_site/the_guestbook/creating_a_workflow.html">Creating a workflow</a><br/>
+          
+	
+            &nbsp;&nbsp;&nbsp;
+                    <a href="building_an_ez_publish_site/the_guestbook/connecting_the_workflow_to_a_trigger_function.html">Connecting the workflow to a trigger...</a><br/>
+          
+	
+            &nbsp;&nbsp;&nbsp;
+                    <a href="building_an_ez_publish_site/the_guestbook/approving_entries.html">Approving entries</a><br/>
+          
+	
+            &nbsp;&nbsp;&nbsp;
+                    <a href="building_an_ez_publish_site/the_guestbook/the_runcronjob_script.html">The "runcronjob" script</a><br/>
+          
+	
+            
+                    <a href="building_an_ez_publish_site/the_links_page.html">The links page</a><br/>
+          
+	
+        </p>
+
+
+<hr class="docsplit"/>
+<h3>Created</h3>
+<p>
+19/11/2003<br/>
+1:09:55 pm<br/>
+by Balazs Halasy
+</p>
+<h3>Last updated</h3>
+<p>
+20/11/2003<br/>
+9:48:44 am<br/>
+by Balazs Halasy
+</p>
+<h3>Authors</h3>
+<p class="rendered">Balazs Halasy<br/></p>
+
+<br/>
+<hr class="docsplit"/>
+
+<p>This page is part of the eZ Publish documentation. The documentation is available under the <a href="https://web.archive.org/web/20071221025510/http://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License.</a> All contributions will be released under the terms of this license.</p>
+
+</div>
+</div>
+</div>
+
+
+
+
+
+<!-- Main area content: END -->
+
+</div>
+</div>
+
+<!-- Main area: END -->
+
+<hr class="hide"/>
+
+<!-- Footer area: START -->
+<div id="footer-design">
+<div id="page-width6">
+<div id="footer">
+
+<address>Powered by eZ Publish&reg; Content Management System.<br/>
+Copyright &copy;1999 - 2024 7x and 2007 eZ Systems AS (except where otherwise noted). All rights reserved.</address>
+
+</div>
+</div>
+</div>
+<!-- Footer area: END -->
+
+</div>
+<!-- Complete page area: END -->
+
+
+    
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TFEDSZJYH0"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-TFEDSZJYH0');
+</script>
+
+
+</body>
+</html>
+
+<!-- th[eZ] 20050804 --><!--
+     FILE ARCHIVED ON 02:55:10 Dec 21, 2007 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 12:58:52 Oct 31, 2024.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  captures_list: 0.477
+  exclusion.robots: 0.022
+  exclusion.robots.policy: 0.013
+  esindex: 0.009
+  cdx.remote: 15.707
+  LoadShardBlock: 229.516 (3)
+  PetaboxLoader3.datanode: 98.316 (4)
+  PetaboxLoader3.resolve: 187.377 (2)
+  load_resource: 80.541
+-->

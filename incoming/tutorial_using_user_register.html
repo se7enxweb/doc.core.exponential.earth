@@ -1,0 +1,937 @@
+
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style type="text/css">
+    @import url(https://doc.core.ezpublish.se7enx.com/ezno2005/design/ezno2005/stylesheets/core.css);
+    @import url(https://doc.core.ezpublish.se7enx.com/ezno2005/design/ezno2005/stylesheets/pagelayout.css);
+    @import url(https://doc.core.ezpublish.se7enx.com/ezno2005/design/ezno2005/stylesheets/classes.css);
+    @import url(https://doc.core.ezpublish.se7enx.com/ezno2005/design/ezno2005/stylesheets/monitor.css);
+</style>
+
+<link type="text/css" rel="stylesheet" href="https://web.archive.org/web/20071217202801cs_/http://ez.no/extension/ezno2005/design/ezno2005/stylesheets/print.css" media="print"/>
+
+    <link rel="alternate" title="ez.no News" href="https://web.archive.org/web/20071217202801/http://ez.no/rss/feed/news" type="application/rss+xml"/><link rel="alternate" title="ez.no Developer News" href="/web/20071217202801/http://ez.no/rss/feed/communitynews" type="application/rss+xml"/>
+<link rel="alternate" title="ez.no Developer Articles" href="https://web.archive.org/web/20071217202801/http://ez.no/rss/feed/community_articles" type="application/rss+xml"/>
+<link rel="alternate" title="ez.no Forum" href="https://web.archive.org/web/20071217202801/http://ez.no/rss/feed/forum" type="application/rss+xml"/>
+<link rel="alternate" title="ez.no Contributions" href="https://web.archive.org/web/20071217202801/http://ez.no/rss/feed/contribs" type="application/rss+xml"/>
+<link rel="alternate" title="ez.no Open Funding" href="https://web.archive.org/web/20071217202801/http://ez.no/rss/feed/openfunding_suggestions" type="application/rss+xml"/>
+
+
+<!-- IE conditional comments; for bug fixes for different IE versions -->
+<!--[if IE 5]>     <style type="text/css"> @import url(/extension/ezno2005/design/ezno2005/stylesheets/ie5.css);    </style> <![endif]-->
+<!--[if lte IE 6]> <style type="text/css"> @import url(/extension/ezno2005/design/ezno2005/stylesheets/ie6lte.css); </style> <![endif]-->
+<!--[if gte IE 6]> <style type="text/css"> @import url(/extension/ezno2005/design/ezno2005/stylesheets/ie6gte.css); </style> <![endif]-->
+
+<!-- Load special stylesheet (if necessary) for newer Netscape decendants, Mozilla and Firefox, using the Gecko renderer -->
+<script type="text/javascript"><!-- if ((navigator.userAgent.indexOf("Gecko") != -1)&&(navigator.userAgent.indexOf("KHTML") == -1)) document.write("<style type=\"text/css\">@import url(/extension/ezno2005/design/ezno2005/stylesheets/gecko.css);</style>");--></script>
+                                                                    
+<title>
+            Tutorial: Using user/register     /         Incoming     /         Documentation                    </title>
+<meta http-equiv="Content-Language" content="en-GB"/>
+    <meta name="author" content="eZ Systems"/>
+    <meta name="copyright" content="eZ Systems as"/>
+    <meta name="description" content="eZ Publish is an open source content management system (CMS) and an open source content management framework (CMF)."/>
+    <meta name="keywords" content="cms, publish, e-commerce, content management, development framework"/>
+
+<meta name="MSSmartTagsPreventParsing" content="TRUE"/>
+<meta name="generator" content="eZ Publish"/>
+
+<script type="text/javascript" src="https://doc.core.ezpublish.se7enx.com/ezno2005/design/ezno2005/javascripts/tools.js"></script>
+<script type="text/javascript" src="https://doc.core.ezpublish.se7enx.com/ezno2005/design/ezno2005/javascripts/dropdownmenu.js"></script>
+</head>    <body onload="menuInit();">
+
+<!-- Complete page area: START -->
+<div id="page">
+
+<!-- Header area: START -->
+<div id="header">
+<div id="header-insert">
+
+<!-- User menu area: START -->
+<div id="usermenu">
+
+<div id="page-width1">
+
+<div id="logo">
+<h1><a href="https://doc.core.ezpublish.se7enx.com/"><span class="hide">eZ Systems - The Content Management Ecosystem</span></a></h1>
+</div>
+
+
+
+<p class="hide"><a href="#main">Skip to main content</a></p>
+
+<hr class="hide"/>
+<div id="searchbox">
+<form action="/web/20071217202801/http://ez.no/ezsearchredirect/action" method="get">
+
+<div class="block">
+<div class="element">
+<input id="searchbutton" class="button" type="submit" value="Search"/>
+</div>
+
+<div class="element searchstring">
+    <label for="searchtext" class="hide">Search text:</label>
+    <input id="searchtext" name="SearchText" type="text" size="12"/><br/>
+    
+
+            <div class="section">
+            <label for="searcharea" class="hide">Search area:</label>
+            <select id="searcharea" name="SubTreeArray[]">
+                <option value="2" selected="selected">All ez.no</option>
+                <option value="306">Bug reports</option>
+                <option value="21358">Contributions</option>
+                <option value="documentation">Documentation</option>
+                <option value="308">Forum</option>
+            </select>
+            </div>
+    </div>
+
+</div>
+</form>
+</div>
+
+<hr class="hide"/>
+<h2 class="hide">User menu</h2>
+
+<!-- User menu content: START -->
+<ul>
+            <li><a href="https://web.archive.org/web/20071217202801/http://ez.no/download"><span>Downloads</span></a></li>
+    <li><a href="https://web.archive.org/web/20071217202801/http://ez.no/company/contact"><span>Contact</span></a></li>
+            <li><a href="https://web.archive.org/web/20071217202801/http://ez.no/user/login"><span>Log in</span></a></li>
+        <li><a href="https://web.archive.org/web/20071217202801/http://ez.no/user/register"><span>Register</span></a></li>
+    
+    <li id="language-menu">
+        <a class="highlighted" title="English" href="https://web.archive.org/web/20071217202801/http://ez.no/ezpublish/documentation/incoming/tutorial_using_user_register"><img src="/ezno2005/design/ezno2005/images/eng-GB.gif" width="18" height="12" alt="English"/></a>
+        <a title="Deutsch" href="https://web.archive.org/web/20071217202801/http://ez.no/de/ezpublish/documentation/incoming/tutorial_using_user_register"><img src="/ezno2005/design/ezno2005/images/ger-DE.gif" width="18" height="12" alt="Deutsch"/></a>
+        <a title="Português" href="https://web.archive.org/web/20071217202801/http://ez.no/br/ezpublish/documentation/incoming/tutorial_using_user_register"><img src="/ezno2005/design/ezno2005/images/por-BR.gif" width="18" height="12" alt="Português"/></a>
+        <a title="Français" href="https://web.archive.org/web/20071217202801/http://ez.no/fr/ezpublish/documentation/incoming/tutorial_using_user_register"><img src="/ezno2005/design/ezno2005/images/fre-FR.gif" width="18" height="12" alt="Français"/></a>
+        <a title="日本語" href="https://web.archive.org/web/20071217202801/http://ez.no/jp/ezpublish/documentation/incoming/tutorial_using_user_register"><img src="/ezno2005/design/ezno2005/images/jpn-JP.gif" width="18" height="12" alt="日本語"/></a>        
+        <a title="中文" href="https://web.archive.org/web/20071217202801/http://ez.no/tw/ezpublish/documentation/incoming/tutorial_using_user_register"><img src="/ezno2005/design/ezno2005/images/chi-TW.gif" width="18" height="12" alt="中文"/></a>        
+        <a title="Norsk" href="https://web.archive.org/web/20071217202801/http://ez.no/no/ezpublish/documentation/incoming/tutorial_using_user_register"><img src="/ezno2005/design/ezno2005/images/nor-NO.gif" width="18" height="12" alt="Norsk"/></a>        
+    </li>
+</ul>
+<!-- User menu content: END -->
+
+</div>
+
+</div>
+<!-- User menu area: END -->
+
+</div>
+</div>
+<!-- Header area: END --><script type="text/javascript">
+<!--
+var menu = new Array();
+
+menu[0] = ['eZ Publish', '/ezpublish', 'eZ Publish Premium', '/ezpublish/premium', 'eZ Publish Now', '/ezpublish/now', 'eZ Publish On Demand', '/ezpublish/on_demand', 'Proprietary license options', '/products/proprietary_license_options', 'Certified extensions', '/products/certified_extensions', 'eZ Flow', '/ezflow', 'eZ Components', '/ezcomponents', 'eZ Find', '/ezfind', 'eZ Newsletter', '/eznewsletter', 'Expert consulting services', '/products/expert_consulting_services', 'Support', '/products/support'];
+menu[1] = ['Documentation', '/doc', 'Articles', '/community/articles', 'Books', '/store/books', 'Training', '/education/training', 'Certification', '/education/certification'];
+menu[2] = ['Case studies', '/customers/case_studies', 'References', '/customers/references', 'User quotes', '/customers/user_quotes', 'eZ for media', '/customers/ez_for_media'];
+menu[3] = ['Worldwide Partners', '/partner/worldwide_partners', 'eZ Partner program', '/partner/ez_partner_program', 'Knowledge centre', '/partner/knowledge_centre'];
+menu[4] = ['Downloads', '/download', 'Documentation', '/doc', 'News', '/developer/news', 'Developer information', '/developer/developer_information', 'Projects & contributions', '/developer/contribs', 'Forum', '/developer/forum', 'Issue tracker', '/bugs/redirect', 'Open Funding', '/developer/open_funding', 'Security', '/developer/security', 'User groups', '/developer/user_groups'];
+menu[5] = ['Total Product Responsibility from eZ', '/support/total_product_responsibility_from_ez'];
+menu[6] = ['Software solutions', '/store/software', 'Training', '/services/training', 'Certification', '/services/certification', 'Books', '/store/books', 'Services', '/store/services'];
+menu[7] = ['News', '/company/news', 'Media & press', '/company/media_press', 'Events', '/company/events', 'Career', '/company/career', 'eZ Conference & Awards', '/company/ez_conference_awards', 'Board of Directors', '/company/board', 'eZ Crew', '/company/ez_crew', 'Contact', '/company/contact'];
+
+-->
+</script>
+<div id="menuborder">
+
+<!-- Main menu area: START -->
+<div id="menu" onmouseover="menuHover();" onmouseout="tryHideSubMenues();">
+
+<div id="mainmenu" class="float-break">
+<div id="page-width2">
+    <ul id="mainmenulist" class="float-break">
+<li class="current"><a href="https://web.archive.org/web/20071217202801/http://ez.no/products" onmouseover="switchSubMenu( this );">Products &amp; services</a></li>
+<li><a href="https://web.archive.org/web/20071217202801/http://ez.no/education" onmouseover="switchSubMenu( this );">Education</a></li>
+<li><a href="https://web.archive.org/web/20071217202801/http://ez.no/customers" onmouseover="switchSubMenu( this );">Customers</a></li>
+<li><a href="https://web.archive.org/web/20071217202801/http://ez.no/partner" onmouseover="switchSubMenu( this );">Partners</a></li>
+<li><a href="https://web.archive.org/web/20071217202801/http://ez.no/developer" onmouseover="switchSubMenu( this );">Developer</a></li>
+<li><a href="https://web.archive.org/web/20071217202801/http://ez.no/support" onmouseover="switchSubMenu( this );">Support</a></li>
+<li><a href="https://web.archive.org/web/20071217202801/http://ez.no/store" onmouseover="switchSubMenu( this );">Store</a></li>
+<li class="last"><a href="https://web.archive.org/web/20071217202801/http://ez.no/company" onmouseover="switchSubMenu( this );">Company</a></li>
+</ul>
+
+</div>
+</div>
+
+
+<div id="submenu">
+<div id="page-width3">
+    <ul class="float-break">
+                        <li><a href="https://web.archive.org/web/20071217202801/http://ez.no/ezpublish">eZ Publish</a></li>
+                                <li><a href="https://web.archive.org/web/20071217202801/http://ez.no/ezpublish/premium">eZ Publish Premium</a></li>
+                                <li><a href="https://web.archive.org/web/20071217202801/http://ez.no/ezpublish/now">eZ Publish Now</a></li>
+                                <li><a href="https://web.archive.org/web/20071217202801/http://ez.no/ezpublish/on_demand">eZ Publish On Demand</a></li>
+                                <li><a href="https://web.archive.org/web/20071217202801/http://ez.no/products/proprietary_license_options">Proprietary license options</a></li>
+                                <li><a href="https://web.archive.org/web/20071217202801/http://ez.no/products/certified_extensions">Certified extensions</a></li>
+                                <li><a href="https://web.archive.org/web/20071217202801/http://ez.no/ezflow">eZ Flow</a></li>
+                                <li><a href="https://web.archive.org/web/20071217202801/http://ez.no/ezcomponents">eZ Components</a></li>
+                                <li><a href="https://web.archive.org/web/20071217202801/http://ez.no/ezfind">eZ Find</a></li>
+                                <li><a href="https://web.archive.org/web/20071217202801/http://ez.no/eznewsletter">eZ Newsletter</a></li>
+                                <li><a href="https://web.archive.org/web/20071217202801/http://ez.no/products/expert_consulting_services">Expert consulting services</a></li>
+                                <li class="last"><a href="https://web.archive.org/web/20071217202801/http://ez.no/products/support">Support</a></li>
+                </ul>
+</div>
+</div>
+
+<script type="text/javascript"><!--
+    document.getElementById('submenu').style.display = 'none';
+--></script>
+
+</div>
+<!-- Main menu area: END -->
+
+</div>
+
+<hr class="hide"/><!-- Path area: START -->
+<div id="path">
+
+<div id="page-width4">
+<h2 class="hide">Path</h2>
+
+<!-- Path content: START -->
+<p>
+                        <a href="https://web.archive.org/web/20071217202801/http://ez.no/">ez.no</a>
+        
+                        /
+                            <a href="https://web.archive.org/web/20071217202801/http://ez.no/ezpublish">ezpublish</a>
+        
+                        /
+                            <a href="toc.html">documentation</a>
+        
+                        /
+                            <a href="incoming.html">incoming</a>
+        
+                        /
+                            tutorial: using user/register
+        
+            </p>
+<!-- Path content: END -->
+
+</div>
+
+</div>
+<!-- Path area: END -->
+
+<hr class="hide"/>
+
+<!-- Main area: START -->
+
+<div id="page-width5">
+<div id="main" class="float-break">
+
+<!-- Main area content: START -->
+
+
+
+
+<div class="template-design area-main-normal">
+<div class="template-module content-view-full">
+<div class="template-object class-documentation">
+
+
+<div class="attribute-heading">
+    <h1>Tutorial: Using user/register</h1>
+</div>
+
+<p><strong>These documentation pages are no longer maintained. Please visit the <a href="https://doc.ezpublishlegacy.se7enx.com">new documentation site.</a></strong></p>
+
+<div class="attribute-long">
+    
+
+<a name="eztoc91885_1" id="eztoc91885_1"></a><h2>Documentation for versions 3.1 to 3.4</h2>
+<p>
+Sites requiring a user to login must have the facility to register the user first. This requires using the ez publish <b>user</b> module with the <b>register</b> view. This is simply done by appending <b>user/register</b> to the root of your website. For example:
+</p>
+    <pre class="wordwrap"><span class="line">http://my-web-site.com/user/register</span></pre>
+    
+<p>
+With the default settings of the ez publish installation this will display a registration screen for users but the format of the display may not be to your liking.
+</p>
+
+<a name="eztoc91885_1_1" id="eztoc91885_1_1"></a><h3>Overriding the display of default user class</h3>
+<p>
+The standard user class in ez publish has the minimum number of fields to make it useful for users. It contains two text fields and a 'user account' datatype. If you want to change the display of user objects you need to override two files:
+</p>
+
+<p>
+<b>Note:</b> The following template files are found within the folder: <b>design/standard/templates/</b>
+</p>
+
+<ul>
+
+<li>user/register.tpl</li>
+
+<li>content/datatype/edit/ezuser.tpl</li>
+
+</ul>
+
+<p>
+The second override is for the datatype.
+</p>
+
+<p>
+Generally it is better to copy the current files required and only change what is needed to be changed, leaving in place the input tags required to submit the form. However, sometimes even the design of the input tags need to be changed.
+</p>
+
+<p>
+The following two sections list the fields that must be present in order to perform a successful user register. Once this is known and understand applying a design is straightforward.
+</p>
+
+<p>
+<b>Note: it is highly recommended you examine the original template files within the standard directory for contextual reference.</b>
+</p>
+
+<p>
+
+An example override file (thanks James!) for user/register is:<br/>
+</p>
+    <pre class="wordwrap"><span class="line">[register_user]</span>
+
+<span class="line">Source=user/register.tpl</span>
+
+<span class="line">MatchFile=user/register.tpl</span>
+
+<span class="line">Subdir=templates</span>
+
+<span class="line">Match[class_identifier]=user</span></pre>
+    
+<p>
+With version 3.3 and 3.4 I've noticed that if your override file is structured in the same way as the original there is no need to put in an explicit override. If your structure changes then you do. For example, <b>user/register</b> is located within <b>design/standard/templates/</b>. If your override file is located at <b>design/user/override/templates/user/register.tpl</b>, where <b>user</b> is your design, there is no need to enter the override. This applies to all overrides.
+</p>
+
+<a name="eztoc91885_1_1_1" id="eztoc91885_1_1_1"></a><h4>Input tags for register.tpl</h4>
+<p>
+The standard register template uses a pre-defined variable called {$content_attributes}. This is an array containing all of the attributes of your user class. The simple way to use this for editing is to loop through the array and use {attribute_edit_gui} to display the correct edit boxes. If you have modified your user class you may need to break out of this. If a simple loop cannot work for you then refer to the attributes directly like this:
+</p>
+    <pre class="wordwrap"><span class="line">{let my_name=$content_attributes[0]</span>
+
+<span class="line">     my_user_account=$content_attributes[1]</span>
+
+<span class="line">     my_address=$content_attributes[2]</span>
+
+<span class="line">}</span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">{$my_name.contentclass_attribute.name} {attribute_edit_gui attribute=$my_name}</span>
+
+<span class="line">{$my_user_account.contentclass_attribute.name} {attribute_edit_gui attribute=$my_user_account}</span>
+
+<span class="line">&lt;i&gt;My address&lt;/i&gt; {attribute_edit_gui=$my_address}</span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">{/let}</span></pre>
+    
+<p>
+Here you must make sure that you index the array in the correct order otherwise you will not have the correct attribute when you expect it. This is a simple example which allows you to add design to it as you need.
+</p>
+
+<p>
+To submit the form you must specify the content object id of each attribute. If you use the loop method then you can set the id at the same time as performing the loop. Examine the original template to see this in action. If you used the break out method above enter code like this:
+</p>
+    <pre class="wordwrap"><span class="line">&lt;input type=&quot;hidden&quot; name=&quot;ContentObjectAttribute_id[]&quot; value=&quot;{$content_attributes[0].id}&quot; /&gt;</span>
+
+<span class="line">&lt;input type=&quot;hidden&quot; name=&quot;ContentObjectAttribute_id[]&quot; value=&quot;{$content_attributes[1].id}&quot; /&gt;</span>
+
+<span class="line">&lt;input type=&quot;hidden&quot; name=&quot;ContentObjectAttribute_id[]&quot; value=&quot;{$content_attributes[2].id}&quot; /&gt;</span></pre>
+    
+<p>
+The name <b>ContentObjectAttribute_id[]</b> will map to an array in the php so each id will be an element in that array. Make sure you have an id for each attribute you have.
+</p>
+
+<p>
+To finish the template off you need a submit button, and the complimentary cancel button. Again the key item to note here is the name used to identify the submit button. You can apply different design here if you wish, make it an image submit button or whatever, but keep the name the same.
+</p>
+    <pre class="wordwrap"><span class="line">&lt;input type=&quot;submit&quot; name=&quot;PublishButton&quot; value=&quot;submit&quot;&gt;</span>
+
+<span class="line">&lt;input type=&quot;button&quot; name=&quot;CancelButton&quot; value=&quot;cancel register&quot;&gt;</span></pre>
+    
+<a name="eztoc91885_1_1_2" id="eztoc91885_1_1_2"></a><h4>Input tags for ezuser.tpl</h4>
+<p>
+Normally you use an {attribute_edit_gui} to display such details but since we are overriding an attributes display we need to have direct calls.
+</p>
+
+<p>
+For a ezuser datatype there are four variables that must be set with a specific name. In this case the variable {$attribute} is pre-defined in the namespace of the template.
+</p>
+
+<p>
+The names are:
+</p>
+
+<ul>
+
+<li>ContentObjectAttribute_data_user_login_{$attribute.id}</li>
+
+<li>ContentObjectAttribute_data_user_email_{$attribute.id}</li>
+
+<li>ContentObjectAttribute_data_user_password_{$attribute.id}</li>
+
+<li>ContentObjectAttribute_data_user_password_confirm_{$attribute.id}</li>
+
+</ul>
+
+<p>
+Each name must used within an input tag, for example:
+</p>
+    <pre class="wordwrap"><span class="line">&lt;input type=&quot;text&quot; name=&quot;ContentObjectAttribute_data_user_login_{$attribute.id}&quot; size=&quot;11&quot; value=&quot;&quot; /&gt;</span></pre>
+    
+<a name="eztoc91885_1_2" id="eztoc91885_1_2"></a><h3>Creating a new user</h3>
+<p>
+Often the default user class needs to be extended or changed to hold additional information, such as address information, for example.
+</p>
+
+<p>
+If the default user class is extended then only the override template <b>user/register.tpl</b> needs to be altered to account for the changes.
+</p>
+
+<p>
+Should a new class be created then a configuration file needs to be adjusted. Generally the configuration file <b>site.ini</b> will contain this information, but it may be set within your site.ini for your site access or in your overrides directory.
+</p>
+
+<p>
+
+Modifications are made within this group:<br/>
+</p>
+    <pre class="wordwrap"><span class="line">[UserSettings]</span></pre>
+    
+<p>
+Groups are indicated by the use of the square bracket.
+</p>
+
+<p>
+After creating your new user class make sure this setting has the correct user class id
+</p>
+    <pre class="wordwrap"><span class="line">UserClassID=NEW_CLASS_ID</span></pre>
+    
+<p>
+If your new user class was not created within the <b>Users</b> class group then alter this value to the group it was created within.
+</p>
+    <pre class="wordwrap"><span class="line">UserClassGroupID=2</span></pre>
+    
+<p>
+If you create a new user group for your new user class you should change this setting to the correct node id:
+</p>
+    <pre class="wordwrap"><span class="line">DefaultUserPlacement=NEW_NODE_ID</span></pre>
+    
+<p>
+This will place user objects within the node specified.
+</p>
+
+<p>
+If you wish your new user to be assigned a specific section alter this value but this is generally not changed.
+</p>
+    <pre class="wordwrap"><span class="line">DefaultSectionID=1</span></pre>
+    
+<p>
+An example of this all together is:
+</p>
+    <pre class="wordwrap"><span class="line">[UserSettings]</span>
+
+<span class="line">DefaultUserPlacement=12</span>
+
+<span class="line">DefaultSectionID=1</span>
+
+<span class="line">UserClassID=4</span>
+
+<span class="line">UserClassGroupID=2</span></pre>
+    
+<p>
+which is the default for ez publish.
+</p>
+
+<a name="eztoc91885_1_3" id="eztoc91885_1_3"></a><h3>Making sure registered users are valid</h3>
+<p>
+Be default ez publish sends an email to a recently registered user. Within this email is a link with a security code that, when clicked, informs ez that the email recipient is indeed the user who registered and that they want to continue.
+</p>
+
+<p>
+Within the above <b>UserSettings</b> group make sure the setting
+</p>
+    <pre class="wordwrap"><span class="line">VerifyUserEmail=enabled</span></pre>
+    
+<p>
+is set to <b>enabled</b> or <b>disabled</b>, depending on what you need.
+</p>
+
+<a name="eztoc91885_1_4" id="eztoc91885_1_4"></a><h3>User roles</h3>
+<p>
+If you have created a new user class and group you will need to make sure that your location for users has the correct role permissions set. This should apply to the group and will ensure created users within that group receive the same permissions.
+</p>
+</div>
+
+
+<div class="content-view-children">
+<div class="class-comment">
+    <h1 id="comments">Comments</h1>    <div class="block float-break">
+              <form method="post" action="/web/20071217202801/http://ez.no/content/action">
+             <input class="button" type="submit" name="NewButton" value="New comment"/>
+             <input type="hidden" name="RedirectURIAfterPublish" value="ezpublish/documentation/incoming/tutorial_using_user_register#comments"/>
+             <input type="hidden" name="NodeID" value="33091"/>
+                             <input type="hidden" name="ClassIdentifier" value="article_comment"/>
+                          <input type="hidden" name="ContentLanguageCode" value="eng-GB"/>
+         </form>
+         </div>
+
+
+        
+
+<div class="content-view-line">
+<div class="class-comment bglight">
+
+    
+    <div id="msg66374" class="attribute-heading">
+        <h2>Thanks Nigel</h2>
+    </div>
+
+<div class="attribute-byline float-break">
+    <p class="author">Paul Forsyth</p>
+    <p class="date">Wednesday 12 January 2005 9:53:53 pm</p>
+</div>
+
+
+<div class="attribute-short">
+            Yip, the lines were wrong. I've used your corrections.<br/>
+<br/>
+Paul
+
+    </div>
+
+
+</div>
+</div>
+    
+
+<div class="content-view-line">
+<div class="class-comment bgdark">
+
+    
+    <div id="msg66355" class="attribute-heading">
+        <h2>Shouldn't these lines be attribute=</h2>
+    </div>
+
+<div class="attribute-byline float-break">
+    <p class="author">nigel dodd</p>
+    <p class="date">Wednesday 12 January 2005 5:45:07 pm</p>
+</div>
+
+
+<div class="attribute-short">
+            Shouldn't the lines such as<br/>
+<pre class="wordwrap"><span class="line">
+</span>
+
+<span class="line">{$my_name.contentclass_attribute.name} {attribute_edit_gui=$my_name}
+</span>
+
+<span class="line"></span></pre><br/>
+really be <br/>
+<pre class="wordwrap"><span class="line">
+</span>
+
+<span class="line">{$my_name.contentclass_attribute.name} {attribute_edit_gui attribute=$my_name}
+</span>
+
+<span class="line"></span></pre><br/>
+
+
+    </div>
+
+
+</div>
+</div>
+    
+
+<div class="content-view-line">
+<div class="class-comment bglight">
+
+    
+    <div id="msg56311" class="attribute-heading">
+        <h2>Thanks James</h2>
+    </div>
+
+<div class="attribute-byline float-break">
+    <p class="author">Paul Forsyth</p>
+    <p class="date">Thursday 05 August 2004 1:55:57 pm</p>
+</div>
+
+
+<div class="attribute-short">
+            I've updated the doc with this suggestion, and noted that you dont need to put in an override now. I've marked this doc as ready for 3.4 as i still use this technique today. Though i think this doc needs a refresh it should be valid. <br/>
+<br/>
+Sorry i missed the comments. I had not added this doc to my notifications.<br/>
+<br/>
+paul<br/>
+
+
+    </div>
+
+
+</div>
+</div>
+    
+
+<div class="content-view-line">
+<div class="class-comment bgdark">
+
+    
+    <div id="msg53046" class="attribute-heading">
+        <h2>override settings</h2>
+    </div>
+
+<div class="attribute-byline float-break">
+    <p class="author">James Ward</p>
+    <p class="date">Tuesday 15 June 2004 11:37:11 pm</p>
+</div>
+
+
+<div class="attribute-short">
+            [register_user]<br/>
+Source=user/register.tpl<br/>
+MatchFile=user/register.tpl<br/>
+Subdir=templates<br/>
+Match[class_identifier]=user
+
+    </div>
+
+
+</div>
+</div>
+    
+
+<div class="content-view-line">
+<div class="class-comment bglight">
+
+    
+    <div id="msg53045" class="attribute-heading">
+        <h2>Include the override.ini example</h2>
+    </div>
+
+<div class="attribute-byline float-break">
+    <p class="author">James Ward</p>
+    <p class="date">Tuesday 15 June 2004 11:19:32 pm</p>
+</div>
+
+
+<div class="attribute-short">
+            Perhaps someone could update this documentation to include an example of the override.ini setting used to call the register.tpl file.
+
+    </div>
+
+
+</div>
+</div>
+    
+
+<div class="content-view-line">
+<div class="class-comment bgdark">
+
+    
+    <div id="msg50075" class="attribute-heading">
+        <h2>Adding custom fields to e-mail templates</h2>
+    </div>
+
+<div class="attribute-byline float-break">
+    <p class="author">Joel Hardi</p>
+    <p class="date">Tuesday 04 May 2004 5:01:52 pm</p>
+</div>
+
+
+<div class="attribute-short">
+            If you create a custom user class and want to include some of the extra fields you have added in the system-generated e-mails, just override the appropriate template in the same way as register.tpl.<br/>
+<br/>
+For instance, if you've added a &quot;company&quot; field to your custom user class and you want to display it in the e-mail that goes to the system administrator, override the registrationfeedback.tpl template and add the line:<br/>
+<br/>
+Company: {attribute_view_gui attribute=$user.contentobject.data_map.company}
+
+    </div>
+
+
+</div>
+</div>
+
+
+ 
+
+
+</div>
+</div>
+
+<div class="block float-break">
+            <form method="post" action="/web/20071217202801/http://ez.no/content/action">
+            <input class="button" type="submit" name="NewButton" value="New comment"/>
+            <input type="hidden" name="RedirectURIAfterPublish" value="ezpublish/documentation/incoming/tutorial_using_user_register#comments"/>
+            <input type="hidden" name="NodeID" value="33091"/>
+                           <input type="hidden" name="ClassIdentifier" value="article_comment"/>
+                        <input type="hidden" name="ContentLanguageCode" value="eng-GB"/>
+        </form>
+    </div>
+
+</div>
+</div>
+</div>
+
+
+<div class="template-design area-sidebar-normal">
+<div class="template-module content-view-sidebar">
+<div class="template-object class-documentation">
+
+<div class="attribute-heading">
+    <h2 class="bullet">Contents</h2>
+</div>
+<h3><a href="incoming.html">Incoming</a></h3>
+<p>
+        
+        
+            
+                    <a href="incoming/appendices.html">APPENDICES</a><br/>
+          
+	
+            
+                    <a href="incoming/design.html">Design</a><br/>
+          
+	
+            
+                    <a href="incoming/developing_and_improving_ezpublish.html">Developing and Improving eZpublish</a><br/>
+          
+	
+            
+                    <a href="incoming/developing_projects.html">Developing projects</a><br/>
+          
+	
+            
+                    <a href="incoming/ez_publish_development_cycle.html">eZ publish development cycle</a><br/>
+          
+	
+            
+                    <a href="incoming/ez_publish_site_structure.html">eZ publish site structure</a><br/>
+          
+	
+            
+                    <a href="incoming/hide_shopsetup_navigation_tab.html">Hide shop/setup navigation tab</a><br/>
+          
+	
+            
+                    <a href="incoming/how_does_the_new_menu_system_work.html">How does the new menu system work?</a><br/>
+          
+	
+            
+                    <a href="incoming/how_to_find_a_node_id_in_the_path_array.html">How to find a node id in the path array</a><br/>
+          
+	
+            
+                    <a href="incoming/how_to_find_the_parent_and_grandparent_of_an_object.html">How to find the parent and grandparen...</a><br/>
+          
+	
+            
+                    <a href="incoming/how_to_set_cache_expire_time_or_disable_cache_in_template.html">How to set cache expire time or disab...</a><br/>
+          
+	
+            
+                    <a href="incoming/http_post_to_url_conversion.html">HTTP Post to URL conversion</a><br/>
+          
+	
+            
+                    <a href="incoming/image_map.html">Image Map</a><br/>
+          
+	
+            
+                    <a href="incoming/javascript_popupmenu.html">Javascript popupmenu</a><br/>
+          
+	
+            
+                    <a href="incoming/line_ending_in_email.html">Line ending in email</a><br/>
+          
+	
+            
+                    <a href="incoming/list_of_mime_types.html">List of MIME types</a><br/>
+          
+	
+            
+                    <a href="incoming/managing_development.html">Managing Development</a><br/>
+          
+	
+            
+                    <a href="incoming/mysql_server_character_set.html">MySQL Server Character Set</a><br/>
+          
+	
+            
+                    <a href="incoming/package_format.html">Package format</a><br/>
+          
+	
+            
+                    <a href="incoming/pdf_export_tutorial.html">PDF export tutorial</a><br/>
+          
+	
+            
+                    <a href="incoming/persistent_template_variable.html">Persistent template variable</a><br/>
+          
+	
+            
+                    <a href="incoming/php_and_apache_2.html">PHP and Apache 2</a><br/>
+          
+	
+            
+                    <a href="incoming/problems_on_mac_os_9_and_mac_os_x.html">Problems on Mac OS 9 and Mac OS X</a><br/>
+          
+	
+            
+                    <a href="incoming/remove_confirmation_when_discarding_an_object.html">Remove confirmation when discarding a...</a><br/>
+          
+	
+            
+                    <a href="incoming/session.html">Session</a><br/>
+          
+	
+            
+                    <a href="incoming/setting_several_variables_in_a_section.html">Setting several variables in a section</a><br/>
+          
+	
+            
+                    <a href="incoming/setting_up_rss_import.html">Setting up RSS Import</a><br/>
+          
+	
+            
+                    <a href="incoming/setup_php_for_comandline_usage_php_cli.html">Setup PHP for comandline usage (PHP-C...</a><br/>
+          
+	
+            
+                    <a href="incoming/smart_viewcache_cleaning_system.html">Smart viewcache cleaning system</a><br/>
+          
+	
+            
+                    <a href="incoming/ssl_with_ez_over_a_ssl_proxy.html">SSL with eZ over a SSL proxy</a><br/>
+          
+	
+            
+                    <a href="incoming/system_development.html">System development</a><br/>
+          
+	
+            
+                    <a href="incoming/test_document.html">Test document</a><br/>
+          
+	
+            
+                    <a href="incoming/the_community_server.html">The Community Server</a><br/>
+          
+	
+            
+                    <a href="incoming/truetype_font_in_pdf.html">Truetype font in PDF</a><br/>
+          
+	
+            
+                    <a href="incoming/tutorial_using_user_register.html"><b>Tutorial: Using user/register</b></a><br/>
+          
+	
+            
+                    <a href="incoming/user_preferences.html">User preferences</a><br/>
+          
+	
+            
+                    <a href="incoming/webdav_clients_and_compatiblity.html">WebDAV clients and compatiblity</a><br/>
+          
+	
+            
+                    <a href="incoming/what_does_something_tag_link_must_have_attribute_href_or_valid_id_need_fix_mean.html">What does "Something: Tag 'link' must...</a><br/>
+          
+	
+        </p>
+
+
+<hr class="docsplit"/>
+<h3>Created</h3>
+<p>
+28/08/2003<br/>
+8:21:08 pm<br/>
+by Paul Forsyth
+</p>
+<h3>Last updated</h3>
+<p>
+12/01/2005<br/>
+9:52:42 pm<br/>
+by Paul Forsyth
+</p>
+<h3>Authors</h3>
+<p class="rendered">Paul Forsyth<br/></p>
+
+<br/>
+<hr class="docsplit"/>
+
+<p>This page is part of the eZ Publish documentation. The documentation is available under the <a href="https://web.archive.org/web/20071217202801/http://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License.</a> All contributions will be released under the terms of this license.</p>
+
+</div>
+</div>
+</div>
+
+
+
+
+
+<!-- Main area content: END -->
+
+</div>
+</div>
+
+<!-- Main area: END -->
+
+<hr class="hide"/>
+
+<!-- Footer area: START -->
+<div id="footer-design">
+<div id="page-width6">
+<div id="footer">
+
+<address>Powered by eZ Publish&reg; Content Management System.<br/>
+Copyright &copy;1999 - 2024 7x and 2007 eZ Systems AS (except where otherwise noted). All rights reserved.</address>
+
+</div>
+</div>
+</div>
+<!-- Footer area: END -->
+
+</div>
+<!-- Complete page area: END -->
+
+
+    
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TFEDSZJYH0"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-TFEDSZJYH0');
+</script>
+
+
+</body>
+</html>
+
+<!-- th[eZ] 20050804 --><!--
+     FILE ARCHIVED ON 20:28:01 Dec 17, 2007 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 11:22:30 Oct 31, 2024.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  captures_list: 0.642
+  exclusion.robots: 0.024
+  exclusion.robots.policy: 0.011
+  esindex: 0.011
+  cdx.remote: 7.952
+  LoadShardBlock: 68.245 (3)
+  PetaboxLoader3.datanode: 74.912 (4)
+  load_resource: 106.389
+  PetaboxLoader3.resolve: 70.494
+-->

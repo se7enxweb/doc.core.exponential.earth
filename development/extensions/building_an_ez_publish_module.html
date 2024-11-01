@@ -1,0 +1,1135 @@
+
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style type="text/css">
+    @import url(https://doc.core.ezpublish.se7enx.com/ezno2005/design/ezno2005/stylesheets/core.css);
+    @import url(https://doc.core.ezpublish.se7enx.com/ezno2005/design/ezno2005/stylesheets/pagelayout.css);
+    @import url(https://doc.core.ezpublish.se7enx.com/ezno2005/design/ezno2005/stylesheets/classes.css);
+    @import url(https://doc.core.ezpublish.se7enx.com/ezno2005/design/ezno2005/stylesheets/monitor.css);
+</style>
+
+<link type="text/css" rel="stylesheet" href="https://web.archive.org/web/20071223212545cs_/http://ez.no/extension/ezno2005/design/ezno2005/stylesheets/print.css" media="print"/>
+
+    <link rel="alternate" title="ez.no News" href="https://web.archive.org/web/20071223212545/http://ez.no/rss/feed/news" type="application/rss+xml"/><link rel="alternate" title="ez.no Developer News" href="/web/20071223212545/http://ez.no/rss/feed/communitynews" type="application/rss+xml"/>
+<link rel="alternate" title="ez.no Developer Articles" href="https://web.archive.org/web/20071223212545/http://ez.no/rss/feed/community_articles" type="application/rss+xml"/>
+<link rel="alternate" title="ez.no Forum" href="https://web.archive.org/web/20071223212545/http://ez.no/rss/feed/forum" type="application/rss+xml"/>
+<link rel="alternate" title="ez.no Contributions" href="https://web.archive.org/web/20071223212545/http://ez.no/rss/feed/contribs" type="application/rss+xml"/>
+<link rel="alternate" title="ez.no Open Funding" href="https://web.archive.org/web/20071223212545/http://ez.no/rss/feed/openfunding_suggestions" type="application/rss+xml"/>
+
+
+<!-- IE conditional comments; for bug fixes for different IE versions -->
+<!--[if IE 5]>     <style type="text/css"> @import url(/extension/ezno2005/design/ezno2005/stylesheets/ie5.css);    </style> <![endif]-->
+<!--[if lte IE 6]> <style type="text/css"> @import url(/extension/ezno2005/design/ezno2005/stylesheets/ie6lte.css); </style> <![endif]-->
+<!--[if gte IE 6]> <style type="text/css"> @import url(/extension/ezno2005/design/ezno2005/stylesheets/ie6gte.css); </style> <![endif]-->
+
+<!-- Load special stylesheet (if necessary) for newer Netscape decendants, Mozilla and Firefox, using the Gecko renderer -->
+<script type="text/javascript"><!-- if ((navigator.userAgent.indexOf("Gecko") != -1)&&(navigator.userAgent.indexOf("KHTML") == -1)) document.write("<style type=\"text/css\">@import url(/extension/ezno2005/design/ezno2005/stylesheets/gecko.css);</style>");--></script>
+                                                                                    
+<title>
+            Building an eZ publish module     /         Extensions     /         Development                    </title>
+<meta http-equiv="Content-Language" content="en-GB"/>
+    <meta name="author" content="eZ Systems"/>
+    <meta name="copyright" content="eZ Systems as"/>
+    <meta name="description" content="eZ Publish is an open source content management system (CMS) and an open source content management framework (CMF)."/>
+    <meta name="keywords" content="cms, publish, e-commerce, content management, development framework"/>
+
+<meta name="MSSmartTagsPreventParsing" content="TRUE"/>
+<meta name="generator" content="eZ Publish"/>
+
+<script type="text/javascript" src="https://doc.core.ezpublish.se7enx.com/ezno2005/design/ezno2005/javascripts/tools.js"></script>
+<script type="text/javascript" src="https://doc.core.ezpublish.se7enx.com/ezno2005/design/ezno2005/javascripts/dropdownmenu.js"></script>
+</head>    <body onload="menuInit();">
+
+<!-- Complete page area: START -->
+<div id="page">
+
+<!-- Header area: START -->
+<div id="header">
+<div id="header-insert">
+
+<!-- User menu area: START -->
+<div id="usermenu">
+
+<div id="page-width1">
+
+<div id="logo">
+<h1><a href="https://doc.core.ezpublish.se7enx.com/"><span class="hide">eZ Systems - The Content Management Ecosystem</span></a></h1>
+</div>
+
+
+
+<p class="hide"><a href="#main">Skip to main content</a></p>
+
+<hr class="hide"/>
+<div id="searchbox">
+<form action="/web/20071223212545/http://ez.no/ezsearchredirect/action" method="get">
+
+<div class="block">
+<div class="element">
+<input id="searchbutton" class="button" type="submit" value="Search"/>
+</div>
+
+<div class="element searchstring">
+    <label for="searchtext" class="hide">Search text:</label>
+    <input id="searchtext" name="SearchText" type="text" size="12"/><br/>
+    
+
+            <div class="section">
+            <label for="searcharea" class="hide">Search area:</label>
+            <select id="searcharea" name="SubTreeArray[]">
+                <option value="2" selected="selected">All ez.no</option>
+                <option value="306">Bug reports</option>
+                <option value="21358">Contributions</option>
+                <option value="documentation">Documentation</option>
+                <option value="308">Forum</option>
+            </select>
+            </div>
+    </div>
+
+</div>
+</form>
+</div>
+
+<hr class="hide"/>
+<h2 class="hide">User menu</h2>
+
+<!-- User menu content: START -->
+<ul>
+            <li><a href="https://web.archive.org/web/20071223212545/http://ez.no/download"><span>Downloads</span></a></li>
+    <li><a href="https://web.archive.org/web/20071223212545/http://ez.no/company/contact"><span>Contact</span></a></li>
+            <li><a href="https://web.archive.org/web/20071223212545/http://ez.no/user/login"><span>Log in</span></a></li>
+        <li><a href="https://web.archive.org/web/20071223212545/http://ez.no/user/register"><span>Register</span></a></li>
+    
+    <li id="language-menu">
+        <a class="highlighted" title="English" href="https://web.archive.org/web/20071223212545/http://ez.no/ezpublish/documentation/development/extensions/building_an_ez_publish_module"><img src="/ezno2005/design/ezno2005/images/eng-GB.gif" width="18" height="12" alt="English"/></a>
+        <a title="Deutsch" href="https://web.archive.org/web/20071223212545/http://ez.no/de/ezpublish/documentation/development/extensions/building_an_ez_publish_module"><img src="/ezno2005/design/ezno2005/images/ger-DE.gif" width="18" height="12" alt="Deutsch"/></a>
+        <a title="Português" href="https://web.archive.org/web/20071223212545/http://ez.no/br/ezpublish/documentation/development/extensions/building_an_ez_publish_module"><img src="/ezno2005/design/ezno2005/images/por-BR.gif" width="18" height="12" alt="Português"/></a>
+        <a title="Français" href="https://web.archive.org/web/20071223212545/http://ez.no/fr/ezpublish/documentation/development/extensions/building_an_ez_publish_module"><img src="/ezno2005/design/ezno2005/images/fre-FR.gif" width="18" height="12" alt="Français"/></a>
+        <a title="日本語" href="https://web.archive.org/web/20071223212545/http://ez.no/jp/ezpublish/documentation/development/extensions/building_an_ez_publish_module"><img src="/ezno2005/design/ezno2005/images/jpn-JP.gif" width="18" height="12" alt="日本語"/></a>        
+        <a title="中文" href="https://web.archive.org/web/20071223212545/http://ez.no/tw/ezpublish/documentation/development/extensions/building_an_ez_publish_module"><img src="/ezno2005/design/ezno2005/images/chi-TW.gif" width="18" height="12" alt="中文"/></a>        
+        <a title="Norsk" href="https://web.archive.org/web/20071223212545/http://ez.no/no/ezpublish/documentation/development/extensions/building_an_ez_publish_module"><img src="/ezno2005/design/ezno2005/images/nor-NO.gif" width="18" height="12" alt="Norsk"/></a>        
+    </li>
+</ul>
+<!-- User menu content: END -->
+
+</div>
+
+</div>
+<!-- User menu area: END -->
+
+</div>
+</div>
+<!-- Header area: END --><script type="text/javascript">
+<!--
+var menu = new Array();
+
+menu[0] = ['eZ Publish', '/ezpublish', 'eZ Publish Premium', '/ezpublish/premium', 'eZ Publish Now', '/ezpublish/now', 'eZ Publish On Demand', '/ezpublish/on_demand', 'Proprietary license options', '/products/proprietary_license_options', 'Certified extensions', '/products/certified_extensions', 'eZ Flow', '/ezflow', 'eZ Components', '/ezcomponents', 'eZ Find', '/ezfind', 'eZ Newsletter', '/eznewsletter', 'Expert consulting services', '/products/expert_consulting_services', 'Support', '/products/support'];
+menu[1] = ['Documentation', '/doc', 'Articles', '/community/articles', 'Books', '/store/books', 'Training', '/education/training', 'Certification', '/education/certification'];
+menu[2] = ['Case studies', '/customers/case_studies', 'References', '/customers/references', 'User quotes', '/customers/user_quotes', 'eZ for media', '/customers/ez_for_media'];
+menu[3] = ['Worldwide Partners', '/partner/worldwide_partners', 'eZ Partner program', '/partner/ez_partner_program', 'Knowledge centre', '/partner/knowledge_centre'];
+menu[4] = ['Downloads', '/download', 'Documentation', '/doc', 'News', '/developer/news', 'Developer information', '/developer/developer_information', 'Projects & contributions', '/developer/contribs', 'Forum', '/developer/forum', 'Issue tracker', '/bugs/redirect', 'Open Funding', '/developer/open_funding', 'Security', '/developer/security', 'User groups', '/developer/user_groups'];
+menu[5] = ['Total Product Responsibility from eZ', '/support/total_product_responsibility_from_ez'];
+menu[6] = ['Software solutions', '/store/software', 'Training', '/services/training', 'Certification', '/services/certification', 'Books', '/store/books', 'Services', '/store/services'];
+menu[7] = ['News', '/company/news', 'Media & press', '/company/media_press', 'Events', '/company/events', 'Career', '/company/career', 'eZ Conference & Awards', '/company/ez_conference_awards', 'Board of Directors', '/company/board', 'eZ Crew', '/company/ez_crew', 'Contact', '/company/contact'];
+
+-->
+</script>
+<div id="menuborder">
+
+<!-- Main menu area: START -->
+<div id="menu" onmouseover="menuHover();" onmouseout="tryHideSubMenues();">
+
+<div id="mainmenu" class="float-break">
+<div id="page-width2">
+    <ul id="mainmenulist" class="float-break">
+<li class="current"><a href="https://web.archive.org/web/20071223212545/http://ez.no/products" onmouseover="switchSubMenu( this );">Products &amp; services</a></li>
+<li><a href="https://web.archive.org/web/20071223212545/http://ez.no/education" onmouseover="switchSubMenu( this );">Education</a></li>
+<li><a href="https://web.archive.org/web/20071223212545/http://ez.no/customers" onmouseover="switchSubMenu( this );">Customers</a></li>
+<li><a href="https://web.archive.org/web/20071223212545/http://ez.no/partner" onmouseover="switchSubMenu( this );">Partners</a></li>
+<li><a href="https://web.archive.org/web/20071223212545/http://ez.no/developer" onmouseover="switchSubMenu( this );">Developer</a></li>
+<li><a href="https://web.archive.org/web/20071223212545/http://ez.no/support" onmouseover="switchSubMenu( this );">Support</a></li>
+<li><a href="https://web.archive.org/web/20071223212545/http://ez.no/store" onmouseover="switchSubMenu( this );">Store</a></li>
+<li class="last"><a href="https://web.archive.org/web/20071223212545/http://ez.no/company" onmouseover="switchSubMenu( this );">Company</a></li>
+</ul>
+
+</div>
+</div>
+
+
+<div id="submenu">
+<div id="page-width3">
+    <ul class="float-break">
+                        <li><a href="https://web.archive.org/web/20071223212545/http://ez.no/ezpublish">eZ Publish</a></li>
+                                <li><a href="https://web.archive.org/web/20071223212545/http://ez.no/ezpublish/premium">eZ Publish Premium</a></li>
+                                <li><a href="https://web.archive.org/web/20071223212545/http://ez.no/ezpublish/now">eZ Publish Now</a></li>
+                                <li><a href="https://web.archive.org/web/20071223212545/http://ez.no/ezpublish/on_demand">eZ Publish On Demand</a></li>
+                                <li><a href="https://web.archive.org/web/20071223212545/http://ez.no/products/proprietary_license_options">Proprietary license options</a></li>
+                                <li><a href="https://web.archive.org/web/20071223212545/http://ez.no/products/certified_extensions">Certified extensions</a></li>
+                                <li><a href="https://web.archive.org/web/20071223212545/http://ez.no/ezflow">eZ Flow</a></li>
+                                <li><a href="https://web.archive.org/web/20071223212545/http://ez.no/ezcomponents">eZ Components</a></li>
+                                <li><a href="https://web.archive.org/web/20071223212545/http://ez.no/ezfind">eZ Find</a></li>
+                                <li><a href="https://web.archive.org/web/20071223212545/http://ez.no/eznewsletter">eZ Newsletter</a></li>
+                                <li><a href="https://web.archive.org/web/20071223212545/http://ez.no/products/expert_consulting_services">Expert consulting services</a></li>
+                                <li class="last"><a href="https://web.archive.org/web/20071223212545/http://ez.no/products/support">Support</a></li>
+                </ul>
+</div>
+</div>
+
+<script type="text/javascript"><!--
+    document.getElementById('submenu').style.display = 'none';
+--></script>
+
+</div>
+<!-- Main menu area: END -->
+
+</div>
+
+<hr class="hide"/><!-- Path area: START -->
+<div id="path">
+
+<div id="page-width4">
+<h2 class="hide">Path</h2>
+
+<!-- Path content: START -->
+<p>
+                        <a href="https://web.archive.org/web/20071223212545/http://ez.no/">ez.no</a>
+        
+                        /
+                            <a href="https://web.archive.org/web/20071223212545/http://ez.no/ezpublish">ezpublish</a>
+        
+                        /
+                            <a href="toc.html">documentation</a>
+        
+                        /
+                            <a href="development.html">development</a>
+        
+                        /
+                            <a href="development/extensions.html">extensions</a>
+        
+                        /
+                            building an ez publish module
+        
+            </p>
+<!-- Path content: END -->
+
+</div>
+
+</div>
+<!-- Path area: END -->
+
+<hr class="hide"/>
+
+<!-- Main area: START -->
+
+<div id="page-width5">
+<div id="main" class="float-break">
+
+<!-- Main area content: START -->
+
+
+
+
+<div class="template-design area-main-normal">
+<div class="template-module content-view-full">
+<div class="template-object class-documentation">
+
+
+<div class="attribute-heading">
+    <h1>Building an eZ publish module</h1>
+</div>
+
+<p><strong>These documentation pages are no longer maintained. Please visit the <a href="https://doc.ezpublishlegacy.se7enx.com">new documentation site.</a></strong></p>
+
+<div class="attribute-long">
+    
+
+<p>
+The purpose of this rather short tutorial is to show users of eZ publish 3 willing to write some additional functions by exploiting the extensions functionality.
+</p>
+
+<p>
+In the following article where ever we will mention an absolute path it will mean the path from the eZ publish root. We also suppose, that URL for our eZ publish site is <a href="https://web.archive.org/web/20071223212545/http://www.example.com/path/index.php/mysite/">http://www.example.com/path/index.php/mysite/</a>
+</p>
+
+<p>
+We will develop a simple extension for accessing EUR exchange rates. Of course, we need some source of exchange rates in an usable format. In our tutorial, we will use a service provided by European Central Bank. You can have a look at <a href="https://web.archive.org/web/20071223212545/http://ez.no/">http://www.ecb.int/stats/eurofxref/eurofxref-xml.html</a> to see actual exchange rates as HTML page. (This information is updated every working day at 2.15pm CE(S)T.) We are lucky because the bank provides this information also in the XML format at <a href="https://web.archive.org/web/20071223212545/http://ez.no/">http://www.ecb.int/stats/eurofxref/eurofxref-daily.xml</a>
+</p>
+
+<p>
+Let's have a brief look at this file:
+</p>
+    <pre class="wordwrap">
+<span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+
+<span class="line">&lt;gesmes:Envelope xmlns:gesmes=&quot;http://www.gesmes.org/xml/2002-08-01&quot;</span>
+
+<span class="line">xmlns=&quot;http://www.ecb.int/vocabulary/2002-08-01/eurofxref&quot;&gt;</span>
+
+<span class="line">&lt;gesmes:subject&gt;Reference rates&lt;/gesmes:subject&gt;</span>
+
+<span class="line">&lt;gesmes:Sender&gt;</span>
+
+<span class="line">&lt;gesmes:name&gt;European Central Bank&lt;/gesmes:name&gt;</span>
+
+<span class="line">&lt;/gesmes:Sender&gt;</span>
+
+<span class="line">&lt;Cube&gt;</span>
+
+<span class="line">&lt;Cube time='2004-04-15'&gt;</span>
+
+<span class="line">&lt;Cube currency='USD' rate='1.1912'/&gt;</span>
+
+<span class="line">&lt;Cube currency='JPY' rate='129.39'/&gt;</span>
+
+<span class="line">&lt;Cube currency='DKK' rate='7.4443'/&gt;</span>
+
+<span class="line">...</span>
+
+<span class="line">&lt;Cube currency='ZAR' rate='7.8591'/&gt;</span>
+
+<span class="line">&lt;/Cube&gt;</span>
+
+<span class="line">&lt;/Cube&gt;</span>
+
+<span class="line">&lt;/gesmes:Envelope&gt;</span></pre>
+    
+<p>
+Perfect! We see that the most important information is stored in attributes of Cube tags: if the tag has the attribute named time, its value is the date, if it has the attribute named currency, its value is the currency symbol and the value of the attribute rate is the actual exchange rate. The format of the rate is suitable for us, so we do not need to do any post-processing.
+</p>
+
+<p>
+In this tutorial we develop an extension named eurofxref which will contain one module with the same name. We want to have the possibility of including exchange rates to our templates and also we prepare an overview page like http://www.example.com/path/index.php/mysite/eurofxref/overview to see the entire table of exchange rates.
+</p>
+
+<p>
+First, create the directory eurofxref under the /extension directory located in the root directory of eZ publish. If the /extension directory does not exist, then you have to create it. You must tell eZ publish that this extension exists by adding ActiveExtensions[]=eurofxref in the [ExtensionSettings] section of site.ini files. Preferably, you should do this by adding the following lines in /settings/override/site.ini.append.php. Please note that if you already have either [ExtensionSettings] or [RoleSettings] section in your site ini file, you have to add the line(s) to the corresponding section(s).
+</p>
+    <pre class="wordwrap">
+<span class="line">site.ini.append.php (partial content):</span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">[ExtensionSettings]</span>
+
+<span class="line">ActiveExtensions[]=eurofxref</span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">[RoleSettings]</span>
+
+<span class="line">PolicyOmitList[]=eurofxref</span></pre>
+    
+<p>
+The last line ensures that an anonymous user will be not prompted for a login name and a password, when accessing information through the eurofxref module, for example by browsing http://www.example.com/path/index.php/mysite/eurofxref/overview. The eurofxref in the URL represents the module name, not the extension name. Every module can have an unlimited number of &quot;views&quot; - they represent different views of the data in the module. You can choose which view you want to see by entering its name after the name of the module (and the slash) in a URL.
+</p>
+
+<p>
+Now create the directories design, modules and settings under /extension/eurofxref. Under design create the path /extension/eurofxref/design/standard/templates/eurofxref (by creating one subdirectory in this path at a time). In this directory we will put our template files, hence the directory name design. standard stands for the default design, templates is, as the name says, the directory used for storing templates and eurofxref is our &quot;identifier&quot;. From now on, we can use an eZ publish URI like design:eurofxref/name_of_template.tpl for accessing templates stored in this directory.
+</p>
+                            <div class="object-center">
+        <div class="content-view-embeddedmedia">
+    <div class="class-image">
+
+    <div class="attribute-image">
+                                                                                  
+
+    
+        
+    
+    <a href="https://web.archive.org/web/20071223212545/http://ez.no/var/ezno/storage/images/images/documentation/extensions/diagram_eurofxref/149565-2-eng-GB/diagram_eurofxref.gif" target="_blank"><img src="/web/20071223212545im_/http://ez.no/var/ezno/storage/images/images/documentation/extensions/diagram_eurofxref/149565-2-eng-GB/diagram_eurofxref.gif" width="351" height="241" border="0" alt="Directory structure" title="Directory structure"/></a>
+    
+    
+            </div>
+        </div>
+</div>
+
+    </div>
+
+
+    <pre class="wordwrap">
+<span class="line">Under /extension/eurofxref/settings create the following two files:</span>
+
+<span class="line">design.ini.append.php (Exact content)</span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">[ExtensionSettings]</span>
+
+<span class="line">DesignExtensions[]=eurofxref</span></pre>
+    
+<p>
+and
+</p>
+    <pre class="wordwrap">
+<span class="line">module.ini.append.php (Exact content)</span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">[ModuleSettings]</span>
+
+<span class="line">ExtensionRepositories[]=eurofxref</span></pre>
+    
+<p>
+As you have probably found out, the purpose of design.ini.append.php is to allow using of templates located in our extension, in module.ini.append.php we say to eZ publish we are having modules in this extension.
+</p>
+
+<p>
+Now we are coming to the most important part: creating the module eurofxref itself. Under /extension/eurofxref/modules create a directory eurofxref (the name of the module) and create the following files:
+</p>
+    <pre class="wordwrap">
+<span class="line">module.php (Exact content)</span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">&lt;?php</span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">$Module = array( 'name' =&gt; 'Eurofxref' );</span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">$ViewList = array();</span>
+
+<span class="line">$ViewList['overview'] = array(</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;'script' =&gt; 'overview.php',</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;'params' =&gt; array ( ) );</span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">?&gt;</span></pre>
+        <pre class="wordwrap">
+<span class="line">overview.php (Exact content)</span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">&lt;?php</span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">include_once( 'kernel/common/template.php' );</span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">$tpl =&amp; templateInit();</span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">$Result = array();</span>
+
+<span class="line">$Result['content'] =&amp; $tpl-&gt;fetch( 'design:eurofxref/overview.tpl' );</span>
+
+<span class="line">$Result['path'] = array( array( 'url' =&gt; false,</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'text' =&gt; 'Euro Exchange Rates' ) );</span>
+
+<span class="line">?&gt;</span></pre>
+    
+<p>
+and
+</p>
+    <pre class="wordwrap">
+<span class="line">function_definition.php (Exact content)</span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">&lt;?php</span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">$FunctionList = array();</span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">$FunctionList['fxref'] = array(</span>
+
+<span class="line">'name' =&gt; 'fxref',</span>
+
+<span class="line">'call_method' =&gt; array( </span>
+
+<span class="line">'include_file' =&gt; 'extension/eurofxref/modules/eurofxref/classes/eurofxref.php',</span>
+
+<span class="line">'class' =&gt; 'EuroFxRef',</span>
+
+<span class="line">'method' =&gt; 'fetchFX' ),</span>
+
+<span class="line">'parameter_type' =&gt; 'standard',</span>
+
+<span class="line">'parameters' =&gt; array() );</span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">?&gt;</span></pre>
+    
+<p>
+The module.php file is used to connect the different views in the module, represented by keys in the $ViewList array (in our case 'overview') with the file names (overview.php). We can see that overview.php contains simple code to fetch and process the template file design:eurofxref/overview.tpl. We will create this file later.
+</p>
+
+<p>
+If you have {let var_name=fetch( 'module', 'function', 'parameters' )} in the template, eZ publish will call a method whose parameters are defined in the file function_definition.php under the corresponding module. Having a look in our function_definition.php file, we see that if the template fetches the function fxref in our module (eurofxref), eZ publish will call the method EuroFxRef::fetchFX() which will be defined in /extension/eurofxref/modules/eurofxref/classes/eurofxref.php. In our simple example, we do not have any parameters in the fetch.
+</p>
+
+<p>
+Create the directory classes under /extension/eurofxref/modules/eurofxref and place the following file in it:
+</p>
+    <pre class="wordwrap">
+<span class="line">eurofxref.php (Exact content)</span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">&lt;?php</span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">include_once( 'lib/ezxml/classes/ezxml.php' );</span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">class EuroFxRef</span>
+
+<span class="line">{</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;// static</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;function fetchFX()</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;{</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$result = array( 'date' =&gt; false, 'fx' =&gt; array() );</span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$fxXML = file_get_contents(&quot;http://www.ecb.int/stats/eurofxref/eurofxref-daily.xml&quot;);</span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$xml = new eZXML();</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$dom =&amp; $xml-&gt;domTree( $fxXML );</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$fxArray =&amp; $dom-&gt;elementsByName( 'Cube' );</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;foreach ( $fxArray as $fxRate )</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if ( !$fxRate-&gt;hasAttributes() )</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;continue;</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$currency = $fxRate-&gt;attributeValue( 'currency' );</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if ( $currency === false )</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if ( $fxRate-&gt;attributeValue( 'time' ) != false )</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$datePieces = explode( '-', $fxRate-&gt;attributeValue( 'time' ) );</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$result['date'] = mktime( 0, 0, 0, $datePieces[1], $datePieces[2], $datePieces[0] );</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$value = $fxRate-&gt;attributeValue( 'rate' );</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$result['fx'][$currency] = $value;</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return array( 'result' =&gt; $result );</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;}</span>
+
+<span class="line">}</span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">?&gt;</span></pre>
+    
+<p>
+Note that we are returning our data ($result) in an array element with the key 'result'.
+</p>
+
+<p>
+When the file is parsed and the result is returned, the $result array looks like:
+</p>
+    <pre class="wordwrap">
+<span class="line">$result = array( 'date' =&gt; 1081980000,</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'fx' =&gt; array( 'USD' =&gt; 1.1912,</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'JPY' =&gt; 129.39,</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'DKK' =&gt; 7.4443,</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'ZAR' =&gt; 7.8591 ) )</span></pre>
+    
+<p>
+The last file which we need to create before testing our new extension, is the template file overview.tpl under /extension/eurofxref/design/standard/templates/eurofxref. Put the following contents in it:
+</p>
+    <pre class="wordwrap">
+<span class="line">overview.tpl (Exact content)</span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">&lt;h1&gt;Euro foreign exchange reference rates&lt;/h1&gt;</span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">{let rates=fetch( 'eurofxref', 'fxref' )}</span>
+
+<span class="line">Date: {$rates.date|l10n( 'date' )}&lt;br /&gt;</span>
+
+<span class="line">&lt;br /&gt;</span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">&lt;table border=&quot;1&quot;&gt;</span>
+
+<span class="line">&lt;tr&gt;&lt;th&gt; Currency &lt;/th&gt;&lt;th&gt; Value &lt;/th&gt;&lt;/tr&gt;</span>
+
+<span class="line">{section loop=$rates.fx}</span>
+
+<span class="line">&lt;tr&gt;&lt;td&gt; {$:key} &lt;/td&gt;&lt;td&gt; {$:item|l10n( 'number' )} &lt;/td&gt;&lt;/tr&gt;</span>
+
+<span class="line">{/section}</span>
+
+<span class="line">&lt;/table&gt;</span>
+
+<span class="line">{/let}</span>
+
+<span class="line">&lt;br /&gt;</span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">Source: &lt;a href=&quot;http://www.ecb.int&quot;&gt;European Central Bank&lt;/a&gt;</span></pre>
+    
+<p>
+As outlined before, we use let rates=fetch( 'eurofxref', 'fxref' ) to fetch data through the function EuroFxRef::fetchFX(). Using $rates.date we can output the date and we can cycle through elements of $rates.fx (with loop=$rates.fx).
+</p>
+
+<p>
+If you point your browser to http://www.example.com/path/index.php/mysite/eurofxref/overview you should see a table with currency symbols and rates:
+</p>
+                            <div class="object-center">
+        <div class="content-view-embeddedmedia">
+    <div class="class-image">
+
+    <div class="attribute-image">
+                                                                                  
+
+    
+        
+    
+    <a href="https://web.archive.org/web/20071223212545/http://ez.no/var/ezno/storage/images-versioned/149568/1-eng-GB/screenshot_eurofxref1.gif" target="_blank"><img src="/web/20071223212545im_/http://ez.no/var/ezno/storage/images-versioned/149568/1-eng-GB/screenshot_eurofxref1.gif" width="389" height="594" border="0" alt="Screenshot of module output" title="Screenshot of module output"/></a>
+    
+    
+            </div>
+        </div>
+</div>
+
+    </div>
+
+
+
+<p>
+You can print the current exchange rate of your currency in any template just by including the following code in it.
+</p>
+    <pre class="wordwrap">
+<span class="line">(partial content)</span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">{let rates=fetch( 'eurofxref', 'fxref' )}</span>
+
+<span class="line">1 EUR = {$rates.fx.USD|l10n( 'number' )} USD</span>
+
+<span class="line">{/let}</span></pre>
+    
+<p>
+If you want to use this code on pages which are frequently used then you may consider some optimization. The problem is that the code will download the XML document every time the fetch function is called. One possible solution is to store the values into a database and if we know the data is valid next fetches will use these stored values instead of downloading the XML document from web again and again.
+</p>
+
+<p>
+The second solution is much simpler but not so sophisticated. We can use the template function cache-block to cache a generated part of the page. Using this function is very simple:
+</p>
+    <pre class="wordwrap">
+<span class="line">(partial content)</span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">{cache-block expiry=3600}</span>
+
+<span class="line">{let rates=fetch( 'eurofxref', 'fxref' )}</span>
+
+<span class="line">1 EUR = {$rates.fx.USD|l10n( 'number' )} USD</span>
+
+<span class="line">{/let}</span>
+
+<span class="line">{/cache-block}</span></pre>
+    
+<p>
+We set the expiration period by setting the expiry parameter to the maximum number of seconds the element might be in the cache. In our example we use one hour (3600 seconds). We should put the entire content of overview.tpl into a cache block as well. Please note that this will cache something like &quot;1 EUR = 1.1912 USD&quot; rather than the information about rates. If you will use the code elsewhere it will download the XML document again.
+</p>
+
+<p>
+If you want to create views that have parameters in an URL, (e.g. http://www.example.com/path/index.php/mysite/eurofxref/history/EUR, where history is the name of a view and EUR is a parameter), you have to add additional code to module.php, for example:
+</p>
+    <pre class="wordwrap">
+<span class="line">module.php (partial content)</span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">$ViewList['history'] = array(</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;'script' =&gt; 'history.php',</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;'params' =&gt; array ( 'CurrencySymbol' ) );</span></pre>
+    
+<p>
+You can retrieve the value of the parameters in your script with:
+</p>
+    <pre class="wordwrap">
+<span class="line">history.php (partial content)</span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">&lt;?php</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;$currencySymbol = $Params['CurrencySymbol'];</span></pre>
+    
+<p>
+A more complicated addition to our example is adding parameters to the fetch function called from a template. However this exceeds the scope of this article, we recommend to read the documentation and browse the eZ publish source code, for example have a look at /kernel/content/function_definition.php and see the source code of any function defined with the call_method key.
+</p>
+
+<p>
+You can download the whole source code of the extension from this tutorial from <a href="https://web.archive.org/web/20071223212545/http://ez.no/community/contributions/examples/euro_exchange_rates">http://ez.no/community/contributions/examples/euro_exchange_rates</a>.
+</p>
+</div>
+
+
+<div class="content-view-children">
+<div class="class-comment">
+    <h1 id="comments">Comments</h1>    <div class="block float-break">
+              <form method="post" action="/web/20071223212545/http://ez.no/content/action">
+             <input class="button" type="submit" name="NewButton" value="New comment"/>
+             <input type="hidden" name="RedirectURIAfterPublish" value="ezpublish/documentation/development/extensions/building_an_ez_publish_module#comments"/>
+             <input type="hidden" name="NodeID" value="49503"/>
+                             <input type="hidden" name="ClassIdentifier" value="article_comment"/>
+                          <input type="hidden" name="ContentLanguageCode" value="eng-GB"/>
+         </form>
+         </div>
+
+
+        
+
+<div class="content-view-line">
+<div class="class-comment bglight">
+
+    
+    <div id="msg140419" class="attribute-heading">
+        <h2>Fatal error: Call to a member function on a non-object</h2>
+    </div>
+
+<div class="attribute-byline float-break">
+    <p class="author">Jianjun Hu</p>
+    <p class="date">Tuesday 03 July 2007 4:59:00 pm</p>
+</div>
+
+
+<div class="attribute-short">
+            I'm using <b>eZ Publish 3.9.2.</b><br/>
+I download the source code of the Euro Exchange Rates smaple and upload it to my site.<br/>
+When I pointed my browser to <br/>
+<pre class="wordwrap"><span class="line">
+</span>
+
+<span class="line"><a href="https://web.archive.org/web/20071223212545/http://www.mydomain.com/index.php?/chi/eurofxref/overview" title="http://www.mydomain.com/index.php?/chi/eurofxref/overview">http://www.mydomain.com/index.php?/chi/eurofxref/overview</a>
+</span>
+
+<span class="line"></span></pre><br/>
+the following error message displays:<br/>
+<pre class="wordwrap"><span class="line">
+</span>
+
+<span class="line">Fatal error: Call to a member function on a non-object in /home/mydomain/extension/eurofxref/modules/eurofxref/classes/eurofxref.php on line 16
+</span>
+
+<span class="line">Fatal error: eZ publish did not finish its request
+</span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">The execution of eZ publish was abruptly ended, the debug output is present below.
+</span>
+
+<span class="line"></span></pre><br/>
+<br/>
+The <b>line 16</b> of <b>eurofxref.php</b> is:<br/>
+<pre class="wordwrap"><span class="line">
+</span>
+
+<span class="line">$fxArray =&amp; $dom-&gt;elementsByName( 'Cube' );
+</span>
+
+<span class="line"></span></pre><br/>
+Thanks!<br/>
+<br/>
+OnlyBlue
+
+    </div>
+
+
+</div>
+</div>
+    
+
+<div class="content-view-line">
+<div class="class-comment bgdark">
+
+    
+    <div id="msg104436" class="attribute-heading">
+        <h2>How to call non-static method of class</h2>
+    </div>
+
+<div class="attribute-byline float-break">
+    <p class="author">Mihhail Rekun</p>
+    <p class="date">Tuesday 04 July 2006 1:31:29 am</p>
+</div>
+
+
+<div class="attribute-short">
+            Hello,<br/>
+<br/>
+Could explain, if it is possible to call non-static methods of a class, like <br/>
+euroFxRef-&gt;fetchFX(), not EuroFxRef::fetchFX()<br/>
+<br/>
+If yes, then how to initialize such an object, where to call a constructor, few lines of the code would be very nice,<br/>
+<br/>
+TIA,<br/>
+<br/>
+Mihhail
+
+    </div>
+
+
+</div>
+</div>
+    
+
+<div class="content-view-line">
+<div class="class-comment bglight">
+
+    
+    <div id="msg88867" class="attribute-heading">
+        <h2>Plz help me Module not found</h2>
+    </div>
+
+<div class="attribute-byline float-break">
+    <p class="author">Amer Azzaz</p>
+    <p class="date">Wednesday 07 December 2005 9:33:45 am</p>
+</div>
+
+
+<div class="attribute-short">
+            Hi to all<br/>
+I created the extension eurofxref under the steps in tutorial but when I write the url to the module, the browser shown &quot;Module not found&quot; .<br/>
+In other way, I downloaded the eurofxref from site because (maybe I do some error) and after download it, I put it in the extension folder and I write the code in /settings/override/site.ini.append.php<br/>
+[ExtensionSettings] <br/>
+ActiveExtensions[]=eurofxref   <br/>
+[RoleSettings] <br/>
+PolicyOmitList[]=eurofxref<br/>
+when I log to the site by URL : <a href="https://web.archive.org/web/20071223212545/http://localhost/index.php/cvc/eurofxref/overview/" title="http://localhost/index.php/cvc/eurofxref/overview/">http://localhost/index.php/cvc/eurofxref/overview/</a><br/>
+the browser give me Module not found.<br/>
+Note: My site name is cvc.
+
+    </div>
+
+
+</div>
+</div>
+    
+
+<div class="content-view-line">
+<div class="class-comment bgdark">
+
+    
+    <div id="msg84544" class="attribute-heading">
+        <h2>Modules not showing</h2>
+    </div>
+
+<div class="attribute-byline float-break">
+    <p class="author">William Steenbergh</p>
+    <p class="date">Wednesday 05 October 2005 1:32:42 pm</p>
+</div>
+
+
+<div class="attribute-short">
+            I had the same problem. Did the tutorial (to the letter), module popped up in admin, but client-side got 'Module not found.'<br/>
+<br/>
+I solved it by setting the correct permissions for the files. (ok, not the correct ones, but it worked.) <br/>
+<br/>
+Try this (if eZ Publish is running on a UNIX or LINUXlike platform):<br/>
+/ez/publish/root # chmod -R 777 *<br/>
+<br/>
+Admitted, this might be overkill, but it works! (for me...)
+
+    </div>
+
+
+</div>
+</div>
+    
+
+<div class="content-view-line">
+<div class="class-comment bglight">
+
+    
+    <div id="msg56820" class="attribute-heading">
+        <h2>help me please</h2>
+    </div>
+
+<div class="attribute-byline float-break">
+    <p class="author">Hervé Disdier</p>
+    <p class="date">Friday 13 August 2004 12:47:02 pm</p>
+</div>
+
+
+<div class="attribute-short">
+            I have created an extension (exemple : eurofxref), the extension is recognized but not the module eurofxref (idem for then exemple Hello).<br/>
+Version used : 3.4.1<br/>
+Thank you <br/>
+<a href="https://web.archive.org/web/20071223212545/mailto:hdisdier@prodidact.net">hdisdier@prodidact.net</a> <br/>
+
+
+    </div>
+
+
+</div>
+</div>
+
+
+ 
+
+
+</div>
+</div>
+
+<div class="block float-break">
+            <form method="post" action="/web/20071223212545/http://ez.no/content/action">
+            <input class="button" type="submit" name="NewButton" value="New comment"/>
+            <input type="hidden" name="RedirectURIAfterPublish" value="ezpublish/documentation/development/extensions/building_an_ez_publish_module#comments"/>
+            <input type="hidden" name="NodeID" value="49503"/>
+                           <input type="hidden" name="ClassIdentifier" value="article_comment"/>
+                        <input type="hidden" name="ContentLanguageCode" value="eng-GB"/>
+        </form>
+    </div>
+
+</div>
+</div>
+</div>
+
+
+<div class="template-design area-sidebar-normal">
+<div class="template-module content-view-sidebar">
+<div class="template-object class-documentation">
+
+<div class="attribute-heading">
+    <h2 class="bullet">Contents</h2>
+</div>
+<h3><a href="development.html">Development</a></h3>
+<p>
+        
+        
+            
+                    <a href="development/extensions.html">Extensions</a><br/>
+          
+	
+            &nbsp;&nbsp;&nbsp;
+                    <a href="development/extensions/translation.html">Translation</a><br/>
+          
+	
+            &nbsp;&nbsp;&nbsp;
+                    <a href="development/extensions/introduction_to_extensions.html">Introduction to extensions</a><br/>
+          
+	
+            &nbsp;&nbsp;&nbsp;
+                    <a href="development/extensions/building_an_ez_publish_module.html"><b>Building an eZ publish module</b></a><br/>
+          
+	
+            &nbsp;&nbsp;&nbsp;
+                    <a href="development/extensions/design_extension.html">Design extension</a><br/>
+          
+	
+            &nbsp;&nbsp;&nbsp;
+                    <a href="development/extensions/datatypes.html">Datatypes</a><br/>
+          
+	
+            &nbsp;&nbsp;&nbsp;
+                    <a href="development/extensions/workflow_events.html">Workflow events</a><br/>
+          
+	
+            &nbsp;&nbsp;&nbsp;
+                    <a href="development/extensions/module.html">Module</a><br/>
+          
+	
+            &nbsp;&nbsp;&nbsp;
+                    <a href="development/extensions/template_operator.html">Template operator</a><br/>
+          
+	
+            &nbsp;&nbsp;&nbsp;
+                    <a href="development/extensions/template_function.html">Template function</a><br/>
+          
+	
+            
+                    <a href="development/ez_publish_datamodel.html">eZ publish datamodel</a><br/>
+          
+	
+            
+                    <a href="development/ez_publish_tuning_and_stability.html">eZ publish tuning and stability</a><br/>
+          
+	
+            
+                    <a href="development/importing_attribute_data.html">Importing attribute data</a><br/>
+          
+	
+            
+                    <a href="development/kernel.html">Kernel</a><br/>
+          
+	
+            
+                    <a href="development/libraries.html">Libraries</a><br/>
+          
+	
+            
+                    <a href="development/scripting.html">Scripting</a><br/>
+          
+	
+            
+                    <a href="development/standards.html">Standards</a><br/>
+          
+	
+            
+                    <a href="development/system_overview.html">System overview</a><br/>
+          
+	
+            
+                    <a href="development/test_suite.html">Test Suite</a><br/>
+          
+	
+            
+                    <a href="development/using_doxygen_to_create_api_documentation.html">Using Doxygen to create API documenta...</a><br/>
+          
+	
+        </p>
+
+
+<hr class="docsplit"/>
+<h3>Created</h3>
+<p>
+26/04/2004<br/>
+2:36:57 pm<br/>
+by Jan Kudlicka
+</p>
+<h3>Last updated</h3>
+<p>
+08/04/2005<br/>
+11:03:34 am<br/>
+by Ole Morten Halvorsen
+</p>
+<h3>Authors</h3>
+<p class="rendered">Jan Kudlicka<br/>Ole Morten Halvorsen<br/></p>
+
+<br/>
+<hr class="docsplit"/>
+
+<p>This page is part of the eZ Publish documentation. The documentation is available under the <a href="https://web.archive.org/web/20071223212545/http://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License.</a> All contributions will be released under the terms of this license.</p>
+
+</div>
+</div>
+</div>
+
+
+
+
+
+<!-- Main area content: END -->
+
+</div>
+</div>
+
+<!-- Main area: END -->
+
+<hr class="hide"/>
+
+<!-- Footer area: START -->
+<div id="footer-design">
+<div id="page-width6">
+<div id="footer">
+
+<address>Powered by eZ Publish&reg; Content Management System.<br/>
+Copyright &copy;1999 - 2024 7x and 2007 eZ Systems AS (except where otherwise noted). All rights reserved.</address>
+
+</div>
+</div>
+</div>
+<!-- Footer area: END -->
+
+</div>
+<!-- Complete page area: END -->
+
+
+    
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TFEDSZJYH0"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-TFEDSZJYH0');
+</script>
+
+
+</body>
+</html>
+
+<!-- th[eZ] 20050804 --><!--
+     FILE ARCHIVED ON 21:25:45 Dec 23, 2007 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 11:20:22 Oct 31, 2024.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  captures_list: 0.504
+  exclusion.robots: 0.02
+  exclusion.robots.policy: 0.009
+  esindex: 0.01
+  cdx.remote: 6.738
+  LoadShardBlock: 85.576 (3)
+  PetaboxLoader3.datanode: 148.315 (4)
+  load_resource: 331.724
+  PetaboxLoader3.resolve: 240.763
+-->

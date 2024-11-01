@@ -1,0 +1,988 @@
+
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style type="text/css">
+    @import url(https://doc.core.ezpublish.se7enx.com/ezno2005/design/ezno2005/stylesheets/core.css);
+    @import url(https://doc.core.ezpublish.se7enx.com/ezno2005/design/ezno2005/stylesheets/pagelayout.css);
+    @import url(https://doc.core.ezpublish.se7enx.com/ezno2005/design/ezno2005/stylesheets/classes.css);
+    @import url(https://doc.core.ezpublish.se7enx.com/ezno2005/design/ezno2005/stylesheets/monitor.css);
+</style>
+
+<link type="text/css" rel="stylesheet" href="https://web.archive.org/web/20071217203825cs_/http://ez.no/extension/ezno2005/design/ezno2005/stylesheets/print.css" media="print"/>
+
+    <link rel="alternate" title="ez.no News" href="https://web.archive.org/web/20071217203825/http://ez.no/rss/feed/news" type="application/rss+xml"/><link rel="alternate" title="ez.no Developer News" href="/web/20071217203825/http://ez.no/rss/feed/communitynews" type="application/rss+xml"/>
+<link rel="alternate" title="ez.no Developer Articles" href="https://web.archive.org/web/20071217203825/http://ez.no/rss/feed/community_articles" type="application/rss+xml"/>
+<link rel="alternate" title="ez.no Forum" href="https://web.archive.org/web/20071217203825/http://ez.no/rss/feed/forum" type="application/rss+xml"/>
+<link rel="alternate" title="ez.no Contributions" href="https://web.archive.org/web/20071217203825/http://ez.no/rss/feed/contribs" type="application/rss+xml"/>
+<link rel="alternate" title="ez.no Open Funding" href="https://web.archive.org/web/20071217203825/http://ez.no/rss/feed/openfunding_suggestions" type="application/rss+xml"/>
+
+
+<!-- IE conditional comments; for bug fixes for different IE versions -->
+<!--[if IE 5]>     <style type="text/css"> @import url(/extension/ezno2005/design/ezno2005/stylesheets/ie5.css);    </style> <![endif]-->
+<!--[if lte IE 6]> <style type="text/css"> @import url(/extension/ezno2005/design/ezno2005/stylesheets/ie6lte.css); </style> <![endif]-->
+<!--[if gte IE 6]> <style type="text/css"> @import url(/extension/ezno2005/design/ezno2005/stylesheets/ie6gte.css); </style> <![endif]-->
+
+<!-- Load special stylesheet (if necessary) for newer Netscape decendants, Mozilla and Firefox, using the Gecko renderer -->
+<script type="text/javascript"><!-- if ((navigator.userAgent.indexOf("Gecko") != -1)&&(navigator.userAgent.indexOf("KHTML") == -1)) document.write("<style type=\"text/css\">@import url(/extension/ezno2005/design/ezno2005/stylesheets/gecko.css);</style>");--></script>
+                                                                    
+<title>
+            Smart viewcache cleaning system     /         Incoming     /         Documentation                    </title>
+<meta http-equiv="Content-Language" content="en-GB"/>
+    <meta name="author" content="eZ Systems"/>
+    <meta name="copyright" content="eZ Systems as"/>
+    <meta name="description" content="eZ Publish is an open source content management system (CMS) and an open source content management framework (CMF)."/>
+    <meta name="keywords" content="cms, publish, e-commerce, content management, development framework"/>
+
+<meta name="MSSmartTagsPreventParsing" content="TRUE"/>
+<meta name="generator" content="eZ Publish"/>
+
+<script type="text/javascript" src="https://doc.core.ezpublish.se7enx.com/ezno2005/design/ezno2005/javascripts/tools.js"></script>
+<script type="text/javascript" src="https://doc.core.ezpublish.se7enx.com/ezno2005/design/ezno2005/javascripts/dropdownmenu.js"></script>
+</head>    <body onload="menuInit();">
+
+<!-- Complete page area: START -->
+<div id="page">
+
+<!-- Header area: START -->
+<div id="header">
+<div id="header-insert">
+
+<!-- User menu area: START -->
+<div id="usermenu">
+
+<div id="page-width1">
+
+<div id="logo">
+<h1><a href="https://doc.core.ezpublish.se7enx.com/"><span class="hide">eZ Systems - The Content Management Ecosystem</span></a></h1>
+</div>
+
+
+
+<p class="hide"><a href="#main">Skip to main content</a></p>
+
+<hr class="hide"/>
+<div id="searchbox">
+<form action="/web/20071217203825/http://ez.no/ezsearchredirect/action" method="get">
+
+<div class="block">
+<div class="element">
+<input id="searchbutton" class="button" type="submit" value="Search"/>
+</div>
+
+<div class="element searchstring">
+    <label for="searchtext" class="hide">Search text:</label>
+    <input id="searchtext" name="SearchText" type="text" size="12"/><br/>
+    
+
+            <div class="section">
+            <label for="searcharea" class="hide">Search area:</label>
+            <select id="searcharea" name="SubTreeArray[]">
+                <option value="2" selected="selected">All ez.no</option>
+                <option value="306">Bug reports</option>
+                <option value="21358">Contributions</option>
+                <option value="documentation">Documentation</option>
+                <option value="308">Forum</option>
+            </select>
+            </div>
+    </div>
+
+</div>
+</form>
+</div>
+
+<hr class="hide"/>
+<h2 class="hide">User menu</h2>
+
+<!-- User menu content: START -->
+<ul>
+            <li><a href="https://web.archive.org/web/20071217203825/http://ez.no/download"><span>Downloads</span></a></li>
+    <li><a href="https://web.archive.org/web/20071217203825/http://ez.no/company/contact"><span>Contact</span></a></li>
+            <li><a href="https://web.archive.org/web/20071217203825/http://ez.no/user/login"><span>Log in</span></a></li>
+        <li><a href="https://web.archive.org/web/20071217203825/http://ez.no/user/register"><span>Register</span></a></li>
+    
+    <li id="language-menu">
+        <a class="highlighted" title="English" href="https://web.archive.org/web/20071217203825/http://ez.no/ezpublish/documentation/incoming/smart_viewcache_cleaning_system"><img src="/ezno2005/design/ezno2005/images/eng-GB.gif" width="18" height="12" alt="English"/></a>
+        <a title="Deutsch" href="https://web.archive.org/web/20071217203825/http://ez.no/de/ezpublish/documentation/incoming/smart_viewcache_cleaning_system"><img src="/ezno2005/design/ezno2005/images/ger-DE.gif" width="18" height="12" alt="Deutsch"/></a>
+        <a title="Português" href="https://web.archive.org/web/20071217203825/http://ez.no/br/ezpublish/documentation/incoming/smart_viewcache_cleaning_system"><img src="/ezno2005/design/ezno2005/images/por-BR.gif" width="18" height="12" alt="Português"/></a>
+        <a title="Français" href="https://web.archive.org/web/20071217203825/http://ez.no/fr/ezpublish/documentation/incoming/smart_viewcache_cleaning_system"><img src="/ezno2005/design/ezno2005/images/fre-FR.gif" width="18" height="12" alt="Français"/></a>
+        <a title="日本語" href="https://web.archive.org/web/20071217203825/http://ez.no/jp/ezpublish/documentation/incoming/smart_viewcache_cleaning_system"><img src="/ezno2005/design/ezno2005/images/jpn-JP.gif" width="18" height="12" alt="日本語"/></a>        
+        <a title="中文" href="https://web.archive.org/web/20071217203825/http://ez.no/tw/ezpublish/documentation/incoming/smart_viewcache_cleaning_system"><img src="/ezno2005/design/ezno2005/images/chi-TW.gif" width="18" height="12" alt="中文"/></a>        
+        <a title="Norsk" href="https://web.archive.org/web/20071217203825/http://ez.no/no/ezpublish/documentation/incoming/smart_viewcache_cleaning_system"><img src="/ezno2005/design/ezno2005/images/nor-NO.gif" width="18" height="12" alt="Norsk"/></a>        
+    </li>
+</ul>
+<!-- User menu content: END -->
+
+</div>
+
+</div>
+<!-- User menu area: END -->
+
+</div>
+</div>
+<!-- Header area: END --><script type="text/javascript">
+<!--
+var menu = new Array();
+
+menu[0] = ['eZ Publish', '/ezpublish', 'eZ Publish Premium', '/ezpublish/premium', 'eZ Publish Now', '/ezpublish/now', 'eZ Publish On Demand', '/ezpublish/on_demand', 'Proprietary license options', '/products/proprietary_license_options', 'Certified extensions', '/products/certified_extensions', 'eZ Flow', '/ezflow', 'eZ Components', '/ezcomponents', 'eZ Find', '/ezfind', 'eZ Newsletter', '/eznewsletter', 'Expert consulting services', '/products/expert_consulting_services', 'Support', '/products/support'];
+menu[1] = ['Documentation', '/doc', 'Articles', '/community/articles', 'Books', '/store/books', 'Training', '/education/training', 'Certification', '/education/certification'];
+menu[2] = ['Case studies', '/customers/case_studies', 'References', '/customers/references', 'User quotes', '/customers/user_quotes', 'eZ for media', '/customers/ez_for_media'];
+menu[3] = ['Worldwide Partners', '/partner/worldwide_partners', 'eZ Partner program', '/partner/ez_partner_program', 'Knowledge centre', '/partner/knowledge_centre'];
+menu[4] = ['Downloads', '/download', 'Documentation', '/doc', 'News', '/developer/news', 'Developer information', '/developer/developer_information', 'Projects & contributions', '/developer/contribs', 'Forum', '/developer/forum', 'Issue tracker', '/bugs/redirect', 'Open Funding', '/developer/open_funding', 'Security', '/developer/security', 'User groups', '/developer/user_groups'];
+menu[5] = ['Total Product Responsibility from eZ', '/support/total_product_responsibility_from_ez'];
+menu[6] = ['Software solutions', '/store/software', 'Training', '/services/training', 'Certification', '/services/certification', 'Books', '/store/books', 'Services', '/store/services'];
+menu[7] = ['News', '/company/news', 'Media & press', '/company/media_press', 'Events', '/company/events', 'Career', '/company/career', 'eZ Conference & Awards', '/company/ez_conference_awards', 'Board of Directors', '/company/board', 'eZ Crew', '/company/ez_crew', 'Contact', '/company/contact'];
+
+-->
+</script>
+<div id="menuborder">
+
+<!-- Main menu area: START -->
+<div id="menu" onmouseover="menuHover();" onmouseout="tryHideSubMenues();">
+
+<div id="mainmenu" class="float-break">
+<div id="page-width2">
+    <ul id="mainmenulist" class="float-break">
+<li class="current"><a href="https://web.archive.org/web/20071217203825/http://ez.no/products" onmouseover="switchSubMenu( this );">Products &amp; services</a></li>
+<li><a href="https://web.archive.org/web/20071217203825/http://ez.no/education" onmouseover="switchSubMenu( this );">Education</a></li>
+<li><a href="https://web.archive.org/web/20071217203825/http://ez.no/customers" onmouseover="switchSubMenu( this );">Customers</a></li>
+<li><a href="https://web.archive.org/web/20071217203825/http://ez.no/partner" onmouseover="switchSubMenu( this );">Partners</a></li>
+<li><a href="https://web.archive.org/web/20071217203825/http://ez.no/developer" onmouseover="switchSubMenu( this );">Developer</a></li>
+<li><a href="https://web.archive.org/web/20071217203825/http://ez.no/support" onmouseover="switchSubMenu( this );">Support</a></li>
+<li><a href="https://web.archive.org/web/20071217203825/http://ez.no/store" onmouseover="switchSubMenu( this );">Store</a></li>
+<li class="last"><a href="https://web.archive.org/web/20071217203825/http://ez.no/company" onmouseover="switchSubMenu( this );">Company</a></li>
+</ul>
+
+</div>
+</div>
+
+
+<div id="submenu">
+<div id="page-width3">
+    <ul class="float-break">
+                        <li><a href="https://web.archive.org/web/20071217203825/http://ez.no/ezpublish">eZ Publish</a></li>
+                                <li><a href="https://web.archive.org/web/20071217203825/http://ez.no/ezpublish/premium">eZ Publish Premium</a></li>
+                                <li><a href="https://web.archive.org/web/20071217203825/http://ez.no/ezpublish/now">eZ Publish Now</a></li>
+                                <li><a href="https://web.archive.org/web/20071217203825/http://ez.no/ezpublish/on_demand">eZ Publish On Demand</a></li>
+                                <li><a href="https://web.archive.org/web/20071217203825/http://ez.no/products/proprietary_license_options">Proprietary license options</a></li>
+                                <li><a href="https://web.archive.org/web/20071217203825/http://ez.no/products/certified_extensions">Certified extensions</a></li>
+                                <li><a href="https://web.archive.org/web/20071217203825/http://ez.no/ezflow">eZ Flow</a></li>
+                                <li><a href="https://web.archive.org/web/20071217203825/http://ez.no/ezcomponents">eZ Components</a></li>
+                                <li><a href="https://web.archive.org/web/20071217203825/http://ez.no/ezfind">eZ Find</a></li>
+                                <li><a href="https://web.archive.org/web/20071217203825/http://ez.no/eznewsletter">eZ Newsletter</a></li>
+                                <li><a href="https://web.archive.org/web/20071217203825/http://ez.no/products/expert_consulting_services">Expert consulting services</a></li>
+                                <li class="last"><a href="https://web.archive.org/web/20071217203825/http://ez.no/products/support">Support</a></li>
+                </ul>
+</div>
+</div>
+
+<script type="text/javascript"><!--
+    document.getElementById('submenu').style.display = 'none';
+--></script>
+
+</div>
+<!-- Main menu area: END -->
+
+</div>
+
+<hr class="hide"/><!-- Path area: START -->
+<div id="path">
+
+<div id="page-width4">
+<h2 class="hide">Path</h2>
+
+<!-- Path content: START -->
+<p>
+                        <a href="https://web.archive.org/web/20071217203825/http://ez.no/">ez.no</a>
+        
+                        /
+                            <a href="https://web.archive.org/web/20071217203825/http://ez.no/ezpublish">ezpublish</a>
+        
+                        /
+                            <a href="toc.html">documentation</a>
+        
+                        /
+                            <a href="incoming.html">incoming</a>
+        
+                        /
+                            smart viewcache cleaning system
+        
+            </p>
+<!-- Path content: END -->
+
+</div>
+
+</div>
+<!-- Path area: END -->
+
+<hr class="hide"/>
+
+<!-- Main area: START -->
+
+<div id="page-width5">
+<div id="main" class="float-break">
+
+<!-- Main area content: START -->
+
+
+
+
+<div class="template-design area-main-normal">
+<div class="template-module content-view-full">
+<div class="template-object class-documentation">
+
+
+<div class="attribute-heading">
+    <h1>Smart viewcache cleaning system</h1>
+</div>
+
+<p><strong>These documentation pages are no longer maintained. Please visit the <a href="https://doc.ezpublishlegacy.se7enx.com">new documentation site.</a></strong></p>
+
+<div class="attribute-long">
+    
+
+<a name="eztoc223369_1" id="eztoc223369_1"></a><h2>Introduction</h2>
+<p>
+The goal of 'smart viewchache cleaning' (svcs) is to provide flexibility in the cache system when cleaning the viewcache of an objects nodes. It is aimed to extend default behaviour when cleaning cache in specific(site-depended) situations.
+</p>
+
+<p>
+If 'svcs' is turned off (default) the caches of all nodes on the system will be cleared if a published object is changed.
+</p>
+
+<p>
+Smart viewcache cleaning is available from eZ publish 3.4.2.
+</p>
+
+<a name="eztoc223369_2" id="eztoc223369_2"></a><h2>Concepts</h2>
+<p>
+When the content of an object is changed the cache of its nodes should be cleared. To determine for which nodes eZPublish should clear the caches, the 'smart viewcache cleaning system'(svcs) is used.
+</p>
+
+<p>
+
+The default behaviour of 'svcs' when an object is changed is to clear the caches of:<br/>
+- all published nodes of the object<br/>
+- parent nodes<br/>- nodes of reverse related objects
+</p>
+
+<p>
+
+From 3.5 it will also clear the caches of:<br/>- nodes of objects with the same keywords (if the object has one or more ezkeyword attributes)
+</p>
+
+<p>
+The 'extended' behaviour of 'svcs' is served to determine additional node's identifiers. It depends on settings in ini-file and based on 'path_string' attributes of the published nodes.
+</p>
+
+<p>
+Thus the input parameter of 'svcs' is the object's identifier and the output is a list of node's identifiers for which cache should be cleared.
+</p>
+
+<a name="eztoc223369_3" id="eztoc223369_3"></a><h2>Settings description</h2>
+<p>
+
+Settings are applied to 'extended' behaviour only and can be found in<br/>
+'viewcache.ini' file in your settings directory.<br/>The ini-file consists of several sections: one common section and sections which describes rules to calculate additional node's indentifiers.
+</p>
+
+<p>
+
+The common section is named 'ViewCacheSettings' and has these options:<br/>
+</p>
+    <pre class="wordwrap">
+<span class="line">&nbsp;&nbsp;&nbsp;Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Value&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Description</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;--------------------------------------------------------------------------</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;SmartCacheClear&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;enabled,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;enables/disables 'svcs'.</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;disabled(default)&nbsp;&nbsp;If disabled then caches for</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;all nodes will be cleared;</span></pre>
+    
+<p>
+
+Other sections should begin with indentifier of the class for which rule is made.<br/>
+Allowed options for these sections are:<br/>
+</p>
+    <pre class="wordwrap">
+<span class="line">&nbsp;&nbsp;&nbsp;Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Value&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Description</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;--------------------------------------------------------------------------</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;DependentClassIdentifier&nbsp;&nbsp;&nbsp;forum, folder,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;identifier of the class.</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;article, etc.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Caches of the nodes of</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;objects of this class will</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;be cleared if the object</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for which cache is cleaning</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;now belongs to the class</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;which identifier is pointed</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;as name of this section;</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this is an array so multiple</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;identifiers can be used;</span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;ClearCacheMethod&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;see below&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for which nodes cache</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;should be cleared(parent,</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;reverse related, etc.);</span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;ObjectFilter&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;list of object's&nbsp;&nbsp;&nbsp;if specified then caches of</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ids&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;these objects only will</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;be cleared. Means</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'all objects of this class'</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if not specified;</span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;MaxParents&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;integer(1,...)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Specifies the maximum</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;parents to check in</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;node's 'path_string'.</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Means 'unlimited' if not</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;specified;</span></pre>
+    
+<p>
+
+'ClearCacheMethod' values:<br/>
+</p>
+    <pre class="wordwrap">
+<span class="line">&nbsp;&nbsp;&nbsp;Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Description</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;--------------------------------------------------------------------------</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;clear_object_caches_only&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;clear cache for object's</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;nodes only;</span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;clear_object_and_parent_nodes_caches&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;clear cache for object's</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;nodes and their parent;</span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;clear_object_and_relating_objects_caches&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;clear cache for object's</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;nodes and reverse related</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;objects;</span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;clear_parent_nodes_caches_only&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;clear cache for parent</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;nodes;</span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;clear_parent_nodes_and_relating_caches&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;clear cache for parent</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;nodes and reverse related</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;objects;</span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;clear_relating_caches_only&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;clear cache for reverse</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;related objects;</span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;clear_keyword_caches_only&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;clear cache for objects with</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;the same keywords (from 3.5);</span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;clear_all_caches&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;clear cache for object's</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;nodes, their parent,</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;reverse related objects and</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(from 3.5)</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;objects with the same keywords;</span></pre>
+    
+<a name="eztoc223369_4" id="eztoc223369_4"></a><h2>Examples</h2>
+<p>
+
+Assume that we have a content structure like this:<br/>
+</p>
+    <pre class="wordwrap">
+<span class="line">eZPublish(nodeID = 2, class_identifier = folder)</span>
+
+<span class="line">|</span>
+
+<span class="line">|-- Forum folder(nodeID = 58, class_identifier = folder)</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;|</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;|-- Interesting forum(nodeID = 59, class_identifier = forum)</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|-- Topic 1(nodeID = 60, class_identifier = forum_topic)</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;|</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;|--&nbsp;Reply1(nodeID = 62, class_identifier = forum_reply)</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;|</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;|--&nbsp;Reply2(nodeID = 126, class_identifier = forum_reply)</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;|</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;| -- Reply3(nodeID = 127, class_identifier = forum_reply)</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|-- Topic 2(nodeID = 61, class_identifier = forum_topic)</span></pre>
+    
+<p>
+Users can add replies to the 'Topic 1'.
+</p>
+
+<p>
+
+By default when 'SmartCacheClear' is enabled and user adds new reply to the<br/>
+'Topic 1' viewcache of this reply and its parent('Topic 1') will be cleared.<br/>Looks fine.
+</p>
+
+<a name="eztoc223369_5" id="eztoc223369_5"></a><h2>Case 1</h2>
+<p>
+
+Assume now that we need to display forum name and number of post in this<br/>
+forum when viewing 'Forum folder'. By default after adding new reply cache of<br/>
+'Forum folder' will not be cleared and viewing of 'Forum folder' will display<br/>
+outdate information. To fix this you can use 'extended' behaviour of 'svcs'.<br/>
+You need to make a rule: if new 'forum_reply' was added(published) to 'forum'<br/>
+then clear cache of the parent of the 'forum'. Thus next lines should be added<br/>to 'viewcache.ini' file:
+</p>
+    <pre class="wordwrap">
+<span class="line">[forum_reply]</span>
+
+<span class="line">DependentClassIdentifier[]</span>
+
+<span class="line">DependentClassIdentifier[]=forum</span>
+
+<span class="line">ClearCacheMethod=clear_parent_nodes_caches_only</span></pre>
+    
+<p>
+
+So now when new 'forum_reply' object will be published 'svcs' will look to<br/>
+ini-file, find [forum_reply] section and start to search objects of 'forum'<br/>class in 'path_string' attribute of 'forum_reply' node.
+</p>
+
+<p>
+
+For example, if you'll add 'Reply3' object its node will have 'path_string'<br/>
+attribute: '/1/2/58/59/60/127'. Using last value in path 'svcs' will<br/>
+determine class identifier of 'Reply3' and thus will find right section in<br/>
+ini-file. Then 'svcs' will search for nodes which class identifier is equal<br/>
+to one of the values in the 'DependentClassIdentifier' variable. Searching of appropriate<br/>
+nodes occures in reverse order: node with id=60 will be checked first, then<br/>
+node with id=59, ..., id=2. Node with id=60 does'n belong to 'forum' class,<br/>
+so its cache will be untouched. Next node has id=59 and it belongs to<br/>
+'forum' class, so its cache will be cleared. Residuary nodes in the path(58,<br/>2) doesn't belongs to 'forum' class, so their cache will be untouched.
+</p>
+
+<a name="eztoc223369_6" id="eztoc223369_6"></a><h2>Case 2</h2>
+<p>
+
+Assumes now that in addition to 'Case 1' we have a folder named 'Common folder'<br/>
+which is published under 'eZPublish' folder and contains 'Forum folder' as<br/>
+related object. Since 'Forum folder' cache is cleared when new 'forum_reply'<br/>
+is published cache of 'Common folder' has to be cleared too. For this purpose<br/>we need to add another rule to ini-file:
+</p>
+    <pre class="wordwrap">
+<span class="line">[forum]</span>
+
+<span class="line">DependentClassIdentifier[]</span>
+
+<span class="line">DependentClassIdentifier[]=folder</span>
+
+<span class="line">ClearCacheMethod=clear_relating_caches_only</span>
+
+<span class="line">MaxParents=1;</span></pre>
+    
+<p>
+
+Now when new 'forum_reply' object will be created cache of 'Forum folder' will be cleared because of rule for 'forum_reply' class and cache of 'Common folder' will be cleared too because of rule for 'forum' class.<br/>Since the 'path_string' of new reply looks like '/1/2/58/59/60/...', there are two 'folder' nodes in the path: with id=2 and id=58. But we don't need to clear cache for 'eZPublish' folder (nodeID=2). 'MaxParents' variable was used to fix this. In this exapmle it says: don't search 'folder' objects that are more then '1' node away from 'forum' node.
+</p>
+
+<p>
+Actually for the 'case 2' we can remove 'rule 1' and 'rule 2' and replace them with rule:
+</p>
+    <pre class="wordwrap">
+<span class="line">[forum_reply]</span>
+
+<span class="line">DependentClassIdentifier[]</span>
+
+<span class="line">DependentClassIdentifier[]=folder</span>
+
+<span class="line">ClearCacheMethod=clear_object_and_relating_objects_caches</span>
+
+<span class="line">MaxParents=3;</span>
+
+<span class="line">#If 'Forum folder' has object_id=56 for example then the rule above can be more hard by adding next lines:</span>
+
+<span class="line">ObjectFilter[]</span>
+
+<span class="line">ObjectFilter[]=56</span></pre>
+    
+<p>
+
+The lines above restrict the rule to one 'folder' object which has<br/>object_id=56.
+</p>
+</div>
+
+
+<div class="content-view-children">
+<div class="class-comment">
+    <h1 id="comments">Comments</h1>    <div class="block float-break">
+              <form method="post" action="/web/20071217203825/http://ez.no/content/action">
+             <input class="button" type="submit" name="NewButton" value="New comment"/>
+             <input type="hidden" name="RedirectURIAfterPublish" value="ezpublish/documentation/incoming/smart_viewcache_cleaning_system#comments"/>
+             <input type="hidden" name="NodeID" value="58949"/>
+                             <input type="hidden" name="ClassIdentifier" value="article_comment"/>
+                          <input type="hidden" name="ContentLanguageCode" value="eng-GB"/>
+         </form>
+         </div>
+
+
+        
+
+<div class="content-view-line">
+<div class="class-comment bglight">
+
+    
+    <div id="msg80657" class="attribute-heading">
+        <h2>Better examples, please. Wording issues</h2>
+    </div>
+
+<div class="attribute-byline float-break">
+    <p class="author">Marco Zinn</p>
+    <p class="date">Sunday 07 August 2005 2:51:58 pm</p>
+</div>
+
+
+<div class="attribute-short">
+            Hi. I had and still have quite some problems with ezPublish installs from 3.4 - 3.6, concerning the Smart Viewcaching. So i read this page over and over and i find, that the example is very hard to understand.<br/>
+<br/>
+Quoting:<br/>
+&quot;Assume now that we need to display forum name and number of post in this<br/>
+forum when viewing 'Forum folder'&quot; I guess, this means &quot;Forum folder&quot; object (an object of the &quot;folder&quot; class). Then, this folder should display a LIST of forums, the latest 5 topics in EACH folder and the number of replies for EACH topic... or what?<br/>
+In other words: Are we talking about <a href="https://web.archive.org/web/20071217203825/http://ez.no/community/forum" title="http://ez.no/community/forum">http://ez.no/community/forum</a> or <a href="https://web.archive.org/web/20071217203825/http://ez.no/community/forum/general" title="http://ez.no/community/forum/general">http://ez.no/community/forum/general</a> ?<br/>
+Why don't you just provide &quot;real-live&quot; examples from ez.no?<br/>
+<br/>
+<br/>
+Quote: &quot;You need to make a rule: if new 'forum_reply' was added(published) to 'forum' then clear cache of the parent of the 'forum'&quot; . Does 'forum' now refer to the &quot;Forum Folder&quot; or the &quot;Interesting Forum&quot; ? I guess, it's the &quot;interesting forum&quot; node (from reading the next lines).<br/>
+<br/>
+Quoting again: &quot;Node with id=60 does'n belong to 'forum' class,<br/>
+so its cache will be untouched.&quot; Okay, i understand. But shouldn't the cache of that (&quot;Topic 1&quot;) be cleared to? From Dmitri's comments, i guess, the cache of &quot;Topic 1&quot; is cleared due to the &quot;default behaviour of 'svcs'&quot;<br/>
+<br/>
+Last paragraph: &quot;'rule 1' and 'rule 2'&quot; . What are rules 1 and 2?.<br/>
+<br/>
+Please provide better examples. Maybe use galleries, which have a more simple setup (folder -&gt; gallery -&gt; image); this is enough to explain the issue.<br/>
+My current problem: I have a Folder called &quot;my Galleries&quot;. The override template for that folder should display the newest galleries or images in galleries (tree fetch). But it does not get updates, when i publish an image within a gallery. How should one set this up?<br/>
+Per default behaviour, a new/updated image will clear the cache of it's node and it's parent node (the gallery). This works. Now: should i create a rule for that gallery (dependantclass=folder, Maxparents=1)? Will that rule be triggered by the default behaviours clearing of the parent node's cache?<br/>
+Or should i create a rule for the image (dependantclass=gallery,folder, Maxparents=2). Or should (dependantclass=folder, Maxparents=2) sufficy, as the gallery's cache is cleared anyway? None of this worked for me, btw (Upgraded from 3.5.2 to 3.6.1); now i disabled the view caching for that one node using the override template :(
+
+    </div>
+
+
+</div>
+</div>
+    
+
+<div class="content-view-line">
+<div class="class-comment bgdark">
+
+    
+    <div id="msg80653" class="attribute-heading">
+        <h2>More info</h2>
+    </div>
+
+<div class="attribute-byline float-break">
+    <p class="author">Marco Zinn</p>
+    <p class="date">Sunday 07 August 2005 2:27:56 pm</p>
+</div>
+
+
+<div class="attribute-short">
+            I found the info from this bug report quite usefull<br/>
+<a href="https://web.archive.org/web/20071217203825/http://ez.no/community/bugs/smart_cache_is_impossible_to_disable_in_3_5_2_and_3_6" title="http://ez.no/community/bugs/smart_cache_is_impossible_to_disable_in_3_5_2_and_3_6">http://ez.no/community/bugs/smart...possible_to_disable_in_3_5_2_and_3_6</a><br/>
+Quoting Dmitry:<br/>
+&quot;If (ViewCaching=enabled and SmartCacheClear=disabled) or (ViewCaching=enabled and SmartCacheClear=enabled and &quot;no rules for SmartCacheClear&quot;) then caches of NODE, it's parent, and nodes that has NODE as related object will be cleared.<br/>
+If(ViewCaching=enabled and SmartCacheClear=enabled and &quot;rules for SmartCacheClear&quot;) then caches listed above plus caches calculated using &quot;rules&quot; will be cleared.<br/>
+<br/>
+There was a bug in 3.5.0/3.5.1: If SmartCacheClear=disabled then ALL view caches were cleared.&quot;<br/>
+<br/>
+This answered ONE of my questions: If i specify rules, does this disabled the default behaviour? Answer: No, rules, are adding new object, for which nodes are cleared. (I guess)
+
+    </div>
+
+
+</div>
+</div>
+    
+
+<div class="content-view-line">
+<div class="class-comment bglight">
+
+    
+    <div id="msg62935" class="attribute-heading">
+        <h2>default</h2>
+    </div>
+
+<div class="attribute-byline float-break">
+    <p class="author">Frederik Holljen</p>
+    <p class="date">Tuesday 16 November 2004 11:17:52 am</p>
+</div>
+
+
+<div class="attribute-short">
+            The default behaviour of 'svcs' when an object is changed is to clear the caches of:<br/>
+- all published nodes of the object<br/>
+- parent nodes<br/>
+- nodes of reverse related objects
+
+    </div>
+
+
+</div>
+</div>
+    
+
+<div class="content-view-line">
+<div class="class-comment bgdark">
+
+    
+    <div id="msg61339" class="attribute-heading">
+        <h2>3.4.2 default setting?</h2>
+    </div>
+
+<div class="attribute-byline float-break">
+    <p class="author">Paul Forsyth</p>
+    <p class="date">Thursday 21 October 2004 6:11:42 pm</p>
+</div>
+
+
+<div class="attribute-short">
+            Since it is enabled by default in 3.4.2 and that no settings are defined what is the effect on the system?<br/>
+<br/>
+paul
+
+    </div>
+
+
+</div>
+</div>
+
+
+ 
+
+
+</div>
+</div>
+
+<div class="block float-break">
+            <form method="post" action="/web/20071217203825/http://ez.no/content/action">
+            <input class="button" type="submit" name="NewButton" value="New comment"/>
+            <input type="hidden" name="RedirectURIAfterPublish" value="ezpublish/documentation/incoming/smart_viewcache_cleaning_system#comments"/>
+            <input type="hidden" name="NodeID" value="58949"/>
+                           <input type="hidden" name="ClassIdentifier" value="article_comment"/>
+                        <input type="hidden" name="ContentLanguageCode" value="eng-GB"/>
+        </form>
+    </div>
+
+</div>
+</div>
+</div>
+
+
+<div class="template-design area-sidebar-normal">
+<div class="template-module content-view-sidebar">
+<div class="template-object class-documentation">
+
+<div class="attribute-heading">
+    <h2 class="bullet">Contents</h2>
+</div>
+<h3><a href="incoming.html">Incoming</a></h3>
+<p>
+        
+        
+            
+                    <a href="incoming/appendices.html">APPENDICES</a><br/>
+          
+	
+            
+                    <a href="incoming/design.html">Design</a><br/>
+          
+	
+            
+                    <a href="incoming/developing_and_improving_ezpublish.html">Developing and Improving eZpublish</a><br/>
+          
+	
+            
+                    <a href="incoming/developing_projects.html">Developing projects</a><br/>
+          
+	
+            
+                    <a href="incoming/ez_publish_development_cycle.html">eZ publish development cycle</a><br/>
+          
+	
+            
+                    <a href="incoming/ez_publish_site_structure.html">eZ publish site structure</a><br/>
+          
+	
+            
+                    <a href="incoming/hide_shopsetup_navigation_tab.html">Hide shop/setup navigation tab</a><br/>
+          
+	
+            
+                    <a href="incoming/how_does_the_new_menu_system_work.html">How does the new menu system work?</a><br/>
+          
+	
+            
+                    <a href="incoming/how_to_find_a_node_id_in_the_path_array.html">How to find a node id in the path array</a><br/>
+          
+	
+            
+                    <a href="incoming/how_to_find_the_parent_and_grandparent_of_an_object.html">How to find the parent and grandparen...</a><br/>
+          
+	
+            
+                    <a href="incoming/how_to_set_cache_expire_time_or_disable_cache_in_template.html">How to set cache expire time or disab...</a><br/>
+          
+	
+            
+                    <a href="incoming/http_post_to_url_conversion.html">HTTP Post to URL conversion</a><br/>
+          
+	
+            
+                    <a href="incoming/image_map.html">Image Map</a><br/>
+          
+	
+            
+                    <a href="incoming/javascript_popupmenu.html">Javascript popupmenu</a><br/>
+          
+	
+            
+                    <a href="incoming/line_ending_in_email.html">Line ending in email</a><br/>
+          
+	
+            
+                    <a href="incoming/list_of_mime_types.html">List of MIME types</a><br/>
+          
+	
+            
+                    <a href="incoming/managing_development.html">Managing Development</a><br/>
+          
+	
+            
+                    <a href="incoming/mysql_server_character_set.html">MySQL Server Character Set</a><br/>
+          
+	
+            
+                    <a href="incoming/package_format.html">Package format</a><br/>
+          
+	
+            
+                    <a href="incoming/pdf_export_tutorial.html">PDF export tutorial</a><br/>
+          
+	
+            
+                    <a href="incoming/persistent_template_variable.html">Persistent template variable</a><br/>
+          
+	
+            
+                    <a href="incoming/php_and_apache_2.html">PHP and Apache 2</a><br/>
+          
+	
+            
+                    <a href="incoming/problems_on_mac_os_9_and_mac_os_x.html">Problems on Mac OS 9 and Mac OS X</a><br/>
+          
+	
+            
+                    <a href="incoming/remove_confirmation_when_discarding_an_object.html">Remove confirmation when discarding a...</a><br/>
+          
+	
+            
+                    <a href="incoming/session.html">Session</a><br/>
+          
+	
+            
+                    <a href="incoming/setting_several_variables_in_a_section.html">Setting several variables in a section</a><br/>
+          
+	
+            
+                    <a href="incoming/setting_up_rss_import.html">Setting up RSS Import</a><br/>
+          
+	
+            
+                    <a href="incoming/setup_php_for_comandline_usage_php_cli.html">Setup PHP for comandline usage (PHP-C...</a><br/>
+          
+	
+            
+                    <a href="incoming/smart_viewcache_cleaning_system.html"><b>Smart viewcache cleaning system</b></a><br/>
+          
+	
+            
+                    <a href="incoming/ssl_with_ez_over_a_ssl_proxy.html">SSL with eZ over a SSL proxy</a><br/>
+          
+	
+            
+                    <a href="incoming/system_development.html">System development</a><br/>
+          
+	
+            
+                    <a href="incoming/test_document.html">Test document</a><br/>
+          
+	
+            
+                    <a href="incoming/the_community_server.html">The Community Server</a><br/>
+          
+	
+            
+                    <a href="incoming/truetype_font_in_pdf.html">Truetype font in PDF</a><br/>
+          
+	
+            
+                    <a href="incoming/tutorial_using_user_register.html">Tutorial: Using user/register</a><br/>
+          
+	
+            
+                    <a href="incoming/user_preferences.html">User preferences</a><br/>
+          
+	
+            
+                    <a href="incoming/webdav_clients_and_compatiblity.html">WebDAV clients and compatiblity</a><br/>
+          
+	
+            
+                    <a href="incoming/what_does_something_tag_link_must_have_attribute_href_or_valid_id_need_fix_mean.html">What does "Something: Tag 'link' must...</a><br/>
+          
+	
+        </p>
+
+
+<hr class="docsplit"/>
+<h3>Created</h3>
+<p>
+14/09/2004<br/>
+9:27:32 am<br/>
+by Gunnstein Lye
+</p>
+<h3>Last updated</h3>
+<p>
+30/11/2004<br/>
+10:23:32 am<br/>
+by Derick Rethans
+</p>
+<h3>Authors</h3>
+<p class="rendered">Gunnstein Lye<br/>Ole Morten Halvorsen<br/>Kåre  Køhler Høvik<br/>Derick Rethans<br/></p>
+
+<br/>
+<hr class="docsplit"/>
+
+<p>This page is part of the eZ Publish documentation. The documentation is available under the <a href="https://web.archive.org/web/20071217203825/http://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License.</a> All contributions will be released under the terms of this license.</p>
+
+</div>
+</div>
+</div>
+
+
+
+
+
+<!-- Main area content: END -->
+
+</div>
+</div>
+
+<!-- Main area: END -->
+
+<hr class="hide"/>
+
+<!-- Footer area: START -->
+<div id="footer-design">
+<div id="page-width6">
+<div id="footer">
+
+<address>Powered by eZ Publish&reg; Content Management System.<br/>
+Copyright &copy;1999 - 2024 7x and 2007 eZ Systems AS (except where otherwise noted). All rights reserved.</address>
+
+</div>
+</div>
+</div>
+<!-- Footer area: END -->
+
+</div>
+<!-- Complete page area: END -->
+
+
+    
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TFEDSZJYH0"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-TFEDSZJYH0');
+</script>
+
+
+</body>
+</html>
+
+<!-- th[eZ] 20050804 --><!--
+     FILE ARCHIVED ON 20:38:25 Dec 17, 2007 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 11:22:17 Oct 31, 2024.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  captures_list: 0.924
+  exclusion.robots: 0.037
+  exclusion.robots.policy: 0.016
+  esindex: 0.014
+  cdx.remote: 6.59
+  LoadShardBlock: 59.692 (3)
+  PetaboxLoader3.datanode: 69.661 (4)
+  load_resource: 54.242
+  PetaboxLoader3.resolve: 23.796
+-->

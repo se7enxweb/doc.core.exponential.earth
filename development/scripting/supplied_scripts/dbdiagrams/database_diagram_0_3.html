@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><!-- is_embed=False -->
+<script>
+  const observer = new PerformanceObserver((list) => {
+    list.getEntries().forEach((entry) => {
+      console.log('%o', entry);
+    })
+  });
+  observer.observe({type: "navigation", buffered: true});
+</script>
+<script src="database_diagram_0_3_files/athena.js" type="text/javascript"></script>
+<script type="text/javascript">window.addEventListener('DOMContentLoaded',function(){var v=archive_analytics.values;v.service='wb';v.server_name='wwwb-app213.us.archive.org';v.server_ms=289;archive_analytics.send_pageview({});});</script>
+<script type="text/javascript" src="database_diagram_0_3_files/bundle-playback.js" charset="utf-8"></script>
+<script type="text/javascript" src="database_diagram_0_3_files/wombat.js" charset="utf-8"></script>
+<script>window.RufflePlayer=window.RufflePlayer||{};window.RufflePlayer.config={"autoplay":"on","unmuteOverlay":"hidden"};</script>
+<script type="text/javascript" src="database_diagram_0_3_files/ruffle.js"></script>
+<script type="text/javascript">
+    __wm.init("http://web.archive.org/web");
+  __wm.wombat("http://ez.no:80/images/documentation/reference/dbdiagrams/database_diagram_0_3","20080131121002","http://web.archive.org/","web","/_static/",
+	      "1201781402");
+</script>
+<link rel="stylesheet" type="text/css" href="database_diagram_0_3_files/banner-styles.css">
+<link rel="stylesheet" type="text/css" href="database_diagram_0_3_files/iconochive.css">
+<!-- End Wayback Rewrite JS Include -->
+
+<style type="text/css">
+    @import url(https://doc.core.ezpublish.se7enx.com/ezno2005/design/ezno2005/stylesheets/core.css);
+    @import url(https://doc.core.ezpublish.se7enx.com/ezno2005/design/ezno2005/stylesheets/pagelayout.css);
+    @import url(https://doc.core.ezpublish.se7enx.com/ezno2005/design/ezno2005/stylesheets/classes.css);
+    @import url(https://doc.core.ezpublish.se7enx.com/ezno2005/design/ezno2005/stylesheets/monitor.css);
+</style>
+
+<link type="text/css" rel="stylesheet" href="database_diagram_0_3_files/print.css" media="print">
+
+    <link rel="alternate" title="ez.no News" href="http://web.archive.org/web/20080131121002/http://ez.no/rss/feed/news" type="application/rss+xml"><link rel="alternate" title="ez.no Developer News" href="http://web.archive.org/web/20080131121002/http://ez.no/rss/feed/communitynews" type="application/rss+xml">
+<link rel="alternate" title="ez.no Developer Articles" href="http://web.archive.org/web/20080131121002/http://ez.no/rss/feed/community_articles" type="application/rss+xml">
+<link rel="alternate" title="ez.no Forum" href="http://web.archive.org/web/20080131121002/http://ez.no/rss/feed/forum" type="application/rss+xml">
+<link rel="alternate" title="ez.no Contributions" href="http://web.archive.org/web/20080131121002/http://ez.no/rss/feed/contribs" type="application/rss+xml">
+<link rel="alternate" title="ez.no Open Funding" href="http://web.archive.org/web/20080131121002/http://ez.no/rss/feed/openfunding_suggestions" type="application/rss+xml">
+
+
+<!-- IE conditional comments; for bug fixes for different IE versions -->
+<!--[if IE 5]>     <style type="text/css"> @import url(/extension/ezno2005/design/ezno2005/stylesheets/ie5.css);    </style> <![endif]-->
+<!--[if lte IE 6]> <style type="text/css"> @import url(/extension/ezno2005/design/ezno2005/stylesheets/ie6lte.css); </style> <![endif]-->
+<!--[if gte IE 6]> <style type="text/css"> @import url(/extension/ezno2005/design/ezno2005/stylesheets/ie6gte.css); </style> <![endif]-->
+
+<!-- Load special stylesheet (if necessary) for newer Netscape decendants, Mozilla and Firefox, using the Gecko renderer -->
+<script type="text/javascript"><!-- if ((navigator.userAgent.indexOf("Gecko") != -1)&&(navigator.userAgent.indexOf("KHTML") == -1)) document.write("<style type=\"text/css\">@import url(/extension/ezno2005/design/ezno2005/stylesheets/gecko.css);</style>");--></script>
+                                                                                    
+<title>
+            database diagram 0.3     /         dbdiagrams     /         Reference                    </title>
+<meta http-equiv="Content-Language" content="en-GB">
+    <meta name="author" content="eZ Systems">
+    <meta name="copyright" content="eZ Systems as">
+    <meta name="description" content="eZ Publish is an open source content management system (CMS) and an open source content management framework (CMF).">
+    <meta name="keywords" content="cms, publish, e-commerce, content management, development framework">
+
+<meta name="MSSmartTagsPreventParsing" content="TRUE">
+<meta name="generator" content="eZ Publish">
+
+<script type="text/javascript" src="database_diagram_0_3_files/tools.js"></script>
+<script type="text/javascript" src="database_diagram_0_3_files/dropdownmenu.js"></script>
+</head>    <body onload="menuInit();"><!-- BEGIN WAYBACK TOOLBAR INSERT -->
+<script>__wm.rw(0);</script>
+<div id="wm-ipp-base" lang="en" style="display: block; direction: ltr; height: 107px;">
+</div><div id="wm-ipp-print">The Wayback Machine - 
+http://web.archive.org/web/20080131121002/http://ez.no:80/images/
+documentation/reference/dbdiagrams/database_diagram_0_3</div>
+<script type="text/javascript">//<![CDATA[
+__wm.bt(725,27,25,2,"web","http://ez.no/images/documentation/reference/dbdiagrams/database_diagram_0_3","20080131121002",1996,"/_static/",["/_static/css/banner-styles.css?v=S1zqJCYt","/_static/css/iconochive.css?v=3PDvdIFv"], false);
+  __wm.rw(1);
+//]]></script>
+<!-- END WAYBACK TOOLBAR INSERT -->
+ 
+
+<!-- Complete page area: START -->
+<div id="page">
+
+<!-- Header area: START -->
+<div id="header">
+<div id="header-insert">
+
+<!-- User menu area: START -->
+<div id="usermenu">
+
+<div id="page-width1">
+
+<div id="logo">
+<h1><a href="http://web.archive.org/web/20080131121002/http://ez.no/"><span class="hide">eZ Systems - The Content Management Ecosystem</span></a></h1>
+</div>
+
+
+
+<p class="hide"><a href="#main">Skip to main content</a></p>
+
+<hr class="hide">
+<div id="searchbox">
+<form action="/web/20080131121002/http://ez.no/ezsearchredirect/action" method="get">
+
+<div class="block">
+<div class="element">
+<input id="searchbutton" class="button" type="submit" value="Search">
+</div>
+
+<div class="element searchstring">
+    <label for="searchtext" class="hide">Search text:</label>
+    <input id="searchtext" name="SearchText" type="text" size="12"><br>
+    
+
+            <div class="section">
+            <label for="searcharea" class="hide">Search area:</label>
+            <select id="searcharea" name="SubTreeArray[]">
+                <option value="2" selected="selected">All ez.no</option>
+                <option value="306">Bug reports</option>
+                <option value="21358">Contributions</option>
+                <option value="documentation">Documentation</option>
+                <option value="308">Forum</option>
+            </select>
+            </div>
+    </div>
+
+</div>
+</form>
+</div>
+
+<hr class="hide">
+<h2 class="hide">User menu</h2>
+
+<!-- User menu content: START -->
+<ul>
+            <li><a href="http://web.archive.org/web/20080131121002/http://ez.no/download"><span>Downloads</span></a></li>
+    <li><a href="http://web.archive.org/web/20080131121002/http://ez.no/company/contact"><span>Contact</span></a></li>
+            <li><a href="http://web.archive.org/web/20080131121002/http://ez.no/user/login"><span>Log in</span></a></li>
+        <li><a href="http://web.archive.org/web/20080131121002/http://ez.no/user/register"><span>Register</span></a></li>
+    
+    <li id="language-menu">
+        <a class="highlighted" title="English" href="http://web.archive.org/web/20080131121002/http://ez.no/images/documentation/reference/dbdiagrams/database_diagram_0_3"><img src="database_diagram_0_3_files/eng-gb.gif" width="18" height="12" alt="English"></a>
+        <a title="Deutsch" href="http://web.archive.org/web/20080131121002/http://ez.no/de/images/documentation/reference/dbdiagrams/database_diagram_0_3"><img src="database_diagram_0_3_files/ger-de.gif" width="18" height="12" alt="Deutsch"></a>
+        <a title="Português" href="http://web.archive.org/web/20080131121002/http://ez.no/br/images/documentation/reference/dbdiagrams/database_diagram_0_3"><img src="database_diagram_0_3_files/por-br.gif" width="18" height="12" alt="Português"></a>
+        <a title="Français" href="http://web.archive.org/web/20080131121002/http://ez.no/fr/images/documentation/reference/dbdiagrams/database_diagram_0_3"><img src="database_diagram_0_3_files/fre-fr.gif" width="18" height="12" alt="Français"></a>
+        <a title="日本語" href="http://web.archive.org/web/20080131121002/http://ez.no/jp/images/documentation/reference/dbdiagrams/database_diagram_0_3"><img src="database_diagram_0_3_files/jpn-jp.gif" width="18" height="12" alt="日本語"></a>        
+        <a title="中文" href="http://web.archive.org/web/20080131121002/http://ez.no/tw/images/documentation/reference/dbdiagrams/database_diagram_0_3"><img src="database_diagram_0_3_files/chi-tw.gif" width="18" height="12" alt="中文"></a>        
+        <a title="Norsk" href="http://web.archive.org/web/20080131121002/http://ez.no/no/images/documentation/reference/dbdiagrams/database_diagram_0_3"><img src="database_diagram_0_3_files/nor-NO.gif" width="18" height="12" alt="Norsk"></a>        
+    </li>
+</ul>
+<!-- User menu content: END -->
+
+</div>
+
+</div>
+<!-- User menu area: END -->
+
+</div>
+</div>
+<!-- Header area: END --><script type="text/javascript">
+<!--
+var menu = new Array();
+
+menu[0] = ['eZ Publish', '/ezpublish', 'eZ Publish Premium', '/ezpublish/premium', 'eZ Publish Now', '/ezpublish/now', 'eZ Publish On Demand', '/ezpublish/on_demand', 'Proprietary license options', '/products/proprietary_license_options', 'Certified extensions', '/products/certified_extensions', 'eZ Flow', '/ezflow', 'eZ Components', '/ezcomponents', 'eZ Find', '/ezfind', 'eZ Newsletter', '/eznewsletter', 'Expert consulting services', '/products/expert_consulting_services', 'Support', '/products/support'];
+menu[1] = ['Documentation', '/doc', 'Articles', '/community/articles', 'Books', '/store/books', 'Training', '/education/training', 'Certification', '/education/certification'];
+menu[2] = ['Case studies', '/customers/case_studies', 'References', '/customers/references', 'User quotes', '/customers/user_quotes', 'eZ for media', '/customers/ez_for_media'];
+menu[3] = ['Worldwide Partners', '/partner/worldwide_partners', 'eZ Partner program', '/partner/ez_partner_program', 'Knowledge centre', '/partner/knowledge_centre'];
+menu[4] = ['Downloads', '/download', 'Documentation', '/doc', 'News', '/developer/news', 'Developer information', '/developer/developer_information', 'Projects & contributions', '/developer/contribs', 'Forum', '/developer/forum', 'Issue tracker', '/bugs/redirect', 'Open Funding', '/developer/open_funding', 'Security', '/developer/security', 'User groups', '/developer/user_groups'];
+menu[5] = ['Total Product Responsibility from eZ', '/support/total_product_responsibility_from_ez'];
+menu[6] = ['Software solutions', '/store/software', 'Training', '/services/training', 'Certification', '/services/certification', 'Books', '/store/books', 'Services', '/store/services'];
+menu[7] = ['News', '/company/news', 'Awards', '/company/awards', 'Media & press', '/company/media_press', 'Events', '/company/events', 'Career', '/company/career', 'eZ Conference & Awards', '/company/ez_conference_awards', 'Board of Directors', '/company/board', 'eZ Crew', '/company/ez_crew', 'Contact', '/company/contact'];
+
+-->
+</script>
+<div id="menuborder">
+
+<!-- Main menu area: START -->
+<div id="menu" onmouseover="menuHover();" onmouseout="tryHideSubMenues();">
+
+<div id="mainmenu" class="float-break">
+<div id="page-width2">
+    <ul id="mainmenulist" class="float-break">
+<li><a href="http://web.archive.org/web/20080131121002/http://ez.no/products" onmouseover="switchSubMenu( this );" class="">Products &amp; services</a><div id="submenuID0" class="dropdownmenu" style="display: none;"><ul><li><div><a href="http://web.archive.org/web/20080131121002mp_/http://ez.no/ezpublish">eZ Publish</a></div></li><li><div><a href="http://web.archive.org/web/20080131121002mp_/http://ez.no/ezpublish/premium">eZ Publish Premium</a></div></li><li><div><a href="http://web.archive.org/web/20080131121002mp_/http://ez.no/ezpublish/now">eZ Publish Now</a></div></li><li><div><a href="http://web.archive.org/web/20080131121002mp_/http://ez.no/ezpublish/on_demand">eZ Publish On Demand</a></div></li><li><div><a href="http://web.archive.org/web/20080131121002mp_/http://ez.no/products/proprietary_license_options">Proprietary license options</a></div></li><li><div><a href="http://web.archive.org/web/20080131121002mp_/http://ez.no/products/certified_extensions">Certified extensions</a></div></li><li><div><a href="http://web.archive.org/web/20080131121002mp_/http://ez.no/ezflow">eZ Flow</a></div></li><li><div><a href="http://web.archive.org/web/20080131121002mp_/http://ez.no/ezcomponents">eZ Components</a></div></li><li><div><a href="http://web.archive.org/web/20080131121002mp_/http://ez.no/ezfind">eZ Find</a></div></li><li><div><a href="http://web.archive.org/web/20080131121002mp_/http://ez.no/eznewsletter">eZ Newsletter</a></div></li><li><div><a href="http://web.archive.org/web/20080131121002mp_/http://ez.no/products/expert_consulting_services">Expert consulting services</a></div></li><li><div><a href="http://web.archive.org/web/20080131121002mp_/http://ez.no/products/support">Support</a></div></li></ul></div></li>
+<li><a href="http://web.archive.org/web/20080131121002/http://ez.no/education" onmouseover="switchSubMenu( this );" class="">Education</a><div id="submenuID1" class="dropdownmenu" style="display: none;"><ul><li><div><a href="http://web.archive.org/web/20080131121002mp_/http://ez.no/doc">Documentation</a></div></li><li><div><a href="http://web.archive.org/web/20080131121002mp_/http://ez.no/community/articles">Articles</a></div></li><li><div><a href="http://web.archive.org/web/20080131121002mp_/http://ez.no/store/books">Books</a></div></li><li><div><a href="http://web.archive.org/web/20080131121002mp_/http://ez.no/education/training">Training</a></div></li><li><div><a href="http://web.archive.org/web/20080131121002mp_/http://ez.no/education/certification">Certification</a></div></li></ul></div></li>
+<li><a href="http://web.archive.org/web/20080131121002/http://ez.no/customers" onmouseover="switchSubMenu( this );" class="">Customers</a><div id="submenuID2" class="dropdownmenu" style="display: none;"><ul><li><div><a href="http://web.archive.org/web/20080131121002mp_/http://ez.no/customers/case_studies">Case studies</a></div></li><li><div><a href="http://web.archive.org/web/20080131121002mp_/http://ez.no/customers/references">References</a></div></li><li><div><a href="http://web.archive.org/web/20080131121002mp_/http://ez.no/customers/user_quotes">User quotes</a></div></li><li><div><a href="http://web.archive.org/web/20080131121002mp_/http://ez.no/customers/ez_for_media">eZ for media</a></div></li></ul></div></li>
+<li><a href="http://web.archive.org/web/20080131121002/http://ez.no/partner" onmouseover="switchSubMenu( this );" class="">Partners</a><div id="submenuID3" class="dropdownmenu" style="display: none;"><ul><li><div><a href="http://web.archive.org/web/20080131121002mp_/http://ez.no/partner/worldwide_partners">Worldwide Partners</a></div></li><li><div><a href="http://web.archive.org/web/20080131121002mp_/http://ez.no/partner/ez_partner_program">eZ Partner program</a></div></li><li><div><a href="http://web.archive.org/web/20080131121002mp_/http://ez.no/partner/knowledge_centre">Knowledge centre</a></div></li></ul></div></li>
+<li><a href="http://web.archive.org/web/20080131121002/http://ez.no/developer" onmouseover="switchSubMenu( this );" class="">Developer</a><div id="submenuID4" class="dropdownmenu" style="display: none;"><ul><li><div><a href="http://web.archive.org/web/20080131121002mp_/http://ez.no/download">Downloads</a></div></li><li><div><a href="http://web.archive.org/web/20080131121002mp_/http://ez.no/doc">Documentation</a></div></li><li><div><a href="http://web.archive.org/web/20080131121002mp_/http://ez.no/developer/news">News</a></div></li><li><div><a href="http://web.archive.org/web/20080131121002mp_/http://ez.no/developer/developer_information">Developer information</a></div></li><li><div><a href="http://web.archive.org/web/20080131121002mp_/http://ez.no/developer/contribs">Projects &amp; contributions</a></div></li><li><div><a href="http://web.archive.org/web/20080131121002mp_/http://ez.no/developer/forum">Forum</a></div></li><li><div><a href="http://web.archive.org/web/20080131121002mp_/http://ez.no/bugs/redirect">Issue tracker</a></div></li><li><div><a href="http://web.archive.org/web/20080131121002mp_/http://ez.no/developer/open_funding">Open Funding</a></div></li><li><div><a href="http://web.archive.org/web/20080131121002mp_/http://ez.no/developer/security">Security</a></div></li><li><div><a href="http://web.archive.org/web/20080131121002mp_/http://ez.no/developer/user_groups">User groups</a></div></li></ul></div></li>
+<li><a href="http://web.archive.org/web/20080131121002/http://ez.no/support" onmouseover="switchSubMenu( this );" class="">Support</a><div id="submenuID5" class="dropdownmenu" style="display: none;"><ul><li><div><a href="http://web.archive.org/web/20080131121002mp_/http://ez.no/support/total_product_responsibility_from_ez">Total Product Responsibility from eZ</a></div></li></ul></div></li>
+<li><a href="http://web.archive.org/web/20080131121002/http://ez.no/store" onmouseover="switchSubMenu( this );" class="">Store</a><div id="submenuID6" class="dropdownmenu" style="display: none;"><ul><li><div><a href="http://web.archive.org/web/20080131121002mp_/http://ez.no/store/software">Software solutions</a></div></li><li><div><a href="http://web.archive.org/web/20080131121002mp_/http://ez.no/services/training">Training</a></div></li><li><div><a href="http://web.archive.org/web/20080131121002mp_/http://ez.no/services/certification">Certification</a></div></li><li><div><a href="http://web.archive.org/web/20080131121002mp_/http://ez.no/store/books">Books</a></div></li><li><div><a href="http://web.archive.org/web/20080131121002mp_/http://ez.no/store/services">Services</a></div></li></ul></div></li>
+<li class="last"><a href="http://web.archive.org/web/20080131121002/http://ez.no/company" onmouseover="switchSubMenu( this );" class="">Company</a><div id="submenuID7" class="dropdownmenu" style="display: none;"><ul><li><div><a href="http://web.archive.org/web/20080131121002mp_/http://ez.no/company/news">News</a></div></li><li><div><a href="http://web.archive.org/web/20080131121002mp_/http://ez.no/company/awards">Awards</a></div></li><li><div><a href="http://web.archive.org/web/20080131121002mp_/http://ez.no/company/media_press">Media &amp; press</a></div></li><li><div><a href="http://web.archive.org/web/20080131121002mp_/http://ez.no/company/events">Events</a></div></li><li><div><a href="http://web.archive.org/web/20080131121002mp_/http://ez.no/company/career">Career</a></div></li><li><div><a href="http://web.archive.org/web/20080131121002mp_/http://ez.no/company/ez_conference_awards">eZ Conference &amp; Awards</a></div></li><li><div><a href="http://web.archive.org/web/20080131121002mp_/http://ez.no/company/board">Board of Directors</a></div></li><li><div><a href="http://web.archive.org/web/20080131121002mp_/http://ez.no/company/ez_crew">eZ Crew</a></div></li><li><div><a href="http://web.archive.org/web/20080131121002mp_/http://ez.no/company/contact">Contact</a></div></li></ul></div></li>
+</ul>
+
+</div>
+</div>
+
+
+<div id="submenu" style="display: none;">
+<div id="page-width3">
+
+</div>
+</div>
+
+<script type="text/javascript"><!--
+    document.getElementById('submenu').style.display = 'none';
+--></script>
+
+</div>
+<!-- Main menu area: END -->
+
+</div>
+
+<hr class="hide"><!-- Path area: START -->
+<div id="path">
+
+<div id="page-width4">
+<h2 class="hide">Path</h2>
+
+<!-- Path content: START -->
+<p>
+                        <a href="http://web.archive.org/web/20080131121002/http://ez.no/">ez.no</a>
+        
+                        /
+                            <a href="http://web.archive.org/web/20080131121002/http://ez.no/images">images</a>
+        
+                        /
+                            <a href="http://web.archive.org/web/20080131121002/http://ez.no/images/documentation">documentation</a>
+        
+                        /
+                            <a href="http://web.archive.org/web/20080131121002/http://ez.no/images/documentation/reference">reference</a>
+        
+                        /
+                            <a href="http://web.archive.org/web/20080131121002/http://ez.no/images/documentation/reference/dbdiagrams">dbdiagrams</a>
+        
+                        /
+                            database diagram 0.3
+        
+            </p>
+<!-- Path content: END -->
+
+</div>
+
+</div>
+<!-- Path area: END -->
+
+<hr class="hide">
+
+<!-- Main area: START -->
+
+<div id="page-width5">
+<div id="main" class="float-break">
+
+<!-- Main area content: START -->
+
+
+
+
+<div class="template-design area-main-full">
+<div class="template-module content-view-full">
+<div class="template-object class-imagegallery">
+
+     <div class="attribute-heading">
+        <h1>database diagram 0.3</h1>
+    </div>
+
+                    <p class="box">
+                                <span class="content-navigator-arrow-disabled">«</span>&nbsp;Previous image
+            
+                            |
+            
+                            <a href="http://web.archive.org/web/20080131121002/http://ez.no/images/documentation/reference/dbdiagrams">dbdiagrams</a>
+            
+                            |
+            
+                                Next image&nbsp;<span class="content-navigator-arrow-disabled">»</span>
+                        </p>
+        
+                                
+       <p>
+
+    
+        
+    
+    <img src="database_diagram_0_3_files/database_diagram_031.gif" width="4782" height="3709" border="0" alt="database diagram" title="database diagram">
+    
+    
+    </p>
+
+       
+        
+
+<p>
+Database diagram (v0.3). 
+</p>
+
+</div>
+</div>
+</div>
+
+<!-- Main area content: END -->
+
+</div>
+</div>
+
+<!-- Main area: END -->
+
+<hr class="hide">
+
+<!-- Footer area: START -->
+<div id="footer-design">
+<div id="page-width6">
+<div id="footer">
+
+<address>Powered by eZ Publish® Content Management System.<br>
+Copyright © 2008 eZ Systems AS (except where otherwise noted). All rights reserved.</address>
+
+</div>
+</div>
+</div>
+<!-- Footer area: END -->
+
+</div>
+<!-- Complete page area: END -->
+
+
+
+<script type="text/javascript">
+    var gaJsHost = (("https:" == document.location.protocol) ? "http://web.archive.org/web/20080131121002/https://ssl." : "http://web.archive.org/web/20080131121002/http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script src="database_diagram_0_3_files/ga.js" type="text/javascript"></script>
+<script type="text/javascript">
+    var pageTracker = _gat._getTracker("UA-303624-1");
+    pageTracker._initData();
+    pageTracker._trackPageview();
+</script>
+
+
+
+
+
+</body></html>
+<!-- th[eZ] 20050804 -->
+<!--
+     FILE ARCHIVED ON 12:10:02 Jan 31, 2008 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 14:31:23 Oct 31, 2024.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  captures_list: 0.601
+  exclusion.robots: 0.026
+  exclusion.robots.policy: 0.016
+  esindex: 0.009
+  cdx.remote: 9.353
+  LoadShardBlock: 141.037 (3)
+  PetaboxLoader3.datanode: 115.979 (4)
+  PetaboxLoader3.resolve: 109.032 (2)
+  load_resource: 107.552
+-->

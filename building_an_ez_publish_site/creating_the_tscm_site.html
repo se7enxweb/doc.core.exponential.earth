@@ -1,0 +1,836 @@
+
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style type="text/css">
+    @import url(https://doc.core.ezpublish.se7enx.com/ezno2005/design/ezno2005/stylesheets/core.css);
+    @import url(https://doc.core.ezpublish.se7enx.com/ezno2005/design/ezno2005/stylesheets/pagelayout.css);
+    @import url(https://doc.core.ezpublish.se7enx.com/ezno2005/design/ezno2005/stylesheets/classes.css);
+    @import url(https://doc.core.ezpublish.se7enx.com/ezno2005/design/ezno2005/stylesheets/monitor.css);
+</style>
+
+<link type="text/css" rel="stylesheet" href="https://web.archive.org/web/20071223212534cs_/http://ez.no/extension/ezno2005/design/ezno2005/stylesheets/print.css" media="print"/>
+
+    <link rel="alternate" title="ez.no News" href="https://web.archive.org/web/20071223212534/http://ez.no/rss/feed/news" type="application/rss+xml"/><link rel="alternate" title="ez.no Developer News" href="/web/20071223212534/http://ez.no/rss/feed/communitynews" type="application/rss+xml"/>
+<link rel="alternate" title="ez.no Developer Articles" href="https://web.archive.org/web/20071223212534/http://ez.no/rss/feed/community_articles" type="application/rss+xml"/>
+<link rel="alternate" title="ez.no Forum" href="https://web.archive.org/web/20071223212534/http://ez.no/rss/feed/forum" type="application/rss+xml"/>
+<link rel="alternate" title="ez.no Contributions" href="https://web.archive.org/web/20071223212534/http://ez.no/rss/feed/contribs" type="application/rss+xml"/>
+<link rel="alternate" title="ez.no Open Funding" href="https://web.archive.org/web/20071223212534/http://ez.no/rss/feed/openfunding_suggestions" type="application/rss+xml"/>
+
+
+<!-- IE conditional comments; for bug fixes for different IE versions -->
+<!--[if IE 5]>     <style type="text/css"> @import url(/extension/ezno2005/design/ezno2005/stylesheets/ie5.css);    </style> <![endif]-->
+<!--[if lte IE 6]> <style type="text/css"> @import url(/extension/ezno2005/design/ezno2005/stylesheets/ie6lte.css); </style> <![endif]-->
+<!--[if gte IE 6]> <style type="text/css"> @import url(/extension/ezno2005/design/ezno2005/stylesheets/ie6gte.css); </style> <![endif]-->
+
+<!-- Load special stylesheet (if necessary) for newer Netscape decendants, Mozilla and Firefox, using the Gecko renderer -->
+<script type="text/javascript"><!-- if ((navigator.userAgent.indexOf("Gecko") != -1)&&(navigator.userAgent.indexOf("KHTML") == -1)) document.write("<style type=\"text/css\">@import url(/extension/ezno2005/design/ezno2005/stylesheets/gecko.css);</style>");--></script>
+                                                                    
+<title>
+            Creating the TSCM site     /         Building an eZ publish site     /         Documentation                    </title>
+<meta http-equiv="Content-Language" content="en-GB"/>
+    <meta name="author" content="eZ Systems"/>
+    <meta name="copyright" content="eZ Systems as"/>
+    <meta name="description" content="eZ Publish is an open source content management system (CMS) and an open source content management framework (CMF)."/>
+    <meta name="keywords" content="cms, publish, e-commerce, content management, development framework"/>
+
+<meta name="MSSmartTagsPreventParsing" content="TRUE"/>
+<meta name="generator" content="eZ Publish"/>
+
+<script type="text/javascript" src="/web/20071223212534js_/http://ez.no/extension/ezno2005/design/ezno2005/javascripts/tools.js"></script>
+<script type="text/javascript" src="https://doc.core.ezpublish.se7enx.com/ezno2005/design/ezno2005/javascripts/dropdownmenu.js"></script>
+</head>    <body onload="menuInit();">
+
+<!-- Complete page area: START -->
+<div id="page">
+
+<!-- Header area: START -->
+<div id="header">
+<div id="header-insert">
+
+<!-- User menu area: START -->
+<div id="usermenu">
+
+<div id="page-width1">
+
+<div id="logo">
+<h1><a href="https://doc.core.ezpublish.se7enx.com/"><span class="hide">eZ Systems - The Content Management Ecosystem</span></a></h1>
+</div>
+
+
+
+<p class="hide"><a href="#main">Skip to main content</a></p>
+
+<hr class="hide"/>
+<div id="searchbox">
+<form action="/web/20071223212534/http://ez.no/ezsearchredirect/action" method="get">
+
+<div class="block">
+<div class="element">
+<input id="searchbutton" class="button" type="submit" value="Search"/>
+</div>
+
+<div class="element searchstring">
+    <label for="searchtext" class="hide">Search text:</label>
+    <input id="searchtext" name="SearchText" type="text" size="12"/><br/>
+    
+
+            <div class="section">
+            <label for="searcharea" class="hide">Search area:</label>
+            <select id="searcharea" name="SubTreeArray[]">
+                <option value="2" selected="selected">All ez.no</option>
+                <option value="306">Bug reports</option>
+                <option value="21358">Contributions</option>
+                <option value="documentation">Documentation</option>
+                <option value="308">Forum</option>
+            </select>
+            </div>
+    </div>
+
+</div>
+</form>
+</div>
+
+<hr class="hide"/>
+<h2 class="hide">User menu</h2>
+
+<!-- User menu content: START -->
+<ul>
+            <li><a href="https://web.archive.org/web/20071224070727/http://ez.no/download"><span>Downloads</span></a></li>
+    <li><a href="https://web.archive.org/web/20071224070727/http://ez.no/company/contact"><span>Contact</span></a></li>
+            <li><a href="https://web.archive.org/web/20071224070727/http://ez.no/user/login"><span>Log in</span></a></li>
+        <li><a href="https://web.archive.org/web/20071224070727/http://ez.no/user/register"><span>Register</span></a></li>
+    
+    <li id="language-menu">
+        <a class="highlighted" title="English" href="https://web.archive.org/web/20071223212534/http://ez.no/ezpublish/documentation/building_an_ez_publish_site/creating_the_tscm_site"><img src="/web/20071223212534im_/http://ez.no/extension/ezno2005/design/ezno2005/images/eng-GB.gif" width="18" height="12" alt="English"/></a>
+        <a title="Deutsch" href="https://web.archive.org/web/20071223212534/http://ez.no/de/ezpublish/documentation/building_an_ez_publish_site/creating_the_tscm_site"><img src="/web/20071223212534im_/http://ez.no/extension/ezno2005/design/ezno2005/images/ger-DE.gif" width="18" height="12" alt="Deutsch"/></a>
+        <a title="Português" href="https://web.archive.org/web/20071223212534/http://ez.no/br/ezpublish/documentation/building_an_ez_publish_site/creating_the_tscm_site"><img src="/web/20071223212534im_/http://ez.no/extension/ezno2005/design/ezno2005/images/por-BR.gif" width="18" height="12" alt="Português"/></a>
+        <a title="Français" href="https://web.archive.org/web/20071223212534/http://ez.no/fr/ezpublish/documentation/building_an_ez_publish_site/creating_the_tscm_site"><img src="/web/20071223212534im_/http://ez.no/extension/ezno2005/design/ezno2005/images/fre-FR.gif" width="18" height="12" alt="Français"/></a>
+        <a title="日本語" href="https://web.archive.org/web/20071223212534/http://ez.no/jp/ezpublish/documentation/building_an_ez_publish_site/creating_the_tscm_site"><img src="/web/20071223212534im_/http://ez.no/extension/ezno2005/design/ezno2005/images/jpn-JP.gif" width="18" height="12" alt="日本語"/></a>        
+        <a title="中文" href="https://web.archive.org/web/20071223212534/http://ez.no/tw/ezpublish/documentation/building_an_ez_publish_site/creating_the_tscm_site"><img src="/web/20071223212534im_/http://ez.no/extension/ezno2005/design/ezno2005/images/chi-TW.gif" width="18" height="12" alt="中文"/></a>        
+        <a title="Norsk" href="https://web.archive.org/web/20071223212534/http://ez.no/no/ezpublish/documentation/building_an_ez_publish_site/creating_the_tscm_site"><img src="/web/20071223212534im_/http://ez.no/extension/ezno2005/design/ezno2005/images/nor-NO.gif" width="18" height="12" alt="Norsk"/></a>        
+    </li>
+</ul>
+<!-- User menu content: END -->
+
+</div>
+
+</div>
+<!-- User menu area: END -->
+
+</div>
+</div>
+<!-- Header area: END --><script type="text/javascript">
+<!--
+var menu = new Array();
+
+menu[0] = ['eZ Publish', '/ezpublish', 'eZ Publish Premium', '/ezpublish/premium', 'eZ Publish Now', '/ezpublish/now', 'eZ Publish On Demand', '/ezpublish/on_demand', 'Proprietary license options', '/products/proprietary_license_options', 'Certified extensions', '/products/certified_extensions', 'eZ Flow', '/ezflow', 'eZ Components', '/ezcomponents', 'eZ Find', '/ezfind', 'eZ Newsletter', '/eznewsletter', 'Expert consulting services', '/products/expert_consulting_services', 'Support', '/products/support'];
+menu[1] = ['Documentation', '/doc', 'Articles', '/community/articles', 'Books', '/store/books', 'Training', '/education/training', 'Certification', '/education/certification'];
+menu[2] = ['Case studies', '/customers/case_studies', 'References', '/customers/references', 'User quotes', '/customers/user_quotes', 'eZ for media', '/customers/ez_for_media'];
+menu[3] = ['Worldwide Partners', '/partner/worldwide_partners', 'eZ Partner program', '/partner/ez_partner_program', 'Knowledge centre', '/partner/knowledge_centre'];
+menu[4] = ['Downloads', '/download', 'Documentation', '/doc', 'News', '/developer/news', 'Developer information', '/developer/developer_information', 'Projects & contributions', '/developer/contribs', 'Forum', '/developer/forum', 'Issue tracker', '/bugs/redirect', 'Open Funding', '/developer/open_funding', 'Security', '/developer/security', 'User groups', '/developer/user_groups'];
+menu[5] = ['Total Product Responsibility from eZ', '/support/total_product_responsibility_from_ez'];
+menu[6] = ['Software solutions', '/store/software', 'Training', '/services/training', 'Certification', '/services/certification', 'Books', '/store/books', 'Services', '/store/services'];
+menu[7] = ['News', '/company/news', 'Media & press', '/company/media_press', 'Events', '/company/events', 'Career', '/company/career', 'eZ Conference & Awards', '/company/ez_conference_awards', 'Board of Directors', '/company/board', 'eZ Crew', '/company/ez_crew', 'Contact', '/company/contact'];
+
+-->
+</script>
+<div id="menuborder">
+
+<!-- Main menu area: START -->
+<div id="menu" onmouseover="menuHover();" onmouseout="tryHideSubMenues();">
+
+<div id="mainmenu" class="float-break">
+<div id="page-width2">
+    <ul id="mainmenulist" class="float-break">
+<li class="current"><a href="https://web.archive.org/web/20071224070727/http://ez.no/products" onmouseover="switchSubMenu( this );">Products &amp; services</a></li>
+<li><a href="https://web.archive.org/web/20071224070727/http://ez.no/education" onmouseover="switchSubMenu( this );">Education</a></li>
+<li><a href="https://web.archive.org/web/20071224070727/http://ez.no/customers" onmouseover="switchSubMenu( this );">Customers</a></li>
+<li><a href="https://web.archive.org/web/20071224070727/http://ez.no/partner" onmouseover="switchSubMenu( this );">Partners</a></li>
+<li><a href="https://web.archive.org/web/20071224070727/http://ez.no/developer" onmouseover="switchSubMenu( this );">Developer</a></li>
+<li><a href="https://web.archive.org/web/20071224070727/http://ez.no/support" onmouseover="switchSubMenu( this );">Support</a></li>
+<li><a href="https://web.archive.org/web/20071224070727/http://ez.no/store" onmouseover="switchSubMenu( this );">Store</a></li>
+<li class="last"><a href="https://web.archive.org/web/20071224070727/http://ez.no/company" onmouseover="switchSubMenu( this );">Company</a></li>
+</ul>
+
+</div>
+</div>
+
+
+<div id="submenu">
+<div id="page-width3">
+    <ul class="float-break">
+                        <li><a href="https://web.archive.org/web/20071224070727/http://ez.no/ezpublish">eZ Publish</a></li>
+                                <li><a href="https://web.archive.org/web/20071224070727/http://ez.no/ezpublish/premium">eZ Publish Premium</a></li>
+                                <li><a href="https://web.archive.org/web/20071224070727/http://ez.no/ezpublish/now">eZ Publish Now</a></li>
+                                <li><a href="https://web.archive.org/web/20071224070727/http://ez.no/ezpublish/on_demand">eZ Publish On Demand</a></li>
+                                <li><a href="https://web.archive.org/web/20071224070727/http://ez.no/products/proprietary_license_options">Proprietary license options</a></li>
+                                <li><a href="https://web.archive.org/web/20071224070727/http://ez.no/products/certified_extensions">Certified extensions</a></li>
+                                <li><a href="https://web.archive.org/web/20071224070727/http://ez.no/ezflow">eZ Flow</a></li>
+                                <li><a href="https://web.archive.org/web/20071224070727/http://ez.no/ezcomponents">eZ Components</a></li>
+                                <li><a href="https://web.archive.org/web/20071224070727/http://ez.no/ezfind">eZ Find</a></li>
+                                <li><a href="https://web.archive.org/web/20071224070727/http://ez.no/eznewsletter">eZ Newsletter</a></li>
+                                <li><a href="https://web.archive.org/web/20071224070727/http://ez.no/products/expert_consulting_services">Expert consulting services</a></li>
+                                <li class="last"><a href="https://web.archive.org/web/20071224070727/http://ez.no/products/support">Support</a></li>
+                </ul>
+</div>
+</div>
+
+<script type="text/javascript"><!--
+    document.getElementById('submenu').style.display = 'none';
+--></script>
+
+</div>
+<!-- Main menu area: END -->
+
+</div>
+
+<hr class="hide"/><!-- Path area: START -->
+<div id="path">
+
+<div id="page-width4">
+<h2 class="hide">Path</h2>
+
+<!-- Path content: START -->
+<p>
+                        <a href="https://web.archive.org/web/20071224070727/http://ez.no/">ez.no</a>
+        
+                        /
+                            <a href="https://web.archive.org/web/20071224070727/http://ez.no/ezpublish">ezpublish</a>
+        
+                        /
+                            <a href="https://doc.core.ezpublish.se7enx.com/toc.html">documentation</a>
+        
+                        /
+                            <a href="building_an_ez_publish_site.html">building an ez publish site</a>
+        
+                        /
+                            creating the tscm site
+        
+            </p>
+<!-- Path content: END -->
+
+</div>
+
+</div>
+<!-- Path area: END -->
+
+<hr class="hide"/>
+
+<!-- Main area: START -->
+
+<div id="page-width5">
+<div id="main" class="float-break">
+
+<!-- Main area content: START -->
+
+
+
+
+<div class="template-design area-main-normal">
+<div class="template-module content-view-full">
+<div class="template-object class-documentation">
+
+
+<div class="attribute-heading">
+    <h1>Creating the TSCM site</h1>
+</div>
+
+<p><strong>These documentation pages are no longer maintained. Please visit the <a href="https://doc.ezpublishlegacy.se7enx.com">new documentation site.</a></strong></p>
+
+<div class="attribute-long">
+    
+
+<p>
+The eZ publish CMS can handle multiple sites. To create a new site, we have to modify the initialization files and set up the site access files and directories. In this tutorial we will modify the existing &quot;Plain&quot; site. The elements and default files which were generated during the standard installation will be reused.
+</p>
+
+<p>
+
+<b>1. Renaming the siteaccess directories</b><br/>A site has two interfaces: an user and an administration interface. Inside eZ publish, these are called &quot;plain&quot; and &quot;plain_admin&quot;. The &quot;settings/siteaccess/&quot; directory contains subdirectories for sites that eZ publish may be configured to run. Navigate to this directory and rename &quot;plain&quot; to &quot;tscm&quot; and &quot;plain_admin&quot; to &quot;tscm_admin&quot;.
+</p>
+
+<p>
+Make sure that the user running the web server has write access to the &quot;settings/siteaccess/tscm&quot; directory and the files that reside inside it.
+</p>
+
+<p>
+
+<b>2. Modifying the siteaccess files</b><br/>eZ publish comes with a lot of configuration files, all residing in the &quot;settings&quot; directory. The &quot;.ini&quot; files are the default eZ publish configuration files. You should never change these files. Instead, you should use the override system, which is basically a set of files containing settings that will override the default configuration. In addition to the global override configuration files, each site can have its own set of override files. eZ publish reads the configuration files in the following order:
+</p>
+
+<ol>
+
+<li>
+Default configuration files<br/>(/settings/*) </li>
+
+<li>
+Site specific override files<br/>(/settings/siteaccess/[sitename]/* </li>
+
+<li>
+Global override files<br/>(/settings/override/*)</li>
+
+</ol>
+
+<p>
+Configuration settings in (1) will be overridden by settings in (2), which again will be overridden by settings in (3). Some of the override files end with an &quot;.append&quot; and some end with the &quot;.append.php&quot; extension. The latter is because of security issues related to sites running in non virtual host mode.
+</p>
+
+<p>
+Edit the &quot;settings/siteaccess/tscm/site.ini.append.php&quot; or &quot;settings/siteaccess/tscm/site.ini.append&quot; file. (It is correct that the settings are commented out with the /* and */ marks.)
+</p>
+
+<p>
+Modify the &quot;SiteName=Plain&quot; setting by replacing &quot;Plain&quot; with &quot;The Scandinavian Check Mates&quot;.
+</p>
+
+<p>
+Modify the &quot;SiteDesign=plain&quot; setting to &quot;SiteDesign=tscm&quot;. This tells the system to use the &quot;tscm&quot; design when the user/public interface of the TSCM site is accessed.
+</p>
+
+<p>
+Modify the &quot;VarDir&quot; setting to equal &quot;var/tscm&quot;. This tells the system to use the &quot;var/tscm&quot; directory instead of &quot;var/plain&quot;.
+</p>
+
+<p>
+
+Add the following lines above the last line of this file:<br/>
+</p>
+    <pre class="wordwrap"><span class="line">[TemplateSettings]</span>
+
+<span class="line">TemplateCache=disabled</span>
+
+<span class="line">Debug=disabled</span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">[ContentSettings]</span>
+
+<span class="line">ViewCaching=disabled</span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">[DebugSettings]</span>
+
+<span class="line">DebugOutput=enabled</span></pre>
+    
+<p>
+When building a site, it is always a good idea to turn off the cache engines and enable debug output. When the &quot;DebugOutput&quot; is set to &quot;Enabled&quot;, eZ publish will print a lot of debug related information right below the actual page that it has rendered. Use this information to solve problems. Debug output may be turned off at any time by replacing &quot;DebugOutput=enabled&quot; to &quot;DebugOutput=disabled&quot;. The screenshots within this tutorial will not contain any debug output.
+</p>
+
+<p>
+Edit the &quot;settings/siteaccess/tscm_admin/site.ini.append.php&quot; file.
+</p>
+
+<p>
+Modify the &quot;SiteName=Plain&quot; setting by replacing &quot;Plain&quot; with &quot;The Scandinavian Check Mates&quot;.
+</p>
+
+<p>
+The &quot;SiteDesign&quot; setting in this file tells the system to use the default admin interface, which is exactly what we want.
+</p>
+
+<p>
+Modify the &quot;VarDir&quot; setting to equal &quot;tscm&quot;. This tells the system to use the &quot;var/tscm&quot; directory instead of &quot;var/plain&quot;.
+</p>
+
+<p>
+
+<b>3. Modifying &quot;settings/override/site.ini.append.php&quot;</b><br/>Edit the &quot;settings/override/site.ini.append.php&quot; file and replace the occurrences of &quot;plain&quot; and &quot;plain_admin&quot; with &quot;tscm&quot; and &quot;tscm_admin&quot;. You'll probably have to do this four times.
+</p>
+
+<p>
+
+<b>4. Removing the plain var directory</b><br/>Under &quot;var/&quot;, each site has a directory that is used for storage of site specific content files (usually images and binary files), logs and cache files. If the &quot;var/plain&quot; directory exists, rename it to &quot;var/tscm&quot; or just delete it. eZ publish will automatically create a new &quot;var/tscm&quot; directory if it does not exist.
+</p>
+
+<p>
+
+<b>5. Creating a design directory</b><br/>In the root directory of eZ publish, there is a subdirectory called &quot;design&quot;. This directory contains all the design related files that may be used by various sites. Navigate into the design directory and create a subdirectory called &quot;tscm&quot;. We will not (re)use any of the files that reside in the &quot;plain&quot; directory; feel free to remove it.
+</p>
+
+<p>
+Under the &quot;design/tscm&quot; directory, create the following subdirectories:
+</p>
+    
+<table class="renderedtable" cellspacing="0" border="0" width="100%">
+<tr>
+<td valign="top">  
+<p>
+fonts
+</p>
+
+  </td>
+
+<td valign="top">  
+<p>
+(for fonts, used when rendering bitmaps of text)
+</p>
+
+  </td>
+</tr>
+<tr class="bglight">
+<td valign="top">  
+<p>
+images
+</p>
+
+  </td>
+
+<td valign="top">  
+<p>
+(non-content specific images; banners, logos, etc.)
+</p>
+
+  </td>
+</tr>
+<tr class="bgdark">
+<td valign="top">  
+<p>
+override
+</p>
+
+  </td>
+
+<td valign="top">  
+<p>
+(for custom overrides)
+</p>
+
+  </td>
+</tr>
+<tr class="bglight">
+<td valign="top">  
+<p>
+override/templates
+</p>
+
+  </td>
+
+<td valign="top">  
+<p>
+(for custom overrides)
+</p>
+
+  </td>
+</tr>
+<tr class="bgdark">
+<td valign="top">  
+<p>
+stylesheets
+</p>
+
+  </td>
+
+<td valign="top">  
+<p>
+(for CSS files)
+</p>
+
+  </td>
+</tr>
+<tr class="bglight">
+<td valign="top">  
+<p>
+templates
+</p>
+
+  </td>
+
+<td valign="top">  
+<p>
+(for site-specific templates)
+</p>
+
+  </td>
+</tr>
+
+</table>
+
+<p>
+Notice that a subdirectory called &quot;templates&quot; is created inside the &quot;override&quot; directory. Also make sure that the user running the web server has write access to the this directory.
+</p>
+
+<p>
+In the next section we will test the basics of our TSCM site.
+</p>
+</div>
+
+
+<div class="content-view-children">
+<div class="class-comment">
+    <h1 id="comments">Comments</h1>    <div class="block float-break">
+              <form method="post" action="/web/20071223212534/http://ez.no/content/action">
+             <input class="button" type="submit" name="NewButton" value="New comment"/>
+             <input type="hidden" name="RedirectURIAfterPublish" value="ezpublish/documentation/building_an_ez_publish_site/creating_the_tscm_site#comments"/>
+             <input type="hidden" name="NodeID" value="36663"/>
+                             <input type="hidden" name="ClassIdentifier" value="article_comment"/>
+                          <input type="hidden" name="ContentLanguageCode" value="eng-GB"/>
+         </form>
+         </div>
+
+
+        
+
+<div class="content-view-line">
+<div class="class-comment bglight">
+
+    
+    <div id="msg118782" class="attribute-heading">
+        <h2>Outdated documentation</h2>
+    </div>
+
+<div class="attribute-byline float-break">
+    <p class="author">Sean Deveni</p>
+    <p class="date">Tuesday 30 January 2007 8:53:17 pm</p>
+</div>
+
+
+<div class="attribute-short">
+            Thank you, Thomas.  I've been struggling to learn how setup various siteaccess because the online tutorial is nearly 4 years old and missing many important details.  <br/>
+<br/>
+However, at this juncture, all I needed was your particular reminder about resetting the Anonymous users for the new siteaccess to solve my particular situation.<br/>
+<br/>
+Let's hope that eZ systems is able to cleanup their documentation before another 4 years goes by.
+
+    </div>
+
+
+</div>
+</div>
+    
+
+<div class="content-view-line">
+<div class="class-comment bgdark">
+
+    
+    <div id="msg80757" class="attribute-heading">
+        <h2>Wizard's not that useful</h2>
+    </div>
+
+<div class="attribute-byline float-break">
+    <p class="author">James Ashley</p>
+    <p class="date">Tuesday 09 August 2005 3:17:09 am</p>
+</div>
+
+
+<div class="attribute-short">
+            [quote]Bob: there is a wizard right after the installation that creates template sites more useful than &quot;plain&quot; (news, shop, ...).[/quote]<br/>
+<br/>
+Of course, there are a lot of people (myself included) who haven't been able to get the wizard to work.  And I haven't run across any way to run the wizard again to create a new site (the way we're doing here) without dropping your existing database, wiping out your install files, and rebuilding everything from scratch.<br/>
+<br/>
+ez needs a lot of work in the UI department.  At least from the standpoint of the install.  Since I haven't been able to get past that phase, I don't have any idea what the rest of it's like.
+
+    </div>
+
+
+</div>
+</div>
+    
+
+<div class="content-view-line">
+<div class="class-comment bglight">
+
+    
+    <div id="msg77584" class="attribute-heading">
+        <h2>When renaming a &quot;user&quot; siteaccess...</h2>
+    </div>
+
+<div class="attribute-byline float-break">
+    <p class="author">Thomas Equeter</p>
+    <p class="date">Sunday 19 June 2005 2:28:41 pm</p>
+</div>
+
+
+<div class="attribute-short">
+            ...Do not forget to modify the &quot;Anonymous&quot; role to grant it access to the public part of your site!<br/>
+<br/>
+User accounts &gt; roles and policies &gt; anonymous (edit) &gt; user/login (edit) &gt; siteaccess &gt; your_new_site_access, then save your configuration appropriately. Do this only for the &quot;user&quot; siteaccess of course, not for the admin interface.<br/>
+<br/>
+See <a href="https://web.archive.org/web/20071223212534/http://ez.no/community/forum/install_configuration/second_siteaccess_always_asks_for_login_3_50rc2" title="http://ez.no/community/forum/install_configuration/second_siteaccess_always_asks_for_login_3_50rc2">http://ez.no/community/forum/inst...access_always_asks_for_login_3_50rc2</a> for the details.<br/>
+<br/>
+<br/>
+Bob: there is a wizard right after the installation that creates template sites more useful than &quot;plain&quot; (news, shop, ...).
+
+    </div>
+
+
+</div>
+</div>
+    
+
+<div class="content-view-line">
+<div class="class-comment bgdark">
+
+    
+    <div id="msg74338" class="attribute-heading">
+        <h2>Creating a new site</h2>
+    </div>
+
+<div class="attribute-byline float-break">
+    <p class="author">Bob Hurt</p>
+    <p class="date">Monday 02 May 2005 11:39:50 pm</p>
+</div>
+
+
+<div class="attribute-short">
+            You have got to be kidding.  No, I guess you aren't.  EZ Publish is supposed to be EASY.  Guessing at all the work that has gone into it, I cannot imagine why the developers did not make a EZ Site button called &quot;Create a site&quot;, then a little menu that offers selections like &quot;Template site to use for pattern,&quot; &quot;Make one from scratch,&quot; and so on.  All this renaming and editing should be done automatically.
+
+    </div>
+
+
+</div>
+</div>
+    
+
+<div class="content-view-line">
+<div class="class-comment bglight">
+
+    
+    <div id="msg70758" class="attribute-heading">
+        <h2>Modifying SiteName</h2>
+    </div>
+
+<div class="attribute-byline float-break">
+    <p class="author">Fred Nerks</p>
+    <p class="date">Monday 14 March 2005 9:50:32 pm</p>
+</div>
+
+
+<div class="attribute-short">
+            When modifying SiteName under [SiteSettings], don't forget to clear the cache files or you wont see the changes.<br/>
+<br/>
+To delete the cache you have to login to the administration interface. When you are logged in: click on the setup tab (top), click on &quot;Cache Management&quot; (left), and click on &quot;Clear ini caches&quot; (right).
+
+    </div>
+
+
+</div>
+</div>
+    
+
+<div class="content-view-line">
+<div class="class-comment bgdark">
+
+    
+    <div id="msg65202" class="attribute-heading">
+        <h2>It's not there in CVS</h2>
+    </div>
+
+<div class="attribute-byline float-break">
+    <p class="author">Frederik Holljen</p>
+    <p class="date">Wednesday 22 December 2004 3:49:28 pm</p>
+</div>
+
+
+<div class="attribute-short">
+            But the installer creates it, and you may create it yourself.
+
+    </div>
+
+
+</div>
+</div>
+    
+
+<div class="content-view-line">
+<div class="class-comment bglight">
+
+    
+    <div id="msg65129" class="attribute-heading">
+        <h2>3.5 svn</h2>
+    </div>
+
+<div class="attribute-byline float-break">
+    <p class="author">JM P</p>
+    <p class="date">Tuesday 21 December 2004 7:34:38 pm</p>
+</div>
+
+
+<div class="attribute-short">
+            3. Modifying &quot;settings/override/site.ini.append.php&quot;<br/>
+Edit the &quot;settings/override/site.ini.append.php&quot; file and replace the occurrences of &quot;plain&quot; and &quot;plain_admin&quot; with &quot;tscm&quot; and &quot;tscm_admin&quot;. You'll probably have to do this four times.<br/>
+<br/>
+---<br/>
+<br/>
+There is no &quot;override&quot; subfolder in the settings folder that I got from today's 3.5 svn release!
+
+    </div>
+
+
+</div>
+</div>
+
+
+ 
+
+
+</div>
+</div>
+
+<div class="block float-break">
+            <form method="post" action="/web/20071223212534/http://ez.no/content/action">
+            <input class="button" type="submit" name="NewButton" value="New comment"/>
+            <input type="hidden" name="RedirectURIAfterPublish" value="ezpublish/documentation/building_an_ez_publish_site/creating_the_tscm_site#comments"/>
+            <input type="hidden" name="NodeID" value="36663"/>
+                           <input type="hidden" name="ClassIdentifier" value="article_comment"/>
+                        <input type="hidden" name="ContentLanguageCode" value="eng-GB"/>
+        </form>
+    </div>
+
+</div>
+</div>
+</div>
+
+
+<div class="template-design area-sidebar-normal">
+<div class="template-module content-view-sidebar">
+<div class="template-object class-documentation">
+
+<div class="attribute-heading">
+    <h2 class="bullet">Contents</h2>
+</div>
+<h3><a href="building_an_ez_publish_site.html">Building an eZ publish site</a></h3>
+<p>
+        
+        
+            
+                    <a href="building_an_ez_publish_site/prerequisits.html">Prerequisits</a><br/>
+          
+	
+            
+                    <a href="building_an_ez_publish_site/situation.html">Situation</a><br/>
+          
+	
+            
+                    <a href="building_an_ez_publish_site/creating_the_tscm_site.html"><b>Creating the TSCM site</b></a><br/>
+          
+	
+            
+                    <a href="building_an_ez_publish_site/testing_the_interfaces.html">Testing the interfaces</a><br/>
+          
+	
+            
+                    <a href="building_an_ez_publish_site/setting_up_the_main_layout.html">Setting up the main layout</a><br/>
+          
+	
+            
+                    <a href="building_an_ez_publish_site/creating_sections.html">Creating sections</a><br/>
+          
+	
+            
+                    <a href="building_an_ez_publish_site/the_welcome_page.html">The welcome page</a><br/>
+          
+	
+            
+                    <a href="building_an_ez_publish_site/the_news_page.html">The news page</a><br/>
+          
+	
+            
+                    <a href="building_an_ez_publish_site/the_members_page.html">The members page</a><br/>
+          
+	
+            
+                    <a href="building_an_ez_publish_site/the_guestbook.html">The guestbook</a><br/>
+          
+	
+            
+                    <a href="building_an_ez_publish_site/the_links_page.html">The links page</a><br/>
+          
+	
+        </p>
+
+
+<hr class="docsplit"/>
+<h3>Created</h3>
+<p>
+17/10/2003<br/>
+12:45:03 pm<br/>
+by Balazs Halasy
+</p>
+<h3>Last updated</h3>
+<p>
+24/11/2004<br/>
+10:24:08 am<br/>
+by Raymond Bosman
+</p>
+<h3>Authors</h3>
+<p class="rendered">Balazs Halasy<br/>Guttorm Flatabø<br/>Raymond Bosman<br/></p>
+
+<br/>
+<hr class="docsplit"/>
+
+<p>This page is part of the eZ Publish documentation. The documentation is available under the <a href="https://web.archive.org/web/20071223212534/http://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License.</a> All contributions will be released under the terms of this license.</p>
+
+</div>
+</div>
+</div>
+
+
+
+
+
+<!-- Main area content: END -->
+
+</div>
+</div>
+
+<!-- Main area: END -->
+
+<hr class="hide"/>
+
+<!-- Footer area: START -->
+<div id="footer-design">
+<div id="page-width6">
+<div id="footer">
+
+<address>Powered by eZ Publish&reg; Content Management System.<br/>
+Copyright &copy;1999 - 2024 7x and 2007 eZ Systems AS (except where otherwise noted). All rights reserved.</address>
+
+</div>
+</div>
+</div>
+<!-- Footer area: END -->
+
+</div>
+<!-- Complete page area: END -->
+
+
+    
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TFEDSZJYH0"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-TFEDSZJYH0');
+</script>
+
+
+</body>
+</html>
+
+<!-- th[eZ] 20050804 --><!--
+     FILE ARCHIVED ON 21:25:34 Dec 23, 2007 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 13:03:53 Oct 31, 2024.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  captures_list: 0.539
+  exclusion.robots: 0.018
+  exclusion.robots.policy: 0.008
+  esindex: 0.008
+  cdx.remote: 14.136
+  LoadShardBlock: 157.24 (3)
+  PetaboxLoader3.datanode: 82.543 (4)
+  load_resource: 112.639
+  PetaboxLoader3.resolve: 66.849
+-->

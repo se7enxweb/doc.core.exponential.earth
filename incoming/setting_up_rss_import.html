@@ -1,0 +1,735 @@
+
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style type="text/css">
+    @import url(https://doc.core.ezpublish.se7enx.com/ezno2005/design/ezno2005/stylesheets/core.css);
+    @import url(https://doc.core.ezpublish.se7enx.com/ezno2005/design/ezno2005/stylesheets/pagelayout.css);
+    @import url(https://doc.core.ezpublish.se7enx.com/ezno2005/design/ezno2005/stylesheets/classes.css);
+    @import url(https://doc.core.ezpublish.se7enx.com/ezno2005/design/ezno2005/stylesheets/monitor.css);
+</style>
+
+<link type="text/css" rel="stylesheet" href="https://web.archive.org/web/20071224011021cs_/http://ez.no/extension/ezno2005/design/ezno2005/stylesheets/print.css" media="print"/>
+
+    <link rel="alternate" title="ez.no News" href="https://web.archive.org/web/20071224011021/http://ez.no/rss/feed/news" type="application/rss+xml"/><link rel="alternate" title="ez.no Developer News" href="/web/20071224011021/http://ez.no/rss/feed/communitynews" type="application/rss+xml"/>
+<link rel="alternate" title="ez.no Developer Articles" href="https://web.archive.org/web/20071224011021/http://ez.no/rss/feed/community_articles" type="application/rss+xml"/>
+<link rel="alternate" title="ez.no Forum" href="https://web.archive.org/web/20071224011021/http://ez.no/rss/feed/forum" type="application/rss+xml"/>
+<link rel="alternate" title="ez.no Contributions" href="https://web.archive.org/web/20071224011021/http://ez.no/rss/feed/contribs" type="application/rss+xml"/>
+<link rel="alternate" title="ez.no Open Funding" href="https://web.archive.org/web/20071224011021/http://ez.no/rss/feed/openfunding_suggestions" type="application/rss+xml"/>
+
+
+<!-- IE conditional comments; for bug fixes for different IE versions -->
+<!--[if IE 5]>     <style type="text/css"> @import url(/extension/ezno2005/design/ezno2005/stylesheets/ie5.css);    </style> <![endif]-->
+<!--[if lte IE 6]> <style type="text/css"> @import url(/extension/ezno2005/design/ezno2005/stylesheets/ie6lte.css); </style> <![endif]-->
+<!--[if gte IE 6]> <style type="text/css"> @import url(/extension/ezno2005/design/ezno2005/stylesheets/ie6gte.css); </style> <![endif]-->
+
+<!-- Load special stylesheet (if necessary) for newer Netscape decendants, Mozilla and Firefox, using the Gecko renderer -->
+<script type="text/javascript"><!-- if ((navigator.userAgent.indexOf("Gecko") != -1)&&(navigator.userAgent.indexOf("KHTML") == -1)) document.write("<style type=\"text/css\">@import url(/extension/ezno2005/design/ezno2005/stylesheets/gecko.css);</style>");--></script>
+                                                                    
+<title>
+            Setting up RSS Import     /         Incoming     /         Documentation                    </title>
+<meta http-equiv="Content-Language" content="en-GB"/>
+    <meta name="author" content="eZ Systems"/>
+    <meta name="copyright" content="eZ Systems as"/>
+    <meta name="description" content="eZ Publish is an open source content management system (CMS) and an open source content management framework (CMF)."/>
+    <meta name="keywords" content="cms, publish, e-commerce, content management, development framework"/>
+
+<meta name="MSSmartTagsPreventParsing" content="TRUE"/>
+<meta name="generator" content="eZ Publish"/>
+
+<script type="text/javascript" src="https://doc.core.ezpublish.se7enx.com/ezno2005/design/ezno2005/javascripts/tools.js"></script>
+<script type="text/javascript" src="https://doc.core.ezpublish.se7enx.com/ezno2005/design/ezno2005/javascripts/dropdownmenu.js"></script>
+</head>    <body onload="menuInit();">
+
+<!-- Complete page area: START -->
+<div id="page">
+
+<!-- Header area: START -->
+<div id="header">
+<div id="header-insert">
+
+<!-- User menu area: START -->
+<div id="usermenu">
+
+<div id="page-width1">
+
+<div id="logo">
+<h1><a href="https://doc.core.ezpublish.se7enx.com/"><span class="hide">eZ Systems - The Content Management Ecosystem</span></a></h1>
+</div>
+
+
+
+<p class="hide"><a href="#main">Skip to main content</a></p>
+
+<hr class="hide"/>
+<div id="searchbox">
+<form action="/web/20071224011021/http://ez.no/ezsearchredirect/action" method="get">
+
+<div class="block">
+<div class="element">
+<input id="searchbutton" class="button" type="submit" value="Search"/>
+</div>
+
+<div class="element searchstring">
+    <label for="searchtext" class="hide">Search text:</label>
+    <input id="searchtext" name="SearchText" type="text" size="12"/><br/>
+    
+
+            <div class="section">
+            <label for="searcharea" class="hide">Search area:</label>
+            <select id="searcharea" name="SubTreeArray[]">
+                <option value="2" selected="selected">All ez.no</option>
+                <option value="306">Bug reports</option>
+                <option value="21358">Contributions</option>
+                <option value="documentation">Documentation</option>
+                <option value="308">Forum</option>
+            </select>
+            </div>
+    </div>
+
+</div>
+</form>
+</div>
+
+<hr class="hide"/>
+<h2 class="hide">User menu</h2>
+
+<!-- User menu content: START -->
+<ul>
+            <li><a href="https://web.archive.org/web/20071224011021/http://ez.no/download"><span>Downloads</span></a></li>
+    <li><a href="https://web.archive.org/web/20071224011021/http://ez.no/company/contact"><span>Contact</span></a></li>
+            <li><a href="https://web.archive.org/web/20071224011021/http://ez.no/user/login"><span>Log in</span></a></li>
+        <li><a href="https://web.archive.org/web/20071224011021/http://ez.no/user/register"><span>Register</span></a></li>
+    
+    <li id="language-menu">
+        <a class="highlighted" title="English" href="https://web.archive.org/web/20071224011021/http://ez.no/ezpublish/documentation/incoming/setting_up_rss_import"><img src="/ezno2005/design/ezno2005/images/eng-GB.gif" width="18" height="12" alt="English"/></a>
+        <a title="Deutsch" href="https://web.archive.org/web/20071224011021/http://ez.no/de/ezpublish/documentation/incoming/setting_up_rss_import"><img src="/ezno2005/design/ezno2005/images/ger-DE.gif" width="18" height="12" alt="Deutsch"/></a>
+        <a title="Português" href="https://web.archive.org/web/20071224011021/http://ez.no/br/ezpublish/documentation/incoming/setting_up_rss_import"><img src="/ezno2005/design/ezno2005/images/por-BR.gif" width="18" height="12" alt="Português"/></a>
+        <a title="Français" href="https://web.archive.org/web/20071224011021/http://ez.no/fr/ezpublish/documentation/incoming/setting_up_rss_import"><img src="/ezno2005/design/ezno2005/images/fre-FR.gif" width="18" height="12" alt="Français"/></a>
+        <a title="日本語" href="https://web.archive.org/web/20071224011021/http://ez.no/jp/ezpublish/documentation/incoming/setting_up_rss_import"><img src="/ezno2005/design/ezno2005/images/jpn-JP.gif" width="18" height="12" alt="日本語"/></a>        
+        <a title="中文" href="https://web.archive.org/web/20071224011021/http://ez.no/tw/ezpublish/documentation/incoming/setting_up_rss_import"><img src="/ezno2005/design/ezno2005/images/chi-TW.gif" width="18" height="12" alt="中文"/></a>        
+        <a title="Norsk" href="https://web.archive.org/web/20071224011021/http://ez.no/no/ezpublish/documentation/incoming/setting_up_rss_import"><img src="/ezno2005/design/ezno2005/images/nor-NO.gif" width="18" height="12" alt="Norsk"/></a>        
+    </li>
+</ul>
+<!-- User menu content: END -->
+
+</div>
+
+</div>
+<!-- User menu area: END -->
+
+</div>
+</div>
+<!-- Header area: END --><script type="text/javascript">
+<!--
+var menu = new Array();
+
+menu[0] = ['eZ Publish', '/ezpublish', 'eZ Publish Premium', '/ezpublish/premium', 'eZ Publish Now', '/ezpublish/now', 'eZ Publish On Demand', '/ezpublish/on_demand', 'Proprietary license options', '/products/proprietary_license_options', 'Certified extensions', '/products/certified_extensions', 'eZ Flow', '/ezflow', 'eZ Components', '/ezcomponents', 'eZ Find', '/ezfind', 'eZ Newsletter', '/eznewsletter', 'Expert consulting services', '/products/expert_consulting_services', 'Support', '/products/support'];
+menu[1] = ['Documentation', '/doc', 'Articles', '/community/articles', 'Books', '/store/books', 'Training', '/education/training', 'Certification', '/education/certification'];
+menu[2] = ['Case studies', '/customers/case_studies', 'References', '/customers/references', 'User quotes', '/customers/user_quotes', 'eZ for media', '/customers/ez_for_media'];
+menu[3] = ['Worldwide Partners', '/partner/worldwide_partners', 'eZ Partner program', '/partner/ez_partner_program', 'Knowledge centre', '/partner/knowledge_centre'];
+menu[4] = ['Downloads', '/download', 'Documentation', '/doc', 'News', '/developer/news', 'Developer information', '/developer/developer_information', 'Projects & contributions', '/developer/contribs', 'Forum', '/developer/forum', 'Issue tracker', '/bugs/redirect', 'Open Funding', '/developer/open_funding', 'Security', '/developer/security', 'User groups', '/developer/user_groups'];
+menu[5] = ['Total Product Responsibility from eZ', '/support/total_product_responsibility_from_ez'];
+menu[6] = ['Software solutions', '/store/software', 'Training', '/services/training', 'Certification', '/services/certification', 'Books', '/store/books', 'Services', '/store/services'];
+menu[7] = ['News', '/company/news', 'Media & press', '/company/media_press', 'Events', '/company/events', 'Career', '/company/career', 'eZ Conference & Awards', '/company/ez_conference_awards', 'Board of Directors', '/company/board', 'eZ Crew', '/company/ez_crew', 'Contact', '/company/contact'];
+
+-->
+</script>
+<div id="menuborder">
+
+<!-- Main menu area: START -->
+<div id="menu" onmouseover="menuHover();" onmouseout="tryHideSubMenues();">
+
+<div id="mainmenu" class="float-break">
+<div id="page-width2">
+    <ul id="mainmenulist" class="float-break">
+<li class="current"><a href="https://web.archive.org/web/20071224011021/http://ez.no/products" onmouseover="switchSubMenu( this );">Products &amp; services</a></li>
+<li><a href="https://web.archive.org/web/20071224011021/http://ez.no/education" onmouseover="switchSubMenu( this );">Education</a></li>
+<li><a href="https://web.archive.org/web/20071224011021/http://ez.no/customers" onmouseover="switchSubMenu( this );">Customers</a></li>
+<li><a href="https://web.archive.org/web/20071224011021/http://ez.no/partner" onmouseover="switchSubMenu( this );">Partners</a></li>
+<li><a href="https://web.archive.org/web/20071224011021/http://ez.no/developer" onmouseover="switchSubMenu( this );">Developer</a></li>
+<li><a href="https://web.archive.org/web/20071224011021/http://ez.no/support" onmouseover="switchSubMenu( this );">Support</a></li>
+<li><a href="https://web.archive.org/web/20071224011021/http://ez.no/store" onmouseover="switchSubMenu( this );">Store</a></li>
+<li class="last"><a href="https://web.archive.org/web/20071224011021/http://ez.no/company" onmouseover="switchSubMenu( this );">Company</a></li>
+</ul>
+
+</div>
+</div>
+
+
+<div id="submenu">
+<div id="page-width3">
+    <ul class="float-break">
+                        <li><a href="https://web.archive.org/web/20071224011021/http://ez.no/ezpublish">eZ Publish</a></li>
+                                <li><a href="https://web.archive.org/web/20071224011021/http://ez.no/ezpublish/premium">eZ Publish Premium</a></li>
+                                <li><a href="https://web.archive.org/web/20071224011021/http://ez.no/ezpublish/now">eZ Publish Now</a></li>
+                                <li><a href="https://web.archive.org/web/20071224011021/http://ez.no/ezpublish/on_demand">eZ Publish On Demand</a></li>
+                                <li><a href="https://web.archive.org/web/20071224011021/http://ez.no/products/proprietary_license_options">Proprietary license options</a></li>
+                                <li><a href="https://web.archive.org/web/20071224011021/http://ez.no/products/certified_extensions">Certified extensions</a></li>
+                                <li><a href="https://web.archive.org/web/20071224011021/http://ez.no/ezflow">eZ Flow</a></li>
+                                <li><a href="https://web.archive.org/web/20071224011021/http://ez.no/ezcomponents">eZ Components</a></li>
+                                <li><a href="https://web.archive.org/web/20071224011021/http://ez.no/ezfind">eZ Find</a></li>
+                                <li><a href="https://web.archive.org/web/20071224011021/http://ez.no/eznewsletter">eZ Newsletter</a></li>
+                                <li><a href="https://web.archive.org/web/20071224011021/http://ez.no/products/expert_consulting_services">Expert consulting services</a></li>
+                                <li class="last"><a href="https://web.archive.org/web/20071224011021/http://ez.no/products/support">Support</a></li>
+                </ul>
+</div>
+</div>
+
+<script type="text/javascript"><!--
+    document.getElementById('submenu').style.display = 'none';
+--></script>
+
+</div>
+<!-- Main menu area: END -->
+
+</div>
+
+<hr class="hide"/><!-- Path area: START -->
+<div id="path">
+
+<div id="page-width4">
+<h2 class="hide">Path</h2>
+
+<!-- Path content: START -->
+<p>
+                        <a href="https://web.archive.org/web/20071224011021/http://ez.no/">ez.no</a>
+        
+                        /
+                            <a href="https://web.archive.org/web/20071224011021/http://ez.no/ezpublish">ezpublish</a>
+        
+                        /
+                            <a href="toc.html">documentation</a>
+        
+                        /
+                            <a href="incoming.html">incoming</a>
+        
+                        /
+                            setting up rss import
+        
+            </p>
+<!-- Path content: END -->
+
+</div>
+
+</div>
+<!-- Path area: END -->
+
+<hr class="hide"/>
+
+<!-- Main area: START -->
+
+<div id="page-width5">
+<div id="main" class="float-break">
+
+<!-- Main area content: START -->
+
+
+
+
+<div class="template-design area-main-normal">
+<div class="template-module content-view-full">
+<div class="template-object class-documentation">
+
+
+<div class="attribute-heading">
+    <h1>Setting up RSS Import</h1>
+</div>
+
+<p><strong>These documentation pages are no longer maintained. Please visit the <a href="https://doc.ezpublishlegacy.se7enx.com">new documentation site.</a></strong></p>
+
+<div class="attribute-long">
+    
+
+<p>
+This document will show, how to set up an RSS import for importing an RSS newsfeed into ezPublish. RSS import is available since ezPublish 3.3, which -at the time of writing- is only available as a beta release, which should not be used for production sites.
+</p>
+
+<p>
+For this example, I set up a 3.3 beta 1 site using the &quot;news&quot; package. We will get an RSS newsfeed from N24.de, which is a german news site. If you already have your RSS URL, you can use yours in the last step ;)
+</p>
+
+<p>
+Please note, that I use a german ezPublish setup and back-translate some GUI elements, like button names. So, i hope, the names are correct. If not, someone please fix that here.
+</p>
+
+<a name="eztoc111784_1" id="eztoc111784_1"></a><h2>Overview</h2>
+<p>
+In order to import an RSS newsfeed, you will need to follow these steps
+</p>
+
+<ol>
+
+<li>Create an appropriate class, where the data from the newsfeed shall be imported to and create a full-view template for this class </li>
+
+<li>Edit your roles, so that users will see the new class </li>
+
+<li>Create a place (folder), where you want your imported news items to be displayed </li>
+
+<li>Define the RSS newsfeed to be imported </li>
+
+<li>Import the newsfeed by running a cronjob</li>
+
+</ol>
+
+<p>
+Steps 1 and 2 are required only once. You can skip these completly and import the data to some existing class (ie &quot;article&quot;), if you want to.
+</p>
+
+<p>
+Steps 3 and 4 are required once for every news feed import, that you want to define (assuming, that you want to import each feed into a seperate folder)
+</p>
+
+<p>
+Step 5 should be run automatically by your cronjob. The frequency depends, on how you want to update you news. You should set up the cronjob to run at least once every day (every 24 hours). Setting up a cronjob is <i>not</i> described here.
+</p>
+
+<p>
+<i>Note:</i> Your server will need a HTTP connection to the location of the RSS feed. If your server is behind some firewall, which prevents HTTP communication, RSS import will probably not work, as it does not (yet) support HTTP proxies.
+</p>
+
+<a name="eztoc111784_2" id="eztoc111784_2"></a><h2>Detailled Description</h2>
+<a name="eztoc111784_2_1" id="eztoc111784_2_1"></a><h3>Setting up a class</h3>
+<p>
+Each newsfeed consists of distinct &quot;news items&quot;. Usually, an RSS feed contains 10-15 items. &quot;RSS import&quot; looks at the RSS feed (which is an XML structure), take some data from each news items and publishes one ezPublish object per news item.
+</p>
+
+<p>
+You could use the &quot;article&quot; class for this, but let's define our own class, that will hold the news items from the RSS feed, because the article class is a bit too complex for this.
+</p>
+
+<p>
+So log in to your admin siteaccess, go to &quot;Setup&quot; tab, choose &quot;Classes&quot; and define a new class in the &quot;Content&quot; group.
+</p>
+
+<p>
+For this document, we will use this class:
+</p>
+
+<ol>
+
+<li>Class name: &quot;Link&quot; (identifier: &quot;link&quot;) </li>
+
+<li>First Attribute: &quot;Titel&quot; (Textline, identyfier &quot;titel&quot;) </li>
+
+<li>Second Attribute: &quot;Intro&quot; (Textfield, identyfier &quot;intro&quot;) </li>
+
+<li>Third Attribute: &quot;URL&quot; (URL, identyfier &quot;url&quot;)</li>
+
+</ol>
+
+<p>
+After you have set up the class, you will need some template for that class, so you can really use it at you site.
+</p>
+
+<p>
+Go to &quot;Template&quot; (still in the &quot;Setup&quot; tab), click on &quot;node/view/full.tpl&quot;, choose your user-siteaccess from the dropdown list and press &quot;set&quot;. You should now see some template for folders, articles etc. Click &quot;Create new&quot;, name the template &quot;link.tpl&quot;, choose your class (Link) from the first dropdown list and select &quot;View (without children)&quot;. Press &quot;Create&quot;. This will create a template and bring you back to the template list.
+</p>
+
+<p>
+Edit your newly created template. You should see something like this:
+</p>
+    <pre class="wordwrap"><span class="line">&lt;h1&gt;{$node.name}&lt;/h1&gt;</span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">&lt;h2&gt;Titel&lt;/h2&gt;</span>
+
+<span class="line">{attribute_view_gui attribute=$node.object.data_map.titel}</span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">&lt;h2&gt;Intro&lt;/h2&gt;</span>
+
+<span class="line">{attribute_view_gui attribute=$node.object.data_map.intro}</span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">&lt;h2&gt;URL&lt;/h2&gt;</span>
+
+<span class="line">{attribute_view_gui attribute=$node.object.data_map.url}</span></pre>
+    
+<p>
+This is almost nice, but will not show you the URL later, because &quot;attribute_view_gui&quot; uses the &quot;text&quot; of a URL to display the link. But when we import the news later, we will have no URL text, so we would see no link.
+</p>
+
+<p>
+Because of that, we change the template to look like this:
+</p>
+    <pre class="wordwrap"><span class="line">&lt;h1&gt;{$node.name}&lt;/h1&gt;</span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">{attribute_view_gui attribute=$node.object.data_map.intro}</span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">&lt;p&gt;mehr: &lt;a href=&quot;{$node.object.data_map.url.content}&quot;&gt;{$node.object.data_map.url.content}&lt;/a&gt;&lt;/p&gt;</span></pre>
+    
+<p>
+That should give us a more or less nice &quot;full view&quot; of the imported news item. Save the template. We are done with the class definition. Note, that I did not change the &quot;line&quot; template here. Maybe it's better to define a nice &quot;line&quot; template with title, intro and URL, instead of the &quot;full-view&quot;-template, because an RSS news item NEVER has a body. Per definition, the body of the news item always is on the news site itself and so, it might be a good idea to just define a &quot;line&quot; template, which will link to the (external) news item full view immendiatly. But.. i will leave this to you as an exercise ;)
+</p>
+
+<a name="eztoc111784_2_2" id="eztoc111784_2_2"></a><h3>Adapt your role policies</h3>
+<p>
+Note, that you could go ahead now and define and import RSS data now, but the user would not see it at the user site. Why? Because the &quot;anonymous&quot; role is not yet allowed to read our new class!
+</p>
+
+<p>
+So, go to the &quot;Users&quot; tab, choose &quot;roles&quot; and edit the &quot;Anonymous&quot; role. There, edit the &quot;content read&quot; policy and add your new class (Link) in the first drop-down-list (Control-Click). Confirm with &quot;Update&quot; and then don't forget to press &quot;Store&quot; ! From now on, &quot;Anonymous&quot; users should be able to see the news items... but we don't have any yet.
+</p>
+
+<a name="eztoc111784_2_3" id="eztoc111784_2_3"></a><h3>Define a place for your news items</h3>
+<p>
+Remember, that the import will create new objects (one for each news item). You should create a nice place for these items.
+</p>
+
+<p>
+In the &quot;content&quot; tab, create a new folder at root level and name it &quot;RSS&quot; (just for this example). In that, create another folder called &quot;N24&quot;, which is the name of the news site, where we will get our RSS news from in some minutes. The folder &quot;N24&quot; should be sorted by date, backwards, so the item, that was imported latest, will be at the top.
+</p>
+
+<p>
+You should now have a folder with this path &quot;News / RSS / N24&quot;, which is empty.
+</p>
+
+<a name="eztoc111784_2_4" id="eztoc111784_2_4"></a><h3>Define the RSS feed to be imported</h3>
+<p>
+Now, after all that prerequisites, we will finally define our news feed. Go to &quot;setup&quot; tab, click on &quot;RSS&quot;. You should see two lists: &quot;RSS Exports&quot; and &quot;RSS imports&quot;. Both are empty, so let's create a new import. Press the &quot;New Import&quot; button.
+</p>
+
+<p>
+There, fill in these information:
+</p>
+
+<ul>
+
+<li>Title: N24 Home (will not be visible to the user, it's just to give the import a name) </li>
+
+<li>URL: http://n24.de/rss/?rubrik=home (The URL of the RSS feed). </li>
+
+<li>Destination path: Press &quot;Browse&quot; and browse to your target folder (/News/RSS/N24). After you press &quot;Select&quot;, the path of the target folder will appear in the text field. </li>
+
+<li>Imported Objects owner: Leave it to &quot;Administrator user&quot;. This will be the owner of the news items. </li>
+
+<li>Class: Select &quot;Link&quot; from the dropdown list and press the &quot;Update&quot; button to update the attributes in the next lists to reflect the attributes of the &quot;Link&quot; class </li>
+
+<li>Title: Select &quot;Title&quot; from the drop-down-list </li>
+
+<li>URL: Select &quot;URL&quot; from the drop-down-list </li>
+
+<li>Description: Select &quot;Intro&quot; from the drop-down-list </li>
+
+<li>Active: Leave enabled</li>
+
+</ul>
+
+<p>
+Press the &quot;Store&quot; button to save the import definition. This defines the RSS import, but does not import anything yet. Importing is done during a cronjob run.
+</p>
+
+<a name="eztoc111784_2_5" id="eztoc111784_2_5"></a><h3>Importing data with a cronjob</h3>
+<p>
+In 3.3, the cronjob script &quot;runcronjobs.php&quot; includes a PHP script, which imports news items for all (enabled) RSS imports.
+</p>
+
+<p>
+Refer to <a href="https://web.archive.org/web/20071224011021/http://ez.no/developer/ez_publish_3/documentation/configuration/configuration/cron_jobs">http://ez.no/developer/ez_publish_3/documentation/configuration/configuration/cron_jobs</a> for more information on setting up a cron-job.
+</p>
+
+<p>
+The cronjob will import and publish the distinct news items for the defined RSS imports. It will use the &quot;URL&quot; field to determine, if a news item already exists and skip it, if this is the case.
+</p>
+
+<p>
+Note that this will create lots of objects in just a few days, so make sure, that you manage this somehow to prevent &quot;information overflow&quot;.
+</p>
+</div>
+
+
+<div class="content-view-children">
+<div class="class-comment">
+    <h1 id="comments">Comments</h1>
+
+
+    
+
+ 
+
+
+</div>
+</div>
+
+<div class="block float-break">
+            <form method="post" action="/web/20071224011021/http://ez.no/content/action">
+            <input class="button" type="submit" name="NewButton" value="New comment"/>
+            <input type="hidden" name="RedirectURIAfterPublish" value="ezpublish/documentation/incoming/setting_up_rss_import#comments"/>
+            <input type="hidden" name="NodeID" value="39503"/>
+                           <input type="hidden" name="ClassIdentifier" value="article_comment"/>
+                        <input type="hidden" name="ContentLanguageCode" value="eng-GB"/>
+        </form>
+    </div>
+
+</div>
+</div>
+</div>
+
+
+<div class="template-design area-sidebar-normal">
+<div class="template-module content-view-sidebar">
+<div class="template-object class-documentation">
+
+<div class="attribute-heading">
+    <h2 class="bullet">Contents</h2>
+</div>
+<h3><a href="incoming.html">Incoming</a></h3>
+<p>
+        
+        
+            
+                    <a href="incoming/appendices.html">APPENDICES</a><br/>
+          
+	
+            
+                    <a href="incoming/design.html">Design</a><br/>
+          
+	
+            
+                    <a href="incoming/developing_and_improving_ezpublish.html">Developing and Improving eZpublish</a><br/>
+          
+	
+            
+                    <a href="incoming/developing_projects.html">Developing projects</a><br/>
+          
+	
+            
+                    <a href="incoming/ez_publish_development_cycle.html">eZ publish development cycle</a><br/>
+          
+	
+            
+                    <a href="incoming/ez_publish_site_structure.html">eZ publish site structure</a><br/>
+          
+	
+            
+                    <a href="incoming/hide_shopsetup_navigation_tab.html">Hide shop/setup navigation tab</a><br/>
+          
+	
+            
+                    <a href="incoming/how_does_the_new_menu_system_work.html">How does the new menu system work?</a><br/>
+          
+	
+            
+                    <a href="incoming/how_to_find_a_node_id_in_the_path_array.html">How to find a node id in the path array</a><br/>
+          
+	
+            
+                    <a href="incoming/how_to_find_the_parent_and_grandparent_of_an_object.html">How to find the parent and grandparen...</a><br/>
+          
+	
+            
+                    <a href="incoming/how_to_set_cache_expire_time_or_disable_cache_in_template.html">How to set cache expire time or disab...</a><br/>
+          
+	
+            
+                    <a href="incoming/http_post_to_url_conversion.html">HTTP Post to URL conversion</a><br/>
+          
+	
+            
+                    <a href="incoming/image_map.html">Image Map</a><br/>
+          
+	
+            
+                    <a href="incoming/javascript_popupmenu.html">Javascript popupmenu</a><br/>
+          
+	
+            
+                    <a href="incoming/line_ending_in_email.html">Line ending in email</a><br/>
+          
+	
+            
+                    <a href="incoming/list_of_mime_types.html">List of MIME types</a><br/>
+          
+	
+            
+                    <a href="incoming/managing_development.html">Managing Development</a><br/>
+          
+	
+            
+                    <a href="incoming/mysql_server_character_set.html">MySQL Server Character Set</a><br/>
+          
+	
+            
+                    <a href="incoming/package_format.html">Package format</a><br/>
+          
+	
+            
+                    <a href="incoming/pdf_export_tutorial.html">PDF export tutorial</a><br/>
+          
+	
+            
+                    <a href="incoming/persistent_template_variable.html">Persistent template variable</a><br/>
+          
+	
+            
+                    <a href="incoming/php_and_apache_2.html">PHP and Apache 2</a><br/>
+          
+	
+            
+                    <a href="incoming/problems_on_mac_os_9_and_mac_os_x.html">Problems on Mac OS 9 and Mac OS X</a><br/>
+          
+	
+            
+                    <a href="incoming/remove_confirmation_when_discarding_an_object.html">Remove confirmation when discarding a...</a><br/>
+          
+	
+            
+                    <a href="incoming/session.html">Session</a><br/>
+          
+	
+            
+                    <a href="incoming/setting_several_variables_in_a_section.html">Setting several variables in a section</a><br/>
+          
+	
+            
+                    <a href="incoming/setting_up_rss_import.html"><b>Setting up RSS Import</b></a><br/>
+          
+	
+            
+                    <a href="incoming/setup_php_for_comandline_usage_php_cli.html">Setup PHP for comandline usage (PHP-C...</a><br/>
+          
+	
+            
+                    <a href="incoming/smart_viewcache_cleaning_system.html">Smart viewcache cleaning system</a><br/>
+          
+	
+            
+                    <a href="incoming/ssl_with_ez_over_a_ssl_proxy.html">SSL with eZ over a SSL proxy</a><br/>
+          
+	
+            
+                    <a href="incoming/system_development.html">System development</a><br/>
+          
+	
+            
+                    <a href="incoming/test_document.html">Test document</a><br/>
+          
+	
+            
+                    <a href="incoming/the_community_server.html">The Community Server</a><br/>
+          
+	
+            
+                    <a href="incoming/truetype_font_in_pdf.html">Truetype font in PDF</a><br/>
+          
+	
+            
+                    <a href="incoming/tutorial_using_user_register.html">Tutorial: Using user/register</a><br/>
+          
+	
+            
+                    <a href="incoming/user_preferences.html">User preferences</a><br/>
+          
+	
+            
+                    <a href="incoming/webdav_clients_and_compatiblity.html">WebDAV clients and compatiblity</a><br/>
+          
+	
+            
+                    <a href="incoming/what_does_something_tag_link_must_have_attribute_href_or_valid_id_need_fix_mean.html">What does "Something: Tag 'link' must...</a><br/>
+          
+	
+        </p>
+
+
+<hr class="docsplit"/>
+<h3>Created</h3>
+<p>
+30/11/2003<br/>
+2:06:19 pm<br/>
+by Marco Zinn
+</p>
+<h3>Last updated</h3>
+<p>
+30/11/2003<br/>
+2:51:54 pm<br/>
+by Marco Zinn
+</p>
+<h3>Authors</h3>
+<p class="rendered">Marco Zinn<br/></p>
+
+<br/>
+<hr class="docsplit"/>
+
+<p>This page is part of the eZ Publish documentation. The documentation is available under the <a href="https://web.archive.org/web/20071224011021/http://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License.</a> All contributions will be released under the terms of this license.</p>
+
+</div>
+</div>
+</div>
+
+
+
+
+
+<!-- Main area content: END -->
+
+</div>
+</div>
+
+<!-- Main area: END -->
+
+<hr class="hide"/>
+
+<!-- Footer area: START -->
+<div id="footer-design">
+<div id="page-width6">
+<div id="footer">
+
+<address>Powered by eZ Publish&reg; Content Management System.<br/>
+Copyright &copy;1999 - 2024 7x and 2007 eZ Systems AS (except where otherwise noted). All rights reserved.</address>
+
+</div>
+</div>
+</div>
+<!-- Footer area: END -->
+
+</div>
+<!-- Complete page area: END -->
+
+
+    
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TFEDSZJYH0"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-TFEDSZJYH0');
+</script>
+
+
+</body>
+</html>
+
+<!-- th[eZ] 20050804 --><!--
+     FILE ARCHIVED ON 01:10:21 Dec 24, 2007 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 11:22:16 Oct 31, 2024.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  captures_list: 0.547
+  exclusion.robots: 0.02
+  exclusion.robots.policy: 0.01
+  esindex: 0.01
+  cdx.remote: 8.056
+  LoadShardBlock: 244.57 (3)
+  PetaboxLoader3.datanode: 122.877 (4)
+  PetaboxLoader3.resolve: 240.239 (2)
+  load_resource: 159.763
+-->

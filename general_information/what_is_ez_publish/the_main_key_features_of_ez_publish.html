@@ -1,0 +1,778 @@
+
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style type="text/css">
+    @import url(https://doc.core.ezpublish.se7enx.com/ezno2005/design/ezno2005/stylesheets/core.css);
+    @import url(https://doc.core.ezpublish.se7enx.com/ezno2005/design/ezno2005/stylesheets/pagelayout.css);
+    @import url(https://doc.core.ezpublish.se7enx.com/ezno2005/design/ezno2005/stylesheets/classes.css);
+    @import url(https://doc.core.ezpublish.se7enx.com/ezno2005/design/ezno2005/stylesheets/monitor.css);
+</style>
+
+<link type="text/css" rel="stylesheet" href="https://web.archive.org/web/20071223082602cs_/http://ez.no/extension/ezno2005/design/ezno2005/stylesheets/print.css" media="print"/>
+
+    <link rel="alternate" title="ez.no News" href="https://web.archive.org/web/20071223082602/http://ez.no/rss/feed/news" type="application/rss+xml"/><link rel="alternate" title="ez.no Developer News" href="/web/20071223082602/http://ez.no/rss/feed/communitynews" type="application/rss+xml"/>
+<link rel="alternate" title="ez.no Developer Articles" href="https://web.archive.org/web/20071223082602/http://ez.no/rss/feed/community_articles" type="application/rss+xml"/>
+<link rel="alternate" title="ez.no Forum" href="https://web.archive.org/web/20071223082602/http://ez.no/rss/feed/forum" type="application/rss+xml"/>
+<link rel="alternate" title="ez.no Contributions" href="https://web.archive.org/web/20071223082602/http://ez.no/rss/feed/contribs" type="application/rss+xml"/>
+<link rel="alternate" title="ez.no Open Funding" href="https://web.archive.org/web/20071223082602/http://ez.no/rss/feed/openfunding_suggestions" type="application/rss+xml"/>
+
+
+<!-- IE conditional comments; for bug fixes for different IE versions -->
+<!--[if IE 5]>     <style type="text/css"> @import url(/extension/ezno2005/design/ezno2005/stylesheets/ie5.css);    </style> <![endif]-->
+<!--[if lte IE 6]> <style type="text/css"> @import url(/extension/ezno2005/design/ezno2005/stylesheets/ie6lte.css); </style> <![endif]-->
+<!--[if gte IE 6]> <style type="text/css"> @import url(/extension/ezno2005/design/ezno2005/stylesheets/ie6gte.css); </style> <![endif]-->
+
+<!-- Load special stylesheet (if necessary) for newer Netscape decendants, Mozilla and Firefox, using the Gecko renderer -->
+<script type="text/javascript"><!-- if ((navigator.userAgent.indexOf("Gecko") != -1)&&(navigator.userAgent.indexOf("KHTML") == -1)) document.write("<style type=\"text/css\">@import url(/extension/ezno2005/design/ezno2005/stylesheets/gecko.css);</style>");--></script>
+                                                                                    
+<title>
+            The main/key features of eZ publish     /         What is eZ publish?     /         General information                    </title>
+<meta http-equiv="Content-Language" content="en-GB"/>
+    <meta name="author" content="eZ Systems"/>
+    <meta name="copyright" content="eZ Systems as"/>
+    <meta name="description" content="eZ Publish is an open source content management system (CMS) and an open source content management framework (CMF)."/>
+    <meta name="keywords" content="cms, publish, e-commerce, content management, development framework"/>
+
+<meta name="MSSmartTagsPreventParsing" content="TRUE"/>
+<meta name="generator" content="eZ Publish"/>
+
+<script type="text/javascript" src="https://doc.core.ezpublish.se7enx.com/ezno2005/design/ezno2005/javascripts/tools.js"></script>
+<script type="text/javascript" src="https://doc.core.ezpublish.se7enx.com/ezno2005/design/ezno2005/javascripts/dropdownmenu.js"></script>
+</head>    <body onload="menuInit();">
+
+<!-- Complete page area: START -->
+<div id="page">
+
+<!-- Header area: START -->
+<div id="header">
+<div id="header-insert">
+
+<!-- User menu area: START -->
+<div id="usermenu">
+
+<div id="page-width1">
+
+<div id="logo">
+<h1><a href="https://doc.core.ezpublish.se7enx.com/"><span class="hide">eZ Systems - The Content Management Ecosystem</span></a></h1>
+</div>
+
+
+
+<p class="hide"><a href="#main">Skip to main content</a></p>
+
+<hr class="hide"/>
+<div id="searchbox">
+<form action="/web/20071223082602/http://ez.no/ezsearchredirect/action" method="get">
+
+<div class="block">
+<div class="element">
+<input id="searchbutton" class="button" type="submit" value="Search"/>
+</div>
+
+<div class="element searchstring">
+    <label for="searchtext" class="hide">Search text:</label>
+    <input id="searchtext" name="SearchText" type="text" size="12"/><br/>
+    
+
+            <div class="section">
+            <label for="searcharea" class="hide">Search area:</label>
+            <select id="searcharea" name="SubTreeArray[]">
+                <option value="2" selected="selected">All ez.no</option>
+                <option value="306">Bug reports</option>
+                <option value="21358">Contributions</option>
+                <option value="documentation">Documentation</option>
+                <option value="308">Forum</option>
+            </select>
+            </div>
+    </div>
+
+</div>
+</form>
+</div>
+
+<hr class="hide"/>
+<h2 class="hide">User menu</h2>
+
+<!-- User menu content: START -->
+<ul>
+            <li><a href="https://web.archive.org/web/20071224070727/http://ez.no/download"><span>Downloads</span></a></li>
+    <li><a href="https://web.archive.org/web/20071224070727/http://ez.no/company/contact"><span>Contact</span></a></li>
+            <li><a href="https://web.archive.org/web/20071224070727/http://ez.no/user/login"><span>Log in</span></a></li>
+        <li><a href="https://web.archive.org/web/20071224070727/http://ez.no/user/register"><span>Register</span></a></li>
+    
+    <li id="language-menu">
+        <a class="highlighted" title="English" href="https://web.archive.org/web/20071223082602/http://ez.no/ezpublish/documentation/general_information/what_is_ez_publish/the_main_key_features_of_ez_publish"><img src="/ezno2005/design/ezno2005/images/eng-GB.gif" width="18" height="12" alt="English"/></a>
+        <a title="Deutsch" href="https://web.archive.org/web/20071223082602/http://ez.no/de/ezpublish/documentation/general_information/what_is_ez_publish/the_main_key_features_of_ez_publish"><img src="/ezno2005/design/ezno2005/images/ger-DE.gif" width="18" height="12" alt="Deutsch"/></a>
+        <a title="Português" href="https://web.archive.org/web/20071223082602/http://ez.no/br/ezpublish/documentation/general_information/what_is_ez_publish/the_main_key_features_of_ez_publish"><img src="/ezno2005/design/ezno2005/images/por-BR.gif" width="18" height="12" alt="Português"/></a>
+        <a title="Français" href="https://web.archive.org/web/20071223082602/http://ez.no/fr/ezpublish/documentation/general_information/what_is_ez_publish/the_main_key_features_of_ez_publish"><img src="/ezno2005/design/ezno2005/images/fre-FR.gif" width="18" height="12" alt="Français"/></a>
+        <a title="日本語" href="https://web.archive.org/web/20071223082602/http://ez.no/jp/ezpublish/documentation/general_information/what_is_ez_publish/the_main_key_features_of_ez_publish"><img src="/ezno2005/design/ezno2005/images/jpn-JP.gif" width="18" height="12" alt="日本語"/></a>        
+        <a title="中文" href="https://web.archive.org/web/20071223082602/http://ez.no/tw/ezpublish/documentation/general_information/what_is_ez_publish/the_main_key_features_of_ez_publish"><img src="/ezno2005/design/ezno2005/images/chi-TW.gif" width="18" height="12" alt="中文"/></a>        
+        <a title="Norsk" href="https://web.archive.org/web/20071223082602/http://ez.no/no/ezpublish/documentation/general_information/what_is_ez_publish/the_main_key_features_of_ez_publish"><img src="/ezno2005/design/ezno2005/images/nor-NO.gif" width="18" height="12" alt="Norsk"/></a>        
+    </li>
+</ul>
+<!-- User menu content: END -->
+
+</div>
+
+</div>
+<!-- User menu area: END -->
+
+</div>
+</div>
+<!-- Header area: END --><script type="text/javascript">
+<!--
+var menu = new Array();
+
+menu[0] = ['eZ Publish', '/ezpublish', 'eZ Publish Premium', '/ezpublish/premium', 'eZ Publish Now', '/ezpublish/now', 'eZ Publish On Demand', '/ezpublish/on_demand', 'Proprietary license options', '/products/proprietary_license_options', 'Certified extensions', '/products/certified_extensions', 'eZ Flow', '/ezflow', 'eZ Components', '/ezcomponents', 'eZ Find', '/ezfind', 'eZ Newsletter', '/eznewsletter', 'Expert consulting services', '/products/expert_consulting_services', 'Support', '/products/support'];
+menu[1] = ['Documentation', '/doc', 'Articles', '/community/articles', 'Books', '/store/books', 'Training', '/education/training', 'Certification', '/education/certification'];
+menu[2] = ['Case studies', '/customers/case_studies', 'References', '/customers/references', 'User quotes', '/customers/user_quotes', 'eZ for media', '/customers/ez_for_media'];
+menu[3] = ['Worldwide Partners', '/partner/worldwide_partners', 'eZ Partner program', '/partner/ez_partner_program', 'Knowledge centre', '/partner/knowledge_centre'];
+menu[4] = ['Downloads', '/download', 'Documentation', '/doc', 'News', '/developer/news', 'Developer information', '/developer/developer_information', 'Projects & contributions', '/developer/contribs', 'Forum', '/developer/forum', 'Issue tracker', '/bugs/redirect', 'Open Funding', '/developer/open_funding', 'Security', '/developer/security', 'User groups', '/developer/user_groups'];
+menu[5] = ['Total Product Responsibility from eZ', '/support/total_product_responsibility_from_ez'];
+menu[6] = ['Software solutions', '/store/software', 'Training', '/services/training', 'Certification', '/services/certification', 'Books', '/store/books', 'Services', '/store/services'];
+menu[7] = ['News', '/company/news', 'Media & press', '/company/media_press', 'Events', '/company/events', 'Career', '/company/career', 'eZ Conference & Awards', '/company/ez_conference_awards', 'Board of Directors', '/company/board', 'eZ Crew', '/company/ez_crew', 'Contact', '/company/contact'];
+
+-->
+</script>
+<div id="menuborder">
+
+<!-- Main menu area: START -->
+<div id="menu" onmouseover="menuHover();" onmouseout="tryHideSubMenues();">
+
+<div id="mainmenu" class="float-break">
+<div id="page-width2">
+    <ul id="mainmenulist" class="float-break">
+<li class="current"><a href="https://web.archive.org/web/20071224070727/http://ez.no/products" onmouseover="switchSubMenu( this );">Products &amp; services</a></li>
+<li><a href="https://web.archive.org/web/20071224070727/http://ez.no/education" onmouseover="switchSubMenu( this );">Education</a></li>
+<li><a href="https://web.archive.org/web/20071224070727/http://ez.no/customers" onmouseover="switchSubMenu( this );">Customers</a></li>
+<li><a href="https://web.archive.org/web/20071224070727/http://ez.no/partner" onmouseover="switchSubMenu( this );">Partners</a></li>
+<li><a href="https://web.archive.org/web/20071224070727/http://ez.no/developer" onmouseover="switchSubMenu( this );">Developer</a></li>
+<li><a href="https://web.archive.org/web/20071224070727/http://ez.no/support" onmouseover="switchSubMenu( this );">Support</a></li>
+<li><a href="https://web.archive.org/web/20071224070727/http://ez.no/store" onmouseover="switchSubMenu( this );">Store</a></li>
+<li class="last"><a href="https://web.archive.org/web/20071224070727/http://ez.no/company" onmouseover="switchSubMenu( this );">Company</a></li>
+</ul>
+
+</div>
+</div>
+
+
+<div id="submenu">
+<div id="page-width3">
+    <ul class="float-break">
+                        <li><a href="https://web.archive.org/web/20071224070727/http://ez.no/ezpublish">eZ Publish</a></li>
+                                <li><a href="https://web.archive.org/web/20071224070727/http://ez.no/ezpublish/premium">eZ Publish Premium</a></li>
+                                <li><a href="https://web.archive.org/web/20071224070727/http://ez.no/ezpublish/now">eZ Publish Now</a></li>
+                                <li><a href="https://web.archive.org/web/20071224070727/http://ez.no/ezpublish/on_demand">eZ Publish On Demand</a></li>
+                                <li><a href="https://web.archive.org/web/20071224070727/http://ez.no/products/proprietary_license_options">Proprietary license options</a></li>
+                                <li><a href="https://web.archive.org/web/20071224070727/http://ez.no/products/certified_extensions">Certified extensions</a></li>
+                                <li><a href="https://web.archive.org/web/20071224070727/http://ez.no/ezflow">eZ Flow</a></li>
+                                <li><a href="https://web.archive.org/web/20071224070727/http://ez.no/ezcomponents">eZ Components</a></li>
+                                <li><a href="https://web.archive.org/web/20071224070727/http://ez.no/ezfind">eZ Find</a></li>
+                                <li><a href="https://web.archive.org/web/20071224070727/http://ez.no/eznewsletter">eZ Newsletter</a></li>
+                                <li><a href="https://web.archive.org/web/20071224070727/http://ez.no/products/expert_consulting_services">Expert consulting services</a></li>
+                                <li class="last"><a href="https://web.archive.org/web/20071224070727/http://ez.no/products/support">Support</a></li>
+                </ul>
+</div>
+</div>
+
+<script type="text/javascript"><!--
+    document.getElementById('submenu').style.display = 'none';
+--></script>
+
+</div>
+<!-- Main menu area: END -->
+
+</div>
+
+<hr class="hide"/><!-- Path area: START -->
+<div id="path">
+
+<div id="page-width4">
+<h2 class="hide">Path</h2>
+
+<!-- Path content: START -->
+<p>
+                        <a href="https://web.archive.org/web/20071224070727/http://ez.no/">ez.no</a>
+        
+                        /
+                            <a href="https://web.archive.org/web/20071224070727/http://ez.no/ezpublish">ezpublish</a>
+        
+                        /
+                            <a href="https://doc.core.ezpublish.se7enx.com/toc.html">documentation</a>
+        
+                        /
+                            <a href="general_information.html">general information</a>
+        
+                        /
+                            <a href="general_information/what_is_ez_publish.html">what is ez publish?</a>
+        
+                        /
+                            the main/key features of ez publish
+        
+            </p>
+<!-- Path content: END -->
+
+</div>
+
+</div>
+<!-- Path area: END -->
+
+<hr class="hide"/>
+
+<!-- Main area: START -->
+
+<div id="page-width5">
+<div id="main" class="float-break">
+
+<!-- Main area content: START -->
+
+
+
+
+<div class="template-design area-main-normal">
+<div class="template-module content-view-full">
+<div class="template-object class-documentation">
+
+
+<div class="attribute-heading">
+    <h1>The main/key features of eZ publish</h1>
+</div>
+
+<p><strong>These documentation pages are no longer maintained. Please visit the <a href="https://doc.ezpublishlegacy.se7enx.com">new documentation site.</a></strong></p>
+
+<div class="attribute-long">
+    
+
+<p>
+eZ publish 3 is a CMS and a development framework. With functionality like easy to create and edit content, an advanced workflow system, content versioning, multilanguage possibilities, collaboration, e-commerce functionality, a revolutionary content class system, role based access control, discussion forums and much more you can create all kinds of websites.
+</p>
+
+<a name="eztoc96027_1" id="eztoc96027_1"></a><h2>Access anywhere</h2>
+<p>
+As long as you have a computer with access to the Internet and access to your site through a username and a password you can work with eZ publish from your office or your sofa. That way you can edit your site as quickly as you wish. Work whenever and wherever you prefer.
+</p>
+
+<a name="eztoc96027_2" id="eztoc96027_2"></a><h2>Admin interface</h2>
+<p>
+By using the standard setup in the admin interface you will soon understand and appreciate how the interface is designed and works. You have easy access to content, features, classes and users. Editing and adding content is very easy and logical. No technical experience is needed by day-to-day users.
+</p>
+
+<a name="eztoc96027_3" id="eztoc96027_3"></a><h2>Caching</h2>
+<p>
+Click a button to clear a collection of caches. You can clear selected caches like Content views and template blocks, template overrides and template compiling or INI caches in a click.
+</p>
+
+<a name="eztoc96027_4" id="eztoc96027_4"></a><h2>Classes</h2>
+<p>
+A <b>content class</b> is simply a definition of an arbitrary data structure. eZ publish comes with a set of predefined, ready-to-use content classes such as &quot;folder&quot;, &quot;article&quot;, &quot;user account&quot;, &quot;image&quot;, etc. These content classes are carefully designed to fit the most common generic/everyday tasks of a CMS. In addition, it is possible to create custom content classes using the administration interface. The content classes (both custom and built-in) may be easily modified and/or extended at any time.
+</p>
+
+<a name="eztoc96027_5" id="eztoc96027_5"></a><h2>Collaboration</h2>
+<p>
+With the collaboration functionality you can work together with other people or delegate tasks to others. This feature is best illustrated by an example:
+</p>
+
+<p>
+An editor wants to make a story on emigration. She assigns the following tasks:
+</p>
+
+<ul>
+
+<li>Photograph Joe: take pictures </li>
+
+<li>Journalist Peter: write story </li>
+
+<li>Journalist Sally: get background statistics</li>
+
+</ul>
+
+<p>
+Upon completion the editor will receive the complete article and may choose to publish the story or reject with comments. The other person will then get a notice telling her what to do.
+</p>
+
+<p>
+The collaboration functionality may also be used for many other processes, such as distributing tasks in a support service, handling of requests from customers, or invitations to meetings/events.
+</p>
+
+<a name="eztoc96027_6" id="eztoc96027_6"></a><h2>Contributions</h2>
+<p>
+eZ publish is developed by eZ systems. However everyone can add contributions to eZ publish. You can add features that you have created and want to share with other users of eZ publish. The large eZ publish community contributes with code, modifications, extensions plus more for eZ publish.
+</p>
+
+<a name="eztoc96027_7" id="eztoc96027_7"></a><h2>Cross platform</h2>
+<p>
+eZ publish is a LAMP software, meaning it is based on Linux, Apache, MySQL/PostgreSQL and PHP. It can of course also run on Windows (Win32) and Mac OS X and most other platforms. The web pages of the administration interface and the example data are designed to work in any browser. No platform specific browser extensions are needed.
+</p>
+
+<a name="eztoc96027_8" id="eztoc96027_8"></a><h2>Customization</h2>
+<p>
+In eZ publish you don't have to make your content fit a certain predefined, one-size-fits-all content model. eZ publish lets you create your own content classes with exactly the attributes you need. This lets you structure your data very well, and makes it easier for you to present the data in various ways when needed.
+</p>
+
+<p>
+If, for instance, you were setting up a web shop that sells books, you would make a Book content class with attributes such as title, author, image, publisher, year, and ISBN number. You can set the data type of these attributes, for instance text string, image or 4-digit number. You can specify which attributes can be searched when a user searches for a book. You can also enable an input validator. A validator restricts the format of the input data. It can be as simple as setting the maximum length of an input string, or more complex, such as checking that an ISBN number or an email address is correctly formatted. In this case it means that when you add books to your shop, you cannot register a book with an invalid ISBN number.
+</p>
+
+<p>
+All this customization is done in your own web browser, without editing code or text files.
+</p>
+
+<p>
+When you add a new book to the shop, what happens is that an instance of the Book content class is created. All such instances, or content objects, are placed in the content tree. The tree can be organized like a file system with directories and documents placed in the folders, or in any arbitrary way you prefer.
+</p>
+
+<a name="eztoc96027_9" id="eztoc96027_9"></a><h2>Design</h2>
+<p>
+To present the objects to the user of the web page, you create templates. You would create one template for each content class, or more if objects of this class should be able to present them self in various ways. eZ publish separates Layout, Code, Content and Language. You can redesign or implement a new design or templates without worrying about the content changing. eZ publish is using cascading stylesheets (css) for design like font, sizes and colours. eZ publish comes with 20 different site skins you can use on your site.
+</p>
+
+<a name="eztoc96027_10" id="eztoc96027_10"></a><h2>Documentation</h2>
+<p>
+The eZ publish documentation covers common topics related to the setup and daily use of the eZ publish content management framework. In addition, it also covers some advanced topics. The documentation is written by employees of eZ systems and by community members. It is available under the GNU Free Documentation License. The documentation is always a work in progress.
+</p>
+
+<a name="eztoc96027_11" id="eztoc96027_11"></a><h2>Dual licence</h2>
+<p>
+eZ publish is dual licenced. It can be used under the terms of the gnu GPL (open source and free) or under the terms of the eZ publish Professional Licence (allows you to make commercial software and solutions with eZ publish)
+</p>
+
+<a name="eztoc96027_12" id="eztoc96027_12"></a><h2>e-commerce functionality</h2>
+<p>
+Use eZ publish for setting up professional web shops. eZ publish has standard functionality for setting up your own professional webshop. The webshop functionalities includes i.e.: Product management, Order management, Credit card integration interface, Shopping basket, Tax calculation support, Special offer functions, Statistics, Support for selling content and Support for different currencies.
+</p>
+
+<a name="eztoc96027_13" id="eztoc96027_13"></a><h2>Extension possibilities</h2>
+<p>
+With the creation of the community area at http://pubsvn.ez.no/community-development.html it is now possible to actively develop extensions. eZ publish is built in a modular way. Much is created with a plug-in system. This allows you to easily extend the functionality of eZ publish. However, you should try to avoid changing the kernel of eZ publish. This is to make it easier to upgrade to a newer eZ publish version later. New datatypes, workflow events and so on should be created as extensions. This will also make it easier to share your extensions with other eZ publish users.
+</p>
+
+<a name="eztoc96027_14" id="eztoc96027_14"></a><h2>eZ publish CMF</h2>
+<p>
+eZ publish Content Management Framework (CMF) is a dual licenced open source framework. With the CMF you can build customized web solutions, dynamic internet applications or your own open source or commercial CMS.
+</p>
+
+<a name="eztoc96027_15" id="eztoc96027_15"></a><h2>eZ publish CMS</h2>
+<p>
+eZ publish CMS is an Open Source Content Management system based on the flexible and powerful eZ publish Content Management Framework (CMF). With the full power of eZ publish you can use these out of the box solutions as a starting point for your web site. You can choose to do minor changes to get the desired web solution or make customized solutions with the CMS as a starting point. You can choose from the following solutions included in eZ publish: Web shop, Intranet, News site, Gallery, Corporate website, Blog and Forum.
+</p>
+
+<a name="eztoc96027_16" id="eztoc96027_16"></a><h2>Export /import</h2>
+<p>
+eZ publish is a framework and you can create the imports and exports you would need yourself. eZ systems has created an import/export class that you can use to import/export class definitions to and from an XML file.
+</p>
+
+<a name="eztoc96027_17" id="eztoc96027_17"></a><h2>File handling</h2>
+<p>
+In eZ publish you can handle and work with all kinds of files and publish them on your website. Pdfs, images, movies and documents are among the files that can be handled.
+</p>
+
+<a name="eztoc96027_18" id="eztoc96027_18"></a><h2>Forum and Community</h2>
+<p>
+In the forums you can discuss eZ publish with other members of the eZ publish community. If you have questions or suggestions you can post in the forums.
+</p>
+
+<a name="eztoc96027_19" id="eztoc96027_19"></a><h2>Full version control</h2>
+<p>
+After you have written or edited an object you can save this and publish it immediately. But perhaps after you published it you want to change it by adding some more text and a picture. You can work on this new version of the object without worrying about the current published version. All changes to data in eZ publish 3 is version controlled and stored. This way you keep track of all changes in an article, product, users etc and always return to this later.
+</p>
+
+<a name="eztoc96027_20" id="eztoc96027_20"></a><h2>Image handling</h2>
+<p>
+With eZ publish you handle, scale and convert your images for publishing on your eZ publish site. Images can be handled as related objects and can be changed at any time through the admin interface.
+</p>
+
+<a name="eztoc96027_21" id="eztoc96027_21"></a><h2>Information collection</h2>
+<p>
+With the Information Collection class you can create forms.
+</p>
+
+<a name="eztoc96027_22" id="eztoc96027_22"></a><h2>Installers</h2>
+<p>
+eZ publish comes with installers for Windows, Linux and FreeBSD. These installers will install everything you need to run eZ publish and comes with example websites that you can use eZ publish for. NB! The installers are not meant for production use but for testing only. For a production site you should always use one of the distros.
+</p>
+
+<a name="eztoc96027_23" id="eztoc96027_23"></a><h2>Integrated search engine</h2>
+<p>
+The integrated search engine can search and find all your content. You can use full text search and the advanced search engine can also use logical operator such as AND/OR and phrase search.
+</p>
+
+<p>
+You have the possibility to limit search based on content type, content attributes, sections and author or time stamps. The search is integrated with access control to return accessible content, which means that you set up the search to only find the content you have permission to see. Your own favourite search engine using the plug-in system may easily replace the integrated search engine.
+</p>
+
+<a name="eztoc96027_24" id="eztoc96027_24"></a><h2>Kernel</h2>
+<p>
+The eZ publish kernel can be described as the system core. It takes care of all the low level functionality like content handling, workflows, version control, access control, etc. Basically, the kernel is a collection of engines, it builds upon and makes use of the libraries.
+</p>
+
+<a name="eztoc96027_25" id="eztoc96027_25"></a><h2>LDAP</h2>
+<p>
+Lightweight Directory Access Protocol, is an Internet protocol that
+</p>
+
+<p>
+applications use to look up contact information from a server. eZ publish is integrated with LDAP. User log in process can be handled by LDAP sever and user account information will be fetched from LDAP server.
+</p>
+
+<a name="eztoc96027_26" id="eztoc96027_26"></a><h2>Libraries</h2>
+<p>
+The libraries are the main building blocks of the system. They are general purpose reusable PHP libraries that can be used independently of eZ publish, such as libraries for SOAP, Webdav and PDF. The libraries are in no way dependent on the eZ publish kernel. People looking for general PHP libraries should take a look in the &quot;lib&quot; folder within the root directory of an eZ publish installation. Appendix A contains a complete list and a short description of the currently available libraries.
+</p>
+
+<a name="eztoc96027_27" id="eztoc96027_27"></a><h2>Menu management</h2>
+<p>
+Menus are found on most websites and allows the user to quickly get an overview of the site and navigate trough it. In eZ publish menus are represented with a template function and a menu management system. The template function allows template developers to reuse menus in all of their templates (usually pagelayout.tpl). Some menus are also bundled with eZ publish, the menus are:
+</p>
+
+<ul>
+
+<li>Vertical left menu with a tree structure </li>
+
+<li>Horizontal top menu with one level </li>
+
+<li>Horizontal top menu with two levels</li>
+
+</ul>
+
+<a name="eztoc96027_28" id="eztoc96027_28"></a><h2>Modules</h2>
+<p>
+The Modules are interfaces to an engine inside the kernel and has a collection of functionality, like search, notification, e-commerce and collaboration. A module can be thought of as a collection of functionality. It may be described as an interface to an engine inside the kernel. Each module has a collection of functions that take care of various tasks. Appendix B contains a complete list and short descriptions of the currently available eZ publish modules.
+</p>
+
+<a name="eztoc96027_29" id="eztoc96027_29"></a><h2>Multilanguage support</h2>
+<p>
+eZ publish supports having different languages at your site. All text/labels are stored in industry standard XML language files and are easily translated using linguist translation program. All your content may be translated into the language you want. eZ publish has functionality for creating and maintaining several different translations of an article or product etc.
+</p>
+
+<p>
+eZ publish also has Unicode support.
+</p>
+
+<a name="eztoc96027_30" id="eztoc96027_30"></a><h2>Notification system</h2>
+<p>
+With the notification system you can keep updated on news, releases, changes etc. You can easily set up the notification on your site. An example can be the notification system at ez.no. The users of the site can decide what they want to be updated on and when.
+</p>
+
+<a name="eztoc96027_31" id="eztoc96027_31"></a><h2>Online editor</h2>
+<p>
+eZ publish 3, does also have a plug in editor for simplified content editing, the online editor (OE). Making headers, bold or italic text, tables, links or adding pictures has never been easier. The online editor is a plug-in that when installed will be a part of your admin interface. The program will be available for all users of your eZ publish administration site. OE is a commercial product with the source code available.
+</p>
+
+<a name="eztoc96027_32" id="eztoc96027_32"></a><h2>PDF generation and indexing</h2>
+<p>
+Generate PDF files from all the content on your site automatically. A customizable template system ensures full flexibility of the generated files. Use the role system to restrict access to generated PDF files. PDF documents can also be indexed in eZ publish.
+</p>
+
+<a name="eztoc96027_33" id="eztoc96027_33"></a><h2>Performance</h2>
+<p>
+The developers of eZ publish are experienced in tuning and deploying enterprise internet solutions running eZ publish to get the a very high performance. eZ publish is designed with performance in mind, both for load and speed
+</p>
+
+<a name="eztoc96027_34" id="eztoc96027_34"></a><h2>Professional licence</h2>
+<p>
+The eZ publish professional licences allow you a full protection of your work made with the eZ publish. With the professional licence you will be free to distribute eZ publish in modified or amended versions without disclosing the source code. You do also get the right to licence, re-brand and sell software or solutions made with eZ publish.
+</p>
+
+<a name="eztoc96027_35" id="eztoc96027_35"></a><h2>RAD tool</h2>
+<p>
+The rapid application development (RAD) tools allow you to easily get started with creating new functionality for eZ publish.
+</p>
+
+<a name="eztoc96027_36" id="eztoc96027_36"></a><h2>Role based permissions</h2>
+<p>
+The access permissions and privileges at your site are specified by roles. A role is a set of access policies that can be assigned to a user or a user group. The role system allows you to specify access by module (content, shop, task, etc.), by function (read, create, edit, remove, etc.), by object owner, by object class, and by site section. This gives the site administrator full freedom to customize who gets access and privileges to every part of the site.
+</p>
+
+<a name="eztoc96027_37" id="eztoc96027_37"></a><h2>RSS support</h2>
+<p>
+You can set up an RSS import for importing an RSS news feed into eZ publish. RSS import is available since eZ publish 3.3.
+</p>
+
+<a name="eztoc96027_38" id="eztoc96027_38"></a><h2>Scalability</h2>
+<p>
+eZ publish can be adjusted to the needs and demands of different customers and users. Some users need much more finesse and modules on their site while others only need some of the modules. It is up to you when it comes to deciding what modules you need to satisfy your readers and users. eZ publish is very scalable and can be used at websites with a few dynamic pages to internet newspapers with several hundred thousand articles, to webshops with several hundred thousand products. eZ publish is built for today and for the future. It can adjust easily to your changes and you can add new modules as soon as they are developed by eZ systems or by yourself
+</p>
+
+<a name="eztoc96027_39" id="eztoc96027_39"></a><h2>Search engine compatibility</h2>
+<p>
+eZ publish is built to be indexed in the best possible way and is compatible with all search engines on the web. All pages on your site will be indexed.
+</p>
+
+<a name="eztoc96027_40" id="eztoc96027_40"></a><h2>Security</h2>
+<p>
+eZ publish systems can only be as secure as the hosting environment it lives on. It is wise to ensure that PHP, MySQL, Apache, PostgreSQL, IIS are as secure as they can be.
+</p>
+
+<p>
+There are books and web sites on this subject, so if you run your own server its wise to find out about these issues before you go into production.
+</p>
+
+<a name="eztoc96027_41" id="eztoc96027_41"></a><h2>Solutions</h2>
+<p>
+eZ publish comes with a set of predefined examples that you can use as is or as a starting point for future development. These examples are Web shop, Intranet, News site, Gallery, Corporate website, Blog and Forum.
+</p>
+
+<a name="eztoc96027_42" id="eztoc96027_42"></a><h2>Speed and optimalization</h2>
+<p>
+eZ publish is build to be as flexible as possible both if you run small or large sites. Different sites may have different ways of optimisation depending on size, number of users, storage capacity, server size and Internet connection speed. The different possibilities are well documented. Highly recommended when running eZ publish is the PHP Acceleration. It will really boost the performance of your eZ publish site as it is caching of the compiled PHP script in memory.
+</p>
+
+<a name="eztoc96027_43" id="eztoc96027_43"></a><h2>Storage used in eZ publish</h2>
+<p>
+eZ publish structures and stores content inside a database. This is true for all content except images and raw/binary files. These are stored on the file system (within the &quot;var&quot; directory) to gain speed. Everything that is related to design (template files, CSS files, non content specific images, etc.) is also stored on the file system.
+</p>
+
+<a name="eztoc96027_44" id="eztoc96027_44"></a><h2>Support</h2>
+<p>
+To guarantee our customers the best possible result eZ systems offers a support program. The professional developers are ready to help you with your eZ publish development. The support will cover answers by email and phone. If you need help to configure or develop features, we can help you doing that directly on your server, or as a new feature to a distribution on eZ publish. We will also be able to give advise on how to solve problems with development in eZ publish, if you want to do most of the work yourself.
+</p>
+
+<a name="eztoc96027_45" id="eztoc96027_45"></a><h2>SVN</h2>
+<p>
+Download eZ publish directly from SVN. In the stable directory you will find the latest stable source. Bug fixes will occur here before they are finally released. In the trunk you will find the latest unstable development tree of eZ publish.
+</p>
+
+<a name="eztoc96027_46" id="eztoc96027_46"></a><h2>Template system and design</h2>
+<p>
+To present these objects to the user of the web page, you create templates. You would create one template for each content class, or more if objects of this class should be able to present them self in various ways. Each object &quot;knows&quot; how to call its own template and thus draw itself in the browser. This makes it simple to assemble the various parts into a complete page.
+</p>
+
+<p>
+The templates use a mix of HTML/XHTML (or other presentation languages such as WML for WAP devices) mixed with template code. What the template code can do ranges from simple things like printing the title of a content object, to more advanced things like adding a text label to an image or presenting a list with alternating colors on each line.
+</p>
+
+<a name="eztoc96027_47" id="eztoc96027_47"></a><h2>The distribution</h2>
+<p>
+The eZ publish distribution comes with a standard set up and the most common features of a web site are ready to use: Administrative interface, article editing and publishing, discussion forums, e-commerce, and a collaboration and instant messaging system. It also includes a manual and an Software Development Kit (SDK) which has full, cross linked API documentation with UML diagrams, several tutorials, template code documentation and other documents helping you getting the most out of your eZ publish server.
+</p>
+
+<p>
+eZ publish is based on a set of PHP libraries that can be reused in other situations, such as XML document creation, parsing and validating, SOAP communication, database connectivity, image manipulation, template engine, and internationalisation. Feel free to use these libraries in your own GPL projects or commercial software with the professional licence.
+</p>
+
+<a name="eztoc96027_48" id="eztoc96027_48"></a><h2>Toolbars</h2>
+<p>
+From eZ publish 3.4, it is possible to configure toolbars using the admin interface. With the toolbars you can add and remove functionality from the top, right and buttom toolbars. This feature makes the site created by eZ publish more dynamic.
+</p>
+
+<a name="eztoc96027_49" id="eztoc96027_49"></a><h2>Translation &amp; Localization</h2>
+<p>
+eZ publish is developed in English, but can easily be translated and adapted to local conditions. Local settings for formatting of currency, date, time and other locale-specific values are present. The Qt Linguist program by TrollTech is used for translation. The Linguist features automatic translation suggestions and a well-designed interface. eZ publish has been translated into several languages by the eZ publish community.
+</p>
+
+<a name="eztoc96027_50" id="eztoc96027_50"></a><h2>Trash</h2>
+<p>
+If you choose to delete some of your content from your site it will be put in the trash can. It may be restored at a later time or removed completely from the system.
+</p>
+
+<a name="eztoc96027_51" id="eztoc96027_51"></a><h2>URL translator</h2>
+<p>
+The URL translator is a very useful feature that let you write more browser friendly and user-friendly urls. You can rewrite system urls like content/view/full/42 to /services. You can also use the URL translator for forwarding an old url to its new location.
+</p>
+
+<a name="eztoc96027_52" id="eztoc96027_52"></a><h2>User management</h2>
+<p>
+You can easily handle all your users and hand them privileges in eZ publish. You can add users to user groups and assign them roles that decide what the current user can and cannot do at the site.
+</p>
+
+<a name="eztoc96027_53" id="eztoc96027_53"></a><h2>Webdav</h2>
+<p>
+eZ WebDAV is a WebDAV server abstraction library. It enables you to quickly develop WebDAV enabled PHP servers/applications. WebDAV is an abbreviation for &quot;Web-based Distributed Authoring and Versioning&quot;. It is a set of extensions to the HTTP protocol which allows users to collaboratively edit and manage files on remote web servers using WebDAV enabled clients. For example, you can use recent versions of KDE's Konqueror or Microsoft's Internet Explorer to browse/manage the content of a WebDAV compatible web server (similar to browsing/managing local file systems). DAV is an IETF Proposed Standard (published as RFC 2518). This means that it is an entirely open standard.
+</p>
+
+<a name="eztoc96027_54" id="eztoc96027_54"></a><h2>Workflow system</h2>
+<p>
+Setting up and configuring workflows is handled in the administration interface of eZ publish. You can specify workflows that are run whenever an event happens. This lets you change how things work and extend functionality without changing eZ publish code. For instance, when a shop user buys something, you can create a workflow that asks him whether he wants to have his item wrapped in gift paper. Another use for workflows is editor approval before articles can be published.
+</p>
+
+<p>
+Workflows may be used for many other purposes as well: publishing processes (e.g. all articles posted on the front page has to be approved by the editor), notifications (send email to customers with items in the shopping basket, if not checked out within 3 days), move articles to archive after 3 months and managing the steps in the order check-out process.
+</p>
+
+<p>
+A workflow is used to set up and control a sequential list of actions and is triggered by function calls. A workflow may be set up to run before or after the function itself and may trigger other workflow-based conditions. The list of workflows that are standard can easily be extended by plug-in systems. Despite the ability to create custom content and workflows, you might run into a situation where you need to extend eZ publish code. The extension system lets you keep your code separated from eZ publish code, making it safe to update your site to newer versions of eZ publish.
+</p>
+
+<a name="eztoc96027_55" id="eztoc96027_55"></a><h2>XML handling</h2>
+<p>
+All content in eZ publish is stored as XML. eZ xml is a DOM XML parser written in PHP. It does not need any external libraries to work. eZ xml enables you to parse and manipulate XML documents. eZ xml supports handling of XML documents as defined in Extensible Markup Language (XML) 1.0. Namespaces are supported as described by W3C in Namespaces in XML. eZ xml supports the XML Schema standard for validating XML documents. It follows the DOM level 2 as far as possible.
+</p>
+</div>
+
+
+<div class="content-view-children">
+<div class="class-comment">
+    <h1 id="comments">Comments</h1>
+
+
+    
+
+ 
+
+
+</div>
+</div>
+
+<div class="block float-break">
+            <form method="post" action="/web/20071223082602/http://ez.no/content/action">
+            <input class="button" type="submit" name="NewButton" value="New comment"/>
+            <input type="hidden" name="RedirectURIAfterPublish" value="ezpublish/documentation/general_information/what_is_ez_publish/the_main_key_features_of_ez_publish#comments"/>
+            <input type="hidden" name="NodeID" value="34478"/>
+                           <input type="hidden" name="ClassIdentifier" value="article_comment"/>
+                        <input type="hidden" name="ContentLanguageCode" value="eng-GB"/>
+        </form>
+    </div>
+
+</div>
+</div>
+</div>
+
+
+<div class="template-design area-sidebar-normal">
+<div class="template-module content-view-sidebar">
+<div class="template-object class-documentation">
+
+<div class="attribute-heading">
+    <h2 class="bullet">Contents</h2>
+</div>
+<h3><a href="general_information.html">General information</a></h3>
+<p>
+        
+        
+            
+                    <a href="general_information/about_the_documentation.html">About the documentation</a><br/>
+          
+	
+            
+                    <a href="general_information/what_is_ez_publish.html">What is eZ publish?</a><br/>
+          
+	
+            &nbsp;&nbsp;&nbsp;
+                    <a href="general_information/what_is_ez_publish/possibilities_with_ez_publish.html">Possibilities with eZ publish</a><br/>
+          
+	
+            &nbsp;&nbsp;&nbsp;
+                    <a href="general_information/what_is_ez_publish/benefits.html">Benefits</a><br/>
+          
+	
+            &nbsp;&nbsp;&nbsp;
+                    <a href="general_information/what_is_ez_publish/the_main_key_features_of_ez_publish.html"><b>The main/key features of eZ publish</b></a><br/>
+          
+	
+            &nbsp;&nbsp;&nbsp;
+                    <a href="general_information/what_is_ez_publish/the_history_of_ez_publish.html">The history of eZ publish</a><br/>
+          
+	
+            &nbsp;&nbsp;&nbsp;
+                    <a href="general_information/what_is_ez_publish/differences_between_ez_publish_2_x_and_3_x.html">Differences between eZ publish 2.x an...</a><br/>
+          
+	
+            &nbsp;&nbsp;&nbsp;
+                    <a href="general_information/what_is_ez_publish/ez_publish_requirements.html">eZ publish requirements</a><br/>
+          
+	
+            &nbsp;&nbsp;&nbsp;
+                    <a href="general_information/what_is_ez_publish/releases.html">Releases</a><br/>
+          
+	
+            
+                    <a href="general_information/what_is_ez_systems.html">What is eZ systems?</a><br/>
+          
+	
+        </p>
+
+
+<hr class="docsplit"/>
+<h3>Created</h3>
+<p>
+17/09/2003<br/>
+3:48:54 pm<br/>
+by Balazs Halasy
+</p>
+<h3>Last updated</h3>
+<p>
+31/01/2005<br/>
+2:54:17 pm<br/>
+by Remco Wulms
+</p>
+<h3>Authors</h3>
+<p class="rendered">Balazs Halasy<br/>Marco Zinn<br/>Terje Gunrell-Kaste<br/>Guttorm Flatabø<br/>Roberto Gobbo<br/>Remco Wulms<br/></p>
+
+<br/>
+<hr class="docsplit"/>
+
+<p>This page is part of the eZ Publish documentation. The documentation is available under the <a href="https://web.archive.org/web/20071223082602/http://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License.</a> All contributions will be released under the terms of this license.</p>
+
+</div>
+</div>
+</div>
+
+
+
+
+
+<!-- Main area content: END -->
+
+</div>
+</div>
+
+<!-- Main area: END -->
+
+<hr class="hide"/>
+
+<!-- Footer area: START -->
+<div id="footer-design">
+<div id="page-width6">
+<div id="footer">
+
+<address>Powered by eZ Publish&reg; Content Management System.<br/>
+Copyright &copy;1999 - 2024 7x and 2007 eZ Systems AS (except where otherwise noted). All rights reserved.</address>
+
+</div>
+</div>
+</div>
+<!-- Footer area: END -->
+
+</div>
+<!-- Complete page area: END -->
+
+
+    
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TFEDSZJYH0"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-TFEDSZJYH0');
+</script>
+
+
+</body>
+</html>
+
+<!-- th[eZ] 20050804 --><!--
+     FILE ARCHIVED ON 08:26:02 Dec 23, 2007 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 12:41:13 Oct 31, 2024.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  captures_list: 0.505
+  exclusion.robots: 0.018
+  exclusion.robots.policy: 0.009
+  esindex: 0.029
+  cdx.remote: 6.112
+  LoadShardBlock: 66.111 (3)
+  PetaboxLoader3.datanode: 93.268 (4)
+  load_resource: 258.263
+  PetaboxLoader3.resolve: 173.194
+-->

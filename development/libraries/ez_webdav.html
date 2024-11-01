@@ -1,0 +1,919 @@
+
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style type="text/css">
+    @import url(https://doc.core.ezpublish.se7enx.com/ezno2005/design/ezno2005/stylesheets/core.css);
+    @import url(https://doc.core.ezpublish.se7enx.com/ezno2005/design/ezno2005/stylesheets/pagelayout.css);
+    @import url(https://doc.core.ezpublish.se7enx.com/ezno2005/design/ezno2005/stylesheets/classes.css);
+    @import url(https://doc.core.ezpublish.se7enx.com/ezno2005/design/ezno2005/stylesheets/monitor.css);
+</style>
+
+<link type="text/css" rel="stylesheet" href="https://web.archive.org/web/20071217085633cs_/http://ez.no/extension/ezno2005/design/ezno2005/stylesheets/print.css" media="print"/>
+
+    <link rel="alternate" title="ez.no News" href="https://web.archive.org/web/20071217085633/http://ez.no/rss/feed/news" type="application/rss+xml"/><link rel="alternate" title="ez.no Developer News" href="/web/20071217085633/http://ez.no/rss/feed/communitynews" type="application/rss+xml"/>
+<link rel="alternate" title="ez.no Developer Articles" href="https://web.archive.org/web/20071217085633/http://ez.no/rss/feed/community_articles" type="application/rss+xml"/>
+<link rel="alternate" title="ez.no Forum" href="https://web.archive.org/web/20071217085633/http://ez.no/rss/feed/forum" type="application/rss+xml"/>
+<link rel="alternate" title="ez.no Contributions" href="https://web.archive.org/web/20071217085633/http://ez.no/rss/feed/contribs" type="application/rss+xml"/>
+<link rel="alternate" title="ez.no Open Funding" href="https://web.archive.org/web/20071217085633/http://ez.no/rss/feed/openfunding_suggestions" type="application/rss+xml"/>
+
+
+<!-- IE conditional comments; for bug fixes for different IE versions -->
+<!--[if IE 5]>     <style type="text/css"> @import url(/extension/ezno2005/design/ezno2005/stylesheets/ie5.css);    </style> <![endif]-->
+<!--[if lte IE 6]> <style type="text/css"> @import url(/extension/ezno2005/design/ezno2005/stylesheets/ie6lte.css); </style> <![endif]-->
+<!--[if gte IE 6]> <style type="text/css"> @import url(/extension/ezno2005/design/ezno2005/stylesheets/ie6gte.css); </style> <![endif]-->
+
+<!-- Load special stylesheet (if necessary) for newer Netscape decendants, Mozilla and Firefox, using the Gecko renderer -->
+<script type="text/javascript"><!-- if ((navigator.userAgent.indexOf("Gecko") != -1)&&(navigator.userAgent.indexOf("KHTML") == -1)) document.write("<style type=\"text/css\">@import url(/extension/ezno2005/design/ezno2005/stylesheets/gecko.css);</style>");--></script>
+                                                                                    
+<title>
+            eZ webdav     /         Libraries     /         Development                    </title>
+<meta http-equiv="Content-Language" content="en-GB"/>
+    <meta name="author" content="eZ Systems"/>
+    <meta name="copyright" content="eZ Systems as"/>
+    <meta name="description" content="eZ Publish is an open source content management system (CMS) and an open source content management framework (CMF)."/>
+    <meta name="keywords" content="cms, publish, e-commerce, content management, development framework"/>
+
+<meta name="MSSmartTagsPreventParsing" content="TRUE"/>
+<meta name="generator" content="eZ Publish"/>
+
+<script type="text/javascript" src="https://doc.core.ezpublish.se7enx.com/ezno2005/design/ezno2005/javascripts/tools.js"></script>
+<script type="text/javascript" src="https://doc.core.ezpublish.se7enx.com/ezno2005/design/ezno2005/javascripts/dropdownmenu.js"></script>
+</head>    <body onload="menuInit();">
+
+<!-- Complete page area: START -->
+<div id="page">
+
+<!-- Header area: START -->
+<div id="header">
+<div id="header-insert">
+
+<!-- User menu area: START -->
+<div id="usermenu">
+
+<div id="page-width1">
+
+<div id="logo">
+<h1><a href="https://doc.core.ezpublish.se7enx.com/"><span class="hide">eZ Systems - The Content Management Ecosystem</span></a></h1>
+</div>
+
+
+
+<p class="hide"><a href="#main">Skip to main content</a></p>
+
+<hr class="hide"/>
+<div id="searchbox">
+<form action="/web/20071217085633/http://ez.no/ezsearchredirect/action" method="get">
+
+<div class="block">
+<div class="element">
+<input id="searchbutton" class="button" type="submit" value="Search"/>
+</div>
+
+<div class="element searchstring">
+    <label for="searchtext" class="hide">Search text:</label>
+    <input id="searchtext" name="SearchText" type="text" size="12"/><br/>
+    
+
+            <div class="section">
+            <label for="searcharea" class="hide">Search area:</label>
+            <select id="searcharea" name="SubTreeArray[]">
+                <option value="2" selected="selected">All ez.no</option>
+                <option value="306">Bug reports</option>
+                <option value="21358">Contributions</option>
+                <option value="documentation">Documentation</option>
+                <option value="308">Forum</option>
+            </select>
+            </div>
+    </div>
+
+</div>
+</form>
+</div>
+
+<hr class="hide"/>
+<h2 class="hide">User menu</h2>
+
+<!-- User menu content: START -->
+<ul>
+            <li><a href="https://web.archive.org/web/20071217085633/http://ez.no/download"><span>Downloads</span></a></li>
+    <li><a href="https://web.archive.org/web/20071217085633/http://ez.no/company/contact"><span>Contact</span></a></li>
+            <li><a href="https://web.archive.org/web/20071217085633/http://ez.no/user/login"><span>Log in</span></a></li>
+        <li><a href="https://web.archive.org/web/20071217085633/http://ez.no/user/register"><span>Register</span></a></li>
+    
+    <li id="language-menu">
+        <a class="highlighted" title="English" href="https://web.archive.org/web/20071217085633/http://ez.no/ezpublish/documentation/development/libraries/ez_webdav"><img src="/ezno2005/design/ezno2005/images/eng-GB.gif" width="18" height="12" alt="English"/></a>
+        <a title="Deutsch" href="https://web.archive.org/web/20071217085633/http://ez.no/de/ezpublish/documentation/development/libraries/ez_webdav"><img src="/ezno2005/design/ezno2005/images/ger-DE.gif" width="18" height="12" alt="Deutsch"/></a>
+        <a title="Português" href="https://web.archive.org/web/20071217085633/http://ez.no/br/ezpublish/documentation/development/libraries/ez_webdav"><img src="/ezno2005/design/ezno2005/images/por-BR.gif" width="18" height="12" alt="Português"/></a>
+        <a title="Français" href="https://web.archive.org/web/20071217085633/http://ez.no/fr/ezpublish/documentation/development/libraries/ez_webdav"><img src="/ezno2005/design/ezno2005/images/fre-FR.gif" width="18" height="12" alt="Français"/></a>
+        <a title="日本語" href="https://web.archive.org/web/20071217085633/http://ez.no/jp/ezpublish/documentation/development/libraries/ez_webdav"><img src="/ezno2005/design/ezno2005/images/jpn-JP.gif" width="18" height="12" alt="日本語"/></a>        
+        <a title="中文" href="https://web.archive.org/web/20071217085633/http://ez.no/tw/ezpublish/documentation/development/libraries/ez_webdav"><img src="/ezno2005/design/ezno2005/images/chi-TW.gif" width="18" height="12" alt="中文"/></a>        
+        <a title="Norsk" href="https://web.archive.org/web/20071217085633/http://ez.no/no/ezpublish/documentation/development/libraries/ez_webdav"><img src="/ezno2005/design/ezno2005/images/nor-NO.gif" width="18" height="12" alt="Norsk"/></a>        
+    </li>
+</ul>
+<!-- User menu content: END -->
+
+</div>
+
+</div>
+<!-- User menu area: END -->
+
+</div>
+</div>
+<!-- Header area: END --><script type="text/javascript">
+<!--
+var menu = new Array();
+
+menu[0] = ['eZ Publish', '/ezpublish', 'eZ Publish Premium', '/ezpublish/premium', 'eZ Publish Now', '/ezpublish/now', 'eZ Publish On Demand', '/ezpublish/on_demand', 'Proprietary license options', '/products/proprietary_license_options', 'Certified extensions', '/products/certified_extensions', 'eZ Flow', '/ezflow', 'eZ Components', '/ezcomponents', 'eZ Find', '/ezfind', 'eZ Newsletter', '/eznewsletter', 'Expert consulting services', '/products/expert_consulting_services', 'Support', '/products/support'];
+menu[1] = ['Documentation', '/doc', 'Articles', '/community/articles', 'Books', '/store/books', 'Training', '/education/training', 'Certification', '/education/certification'];
+menu[2] = ['Case studies', '/customers/case_studies', 'References', '/customers/references', 'User quotes', '/customers/user_quotes', 'eZ for media', '/customers/ez_for_media'];
+menu[3] = ['Worldwide Partners', '/partner/worldwide_partners', 'eZ Partner program', '/partner/ez_partner_program', 'Knowledge centre', '/partner/knowledge_centre'];
+menu[4] = ['Downloads', '/download', 'Documentation', '/doc', 'News', '/developer/news', 'Developer information', '/developer/developer_information', 'Projects & contributions', '/developer/contribs', 'Forum', '/developer/forum', 'Issue tracker', '/bugs/redirect', 'Open Funding', '/developer/open_funding', 'Security', '/developer/security', 'User groups', '/developer/user_groups'];
+menu[5] = ['Total Product Responsibility from eZ', '/support/total_product_responsibility_from_ez'];
+menu[6] = ['Software solutions', '/store/software', 'Training', '/services/training', 'Certification', '/services/certification', 'Books', '/store/books', 'Services', '/store/services'];
+menu[7] = ['News', '/company/news', 'Media & press', '/company/media_press', 'Events', '/company/events', 'Career', '/company/career', 'eZ Conference & Awards', '/company/ez_conference_awards', 'Board of Directors', '/company/board', 'eZ Crew', '/company/ez_crew', 'Contact', '/company/contact'];
+
+-->
+</script>
+<div id="menuborder">
+
+<!-- Main menu area: START -->
+<div id="menu" onmouseover="menuHover();" onmouseout="tryHideSubMenues();">
+
+<div id="mainmenu" class="float-break">
+<div id="page-width2">
+    <ul id="mainmenulist" class="float-break">
+<li class="current"><a href="https://web.archive.org/web/20071217085633/http://ez.no/products" onmouseover="switchSubMenu( this );">Products &amp; services</a></li>
+<li><a href="https://web.archive.org/web/20071217085633/http://ez.no/education" onmouseover="switchSubMenu( this );">Education</a></li>
+<li><a href="https://web.archive.org/web/20071217085633/http://ez.no/customers" onmouseover="switchSubMenu( this );">Customers</a></li>
+<li><a href="https://web.archive.org/web/20071217085633/http://ez.no/partner" onmouseover="switchSubMenu( this );">Partners</a></li>
+<li><a href="https://web.archive.org/web/20071217085633/http://ez.no/developer" onmouseover="switchSubMenu( this );">Developer</a></li>
+<li><a href="https://web.archive.org/web/20071217085633/http://ez.no/support" onmouseover="switchSubMenu( this );">Support</a></li>
+<li><a href="https://web.archive.org/web/20071217085633/http://ez.no/store" onmouseover="switchSubMenu( this );">Store</a></li>
+<li class="last"><a href="https://web.archive.org/web/20071217085633/http://ez.no/company" onmouseover="switchSubMenu( this );">Company</a></li>
+</ul>
+
+</div>
+</div>
+
+
+<div id="submenu">
+<div id="page-width3">
+    <ul class="float-break">
+                        <li><a href="https://web.archive.org/web/20071217085633/http://ez.no/ezpublish">eZ Publish</a></li>
+                                <li><a href="https://web.archive.org/web/20071217085633/http://ez.no/ezpublish/premium">eZ Publish Premium</a></li>
+                                <li><a href="https://web.archive.org/web/20071217085633/http://ez.no/ezpublish/now">eZ Publish Now</a></li>
+                                <li><a href="https://web.archive.org/web/20071217085633/http://ez.no/ezpublish/on_demand">eZ Publish On Demand</a></li>
+                                <li><a href="https://web.archive.org/web/20071217085633/http://ez.no/products/proprietary_license_options">Proprietary license options</a></li>
+                                <li><a href="https://web.archive.org/web/20071217085633/http://ez.no/products/certified_extensions">Certified extensions</a></li>
+                                <li><a href="https://web.archive.org/web/20071217085633/http://ez.no/ezflow">eZ Flow</a></li>
+                                <li><a href="https://web.archive.org/web/20071217085633/http://ez.no/ezcomponents">eZ Components</a></li>
+                                <li><a href="https://web.archive.org/web/20071217085633/http://ez.no/ezfind">eZ Find</a></li>
+                                <li><a href="https://web.archive.org/web/20071217085633/http://ez.no/eznewsletter">eZ Newsletter</a></li>
+                                <li><a href="https://web.archive.org/web/20071217085633/http://ez.no/products/expert_consulting_services">Expert consulting services</a></li>
+                                <li class="last"><a href="https://web.archive.org/web/20071217085633/http://ez.no/products/support">Support</a></li>
+                </ul>
+</div>
+</div>
+
+<script type="text/javascript"><!--
+    document.getElementById('submenu').style.display = 'none';
+--></script>
+
+</div>
+<!-- Main menu area: END -->
+
+</div>
+
+<hr class="hide"/><!-- Path area: START -->
+<div id="path">
+
+<div id="page-width4">
+<h2 class="hide">Path</h2>
+
+<!-- Path content: START -->
+<p>
+                        <a href="https://web.archive.org/web/20071217085633/http://ez.no/">ez.no</a>
+        
+                        /
+                            <a href="https://web.archive.org/web/20071217085633/http://ez.no/ezpublish">ezpublish</a>
+        
+                        /
+                            <a href="toc.html">documentation</a>
+        
+                        /
+                            <a href="development.html">development</a>
+        
+                        /
+                            <a href="development/libraries.html">libraries</a>
+        
+                        /
+                            ez webdav
+        
+            </p>
+<!-- Path content: END -->
+
+</div>
+
+</div>
+<!-- Path area: END -->
+
+<hr class="hide"/>
+
+<!-- Main area: START -->
+
+<div id="page-width5">
+<div id="main" class="float-break">
+
+<!-- Main area content: START -->
+
+
+
+
+<div class="template-design area-main-normal">
+<div class="template-module content-view-full">
+<div class="template-object class-documentation">
+
+
+<div class="attribute-heading">
+    <h1>eZ webdav</h1>
+</div>
+
+<p><strong>These documentation pages are no longer maintained. Please visit the <a href="https://doc.ezpublishlegacy.se7enx.com">new documentation site.</a></strong></p>
+
+<div class="attribute-long">
+    
+
+<p>
+This functionality is currently under development. It will hopefully appear in eZ publish 3.2. Most of it will be available from within trunk [as soon as it reaches an alpha/usable state].
+</p>
+
+<p>
+eZ WebDAV is a WebDAV server abstraction library. It enables you to quickly develop WebDAV enabled PHP servers/applications.
+</p>
+
+<a name="eztoc86463_1" id="eztoc86463_1"></a><h2>A few words about WebDAV</h2>
+<p>
+WebDAV is an abbreviation for &quot;Web-based Distributed Authoring and Versioning&quot;. It is a set of extensions to the HTTP protocol which allows users to collaboratively edit and manage files on remote web servers using WebDAV enabled clients. For example, you can use recent versions of KDE's Konqueror or Microsoft's Internet Explorer to browse/manage a WebDAV server (similar to browsing/managing local filesystems). DAV is an IETF Proposed Standard (published as RFC 2518). This means that it is an entirely open, published standard.
+</p>
+
+<a name="eztoc86463_2" id="eztoc86463_2"></a><h2>WebDAV definitions</h2>
+<p>
+Since the WebDAV protocol is XML based and can be used to manage any type of digitally stored information it uses a different kind of notation that you might be used to. Details about WebDAV and the specification is far beyond the scope of this document (check out the <a href="https://web.archive.org/web/20071217085633/http://ez.no/"> official webdav site</a>). For now you'll only need to get used to the following nomenclature: WebDAV defines a file (collection of relevant data/information) as a RESOURCE and a directory (collection of files) as a COLLECTION. We'll be using these terms throughout this document and within the source code.
+</p>
+
+<a name="eztoc86463_3" id="eztoc86463_3"></a><h2>The eZWebDAVServer class</h2>
+<p>
+The eZWebDAVServer class provides a basic framework. It is an abstract base class that developers can use to build various kinds of WebDAV enabled servers/applications. The class needs to be inherited and extended, it will absolutely not work without some extra/additional code (your code :-).
+</p>
+
+<p>
+The functionality provided within this class takes care of the low-level communication between a WebDAV compatible client (for example a browser) and a server. Additional/custom code takes care of actual file/data management and interpretation (based on the various actions; GET, PUT, DELETE,etc.). In other words: by extending this class, you could build a WebDAV server that makes it possible to manage any kind of information (files, folders, documents, images, etc.) that you would like to administer using a WebDAV client.
+</p>
+
+<a name="eztoc86463_4" id="eztoc86463_4"></a><h2>WebDAV methods</h2>
+<p>
+Currently, the following WebDAV methods are supported by the base class:
+</p>
+    
+<table class="renderedtable" cellspacing="0" border="0">
+<tr>
+<td valign="top">  
+<p>
+<b>Method:</b>
+</p>
+
+  </td>
+
+<td valign="top">  
+<p>
+<b>Action:</b>
+</p>
+
+  </td>
+</tr>
+<tr class="bglight">
+<td valign="top">  
+<p>
+<b>OPTIONS</b>
+</p>
+
+  </td>
+
+<td valign="top">  
+<p>
+Some clients use this to identify a WebDAV server/location.
+</p>
+
+  </td>
+</tr>
+<tr class="bgdark">
+<td valign="top">  
+<p>
+<b>PROPFIND</b>
+</p>
+
+  </td>
+
+<td valign="top">  
+<p>
+Request a list of resources/collections that reside at a location.
+</p>
+
+  </td>
+</tr>
+<tr class="bglight">
+<td valign="top">  
+<p>
+<b>HEAD</b>
+</p>
+
+  </td>
+
+<td valign="top">  
+<p>
+Check wether a resource/collection exists or not.
+</p>
+
+  </td>
+</tr>
+<tr class="bgdark">
+<td valign="top">  
+<p>
+<b>GET</b>
+</p>
+
+  </td>
+
+<td valign="top">  
+<p>
+Initiate a download of a resource.
+</p>
+
+  </td>
+</tr>
+<tr class="bglight">
+<td valign="top">  
+<p>
+<b>MKCOL</b>
+</p>
+
+  </td>
+
+<td valign="top">  
+<p>
+Create a new collection on the server.
+</p>
+
+  </td>
+</tr>
+<tr class="bgdark">
+<td valign="top">  
+<p>
+<b>PUT</b>
+</p>
+
+  </td>
+
+<td valign="top">  
+<p>
+Initiate an upload of a resource.
+</p>
+
+  </td>
+</tr>
+<tr class="bglight">
+<td valign="top">  
+<p>
+<b>COPY</b>
+</p>
+
+  </td>
+
+<td valign="top">  
+<p>
+Copy data from one location to another.
+</p>
+
+  </td>
+</tr>
+<tr class="bgdark">
+<td valign="top">  
+<p>
+<b>MOVE</b>
+</p>
+
+  </td>
+
+<td valign="top">  
+<p>
+Move data from one location to another.
+</p>
+
+  </td>
+</tr>
+<tr class="bglight">
+<td valign="top">  
+<p>
+<b>DELETE</b>
+</p>
+
+  </td>
+
+<td valign="top">  
+<p>
+Delete stuff from server.
+</p>
+
+  </td>
+</tr>
+
+</table>
+
+<a name="eztoc86463_5" id="eztoc86463_5"></a><h2>Actual implementation</h2>
+<p>
+The actual implementation of the base class is really simple, it consists of four main parts, which are briefly described in the following text.
+</p>
+    
+<table class="renderedtable" cellspacing="0" border="0">
+<tr>
+<td valign="top">  
+<a name="eztoc86463_6" id="eztoc86463_6"></a><h2>Part:</h2>
+  </td>
+
+<td valign="top">  
+<a name="eztoc86463_7" id="eztoc86463_7"></a><h2>Brief description:</h2>
+  </td>
+</tr>
+<tr class="bglight">
+<td valign="top">  
+<p>
+<b>Process function</b>
+</p>
+
+  </td>
+
+<td valign="top">  
+<p>
+Main logic, initiates appropriate action based on the client request.
+</p>
+
+  </td>
+</tr>
+<tr class="bgdark">
+<td valign="top">  
+<p>
+<b>Output functions</b>
+</p>
+
+  </td>
+
+<td valign="top">  
+<p>
+Generate and send nicely formatted output to client.
+</p>
+
+  </td>
+</tr>
+<tr class="bglight">
+<td valign="top">  
+<p>
+<b>Virtual functions</b>
+</p>
+
+  </td>
+
+<td valign="top">  
+<p>
+Miscellaneous custom actions (stuff that happens on server-side).
+</p>
+
+  </td>
+</tr>
+<tr class="bgdark">
+<td valign="top">  
+<p>
+<b>Handler fuction</b>
+</p>
+
+  </td>
+
+<td valign="top">  
+<p>
+Handles return codes.
+</p>
+
+  </td>
+</tr>
+
+</table>
+
+<p>
+
+<b>The process function</b><br/>This function simply checks what the client wants, and initiates a corresponding sequence of actions. For example if the client requests the contents and properties of the resources within a collection (in other words: directory listing), the process function will call a virtual function (here, your code will acquire/collect and return the necessary data about the resources). Finally, an output function will be called (which takes care of WebDAV-style-formatting of your data).
+</p>
+
+<p>
+
+<b>The Output functions</b><br/>These functions take care of formatting and outputting various data (collection content, resource content, etc.) in WebDAV-style so that WebDAV clients can read, understand and present it to a user. You don't need to worry about formatting, the only thing you need to do is to provide necessary data (using the virtual functions) and an output function will take care of any low-level communication and the formatting.
+</p>
+
+<p>
+
+<b>The Virtual functions</b><br/>These functions are empty and should be overridden and filled with custom code in your class (which extends the eZWebDAVServer class). It is here where you must put in code to do various stuff like getting the required attributes for files, etc. These functions must return a set of predefined values (look in the beginning of eZWebDAVServer.php).
+</p>
+
+<p>
+
+<b>The handler function</b><br/>This function takes care of handling the return values of the output and the virtual functions. Based on the return value, it simply sends the necessary HTTP header(s) etc. For example when a resource is successfully deleted, the handler will send a HTTP OK header to the client (or a HTTP FORBIDDEN header if the client doesn't have permissions to delete the resource).
+</p>
+
+<a name="eztoc86463_8" id="eztoc86463_8"></a><h2>How does all this work?</h2>
+<p>
+Simple:
+</p>
+
+<p>
+
+(1) The client sends a request (perhaps with some parameters along with the request).<br/>
+(2) The server checks what the client wants and attempts to do the requested action.<br/>
+(3) The server returns something (data or just control information) to the client.<br/>(4) GOTO (1)
+</p>
+
+<a name="eztoc86463_9" id="eztoc86463_9"></a><h2>How to get it working?</h2>
+<p>
+
+First of all, you need to define a class that inherits from the eZWebDAVServer:<br/>
+</p>
+    <pre class="wordwrap">
+<span class="line">include_once( &quot;lib/ezwebdav/classes/ezwebdavserver.php&quot; );</span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">class eZWebDAVCustomServer extends eZWebDAVServer</span>
+
+<span class="line">{</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;[...]</span>
+
+<span class="line">}</span></pre>
+    
+<p>
+Secondly, you need to override the empty/virtual functions of eZWebDAVServer:
+</p>
+    <pre class="wordwrap">
+<span class="line">&nbsp;</span>
+
+<span class="line">function options( &lt;i&gt;$target&lt;/i&gt; ) {...}</span>
+
+<span class="line">function getCollectionContent( &lt;i&gt;$target&lt;/i&gt; ) {...}</span>
+
+<span class="line">function head( &lt;i&gt;$target ) {...}</span>
+
+<span class="line">function get( &lt;i&gt;$target&lt;/i&gt; ) {...}</span>
+
+<span class="line">function put( &lt;i&gt;$target&lt;/i&gt; ) {...}</span>
+
+<span class="line">function mkcol( &lt;i&gt;$target&lt;/i&gt; ) {...}</span>
+
+<span class="line">function copy( &lt;i&gt;$source, $destination&lt;/i&gt; ) {...}</span>
+
+<span class="line">function move( &lt;i&gt;$source, $destination&lt;/i&gt; ) {...}</span>
+
+<span class="line">function delete( &lt;i&gt;$target&lt;/i&gt; ) {...}</span></pre>
+    
+<p>
+
+<b>function options( <i>$target</i> ) {...}</b><br/>Only needs to be overridden if you want a custom OPTIONS reply. By default, the server will reply with a collection of safe WebDAV ID-headers. The <i>$target</i> parameter specifies the path-to and the name-of the resource/collection that was targeted by the OPTIONS command.
+</p>
+
+<p>
+
+<b>function getCollectionContent( <i>$target</i> ) {...}</b><br/>This function must generate and return an array of resources/collections (files/dirs) that reside at a location specified by the <i>$target</i> parameter. For each and every collection/directory-entry, the following properties must be returned:
+</p>
+
+<p>
+
+Name<br/>
+Size (in bytes)<br/>
+Mime type<br/>
+Creation date/time (UNIX timestamp)<br/>Modification date/time (UNIX timestamp)
+</p>
+
+<p>
+
+<b>function head( <i>$target</i> ) {...}</b><br/>This function should check if the a resource/collection (file/dir), specified by the <i>$target</i> parameter, exists or not. Must return either EZ_WEBDAV_OK_CREATED or EZ_WEBDAV_NOT_FOUND.
+</p>
+
+<p>
+
+<b>function get( <i>$target</i> ) {...}</b><br/>
+The get function should take care of sending data from the server to the client. However, in the virtual function you only need to specify the type, location and/or contents of the data. Actual data transmission and low-level communication is taken care of by the base class. The <i>$target</i> parameter reveals what the client requested. The data you wish to send can either be a file (located somewhere on the filesystem) or a custom data-string. The get function should just return an associative array; the following examples should demonstrate this clearly:<br/>
+</p>
+    <pre class="wordwrap">
+<span class="line">Sending custom data:</span>
+
+<span class="line">[...]</span>
+
+<span class="line">$result = array();</span>
+
+<span class="line">$result[&quot;data&quot;] = &quot;custom data string, whatever, bla bla bla&quot;;</span>
+
+<span class="line">$result[&quot;file&quot;] = FALSE;</span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">return( $result );</span>
+
+<span class="line">[...]</span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">Sending a file:</span>
+
+<span class="line">[...]</span>
+
+<span class="line">$result = array();</span>
+
+<span class="line">$result[&quot;data&quot;] = FALSE;</span>
+
+<span class="line">$result[&quot;file&quot;] = &quot;/bring/on/the/babes/forfun.txt&quot;;</span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">return( $result );</span>
+
+<span class="line">[...]</span></pre>
+    
+<p>
+Obviously, one of the elements must be FALSE while the other is NON-FALSE.
+</p>
+
+<p>
+
+<b>function put( <i>$target, $tempFile</i> ) {...}</b><br/>The put function is automatically called by the base class after some data has been uploaded from a client to the server. Again, the base class takes care of the low level stuff and puts the contents of the uploaded data into a temporary file passed to this function as <i>$tempFile</i>. The <i>$target</i> parameter reveals the location and name of the file/data that the client just uploaded. When dealing with files, you would simply do a move (called &quot;rename&quot; in PHP) operation in order to move the file from temporary to permanent location. Return values: EZ_WEBDAV_OK_CREATED on success and EZ_WEBDAV_FAILED_FORBIDDEN on failure.
+</p>
+
+<p>
+
+<b>function mkcol( <i>$target</i> ) {...}</b><br/>This function is called when the client issues an MKCOL command, which means &quot;make collection&quot; (or make directory if you prefer working with files/dirs). The <i>$target</i> parameter reveals the location and name of the collection that should be created. Your function must check if the location is valid. If there already exists a resource/collection (file/dir) with the specified name, the must return EZ_WEBDAV_FAILED_EXSITS. If the creation was successful, EZ_WEBDAV_OK_CREATED should be returned. If creation failed (for some other reason, permissions, etc.), the return value must be EZ_WEBDAV_FAILED_FORBIDDEN.
+</p>
+
+<p>
+
+<b>function copy( <i>$source, $destination</i> ) {...}</b><br/>This function should take care of copying a resource (or a collection, recursively) from the <i>$source</i> to the <i>$destination</i> location on the server. Return values: EZ_WEBDAV_OK_CREATED on success and EZ_WEBDAV_FAILED_FORBIDDEN if the operation failed.
+</p>
+
+<p>
+
+<b>function move( <i>$source, $destination</i> ) {...}</b><br/>Almost identical to the copy function. The move function should take care of moving a resource (or a collection, recursively) from the <i>$source</i> to the <i>$destination</i> location on the server. Return values: EZ_WEBDAV_OK_CREATED on success and EZ_WEBDAV_FAILED_FORBIDDEN if the operation failed.
+</p>
+
+<p>
+
+<b>function delete( <i>$target</i> ) {...}</b><br/>The delete function must remove a resource or a collection (file or dir) specified by the <i>$target</i> parameter. It must either return EZ_WEBDAV_OK (on success) or EZ_WEBDAV_FAILED_FORBIDDEN (if the operation failed).
+</p>
+
+<p>
+
+Third, you need to create an object of your eZWebDAVServer extended class and let the process function run when the script is called:<br/>
+</p>
+    <pre class="wordwrap">
+<span class="line">$myServer = new eZWebDAVCustomServer();</span>
+
+<span class="line">$myServer-&gt;processClientRequest();</span></pre>
+    
+<p>
+<i>Please keep in mind that the functionality and documentation presented here is currently under development.</i>
+</p>
+</div>
+
+
+<div class="content-view-children">
+<div class="class-comment">
+    <h1 id="comments">Comments</h1>
+
+
+        
+
+<div class="content-view-line">
+<div class="class-comment bglight">
+
+    
+    <div id="msg59239" class="attribute-heading">
+        <h2>outdated?</h2>
+    </div>
+
+<div class="attribute-byline float-break">
+    <p class="author">Marco Zinn</p>
+    <p class="date">Saturday 18 September 2004 8:27:47 pm</p>
+</div>
+
+
+<div class="attribute-short">
+            &quot;This functionality is currently under development. It will hopefully appear in eZ publish 3.2.&quot; ... At the time of writing this comment, ez 3.4.1 is out.<br/>
+Could someone please change this article to reflect the current state?
+
+    </div>
+
+
+</div>
+</div>
+
+
+ 
+
+
+</div>
+</div>
+
+<div class="block float-break">
+            <form method="post" action="/web/20071217085633/http://ez.no/content/action">
+            <input class="button" type="submit" name="NewButton" value="New comment"/>
+            <input type="hidden" name="RedirectURIAfterPublish" value="ezpublish/documentation/development/libraries/ez_webdav#comments"/>
+            <input type="hidden" name="NodeID" value="31291"/>
+                           <input type="hidden" name="ClassIdentifier" value="article_comment"/>
+                        <input type="hidden" name="ContentLanguageCode" value="eng-GB"/>
+        </form>
+    </div>
+
+</div>
+</div>
+</div>
+
+
+<div class="template-design area-sidebar-normal">
+<div class="template-module content-view-sidebar">
+<div class="template-object class-documentation">
+
+<div class="attribute-heading">
+    <h2 class="bullet">Contents</h2>
+</div>
+<h3><a href="development.html">Development</a></h3>
+<p>
+        
+        
+            
+                    <a href="development/extensions.html">Extensions</a><br/>
+          
+	
+            
+                    <a href="development/ez_publish_datamodel.html">eZ publish datamodel</a><br/>
+          
+	
+            
+                    <a href="development/ez_publish_tuning_and_stability.html">eZ publish tuning and stability</a><br/>
+          
+	
+            
+                    <a href="development/importing_attribute_data.html">Importing attribute data</a><br/>
+          
+	
+            
+                    <a href="development/kernel.html">Kernel</a><br/>
+          
+	
+            
+                    <a href="development/libraries.html">Libraries</a><br/>
+          
+	
+            &nbsp;&nbsp;&nbsp;
+                    <a href="development/libraries/ez_xml.html">eZ xml</a><br/>
+          
+	
+            &nbsp;&nbsp;&nbsp;
+                    <a href="development/libraries/ez_db.html">eZ db</a><br/>
+          
+	
+            &nbsp;&nbsp;&nbsp;
+                    <a href="development/libraries/ez_i18n.html">eZ i18n</a><br/>
+          
+	
+            &nbsp;&nbsp;&nbsp;
+                    <a href="development/libraries/ez_soap.html">eZ soap</a><br/>
+          
+	
+            &nbsp;&nbsp;&nbsp;
+                    <a href="development/libraries/ez_template.html">eZ template</a><br/>
+          
+	
+            &nbsp;&nbsp;&nbsp;
+                    <a href="development/libraries/ez_webdav.html"><b>eZ webdav</b></a><br/>
+          
+	
+            
+                    <a href="development/scripting.html">Scripting</a><br/>
+          
+	
+            
+                    <a href="development/standards.html">Standards</a><br/>
+          
+	
+            
+                    <a href="development/system_overview.html">System overview</a><br/>
+          
+	
+            
+                    <a href="development/test_suite.html">Test Suite</a><br/>
+          
+	
+            
+                    <a href="development/using_doxygen_to_create_api_documentation.html">Using Doxygen to create API documenta...</a><br/>
+          
+	
+        </p>
+
+
+<hr class="docsplit"/>
+<h3>Created</h3>
+<p>
+29/07/2003<br/>
+4:00:14 pm<br/>
+by Bård Farstad
+</p>
+<h3>Last updated</h3>
+<p>
+06/08/2003<br/>
+11:45:51 am<br/>
+by Balazs Halasy
+</p>
+<h3>Authors</h3>
+<p class="rendered">Bård Farstad<br/>Balazs Halasy<br/></p>
+
+<br/>
+<hr class="docsplit"/>
+
+<p>This page is part of the eZ Publish documentation. The documentation is available under the <a href="https://web.archive.org/web/20071217085633/http://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License.</a> All contributions will be released under the terms of this license.</p>
+
+</div>
+</div>
+</div>
+
+
+
+
+
+<!-- Main area content: END -->
+
+</div>
+</div>
+
+<!-- Main area: END -->
+
+<hr class="hide"/>
+
+<!-- Footer area: START -->
+<div id="footer-design">
+<div id="page-width6">
+<div id="footer">
+
+<address>Powered by eZ Publish&reg; Content Management System.<br/>
+Copyright &copy;1999 - 2024 7x and 2007 eZ Systems AS (except where otherwise noted). All rights reserved.</address>
+
+</div>
+</div>
+</div>
+<!-- Footer area: END -->
+
+</div>
+<!-- Complete page area: END -->
+
+
+    
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TFEDSZJYH0"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-TFEDSZJYH0');
+</script>
+
+
+</body>
+</html>
+
+<!-- th[eZ] 20050804 --><!--
+     FILE ARCHIVED ON 08:56:33 Dec 17, 2007 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 11:20:37 Oct 31, 2024.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  captures_list: 1.415
+  exclusion.robots: 0.029
+  exclusion.robots.policy: 0.009
+  esindex: 0.012
+  cdx.remote: 69.108
+  LoadShardBlock: 58.477 (3)
+  PetaboxLoader3.datanode: 76.757 (4)
+  load_resource: 108.905
+  PetaboxLoader3.resolve: 64.402
+-->

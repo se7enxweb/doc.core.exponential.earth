@@ -1,0 +1,889 @@
+
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="/_static/css/banner-styles.css?v=S1zqJCYt" />
+<link rel="stylesheet" type="text/css" href="/_static/css/iconochive.css?v=3PDvdIFv" />
+<!-- End Wayback Rewrite JS Include -->
+
+<style type="text/css">
+    @import url(https://doc.core.ezpublish.se7enx.com/ezno2005/design/ezno2005/stylesheets/core.css);
+    @import url(https://doc.core.ezpublish.se7enx.com/ezno2005/design/ezno2005/stylesheets/pagelayout.css);
+    @import url(https://doc.core.ezpublish.se7enx.com/ezno2005/design/ezno2005/stylesheets/classes.css);
+    @import url(https://doc.core.ezpublish.se7enx.com/ezno2005/design/ezno2005/stylesheets/monitor.css);
+</style>
+
+<link type="text/css" rel="stylesheet" href="https://web.archive.org/web/20071224070727cs_/http://ez.no/extension/ezno2005/design/ezno2005/stylesheets/print.css" media="print"/>
+
+    <link rel="alternate" title="ez.no News" href="https://web.archive.org/web/20071224070727/http://ez.no/rss/feed/news" type="application/rss+xml"/><link rel="alternate" title="ez.no Developer News" href="/web/20071224070727/http://ez.no/rss/feed/communitynews" type="application/rss+xml"/>
+<link rel="alternate" title="ez.no Developer Articles" href="https://web.archive.org/web/20071224070727/http://ez.no/rss/feed/community_articles" type="application/rss+xml"/>
+<link rel="alternate" title="ez.no Forum" href="https://web.archive.org/web/20071224070727/http://ez.no/rss/feed/forum" type="application/rss+xml"/>
+<link rel="alternate" title="ez.no Contributions" href="https://web.archive.org/web/20071224070727/http://ez.no/rss/feed/contribs" type="application/rss+xml"/>
+<link rel="alternate" title="ez.no Open Funding" href="https://web.archive.org/web/20071224070727/http://ez.no/rss/feed/openfunding_suggestions" type="application/rss+xml"/>
+
+
+<!-- IE conditional comments; for bug fixes for different IE versions -->
+<!--[if IE 5]>     <style type="text/css"> @import url(/extension/ezno2005/design/ezno2005/stylesheets/ie5.css);    </style> <![endif]-->
+<!--[if lte IE 6]> <style type="text/css"> @import url(/extension/ezno2005/design/ezno2005/stylesheets/ie6lte.css); </style> <![endif]-->
+<!--[if gte IE 6]> <style type="text/css"> @import url(/extension/ezno2005/design/ezno2005/stylesheets/ie6gte.css); </style> <![endif]-->
+
+<!-- Load special stylesheet (if necessary) for newer Netscape decendants, Mozilla and Firefox, using the Gecko renderer -->
+<script type="text/javascript"><!-- if ((navigator.userAgent.indexOf("Gecko") != -1)&&(navigator.userAgent.indexOf("KHTML") == -1)) document.write("<style type=\"text/css\">@import url(/extension/ezno2005/design/ezno2005/stylesheets/gecko.css);</style>");--></script>
+                                                    
+<title>
+            toc     /         Documentation     /         eZPublish                    </title>
+<meta http-equiv="Content-Language" content="en-GB"/>
+    <meta name="author" content="eZ Systems"/>
+    <meta name="copyright" content="eZ Systems as"/>
+    <meta name="description" content="eZ Publish is an open source content management system (CMS) and an open source content management framework (CMF)."/>
+    <meta name="keywords" content="cms, publish, e-commerce, content management, development framework"/>
+
+<meta name="MSSmartTagsPreventParsing" content="TRUE"/>
+<meta name="generator" content="eZ Publish"/>
+
+<script type="text/javascript" src="https://doc.core.ezpublish.se7enx.com/ezno2005/design/ezno2005/javascripts/tools.js"></script>
+<script type="text/javascript" src="https://doc.core.ezpublish.se7enx.com/ezno2005/design/ezno2005/javascripts/dropdownmenu.js"></script>
+</head>    <body onload="menuInit();">
+
+<!-- Complete page area: START -->
+<div id="page">
+
+<!-- Header area: START -->
+<div id="header">
+<div id="header-insert">
+
+<!-- User menu area: START -->
+<div id="usermenu">
+
+<div id="page-width1">
+
+<div id="logo">
+<h1><a href="https://doc.core.ezpublish.se7enx.com/"><span class="hide">eZ Systems - The Content Management Ecosystem</span></a></h1>
+</div>
+
+
+
+<p class="hide"><a href="#main">Skip to main content</a></p>
+
+<hr class="hide"/>
+<div id="searchbox">
+<form action="/web/20071224070727/http://ez.no/ezsearchredirect/action" method="get">
+
+<div class="block">
+<div class="element">
+<input id="searchbutton" class="button" type="submit" value="Search"/>
+</div>
+
+<div class="element searchstring">
+    <label for="searchtext" class="hide">Search text:</label>
+    <input id="searchtext" name="SearchText" type="text" size="12"/><br/>
+    
+
+            <div class="section">
+            <label for="searcharea" class="hide">Search area:</label>
+            <select id="searcharea" name="SubTreeArray[]">
+                <option value="2" selected="selected">All ez.no</option>
+                <option value="306">Bug reports</option>
+                <option value="21358">Contributions</option>
+                <option value="documentation">Documentation</option>
+                <option value="308">Forum</option>
+            </select>
+            </div>
+    </div>
+
+</div>
+</form>
+</div>
+
+<hr class="hide"/>
+<h2 class="hide">User menu</h2>
+
+<!-- User menu content: START -->
+<ul>
+            <li><a href="https://web.archive.org/web/20071224070727/http://ez.no/download"><span>Downloads</span></a></li>
+    <li><a href="https://web.archive.org/web/20071224070727/http://ez.no/company/contact"><span>Contact</span></a></li>
+            <li><a href="https://web.archive.org/web/20071224070727/http://ez.no/user/login"><span>Log in</span></a></li>
+        <li><a href="https://web.archive.org/web/20071224070727/http://ez.no/user/register"><span>Register</span></a></li>
+    
+    <li id="language-menu">
+        <a class="highlighted" title="English" href="img src="/ezno2005/design/ezno2005/images/eng-GB.gif" width="18" height="12" alt="English"/></a>
+        <a title="Deutsch" href="https://web.archive.org/web/20071224070727/http://ez.no/de/ezpublish/documentation/toc"><img src="/ezno2005/design/ezno2005/images/ger-DE.gif" width="18" height="12" alt="Deutsch"/></a>
+        <a title="Português" href="https://web.archive.org/web/20071224070727/http://ez.no/br/ezpublish/documentation/toc"><img src="/ezno2005/design/ezno2005/images/por-BR.gif" width="18" height="12" alt="Português"/></a>
+        <a title="Français" href="https://web.archive.org/web/20071224070727/http://ez.no/fr/ezpublish/documentation/toc"><img src="/ezno2005/design/ezno2005/images/fre-FR.gif" width="18" height="12" alt="Français"/></a>
+        <a title="日本語" href="https://web.archive.org/web/20071224070727/http://ez.no/jp/ezpublish/documentation/toc"><img src="/ezno2005/design/ezno2005/images/jpn-JP.gif" width="18" height="12" alt="日本語"/></a>        
+        <a title="中文" href="https://web.archive.org/web/20071224070727/http://ez.no/tw/ezpublish/documentation/toc"><img src="/ezno2005/design/ezno2005/images/chi-TW.gif" width="18" height="12" alt="中文"/></a>        
+        <a title="Norsk" href="https://web.archive.org/web/20071224070727/http://ez.no/no/ezpublish/documentation/toc"><img src="/ezno2005/design/ezno2005/images/nor-NO.gif" width="18" height="12" alt="Norsk"/></a>        
+    </li>
+</ul>
+<!-- User menu content: END -->
+
+</div>
+
+</div>
+<!-- User menu area: END -->
+
+</div>
+</div>
+<!-- Header area: END --><script type="text/javascript">
+<!--
+var menu = new Array();
+
+menu[0] = ['eZ Publish', '/ezpublish', 'eZ Publish Premium', '/ezpublish/premium', 'eZ Publish Now', '/ezpublish/now', 'eZ Publish On Demand', '/ezpublish/on_demand', 'Proprietary license options', '/products/proprietary_license_options', 'Certified extensions', '/products/certified_extensions', 'eZ Flow', '/ezflow', 'eZ Components', '/ezcomponents', 'eZ Find', '/ezfind', 'eZ Newsletter', '/eznewsletter', 'Expert consulting services', '/products/expert_consulting_services', 'Support', '/products/support'];
+menu[1] = ['Documentation', '/doc', 'Articles', '/community/articles', 'Books', '/store/books', 'Training', '/education/training', 'Certification', '/education/certification'];
+menu[2] = ['Case studies', '/customers/case_studies', 'References', '/customers/references', 'User quotes', '/customers/user_quotes', 'eZ for media', '/customers/ez_for_media'];
+menu[3] = ['Worldwide Partners', '/partner/worldwide_partners', 'eZ Partner program', '/partner/ez_partner_program', 'Knowledge centre', '/partner/knowledge_centre'];
+menu[4] = ['Downloads', '/download', 'Documentation', '/doc', 'News', '/developer/news', 'Developer information', '/developer/developer_information', 'Projects & contributions', '/developer/contribs', 'Forum', '/developer/forum', 'Issue tracker', '/bugs/redirect', 'Open Funding', '/developer/open_funding', 'Security', '/developer/security', 'User groups', '/developer/user_groups'];
+menu[5] = ['Total Product Responsibility from eZ', '/support/total_product_responsibility_from_ez'];
+menu[6] = ['Software solutions', '/store/software', 'Training', '/services/training', 'Certification', '/services/certification', 'Books', '/store/books', 'Services', '/store/services'];
+menu[7] = ['News', '/company/news', 'Media & press', '/company/media_press', 'Events', '/company/events', 'Career', '/company/career', 'eZ Conference & Awards', '/company/ez_conference_awards', 'Board of Directors', '/company/board', 'eZ Crew', '/company/ez_crew', 'Contact', '/company/contact'];
+
+-->
+</script>
+<div id="menuborder">
+
+<!-- Main menu area: START -->
+<div id="menu" onmouseover="menuHover();" onmouseout="tryHideSubMenues();">
+
+<div id="mainmenu" class="float-break">
+<div id="page-width2">
+    <ul id="mainmenulist" class="float-break">
+<li class="current"><a href="https://web.archive.org/web/20071224070727/http://ez.no/products" onmouseover="switchSubMenu( this );">Products &amp; services</a></li>
+<li><a href="https://web.archive.org/web/20071224070727/http://ez.no/education" onmouseover="switchSubMenu( this );">Education</a></li>
+<li><a href="https://web.archive.org/web/20071224070727/http://ez.no/customers" onmouseover="switchSubMenu( this );">Customers</a></li>
+<li><a href="https://web.archive.org/web/20071224070727/http://ez.no/partner" onmouseover="switchSubMenu( this );">Partners</a></li>
+<li><a href="https://web.archive.org/web/20071224070727/http://ez.no/developer" onmouseover="switchSubMenu( this );">Developer</a></li>
+<li><a href="https://web.archive.org/web/20071224070727/http://ez.no/support" onmouseover="switchSubMenu( this );">Support</a></li>
+<li><a href="https://web.archive.org/web/20071224070727/http://ez.no/store" onmouseover="switchSubMenu( this );">Store</a></li>
+<li class="last"><a href="https://web.archive.org/web/20071224070727/http://ez.no/company" onmouseover="switchSubMenu( this );">Company</a></li>
+</ul>
+
+</div>
+</div>
+
+
+<div id="submenu">
+<div id="page-width3">
+    <ul class="float-break">
+                        <li><a href="https://web.archive.org/web/20071224070727/http://ez.no/ezpublish">eZ Publish</a></li>
+                                <li><a href="https://web.archive.org/web/20071224070727/http://ez.no/ezpublish/premium">eZ Publish Premium</a></li>
+                                <li><a href="https://web.archive.org/web/20071224070727/http://ez.no/ezpublish/now">eZ Publish Now</a></li>
+                                <li><a href="https://web.archive.org/web/20071224070727/http://ez.no/ezpublish/on_demand">eZ Publish On Demand</a></li>
+                                <li><a href="https://web.archive.org/web/20071224070727/http://ez.no/products/proprietary_license_options">Proprietary license options</a></li>
+                                <li><a href="https://web.archive.org/web/20071224070727/http://ez.no/products/certified_extensions">Certified extensions</a></li>
+                                <li><a href="https://web.archive.org/web/20071224070727/http://ez.no/ezflow">eZ Flow</a></li>
+                                <li><a href="https://web.archive.org/web/20071224070727/http://ez.no/ezcomponents">eZ Components</a></li>
+                                <li><a href="https://web.archive.org/web/20071224070727/http://ez.no/ezfind">eZ Find</a></li>
+                                <li><a href="https://web.archive.org/web/20071224070727/http://ez.no/eznewsletter">eZ Newsletter</a></li>
+                                <li><a href="https://web.archive.org/web/20071224070727/http://ez.no/products/expert_consulting_services">Expert consulting services</a></li>
+                                <li class="last"><a href="https://web.archive.org/web/20071224070727/http://ez.no/products/support">Support</a></li>
+                </ul>
+</div>
+</div>
+
+<script type="text/javascript"><!--
+    document.getElementById('submenu').style.display = 'none';
+--></script>
+
+</div>
+<!-- Main menu area: END -->
+
+</div>
+
+<hr class="hide"/><!-- Path area: START -->
+<div id="path">
+
+<div id="page-width4">
+<h2 class="hide">Path</h2>
+
+<!-- Path content: START -->
+<p>
+                        <a href="https://web.archive.org/web/20071224070727/http://ez.no/">ez.no</a>
+        
+                        /
+                            <a href="https://web.archive.org/web/20071224070727/http://ez.no/ezpublish">ezpublish</a>
+        
+                        /
+                            <a href="https://doc.core.ezpublish.se7enx.com/toc.html">documentation</a>
+        
+                        /
+                            toc
+        
+            </p>
+<!-- Path content: END -->
+
+</div>
+
+</div>
+<!-- Path area: END -->
+
+<hr class="hide"/>
+
+<!-- Main area: START -->
+
+<div id="page-width5">
+<div id="main" class="float-break">
+
+<!-- Main area content: START -->
+
+
+
+<div class="template-design area-main-full">
+<div class="template-module node-view-buglist">
+<div class="template-object">
+
+<div class="attribute-heading">
+    <h1>Chapter overview </h1>
+</div>
+
+<p>
+<a href="toc.html">Main documentation page</a>
+<hr class="docsplit"/>
+
+<h1>Table of contents (all chapters)</h1>
+
+    <div class="toclist">
+<ul class="linklist">
+<li><div><a href="../ez_publish_3_4.html">eZ Publish 3.4</a></div></li>
+<li><div><ul><li><div><a href="ez_publish_3_4/content_object_export_with_ezpm.html">Content object export with ezpm</a></div></li>
+    <li><div><a href="ez_publish_3_4/content_object_import_and_export.html">Content object import and export</a></div></li>
+    <li><div><a href="ez_publish_3_4/ini_settings_module.html">Ini settings module</a></div></li>
+    <li><div><a href="ez_publish_3_4/using_look_and_feel_to_configure_your_site.html">Using 'look and feel' to configure your site</a></div></li>
+    <li><div><a href="ez_publish_3_4/using_settings_object_to_change_ini_settings.html">Using 'Settings' object to change ini settings</a></div></li>
+    <li><div><a href="ez_publish_3_4/using_database_schema_checker.html">Using database schema checker</a></div></li>
+    <li><div><a href="ez_publish_3_4/using_file_consistency_check.html">Using file consistency check</a></div></li>
+    </ul></div></li></ul>
+</div>
+    <div class="toclist">
+<ul class="linklist">
+<li><div><a href="general_information.html">General information</a></div></li>
+<li><div><ul><li><div><a href="general_information/about_the_documentation.html">About the documentation</a></div></li>
+        <li><div><ul>
+        <li><div><a href="general_information/about_the_documentation/structure.html">Structure</a></div></li>
+                <li><div><a href="general_information/about_the_documentation/status.html">Status</a></div></li>
+                <li><div><a href="general_information/about_the_documentation/comments.html">Comments</a></div></li>
+                <li><div><a href="general_information/about_the_documentation/guidelines.html">Guidelines</a></div></li>
+                </ul></div></li><li><div><a href="general_information/what_is_ez_publish.html">What is eZ publish?</a></div></li>
+        <li><div><ul>
+        <li><div><a href="general_information/what_is_ez_publish/possibilities_with_ez_publish.html">Possibilities with eZ publish</a></div></li>
+                <li><div><a href="general_information/what_is_ez_publish/benefits.html">Benefits</a></div></li>
+                <li><div><a href="general_information/what_is_ez_publish/the_main_key_features_of_ez_publish.html">The main/key features of eZ publish</a></div></li>
+                <li><div><a href="general_information/what_is_ez_publish/the_history_of_ez_publish.html">The history of eZ publish</a></div></li>
+                <li><div><a href="general_information/what_is_ez_publish/differences_between_ez_publish_2_x_and_3_x.html">Differences between eZ publish 2.x and 3.x</a></div></li>
+                <li><div><a href="general_information/what_is_ez_publish/ez_publish_requirements.html">eZ publish requirements</a></div></li>
+                <li><div><a href="general_information/what_is_ez_publish/releases.html">Releases</a></div></li>
+                </ul></div></li><li><div><a href="general_information/what_is_ez_systems.html">What is eZ systems?</a></div></li>
+        <li><div><ul>
+        <li><div><a href="general_information/what_is_ez_systems/the_business_model_and_services_of_ez_systems.html">The business model and services of eZ systems</a></div></li>
+                <li><div><a href="general_information/what_is_ez_systems/support.html">Support</a></div></li>
+                <li><div><a href="general_information/what_is_ez_systems/training_and_certification.html">Training and certification</a></div></li>
+                <li><div><a href="general_information/what_is_ez_systems/consulting.html">Consulting</a></div></li>
+                <li><div><a href="general_information/what_is_ez_systems/commercial_licences.html">Commercial licences</a></div></li>
+                <li><div><a href="general_information/what_is_ez_systems/partner.html">Partner</a></div></li>
+                <li><div><a href="general_information/what_is_ez_systems/contact.html">Contact</a></div></li>
+                </ul></div></li></ul></div></li></ul>
+</div>
+    <div class="toclist">
+<ul class="linklist">
+<li><div><a href="../installation.html">Installation</a></div></li>
+<li><div><ul><li><div><a href="normal_installation.html">Normal installation</a></div></li>
+        <li><div><ul>
+        <li><div><a href="requirements_for_doing_a_normal_installation.html">Requirements for doing a normal installation</a></div></li>
+                <li><div><a href="installing_ez_publish_on_a_linux_unix_based_system.html">Installing eZ publish on a Linux/UNIX based system</a></div></li>
+                <li><div><a href="installing_ez_publish_on_a_windows_based_system.html">Installing eZ publish on a Windows based system</a></div></li>
+                </ul></div></li><li><div><a href="../bundled_installation.html">bundled installation</a></div></li>
+        <li><div><ul>
+        <li><div><a href="requirements_for_doing_a_bundled_installation.html">Requirements for doing a bundled installation</a></div></li>
+                <li><div><a href="ez_publish_bundle_for_linuxunix_based_systems.html">eZ publish bundle for Linux/UNIX based systems</a></div></li>
+                <li><div><a href="ez_publish_bundle_for_windows_based_systems.html">eZ publish bundle for Windows based systems</a></div></li>
+                </ul></div></li><li><div><a href="../manual_installation.html">manual installation</a></div></li>
+        <li><div><ul>
+        <li><div><a href="requirements_for_doing_a_manual_installation.html">Requirements for doing a manual installation</a></div></li>
+                <li><div><a href="manual_installation_on_a_linux_unix_based_system.html">Manual installation on a Linux/UNIX based system</a></div></li>
+                <li><div><a href="manual_installation_on_a_windows_based_system.html">Manual installation on a Windows based system</a></div></li>
+                <li><div><a href="manual_configuration_of_ez_publish.html">Manual configuration of eZ publish</a></div></li>
+                </ul></div></li><li><div><a href="the_setup_wizard.html">The setup wizard</a></div></li>
+    <li><div><a href="the_cronjob_script.html">The cronjob script</a></div></li>
+    <li><div><a href="virtual_host_setup.html">Virtual Host setup</a></div></li>
+    <li><div><a href="upgrading.html">Upgrading</a></div></li>
+        <li><div><ul>
+        <li><div><a href="upgrading/upgrading_ez_publish_from_3_a_b_to_3_x_y.html">Upgrading eZ publish from 3.a-b to 3.x-y</a></div></li>
+                </ul></div></li><li><div><a href="adding_extensions.html">Adding extensions</a></div></li>
+    <li><div><a href="../removing_ez_publish.html">removing ez publish</a></div></li>
+        <li><div><ul>
+        <li><div><a href="removing_ez_publish/removing_a_normal_ez_publish_installation.html">Removing a normal eZ publish installation</a></div></li>
+                <li><div><a href="removing_ez_publish/removing_a_bundled_ez_publish_installation.html">Removing a bundled eZ publish installation</a></div></li>
+                <li><div><a href="removing_ez_publish/removing_a_manual_ez_publish_installation.html">Removing a manual eZ publish installation</a></div></li>
+                </ul></div></li></ul></div></li></ul>
+</div>
+    <div class="toclist">
+<ul class="linklist">
+<li><div><a href="ez_publish_basics.html">eZ publish basics</a></div></li>
+<li><div><ul><li><div><a href="ez_publish_basics/the_internal_structure_of_ez_publish.html">The internal structure of eZ publish</a></div></li>
+        <li><div><ul>
+        <li><div><a href="ez_publish_basics/the_internal_structure_of_ez_publish/kernel_libraries_and_modules.html">Kernel, libraries and modules</a></div></li>
+                <li><div><a href="ez_publish_basics/the_internal_structure_of_ez_publish/directory_structure.html">Directory structure</a></div></li>
+                </ul></div></li><li><div><a href="ez_publish_basics/content_and_design.html">Content and design</a></div></li>
+        <li><div><ul>
+        <li><div><a href="ez_publish_basics/content_and_design/the_separation_of_content_and_design.html">The separation of content and design</a></div></li>
+                <li><div><a href="ez_publish_basics/content_and_design/templates.html">Templates</a></div></li>
+                <li><div><a href="ez_publish_basics/content_and_design/storage.html">Storage</a></div></li>
+                </ul></div></li><li><div><a href="ez_publish_basics/content_management_in_ez_publish.html">Content management in eZ publish</a></div></li>
+        <li><div><ul>
+        <li><div><a href="ez_publish_basics/content_management_in_ez_publish/a_note_about_object_oriented_technology.html">A note about object oriented technology</a></div></li>
+                <li><div><a href="ez_publish_basics/content_management_in_ez_publish/the_content_structure.html">The content structure</a></div></li>
+                <li><div><a href="ez_publish_basics/content_management_in_ez_publish/datatypes.html">Datatypes</a></div></li>
+                <li><div><a href="ez_publish_basics/content_management_in_ez_publish/the_content_class.html">The content class</a></div></li>
+                <li><div><a href="ez_publish_basics/content_management_in_ez_publish/the_content_object.html">The content object</a></div></li>
+                <li><div><a href="ez_publish_basics/content_management_in_ez_publish/relation_between_datatypes_classes_and_objects.html">Relation between datatypes, classes and objects</a></div></li>
+                <li><div><a href="ez_publish_basics/content_management_in_ez_publish/content_object_versioning.html">Content object versioning</a></div></li>
+                <li><div><a href="ez_publish_basics/content_management_in_ez_publish/support_for_multiple_languages.html">Support for multiple languages</a></div></li>
+                <li><div><a href="ez_publish_basics/content_management_in_ez_publish/objects_nodes_and_the_content_node_tree.html">Objects, nodes and the content node tree</a></div></li>
+                <li><div><a href="ez_publish_basics/content_management_in_ez_publish/locations.html">Locations</a></div></li>
+                <li><div><a href="ez_publish_basics/content_management_in_ez_publish/sections.html">Sections</a></div></li>
+                </ul></div></li><li><div><a href="ez_publish_basics/site_management_in_ez_publish.html">Site management in eZ publish</a></div></li>
+        <li><div><ul>
+        <li><div><a href="ez_publish_basics/site_management_in_ez_publish/site.html">Site</a></div></li>
+                <li><div><a href="ez_publish_basics/site_management_in_ez_publish/site_interface.html">Site interface</a></div></li>
+                <li><div><a href="ez_publish_basics/site_management_in_ez_publish/site_access.html">Site access</a></div></li>
+                </ul></div></li><li><div><a href="ez_publish_basics/ez_publish_urls.html">eZ publish URLs</a></div></li>
+        <li><div><ul>
+        <li><div><a href="ez_publish_basics/ez_publish_urls/system_urls.html">System URLs</a></div></li>
+                <li><div><a href="ez_publish_basics/ez_publish_urls/virtual_urls.html">Virtual URLs</a></div></li>
+                </ul></div></li><li><div><a href="ez_publish_basics/summary.html">Summary</a></div></li>
+    </ul></div></li></ul>
+</div>
+    <div class="toclist">
+<ul class="linklist">
+<li><div><a href="building_an_ez_publish_site.html">Building an eZ publish site</a></div></li>
+<li><div><ul><li><div><a href="building_an_ez_publish_site/prerequisits.html">Prerequisits</a></div></li>
+    <li><div><a href="building_an_ez_publish_site/situation.html">Situation</a></div></li>
+    <li><div><a href="building_an_ez_publish_site/creating_the_tscm_site.html">Creating the TSCM site</a></div></li>
+    <li><div><a href="building_an_ez_publish_site/testing_the_interfaces.html">Testing the interfaces</a></div></li>
+    <li><div><a href="building_an_ez_publish_site/setting_up_the_main_layout.html">Setting up the main layout</a></div></li>
+        <li><div><ul>
+        <li><div><a href="building_an_ez_publish_site/setting_up_the_main_layout/creating_a_bare_bone_main_template.html">Creating a bare-bone main template</a></div></li>
+                <li><div><a href="building_an_ez_publish_site/setting_up_the_main_layout/creating_and_using_a_custom_style_sheet.html">Creating and using a custom style sheet</a></div></li>
+                <li><div><a href="building_an_ez_publish_site/setting_up_the_main_layout/customizing_the_main_layout.html">Customizing the main layout</a></div></li>
+                </ul></div></li><li><div><a href="building_an_ez_publish_site/creating_sections.html">Creating sections</a></div></li>
+    <li><div><a href="building_an_ez_publish_site/the_welcome_page.html">The welcome page</a></div></li>
+        <li><div><ul>
+        <li><div><a href="building_an_ez_publish_site/the_welcome_page/adding_the_contents_of_the_welcome_page.html">Adding the contents of the welcome page</a></div></li>
+                <li><div><a href="building_an_ez_publish_site/the_welcome_page/setting_the_default_page.html">Setting the default page</a></div></li>
+                <li><div><a href="building_an_ez_publish_site/the_welcome_page/creating_and_using_a_custom_template.html">Creating and using a custom template</a></div></li>
+                </ul></div></li><li><div><a href="building_an_ez_publish_site/the_news_page.html">The news page</a></div></li>
+        <li><div><ul>
+        <li><div><a href="building_an_ez_publish_site/the_news_page/adding_news_articles.html">Adding news articles</a></div></li>
+                <li><div><a href="building_an_ez_publish_site/the_news_page/assigning_the_news_folder_to_the_news_section.html">Assigning the News folder to the News section</a></div></li>
+                <li><div><a href="building_an_ez_publish_site/the_news_page/overview_of_the_latest_news.html">Overview of the latest news</a></div></li>
+                <li><div><a href="building_an_ez_publish_site/the_news_page/full_display_of_an_article.html">Full display of an article</a></div></li>
+                <li><div><a href="building_an_ez_publish_site/the_news_page/news_archive.html">News archive</a></div></li>
+                </ul></div></li><li><div><a href="building_an_ez_publish_site/the_members_page.html">The members page</a></div></li>
+        <li><div><ul>
+        <li><div><a href="building_an_ez_publish_site/the_members_page/creating_a_custom_content_class.html">Creating a custom content class</a></div></li>
+                <li><div><a href="building_an_ez_publish_site/the_members_page/adding_members.html">Adding members</a></div></li>
+                <li><div><a href="building_an_ez_publish_site/the_members_page/list_of_members.html">List of members</a></div></li>
+                <li><div><a href="building_an_ez_publish_site/the_members_page/member_info_page.html">Member info page</a></div></li>
+                </ul></div></li><li><div><a href="building_an_ez_publish_site/the_guestbook.html">The guestbook</a></div></li>
+        <li><div><ul>
+        <li><div><a href="building_an_ez_publish_site/the_guestbook/creating_the_content_class.html">Creating the content class</a></div></li>
+                <li><div><a href="building_an_ez_publish_site/the_guestbook/adding_content.html">Adding content</a></div></li>
+                <li><div><a href="building_an_ez_publish_site/the_guestbook/creating_the_template.html">Creating the template</a></div></li>
+                <li><div><a href="building_an_ez_publish_site/the_guestbook/adding_an_action_button.html">Adding an action button</a></div></li>
+                <li><div><a href="building_an_ez_publish_site/the_guestbook/making_the_button_work.html">Making the button work</a></div></li>
+                <li><div><a href="building_an_ez_publish_site/the_guestbook/the_input_template.html">The input template</a></div></li>
+                <li><div><a href="building_an_ez_publish_site/the_guestbook/testing_the_guestbook.html">Testing the guestbook</a></div></li>
+                <li><div><a href="building_an_ez_publish_site/the_guestbook/implementing_an_approval_mechanism.html">Implementing an approval mechanism</a></div></li>
+                <li><div><a href="building_an_ez_publish_site/the_guestbook/modifying_the_entry_page.html">Modifying the entry page</a></div></li>
+                <li><div><a href="building_an_ez_publish_site/the_guestbook/creating_a_workflow.html">Creating a workflow</a></div></li>
+                <li><div><a href="building_an_ez_publish_site/the_guestbook/connecting_the_workflow_to_a_trigger_function.html">Connecting the workflow to a trigger function</a></div></li>
+                <li><div><a href="building_an_ez_publish_site/the_guestbook/approving_entries.html">Approving entries</a></div></li>
+                <li><div><a href="building_an_ez_publish_site/the_guestbook/the_runcronjob_script.html">The "runcronjob" script</a></div></li>
+                </ul></div></li><li><div><a href="building_an_ez_publish_site/the_links_page.html">The links page</a></div></li>
+        <li><div><ul>
+        <li><div><a href="building_an_ez_publish_site/the_links_page/adding_content.html">Adding content</a></div></li>
+                <li><div><a href="building_an_ez_publish_site/the_links_page/creating_the_template.html">Creating the template</a></div></li>
+                <li><div><a href="building_an_ez_publish_site/the_links_page/displaying_the_subfolders.html">Displaying the sub-folders</a></div></li>
+                <li><div><a href="building_an_ez_publish_site/the_links_page/displaying_the_contents_of_a_folder.html">Displaying the contents of a folder</a></div></li>
+                <li><div><a href="building_an_ez_publish_site/the_links_page/creating_a_tree_style_appearence.html">Creating a tree-style appearence</a></div></li>
+                <li><div><a href="building_an_ez_publish_site/the_links_page/same_content_at_different_locations.html">Same content at different locations</a></div></li>
+                </ul></div></li></ul></div></li></ul>
+</div>
+    <div class="toclist">
+<ul class="linklist">
+<li><div><a href="building_an_ez_publish_shop.html">Building an eZ publish shop</a></div></li>
+<li><div><ul><li><div><a href="building_an_ez_publish_shop/setting_up_the_tscm_layout.html">Setting up the TSCM layout</a></div></li>
+    <li><div><a href="building_an_ez_publish_shop/setting_up_a_simple_shop.html">Setting up a simple shop</a></div></li>
+        <li><div><ul>
+        <li><div><a href="building_an_ez_publish_shop/setting_up_a_simple_shop/adding_a_simple_shop.html">Adding a simple shop</a></div></li>
+                <li><div><a href="building_an_ez_publish_shop/setting_up_a_simple_shop/modifying_the_default_behavior.html">Modifying the default behavior</a></div></li>
+                </ul></div></li><li><div><a href="building_an_ez_publish_shop/extending_the_shop_with_a_paypal_payment_service.html">Extending the shop with a Paypal payment service</a></div></li>
+        <li><div><ul>
+        <li><div><a href="building_an_ez_publish_shop/extending_the_shop_with_a_paypal_payment_service/workflows_and_triggers.html">Workflows and triggers</a></div></li>
+                <li><div><a href="building_an_ez_publish_shop/extending_the_shop_with_a_paypal_payment_service/paypal_payment_service.html">Paypal Payment Service</a></div></li>
+                <li><div><a href="building_an_ez_publish_shop/extending_the_shop_with_a_paypal_payment_service/adding_the_payment_service_to_the_shop.html">Adding the payment service to the shop</a></div></li>
+                <li><div><a href="building_an_ez_publish_shop/extending_the_shop_with_a_paypal_payment_service/testing.html">Testing</a></div></li>
+                </ul></div></li></ul></div></li></ul>
+</div>
+    <div class="toclist">
+<ul class="linklist">
+<li><div><a href="day_to_day_use.html">Day to day use</a></div></li>
+<li><div><ul><li><div><a href="day_to_day_use/the_admin_interface.html">The admin interface</a></div></li>
+    <li><div><a href="day_to_day_use/how_to_create_a_folder.html">How to create a folder</a></div></li>
+    <li><div><a href="day_to_day_use/how_to_add_content_in_a_folder.html">How to add content in a folder</a></div></li>
+    <li><div><a href="day_to_day_use/how_to_add_objects_to_an_article.html">How to add objects to an article</a></div></li>
+    <li><div><a href="day_to_day_use/search_for_content.html">Search for content</a></div></li>
+    <li><div><a href="day_to_day_use/drafts.html">Drafts</a></div></li>
+    <li><div><a href="day_to_day_use/publish_in_several_locations.html">Publish in several locations</a></div></li>
+    <li><div><a href="day_to_day_use/remove_objects.html">Remove objects</a></div></li>
+    <li><div><a href="day_to_day_use/edit_objects.html">Edit objects</a></div></li>
+    <li><div><a href="day_to_day_use/related_objects.html">Related objects</a></div></li>
+    <li><div><a href="day_to_day_use/version_control.html">Version control</a></div></li>
+    <li><div><a href="day_to_day_use/preview_your_content.html">Preview your content</a></div></li>
+    <li><div><a href="day_to_day_use/translate_content.html">Translate content</a></div></li>
+    <li><div><a href="day_to_day_use/sorting_content.html">Sorting content</a></div></li>
+    <li><div><a href="day_to_day_use/discount_rules.html">Discount rules</a></div></li>
+    <li><div><a href="day_to_day_use/vat_types.html">VAT types</a></div></li>
+    <li><div><a href="day_to_day_use/adding_a_class_to_your_vat_types.html">Adding a class to your VAT types</a></div></li>
+    <li><div><a href="day_to_day_use/order_list.html">Order list</a></div></li>
+    <li><div><a href="day_to_day_use/wishlist.html">Wishlist</a></div></li>
+    </ul></div></li></ul>
+</div>
+    <div class="toclist">
+<ul class="linklist">
+<li><div><a href="configuration.html">Configuration</a></div></li>
+<li><div><ul><li><div><a href="configuration/configuration.html">Configuration</a></div></li>
+        <li><div><ul>
+        <li><div><a href="configuration/configuration/webdav_setup.html">WebDAV setup</a></div></li>
+                <li><div><a href="configuration/configuration/ez_publish_running_on_a_cgi_version_of_php.html">eZ publish running on a CGI version of PHP</a></div></li>
+                <li><div><a href="configuration/configuration/path_prefix.html">Path prefix</a></div></li>
+                <li><div><a href="configuration/configuration/locale_settings.html">Locale Settings</a></div></li>
+                <li><div><a href="configuration/configuration/introduction.html">Introduction</a></div></li>
+                <li><div><a href="configuration/configuration/configuration_files.html">Configuration files</a></div></li>
+                <li><div><a href="configuration/configuration/site_access.html">Site access</a></div></li>
+                <li><div><a href="configuration/configuration/common_settings.html">Common settings</a></div></li>
+                <li><div><a href="configuration/configuration/multi_site.html">Multi Site</a></div></li>
+                <li><div><a href="configuration/configuration/directory_structure.html">Directory structure</a></div></li>
+                <li><div><a href="configuration/configuration/language_and_charset.html">Language and charset</a></div></li>
+                <li><div><a href="configuration/configuration/cron_jobs.html">Cron jobs</a></div></li>
+                <li><div><a href="configuration/configuration/login_handler.html">Login handler</a></div></li>
+                <li><div><a href="configuration/configuration/search_engine.html">Search engine</a></div></li>
+                <li><div><a href="configuration/configuration/tips_tricks.html">Tips &amp; Tricks</a></div></li>
+                </ul></div></li><li><div><a href="configuration/security.html">Security</a></div></li>
+        <li><div><ul>
+        <li><div><a href="configuration/security/non_virtualhost.html">Non-Virtualhost</a></div></li>
+                <li><div><a href="configuration/security/discussions.html">Discussions</a></div></li>
+                <li><div><a href="configuration/security/restrictions.html">Restrictions</a></div></li>
+                <li><div><a href="configuration/security/system_security.html">System security</a></div></li>
+                </ul></div></li><li><div><a href="configuration/optimization.html">Optimization</a></div></li>
+        <li><div><ul>
+        <li><div><a href="configuration/optimization/php_acceleration.html">PHP Acceleration</a></div></li>
+                <li><div><a href="configuration/optimization/disabling_the_cache.html">Disabling the cache</a></div></li>
+                <li><div><a href="configuration/optimization/configuration_tuning.html">Configuration tuning</a></div></li>
+                <li><div><a href="configuration/optimization/caching_for_improved_speed.html">Caching for improved speed</a></div></li>
+                <li><div><a href="configuration/optimization/speeding_up_acrobat_pdf_document_indexing_.html">Speeding up acrobat pdf document indexing</a></div></li>
+                </ul></div></li><li><div><a href="configuration/backup_restore.html">Backup &amp; Restore</a></div></li>
+        <li><div><ul>
+        <li><div><a href="configuration/backup_restore/move_to_new_provider.html">Move to new provider</a></div></li>
+                <li><div><a href="configuration/backup_restore/overview.html">Overview</a></div></li>
+                </ul></div></li><li><div><a href="configuration/troubleshooting.html">Troubleshooting</a></div></li>
+        <li><div><ul>
+        <li><div><a href="configuration/troubleshooting/404_page_not_found.html">404 - Page not found</a></div></li>
+                <li><div><a href="configuration/troubleshooting/change_the_right_configuration_file.html">Change the right configuration file</a></div></li>
+                <li><div><a href="configuration/troubleshooting/debug_popup_window_infinite_loops.html">Debug popup window infinite loops</a></div></li>
+                <li><div><a href="configuration/troubleshooting/ez_publish_3_and_apache_2.html">eZ publish 3 and Apache 2</a></div></li>
+                <li><div><a href="configuration/troubleshooting/getting_looped_back_when_logging_in.html">Getting looped back when logging in</a></div></li>
+                <li><div><a href="configuration/troubleshooting/giving_you_back_the_admin_rights.html">Giving you back the admin rights</a></div></li>
+                <li><div><a href="configuration/troubleshooting/i_need_to_reindex_my_site_for_search.html">I need to reindex my site for search.</a></div></li>
+                <li><div><a href="configuration/troubleshooting/images_do_not_work.html">Images do not work</a></div></li>
+                <li><div><a href="configuration/troubleshooting/mixing_up_node_id_and_object_id.html">Mixing up node id and object id</a></div></li>
+                <li><div><a href="configuration/troubleshooting/not_enough_php_memory.html">Not enough PHP memory</a></div></li>
+                <li><div><a href="configuration/troubleshooting/open_basedir_restriction.html">Open_basedir restriction</a></div></li>
+                <li><div><a href="configuration/troubleshooting/permissions_of_cache_files.html">Permissions of cache files</a></div></li>
+                <li><div><a href="configuration/troubleshooting/problems_with_the_translation_function.html">Problems with the translation function</a></div></li>
+                <li><div><a href="configuration/troubleshooting/process_cache_enabled_reduces_performance.html">Process cache enabled reduces performance</a></div></li>
+                <li><div><a href="configuration/troubleshooting/user_site_instead_of_admin_site.html">User site instead of admin site</a></div></li>
+                <li><div><a href="configuration/troubleshooting/warning_failed_to_write_session_data_user_.html">Warning: Failed to write session data (user).</a></div></li>
+                <li><div><a href="configuration/troubleshooting/what_not_to_do_with_ez.html">What not to do with eZ</a></div></li>
+                </ul></div></li></ul></div></li></ul>
+</div>
+    <div class="toclist">
+<ul class="linklist">
+<li><div><a href="customization.html">Customization</a></div></li>
+<li><div><ul><li><div><a href="customization/access_control.html">Access control</a></div></li>
+        <li><div><ul>
+        <li><div><a href="customization/access_control/access_control_management.html">Access control management</a></div></li>
+                <li><div><a href="customization/access_control/limited_role_assignment.html">Limited role assignment</a></div></li>
+                </ul></div></li><li><div><a href="customization/ez_publish_api_documentation.html">eZ publish API Documentation</a></div></li>
+        <li><div><ul>
+        <li><div><a href="customization/ez_publish_api_documentation/module_function_definition_content.html">Module Function Definition: Content</a></div></li>
+                </ul></div></li><li><div><a href="customization/content_structure.html">Content structure</a></div></li>
+        <li><div><ul>
+        <li><div><a href="customization/content_structure/content_classes.html">Content classes</a></div></li>
+                <li><div><a href="customization/content_structure/sitemap.html">Sitemap</a></div></li>
+                </ul></div></li><li><div><a href="customization/custom_design.html">Custom design</a></div></li>
+        <li><div><ul>
+        <li><div><a href="customization/custom_design/user_specified_parameters.html">User specified parameters</a></div></li>
+                <li><div><a href="customization/custom_design/template_variables_set_by_ezpublish.html">Template variables set by ezPublish</a></div></li>
+                <li><div><a href="customization/custom_design/introduction.html">Introduction</a></div></li>
+                <li><div><a href="customization/custom_design/variables_arrays_and_objects.html">Variables, arrays and objects</a></div></li>
+                <li><div><a href="customization/custom_design/node.html">Node</a></div></li>
+                <li><div><a href="customization/custom_design/database_connectivity.html">Database connectivity</a></div></li>
+                <li><div><a href="customization/custom_design/sections.html">Sections</a></div></li>
+                <li><div><a href="customization/custom_design/file_placement.html">File placement</a></div></li>
+                <li><div><a href="customization/custom_design/override_templates.html">Override templates</a></div></li>
+                <li><div><a href="customization/custom_design/node_view_gui.html">node_view_gui</a></div></li>
+                <li><div><a href="customization/custom_design/pagination.html">Pagination</a></div></li>
+                <li><div><a href="customization/custom_design/caching.html">Caching</a></div></li>
+                <li><div><a href="customization/custom_design/stylesheets.html">Stylesheets</a></div></li>
+                <li><div><a href="customization/custom_design/pagelayout.html">Pagelayout</a></div></li>
+                <li><div><a href="customization/custom_design/printable_pages.html">Printable pages</a></div></li>
+                <li><div><a href="customization/custom_design/examples.html">Examples</a></div></li>
+                </ul></div></li><li><div><a href="customization/components.html">Components</a></div></li>
+        <li><div><ul>
+        <li><div><a href="customization/components/images.html">Images</a></div></li>
+                <li><div><a href="customization/components/datatypes.html">Datatypes</a></div></li>
+                <li><div><a href="customization/components/shop.html">Shop</a></div></li>
+                <li><div><a href="customization/components/information_collection.html">Information collection</a></div></li>
+                <li><div><a href="customization/components/search.html">Search</a></div></li>
+                <li><div><a href="customization/components/form_processing.html">Form processing</a></div></li>
+                <li><div><a href="customization/components/error_handling.html">Error handling</a></div></li>
+                <li><div><a href="customization/components/icons.html">Icons</a></div></li>
+                <li><div><a href="customization/components/menus.html">Menus</a></div></li>
+                <li><div><a href="customization/components/toolbars.html">Toolbars</a></div></li>
+                </ul></div></li><li><div><a href="customization/tips_tricks.html">Tips &amp; Tricks</a></div></li>
+        <li><div><ul>
+        <li><div><a href="customization/tips_tricks/debugging_templates.html">Debugging templates</a></div></li>
+                <li><div><a href="customization/tips_tricks/javascript_in_templates.html">Javascript in templates</a></div></li>
+                <li><div><a href="customization/tips_tricks/fetching_current_user.html">Fetching current user</a></div></li>
+                <li><div><a href="customization/tips_tricks/showing_related_objects.html">Showing related objects</a></div></li>
+                <li><div><a href="customization/tips_tricks/show_which_templates_are_used.html">Show which templates are used</a></div></li>
+                <li><div><a href="customization/tips_tricks/fetching_the_id_of_the_parent.html">Fetching the ID of the parent</a></div></li>
+                <li><div><a href="customization/tips_tricks/one_article_folder.html">One Article Folder</a></div></li>
+                <li><div><a href="customization/tips_tricks/creating_tree_menus.html">Creating tree menus</a></div></li>
+                <li><div><a href="customization/tips_tricks/how_can_i_use_my_own_php_script_inside_ezp.html">How can I use my own php script inside eZp?</a></div></li>
+                <li><div><a href="customization/tips_tricks/hiding_attribute_content.html">Hiding attribute content</a></div></li>
+                <li><div><a href="customization/tips_tricks/splitting_an_article_over_several_pages.html">Splitting an article over several pages</a></div></li>
+                <li><div><a href="customization/tips_tricks/accessing_section_id_in_pagelayout.html">Accessing section id in pagelayout</a></div></li>
+                <li><div><a href="customization/tips_tricks/list_articles_in_folder.html">List articles in folder</a></div></li>
+                <li><div><a href="customization/tips_tricks/creating_nice_urls.html">Creating nice URLs</a></div></li>
+                <li><div><a href="customization/tips_tricks/alt_tag_on_images.html">Alt tag on images</a></div></li>
+                <li><div><a href="customization/tips_tricks/improve_the_pagelayouttpl.html">Improve the pagelayout.tpl</a></div></li>
+                <li><div><a href="customization/tips_tricks/clean_html_tags.html">Clean HTML tags</a></div></li>
+                <li><div><a href="customization/tips_tricks/insert_javascript_call_inside_ezpub_document.html">Insert javascript call inside ezpub document</a></div></li>
+                <li><div><a href="customization/tips_tricks/3rd_party_applications.html">3rd party applications</a></div></li>
+                <li><div><a href="customization/tips_tricks/fetch_function_examples.html">Fetch Function examples</a></div></li>
+                <li><div><a href="customization/tips_tricks/display_more_than_15_items_on_your_content_administration_page.html">Display more than 15 items on your content administration page</a></div></li>
+                <li><div><a href="customization/tips_tricks/including_php_files_in_templates.html">Including PHP files in templates</a></div></li>
+                <li><div><a href="customization/tips_tricks/redirecting_after_content_publishing.html">Redirecting after content publishing</a></div></li>
+                <li><div><a href="customization/tips_tricks/howto_see_if_article_has_an_image.html">HowTo see if article has an image</a></div></li>
+                <li><div><a href="customization/tips_tricks/date_and_time_formats.html">Date and Time Formats</a></div></li>
+                <li><div><a href="customization/tips_tricks/forms_processing_example_store_user_data_without_logging_in.html">Forms processing example: store user data without logging in</a></div></li>
+                <li><div><a href="customization/tips_tricks/adjust_timezone.html">Adjust Timezone</a></div></li>
+                <li><div><a href="customization/tips_tricks/adding_a_remove_button_image.html">Adding a Remove Button/Image</a></div></li>
+                <li><div><a href="customization/tips_tricks/find_the_age_in_years_for_an_object.html">Find the age in years for an object</a></div></li>
+                <li><div><a href="customization/tips_tricks/editing_creating_and_removing_content_from_the_user_page.html">Editing, creating and removing content from the user page</a></div></li>
+                <li><div><a href="customization/tips_tricks/indexing_binary_files_with_ifilters_on_windows_installations.html">Indexing binary files with IFilters on Windows installations</a></div></li>
+                </ul></div></li><li><div><a href="customization/troubleshooting.html">Troubleshooting</a></div></li>
+        <li><div><ul>
+        <li><div><a href="customization/troubleshooting/your_changes_not_take_effect_or_new_nodes_not_appearing_.html">Your changes not take effect or new nodes not appearing</a></div></li>
+                <li><div><a href="customization/troubleshooting/new_content_class_not_shown_on_user_site.html">New content class not shown on user site</a></div></li>
+                </ul></div></li></ul></div></li></ul>
+</div>
+    <div class="toclist">
+<ul class="linklist">
+<li><div><a href="development.html">Development</a></div></li>
+<li><div><ul><li><div><a href="development/extensions.html">Extensions</a></div></li>
+        <li><div><ul>
+        <li><div><a href="development/extensions/translation.html">Translation</a></div></li>
+                <li><div><a href="development/extensions/introduction_to_extensions.html">Introduction to extensions</a></div></li>
+                <li><div><a href="development/extensions/building_an_ez_publish_module.html">Building an eZ publish module</a></div></li>
+                <li><div><a href="development/extensions/design_extension.html">Design extension</a></div></li>
+                <li><div><a href="development/extensions/datatypes.html">Datatypes</a></div></li>
+                <li><div><a href="development/extensions/workflow_events.html">Workflow events</a></div></li>
+                <li><div><a href="development/extensions/module.html">Module</a></div></li>
+                <li><div><a href="development/extensions/template_operator.html">Template operator</a></div></li>
+                <li><div><a href="development/extensions/template_function.html">Template function</a></div></li>
+                </ul></div></li><li><div><a href="development/ez_publish_datamodel.html">eZ publish datamodel</a></div></li>
+    <li><div><a href="development/ez_publish_tuning_and_stability.html">eZ publish tuning and stability</a></div></li>
+    <li><div><a href="development/importing_attribute_data.html">Importing attribute data</a></div></li>
+    <li><div><a href="development/kernel.html">Kernel</a></div></li>
+        <li><div><ul>
+        <li><div><a href="development/kernel/executing_php_shell_scripts.html">Executing PHP shell scripts</a></div></li>
+                <li><div><a href="development/kernel/ez_soap_web_services_overview.html">eZ SOAP Web Services Overview</a></div></li>
+                <li><div><a href="development/kernel/deploying_soap_servers_with_ez_publish_3x.html">Deploying SOAP Servers with eZ Publish 3.x</a></div></li>
+                <li><div><a href="development/kernel/custom_template_operators.html">Custom template operators</a></div></li>
+                <li><div><a href="development/kernel/cache_block_optimization.html">Cache block optimization</a></div></li>
+                </ul></div></li><li><div><a href="development/libraries.html">Libraries</a></div></li>
+        <li><div><ul>
+        <li><div><a href="development/libraries/ez_xml.html">eZ xml</a></div></li>
+                <li><div><a href="development/libraries/ez_db.html">eZ db</a></div></li>
+                <li><div><a href="development/libraries/ez_i18n.html">eZ i18n</a></div></li>
+                <li><div><a href="development/libraries/ez_soap.html">eZ soap</a></div></li>
+                <li><div><a href="development/libraries/ez_template.html">eZ template</a></div></li>
+                <li><div><a href="development/libraries/ez_webdav.html">eZ webdav</a></div></li>
+                </ul></div></li><li><div><a href="development/scripting.html">Scripting</a></div></li>
+        <li><div><ul>
+        <li><div><a href="development/scripting/script_classes.html">Script classes</a></div></li>
+                <li><div><a href="development/scripting/supplied_scripts.html">Supplied scripts</a></div></li>
+                <li><div><a href="development/scripting/php_cli.html">PHP CLI</a></div></li>
+                </ul></div></li><li><div><a href="development/standards.html">Standards</a></div></li>
+        <li><div><ul>
+        <li><div><a href="development/standards/php.html">PHP</a></div></li>
+                <li><div><a href="development/standards/sql.html">SQL</a></div></li>
+                <li><div><a href="development/standards/template.html">Template</a></div></li>
+                <li><div><a href="development/standards/user_interface.html">User Interface</a></div></li>
+                </ul></div></li><li><div><a href="development/system_overview.html">System overview</a></div></li>
+    <li><div><a href="development/test_suite.html">Test Suite</a></div></li>
+    <li><div><a href="development/using_doxygen_to_create_api_documentation.html">Using Doxygen to create API documentation</a></div></li>
+    </ul></div></li></ul>
+</div>
+    <div class="toclist">
+<ul class="linklist">
+<li><div><a href="reference.html">Reference</a></div></li>
+<li><div><ul><li><div><a href="reference/database_diagram.html">Database diagram</a></div></li>
+    <li><div><a href="reference/template_operators.html">Template operators</a></div></li>
+        <li><div><ul>
+        <li><div><a href="reference/template_operators/pdf.html">PDF</a></div></li>
+                <li><div><a href="reference/template_operators/arrays.html">Arrays</a></div></li>
+                <li><div><a href="reference/template_operators/data_extraction.html">Data extraction</a></div></li>
+                <li><div><a href="reference/template_operators/formatting.html">Formatting</a></div></li>
+                <li><div><a href="reference/template_operators/images.html">Images</a></div></li>
+                <li><div><a href="reference/template_operators/logic.html">Logic</a></div></li>
+                <li><div><a href="reference/template_operators/mathematics.html">Mathematics</a></div></li>
+                <li><div><a href="reference/template_operators/miscellaneous.html">Miscellaneous</a></div></li>
+                <li><div><a href="reference/template_operators/strings.html">Strings</a></div></li>
+                <li><div><a href="reference/template_operators/urls.html">URLs</a></div></li>
+                <li><div><a href="reference/template_operators/variables.html">Variables</a></div></li>
+                </ul></div></li><li><div><a href="reference/template_functions.html">Template functions</a></div></li>
+        <li><div><ul>
+        <li><div><a href="reference/template_functions/gui.html">GUI</a></div></li>
+                <li><div><a href="reference/template_functions/miscellaneous.html">Miscellaneous</a></div></li>
+                <li><div><a href="reference/template_functions/program_flow.html">Program flow</a></div></li>
+                <li><div><a href="reference/template_functions/variables.html">Variables</a></div></li>
+                </ul></div></li><li><div><a href="reference/data_fetching.html">Data fetching</a></div></li>
+        <li><div><ul>
+        <li><div><a href="reference/data_fetching/class.html">Class</a></div></li>
+                <li><div><a href="reference/data_fetching/content.html">Content</a></div></li>
+                <li><div><a href="reference/data_fetching/collaboration.html">Collaboration</a></div></li>
+                <li><div><a href="reference/data_fetching/layout.html">Layout</a></div></li>
+                <li><div><a href="reference/data_fetching/notification.html">Notification</a></div></li>
+                <li><div><a href="reference/data_fetching/package.html">Package</a></div></li>
+                <li><div><a href="reference/data_fetching/section.html">Section</a></div></li>
+                <li><div><a href="reference/data_fetching/shop.html">Shop</a></div></li>
+                <li><div><a href="reference/data_fetching/url.html">URL</a></div></li>
+                <li><div><a href="reference/data_fetching/user.html">User</a></div></li>
+                </ul></div></li><li><div><a href="reference/modules.html">Modules</a></div></li>
+        <li><div><ul>
+        <li><div><a href="reference/modules/class.html">Class</a></div></li>
+                <li><div><a href="reference/modules/collaboration.html">Collaboration</a></div></li>
+                <li><div><a href="reference/modules/content.html">Content</a></div></li>
+                <li><div><a href="reference/modules/error.html">Error</a></div></li>
+                <li><div><a href="reference/modules/ez_info.html">eZ info</a></div></li>
+                <li><div><a href="reference/modules/form.html">Form</a></div></li>
+                <li><div><a href="reference/modules/layout.html">Layout</a></div></li>
+                <li><div><a href="reference/modules/notification.html">Notification</a></div></li>
+                <li><div><a href="reference/modules/package.html">Package</a></div></li>
+                <li><div><a href="reference/modules/pdf.html">PDF</a></div></li>
+                <li><div><a href="reference/modules/reference.html">Reference</a></div></li>
+                <li><div><a href="reference/modules/role.html">Role</a></div></li>
+                <li><div><a href="reference/modules/rss.html">RSS</a></div></li>
+                <li><div><a href="reference/modules/search.html">Search</a></div></li>
+                <li><div><a href="reference/modules/section.html">Section</a></div></li>
+                <li><div><a href="reference/modules/setup.html">Setup</a></div></li>
+                <li><div><a href="reference/modules/shop.html">Shop</a></div></li>
+                <li><div><a href="reference/modules/trigger.html">Trigger</a></div></li>
+                <li><div><a href="reference/modules/url.html">URL</a></div></li>
+                <li><div><a href="reference/modules/user.html">User</a></div></li>
+                <li><div><a href="reference/modules/workflow.html">Workflow</a></div></li>
+                </ul></div></li><li><div><a href="reference/xml_tags.html">XML tags</a></div></li>
+    </ul></div></li></ul>
+</div>
+    <div class="toclist">
+<ul class="linklist">
+<li><div><a href="incoming.html">Incoming</a></div></li>
+<li><div><ul><li><div><a href="incoming/appendices.html">APPENDICES</a></div></li>
+        <li><div><ul>
+        <li><div><a href="incoming/appendices/appendix_a_ez_publish_libraries.html">Appendix A - eZ publish libraries</a></div></li>
+                <li><div><a href="incoming/appendices/appendix_b_ez_publish_modules.html">Appendix B - eZ publish modules</a></div></li>
+                <li><div><a href="incoming/appendices/appendix_c_ez_publish_datatypes.html">Appendix C - eZ publish datatypes</a></div></li>
+                <li><div><a href="incoming/appendices/appendix_d_ez_publish_content_classes.html">Appendix D - eZ publish content classes</a></div></li>
+                <li><div><a href="incoming/appendices/appendix_e_ez_publish_template_operators.html">Appendix E - eZ publish template operators</a></div></li>
+                <li><div><a href="incoming/appendices/appendix_f_ez_publish_template_functions.html">Appendix F - eZ publish template functions</a></div></li>
+                </ul></div></li><li><div><a href="incoming/design.html">Design</a></div></li>
+        <li><div><ul>
+        <li><div><a href="incoming/design/default_designs.html">Default designs</a></div></li>
+                <li><div><a href="incoming/design/designs_and_siteaccesses.html">Designs and siteaccesses</a></div></li>
+                <li><div><a href="incoming/design/siteaccess_configuration.html">Siteaccess configuration</a></div></li>
+                <li><div><a href="incoming/design/the_design_directory.html">The design directory</a></div></li>
+                </ul></div></li><li><div><a href="incoming/developing_and_improving_ezpublish.html">Developing and Improving eZpublish</a></div></li>
+        <li><div><ul>
+        <li><div><a href="incoming/developing_and_improving_ezpublish/developing_the_community.html">Developing the community</a></div></li>
+                <li><div><a href="incoming/developing_and_improving_ezpublish/making_embedded_objects_inline_elements_instead_of_block_elements.html">Making embedded objects inline elements instead of block elements</a></div></li>
+                </ul></div></li><li><div><a href="incoming/developing_projects.html">Developing projects</a></div></li>
+        <li><div><ul>
+        <li><div><a href="incoming/developing_projects/portals.html">Portals</a></div></li>
+                <li><div><a href="incoming/developing_projects/web_standards.html">Web Standards</a></div></li>
+                <li><div><a href="incoming/developing_projects/online_editor.html">Online Editor</a></div></li>
+                <li><div><a href="incoming/developing_projects/desktop_edition.html">Desktop Edition</a></div></li>
+                <li><div><a href="incoming/developing_projects/packages.html">Packages</a></div></li>
+                <li><div><a href="incoming/developing_projects/flash.html">Flash</a></div></li>
+                <li><div><a href="incoming/developing_projects/pdf.html">PDF</a></div></li>
+                <li><div><a href="incoming/developing_projects/rss.html">RSS</a></div></li>
+                <li><div><a href="incoming/developing_projects/soap.html">Soap</a></div></li>
+                <li><div><a href="incoming/developing_projects/webdav.html">Webdav</a></div></li>
+                <li><div><a href="incoming/developing_projects/extensions.html">Extensions</a></div></li>
+                </ul></div></li><li><div><a href="incoming/ez_publish_development_cycle.html">eZ publish development cycle</a></div></li>
+    <li><div><a href="incoming/ez_publish_site_structure.html">eZ publish site structure</a></div></li>
+        <li><div><ul>
+        <li><div><a href="incoming/ez_publish_site_structure/extension_structure.html">Extension structure</a></div></li>
+                </ul></div></li><li><div><a href="incoming/hide_shopsetup_navigation_tab.html">Hide shop/setup navigation tab</a></div></li>
+    <li><div><a href="incoming/how_does_the_new_menu_system_work.html">How does the new menu system work?</a></div></li>
+    <li><div><a href="incoming/how_to_find_a_node_id_in_the_path_array.html">How to find a node id in the path array</a></div></li>
+    <li><div><a href="incoming/how_to_find_the_parent_and_grandparent_of_an_object.html">How to find the parent and grandparent of an object</a></div></li>
+    <li><div><a href="incoming/how_to_set_cache_expire_time_or_disable_cache_in_template.html">How to set cache expire time or disable cache in template?</a></div></li>
+    <li><div><a href="incoming/http_post_to_url_conversion.html">HTTP Post to URL conversion</a></div></li>
+    <li><div><a href="incoming/image_map.html">Image Map</a></div></li>
+    <li><div><a href="incoming/javascript_popupmenu.html">Javascript popupmenu</a></div></li>
+    <li><div><a href="incoming/line_ending_in_email.html">Line ending in email</a></div></li>
+    <li><div><a href="incoming/list_of_mime_types.html">List of MIME types</a></div></li>
+    <li><div><a href="incoming/managing_development.html">Managing Development</a></div></li>
+        <li><div><ul>
+        <li><div><a href="incoming/managing_development/documentation.html">Documentation</a></div></li>
+                <li><div><a href="incoming/managing_development/groupware.html">Groupware</a></div></li>
+                <li><div><a href="incoming/managing_development/integration.html">Integration</a></div></li>
+                <li><div><a href="incoming/managing_development/testing.html">Testing</a></div></li>
+                <li><div><a href="incoming/managing_development/versioning.html">Versioning</a></div></li>
+                <li><div><a href="incoming/managing_development/other.html">Other</a></div></li>
+                </ul></div></li><li><div><a href="incoming/mysql_server_character_set.html">MySQL Server Character Set</a></div></li>
+    <li><div><a href="incoming/package_format.html">Package format</a></div></li>
+    <li><div><a href="incoming/pdf_export_tutorial.html">PDF export tutorial</a></div></li>
+    <li><div><a href="incoming/persistent_template_variable.html">Persistent template variable</a></div></li>
+    <li><div><a href="incoming/php_and_apache_2.html">PHP and Apache 2</a></div></li>
+    <li><div><a href="incoming/problems_on_mac_os_9_and_mac_os_x.html">Problems on Mac OS 9 and Mac OS X</a></div></li>
+    <li><div><a href="incoming/remove_confirmation_when_discarding_an_object.html">Remove confirmation when discarding an object</a></div></li>
+    <li><div><a href="incoming/session.html">Session</a></div></li>
+    <li><div><a href="incoming/setting_several_variables_in_a_section.html">Setting several variables in a section</a></div></li>
+    <li><div><a href="incoming/setting_up_rss_import.html">Setting up RSS Import</a></div></li>
+    <li><div><a href="incoming/setup_php_for_comandline_usage_php_cli.html">Setup PHP for comandline usage (PHP-Cli).</a></div></li>
+    <li><div><a href="incoming/smart_viewcache_cleaning_system.html">Smart viewcache cleaning system</a></div></li>
+    <li><div><a href="incoming/ssl_with_ez_over_a_ssl_proxy.html">SSL with eZ over a SSL proxy</a></div></li>
+    <li><div><a href="incoming/system_development.html">System development</a></div></li>
+        <li><div><ul>
+        <li><div><a href="incoming/system_development/configuration.html">Configuration</a></div></li>
+                <li><div><a href="incoming/system_development/extensions.html">Extensions</a></div></li>
+                <li><div><a href="incoming/system_development/kernel.html">Kernel</a></div></li>
+                <li><div><a href="incoming/system_development/libraries.html">Libraries</a></div></li>
+                <li><div><a href="incoming/system_development/modules.html">Modules</a></div></li>
+                <li><div><a href="incoming/system_development/other_areas.html">Other areas</a></div></li>
+                </ul></div></li><li><div><a href="incoming/test_document.html">Test document</a></div></li>
+        <li><div><ul>
+        <li><div><a href="incoming/test_document/test_sub_doc.html">Test sub doc</a></div></li>
+                </ul></div></li><li><div><a href="incoming/the_community_server.html">The Community Server</a></div></li>
+        <li><div><ul>
+        <li><div><a href="incoming/the_community_server/bugs.html">Bugs</a></div></li>
+                <li><div><a href="incoming/the_community_server/forums.html">Forums</a></div></li>
+                <li><div><a href="incoming/the_community_server/users.html">Users</a></div></li>
+                <li><div><a href="incoming/the_community_server/help.html">Help</a></div></li>
+                </ul></div></li><li><div><a href="incoming/truetype_font_in_pdf.html">Truetype font in PDF</a></div></li>
+    <li><div><a href="incoming/tutorial_using_user_register.html">Tutorial: Using user/register</a></div></li>
+    <li><div><a href="incoming/user_preferences.html">User preferences</a></div></li>
+    <li><div><a href="incoming/webdav_clients_and_compatiblity.html">WebDAV clients and compatiblity</a></div></li>
+    <li><div><a href="incoming/what_does_something_tag_link_must_have_attribute_href_or_valid_id_need_fix_mean.html">What does "Something: Tag 'link' must have attribute 'href' or valid 'id' (need fix);" mean?</a></div></li>
+    </ul></div></li></ul>
+</div>
+    <div class="toclist">
+<ul class="linklist">
+<li><div><a href="the_template_language.html">The template language</a></div></li>
+<li><div><ul><li><div><a href="the_template_language/template_code.html">Template code</a></div></li>
+    <li><div><a href="the_template_language/curly_bracket_issues.html">Curly bracket issues</a></div></li>
+    <li><div><a href="the_template_language/comments.html">Comments</a></div></li>
+    <li><div><a href="the_template_language/variable_types.html">Variable types</a></div></li>
+        <li><div><ul>
+        <li><div><a href="the_template_language/variable_types/numbers.html">Numbers</a></div></li>
+                <li><div><a href="the_template_language/variable_types/strings.html">Strings</a></div></li>
+                <li><div><a href="the_template_language/variable_types/booleans.html">Booleans</a></div></li>
+                <li><div><a href="the_template_language/variable_types/arrays.html">Arrays</a></div></li>
+                <li><div><a href="the_template_language/variable_types/objects.html">Objects</a></div></li>
+                </ul></div></li></ul></div></li></ul>
+</div>
+    <div class="toclist">
+<ul class="linklist">
+<li><div><a href="obsolete.html">Obsolete</a></div></li>
+<li><div><ul><li><div><a href="obsolete/installation.html">Installation</a></div></li>
+        <li><div><ul>
+        <li><div><a href="obsolete/installation/extensions.html">Extensions</a></div></li>
+                <li><div><a href="obsolete/installation/installers.html">Installers</a></div></li>
+                <li><div><a href="obsolete/installation/manual.html">Manual</a></div></li>
+                <li><div><a href="obsolete/installation/uninstall.html">Uninstall</a></div></li>
+                <li><div><a href="obsolete/installation/wizard.html">Wizard</a></div></li>
+                </ul></div></li><li><div><a href="obsolete/upgrade.html">Upgrade</a></div></li>
+    </ul></div></li></ul>
+</div><hr/>
+
+</div>
+</div>
+</div>
+
+<!-- Main area content: END -->
+
+</div>
+</div>
+
+<!-- Main area: END -->
+
+<hr class="hide"/>
+
+<!-- Footer area: START -->
+<div id="footer-design">
+<div id="page-width6">
+<div id="footer">
+
+<address>Powered by eZ Publish&reg; Content Management System.<br/>
+Copyright &copy;1999 - 2024 7x and 2007 eZ Systems AS (except where otherwise noted). All rights reserved.</address>
+
+</div>
+</div>
+</div>
+<!-- Footer area: END -->
+
+</div>
+<!-- Complete page area: END -->
+
+
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TFEDSZJYH0"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-TFEDSZJYH0');
+</script>
+
+
+</body>
+</html>
+
+<!-- th[eZ] 20050804 --><!--
+     FILE ARCHIVED ON 07:07:27 Dec 24, 2007 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 11:59:15 Oct 31, 2024.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  captures_list: 0.469
+  exclusion.robots: 0.016
+  exclusion.robots.policy: 0.007
+  esindex: 0.009
+  cdx.remote: 11.157
+  LoadShardBlock: 156.328 (3)
+  PetaboxLoader3.datanode: 134.52 (4)
+  PetaboxLoader3.resolve: 103.807 (2)
+  load_resource: 113.972
+-->

@@ -1,0 +1,566 @@
+
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style type="text/css">
+    @import url(https://doc.core.ezpublish.se7enx.com/ezno2005/design/ezno2005/stylesheets/core.css);
+    @import url(https://doc.core.ezpublish.se7enx.com/ezno2005/design/ezno2005/stylesheets/pagelayout.css);
+    @import url(https://doc.core.ezpublish.se7enx.com/ezno2005/design/ezno2005/stylesheets/classes.css);
+    @import url(https://doc.core.ezpublish.se7enx.com/ezno2005/design/ezno2005/stylesheets/monitor.css);
+</style>
+
+<link type="text/css" rel="stylesheet" href="https://web.archive.org/web/20071223022529cs_/http://ez.no/extension/ezno2005/design/ezno2005/stylesheets/print.css" media="print"/>
+
+    <link rel="alternate" title="ez.no News" href="https://web.archive.org/web/20071223022529/http://ez.no/rss/feed/news" type="application/rss+xml"/><link rel="alternate" title="ez.no Developer News" href="/web/20071223022529/http://ez.no/rss/feed/communitynews" type="application/rss+xml"/>
+<link rel="alternate" title="ez.no Developer Articles" href="https://web.archive.org/web/20071223022529/http://ez.no/rss/feed/community_articles" type="application/rss+xml"/>
+<link rel="alternate" title="ez.no Forum" href="https://web.archive.org/web/20071223022529/http://ez.no/rss/feed/forum" type="application/rss+xml"/>
+<link rel="alternate" title="ez.no Contributions" href="https://web.archive.org/web/20071223022529/http://ez.no/rss/feed/contribs" type="application/rss+xml"/>
+<link rel="alternate" title="ez.no Open Funding" href="https://web.archive.org/web/20071223022529/http://ez.no/rss/feed/openfunding_suggestions" type="application/rss+xml"/>
+
+
+<!-- IE conditional comments; for bug fixes for different IE versions -->
+<!--[if IE 5]>     <style type="text/css"> @import url(/extension/ezno2005/design/ezno2005/stylesheets/ie5.css);    </style> <![endif]-->
+<!--[if lte IE 6]> <style type="text/css"> @import url(/extension/ezno2005/design/ezno2005/stylesheets/ie6lte.css); </style> <![endif]-->
+<!--[if gte IE 6]> <style type="text/css"> @import url(/extension/ezno2005/design/ezno2005/stylesheets/ie6gte.css); </style> <![endif]-->
+
+<!-- Load special stylesheet (if necessary) for newer Netscape decendants, Mozilla and Firefox, using the Gecko renderer -->
+<script type="text/javascript"><!-- if ((navigator.userAgent.indexOf("Gecko") != -1)&&(navigator.userAgent.indexOf("KHTML") == -1)) document.write("<style type=\"text/css\">@import url(/extension/ezno2005/design/ezno2005/stylesheets/gecko.css);</style>");--></script>
+                                                                    
+<title>
+            Content object export with ezpm     /         eZ publish 3.4     /         Documentation                    </title>
+<meta http-equiv="Content-Language" content="en-GB"/>
+    <meta name="author" content="eZ Systems"/>
+    <meta name="copyright" content="eZ Systems as"/>
+    <meta name="description" content="eZ Publish is an open source content management system (CMS) and an open source content management framework (CMF)."/>
+    <meta name="keywords" content="cms, publish, e-commerce, content management, development framework"/>
+
+<meta name="MSSmartTagsPreventParsing" content="TRUE"/>
+<meta name="generator" content="eZ Publish"/>
+
+<script type="text/javascript" src="https://doc.core.ezpublish.se7enx.com/ezno2005/design/ezno2005/javascripts/tools.js"></script>
+<script type="text/javascript" src="https://doc.core.ezpublish.se7enx.com/ezno2005/design/ezno2005/javascripts/dropdownmenu.js"></script>
+</head>    <body onload="menuInit();">
+
+<!-- Complete page area: START -->
+<div id="page">
+
+<!-- Header area: START -->
+<div id="header">
+<div id="header-insert">
+
+<!-- User menu area: START -->
+<div id="usermenu">
+
+<div id="page-width1">
+
+<div id="logo">
+<h1><a href="https://doc.core.ezpublish.se7enx.com/"><span class="hide">eZ Systems - The Content Management Ecosystem</span></a></h1>
+</div>
+
+
+
+<p class="hide"><a href="#main">Skip to main content</a></p>
+
+<hr class="hide"/>
+<div id="searchbox">
+<form action="/web/20071223022529/http://ez.no/ezsearchredirect/action" method="get">
+
+<div class="block">
+<div class="element">
+<input id="searchbutton" class="button" type="submit" value="Search"/>
+</div>
+
+<div class="element searchstring">
+    <label for="searchtext" class="hide">Search text:</label>
+    <input id="searchtext" name="SearchText" type="text" size="12"/><br/>
+    
+
+            <div class="section">
+            <label for="searcharea" class="hide">Search area:</label>
+            <select id="searcharea" name="SubTreeArray[]">
+                <option value="2" selected="selected">All ez.no</option>
+                <option value="306">Bug reports</option>
+                <option value="21358">Contributions</option>
+                <option value="documentation">Documentation</option>
+                <option value="308">Forum</option>
+            </select>
+            </div>
+    </div>
+
+</div>
+</form>
+</div>
+
+<hr class="hide"/>
+<h2 class="hide">User menu</h2>
+
+<!-- User menu content: START -->
+<ul>
+            <li><a href="https://web.archive.org/web/20071223022529/http://ez.no/download"><span>Downloads</span></a></li>
+    <li><a href="https://web.archive.org/web/20071223022529/http://ez.no/company/contact"><span>Contact</span></a></li>
+            <li><a href="https://web.archive.org/web/20071223022529/http://ez.no/user/login"><span>Log in</span></a></li>
+        <li><a href="https://web.archive.org/web/20071223022529/http://ez.no/user/register"><span>Register</span></a></li>
+    
+    <li id="language-menu">
+        <a class="highlighted" title="English" href="https://web.archive.org/web/20071223022529/http://ez.no/ezpublish/documentation/ez_publish_3_4/content_object_export_with_ezpm"><img src="/ezno2005/design/ezno2005/images/eng-GB.gif" width="18" height="12" alt="English"/></a>
+        <a title="Deutsch" href="https://web.archive.org/web/20071223022529/http://ez.no/de/ezpublish/documentation/ez_publish_3_4/content_object_export_with_ezpm"><img src="/ezno2005/design/ezno2005/images/ger-DE.gif" width="18" height="12" alt="Deutsch"/></a>
+        <a title="Português" href="https://web.archive.org/web/20071223022529/http://ez.no/br/ezpublish/documentation/ez_publish_3_4/content_object_export_with_ezpm"><img src="/ezno2005/design/ezno2005/images/por-BR.gif" width="18" height="12" alt="Português"/></a>
+        <a title="Français" href="https://web.archive.org/web/20071223022529/http://ez.no/fr/ezpublish/documentation/ez_publish_3_4/content_object_export_with_ezpm"><img src="/ezno2005/design/ezno2005/images/fre-FR.gif" width="18" height="12" alt="Français"/></a>
+        <a title="日本語" href="https://web.archive.org/web/20071223022529/http://ez.no/jp/ezpublish/documentation/ez_publish_3_4/content_object_export_with_ezpm"><img src="/ezno2005/design/ezno2005/images/jpn-JP.gif" width="18" height="12" alt="日本語"/></a>        
+        <a title="中文" href="https://web.archive.org/web/20071223022529/http://ez.no/tw/ezpublish/documentation/ez_publish_3_4/content_object_export_with_ezpm"><img src="/ezno2005/design/ezno2005/images/chi-TW.gif" width="18" height="12" alt="中文"/></a>        
+        <a title="Norsk" href="https://web.archive.org/web/20071223022529/http://ez.no/no/ezpublish/documentation/ez_publish_3_4/content_object_export_with_ezpm"><img src="/ezno2005/design/ezno2005/images/nor-NO.gif" width="18" height="12" alt="Norsk"/></a>        
+    </li>
+</ul>
+<!-- User menu content: END -->
+
+</div>
+
+</div>
+<!-- User menu area: END -->
+
+</div>
+</div>
+<!-- Header area: END --><script type="text/javascript">
+<!--
+var menu = new Array();
+
+menu[0] = ['eZ Publish', '/ezpublish', 'eZ Publish Premium', '/ezpublish/premium', 'eZ Publish Now', '/ezpublish/now', 'eZ Publish On Demand', '/ezpublish/on_demand', 'Proprietary license options', '/products/proprietary_license_options', 'Certified extensions', '/products/certified_extensions', 'eZ Flow', '/ezflow', 'eZ Components', '/ezcomponents', 'eZ Find', '/ezfind', 'eZ Newsletter', '/eznewsletter', 'Expert consulting services', '/products/expert_consulting_services', 'Support', '/products/support'];
+menu[1] = ['Documentation', '/doc', 'Articles', '/community/articles', 'Books', '/store/books', 'Training', '/education/training', 'Certification', '/education/certification'];
+menu[2] = ['Case studies', '/customers/case_studies', 'References', '/customers/references', 'User quotes', '/customers/user_quotes', 'eZ for media', '/customers/ez_for_media'];
+menu[3] = ['Worldwide Partners', '/partner/worldwide_partners', 'eZ Partner program', '/partner/ez_partner_program', 'Knowledge centre', '/partner/knowledge_centre'];
+menu[4] = ['Downloads', '/download', 'Documentation', '/doc', 'News', '/developer/news', 'Developer information', '/developer/developer_information', 'Projects & contributions', '/developer/contribs', 'Forum', '/developer/forum', 'Issue tracker', '/bugs/redirect', 'Open Funding', '/developer/open_funding', 'Security', '/developer/security', 'User groups', '/developer/user_groups'];
+menu[5] = ['Total Product Responsibility from eZ', '/support/total_product_responsibility_from_ez'];
+menu[6] = ['Software solutions', '/store/software', 'Training', '/services/training', 'Certification', '/services/certification', 'Books', '/store/books', 'Services', '/store/services'];
+menu[7] = ['News', '/company/news', 'Media & press', '/company/media_press', 'Events', '/company/events', 'Career', '/company/career', 'eZ Conference & Awards', '/company/ez_conference_awards', 'Board of Directors', '/company/board', 'eZ Crew', '/company/ez_crew', 'Contact', '/company/contact'];
+
+-->
+</script>
+<div id="menuborder">
+
+<!-- Main menu area: START -->
+<div id="menu" onmouseover="menuHover();" onmouseout="tryHideSubMenues();">
+
+<div id="mainmenu" class="float-break">
+<div id="page-width2">
+    <ul id="mainmenulist" class="float-break">
+<li class="current"><a href="https://web.archive.org/web/20071223022529/http://ez.no/products" onmouseover="switchSubMenu( this );">Products &amp; services</a></li>
+<li><a href="https://web.archive.org/web/20071223022529/http://ez.no/education" onmouseover="switchSubMenu( this );">Education</a></li>
+<li><a href="https://web.archive.org/web/20071223022529/http://ez.no/customers" onmouseover="switchSubMenu( this );">Customers</a></li>
+<li><a href="https://web.archive.org/web/20071223022529/http://ez.no/partner" onmouseover="switchSubMenu( this );">Partners</a></li>
+<li><a href="https://web.archive.org/web/20071223022529/http://ez.no/developer" onmouseover="switchSubMenu( this );">Developer</a></li>
+<li><a href="https://web.archive.org/web/20071223022529/http://ez.no/support" onmouseover="switchSubMenu( this );">Support</a></li>
+<li><a href="https://web.archive.org/web/20071223022529/http://ez.no/store" onmouseover="switchSubMenu( this );">Store</a></li>
+<li class="last"><a href="https://web.archive.org/web/20071223022529/http://ez.no/company" onmouseover="switchSubMenu( this );">Company</a></li>
+</ul>
+
+</div>
+</div>
+
+
+<div id="submenu">
+<div id="page-width3">
+    <ul class="float-break">
+                        <li><a href="https://web.archive.org/web/20071223022529/http://ez.no/ezpublish">eZ Publish</a></li>
+                                <li><a href="https://web.archive.org/web/20071223022529/http://ez.no/ezpublish/premium">eZ Publish Premium</a></li>
+                                <li><a href="https://web.archive.org/web/20071223022529/http://ez.no/ezpublish/now">eZ Publish Now</a></li>
+                                <li><a href="https://web.archive.org/web/20071223022529/http://ez.no/ezpublish/on_demand">eZ Publish On Demand</a></li>
+                                <li><a href="https://web.archive.org/web/20071223022529/http://ez.no/products/proprietary_license_options">Proprietary license options</a></li>
+                                <li><a href="https://web.archive.org/web/20071223022529/http://ez.no/products/certified_extensions">Certified extensions</a></li>
+                                <li><a href="https://web.archive.org/web/20071223022529/http://ez.no/ezflow">eZ Flow</a></li>
+                                <li><a href="https://web.archive.org/web/20071223022529/http://ez.no/ezcomponents">eZ Components</a></li>
+                                <li><a href="https://web.archive.org/web/20071223022529/http://ez.no/ezfind">eZ Find</a></li>
+                                <li><a href="https://web.archive.org/web/20071223022529/http://ez.no/eznewsletter">eZ Newsletter</a></li>
+                                <li><a href="https://web.archive.org/web/20071223022529/http://ez.no/products/expert_consulting_services">Expert consulting services</a></li>
+                                <li class="last"><a href="https://web.archive.org/web/20071223022529/http://ez.no/products/support">Support</a></li>
+                </ul>
+</div>
+</div>
+
+<script type="text/javascript"><!--
+    document.getElementById('submenu').style.display = 'none';
+--></script>
+
+</div>
+<!-- Main menu area: END -->
+
+</div>
+
+<hr class="hide"/><!-- Path area: START -->
+<div id="path">
+
+<div id="page-width4">
+<h2 class="hide">Path</h2>
+
+<!-- Path content: START -->
+<p>
+                        <a href="https://web.archive.org/web/20071223022529/http://ez.no/">ez.no</a>
+        
+                        /
+                            <a href="https://web.archive.org/web/20071223022529/http://ez.no/ezpublish">ezpublish</a>
+        
+                        /
+                            <a href="toc.html">documentation</a>
+        
+                        /
+                            <a href="../ez_publish_3_4.html">ez publish 3.4</a>
+        
+                        /
+                            content object export with ezpm
+        
+            </p>
+<!-- Path content: END -->
+
+</div>
+
+</div>
+<!-- Path area: END -->
+
+<hr class="hide"/>
+
+<!-- Main area: START -->
+
+<div id="page-width5">
+<div id="main" class="float-break">
+
+<!-- Main area content: START -->
+
+
+
+
+<div class="template-design area-main-normal">
+<div class="template-module content-view-full">
+<div class="template-object class-documentation">
+
+
+<div class="attribute-heading">
+    <h1>Content object export with ezpm</h1>
+</div>
+
+<p><strong>These documentation pages are no longer maintained. Please visit the <a href="https://doc.ezpublishlegacy.se7enx.com">new documentation site.</a></strong></p>
+
+<div class="attribute-long">
+    
+
+<a name="eztoc153857_1" id="eztoc153857_1"></a><h2>Introduction</h2>
+<p>
+
+From <i>3.4</i> it will be possible to export content objects using the package system. You can do this with the command line version of the package manager (called ezpm).<br/>The basics of doing this is first creating a new package, adding your objects or subtrees to the package then exporting it to a file. This file can later on be imported to another site.
+</p>
+
+<a name="eztoc153857_2" id="eztoc153857_2"></a><h2>Syntax</h2>
+<p>
+ezpm.php add <i>package</i> contentobject <b>[options]</b><b>[path|node]</b>
+</p>
+
+<a name="eztoc153857_3" id="eztoc153857_3"></a><h2>Options</h2>
+<ul>
+
+<li>
+--include-classes<br/> Include class definitions in package (default)</li>
+
+<li>
+--include-templates<br/> Include related template files in package (default)</li>
+
+<li>
+--exclude-classes<br/> Do not include class definitions in package</li>
+
+<li>
+--exclude-templates<br/> Do not include related template files in package</li>
+
+<li>
+--language<br/>
+ Comma separated list of languages to export.<br/> If not supplied the value is taken from settings.</li>
+
+<li>
+--current-version<br/> Export only the published version for all objects. (default)</li>
+
+<li>
+--all-versions<br/> Export all versions for all objects.</li>
+
+<li>
+--node-main<br/> Export only main node for all objects. (default)</li>
+
+<li>
+--node-selected<br/> Export all nodes for all objects.</li>
+
+<li>
+--siteaccess<br/>
+ Comma separated list of siteaccess to get definitions from, determines template override data and designs.<br/> If not supplied the value is taken from default siteaccess.</li>
+
+</ul>
+
+<a name="eztoc153857_4" id="eztoc153857_4"></a><h2>Path syntax</h2>
+<p>
+
+The path is chosen in the same manner as the URL alias which is shown in the path in the browser. If you want to export all objects under the node you must add <i>/*</i> to the end of the path<br/>
+e.g. <i>news/this_is_news</i>, <i>news</i> or <i>news/*</i><br/>Note: To fetch the entire tree including users and media you must use an empty string, e.g. <i>''</i>
+</p>
+
+<a name="eztoc153857_5" id="eztoc153857_5"></a><h2>Node syntax</h2>
+<p>
+
+The node is simply the node ID which is a integer number.<br/>e.g. <i>2</i>, <i>5</i> or <i>42</i>
+</p>
+
+<a name="eztoc153857_6" id="eztoc153857_6"></a><h2>Examples</h2>
+<p>
+A couple of examples, all uses <i>forum</i> as package.
+</p>
+
+<a name="eztoc153857_6_1" id="eztoc153857_6_1"></a><h3>All objects in forum</h3>    <pre class="wordwrap">
+<span class="line">ezpm.php add forum contentobject 'forum/*'</span></pre>
+    
+<a name="eztoc153857_6_2" id="eztoc153857_6_2"></a><h3>All versions and objects in forum</h3>    <pre class="wordwrap">
+<span class="line">ezpm.php add forum contentobject --all-versions 'forum/*'</span></pre>
+    
+<a name="eztoc153857_6_3" id="eztoc153857_6_3"></a><h3>All objects in forum, but no templates</h3>    <pre class="wordwrap">
+<span class="line">ezpm.php add forum contentobject --exclude-templates 'forum/*'</span></pre>
+    </div>
+
+
+<div class="content-view-children">
+<div class="class-comment">
+    <h1 id="comments">Comments</h1>
+
+
+        
+
+<div class="content-view-line">
+<div class="class-comment bglight">
+
+    
+    <div id="msg55079" class="attribute-heading">
+        <h2>Other ezpm commands</h2>
+    </div>
+
+<div class="attribute-byline float-break">
+    <p class="author">Kim Marshall</p>
+    <p class="date">Thursday 15 July 2004 8:11:57 am</p>
+</div>
+
+
+<div class="attribute-short">
+            <b>create:</b> Create a new package.<br/>
+usage: create NAME [SUMMARY [VERSION [INSTALLTYPE]]] [PARAMETERS]<br/>
+<br/>
+SUMMARY:     A short summary of your package<br/>
+VERSION:     The version of your package, default is 1.0<br/>
+INSTALLTYPE: Use install (default) for a package that installs files or<br/>
+             import for a package that can only be imported.<br/>
+Parameters:<br/>
+<br/>
+<b>install:</b> Install an eZ publish package.<br/>
+usage: install PACKAGE<br/>
+<br/>
+PACKAGE can be specified with just the name of the of package or<br/>
+the filename of the package. If just the name is used the package<br/>
+will be looked for by appending .ezpkg<br/>
+<br/>
+<b>import:</b> Import an eZ publish package.<br/>
+usage: import PACKAGE<br/>
+<br/>
+PACKAGE can be specified with just the name of the of package or<br/>
+the filename of the package. If just the name is used the package<br/>
+will be looked for by appending .ezpkg<br/>
+<br/>
+<b>export:</b> Export a part of the eZ publish installation into a package.<br/>
+usage: export TYPE [PARAMETERS]... [TYPE [PARAMETERS]...]...<br/>
+<br/>
+Options:<br/>
+  -o,--output FILE   export to file<br/>
+<br/>
+<b>add:</b> Adds an eZ publish item to the package.<br/>
+usage: add PACKAGE ITEM [ITEMPARAMETERS]...<br/>
+<br/>
+Items:<br/>
+  group: Add categorization groups<br/>
+  ezcontentclass: Add contentclass definitions<br/>
+Note: Will open up a new release if no open releases exists yet.<br/>
+<br/>
+<b>set</b>: Sets an attribute in the package.<br/>
+usage: set PACKAGE ATTRIBUTE ATTRIBUTEVALUE<br/>
+<br/>
+Attributes:<br/>
+  summary     :<br/>
+  description :<br/>
+  vendor      :<br/>
+  priority    :<br/>
+  type        :<br/>
+  extension   :<br/>
+  source      :<br/>
+  version     :<br/>
+  licence     :<br/>
+  state       :<br/>
+Note: Will open up a new release if no open releases exists yet.<br/>
+<br/>
+<b>list (ls):</b> Lists all packages in the repository.<br/>
+usage: list<br/>
+<br/>
+<b>info:</b> Displays information on a given package.<br/>
+usage: info PACKAGE<br/>
+<br/>
+
+
+    </div>
+
+
+</div>
+</div>
+
+
+ 
+
+
+</div>
+</div>
+
+<div class="block float-break">
+            <form method="post" action="/web/20071223022529/http://ez.no/content/action">
+            <input class="button" type="submit" name="NewButton" value="New comment"/>
+            <input type="hidden" name="RedirectURIAfterPublish" value="ezpublish/documentation/ez_publish_3_4/content_object_export_with_ezpm#comments"/>
+            <input type="hidden" name="NodeID" value="50823"/>
+                           <input type="hidden" name="ClassIdentifier" value="article_comment"/>
+                        <input type="hidden" name="ContentLanguageCode" value="eng-GB"/>
+        </form>
+    </div>
+
+</div>
+</div>
+</div>
+
+
+<div class="template-design area-sidebar-normal">
+<div class="template-module content-view-sidebar">
+<div class="template-object class-documentation">
+
+<div class="attribute-heading">
+    <h2 class="bullet">Contents</h2>
+</div>
+<h3><a href="../ez_publish_3_4.html">ez publish 3.4</a></h3>
+<p>
+        
+        
+            
+                    <a href="content_object_export_with_ezpm.html"><b>Content object export with ezpm</b></a><br/>
+          
+	
+            
+                    <a href="content_object_import_and_export.html">Content object import and export</a><br/>
+          
+	
+            
+                    <a href="ini_settings_module.html">Ini settings module</a><br/>
+          
+	
+            
+                    <a href="using_look_and_feel_to_configure_your_site.html">Using 'look and feel' to configure yo...</a><br/>
+          
+	
+            
+                    <a href="using_settings_object_to_change_ini_settings.html">Using 'Settings' object to change ini...</a><br/>
+          
+	
+            
+                    <a href="using_database_schema_checker.html">Using database schema checker</a><br/>
+          
+	
+            
+                    <a href="using_file_consistency_check.html">Using file consistency check</a><br/>
+          
+	
+        </p>
+
+
+<hr class="docsplit"/>
+<h3>Created</h3>
+<p>
+13/05/2004<br/>
+4:10:16 pm<br/>
+by Jan Borsodi
+</p>
+<h3>Last updated</h3>
+<p>
+22/06/2004<br/>
+11:15:38 am<br/>
+by Kåre  Køhler Høvik
+</p>
+<h3>Authors</h3>
+<p class="rendered">Jan Borsodi<br/>Kåre  Køhler Høvik<br/></p>
+
+<br/>
+<hr class="docsplit"/>
+
+<p>This page is part of the eZ Publish documentation. The documentation is available under the <a href="https://web.archive.org/web/20071223022529/http://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License.</a> All contributions will be released under the terms of this license.</p>
+
+</div>
+</div>
+</div>
+
+
+
+
+
+<!-- Main area content: END -->
+
+</div>
+</div>
+
+<!-- Main area: END -->
+
+<hr class="hide"/>
+
+<!-- Footer area: START -->
+<div id="footer-design">
+<div id="page-width6">
+<div id="footer">
+
+<address>Powered by eZ Publish&reg; Content Management System.<br/>
+Copyright &copy;1999 - 2024 7x and 2007 eZ Systems AS (except where otherwise noted). All rights reserved.</address>
+
+</div>
+</div>
+</div>
+<!-- Footer area: END -->
+
+</div>
+<!-- Complete page area: END -->
+
+
+    
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TFEDSZJYH0"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-TFEDSZJYH0');
+</script>
+
+
+</body>
+</html>
+
+<!-- th[eZ] 20050804 --><!--
+     FILE ARCHIVED ON 02:25:29 Dec 23, 2007 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 11:16:49 Oct 31, 2024.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  captures_list: 0.43
+  exclusion.robots: 0.018
+  exclusion.robots.policy: 0.011
+  esindex: 0.009
+  cdx.remote: 6.541
+  LoadShardBlock: 87.534 (3)
+  PetaboxLoader3.datanode: 107.348 (4)
+  load_resource: 80.611
+  PetaboxLoader3.resolve: 44.986
+-->

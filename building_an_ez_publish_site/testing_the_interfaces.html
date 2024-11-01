@@ -1,0 +1,911 @@
+
+
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style type="text/css">
+    @import url(https://doc.core.ezpublish.se7enx.com/ezno2005/design/ezno2005/stylesheets/core.css);
+    @import url(https://doc.core.ezpublish.se7enx.com/ezno2005/design/ezno2005/stylesheets/pagelayout.css);
+    @import url(https://doc.core.ezpublish.se7enx.com/ezno2005/design/ezno2005/stylesheets/classes.css);
+    @import url(https://doc.core.ezpublish.se7enx.com/ezno2005/design/ezno2005/stylesheets/monitor.css);
+</style>
+
+<link type="text/css" rel="stylesheet" href="https://web.archive.org/web/20071223174549cs_/http://ez.no/extension/ezno2005/design/ezno2005/stylesheets/print.css" media="print"/>
+
+    <link rel="alternate" title="ez.no News" href="https://web.archive.org/web/20071223174549/http://ez.no/rss/feed/news" type="application/rss+xml"/><link rel="alternate" title="ez.no Developer News" href="/web/20071223174549/http://ez.no/rss/feed/communitynews" type="application/rss+xml"/>
+<link rel="alternate" title="ez.no Developer Articles" href="https://web.archive.org/web/20071223174549/http://ez.no/rss/feed/community_articles" type="application/rss+xml"/>
+<link rel="alternate" title="ez.no Forum" href="https://web.archive.org/web/20071223174549/http://ez.no/rss/feed/forum" type="application/rss+xml"/>
+<link rel="alternate" title="ez.no Contributions" href="https://web.archive.org/web/20071223174549/http://ez.no/rss/feed/contribs" type="application/rss+xml"/>
+<link rel="alternate" title="ez.no Open Funding" href="https://web.archive.org/web/20071223174549/http://ez.no/rss/feed/openfunding_suggestions" type="application/rss+xml"/>
+
+
+<!-- IE conditional comments; for bug fixes for different IE versions -->
+<!--[if IE 5]>     <style type="text/css"> @import url(/extension/ezno2005/design/ezno2005/stylesheets/ie5.css);    </style> <![endif]-->
+<!--[if lte IE 6]> <style type="text/css"> @import url(/extension/ezno2005/design/ezno2005/stylesheets/ie6lte.css); </style> <![endif]-->
+<!--[if gte IE 6]> <style type="text/css"> @import url(/extension/ezno2005/design/ezno2005/stylesheets/ie6gte.css); </style> <![endif]-->
+
+<!-- Load special stylesheet (if necessary) for newer Netscape decendants, Mozilla and Firefox, using the Gecko renderer -->
+<script type="text/javascript"><!-- if ((navigator.userAgent.indexOf("Gecko") != -1)&&(navigator.userAgent.indexOf("KHTML") == -1)) document.write("<style type=\"text/css\">@import url(/extension/ezno2005/design/ezno2005/stylesheets/gecko.css);</style>");--></script>
+                                                                    
+<title>
+            Testing the interfaces     /         Building an eZ publish site     /         Documentation                    </title>
+<meta http-equiv="Content-Language" content="en-GB"/>
+    <meta name="author" content="eZ Systems"/>
+    <meta name="copyright" content="eZ Systems as"/>
+    <meta name="description" content="eZ Publish is an open source content management system (CMS) and an open source content management framework (CMF)."/>
+    <meta name="keywords" content="cms, publish, e-commerce, content management, development framework"/>
+
+<meta name="MSSmartTagsPreventParsing" content="TRUE"/>
+<meta name="generator" content="eZ Publish"/>
+
+<script type="text/javascript" src="/web/20071223174549js_/http://ez.no/extension/ezno2005/design/ezno2005/javascripts/tools.js"></script>
+<script type="text/javascript" src="https://doc.core.ezpublish.se7enx.com/ezno2005/design/ezno2005/javascripts/dropdownmenu.js"></script>
+</head>    <body onload="menuInit();">
+
+<!-- Complete page area: START -->
+<div id="page">
+
+<!-- Header area: START -->
+<div id="header">
+<div id="header-insert">
+
+<!-- User menu area: START -->
+<div id="usermenu">
+
+<div id="page-width1">
+
+<div id="logo">
+<h1><a href="https://doc.core.ezpublish.se7enx.com/"><span class="hide">eZ Systems - The Content Management Ecosystem</span></a></h1>
+</div>
+
+
+
+<p class="hide"><a href="#main">Skip to main content</a></p>
+
+<hr class="hide"/>
+<div id="searchbox">
+<form action="/web/20071223174549/http://ez.no/ezsearchredirect/action" method="get">
+
+<div class="block">
+<div class="element">
+<input id="searchbutton" class="button" type="submit" value="Search"/>
+</div>
+
+<div class="element searchstring">
+    <label for="searchtext" class="hide">Search text:</label>
+    <input id="searchtext" name="SearchText" type="text" size="12"/><br/>
+    
+
+            <div class="section">
+            <label for="searcharea" class="hide">Search area:</label>
+            <select id="searcharea" name="SubTreeArray[]">
+                <option value="2" selected="selected">All ez.no</option>
+                <option value="306">Bug reports</option>
+                <option value="21358">Contributions</option>
+                <option value="documentation">Documentation</option>
+                <option value="308">Forum</option>
+            </select>
+            </div>
+    </div>
+
+</div>
+</form>
+</div>
+
+<hr class="hide"/>
+<h2 class="hide">User menu</h2>
+
+<!-- User menu content: START -->
+<ul>
+            <li><a href="https://web.archive.org/web/20071224070727/http://ez.no/download"><span>Downloads</span></a></li>
+    <li><a href="https://web.archive.org/web/20071224070727/http://ez.no/company/contact"><span>Contact</span></a></li>
+            <li><a href="https://web.archive.org/web/20071224070727/http://ez.no/user/login"><span>Log in</span></a></li>
+        <li><a href="https://web.archive.org/web/20071224070727/http://ez.no/user/register"><span>Register</span></a></li>
+    
+    <li id="language-menu">
+        <a class="highlighted" title="English" href="https://web.archive.org/web/20071223174549/http://ez.no/ezpublish/documentation/building_an_ez_publish_site/testing_the_interfaces"><img src="/web/20071223174549im_/http://ez.no/extension/ezno2005/design/ezno2005/images/eng-GB.gif" width="18" height="12" alt="English"/></a>
+        <a title="Deutsch" href="https://web.archive.org/web/20071223174549/http://ez.no/de/ezpublish/documentation/building_an_ez_publish_site/testing_the_interfaces"><img src="/web/20071223174549im_/http://ez.no/extension/ezno2005/design/ezno2005/images/ger-DE.gif" width="18" height="12" alt="Deutsch"/></a>
+        <a title="Português" href="https://web.archive.org/web/20071223174549/http://ez.no/br/ezpublish/documentation/building_an_ez_publish_site/testing_the_interfaces"><img src="/web/20071223174549im_/http://ez.no/extension/ezno2005/design/ezno2005/images/por-BR.gif" width="18" height="12" alt="Português"/></a>
+        <a title="Français" href="https://web.archive.org/web/20071223174549/http://ez.no/fr/ezpublish/documentation/building_an_ez_publish_site/testing_the_interfaces"><img src="/web/20071223174549im_/http://ez.no/extension/ezno2005/design/ezno2005/images/fre-FR.gif" width="18" height="12" alt="Français"/></a>
+        <a title="日本語" href="https://web.archive.org/web/20071223174549/http://ez.no/jp/ezpublish/documentation/building_an_ez_publish_site/testing_the_interfaces"><img src="/web/20071223174549im_/http://ez.no/extension/ezno2005/design/ezno2005/images/jpn-JP.gif" width="18" height="12" alt="日本語"/></a>        
+        <a title="中文" href="https://web.archive.org/web/20071223174549/http://ez.no/tw/ezpublish/documentation/building_an_ez_publish_site/testing_the_interfaces"><img src="/web/20071223174549im_/http://ez.no/extension/ezno2005/design/ezno2005/images/chi-TW.gif" width="18" height="12" alt="中文"/></a>        
+        <a title="Norsk" href="https://web.archive.org/web/20071223174549/http://ez.no/no/ezpublish/documentation/building_an_ez_publish_site/testing_the_interfaces"><img src="/web/20071223174549im_/http://ez.no/extension/ezno2005/design/ezno2005/images/nor-NO.gif" width="18" height="12" alt="Norsk"/></a>        
+    </li>
+</ul>
+<!-- User menu content: END -->
+
+</div>
+
+</div>
+<!-- User menu area: END -->
+
+</div>
+</div>
+<!-- Header area: END --><script type="text/javascript">
+<!--
+var menu = new Array();
+
+menu[0] = ['eZ Publish', '/ezpublish', 'eZ Publish Premium', '/ezpublish/premium', 'eZ Publish Now', '/ezpublish/now', 'eZ Publish On Demand', '/ezpublish/on_demand', 'Proprietary license options', '/products/proprietary_license_options', 'Certified extensions', '/products/certified_extensions', 'eZ Flow', '/ezflow', 'eZ Components', '/ezcomponents', 'eZ Find', '/ezfind', 'eZ Newsletter', '/eznewsletter', 'Expert consulting services', '/products/expert_consulting_services', 'Support', '/products/support'];
+menu[1] = ['Documentation', '/doc', 'Articles', '/community/articles', 'Books', '/store/books', 'Training', '/education/training', 'Certification', '/education/certification'];
+menu[2] = ['Case studies', '/customers/case_studies', 'References', '/customers/references', 'User quotes', '/customers/user_quotes', 'eZ for media', '/customers/ez_for_media'];
+menu[3] = ['Worldwide Partners', '/partner/worldwide_partners', 'eZ Partner program', '/partner/ez_partner_program', 'Knowledge centre', '/partner/knowledge_centre'];
+menu[4] = ['Downloads', '/download', 'Documentation', '/doc', 'News', '/developer/news', 'Developer information', '/developer/developer_information', 'Projects & contributions', '/developer/contribs', 'Forum', '/developer/forum', 'Issue tracker', '/bugs/redirect', 'Open Funding', '/developer/open_funding', 'Security', '/developer/security', 'User groups', '/developer/user_groups'];
+menu[5] = ['Total Product Responsibility from eZ', '/support/total_product_responsibility_from_ez'];
+menu[6] = ['Software solutions', '/store/software', 'Training', '/services/training', 'Certification', '/services/certification', 'Books', '/store/books', 'Services', '/store/services'];
+menu[7] = ['News', '/company/news', 'Media & press', '/company/media_press', 'Events', '/company/events', 'Career', '/company/career', 'eZ Conference & Awards', '/company/ez_conference_awards', 'Board of Directors', '/company/board', 'eZ Crew', '/company/ez_crew', 'Contact', '/company/contact'];
+
+-->
+</script>
+<div id="menuborder">
+
+<!-- Main menu area: START -->
+<div id="menu" onmouseover="menuHover();" onmouseout="tryHideSubMenues();">
+
+<div id="mainmenu" class="float-break">
+<div id="page-width2">
+    <ul id="mainmenulist" class="float-break">
+<li class="current"><a href="https://web.archive.org/web/20071224070727/http://ez.no/products" onmouseover="switchSubMenu( this );">Products &amp; services</a></li>
+<li><a href="https://web.archive.org/web/20071224070727/http://ez.no/education" onmouseover="switchSubMenu( this );">Education</a></li>
+<li><a href="https://web.archive.org/web/20071224070727/http://ez.no/customers" onmouseover="switchSubMenu( this );">Customers</a></li>
+<li><a href="https://web.archive.org/web/20071224070727/http://ez.no/partner" onmouseover="switchSubMenu( this );">Partners</a></li>
+<li><a href="https://web.archive.org/web/20071224070727/http://ez.no/developer" onmouseover="switchSubMenu( this );">Developer</a></li>
+<li><a href="https://web.archive.org/web/20071224070727/http://ez.no/support" onmouseover="switchSubMenu( this );">Support</a></li>
+<li><a href="https://web.archive.org/web/20071224070727/http://ez.no/store" onmouseover="switchSubMenu( this );">Store</a></li>
+<li class="last"><a href="https://web.archive.org/web/20071224070727/http://ez.no/company" onmouseover="switchSubMenu( this );">Company</a></li>
+</ul>
+
+</div>
+</div>
+
+
+<div id="submenu">
+<div id="page-width3">
+    <ul class="float-break">
+                        <li><a href="https://web.archive.org/web/20071224070727/http://ez.no/ezpublish">eZ Publish</a></li>
+                                <li><a href="https://web.archive.org/web/20071224070727/http://ez.no/ezpublish/premium">eZ Publish Premium</a></li>
+                                <li><a href="https://web.archive.org/web/20071224070727/http://ez.no/ezpublish/now">eZ Publish Now</a></li>
+                                <li><a href="https://web.archive.org/web/20071224070727/http://ez.no/ezpublish/on_demand">eZ Publish On Demand</a></li>
+                                <li><a href="https://web.archive.org/web/20071224070727/http://ez.no/products/proprietary_license_options">Proprietary license options</a></li>
+                                <li><a href="https://web.archive.org/web/20071224070727/http://ez.no/products/certified_extensions">Certified extensions</a></li>
+                                <li><a href="https://web.archive.org/web/20071224070727/http://ez.no/ezflow">eZ Flow</a></li>
+                                <li><a href="https://web.archive.org/web/20071224070727/http://ez.no/ezcomponents">eZ Components</a></li>
+                                <li><a href="https://web.archive.org/web/20071224070727/http://ez.no/ezfind">eZ Find</a></li>
+                                <li><a href="https://web.archive.org/web/20071224070727/http://ez.no/eznewsletter">eZ Newsletter</a></li>
+                                <li><a href="https://web.archive.org/web/20071224070727/http://ez.no/products/expert_consulting_services">Expert consulting services</a></li>
+                                <li class="last"><a href="https://web.archive.org/web/20071224070727/http://ez.no/products/support">Support</a></li>
+                </ul>
+</div>
+</div>
+
+<script type="text/javascript"><!--
+    document.getElementById('submenu').style.display = 'none';
+--></script>
+
+</div>
+<!-- Main menu area: END -->
+
+</div>
+
+<hr class="hide"/><!-- Path area: START -->
+<div id="path">
+
+<div id="page-width4">
+<h2 class="hide">Path</h2>
+
+<!-- Path content: START -->
+<p>
+                        <a href="https://web.archive.org/web/20071224070727/http://ez.no/">ez.no</a>
+        
+                        /
+                            <a href="https://web.archive.org/web/20071224070727/http://ez.no/ezpublish">ezpublish</a>
+        
+                        /
+                            <a href="https://doc.core.ezpublish.se7enx.com/toc.html">documentation</a>
+        
+                        /
+                            <a href="building_an_ez_publish_site.html">building an ez publish site</a>
+        
+                        /
+                            testing the interfaces
+        
+            </p>
+<!-- Path content: END -->
+
+</div>
+
+</div>
+<!-- Path area: END -->
+
+<hr class="hide"/>
+
+<!-- Main area: START -->
+
+<div id="page-width5">
+<div id="main" class="float-break">
+
+<!-- Main area content: START -->
+
+
+
+
+<div class="template-design area-main-normal">
+<div class="template-module content-view-full">
+<div class="template-object class-documentation">
+
+
+<div class="attribute-heading">
+    <h1>Testing the interfaces</h1>
+</div>
+
+<p><strong>These documentation pages are no longer maintained. Please visit the <a href="https://doc.ezpublishlegacy.se7enx.com">new documentation site.</a></strong></p>
+
+<div class="attribute-long">
+    
+
+<p>
+In this section we test the public interface first. Hereafter we will take a closer look at the administration interface.
+</p>
+
+<a name="eztoc102735_1" id="eztoc102735_1"></a><h2>Testing the public interface</h2>
+<p>
+
+You should be able to reach the public interface by the following URL:<br/>http://[www.example.com/path]/index.php/tscm (of course you have to replace the part between square brackets.)
+</p>
+
+<p>
+The site should popup, which is presented in the following screenshot:
+</p>
+                            <div class="object-center">
+        <div class="content-view-embeddedmedia">
+    <div class="class-image">
+
+    <div class="attribute-image">
+                                                                                  
+
+    
+        
+    
+    <a href="https://web.archive.org/web/20071224070727/http://ez.no/var/ezno/storage/images-versioned/240640/1-eng-GB/tscm_first_timepng1_large.png" width="397" height="268" border="0" alt="" title=""/></a>
+    
+    
+            </div>
+        </div>
+</div>
+
+    </div>
+
+
+
+<p>
+eZ publish will look for the templates in the design directory. Because the &quot;design/tscm&quot; directories are empty, the system falls back to the default templates. These templates are stored in the &quot;design/standard&quot; directory.
+</p>
+
+<a name="eztoc102735_2" id="eztoc102735_2"></a><h2>Testing the administration interface</h2>
+<p>
+
+The administration interface can be reached by the following URL:<br/>http://[www.example.com/path]/index.php/tscm_admin
+</p>
+
+<p>
+The login interface will appear. Type here the eZ publish administrator username and password combination:
+</p>
+
+<p>
+
+username: admin<br/>password: specified during the installation.
+</p>
+
+<p>
+After a successful login, your browser should display a page that looks like the following figure:
+</p>
+                            <div class="object-center">
+        <div class="content-view-embeddedmedia">
+    <div class="class-image">
+
+    <div class="attribute-image">
+                                                                                  
+
+    
+        
+    
+    <a href="https://web.archive.org/web/20071224070727/http://ez.no/var/ezno/storage/images-versioned/240643/1-eng-GB/tscm_admin_content_structurepng1_large.png" width="390" height="268" border="0" alt="" title=""/></a>
+    
+    
+            </div>
+        </div>
+</div>
+
+    </div>
+
+
+
+<p>
+This is the standard administration page. What you're looking at is the root folder of the TSCM site. Because we did not create any content, the root folder is completely emtpy.
+</p>
+
+<p>
+The administration interface will not be discussed in detail. However, throughout this tutorial you will learn how to use some its most important features. The point of this exercise was to bring up the interface and log in. To minimize hassle, simply stay logged in (you'll need to use the administration interface frequently). For a walkthrough of the interface itself, please refer to <a href="https://web.archive.org/web/20071223174549/http://ez.no/ez_publish/documentation/day_to_day_use/the_admin_interface">&quot;The Administration Interface&quot;</a> chapter.
+</p>
+</div>
+
+
+<div class="content-view-children">
+<div class="class-comment">
+    <h1 id="comments">Comments</h1>    <div class="block float-break">
+              <form method="post" action="/web/20071223174549/http://ez.no/content/action">
+             <input class="button" type="submit" name="NewButton" value="New comment"/>
+             <input type="hidden" name="RedirectURIAfterPublish" value="ezpublish/documentation/building_an_ez_publish_site/testing_the_interfaces#comments"/>
+             <input type="hidden" name="NodeID" value="36665"/>
+                             <input type="hidden" name="ClassIdentifier" value="article_comment"/>
+                          <input type="hidden" name="ContentLanguageCode" value="eng-GB"/>
+         </form>
+         </div>
+
+
+        
+
+<div class="content-view-line">
+<div class="class-comment bglight">
+
+    
+    <div id="msg88859" class="attribute-heading">
+        <h2>Strange redirects in admin [solved]</h2>
+    </div>
+
+<div class="attribute-byline float-break">
+    <p class="author">Charles Tanton</p>
+    <p class="date">Wednesday 07 December 2005 8:49:15 am</p>
+</div>
+
+
+<div class="attribute-short">
+            When I'm logged in to the admin site and try to change some settings like anonymous user role, I get this message: Redirecting to /sitename/index.php/sitedesign_admin/role/list and a button to click to redirect<br/>
+<br/>
+Is this what's supposed to be happening at this point?<br/>
+<br/>
+OK figured it out - that is supposed to be happening because of the setting:  DebugRedirection=enabled in site.ini.append.php<br/>
+<br/>
+To change it set this to disabled:  DebugRedirection=disabled<br/>
+<br/>
+Charles.
+
+    </div>
+
+
+</div>
+</div>
+    
+
+<div class="content-view-line">
+<div class="class-comment bgdark">
+
+    
+    <div id="msg88128" class="attribute-heading">
+        <h2>Cant log in as admin</h2>
+    </div>
+
+<div class="attribute-byline float-break">
+    <p class="author">sonia naufal</p>
+    <p class="date">Monday 28 November 2005 5:06:42 pm</p>
+</div>
+
+
+<div class="attribute-short">
+            When i try to access the user page it works fine but when accessing the admin page the following message is displayed<br/>
+The requested page could not be displayed. (1)<br/>
+<br/>
+The system is unable to display the requested page because of security issues.<br/>
+<br/>
+Possible reasons:<br/>
+<br/>
+    * You are not logged into the system. Please log in.<br/>
+    * The requested page does not exist. Try changing the URL.<br/>
+<br/>
+What could be the problem
+
+    </div>
+
+
+</div>
+</div>
+    
+
+<div class="content-view-line">
+<div class="class-comment bglight">
+
+    
+    <div id="msg76374" class="attribute-heading">
+        <h2>Debug errors</h2>
+    </div>
+
+<div class="attribute-byline float-break">
+    <p class="author">Tatiana Vorob'eva</p>
+    <p class="date">Wednesday 01 June 2005 2:07:11 pm</p>
+</div>
+
+
+<div class="attribute-short">
+            I've got the same problem. Is it a system bug?<br/>
+Could somebody help me?
+
+    </div>
+
+
+</div>
+</div>
+    
+
+<div class="content-view-line">
+<div class="class-comment bgdark">
+
+    
+    <div id="msg74235" class="attribute-heading">
+        <h2>Clearing the /var cache</h2>
+    </div>
+
+<div class="attribute-byline float-break">
+    <p class="author">Robert Besaw</p>
+    <p class="date">Saturday 30 April 2005 8:18:34 am</p>
+</div>
+
+
+<div class="attribute-short">
+            If you already loaded your pages once or twice, the changes may not show up on the page.  In the var/ there is a folder that if deleted will refresh changes made to the site.append.ini.php files.
+
+    </div>
+
+
+</div>
+</div>
+    
+
+<div class="content-view-line">
+<div class="class-comment bglight">
+
+    
+    <div id="msg68621" class="attribute-heading">
+        <h2>Errors on Public Interface</h2>
+    </div>
+
+<div class="attribute-byline float-break">
+    <p class="author">gato pardo</p>
+    <p class="date">Wednesday 16 February 2005 4:44:35 pm</p>
+</div>
+
+
+<div class="attribute-short">
+            Hi<br/>
+<br/>
+I had the same problem with the user index. I had to login in order to see it but Magne's tip solved the issue. However, eZ keeps sendin the same error report. I wonder if this is critical or what.<br/>
+<br/>
+Error:  	Feb 16 2005 10:20:38<br/>
+<br/>
+Invalid class identifier in subTree() classfilterarray, classID : gallery<br/>
+<br/>
+Error: 	Feb 16 2005 10:20:38<br/>
+<br/>
+Invalid class identifier in subTree() classfilterarray, classID : forum<br/>
+<br/>
+Warning: PHP 	Feb 16 2005 10:20:38<br/>
+<br/>
+strpos(): Empty delimiter. in c:\server\ezweb\var\tscm\cache\template\compiled\node_list-53a1f11f86fd75c390ca37e1610dc99f.php on line 49
+
+    </div>
+
+
+</div>
+</div>
+    
+
+<div class="content-view-line">
+<div class="class-comment bgdark">
+
+    
+    <div id="msg68365" class="attribute-heading">
+        <h2>same problem</h2>
+    </div>
+
+<div class="attribute-byline float-break">
+    <p class="author">Aladdin Mouhaimeed</p>
+    <p class="date">Sunday 13 February 2005 12:55:26 pm</p>
+</div>
+
+
+<div class="attribute-short">
+            I made the changes in this page of the tutorial,<br/>
+and had the same problem with the public site,<br/>
+also made the changes that Magne suggested, and that solved the problem,<br/>
+but not completely<br/>
+<br/>
+the debuging display still shows: <br/>
+<br/>
+Error:  Feb 13 2005 13:57:00 <br/>
+Invalid class identifier in subTree() classfilterarray, classID : feedback_form <br/>
+Error:  Feb 13 2005 13:57:00 <br/>
+Invalid class identifier in subTree() classfilterarray, classID : gallery <br/>
+Error:  Feb 13 2005 13:57:00 <br/>
+Invalid class identifier in subTree() classfilterarray, classID : forum <br/>
+
+
+    </div>
+
+
+</div>
+</div>
+    
+
+<div class="content-view-line">
+<div class="class-comment bglight">
+
+    
+    <div id="msg65658" class="attribute-heading">
+        <h2>About problems with the public interface...</h2>
+    </div>
+
+<div class="attribute-byline float-break">
+    <p class="author">Magne H</p>
+    <p class="date">Sunday 02 January 2005 12:41:49 pm</p>
+</div>
+
+
+<div class="attribute-short">
+            I think this might help someone. I am new to eZ and ran into a similar problem during the tutorial. Got the errors shown below, and had to log in to view the public page... <br/>
+<br/>
+Tried to figure out what could cause this, and had a look at the roles. (Admin-interface-&gt;&quot;User accounts&quot;-&gt;&quot;Roles and policies&quot;-&gt;...) <br/>
+<br/>
+The default role &quot;Anonymous&quot; has the following policy with &quot;Module=user&quot; and &quot;Function=login&quot; limited to &quot;SiteAccess( plain )&quot; just after finishing the installation of the &quot;Plain&quot;-site. <br/>
+<br/>
+During the tutorial we removed the entire &quot;Plain&quot;-site. If you look at the role &quot;Anonymous&quot; after a few steps, you might find that the policy mentioned above now is limited to &quot;SiteAccess( )&quot;. Access to nothing...<br/>
+Try to edit the existing role and set the limitation to the &quot;tscm&quot;-site (&quot;SiteAccess( tscm )&quot;).<br/>
+<br/>
+This helped me, and now the both the login-problem and the errors are gone<br/>
+<br/>
+My first experience with eZ is great. Keep up the good work!<br/>
+<br/>
+/Magne
+
+    </div>
+
+
+</div>
+</div>
+    
+
+<div class="content-view-line">
+<div class="class-comment bgdark">
+
+    
+    <div id="msg65591" class="attribute-heading">
+        <h2>Trying to display the admin interface returns an error</h2>
+    </div>
+
+<div class="attribute-byline float-break">
+    <p class="author">Natalie Calvert</p>
+    <p class="date">Thursday 30 December 2004 10:25:42 pm</p>
+</div>
+
+
+<div class="attribute-short">
+            I made all the changes in settings/, var/ and design/ directories as described in &quot;Creating the TSCM Site&quot; step. I have no problem displaying the non-admin intercaes, but the attempt to access the admin interface returns the following errors:<br/>
+<br/>
+<br/>
+----------<br/>
+Fatal error: eZ publish did not finish its request<br/>
+<br/>
+The execution of eZ publish was abruptly ended, the debug output is present below.<br/>
+<br/>
+eZ debug<br/>
+Timing: <br/>
+Dec 30 2004 18:25:26<br/>
+<br/>
+Module start 'user'<br/>
+<br/>
+Warning: PHP<br/>
+Dec 30 2004 18:25:26<br/>
+<br/>
+main(var/plain/cache/template/compiled/common.php): failed to open stream: No such file or directory in /htdocs/var/lpi/cache/template/compiled/login-202f6bde913d5dd17b14e0368d39b919.php on line 9<br/>
+<br/>
+Warning: PHP<br/>
+Dec 30 2004 18:25:26<br/>
+<br/>
+main(): Failed opening 'var/plain/cache/template/compiled/common.php' for inclusion (include_path='/htdocs/:.:/pear/lib:/var/www/pear/lib') in /htdocs/var/lpi/cache/template/compiled/login-202f6bde913d5dd17b14e0368d39b919.php on line 9<br/>
+-------
+
+    </div>
+
+
+</div>
+</div>
+    
+
+<div class="content-view-line">
+<div class="class-comment bglight">
+
+    
+    <div id="msg65511" class="attribute-heading">
+        <h2>re: Public interface access</h2>
+    </div>
+
+<div class="attribute-byline float-break">
+    <p class="author">Fredrik ohrberg</p>
+    <p class="date">Wednesday 29 December 2004 12:06:39 am</p>
+</div>
+
+
+<div class="attribute-short">
+            Bård,<br/>
+<br/>
+do u mean I should download a whole different setup file, or can I adjust something in the one I have to make it work? Just trying to go through the tutorial. I downloaded the file from <a href="https://web.archive.org/web/20071223174549/http://ez.no/content/download/75764/306745/file/ezpublish-3.5.0_installer.exe" title="http://ez.no/content/download/75764/306745/file/ezpublish-3.5.0_installer.exe">http://ez.no/content/download/757...5/file/ezpublish-3.5.0_installer.exe</a><br/>
+<br/>
+-Fred
+
+    </div>
+
+
+</div>
+</div>
+    
+
+<div class="content-view-line">
+<div class="class-comment bgdark">
+
+    
+    <div id="msg65496" class="attribute-heading">
+        <h2>I think I have the same problem.</h2>
+    </div>
+
+<div class="attribute-byline float-break">
+    <p class="author">Faust Gertz</p>
+    <p class="date">Tuesday 28 December 2004 8:35:06 pm</p>
+</div>
+
+
+<div class="attribute-short">
+            Error:  	Dec 28 2004 13:27:33<br/>
+<br/>
+Invalid class identifier in subTree() classfilterarray, classID : feedback_form<br/>
+<br/>
+Error: 	Dec 28 2004 13:27:33<br/>
+<br/>
+Invalid class identifier in subTree() classfilterarray, classID : gallery<br/>
+<br/>
+Error: 	Dec 28 2004 13:27:33<br/>
+<br/>
+Invalid class identifier in subTree() classfilterarray, classID : forum<br/>
+<br/>
+Warning: PHP 	Dec 28 2004 13:27:33<br/>
+<br/>
+strpos(): Empty delimiter. in c:\ezpublish\ezpublish\var\tscm\cache\template\compiled\node_list-53a1f11f86fd75c390ca37e1610dc99f.php on line 49
+
+    </div>
+
+
+</div>
+</div>
+    
+
+<div class="content-view-line">
+<div class="class-comment bglight">
+
+    
+    <div id="msg65441" class="attribute-heading">
+        <h2>Public interface access</h2>
+    </div>
+
+<div class="attribute-byline float-break">
+    <p class="author">Bård Farstad</p>
+    <p class="date">Monday 27 December 2004 11:45:35 pm</p>
+</div>
+
+
+<div class="attribute-short">
+            Fredrik, you have probably installed the Intranet package. This is configured to require login to get access to the public interface (user site).<br/>
+<br/>
+--bård 
+
+    </div>
+
+
+</div>
+</div>
+    
+
+<div class="content-view-line">
+<div class="class-comment bgdark">
+
+    
+    <div id="msg65378" class="attribute-heading">
+        <h2>I had to login to get the Public interface to show</h2>
+    </div>
+
+<div class="attribute-byline float-break">
+    <p class="author">Fredrik ohrberg</p>
+    <p class="date">Sunday 26 December 2004 6:15:42 pm</p>
+</div>
+
+
+<div class="attribute-short">
+            <br/>
+Any ideas why I had to login? Still after login in some debug errors came up. But page was showing ok.<br/>
+<br/>
+/Fred
+
+    </div>
+
+
+</div>
+</div>
+
+
+ 
+
+
+</div>
+</div>
+
+<div class="block float-break">
+            <form method="post" action="/web/20071223174549/http://ez.no/content/action">
+            <input class="button" type="submit" name="NewButton" value="New comment"/>
+            <input type="hidden" name="RedirectURIAfterPublish" value="ezpublish/documentation/building_an_ez_publish_site/testing_the_interfaces#comments"/>
+            <input type="hidden" name="NodeID" value="36665"/>
+                           <input type="hidden" name="ClassIdentifier" value="article_comment"/>
+                        <input type="hidden" name="ContentLanguageCode" value="eng-GB"/>
+        </form>
+    </div>
+
+</div>
+</div>
+</div>
+
+
+<div class="template-design area-sidebar-normal">
+<div class="template-module content-view-sidebar">
+<div class="template-object class-documentation">
+
+<div class="attribute-heading">
+    <h2 class="bullet">Contents</h2>
+</div>
+<h3><a href="building_an_ez_publish_site.html">Building an eZ publish site</a></h3>
+<p>
+        
+        
+            
+                    <a href="building_an_ez_publish_site/prerequisits.html">Prerequisits</a><br/>
+          
+	
+            
+                    <a href="building_an_ez_publish_site/situation.html">Situation</a><br/>
+          
+	
+            
+                    <a href="building_an_ez_publish_site/creating_the_tscm_site.html">Creating the TSCM site</a><br/>
+          
+	
+            
+                    <a href="building_an_ez_publish_site/testing_the_interfaces.html"><b>Testing the interfaces</b></a><br/>
+          
+	
+            
+                    <a href="building_an_ez_publish_site/setting_up_the_main_layout.html">Setting up the main layout</a><br/>
+          
+	
+            
+                    <a href="building_an_ez_publish_site/creating_sections.html">Creating sections</a><br/>
+          
+	
+            
+                    <a href="building_an_ez_publish_site/the_welcome_page.html">The welcome page</a><br/>
+          
+	
+            
+                    <a href="building_an_ez_publish_site/the_news_page.html">The news page</a><br/>
+          
+	
+            
+                    <a href="building_an_ez_publish_site/the_members_page.html">The members page</a><br/>
+          
+	
+            
+                    <a href="building_an_ez_publish_site/the_guestbook.html">The guestbook</a><br/>
+          
+	
+            
+                    <a href="building_an_ez_publish_site/the_links_page.html">The links page</a><br/>
+          
+	
+        </p>
+
+
+<hr class="docsplit"/>
+<h3>Created</h3>
+<p>
+17/10/2003<br/>
+12:58:29 pm<br/>
+by Balazs Halasy
+</p>
+<h3>Last updated</h3>
+<p>
+23/11/2004<br/>
+1:59:33 pm<br/>
+by Raymond Bosman
+</p>
+<h3>Authors</h3>
+<p class="rendered">Balazs Halasy<br/>Guttorm Flatabø<br/>Raymond Bosman<br/></p>
+
+<br/>
+<hr class="docsplit"/>
+
+<p>This page is part of the eZ Publish documentation. The documentation is available under the <a href="https://web.archive.org/web/20071223174549/http://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License.</a> All contributions will be released under the terms of this license.</p>
+
+</div>
+</div>
+</div>
+
+
+
+
+
+<!-- Main area content: END -->
+
+</div>
+</div>
+
+<!-- Main area: END -->
+
+<hr class="hide"/>
+
+<!-- Footer area: START -->
+<div id="footer-design">
+<div id="page-width6">
+<div id="footer">
+
+<address>Powered by eZ Publish&reg; Content Management System.<br/>
+Copyright &copy;1999 - 2024 7x and 2007 eZ Systems AS (except where otherwise noted). All rights reserved.</address>
+
+</div>
+</div>
+</div>
+<!-- Footer area: END -->
+
+</div>
+<!-- Complete page area: END -->
+
+
+    
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TFEDSZJYH0"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-TFEDSZJYH0');
+</script>
+
+
+</body>
+</html>
+
+<!-- th[eZ] 20050804 --><!--
+     FILE ARCHIVED ON 17:45:49 Dec 23, 2007 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 13:03:54 Oct 31, 2024.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  captures_list: 1.443
+  exclusion.robots: 0.026
+  exclusion.robots.policy: 0.011
+  esindex: 0.015
+  cdx.remote: 9.837
+  LoadShardBlock: 94.339 (3)
+  PetaboxLoader3.datanode: 93.962 (4)
+  load_resource: 87.117
+  PetaboxLoader3.resolve: 55.154
+-->

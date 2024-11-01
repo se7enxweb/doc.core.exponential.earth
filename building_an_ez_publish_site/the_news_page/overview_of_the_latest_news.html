@@ -1,0 +1,892 @@
+
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style type="text/css">
+    @import url(https://doc.core.ezpublish.se7enx.com/ezno2005/design/ezno2005/stylesheets/core.css);
+    @import url(https://doc.core.ezpublish.se7enx.com/ezno2005/design/ezno2005/stylesheets/pagelayout.css);
+    @import url(https://doc.core.ezpublish.se7enx.com/ezno2005/design/ezno2005/stylesheets/classes.css);
+    @import url(https://doc.core.ezpublish.se7enx.com/ezno2005/design/ezno2005/stylesheets/monitor.css);
+</style>
+
+<link type="text/css" rel="stylesheet" href="https://web.archive.org/web/20071216225205cs_/http://ez.no/extension/ezno2005/design/ezno2005/stylesheets/print.css" media="print"/>
+
+    <link rel="alternate" title="ez.no News" href="https://web.archive.org/web/20071216225205/http://ez.no/rss/feed/news" type="application/rss+xml"/><link rel="alternate" title="ez.no Developer News" href="/web/20071216225205/http://ez.no/rss/feed/communitynews" type="application/rss+xml"/>
+<link rel="alternate" title="ez.no Developer Articles" href="https://web.archive.org/web/20071216225205/http://ez.no/rss/feed/community_articles" type="application/rss+xml"/>
+<link rel="alternate" title="ez.no Forum" href="https://web.archive.org/web/20071216225205/http://ez.no/rss/feed/forum" type="application/rss+xml"/>
+<link rel="alternate" title="ez.no Contributions" href="https://web.archive.org/web/20071216225205/http://ez.no/rss/feed/contribs" type="application/rss+xml"/>
+<link rel="alternate" title="ez.no Open Funding" href="https://web.archive.org/web/20071216225205/http://ez.no/rss/feed/openfunding_suggestions" type="application/rss+xml"/>
+
+
+<!-- IE conditional comments; for bug fixes for different IE versions -->
+<!--[if IE 5]>     <style type="text/css"> @import url(/extension/ezno2005/design/ezno2005/stylesheets/ie5.css);    </style> <![endif]-->
+<!--[if lte IE 6]> <style type="text/css"> @import url(/extension/ezno2005/design/ezno2005/stylesheets/ie6lte.css); </style> <![endif]-->
+<!--[if gte IE 6]> <style type="text/css"> @import url(/extension/ezno2005/design/ezno2005/stylesheets/ie6gte.css); </style> <![endif]-->
+
+<!-- Load special stylesheet (if necessary) for newer Netscape decendants, Mozilla and Firefox, using the Gecko renderer -->
+<script type="text/javascript"><!-- if ((navigator.userAgent.indexOf("Gecko") != -1)&&(navigator.userAgent.indexOf("KHTML") == -1)) document.write("<style type=\"text/css\">@import url(/extension/ezno2005/design/ezno2005/stylesheets/gecko.css);</style>");--></script>
+                                                                                    
+<title>
+            Overview of the latest news     /         The news page     /         Building an eZ publish site                    </title>
+<meta http-equiv="Content-Language" content="en-GB"/>
+    <meta name="author" content="eZ Systems"/>
+    <meta name="copyright" content="eZ Systems as"/>
+    <meta name="description" content="eZ Publish is an open source content management system (CMS) and an open source content management framework (CMF)."/>
+    <meta name="keywords" content="cms, publish, e-commerce, content management, development framework"/>
+
+<meta name="MSSmartTagsPreventParsing" content="TRUE"/>
+<meta name="generator" content="eZ Publish"/>
+
+<script type="text/javascript" src="https://doc.core.ezpublish.se7enx.com/ezno2005/design/ezno2005/javascripts/tools.js"></script>
+<script type="text/javascript" src="https://doc.core.ezpublish.se7enx.com/ezno2005/design/ezno2005/javascripts/dropdownmenu.js"></script>
+</head>    <body onload="menuInit();">
+
+<!-- Complete page area: START -->
+<div id="page">
+
+<!-- Header area: START -->
+<div id="header">
+<div id="header-insert">
+
+<!-- User menu area: START -->
+<div id="usermenu">
+
+<div id="page-width1">
+
+<div id="logo">
+<h1><a href="https://doc.core.ezpublish.se7enx.com/"><span class="hide">eZ Systems - The Content Management Ecosystem</span></a></h1>
+</div>
+
+
+
+<p class="hide"><a href="#main">Skip to main content</a></p>
+
+<hr class="hide"/>
+<div id="searchbox">
+<form action="/web/20071216225205/http://ez.no/ezsearchredirect/action" method="get">
+
+<div class="block">
+<div class="element">
+<input id="searchbutton" class="button" type="submit" value="Search"/>
+</div>
+
+<div class="element searchstring">
+    <label for="searchtext" class="hide">Search text:</label>
+    <input id="searchtext" name="SearchText" type="text" size="12"/><br/>
+    
+
+            <div class="section">
+            <label for="searcharea" class="hide">Search area:</label>
+            <select id="searcharea" name="SubTreeArray[]">
+                <option value="2" selected="selected">All ez.no</option>
+                <option value="306">Bug reports</option>
+                <option value="21358">Contributions</option>
+                <option value="documentation">Documentation</option>
+                <option value="308">Forum</option>
+            </select>
+            </div>
+    </div>
+
+</div>
+</form>
+</div>
+
+<hr class="hide"/>
+<h2 class="hide">User menu</h2>
+
+<!-- User menu content: START -->
+<ul>
+            <li><a href="https://web.archive.org/web/20071216225205/http://ez.no/download"><span>Downloads</span></a></li>
+    <li><a href="https://web.archive.org/web/20071216225205/http://ez.no/company/contact"><span>Contact</span></a></li>
+            <li><a href="https://web.archive.org/web/20071216225205/http://ez.no/user/login"><span>Log in</span></a></li>
+        <li><a href="https://web.archive.org/web/20071216225205/http://ez.no/user/register"><span>Register</span></a></li>
+    
+    <li id="language-menu">
+        <a class="highlighted" title="English" href="https://web.archive.org/web/20071216225205/http://ez.no/ezpublish/documentation/building_an_ez_publish_site/the_news_page/overview_of_the_latest_news"><img src="/ezno2005/design/ezno2005/images/eng-GB.gif" width="18" height="12" alt="English"/></a>
+        <a title="Deutsch" href="https://web.archive.org/web/20071216225205/http://ez.no/de/ezpublish/documentation/building_an_ez_publish_site/the_news_page/overview_of_the_latest_news"><img src="/ezno2005/design/ezno2005/images/ger-DE.gif" width="18" height="12" alt="Deutsch"/></a>
+        <a title="Português" href="https://web.archive.org/web/20071216225205/http://ez.no/br/ezpublish/documentation/building_an_ez_publish_site/the_news_page/overview_of_the_latest_news"><img src="/ezno2005/design/ezno2005/images/por-BR.gif" width="18" height="12" alt="Português"/></a>
+        <a title="Français" href="https://web.archive.org/web/20071216225205/http://ez.no/fr/ezpublish/documentation/building_an_ez_publish_site/the_news_page/overview_of_the_latest_news"><img src="/ezno2005/design/ezno2005/images/fre-FR.gif" width="18" height="12" alt="Français"/></a>
+        <a title="日本語" href="https://web.archive.org/web/20071216225205/http://ez.no/jp/ezpublish/documentation/building_an_ez_publish_site/the_news_page/overview_of_the_latest_news"><img src="/ezno2005/design/ezno2005/images/jpn-JP.gif" width="18" height="12" alt="日本語"/></a>        
+        <a title="中文" href="https://web.archive.org/web/20071216225205/http://ez.no/tw/ezpublish/documentation/building_an_ez_publish_site/the_news_page/overview_of_the_latest_news"><img src="/ezno2005/design/ezno2005/images/chi-TW.gif" width="18" height="12" alt="中文"/></a>        
+        <a title="Norsk" href="https://web.archive.org/web/20071216225205/http://ez.no/no/ezpublish/documentation/building_an_ez_publish_site/the_news_page/overview_of_the_latest_news"><img src="/ezno2005/design/ezno2005/images/nor-NO.gif" width="18" height="12" alt="Norsk"/></a>        
+    </li>
+</ul>
+<!-- User menu content: END -->
+
+</div>
+
+</div>
+<!-- User menu area: END -->
+
+</div>
+</div>
+<!-- Header area: END --><script type="text/javascript">
+<!--
+var menu = new Array();
+
+menu[0] = ['eZ Publish', '/ezpublish', 'eZ Publish Premium', '/ezpublish/premium', 'eZ Publish Now', '/ezpublish/now', 'eZ Publish On Demand', '/ezpublish/on_demand', 'Proprietary license options', '/products/proprietary_license_options', 'Certified extensions', '/products/certified_extensions', 'eZ Flow', '/ezflow', 'eZ Components', '/ezcomponents', 'eZ Find', '/ezfind', 'eZ Newsletter', '/eznewsletter', 'Expert consulting services', '/products/expert_consulting_services', 'Support', '/products/support'];
+menu[1] = ['Documentation', '/doc', 'Articles', '/community/articles', 'Books', '/store/books', 'Training', '/education/training', 'Certification', '/education/certification'];
+menu[2] = ['Case studies', '/customers/case_studies', 'References', '/customers/references', 'User quotes', '/customers/user_quotes', 'eZ for media', '/customers/ez_for_media'];
+menu[3] = ['Worldwide Partners', '/partner/worldwide_partners', 'eZ Partner program', '/partner/ez_partner_program', 'Knowledge centre', '/partner/knowledge_centre'];
+menu[4] = ['Downloads', '/download', 'Documentation', '/doc', 'News', '/developer/news', 'Developer information', '/developer/developer_information', 'Projects & contributions', '/developer/contribs', 'Forum', '/developer/forum', 'Issue tracker', '/bugs/redirect', 'Open Funding', '/developer/open_funding', 'Security', '/developer/security', 'User groups', '/developer/user_groups'];
+menu[5] = ['Total Product Responsibility from eZ', '/support/total_product_responsibility_from_ez'];
+menu[6] = ['Software solutions', '/store/software', 'Training', '/services/training', 'Certification', '/services/certification', 'Books', '/store/books', 'Services', '/store/services'];
+menu[7] = ['News', '/company/news', 'Media & press', '/company/media_press', 'Events', '/company/events', 'Career', '/company/career', 'eZ Conference & Awards', '/company/ez_conference_awards', 'Board of Directors', '/company/board', 'eZ Crew', '/company/ez_crew', 'Contact', '/company/contact'];
+
+-->
+</script>
+<div id="menuborder">
+
+<!-- Main menu area: START -->
+<div id="menu" onmouseover="menuHover();" onmouseout="tryHideSubMenues();">
+
+<div id="mainmenu" class="float-break">
+<div id="page-width2">
+    <ul id="mainmenulist" class="float-break">
+<li class="current"><a href="https://web.archive.org/web/20071216225205/http://ez.no/products" onmouseover="switchSubMenu( this );">Products &amp; services</a></li>
+<li><a href="https://web.archive.org/web/20071216225205/http://ez.no/education" onmouseover="switchSubMenu( this );">Education</a></li>
+<li><a href="https://web.archive.org/web/20071216225205/http://ez.no/customers" onmouseover="switchSubMenu( this );">Customers</a></li>
+<li><a href="https://web.archive.org/web/20071216225205/http://ez.no/partner" onmouseover="switchSubMenu( this );">Partners</a></li>
+<li><a href="https://web.archive.org/web/20071216225205/http://ez.no/developer" onmouseover="switchSubMenu( this );">Developer</a></li>
+<li><a href="https://web.archive.org/web/20071216225205/http://ez.no/support" onmouseover="switchSubMenu( this );">Support</a></li>
+<li><a href="https://web.archive.org/web/20071216225205/http://ez.no/store" onmouseover="switchSubMenu( this );">Store</a></li>
+<li class="last"><a href="https://web.archive.org/web/20071216225205/http://ez.no/company" onmouseover="switchSubMenu( this );">Company</a></li>
+</ul>
+
+</div>
+</div>
+
+
+<div id="submenu">
+<div id="page-width3">
+    <ul class="float-break">
+                        <li><a href="https://web.archive.org/web/20071216225205/http://ez.no/ezpublish">eZ Publish</a></li>
+                                <li><a href="https://web.archive.org/web/20071216225205/http://ez.no/ezpublish/premium">eZ Publish Premium</a></li>
+                                <li><a href="https://web.archive.org/web/20071216225205/http://ez.no/ezpublish/now">eZ Publish Now</a></li>
+                                <li><a href="https://web.archive.org/web/20071216225205/http://ez.no/ezpublish/on_demand">eZ Publish On Demand</a></li>
+                                <li><a href="https://web.archive.org/web/20071216225205/http://ez.no/products/proprietary_license_options">Proprietary license options</a></li>
+                                <li><a href="https://web.archive.org/web/20071216225205/http://ez.no/products/certified_extensions">Certified extensions</a></li>
+                                <li><a href="https://web.archive.org/web/20071216225205/http://ez.no/ezflow">eZ Flow</a></li>
+                                <li><a href="https://web.archive.org/web/20071216225205/http://ez.no/ezcomponents">eZ Components</a></li>
+                                <li><a href="https://web.archive.org/web/20071216225205/http://ez.no/ezfind">eZ Find</a></li>
+                                <li><a href="https://web.archive.org/web/20071216225205/http://ez.no/eznewsletter">eZ Newsletter</a></li>
+                                <li><a href="https://web.archive.org/web/20071216225205/http://ez.no/products/expert_consulting_services">Expert consulting services</a></li>
+                                <li class="last"><a href="https://web.archive.org/web/20071216225205/http://ez.no/products/support">Support</a></li>
+                </ul>
+</div>
+</div>
+
+<script type="text/javascript"><!--
+    document.getElementById('submenu').style.display = 'none';
+--></script>
+
+</div>
+<!-- Main menu area: END -->
+
+</div>
+
+<hr class="hide"/><!-- Path area: START -->
+<div id="path">
+
+<div id="page-width4">
+<h2 class="hide">Path</h2>
+
+<!-- Path content: START -->
+<p>
+                        <a href="https://web.archive.org/web/20071216225205/http://ez.no/">ez.no</a>
+        
+                        /
+                            <a href="https://web.archive.org/web/20071216225205/http://ez.no/ezpublish">ezpublish</a>
+        
+                        /
+                            <a href="toc.html">documentation</a>
+        
+                        /
+                            <a href="building_an_ez_publish_site.html">building an ez publish site</a>
+        
+                        /
+                            <a href="building_an_ez_publish_site/the_news_page.html">the news page</a>
+        
+                        /
+                            overview of the latest news
+        
+            </p>
+<!-- Path content: END -->
+
+</div>
+
+</div>
+<!-- Path area: END -->
+
+<hr class="hide"/>
+
+<!-- Main area: START -->
+
+<div id="page-width5">
+<div id="main" class="float-break">
+
+<!-- Main area content: START -->
+
+
+
+
+<div class="template-design area-main-normal">
+<div class="template-module content-view-full">
+<div class="template-object class-documentation">
+
+
+<div class="attribute-heading">
+    <h1>Overview of the latest news</h1>
+</div>
+
+<p><strong>These documentation pages are no longer maintained. Please visit the <a href="https://doc.ezpublishlegacy.se7enx.com">new documentation site.</a></strong></p>
+
+<div class="attribute-long">
+    
+
+<p>
+The main menu (just below the site-banner) contains a link called &quot;News&quot;. When this link is accessed, eZ publish should display the seven latest news articles. We'll achieve this functionality by creating a custom version of the &quot;Folder&quot; content class' full-view template. The full-view template will list the children of the node that is being accessed. Each child will be shown using a custom line-view template.
+</p>
+
+<p>
+
+<b>Fixing the menu</b><br/>First, we have to make sure that the link in the menu works. The following piece of code takes care of this:
+</p>
+    <pre class="wordwrap"><span class="line">&lt;a href={&quot;/news&quot;|ezurl}&gt;News&lt;/a&gt;</span></pre>
+    
+<p>
+Insert this code into the &quot;pagelayout.tpl&quot; file (replace the previous News-link). Note that we're not telling eZ publish the ID of the node that contains the &quot;News&quot; folder. We're using the URL alias of the &quot;News&quot; folder, which is &quot;news&quot;. The URL alias is piped into the &quot;ezurl&quot; operator. The operator takes care of setting the correct path based on the siteaccess settings.
+</p>
+
+<p>
+Browse the TSCM site. Click on the &quot;News&quot; link. eZ publish will then display the contents of the &quot;News&quot; folder using the standard full-view folder template. A standard line-view template will be used to display each child of the folder. The browser should display something that resembles the following screenshot:
+</p>
+                            <div class="object-right">
+        <div class="content-view-embeddedmedia">
+    <div class="class-image">
+
+    <div class="attribute-image">
+                                                                                  
+
+    
+        
+    
+    <a href="https://web.archive.org/web/20071216225205/http://ez.no/var/ezno/storage/images-versioned/241739/1-eng-GB/tscm_news_listpng1.png" target="_blank"><img src="/web/20071216225205im_/http://ez.no/var/ezno/storage/images-versioned/241739/1-eng-GB/tscm_news_listpng1_large.png" width="380" height="291" border="0" alt="" title=""/></a>
+    
+    
+            </div>
+        </div>
+</div>
+
+    </div>
+
+
+
+<p>
+
+<b>Creating custom templates</b><br/>The following text explains how to generate a custom full-view-template for the &quot;Folder&quot; content class within the &quot;News&quot; section.
+</p>
+
+<ol>
+
+<li>Bring up the administration interface. </li>
+
+<li>Click on the &quot;Design&quot; tab. </li>
+
+<li>
+Click on &quot;Templates&quot; (in the menu on the left hand side).<br/>A list of template files will appear.</li>
+
+<li>Locate &quot;/node/view/full.tpl&quot; and click on it. </li>
+
+<li>On the next page, simply click &quot;New override&quot;. </li>
+
+<li>Type in &quot;full_view_news_folder&quot; into the &quot;Filename&quot; field. </li>
+
+<li>Set the &quot;Class&quot; dropdown box to &quot;Folder&quot;. </li>
+
+<li>Set the &quot;Selection&quot; dropdown box to &quot;News section&quot;. </li>
+
+<li>Do not enter anything into the node field (leave it blank). </li>
+
+<li>In the &quot;Base template on&quot; section, select &quot;Empty file&quot;. </li>
+
+<li>Click &quot;OK&quot;.</li>
+
+</ol>
+
+<p>
+This will generate an empty file (&quot;design/tscm/override/templates/full_view_news_folder.tpl&quot;) and instruct eZ publish to use it every time a folder in the &quot;News section&quot; is viewed. Put the following lines into the file, raise the priority (with 1 being the highest), and clear the cache.
+</p>
+    <pre class="wordwrap"><span class="line">&lt;h1&gt;Latest news&lt;/h1&gt;</span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">{* Grab some of the content of the node that is being viewed. *}</span>
+
+<span class="line">{let children=fetch( content, list, hash( parent_node_id, $node.node_id,</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sort_by, $node.sort_array,</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;limit, 7,</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;class_filter_type, include,</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;class_filter_array, array( 'article' ) ) )}</span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">{* LOOP: For each child of the node... *}</span>
+
+<span class="line">{section name=Child loop=$children}</span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;{* Display the content of the child using a line-view template. *}</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;{node_view_gui view=line content_node=$Child:item}</span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&lt;hr&gt;</span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">{* End of loop. *}</span>
+
+<span class="line">{/section}</span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">{* End of namespace. *}</span>
+
+<span class="line">{/let}</span></pre>
+    
+<p>
+This piece of template code does the following:
+</p>
+
+<ul>
+
+<li>Displays the name of the node that is being viewed. </li>
+
+<li>Grabs the seven most recent articles from the node that is being viewed. </li>
+
+<li>Displays the grabbed articles using a line-view template.</li>
+
+</ul>
+
+<p>
+Try to access the &quot;News&quot; page again (either by refreshing the page or by clicking on the &quot;News&quot; link on the main menu). You should be presented with something like this:
+</p>
+                            <div class="object-right">
+        <div class="content-view-embeddedmedia">
+    <div class="class-image">
+
+    <div class="attribute-image">
+                                                                                  
+
+    
+        
+    
+    <a href="https://web.archive.org/web/20071216225205/http://ez.no/var/ezno/storage/images-versioned/241767/1-eng-GB/tscm_news_list2png1.png" target="_blank"><img src="/web/20071216225205im_/http://ez.no/var/ezno/storage/images-versioned/241767/1-eng-GB/tscm_news_list2png1_large.png" width="380" height="291" border="0" alt="" title=""/></a>
+    
+    
+            </div>
+        </div>
+</div>
+
+    </div>
+
+
+
+<p>
+The newly generated full-view template will automatically make use of the standard line-view template. The following text explains how to create a custom template for the line-view of the &quot;Article&quot; class within the &quot;News section&quot;.
+</p>
+
+<ol>
+
+<li>Bring up the admininstration interface. </li>
+
+<li>Click on the &quot;Design&quot; tab. </li>
+
+<li>
+Click on &quot;Templates&quot; (in the menu on the left hand side).<br/>A list of template files will appear.</li>
+
+<li>Locate &quot;/node/view/line.tpl&quot; and click on it. </li>
+
+<li>On the next page, simply click &quot;New override&quot;. </li>
+
+<li>Type in &quot;line_view_news_article&quot; into the &quot;Name&quot; field. </li>
+
+<li>Set the &quot;Class&quot; dropdown box to &quot;Article&quot;. </li>
+
+<li>Set the &quot;Selection&quot; dropdown box to &quot;News section&quot;. </li>
+
+<li>Do not enter anything into the node field (leave it blank). </li>
+
+<li>In the &quot;Base template on&quot; section, select &quot;Emtpy file&quot;. </li>
+
+<li>Click &quot;OK&quot;.</li>
+
+</ol>
+
+<p>
+This will generate the &quot;design/tscm/override/templates/line_view_news_article.tpl&quot; template file. eZ publish will use this template every time it is instructed to display a list-view of article objects within the &quot;News section&quot;. Put the following lines into the file:
+</p>
+    <pre class="wordwrap"><span class="line">&lt;table class=&quot;latest_news&quot;&gt;</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&lt;tr&gt;</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td colspan=&quot;2&quot;&gt;</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class=&quot;headline_link&quot;&gt;</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a href={$node.url_alias|ezurl}&gt;</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{attribute_view_gui attribute=$node.object.data_map.title}</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/a&gt;</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/td&gt;</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&lt;/tr&gt;</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&lt;tr&gt;</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{attribute_view_gui attribute=$node.object.data_map.intro}</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/td&gt;</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td valign=&quot;top&quot;&gt;</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a href={$node.url_alias|ezurl}&gt;</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{attribute_view_gui attribute=$node.object.data_map.image image_class=&quot;small&quot;}</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/a&gt;</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/td&gt;</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&lt;/tr&gt;</span>
+
+<span class="line">&lt;/table&gt;</span></pre>
+    
+<p>
+This code snippet takes care of getting and displaying some the contents of a news article. For each article, the headline, the intro and the article's thumbnail image is displayed. Browse the &quot;News&quot; page again. You should be looking at a page that resembles the following screenshot:
+</p>
+                            <div class="object-center">
+        <div class="content-view-embeddedmedia">
+    <div class="class-image">
+
+    <div class="attribute-image">
+                                                                                  
+
+    
+        
+    
+    <a href="https://web.archive.org/web/20071216225205/http://ez.no/var/ezno/storage/images-versioned/241783/1-eng-GB/tscm_news_list3png1.png" target="_blank"><img src="/web/20071216225205im_/http://ez.no/var/ezno/storage/images-versioned/241783/1-eng-GB/tscm_news_list3png1_large.png" width="380" height="356" border="0" alt="" title=""/></a>
+    
+    
+            </div>
+        </div>
+</div>
+
+    </div>
+
+
+</div>
+
+
+<div class="content-view-children">
+<div class="class-comment">
+    <h1 id="comments">Comments</h1>    <div class="block float-break">
+              <form method="post" action="/web/20071216225205/http://ez.no/content/action">
+             <input class="button" type="submit" name="NewButton" value="New comment"/>
+             <input type="hidden" name="RedirectURIAfterPublish" value="ezpublish/documentation/building_an_ez_publish_site/the_news_page/overview_of_the_latest_news#comments"/>
+             <input type="hidden" name="NodeID" value="36961"/>
+                             <input type="hidden" name="ClassIdentifier" value="article_comment"/>
+                          <input type="hidden" name="ContentLanguageCode" value="eng-GB"/>
+         </form>
+         </div>
+
+
+        
+
+<div class="content-view-line">
+<div class="class-comment bglight">
+
+    
+    <div id="msg95272" class="attribute-heading">
+        <h2>Watch out for permissions!</h2>
+    </div>
+
+<div class="attribute-byline float-break">
+    <p class="author">Ciprian Popovici</p>
+    <p class="date">Friday 03 March 2006 10:05:25 am</p>
+</div>
+
+
+<div class="attribute-short">
+            Read this (Scott Terry's permission note):<br/>
+<a href="https://web.archive.org/web/20071216225205/http://ez.no/community/forum/setup_design/override_templates_being_created_in_wrong_directory" title="http://ez.no/community/forum/setup_design/override_templates_being_created_in_wrong_directory">http://ez.no/community/forum/setu...tes_being_created_in_wrong_directory</a><br/>
+<br/>
+Apparently, ezPublish looks at the permissions of the design/ and settings/ files and subdirectories. If the user PHP runs as (httpd, usually) doesn't have full write access on both dirs and files, it will place the new override template where it has.<br/>
+<br/>
+If you've been following this tutorial and at some point have created new siteaccesses, you most likely didn't place proper permissions on them. The proper permissions are 770 for directories and 660 for files. Go around design and siteaccess and do this:<br/>
+<br/>
+find design/ -type f -exec chmod 660 {} \;<br/>
+find design/ -type d -exec chmod 770 {} \;<br/>
+(repeat for siteaccess/)<br/>
+<br/>
+If you don't, here's what happens: when you click &quot;New override&quot;, the message will say it's gonna place the new override in design/admin/override/templates instead of your design dir, and you'll spend a while wondering if perhaps you should select a different siteaccess from the &quot;Set&quot; dropdown list, and what happens if you have several siteaccesses, and so on.<br/>
+<br/>
+The big gotcha is that the &quot;Set&quot; dropdown list is just a &quot;view&quot; filter, it doesn't decide where the new templete override goes. The folder permissions do.<br/>
+<br/>
+Also a good idea would be to take a look here:<br/>
+<a href="https://web.archive.org/web/20071216225205/http://ez.no/community/forum/general/multiple_sites_pagelayout_tpl_and_site_css_strange_behaviour/re_multiple_sites_pagelayout_tpl_and_site_css_strange_behaviour" title="http://ez.no/community/forum/general/multiple_sites_pagelayout_tpl_and_site_css_strange_behaviour/re_multiple_sites_pagelayout_tpl_and_site_css_strange_behaviour">http://ez.no/community/forum/gene...t_tpl_and_site_css_strange_behaviour</a><br/>
+<br/>
+...and make sure your AvailableSiteDesignList includes all your own designs, otherwise you may end up wondering why the template cache doesn't clear even if you clear it manually.
+
+    </div>
+
+
+</div>
+</div>
+    
+
+<div class="content-view-line">
+<div class="class-comment bgdark">
+
+    
+    <div id="msg72869" class="attribute-heading">
+        <h2>url alias /news -&gt; /content/view/full/node_id</h2>
+    </div>
+
+<div class="attribute-byline float-break">
+    <p class="author">David Goddard</p>
+    <p class="date">Wednesday 13 April 2005 12:29:56 pm</p>
+</div>
+
+
+<div class="attribute-short">
+            This may be obvious but I thought I would share ... I couldn't see how a link in the template to /news was being translated to the system url /content/view/full/node_id_of_news_folder without manually setting up some URL translation under the setup tab.<br/>
+<br/>
+Transpires that automatic URL aliases are &quot;generated from the object names of the parent object, i.e. the &quot;path&quot;. It will convert the name to lower case 0-9 a-z and _ characters&quot;, when you include in site.ini<br/>
+<br/>
+[URLTranslator]<br/>
+Translation=enabled<br/>
+<br/>
+So a folder just under the root node of &quot;Archive of Old News Articles&quot; can be referenced using the url alias path &quot;/archive_of_old_news_articles&quot;.<br/>
+<br/>
+See <a href="https://web.archive.org/web/20071216225205/http://ez.no/community/forum/setup_design/nice_urls" title="http://ez.no/community/forum/setup_design/nice_urls">http://ez.no/community/forum/setup_design/nice_urls</a><br/>
+and <a href="https://web.archive.org/web/20071216225205/http://ez.no/ez_publish/documentation/customization/tips_tricks/creating_nice_urls" title="http://ez.no/ez_publish/documentation/customization/tips_tricks/creating_nice_urls">http://ez.no/ez_publish/documenta...ation/tips_tricks/creating_nice_urls</a><br/>
+
+
+    </div>
+
+
+</div>
+</div>
+    
+
+<div class="content-view-line">
+<div class="class-comment bglight">
+
+    
+    <div id="msg68205" class="attribute-heading">
+        <h2>showing thumbnail image</h2>
+    </div>
+
+<div class="attribute-byline float-break">
+    <p class="author">Scott Madeira</p>
+    <p class="date">Thursday 10 February 2005 4:24:16 pm</p>
+</div>
+
+
+<div class="attribute-short">
+            There are 2 steps to the process.  the first is uploading the image and having it related to the news story. You can upload numerous things and have them be related to that news story.<br/>
+<br/>
+the second part is assigning an image to the news story.  In the image section of the news story you need to &quot;Find Object&quot; and then click on the &quot;Media Library&quot; tab at teh top of the page and then click on the &quot;Images&quot; link in the middle of the page and then select the image you want to display.<br/>
+<br/>
+Then you can send for publishing and it should show up properly.  The directions don't really address the two different phases of associating and then assigning.<br/>
+<br/>
+Hope that helps......
+
+    </div>
+
+
+</div>
+</div>
+    
+
+<div class="content-view-line">
+<div class="class-comment bgdark">
+
+    
+    <div id="msg66096" class="attribute-heading">
+        <h2>not showing thumbnail text</h2>
+    </div>
+
+<div class="attribute-byline float-break">
+    <p class="author">Erik Thorsen</p>
+    <p class="date">Sunday 09 January 2005 12:45:46 pm</p>
+</div>
+
+
+<div class="attribute-short">
+            This view doesn't show the thumbnail image text in this example... <br/>
+Anyone with any suggestions to fix this?
+
+    </div>
+
+
+</div>
+</div>
+    
+
+<div class="content-view-line">
+<div class="class-comment bglight">
+
+    
+    <div id="msg65505" class="attribute-heading">
+        <h2>'line_view_news_article' final steps</h2>
+    </div>
+
+<div class="attribute-byline float-break">
+    <p class="author">Faust Gertz</p>
+    <p class="date">Tuesday 28 December 2004 10:25:39 pm</p>
+</div>
+
+
+<div class="attribute-short">
+            For 'line_view_news_article', don't forget to raise the priority and clear the cache.
+
+    </div>
+
+
+</div>
+</div>
+    
+
+<div class="content-view-line">
+<div class="class-comment bgdark">
+
+    
+    <div id="msg64371" class="attribute-heading">
+        <h2>Class dropdown menu doesn't have Folder or Article as in option in 3.5 RC1</h2>
+    </div>
+
+<div class="attribute-byline float-break">
+    <p class="author">Dave Myron</p>
+    <p class="date">Friday 10 December 2004 2:21:37 am</p>
+</div>
+
+
+<div class="attribute-short">
+            Under Override keys, Classes only has &quot;All classes&quot; as an option. Leaving it as All classes breaks the display of individual news items, of course (found this out by trying it).<br/>
+<br/>
+This has been fixed in the trunk.
+
+    </div>
+
+
+</div>
+</div>
+
+
+ 
+
+
+</div>
+</div>
+
+<div class="block float-break">
+            <form method="post" action="/web/20071216225205/http://ez.no/content/action">
+            <input class="button" type="submit" name="NewButton" value="New comment"/>
+            <input type="hidden" name="RedirectURIAfterPublish" value="ezpublish/documentation/building_an_ez_publish_site/the_news_page/overview_of_the_latest_news#comments"/>
+            <input type="hidden" name="NodeID" value="36961"/>
+                           <input type="hidden" name="ClassIdentifier" value="article_comment"/>
+                        <input type="hidden" name="ContentLanguageCode" value="eng-GB"/>
+        </form>
+    </div>
+
+</div>
+</div>
+</div>
+
+
+<div class="template-design area-sidebar-normal">
+<div class="template-module content-view-sidebar">
+<div class="template-object class-documentation">
+
+<div class="attribute-heading">
+    <h2 class="bullet">Contents</h2>
+</div>
+<h3><a href="building_an_ez_publish_site.html">Building an eZ publish site</a></h3>
+<p>
+        
+        
+            
+                    <a href="building_an_ez_publish_site/prerequisits.html">Prerequisits</a><br/>
+          
+	
+            
+                    <a href="building_an_ez_publish_site/situation.html">Situation</a><br/>
+          
+	
+            
+                    <a href="building_an_ez_publish_site/creating_the_tscm_site.html">Creating the TSCM site</a><br/>
+          
+	
+            
+                    <a href="building_an_ez_publish_site/testing_the_interfaces.html">Testing the interfaces</a><br/>
+          
+	
+            
+                    <a href="building_an_ez_publish_site/setting_up_the_main_layout.html">Setting up the main layout</a><br/>
+          
+	
+            
+                    <a href="building_an_ez_publish_site/creating_sections.html">Creating sections</a><br/>
+          
+	
+            
+                    <a href="building_an_ez_publish_site/the_welcome_page.html">The welcome page</a><br/>
+          
+	
+            
+                    <a href="building_an_ez_publish_site/the_news_page.html">The news page</a><br/>
+          
+	
+            &nbsp;&nbsp;&nbsp;
+                    <a href="building_an_ez_publish_site/the_news_page/adding_news_articles.html">Adding news articles</a><br/>
+          
+	
+            &nbsp;&nbsp;&nbsp;
+                    <a href="building_an_ez_publish_site/the_news_page/assigning_the_news_folder_to_the_news_section.html">Assigning the News folder to the News...</a><br/>
+          
+	
+            &nbsp;&nbsp;&nbsp;
+                    <a href="building_an_ez_publish_site/the_news_page/overview_of_the_latest_news.html"><b>Overview of the latest news</b></a><br/>
+          
+	
+            &nbsp;&nbsp;&nbsp;
+                    <a href="building_an_ez_publish_site/the_news_page/full_display_of_an_article.html">Full display of an article</a><br/>
+          
+	
+            &nbsp;&nbsp;&nbsp;
+                    <a href="building_an_ez_publish_site/the_news_page/news_archive.html">News archive</a><br/>
+          
+	
+            
+                    <a href="building_an_ez_publish_site/the_members_page.html">The members page</a><br/>
+          
+	
+            
+                    <a href="building_an_ez_publish_site/the_guestbook.html">The guestbook</a><br/>
+          
+	
+            
+                    <a href="building_an_ez_publish_site/the_links_page.html">The links page</a><br/>
+          
+	
+        </p>
+
+
+<hr class="docsplit"/>
+<h3>Created</h3>
+<p>
+22/10/2003<br/>
+1:37:17 pm<br/>
+by Balazs Halasy
+</p>
+<h3>Last updated</h3>
+<p>
+23/11/2004<br/>
+2:51:01 pm<br/>
+by Sandro Groganz
+</p>
+<h3>Authors</h3>
+<p class="rendered">Balazs Halasy<br/>Raymond Bosman<br/>Sandro Groganz<br/></p>
+
+<br/>
+<hr class="docsplit"/>
+
+<p>This page is part of the eZ Publish documentation. The documentation is available under the <a href="https://web.archive.org/web/20071216225205/http://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License.</a> All contributions will be released under the terms of this license.</p>
+
+</div>
+</div>
+</div>
+
+
+
+
+
+<!-- Main area content: END -->
+
+</div>
+</div>
+
+<!-- Main area: END -->
+
+<hr class="hide"/>
+
+<!-- Footer area: START -->
+<div id="footer-design">
+<div id="page-width6">
+<div id="footer">
+
+<address>Powered by eZ Publish&reg; Content Management System.<br/>
+Copyright &copy;1999 - 2024 7x and 2007 eZ Systems AS (except where otherwise noted). All rights reserved.</address>
+
+</div>
+</div>
+</div>
+<!-- Footer area: END -->
+
+</div>
+<!-- Complete page area: END -->
+
+
+    
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TFEDSZJYH0"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-TFEDSZJYH0');
+</script>
+
+
+</body>
+</html>
+
+<!-- th[eZ] 20050804 --><!--
+     FILE ARCHIVED ON 22:52:05 Dec 16, 2007 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 11:18:04 Oct 31, 2024.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  captures_list: 0.709
+  exclusion.robots: 0.041
+  exclusion.robots.policy: 0.029
+  esindex: 0.011
+  cdx.remote: 15.365
+  LoadShardBlock: 135.976 (3)
+  PetaboxLoader3.datanode: 90.427 (4)
+  PetaboxLoader3.resolve: 89.769 (2)
+  load_resource: 61.324
+-->

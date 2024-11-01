@@ -1,0 +1,700 @@
+
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style type="text/css">
+    @import url(https://doc.core.ezpublish.se7enx.com/ezno2005/design/ezno2005/stylesheets/core.css);
+    @import url(https://doc.core.ezpublish.se7enx.com/ezno2005/design/ezno2005/stylesheets/pagelayout.css);
+    @import url(https://doc.core.ezpublish.se7enx.com/ezno2005/design/ezno2005/stylesheets/classes.css);
+    @import url(https://doc.core.ezpublish.se7enx.com/ezno2005/design/ezno2005/stylesheets/monitor.css);
+</style>
+
+<link type="text/css" rel="stylesheet" href="https://web.archive.org/web/20071220213352cs_/http://ez.no/extension/ezno2005/design/ezno2005/stylesheets/print.css" media="print"/>
+
+    <link rel="alternate" title="ez.no News" href="https://web.archive.org/web/20071220213352/http://ez.no/rss/feed/news" type="application/rss+xml"/><link rel="alternate" title="ez.no Developer News" href="/web/20071220213352/http://ez.no/rss/feed/communitynews" type="application/rss+xml"/>
+<link rel="alternate" title="ez.no Developer Articles" href="https://web.archive.org/web/20071220213352/http://ez.no/rss/feed/community_articles" type="application/rss+xml"/>
+<link rel="alternate" title="ez.no Forum" href="https://web.archive.org/web/20071220213352/http://ez.no/rss/feed/forum" type="application/rss+xml"/>
+<link rel="alternate" title="ez.no Contributions" href="https://web.archive.org/web/20071220213352/http://ez.no/rss/feed/contribs" type="application/rss+xml"/>
+<link rel="alternate" title="ez.no Open Funding" href="https://web.archive.org/web/20071220213352/http://ez.no/rss/feed/openfunding_suggestions" type="application/rss+xml"/>
+
+
+<!-- IE conditional comments; for bug fixes for different IE versions -->
+<!--[if IE 5]>     <style type="text/css"> @import url(/extension/ezno2005/design/ezno2005/stylesheets/ie5.css);    </style> <![endif]-->
+<!--[if lte IE 6]> <style type="text/css"> @import url(/extension/ezno2005/design/ezno2005/stylesheets/ie6lte.css); </style> <![endif]-->
+<!--[if gte IE 6]> <style type="text/css"> @import url(/extension/ezno2005/design/ezno2005/stylesheets/ie6gte.css); </style> <![endif]-->
+
+<!-- Load special stylesheet (if necessary) for newer Netscape decendants, Mozilla and Firefox, using the Gecko renderer -->
+<script type="text/javascript"><!-- if ((navigator.userAgent.indexOf("Gecko") != -1)&&(navigator.userAgent.indexOf("KHTML") == -1)) document.write("<style type=\"text/css\">@import url(/extension/ezno2005/design/ezno2005/stylesheets/gecko.css);</style>");--></script>
+                                                                                    
+<title>
+            Icons     /         Components     /         Customization                    </title>
+<meta http-equiv="Content-Language" content="en-GB"/>
+    <meta name="author" content="eZ Systems"/>
+    <meta name="copyright" content="eZ Systems as"/>
+    <meta name="description" content="eZ Publish is an open source content management system (CMS) and an open source content management framework (CMF)."/>
+    <meta name="keywords" content="cms, publish, e-commerce, content management, development framework"/>
+
+<meta name="MSSmartTagsPreventParsing" content="TRUE"/>
+<meta name="generator" content="eZ Publish"/>
+
+<script type="text/javascript" src="https://doc.core.ezpublish.se7enx.com/ezno2005/design/ezno2005/javascripts/tools.js"></script>
+<script type="text/javascript" src="https://doc.core.ezpublish.se7enx.com/ezno2005/design/ezno2005/javascripts/dropdownmenu.js"></script>
+</head>    <body onload="menuInit();">
+
+<!-- Complete page area: START -->
+<div id="page">
+
+<!-- Header area: START -->
+<div id="header">
+<div id="header-insert">
+
+<!-- User menu area: START -->
+<div id="usermenu">
+
+<div id="page-width1">
+
+<div id="logo">
+<h1><a href="https://doc.core.ezpublish.se7enx.com/"><span class="hide">eZ Systems - The Content Management Ecosystem</span></a></h1>
+</div>
+
+
+
+<p class="hide"><a href="#main">Skip to main content</a></p>
+
+<hr class="hide"/>
+<div id="searchbox">
+<form action="/web/20071220213352/http://ez.no/ezsearchredirect/action" method="get">
+
+<div class="block">
+<div class="element">
+<input id="searchbutton" class="button" type="submit" value="Search"/>
+</div>
+
+<div class="element searchstring">
+    <label for="searchtext" class="hide">Search text:</label>
+    <input id="searchtext" name="SearchText" type="text" size="12"/><br/>
+    
+
+            <div class="section">
+            <label for="searcharea" class="hide">Search area:</label>
+            <select id="searcharea" name="SubTreeArray[]">
+                <option value="2" selected="selected">All ez.no</option>
+                <option value="306">Bug reports</option>
+                <option value="21358">Contributions</option>
+                <option value="documentation">Documentation</option>
+                <option value="308">Forum</option>
+            </select>
+            </div>
+    </div>
+
+</div>
+</form>
+</div>
+
+<hr class="hide"/>
+<h2 class="hide">User menu</h2>
+
+<!-- User menu content: START -->
+<ul>
+            <li><a href="https://web.archive.org/web/20071220213352/http://ez.no/download"><span>Downloads</span></a></li>
+    <li><a href="https://web.archive.org/web/20071220213352/http://ez.no/company/contact"><span>Contact</span></a></li>
+            <li><a href="https://web.archive.org/web/20071220213352/http://ez.no/user/login"><span>Log in</span></a></li>
+        <li><a href="https://web.archive.org/web/20071220213352/http://ez.no/user/register"><span>Register</span></a></li>
+    
+    <li id="language-menu">
+        <a class="highlighted" title="English" href="https://web.archive.org/web/20071220213352/http://ez.no/ezpublish/documentation/customization/components/icons"><img src="/ezno2005/design/ezno2005/images/eng-GB.gif" width="18" height="12" alt="English"/></a>
+        <a title="Deutsch" href="https://web.archive.org/web/20071220213352/http://ez.no/de/ezpublish/documentation/customization/components/icons"><img src="/ezno2005/design/ezno2005/images/ger-DE.gif" width="18" height="12" alt="Deutsch"/></a>
+        <a title="Português" href="https://web.archive.org/web/20071220213352/http://ez.no/br/ezpublish/documentation/customization/components/icons"><img src="/ezno2005/design/ezno2005/images/por-BR.gif" width="18" height="12" alt="Português"/></a>
+        <a title="Français" href="https://web.archive.org/web/20071220213352/http://ez.no/fr/ezpublish/documentation/customization/components/icons"><img src="/ezno2005/design/ezno2005/images/fre-FR.gif" width="18" height="12" alt="Français"/></a>
+        <a title="日本語" href="https://web.archive.org/web/20071220213352/http://ez.no/jp/ezpublish/documentation/customization/components/icons"><img src="/ezno2005/design/ezno2005/images/jpn-JP.gif" width="18" height="12" alt="日本語"/></a>        
+        <a title="中文" href="https://web.archive.org/web/20071220213352/http://ez.no/tw/ezpublish/documentation/customization/components/icons"><img src="/ezno2005/design/ezno2005/images/chi-TW.gif" width="18" height="12" alt="中文"/></a>        
+        <a title="Norsk" href="https://web.archive.org/web/20071220213352/http://ez.no/no/ezpublish/documentation/customization/components/icons"><img src="/ezno2005/design/ezno2005/images/nor-NO.gif" width="18" height="12" alt="Norsk"/></a>        
+    </li>
+</ul>
+<!-- User menu content: END -->
+
+</div>
+
+</div>
+<!-- User menu area: END -->
+
+</div>
+</div>
+<!-- Header area: END --><script type="text/javascript">
+<!--
+var menu = new Array();
+
+menu[0] = ['eZ Publish', '/ezpublish', 'eZ Publish Premium', '/ezpublish/premium', 'eZ Publish Now', '/ezpublish/now', 'eZ Publish On Demand', '/ezpublish/on_demand', 'Proprietary license options', '/products/proprietary_license_options', 'Certified extensions', '/products/certified_extensions', 'eZ Flow', '/ezflow', 'eZ Components', '/ezcomponents', 'eZ Find', '/ezfind', 'eZ Newsletter', '/eznewsletter', 'Expert consulting services', '/products/expert_consulting_services', 'Support', '/products/support'];
+menu[1] = ['Documentation', '/doc', 'Articles', '/community/articles', 'Books', '/store/books', 'Training', '/education/training', 'Certification', '/education/certification'];
+menu[2] = ['Case studies', '/customers/case_studies', 'References', '/customers/references', 'User quotes', '/customers/user_quotes', 'eZ for media', '/customers/ez_for_media'];
+menu[3] = ['Worldwide Partners', '/partner/worldwide_partners', 'eZ Partner program', '/partner/ez_partner_program', 'Knowledge centre', '/partner/knowledge_centre'];
+menu[4] = ['Downloads', '/download', 'Documentation', '/doc', 'News', '/developer/news', 'Developer information', '/developer/developer_information', 'Projects & contributions', '/developer/contribs', 'Forum', '/developer/forum', 'Issue tracker', '/bugs/redirect', 'Open Funding', '/developer/open_funding', 'Security', '/developer/security', 'User groups', '/developer/user_groups'];
+menu[5] = ['Total Product Responsibility from eZ', '/support/total_product_responsibility_from_ez'];
+menu[6] = ['Software solutions', '/store/software', 'Training', '/services/training', 'Certification', '/services/certification', 'Books', '/store/books', 'Services', '/store/services'];
+menu[7] = ['News', '/company/news', 'Media & press', '/company/media_press', 'Events', '/company/events', 'Career', '/company/career', 'eZ Conference & Awards', '/company/ez_conference_awards', 'Board of Directors', '/company/board', 'eZ Crew', '/company/ez_crew', 'Contact', '/company/contact'];
+
+-->
+</script>
+<div id="menuborder">
+
+<!-- Main menu area: START -->
+<div id="menu" onmouseover="menuHover();" onmouseout="tryHideSubMenues();">
+
+<div id="mainmenu" class="float-break">
+<div id="page-width2">
+    <ul id="mainmenulist" class="float-break">
+<li class="current"><a href="https://web.archive.org/web/20071220213352/http://ez.no/products" onmouseover="switchSubMenu( this );">Products &amp; services</a></li>
+<li><a href="https://web.archive.org/web/20071220213352/http://ez.no/education" onmouseover="switchSubMenu( this );">Education</a></li>
+<li><a href="https://web.archive.org/web/20071220213352/http://ez.no/customers" onmouseover="switchSubMenu( this );">Customers</a></li>
+<li><a href="https://web.archive.org/web/20071220213352/http://ez.no/partner" onmouseover="switchSubMenu( this );">Partners</a></li>
+<li><a href="https://web.archive.org/web/20071220213352/http://ez.no/developer" onmouseover="switchSubMenu( this );">Developer</a></li>
+<li><a href="https://web.archive.org/web/20071220213352/http://ez.no/support" onmouseover="switchSubMenu( this );">Support</a></li>
+<li><a href="https://web.archive.org/web/20071220213352/http://ez.no/store" onmouseover="switchSubMenu( this );">Store</a></li>
+<li class="last"><a href="https://web.archive.org/web/20071220213352/http://ez.no/company" onmouseover="switchSubMenu( this );">Company</a></li>
+</ul>
+
+</div>
+</div>
+
+
+<div id="submenu">
+<div id="page-width3">
+    <ul class="float-break">
+                        <li><a href="https://web.archive.org/web/20071220213352/http://ez.no/ezpublish">eZ Publish</a></li>
+                                <li><a href="https://web.archive.org/web/20071220213352/http://ez.no/ezpublish/premium">eZ Publish Premium</a></li>
+                                <li><a href="https://web.archive.org/web/20071220213352/http://ez.no/ezpublish/now">eZ Publish Now</a></li>
+                                <li><a href="https://web.archive.org/web/20071220213352/http://ez.no/ezpublish/on_demand">eZ Publish On Demand</a></li>
+                                <li><a href="https://web.archive.org/web/20071220213352/http://ez.no/products/proprietary_license_options">Proprietary license options</a></li>
+                                <li><a href="https://web.archive.org/web/20071220213352/http://ez.no/products/certified_extensions">Certified extensions</a></li>
+                                <li><a href="https://web.archive.org/web/20071220213352/http://ez.no/ezflow">eZ Flow</a></li>
+                                <li><a href="https://web.archive.org/web/20071220213352/http://ez.no/ezcomponents">eZ Components</a></li>
+                                <li><a href="https://web.archive.org/web/20071220213352/http://ez.no/ezfind">eZ Find</a></li>
+                                <li><a href="https://web.archive.org/web/20071220213352/http://ez.no/eznewsletter">eZ Newsletter</a></li>
+                                <li><a href="https://web.archive.org/web/20071220213352/http://ez.no/products/expert_consulting_services">Expert consulting services</a></li>
+                                <li class="last"><a href="https://web.archive.org/web/20071220213352/http://ez.no/products/support">Support</a></li>
+                </ul>
+</div>
+</div>
+
+<script type="text/javascript"><!--
+    document.getElementById('submenu').style.display = 'none';
+--></script>
+
+</div>
+<!-- Main menu area: END -->
+
+</div>
+
+<hr class="hide"/><!-- Path area: START -->
+<div id="path">
+
+<div id="page-width4">
+<h2 class="hide">Path</h2>
+
+<!-- Path content: START -->
+<p>
+                        <a href="https://web.archive.org/web/20071220213352/http://ez.no/">ez.no</a>
+        
+                        /
+                            <a href="https://web.archive.org/web/20071220213352/http://ez.no/ezpublish">ezpublish</a>
+        
+                        /
+                            <a href="toc.html">documentation</a>
+        
+                        /
+                            <a href="customization.html">customization</a>
+        
+                        /
+                            <a href="customization/components.html">components</a>
+        
+                        /
+                            icons
+        
+            </p>
+<!-- Path content: END -->
+
+</div>
+
+</div>
+<!-- Path area: END -->
+
+<hr class="hide"/>
+
+<!-- Main area: START -->
+
+<div id="page-width5">
+<div id="main" class="float-break">
+
+<!-- Main area content: START -->
+
+
+
+
+<div class="template-design area-main-normal">
+<div class="template-module content-view-full">
+<div class="template-object class-documentation">
+
+
+<div class="attribute-heading">
+    <h1>Icons</h1>
+</div>
+
+<p><strong>These documentation pages are no longer maintained. Please visit the <a href="https://doc.ezpublishlegacy.se7enx.com">new documentation site.</a></strong></p>
+
+<div class="attribute-long">
+    
+
+<p>
+Using icons is a good way for differentiating types in eZ publish. For instance in listings were there might be mixed types using icons allows users to quickly figure out what each entry in the list reflects.
+</p>
+
+<p>
+Icons are used by default in the administration interface to make it easier to tell one class from another, extending this to custom templates is possible.
+</p>
+
+<p>
+Note: The icon system was added in eZ publish 3.4.
+</p>
+
+<a name="eztoc157903_1" id="eztoc157903_1"></a><h2>Icon repository</h2>
+<p>
+
+All icons are found in the <i>share/icons</i> directory, it contains all global icons which are not bound to a specific design.<br/>If you are setting up a site with rewrite rules you must make sure that this directory is not rewritten to <i>index.php</i>.
+</p>
+
+<a name="eztoc157903_1_1" id="eztoc157903_1_1"></a><h3>Icon themes</h3>
+<p>
+
+The new icons system uses the icon structure from the <a href="https://web.archive.org/web/20071220213352/http://kde.org/">KDE project</a>, this means that you can install any <a href="https://web.archive.org/web/20071220213352/http://ez.no/">icon package</a> from KDE.<br/>The subfolder <i><a href="https://web.archive.org/web/20071220213352/http://ez.no/">crystal</a></i> is the default icon theme for eZ publish and is bundled with eZ publish, it is a stripped down version of the original icon theme with only the icons that are currently used by eZ publish.
+</p>
+
+<p>
+Installing a new them is simply to unpack the icon archive in the <i>share/icons</i> folder and change the current theme in <i>icon.ini</i>.
+</p>
+
+<a name="eztoc157903_1_2" id="eztoc157903_1_2"></a><h3>Theme structure</h3>
+<p>
+
+A theme starts out with one folder for each icon size, typical sizes are <i>12x12</i>, <i>16x16</i>, <i>24x24</i>, <i>32x32</i> and <i>48x48</i>.<br/>Currently eZ publish uses the <i>16x16</i> and <i>32x32</i> sizes.
+</p>
+
+<p>
+
+Under each size folder there will be a series of folders which represents the icon categories, typical categories are <i>actions</i>, <i>apps</i>, <i>devices</i>, <i>filesystems</i> and <i>mimetypes</i>.<br/>Currently eZ publish uses the <i>apps</i>, <i>filesystems</i> and <i>mimetypes</i> folders.
+</p>
+
+<a name="eztoc157903_1_2_1" id="eztoc157903_1_2_1"></a><h4>Categories</h4>
+<ul>
+
+<li><i>actions</i> - Icons for typical actions in applications.</li>
+
+<li><i>apps</i> - Application icons.</li>
+
+<li><i>devices</i> - Icons for Unix/Linux devices.</li>
+
+<li><i>filesystems</i> - Icons for the filesystem, mostly folder variations.</li>
+
+<li><i>mimetypes</i> - Icons for MIME types.</li>
+
+</ul>
+
+<a name="eztoc157903_1_3" id="eztoc157903_1_3"></a><h3>Configuring theme</h3>
+<p>
+
+The INI file <i>icon.ini</i> controls all settings for icons, and the group <i>IconSettings</i> contains the global settings.<br/>The rest of the INI file is used to map mimetypes, classes and groups into icon files.
+</p>
+
+<a name="eztoc157903_1_3_1" id="eztoc157903_1_3_1"></a><h4>IconSettings</h4>
+<ul>
+
+<li><i>Repository</i> - The path to the icon repository relative to eZ publish, the default is <i>share/icons</i> and should not be changed.</li>
+
+<li><i>Theme</i> - The current theme, this matches the subfolder in the icon repository. If you install new themes this must be changed.</li>
+
+<li><i>Size</i> - The default size for icons, this size refers to the size aliases defined in <i>Sizes</i>.</li>
+
+<li><i>Sizes</i> - Maps size aliases to real sizes in a theme. Default aliases are <i>small</i>, <i>normal</i> and <i>large</i>.</li>
+
+</ul>
+
+<a name="eztoc157903_2" id="eztoc157903_2"></a><h2>More icons?</h2>
+<p>
+
+As explained the number of icons bundled with eZ publish covers only the classes and mimetypes in the standard installation.<br/>Installing the full <i><a href="https://web.archive.org/web/20071220213352/http://ez.no/">crystal</a></i> theme (or any other) will give you access to more icons.
+</p>
+
+<p>
+
+If you want to add more custom icons this is possible but changing themes will not work properly (unless the icons are copied).<br/>It is generally recommended to try to reuse the icons which are found in a theme.
+</p>
+
+<a name="eztoc157903_3" id="eztoc157903_3"></a><h2>Template usage</h2>
+<p>
+
+The template system has currently three operators, they are <i>class_icon</i>, <i>classgroup_icon</i> and <i>mimetype_icon</i>.<br/>
+All operators share the same syntax which is:<br/>
+</p>
+    <pre class="wordwrap"><span class="line">{input|icon_operator( size_alias, title )}</span></pre>
+    
+<p>
+The <i>size_alias</i> refers to the sizes defined by the setting <i>Sizes</i>. If not supplied the default size is used.
+</p>
+
+<p>
+
+The <i>title</i> is the title for the icon, this will be used in the <i>title</i> and <i>alt</i> attributes of the <i>img</i> tag.<br/>If not supplied the <i>input</i> value is used, this means that it is generally a good idea to supply a title.
+</p>
+
+<p>
+The <i>input</i> depends on the icon operator but is always a string.
+</p>
+
+<p>
+
+The output of the operator will be an <i>img</i> XHTML tag with a structure looking like this:<br/>
+</p>
+    <pre class="wordwrap"><span class="line">img src=&quot;/share/icons/crystal/16x16/filesystems/folder.png&quot;</span>
+
+<span class="line">width=&quot;16&quot; height=&quot;16&quot;</span>
+
+<span class="line">alt=&quot;Folder&quot; title=&quot;Folder&quot;</span></pre>
+    
+<a name="eztoc157903_3_1" id="eztoc157903_3_1"></a><h3>class_icon</h3>
+<p>
+
+This operator is used to add icons to classes or objects based on their class identifier. The identifier is the <i>input</i> parameter.<br/>
+</p>
+    <pre class="wordwrap"><span class="line">{$class_identifier|class_icon( small|normal|large, $class_name )}</span></pre>
+    
+<p>
+
+Example with a content node:<br/>
+</p>
+    <pre class="wordwrap"><span class="line">{let class=$node.object.content_class}</span>
+
+<span class="line">{$class.identifier|class_icon( small, $class.name )}</span>
+
+<span class="line">{/let}</span></pre>
+    
+<p>
+
+Example with a class identifier:<br/>
+</p>
+    <pre class="wordwrap"><span class="line">{'forum'|class_icon( small, 'Forum' )}</span></pre>
+    
+<a name="eztoc157903_3_2" id="eztoc157903_3_2"></a><h3>classgroup_icon</h3>
+<p>
+
+This operator is used to add icons to class groups based on their class group name. The name is the <i>input</i> parameter.<br/>
+</p>
+    <pre class="wordwrap"><span class="line">{$group_name|classgroup_icon( small|normal|large, $group_name )}</span></pre>
+    
+<p>
+
+Example with a class group:<br/>
+</p>
+    <pre class="wordwrap"><span class="line">{'content'|classgroup_icon( small, 'Content' )}</span></pre>
+    
+<a name="eztoc157903_3_3" id="eztoc157903_3_3"></a><h3>mimetype_icon</h3>
+<p>
+
+This operator is used to add icons to files based on their mimetype. The mimetype is the <i>input</i> parameter.<br/>
+</p>
+    <pre class="wordwrap"><span class="line">{$mimetype|mimetype_icon( small|normal|large, $mimetype_name )}</span></pre>
+    
+<p>
+
+Adding a small icon to a PDF document:<br/>
+</p>
+    <pre class="wordwrap"><span class="line">{'application/pdf'|classgroup_icon( small, 'PDF document' )}</span></pre>
+    
+<p>
+
+Add a normal icon to a text file:<br/>
+</p>
+    <pre class="wordwrap"><span class="line">{'text/plain'|classgroup_icon( normal, 'Text file' )}</span></pre>
+    
+<p>
+
+Adding a normal icon for a quicktime video file:<br/>
+</p>
+    <pre class="wordwrap"><span class="line">{'video/quicktime'|mimetype_icon( normal, 'QuickTime Video' )}</span></pre>
+    
+<a name="eztoc157903_4" id="eztoc157903_4"></a><h2>Configuring icon types</h2>
+<p>
+
+To change an icon for a class you need to edit configuration file <i>icon.ini</i> or <i>icon.ini.append</i>.<br/>
+In this file you can configure how different types (classes, groups and mimetypes) are mapped to an icon file.<br/>The path of the icon file is always relative from the size directory of the current theme.
+</p>
+
+<a name="eztoc157903_4_1" id="eztoc157903_4_1"></a><h3>Changing class icons</h3>
+<p>
+Find the block <i>ClassIcons</i> and edit the <i>ClassMap</i> setting, this maps from the class identifier to the icon file path.
+</p>
+
+<p>
+
+For instance to replace the folder icon change the folder entry to:<br/>
+</p>
+    <pre class="wordwrap"><span class="line">ClassMap[folder]=filesystems/folder_image.png</span></pre>
+    
+<p>
+
+You can also add your own classes using the same method, for instance:<br/>
+</p>
+    <pre class="wordwrap"><span class="line">ClassMap[country]=apps/package.png</span></pre>
+    
+<p>
+The default icon for unknown classes can be modified by changing the <i>Default</i> setting.
+</p>
+
+<a name="eztoc157903_4_2" id="eztoc157903_4_2"></a><h3>Changing class group icons</h3>
+<p>
+
+Find the block <i>ClassGroupIcons</i> and edit the <i>ClassGroupMap</i> setting, this maps from the class group name to the icon file path.<br/>The group name is always in lowercase.
+</p>
+
+<p>
+
+For instance to replace the Content group change the entry to:<br/>
+</p>
+    <pre class="wordwrap"><span class="line">ClassGroupMap[content]=filesystems/folder_video.png</span></pre>
+    
+<p>
+
+You can also add your own class groups using the same method, for instance:<br/>
+</p>
+    <pre class="wordwrap"><span class="line">ClassGroupMap[crm]=apps/kuser.png</span></pre>
+    
+<p>
+The default icon for groups can be modified by changing the <i>Default</i> setting.
+</p>
+
+<a name="eztoc157903_4_3" id="eztoc157903_4_3"></a><h3>Changing mimetype icons</h3>
+<p>
+
+Find the block <i>MimeIcons</i> and edit the <i>MimeMap</i> setting, this maps from the mimetype to the icon file path.<br/>
+The mimetype can be specified fully or with just the group, the system will try to find a complete mimetype before it tries the group.<br/>e.g. <i>text/plain</i> or just <i>text</i>.
+</p>
+
+<p>
+
+For instance to replace the video file icon change the <i>video</i> entry to:<br/>
+</p>
+    <pre class="wordwrap"><span class="line">MimeMap[video]=mimetypes/image.png</span></pre>
+    
+<p>
+
+You can also add extra mimetypes using the same method, for instance:<br/>
+</p>
+    <pre class="wordwrap"><span class="line">MimeMap[text/xml]=mimetypes/html.png</span></pre>
+    
+<p>
+The default icon for mimetypes can be modified by changing the <i>Default</i> setting.
+</p>
+</div>
+
+
+<div class="content-view-children">
+<div class="class-comment">
+    <h1 id="comments">Comments</h1>
+
+
+    
+
+ 
+
+
+</div>
+</div>
+
+<div class="block float-break">
+            <form method="post" action="/web/20071220213352/http://ez.no/content/action">
+            <input class="button" type="submit" name="NewButton" value="New comment"/>
+            <input type="hidden" name="RedirectURIAfterPublish" value="ezpublish/documentation/customization/components/icons#comments"/>
+            <input type="hidden" name="NodeID" value="52043"/>
+                           <input type="hidden" name="ClassIdentifier" value="article_comment"/>
+                        <input type="hidden" name="ContentLanguageCode" value="eng-GB"/>
+        </form>
+    </div>
+
+</div>
+</div>
+</div>
+
+
+<div class="template-design area-sidebar-normal">
+<div class="template-module content-view-sidebar">
+<div class="template-object class-documentation">
+
+<div class="attribute-heading">
+    <h2 class="bullet">Contents</h2>
+</div>
+<h3><a href="customization.html">Customization</a></h3>
+<p>
+        
+        
+            
+                    <a href="customization/access_control.html">Access control</a><br/>
+          
+	
+            
+                    <a href="customization/ez_publish_api_documentation.html">eZ publish API Documentation</a><br/>
+          
+	
+            
+                    <a href="customization/content_structure.html">Content structure</a><br/>
+          
+	
+            
+                    <a href="customization/custom_design.html">Custom design</a><br/>
+          
+	
+            
+                    <a href="customization/components.html">Components</a><br/>
+          
+	
+            &nbsp;&nbsp;&nbsp;
+                    <a href="customization/components/images.html">Images</a><br/>
+          
+	
+            &nbsp;&nbsp;&nbsp;
+                    <a href="customization/components/datatypes.html">Datatypes</a><br/>
+          
+	
+            &nbsp;&nbsp;&nbsp;
+                    <a href="customization/components/shop.html">Shop</a><br/>
+          
+	
+            &nbsp;&nbsp;&nbsp;
+                    <a href="customization/components/information_collection.html">Information collection</a><br/>
+          
+	
+            &nbsp;&nbsp;&nbsp;
+                    <a href="customization/components/search.html">Search</a><br/>
+          
+	
+            &nbsp;&nbsp;&nbsp;
+                    <a href="customization/components/form_processing.html">Form processing</a><br/>
+          
+	
+            &nbsp;&nbsp;&nbsp;
+                    <a href="customization/components/error_handling.html">Error handling</a><br/>
+          
+	
+            &nbsp;&nbsp;&nbsp;
+                    <a href="customization/components/icons.html"><b>Icons</b></a><br/>
+          
+	
+            &nbsp;&nbsp;&nbsp;
+                    <a href="customization/components/menus.html">Menus</a><br/>
+          
+	
+            &nbsp;&nbsp;&nbsp;
+                    <a href="customization/components/toolbars.html">Toolbars</a><br/>
+          
+	
+            
+                    <a href="customization/tips_tricks.html">Tips &amp; Tricks</a><br/>
+          
+	
+            
+                    <a href="customization/troubleshooting.html">Troubleshooting</a><br/>
+          
+	
+        </p>
+
+
+<hr class="docsplit"/>
+<h3>Created</h3>
+<p>
+02/06/2004<br/>
+9:30:42 am<br/>
+by Wenyue Yu
+</p>
+<h3>Last updated</h3>
+<p>
+16/06/2004<br/>
+10:01:34 am<br/>
+by Jan Borsodi
+</p>
+<h3>Authors</h3>
+<p class="rendered">Wenyue Yu<br/>Jan Borsodi<br/></p>
+
+<br/>
+<hr class="docsplit"/>
+
+<p>This page is part of the eZ Publish documentation. The documentation is available under the <a href="https://web.archive.org/web/20071220213352/http://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License.</a> All contributions will be released under the terms of this license.</p>
+
+</div>
+</div>
+</div>
+
+
+
+
+
+<!-- Main area content: END -->
+
+</div>
+</div>
+
+<!-- Main area: END -->
+
+<hr class="hide"/>
+
+<!-- Footer area: START -->
+<div id="footer-design">
+<div id="page-width6">
+<div id="footer">
+
+<address>Powered by eZ Publish&reg; Content Management System.<br/>
+Copyright &copy;1999 - 2024 7x and 2007 eZ Systems AS (except where otherwise noted). All rights reserved.</address>
+
+</div>
+</div>
+</div>
+<!-- Footer area: END -->
+
+</div>
+<!-- Complete page area: END -->
+
+
+    
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TFEDSZJYH0"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-TFEDSZJYH0');
+</script>
+
+
+</body>
+</html>
+
+<!-- th[eZ] 20050804 --><!--
+     FILE ARCHIVED ON 21:33:52 Dec 20, 2007 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 11:19:53 Oct 31, 2024.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  captures_list: 0.487
+  exclusion.robots: 0.018
+  exclusion.robots.policy: 0.008
+  esindex: 0.027
+  cdx.remote: 13.069
+  LoadShardBlock: 89.233 (3)
+  PetaboxLoader3.datanode: 187.264 (4)
+  load_resource: 205.893
+  PetaboxLoader3.resolve: 95.313
+-->

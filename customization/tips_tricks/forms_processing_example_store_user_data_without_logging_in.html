@@ -1,0 +1,933 @@
+
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style type="text/css">
+    @import url(https://doc.core.ezpublish.se7enx.com/ezno2005/design/ezno2005/stylesheets/core.css);
+    @import url(https://doc.core.ezpublish.se7enx.com/ezno2005/design/ezno2005/stylesheets/pagelayout.css);
+    @import url(https://doc.core.ezpublish.se7enx.com/ezno2005/design/ezno2005/stylesheets/classes.css);
+    @import url(https://doc.core.ezpublish.se7enx.com/ezno2005/design/ezno2005/stylesheets/monitor.css);
+</style>
+
+<link type="text/css" rel="stylesheet" href="https://web.archive.org/web/20071223171615cs_/http://ez.no/extension/ezno2005/design/ezno2005/stylesheets/print.css" media="print"/>
+
+    <link rel="alternate" title="ez.no News" href="https://web.archive.org/web/20071223171615/http://ez.no/rss/feed/news" type="application/rss+xml"/><link rel="alternate" title="ez.no Developer News" href="/web/20071223171615/http://ez.no/rss/feed/communitynews" type="application/rss+xml"/>
+<link rel="alternate" title="ez.no Developer Articles" href="https://web.archive.org/web/20071223171615/http://ez.no/rss/feed/community_articles" type="application/rss+xml"/>
+<link rel="alternate" title="ez.no Forum" href="https://web.archive.org/web/20071223171615/http://ez.no/rss/feed/forum" type="application/rss+xml"/>
+<link rel="alternate" title="ez.no Contributions" href="https://web.archive.org/web/20071223171615/http://ez.no/rss/feed/contribs" type="application/rss+xml"/>
+<link rel="alternate" title="ez.no Open Funding" href="https://web.archive.org/web/20071223171615/http://ez.no/rss/feed/openfunding_suggestions" type="application/rss+xml"/>
+
+
+<!-- IE conditional comments; for bug fixes for different IE versions -->
+<!--[if IE 5]>     <style type="text/css"> @import url(/extension/ezno2005/design/ezno2005/stylesheets/ie5.css);    </style> <![endif]-->
+<!--[if lte IE 6]> <style type="text/css"> @import url(/extension/ezno2005/design/ezno2005/stylesheets/ie6lte.css); </style> <![endif]-->
+<!--[if gte IE 6]> <style type="text/css"> @import url(/extension/ezno2005/design/ezno2005/stylesheets/ie6gte.css); </style> <![endif]-->
+
+<!-- Load special stylesheet (if necessary) for newer Netscape decendants, Mozilla and Firefox, using the Gecko renderer -->
+<script type="text/javascript"><!-- if ((navigator.userAgent.indexOf("Gecko") != -1)&&(navigator.userAgent.indexOf("KHTML") == -1)) document.write("<style type=\"text/css\">@import url(/extension/ezno2005/design/ezno2005/stylesheets/gecko.css);</style>");--></script>
+                                                                                    
+<title>
+            Forms processing example: store user data without logging in     /         Tips &amp; Tricks     /         Customization                    </title>
+<meta http-equiv="Content-Language" content="en-GB"/>
+    <meta name="author" content="eZ Systems"/>
+    <meta name="copyright" content="eZ Systems as"/>
+    <meta name="description" content="eZ Publish is an open source content management system (CMS) and an open source content management framework (CMF)."/>
+    <meta name="keywords" content="cms, publish, e-commerce, content management, development framework"/>
+
+<meta name="MSSmartTagsPreventParsing" content="TRUE"/>
+<meta name="generator" content="eZ Publish"/>
+
+<script type="text/javascript" src="https://doc.core.ezpublish.se7enx.com/ezno2005/design/ezno2005/javascripts/tools.js"></script>
+<script type="text/javascript" src="https://doc.core.ezpublish.se7enx.com/ezno2005/design/ezno2005/javascripts/dropdownmenu.js"></script>
+</head>    <body onload="menuInit();">
+
+<!-- Complete page area: START -->
+<div id="page">
+
+<!-- Header area: START -->
+<div id="header">
+<div id="header-insert">
+
+<!-- User menu area: START -->
+<div id="usermenu">
+
+<div id="page-width1">
+
+<div id="logo">
+<h1><a href="https://doc.core.ezpublish.se7enx.com/"><span class="hide">eZ Systems - The Content Management Ecosystem</span></a></h1>
+</div>
+
+
+
+<p class="hide"><a href="#main">Skip to main content</a></p>
+
+<hr class="hide"/>
+<div id="searchbox">
+<form action="/web/20071223171615/http://ez.no/ezsearchredirect/action" method="get">
+
+<div class="block">
+<div class="element">
+<input id="searchbutton" class="button" type="submit" value="Search"/>
+</div>
+
+<div class="element searchstring">
+    <label for="searchtext" class="hide">Search text:</label>
+    <input id="searchtext" name="SearchText" type="text" size="12"/><br/>
+    
+
+            <div class="section">
+            <label for="searcharea" class="hide">Search area:</label>
+            <select id="searcharea" name="SubTreeArray[]">
+                <option value="2" selected="selected">All ez.no</option>
+                <option value="306">Bug reports</option>
+                <option value="21358">Contributions</option>
+                <option value="documentation">Documentation</option>
+                <option value="308">Forum</option>
+            </select>
+            </div>
+    </div>
+
+</div>
+</form>
+</div>
+
+<hr class="hide"/>
+<h2 class="hide">User menu</h2>
+
+<!-- User menu content: START -->
+<ul>
+            <li><a href="https://web.archive.org/web/20071223171615/http://ez.no/download"><span>Downloads</span></a></li>
+    <li><a href="https://web.archive.org/web/20071223171615/http://ez.no/company/contact"><span>Contact</span></a></li>
+            <li><a href="https://web.archive.org/web/20071223171615/http://ez.no/user/login"><span>Log in</span></a></li>
+        <li><a href="https://web.archive.org/web/20071223171615/http://ez.no/user/register"><span>Register</span></a></li>
+    
+    <li id="language-menu">
+        <a class="highlighted" title="English" href="https://web.archive.org/web/20071223171615/http://ez.no/ezpublish/documentation/customization/tips_tricks/forms_processing_example_store_user_data_without_logging_in"><img src="/ezno2005/design/ezno2005/images/eng-GB.gif" width="18" height="12" alt="English"/></a>
+        <a title="Deutsch" href="https://web.archive.org/web/20071223171615/http://ez.no/de/ezpublish/documentation/customization/tips_tricks/forms_processing_example_store_user_data_without_logging_in"><img src="/ezno2005/design/ezno2005/images/ger-DE.gif" width="18" height="12" alt="Deutsch"/></a>
+        <a title="Português" href="https://web.archive.org/web/20071223171615/http://ez.no/br/ezpublish/documentation/customization/tips_tricks/forms_processing_example_store_user_data_without_logging_in"><img src="/ezno2005/design/ezno2005/images/por-BR.gif" width="18" height="12" alt="Português"/></a>
+        <a title="Français" href="https://web.archive.org/web/20071223171615/http://ez.no/fr/ezpublish/documentation/customization/tips_tricks/forms_processing_example_store_user_data_without_logging_in"><img src="/ezno2005/design/ezno2005/images/fre-FR.gif" width="18" height="12" alt="Français"/></a>
+        <a title="日本語" href="https://web.archive.org/web/20071223171615/http://ez.no/jp/ezpublish/documentation/customization/tips_tricks/forms_processing_example_store_user_data_without_logging_in"><img src="/ezno2005/design/ezno2005/images/jpn-JP.gif" width="18" height="12" alt="日本語"/></a>        
+        <a title="中文" href="https://web.archive.org/web/20071223171615/http://ez.no/tw/ezpublish/documentation/customization/tips_tricks/forms_processing_example_store_user_data_without_logging_in"><img src="/ezno2005/design/ezno2005/images/chi-TW.gif" width="18" height="12" alt="中文"/></a>        
+        <a title="Norsk" href="https://web.archive.org/web/20071223171615/http://ez.no/no/ezpublish/documentation/customization/tips_tricks/forms_processing_example_store_user_data_without_logging_in"><img src="/ezno2005/design/ezno2005/images/nor-NO.gif" width="18" height="12" alt="Norsk"/></a>        
+    </li>
+</ul>
+<!-- User menu content: END -->
+
+</div>
+
+</div>
+<!-- User menu area: END -->
+
+</div>
+</div>
+<!-- Header area: END --><script type="text/javascript">
+<!--
+var menu = new Array();
+
+menu[0] = ['eZ Publish', '/ezpublish', 'eZ Publish Premium', '/ezpublish/premium', 'eZ Publish Now', '/ezpublish/now', 'eZ Publish On Demand', '/ezpublish/on_demand', 'Proprietary license options', '/products/proprietary_license_options', 'Certified extensions', '/products/certified_extensions', 'eZ Flow', '/ezflow', 'eZ Components', '/ezcomponents', 'eZ Find', '/ezfind', 'eZ Newsletter', '/eznewsletter', 'Expert consulting services', '/products/expert_consulting_services', 'Support', '/products/support'];
+menu[1] = ['Documentation', '/doc', 'Articles', '/community/articles', 'Books', '/store/books', 'Training', '/education/training', 'Certification', '/education/certification'];
+menu[2] = ['Case studies', '/customers/case_studies', 'References', '/customers/references', 'User quotes', '/customers/user_quotes', 'eZ for media', '/customers/ez_for_media'];
+menu[3] = ['Worldwide Partners', '/partner/worldwide_partners', 'eZ Partner program', '/partner/ez_partner_program', 'Knowledge centre', '/partner/knowledge_centre'];
+menu[4] = ['Downloads', '/download', 'Documentation', '/doc', 'News', '/developer/news', 'Developer information', '/developer/developer_information', 'Projects & contributions', '/developer/contribs', 'Forum', '/developer/forum', 'Issue tracker', '/bugs/redirect', 'Open Funding', '/developer/open_funding', 'Security', '/developer/security', 'User groups', '/developer/user_groups'];
+menu[5] = ['Total Product Responsibility from eZ', '/support/total_product_responsibility_from_ez'];
+menu[6] = ['Software solutions', '/store/software', 'Training', '/services/training', 'Certification', '/services/certification', 'Books', '/store/books', 'Services', '/store/services'];
+menu[7] = ['News', '/company/news', 'Media & press', '/company/media_press', 'Events', '/company/events', 'Career', '/company/career', 'eZ Conference & Awards', '/company/ez_conference_awards', 'Board of Directors', '/company/board', 'eZ Crew', '/company/ez_crew', 'Contact', '/company/contact'];
+
+-->
+</script>
+<div id="menuborder">
+
+<!-- Main menu area: START -->
+<div id="menu" onmouseover="menuHover();" onmouseout="tryHideSubMenues();">
+
+<div id="mainmenu" class="float-break">
+<div id="page-width2">
+    <ul id="mainmenulist" class="float-break">
+<li class="current"><a href="https://web.archive.org/web/20071223171615/http://ez.no/products" onmouseover="switchSubMenu( this );">Products &amp; services</a></li>
+<li><a href="https://web.archive.org/web/20071223171615/http://ez.no/education" onmouseover="switchSubMenu( this );">Education</a></li>
+<li><a href="https://web.archive.org/web/20071223171615/http://ez.no/customers" onmouseover="switchSubMenu( this );">Customers</a></li>
+<li><a href="https://web.archive.org/web/20071223171615/http://ez.no/partner" onmouseover="switchSubMenu( this );">Partners</a></li>
+<li><a href="https://web.archive.org/web/20071223171615/http://ez.no/developer" onmouseover="switchSubMenu( this );">Developer</a></li>
+<li><a href="https://web.archive.org/web/20071223171615/http://ez.no/support" onmouseover="switchSubMenu( this );">Support</a></li>
+<li><a href="https://web.archive.org/web/20071223171615/http://ez.no/store" onmouseover="switchSubMenu( this );">Store</a></li>
+<li class="last"><a href="https://web.archive.org/web/20071223171615/http://ez.no/company" onmouseover="switchSubMenu( this );">Company</a></li>
+</ul>
+
+</div>
+</div>
+
+
+<div id="submenu">
+<div id="page-width3">
+    <ul class="float-break">
+                        <li><a href="https://web.archive.org/web/20071223171615/http://ez.no/ezpublish">eZ Publish</a></li>
+                                <li><a href="https://web.archive.org/web/20071223171615/http://ez.no/ezpublish/premium">eZ Publish Premium</a></li>
+                                <li><a href="https://web.archive.org/web/20071223171615/http://ez.no/ezpublish/now">eZ Publish Now</a></li>
+                                <li><a href="https://web.archive.org/web/20071223171615/http://ez.no/ezpublish/on_demand">eZ Publish On Demand</a></li>
+                                <li><a href="https://web.archive.org/web/20071223171615/http://ez.no/products/proprietary_license_options">Proprietary license options</a></li>
+                                <li><a href="https://web.archive.org/web/20071223171615/http://ez.no/products/certified_extensions">Certified extensions</a></li>
+                                <li><a href="https://web.archive.org/web/20071223171615/http://ez.no/ezflow">eZ Flow</a></li>
+                                <li><a href="https://web.archive.org/web/20071223171615/http://ez.no/ezcomponents">eZ Components</a></li>
+                                <li><a href="https://web.archive.org/web/20071223171615/http://ez.no/ezfind">eZ Find</a></li>
+                                <li><a href="https://web.archive.org/web/20071223171615/http://ez.no/eznewsletter">eZ Newsletter</a></li>
+                                <li><a href="https://web.archive.org/web/20071223171615/http://ez.no/products/expert_consulting_services">Expert consulting services</a></li>
+                                <li class="last"><a href="https://web.archive.org/web/20071223171615/http://ez.no/products/support">Support</a></li>
+                </ul>
+</div>
+</div>
+
+<script type="text/javascript"><!--
+    document.getElementById('submenu').style.display = 'none';
+--></script>
+
+</div>
+<!-- Main menu area: END -->
+
+</div>
+
+<hr class="hide"/><!-- Path area: START -->
+<div id="path">
+
+<div id="page-width4">
+<h2 class="hide">Path</h2>
+
+<!-- Path content: START -->
+<p>
+                        <a href="https://web.archive.org/web/20071223171615/http://ez.no/">ez.no</a>
+        
+                        /
+                            <a href="https://web.archive.org/web/20071223171615/http://ez.no/ezpublish">ezpublish</a>
+        
+                        /
+                            <a href="toc.html">documentation</a>
+        
+                        /
+                            <a href="customization.html">customization</a>
+        
+                        /
+                            <a href="customization/tips_tricks.html">tips &amp; tricks</a>
+        
+                        /
+                            forms processing example: store user data without logging in
+        
+            </p>
+<!-- Path content: END -->
+
+</div>
+
+</div>
+<!-- Path area: END -->
+
+<hr class="hide"/>
+
+<!-- Main area: START -->
+
+<div id="page-width5">
+<div id="main" class="float-break">
+
+<!-- Main area content: START -->
+
+
+
+
+<div class="template-design area-main-normal">
+<div class="template-module content-view-full">
+<div class="template-object class-documentation">
+
+
+<div class="attribute-heading">
+    <h1>Forms processing example: store user data without logging in</h1>
+</div>
+
+<p><strong>These documentation pages are no longer maintained. Please visit the <a href="https://doc.ezpublishlegacy.se7enx.com">new documentation site.</a></strong></p>
+
+<div class="attribute-long">
+    
+
+<p>
+Creating simple forms based applications using eZ Publish is relatively easy. In the admin site many user activities are based on these capabilities. This example shows you how to use the forms processing offered by eZ Publish 3.2 in a user site, i.e. outside the admin site. We create a &quot;for sale&quot; application, where users can post items for sale (along with contact information like telephone nummber etc). Many forms processing applications can be solved similarly.
+</p>
+<p>&nbsp;</p>
+<p>
+Create 2 new classes using the admin site tools, called salesfolder and salesitem, respectively.
+</p>
+<p>&nbsp;</p>
+<p>
+Salesfolder can be a straight copy of the folder class (change class name and identifier of the copy). Then create a new class salesitem, to hold the necessary information about the items for sale. (A minimal solution would have a textline for the item description, and an integer to hold the phone number of the seller).
+</p>
+<p>&nbsp;</p>
+<p>
+Nodes of the class salesitem are to be published by the anonymous webusers in the salesfolder in the user site, i.e. without logging into the admin site. The salesfolder can be published somewhere in the user site, for instance under a node of type article. I assume that you have an existing site where you can add such an article containing a salesfolder.
+</p>
+<p>&nbsp;</p>
+<p>
+Note: The solution described here is not optimal. Hopefully it illustrates eZ Publish capabilities. It also shows you how you can accomplish quite a lot by doing a small amount of customization of the out-of-box functionality provided by eZ Publish.
+</p>
+<p>&nbsp;</p>
+<p>
+Before the users can publish new salesitems, you need to address the question of permissions. To get things working, you need to give your (anonymous) users permission to create salesitems. Do this by editing the role anonymous and adding create permission on salesitems in the salesfolder subtree. There are point and click tools for this in the admin site.
+</p>
+<p>&nbsp;</p>
+<p>
+Note that you also have to give edit permission on salesitems, create permission alone is not enough!
+</p>
+
+<p>
+You may also consider giving remove permission (to &quot;self&quot;). The excact permissions your application requires are up to you.
+</p>
+
+<p>
+The next step is to customize the appearance and functionality of the application, and not use the standard (or admin) template code directly.
+</p>
+
+<p>
+For example, you probably wish to to remove the buttons for preview, bookmark etc that you see in the salesfolder. What you want to do is to override the file /design/admin/override/templates/folder.tpl. The admin site gives you the tools you need to do this.
+</p>
+<p>&nbsp;</p>
+<p>
+You can base your override template on /content/full.tpl. Select your user site and create a template file called say, salesfolder.tpl that overrides the class salesfolder only. Start with an empty file. Then copy the contents of /design/admin/override/templates/folder.tpl and paste it into the newly created template file salesfolder.tpl. At the moment this template file provides to much functionality for the casual web user, and not all of it makes sense in this simple application.You will now customize this file.
+</p>
+
+<p>
+In the template file salesfolder.tpl, remove the following code:
+</p>
+    <pre class="wordwrap"><span class="line">&lt;div class=&quot;buttonblock&quot;&gt;</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;{section show=and($is_editable,$content_object.can_edit)}</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&lt;input type=&quot;hidden&quot; name=&quot;ContentObjectID&quot; </span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;value=&quot;{$content_object.id}&quot; /&gt;</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&lt;input class=&quot;button&quot; type=&quot;submit&quot; name=&quot;EditButton&quot; </span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;value=&quot;{'Edit'|i18n( 'design/standard/node/view' )}&quot; /&gt;</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;{/section}</span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">&nbsp;&lt;input class=&quot;button&quot; type=&quot;submit&quot; name=&quot;ActionPreview&quot; </span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&nbsp;value=&quot;{'Preview'|i18n('design/standard/node/view')}&quot; /&gt;</span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&lt;input class=&quot;button&quot; type=&quot;submit&quot; name=&quot;ActionRemove&quot; </span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&nbsp;value=&quot;{'Remove'|i18n('design/standard/node/view')}&quot; /&gt;</span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&lt;input class=&quot;button&quot; type=&quot;submit&quot; </span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">&nbsp;&nbsp;name=&quot;ActionAddToBookmarks&quot; </span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">&nbsp;&nbsp;value=&quot;{'Bookmark'|i18n('design/standard/node/view')}&quot; /&gt;</span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&lt;input class=&quot;button&quot; type=&quot;submit&quot; </span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;name=&quot;ActionAddToNotification&quot; </span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;value=</span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">&nbsp;&nbsp;&quot;{'Keep me updated'|i18n('design/standard/node/view')}&quot; /&gt;</span>
+
+<span class="line">&nbsp;&lt;/div&gt;</span></pre>
+    
+<p>
+This removes the button block with the preview/bookmark etc buttons. Creat a few salesitems and see how they are displayed in the salesfolder.
+</p>
+
+<p>
+I suggest removing the class and section columns in the list of salesitems in the salesfolder, since these columns do not mean much for the average web user. Do this by removing the following code from salesfolder.tpl:
+</p>
+    <pre class="wordwrap"><span class="line">&lt;th&gt;</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;{&quot;Class&quot;|i18n(&quot;design/standard/node/view&quot;)}</span>
+
+<span class="line">&lt;/th&gt;</span></pre>
+    
+<p>
+and a few lines further below:
+</p>
+    <pre class="wordwrap"><span class="line">&lt;td&gt;</span>
+
+<span class="line">&nbsp;{$Child:item.object.class_name|wash}</span>
+
+<span class="line">&lt;/td&gt;</span></pre>
+    
+<p>
+Also remove:
+</p>
+    <pre class="wordwrap"><span class="line">&lt;th&gt;</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;{&quot;Section&quot;|i18n(&quot;design/standard/node/view&quot;)}</span>
+
+<span class="line">&lt;/th&gt;</span></pre>
+    
+<p>
+and, a few lines further below:
+</p>
+    <pre class="wordwrap"><span class="line">&lt;td&gt;</span>
+
+<span class="line">&nbsp;{$Child:item.object.section_id}</span>
+
+<span class="line">&lt;/td&gt;</span></pre>
+    
+<p>
+Finally, you may want to remove the &quot;store draft&quot; button. Do this by removing the line
+</p>
+    <pre class="wordwrap"><span class="line">&lt;input class=&quot;button&quot; type=&quot;submit&quot; name=&quot;StoreButton&quot;  </span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">&nbsp;value=&quot;{'Store draft'|i18n('design/standard/content/edit')}&quot; /&gt;</span></pre>
+    
+<p>
+You may want to do more customizing along the same lines, depending on your needs, but that is all you <b>need</b> to do, as far as this example is concerned.
+</p>
+
+<p>
+When the user presses the create salesitem button in the salesfolder, again the standard template file for item editing provides more functionality than our application requires. You want to remove some of this functionality.
+</p>
+
+<p>
+Do this by overriding /design/standard/templates/content/edit.tpl. Using the admin site template tools, select your user site and create a new template file salesitemedit.tpl for the class salesitems. Initially empty, Its content can be copied from /design/standard/templates/content/edit.tpl. eZ Publish puts this file in design/usersite/override/templates/salesedit.tpl.
+</p>
+<p>&nbsp;</p>
+<p>
+Now customize this new file. For instance, we want to remove the options in the right menu. Do this by removing the lines:
+</p>
+    <pre class="wordwrap"><span class="line">&lt;!-- Right part start--&gt;</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;{include uri=&quot;design:content/edit_right_menu.tpl&quot;}</span>
+
+<span class="line">&lt;!-- Right part end --&gt;</span></pre>
+    
+<p>
+We also want to remove the possibility to move, trash, change sort order etc. If you try to remove the lines:
+</p>
+    <pre class="wordwrap"><span class="line">{include uri=&quot;design:content/edit_placement.tpl&quot;}</span></pre>
+    <p>&nbsp;</p>
+<p>
+you will find that this does not work; eZ complains and gives you an error message when you try to store the object after editing.
+</p>
+
+<p>
+Put the line back, and rather override the file design/standard/templates/content/edit_placement.tpl. Using the admin siteto create this template, anf copy the contents of the original edit_placement.tpl file into the new file that will be stored at /design/usersite/override/templates/salesitemedit_placement.tpl. You can then customize this new file.
+</p>
+
+<p>
+How do you know which template files to override? Add the line
+</p>
+
+<p>
+debug=enabled
+</p>
+
+<p>
+to the [TemplateSettings] section of /settings/override/site.ini.append.
+</p>
+
+<p>
+Now when you reload the eZ page, eZ Publish will include the names of the template files used. (Put a # before the line debug=enabled to turn the display of template information of when you don&amp;#8217;t need it anymore.)
+</p>
+
+<p>
+First remove the button for adding new locations, i.e remove the line:
+</p>
+    <pre class="wordwrap"><span class="line">&lt;input class=&quot;button&quot; type=&quot;submit&quot; name=&quot;BrowseNodeButton&quot; </span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">&nbsp;value=&quot;{'Add locations'|i18n('design/standard/content/edit')}&quot; /&gt;</span></pre>
+    
+<p>
+Then remove the column heading by removing the lines:
+</p>
+    <pre class="wordwrap"><span class="line">&lt;th width=&quot;60%&quot;&gt;</span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;{&quot;Location&quot;|i18n(&quot;design/standard/content/edit&quot;)}&lt;/th&gt;</span>
+
+<span class="line">&lt;th colspan=&quot;1&quot;&gt;</span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">&nbsp;&nbsp;{&quot;Sort by&quot;|i18n(&quot;design/standard/content/edit&quot;)}&lt;/th&gt;</span>
+
+<span class="line">&lt;th colspan=&quot;2&quot;&gt;</span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;{&quot;Ordering&quot;|i18n(&quot;design/standard/content/edit&quot;)}&lt;/th&gt;</span>
+
+<span class="line">&lt;th colspan=&quot;1&quot;&gt;</span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;{&quot;Main&quot;|i18n(&quot;design/standard/content/edit&quot;)}&lt;/th&gt;</span>
+
+<span class="line">&lt;th colspan=&quot;1&quot;&gt;</span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">&nbsp;&nbsp;{&quot;Move&quot;|i18n(&quot;design/standard/content/edit&quot;)}&lt;/th&gt;</span>
+
+<span class="line">&lt;th colspan=&quot;1&quot;&gt;</span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">&nbsp;&nbsp;{&quot;Remove&quot;|i18n(&quot;design/standard/content/edit&quot;)}&lt;/th&gt;</span></pre>
+    
+<p>
+Remove the option to alter the sort order by removing the lines:
+</p>
+    <pre class="wordwrap"><span class="line">&lt;td class=&quot;{$Node:sequence}&quot;&gt;</span>
+
+<span class="line">&nbsp;&nbsp;&lt;select name=&quot;SortFieldMap[{$Node:item.id}]&quot;&gt;</span>
+
+<span class="line">&nbsp;&nbsp;{section name=Sort loop=$Node:sort_fields}</span>
+
+<span class="line">&nbsp;&nbsp;&lt;option value=&quot;{$Node:Sort:key}&quot; </span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">&nbsp;&nbsp;{section show=eq($Node:Sort:key,$Node:item.sort_field)}</span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">&nbsp;&nbsp;selected=&quot;selected&quot;{/section}&gt;&nbsp;&nbsp;{$Node:Sort:item}&lt;/option&gt;</span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">&nbsp;&nbsp;{/section}</span>
+
+<span class="line">&nbsp;&nbsp;&lt;/select&gt;</span>
+
+<span class="line">&lt;/td&gt;</span></pre>
+    
+<p>
+Remove the corresponding ascending/descending sort order radio buttons by removing the lines:
+</p>
+    <pre class="wordwrap"><span class="line">&lt;td class=&quot;{$Node:sequence}&quot; width=&quot;25&quot;&gt;</span>
+
+<span class="line">&nbsp;&nbsp;&lt;nobr&gt;&lt;img src={&quot;asc-transp.gif&quot;|ezimage} alt=&quot;Ascending&quot; /&gt;</span>
+
+<span class="line">&nbsp;&nbsp;&lt;input type=&quot;radio&quot; name=&quot;SortOrderMap[{$Node:item.id}]&quot; </span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;value=&quot;1&quot; </span>
+
+<span class="line">&nbsp;&nbsp;{section show=eq($Node:item.sort_order,1)}</span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;checked=&quot;checked&quot;{/section} /&gt;&lt;/nobr&gt;</span>
+
+<span class="line">&lt;/td&gt;</span>
+
+<span class="line">&lt;td class=&quot;{$Node:sequence}&quot; width=&quot;25&quot;&gt;</span>
+
+<span class="line">&nbsp;&nbsp;&lt;nobr&gt;&lt;img src={&quot;desc-transp.gif&quot;|ezimage} alt=&quot;Descending&quot; /&gt;</span>
+
+<span class="line">&nbsp;&nbsp;&lt;input type=&quot;radio&quot; name=&quot;SortOrderMap[{$Node:item.id}]&quot; </span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">&nbsp;&nbsp;value=&quot;0&quot; </span>
+
+<span class="line">&nbsp;&nbsp;{section show=eq($Node:item.sort_order,0)}</span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;checked=&quot;checked&quot;{/section} /&gt;&lt;/nobr&gt;</span>
+
+<span class="line">&lt;/td&gt;</span></pre>
+    
+<p>
+Remove the &quot;move file&quot; icon by removing the lines:
+</p>
+    <pre class="wordwrap"><span class="line">&lt;input type=&quot;image&quot;</span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">&nbsp;name=&quot;{concat('MoveNodeID_',$Node:item.parent_node)}&quot; </span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">src={&quot;move.gif&quot;|ezimage} value=&quot;{$Node:item.parent_node}&quot; /&gt;</span></pre>
+    
+<p>
+Remove the trash icon by removing the lines:
+</p>
+    <pre class="wordwrap"><span class="line">&lt;input type=&quot;image&quot; </span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">name=&quot;{concat('RemoveNodeID_',$Node:item.parent_node)}&quot; </span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">src={&quot;trash.png&quot;|ezimage} value=&quot;{$Node:item.parent_node}&quot;/&gt;</span></pre>
+    
+<p>
+Then you will probably want to remove the lingering radio button that still shows up. But removing the code
+</p>
+    <pre class="wordwrap"><span class="line">&lt;input type=&quot;radio&quot; name=&quot;MainNodeID&quot; </span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">{section show=eq($main_node_id,$Node:item.parent_node)}</span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">checked=&quot;checked&quot;{/section} value=&quot;{$Node:item.parent_node}&quot; /&gt;</span></pre>
+    
+<p>
+does not seem to work.. eZ Publish again complains with an error message when you try to store the new item. A workaround is to make this input field hidden by replacing the above lines with the following:
+</p>
+    <pre class="wordwrap"><span class="line">&lt;input type=&quot;hidden&quot; name=&quot;MainNodeID&quot; </span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">{section show=eq($main_node_id,$Node:item.parent_node)}</span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">checked=&quot;checked&quot;{/section} </span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">&nbsp;value=&quot;{$Node:item.parent_node}&quot; /&gt;</span></pre>
+    
+<p>
+A more experienced user would probably do this differently. I suggest you spend some time on this template file to see how you can improve on the solution.
+</p>
+
+<p>
+This concludes the example. To summarize, you have created a simple forms based application by copying standard eZ Publish functionality and adding and removing a few features as required.
+</p>
+</div>
+
+
+<div class="content-view-children">
+<div class="class-comment">
+    <h1 id="comments">Comments</h1>
+
+
+    
+
+ 
+
+
+</div>
+</div>
+
+<div class="block float-break">
+            <form method="post" action="/web/20071223171615/http://ez.no/content/action">
+            <input class="button" type="submit" name="NewButton" value="New comment"/>
+            <input type="hidden" name="RedirectURIAfterPublish" value="ezpublish/documentation/customization/tips_tricks/forms_processing_example_store_user_data_without_logging_in#comments"/>
+            <input type="hidden" name="NodeID" value="36995"/>
+                           <input type="hidden" name="ClassIdentifier" value="article_comment"/>
+                        <input type="hidden" name="ContentLanguageCode" value="eng-GB"/>
+        </form>
+    </div>
+
+</div>
+</div>
+</div>
+
+
+<div class="template-design area-sidebar-normal">
+<div class="template-module content-view-sidebar">
+<div class="template-object class-documentation">
+
+<div class="attribute-heading">
+    <h2 class="bullet">Contents</h2>
+</div>
+<h3><a href="customization.html">Customization</a></h3>
+<p>
+        
+        
+            
+                    <a href="customization/access_control.html">Access control</a><br/>
+          
+	
+            
+                    <a href="customization/ez_publish_api_documentation.html">eZ publish API Documentation</a><br/>
+          
+	
+            
+                    <a href="customization/content_structure.html">Content structure</a><br/>
+          
+	
+            
+                    <a href="customization/custom_design.html">Custom design</a><br/>
+          
+	
+            
+                    <a href="customization/components.html">Components</a><br/>
+          
+	
+            
+                    <a href="customization/tips_tricks.html">Tips &amp; Tricks</a><br/>
+          
+	
+            &nbsp;&nbsp;&nbsp;
+                    <a href="debugging_templates.html">Debugging templates</a><br/>
+          
+	
+            &nbsp;&nbsp;&nbsp;
+                    <a href="javascript_in_templates.html">Javascript in templates</a><br/>
+          
+	
+            &nbsp;&nbsp;&nbsp;
+                    <a href="fetching_current_user.html">Fetching current user</a><br/>
+          
+	
+            &nbsp;&nbsp;&nbsp;
+                    <a href="showing_related_objects.html">Showing related objects</a><br/>
+          
+	
+            &nbsp;&nbsp;&nbsp;
+                    <a href="show_which_templates_are_used.html">Show which templates are used</a><br/>
+          
+	
+            &nbsp;&nbsp;&nbsp;
+                    <a href="fetching_the_id_of_the_parent.html">Fetching the ID of the parent</a><br/>
+          
+	
+            &nbsp;&nbsp;&nbsp;
+                    <a href="one_article_folder.html">One Article Folder</a><br/>
+          
+	
+            &nbsp;&nbsp;&nbsp;
+                    <a href="creating_tree_menus.html">Creating tree menus</a><br/>
+          
+	
+            &nbsp;&nbsp;&nbsp;
+                    <a href="how_can_i_use_my_own_php_script_inside_ezp.html">How can I use my own php script insid...</a><br/>
+          
+	
+            &nbsp;&nbsp;&nbsp;
+                    <a href="hiding_attribute_content.html">Hiding attribute content</a><br/>
+          
+	
+            &nbsp;&nbsp;&nbsp;
+                    <a href="splitting_an_article_over_several_pages.html">Splitting an article over several pages</a><br/>
+          
+	
+            &nbsp;&nbsp;&nbsp;
+                    <a href="accessing_section_id_in_pagelayout.html">Accessing section id in pagelayout</a><br/>
+          
+	
+            &nbsp;&nbsp;&nbsp;
+                    <a href="list_articles_in_folder.html">List articles in folder</a><br/>
+          
+	
+            &nbsp;&nbsp;&nbsp;
+                    <a href="creating_nice_urls.html">Creating nice URLs</a><br/>
+          
+	
+            &nbsp;&nbsp;&nbsp;
+                    <a href="alt_tag_on_images.html">Alt tag on images</a><br/>
+          
+	
+            &nbsp;&nbsp;&nbsp;
+                    <a href="improve_the_pagelayouttpl.html">Improve the pagelayout.tpl</a><br/>
+          
+	
+            &nbsp;&nbsp;&nbsp;
+                    <a href="clean_html_tags.html">Clean HTML tags</a><br/>
+          
+	
+            &nbsp;&nbsp;&nbsp;
+                    <a href="insert_javascript_call_inside_ezpub_document.html">Insert javascript call inside ezpub d...</a><br/>
+          
+	
+            &nbsp;&nbsp;&nbsp;
+                    <a href="3rd_party_applications.html">3rd party applications</a><br/>
+          
+	
+            &nbsp;&nbsp;&nbsp;
+                    <a href="fetch_function_examples.html">Fetch Function examples</a><br/>
+          
+	
+            &nbsp;&nbsp;&nbsp;
+                    <a href="display_more_than_15_items_on_your_content_administration_page.html">Display more than 15 items on your co...</a><br/>
+          
+	
+            &nbsp;&nbsp;&nbsp;
+                    <a href="including_php_files_in_templates.html">Including PHP files in templates</a><br/>
+          
+	
+            &nbsp;&nbsp;&nbsp;
+                    <a href="redirecting_after_content_publishing.html">Redirecting after content publishing</a><br/>
+          
+	
+            &nbsp;&nbsp;&nbsp;
+                    <a href="howto_see_if_article_has_an_image.html">HowTo see if article has an image</a><br/>
+          
+	
+            &nbsp;&nbsp;&nbsp;
+                    <a href="date_and_time_formats.html">Date and Time Formats</a><br/>
+          
+	
+            &nbsp;&nbsp;&nbsp;
+                    <a href="forms_processing_example_store_user_data_without_logging_in.html"><b>Forms processing example: store user...</b></a><br/>
+          
+	
+            &nbsp;&nbsp;&nbsp;
+                    <a href="adjust_timezone.html">Adjust Timezone</a><br/>
+          
+	
+            &nbsp;&nbsp;&nbsp;
+                    <a href="adding_a_remove_button_image.html">Adding a Remove Button/Image</a><br/>
+          
+	
+            &nbsp;&nbsp;&nbsp;
+                    <a href="find_the_age_in_years_for_an_object.html">Find the age in years for an object</a><br/>
+          
+	
+            &nbsp;&nbsp;&nbsp;
+                    <a href="editing_creating_and_removing_content_from_the_user_page.html">Editing, creating and removing conten...</a><br/>
+          
+	
+            &nbsp;&nbsp;&nbsp;
+                    <a href="indexing_binary_files_with_ifilters_on_windows_installations.html">Indexing binary files with IFilters o...</a><br/>
+          
+	
+            
+                    <a href="../troubleshooting.html">Troubleshooting</a><br/>
+          
+	
+        </p>
+
+
+<hr class="docsplit"/>
+<h3>Created</h3>
+<p>
+22/10/2003<br/>
+8:31:43 pm<br/>
+by Paal Are Solberg
+</p>
+<h3>Last updated</h3>
+<p>
+13/11/2003<br/>
+11:04:02 am<br/>
+by Paal Are Solberg
+</p>
+<h3>Authors</h3>
+<p class="rendered">Paal Are Solberg<br/></p>
+
+<br/>
+<hr class="docsplit"/>
+
+<p>This page is part of the eZ Publish documentation. The documentation is available under the <a href="https://web.archive.org/web/20071223171615/http://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License.</a> All contributions will be released under the terms of this license.</p>
+
+</div>
+</div>
+</div>
+
+
+
+
+
+<!-- Main area content: END -->
+
+</div>
+</div>
+
+<!-- Main area: END -->
+
+<hr class="hide"/>
+
+<!-- Footer area: START -->
+<div id="footer-design">
+<div id="page-width6">
+<div id="footer">
+
+<address>Powered by eZ Publish&reg; Content Management System.<br/>
+Copyright &copy;1999 - 2024 7x and 2007 eZ Systems AS (except where otherwise noted). All rights reserved.</address>
+
+</div>
+</div>
+</div>
+<!-- Footer area: END -->
+
+</div>
+<!-- Complete page area: END -->
+
+
+    
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TFEDSZJYH0"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-TFEDSZJYH0');
+</script>
+
+
+</body>
+</html>
+
+<!-- th[eZ] 20050804 --><!--
+     FILE ARCHIVED ON 17:16:15 Dec 23, 2007 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 11:20:13 Oct 31, 2024.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  captures_list: 0.62
+  exclusion.robots: 0.028
+  exclusion.robots.policy: 0.017
+  esindex: 0.012
+  cdx.remote: 4.914
+  LoadShardBlock: 60.583 (3)
+  PetaboxLoader3.datanode: 76.067 (4)
+  load_resource: 41.903
+  PetaboxLoader3.resolve: 22.092
+-->

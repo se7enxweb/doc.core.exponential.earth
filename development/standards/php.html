@@ -1,0 +1,1201 @@
+
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style type="text/css">
+    @import url(https://doc.core.ezpublish.se7enx.com/ezno2005/design/ezno2005/stylesheets/core.css);
+    @import url(https://doc.core.ezpublish.se7enx.com/ezno2005/design/ezno2005/stylesheets/pagelayout.css);
+    @import url(https://doc.core.ezpublish.se7enx.com/ezno2005/design/ezno2005/stylesheets/classes.css);
+    @import url(https://doc.core.ezpublish.se7enx.com/ezno2005/design/ezno2005/stylesheets/monitor.css);
+</style>
+
+<link type="text/css" rel="stylesheet" href="https://web.archive.org/web/20071224023039cs_/http://ez.no/extension/ezno2005/design/ezno2005/stylesheets/print.css" media="print"/>
+
+    <link rel="alternate" title="ez.no News" href="https://web.archive.org/web/20071224023039/http://ez.no/rss/feed/news" type="application/rss+xml"/><link rel="alternate" title="ez.no Developer News" href="/web/20071224023039/http://ez.no/rss/feed/communitynews" type="application/rss+xml"/>
+<link rel="alternate" title="ez.no Developer Articles" href="https://web.archive.org/web/20071224023039/http://ez.no/rss/feed/community_articles" type="application/rss+xml"/>
+<link rel="alternate" title="ez.no Forum" href="https://web.archive.org/web/20071224023039/http://ez.no/rss/feed/forum" type="application/rss+xml"/>
+<link rel="alternate" title="ez.no Contributions" href="https://web.archive.org/web/20071224023039/http://ez.no/rss/feed/contribs" type="application/rss+xml"/>
+<link rel="alternate" title="ez.no Open Funding" href="https://web.archive.org/web/20071224023039/http://ez.no/rss/feed/openfunding_suggestions" type="application/rss+xml"/>
+
+
+<!-- IE conditional comments; for bug fixes for different IE versions -->
+<!--[if IE 5]>     <style type="text/css"> @import url(/extension/ezno2005/design/ezno2005/stylesheets/ie5.css);    </style> <![endif]-->
+<!--[if lte IE 6]> <style type="text/css"> @import url(/extension/ezno2005/design/ezno2005/stylesheets/ie6lte.css); </style> <![endif]-->
+<!--[if gte IE 6]> <style type="text/css"> @import url(/extension/ezno2005/design/ezno2005/stylesheets/ie6gte.css); </style> <![endif]-->
+
+<!-- Load special stylesheet (if necessary) for newer Netscape decendants, Mozilla and Firefox, using the Gecko renderer -->
+<script type="text/javascript"><!-- if ((navigator.userAgent.indexOf("Gecko") != -1)&&(navigator.userAgent.indexOf("KHTML") == -1)) document.write("<style type=\"text/css\">@import url(/extension/ezno2005/design/ezno2005/stylesheets/gecko.css);</style>");--></script>
+                                                                                    
+<title>
+            PHP     /         Standards     /         Development                    </title>
+<meta http-equiv="Content-Language" content="en-GB"/>
+    <meta name="author" content="eZ Systems"/>
+    <meta name="copyright" content="eZ Systems as"/>
+    <meta name="description" content="eZ Publish is an open source content management system (CMS) and an open source content management framework (CMF)."/>
+    <meta name="keywords" content="cms, publish, e-commerce, content management, development framework"/>
+
+<meta name="MSSmartTagsPreventParsing" content="TRUE"/>
+<meta name="generator" content="eZ Publish"/>
+
+<script type="text/javascript" src="https://doc.core.ezpublish.se7enx.com/ezno2005/design/ezno2005/javascripts/tools.js"></script>
+<script type="text/javascript" src="https://doc.core.ezpublish.se7enx.com/ezno2005/design/ezno2005/javascripts/dropdownmenu.js"></script>
+</head>    <body onload="menuInit();">
+
+<!-- Complete page area: START -->
+<div id="page">
+
+<!-- Header area: START -->
+<div id="header">
+<div id="header-insert">
+
+<!-- User menu area: START -->
+<div id="usermenu">
+
+<div id="page-width1">
+
+<div id="logo">
+<h1><a href="https://doc.core.ezpublish.se7enx.com/"><span class="hide">eZ Systems - The Content Management Ecosystem</span></a></h1>
+</div>
+
+
+
+<p class="hide"><a href="#main">Skip to main content</a></p>
+
+<hr class="hide"/>
+<div id="searchbox">
+<form action="/web/20071224023039/http://ez.no/ezsearchredirect/action" method="get">
+
+<div class="block">
+<div class="element">
+<input id="searchbutton" class="button" type="submit" value="Search"/>
+</div>
+
+<div class="element searchstring">
+    <label for="searchtext" class="hide">Search text:</label>
+    <input id="searchtext" name="SearchText" type="text" size="12"/><br/>
+    
+
+            <div class="section">
+            <label for="searcharea" class="hide">Search area:</label>
+            <select id="searcharea" name="SubTreeArray[]">
+                <option value="2" selected="selected">All ez.no</option>
+                <option value="306">Bug reports</option>
+                <option value="21358">Contributions</option>
+                <option value="documentation">Documentation</option>
+                <option value="308">Forum</option>
+            </select>
+            </div>
+    </div>
+
+</div>
+</form>
+</div>
+
+<hr class="hide"/>
+<h2 class="hide">User menu</h2>
+
+<!-- User menu content: START -->
+<ul>
+            <li><a href="https://web.archive.org/web/20071224023039/http://ez.no/download"><span>Downloads</span></a></li>
+    <li><a href="https://web.archive.org/web/20071224023039/http://ez.no/company/contact"><span>Contact</span></a></li>
+            <li><a href="https://web.archive.org/web/20071224023039/http://ez.no/user/login"><span>Log in</span></a></li>
+        <li><a href="https://web.archive.org/web/20071224023039/http://ez.no/user/register"><span>Register</span></a></li>
+    
+    <li id="language-menu">
+        <a class="highlighted" title="English" href="https://web.archive.org/web/20071224023039/http://ez.no/ezpublish/documentation/development/standards/php"><img src="/ezno2005/design/ezno2005/images/eng-GB.gif" width="18" height="12" alt="English"/></a>
+        <a title="Deutsch" href="https://web.archive.org/web/20071224023039/http://ez.no/de/ezpublish/documentation/development/standards/php"><img src="/ezno2005/design/ezno2005/images/ger-DE.gif" width="18" height="12" alt="Deutsch"/></a>
+        <a title="Português" href="https://web.archive.org/web/20071224023039/http://ez.no/br/ezpublish/documentation/development/standards/php"><img src="/ezno2005/design/ezno2005/images/por-BR.gif" width="18" height="12" alt="Português"/></a>
+        <a title="Français" href="https://web.archive.org/web/20071224023039/http://ez.no/fr/ezpublish/documentation/development/standards/php"><img src="/ezno2005/design/ezno2005/images/fre-FR.gif" width="18" height="12" alt="Français"/></a>
+        <a title="日本語" href="https://web.archive.org/web/20071224023039/http://ez.no/jp/ezpublish/documentation/development/standards/php"><img src="/ezno2005/design/ezno2005/images/jpn-JP.gif" width="18" height="12" alt="日本語"/></a>        
+        <a title="中文" href="https://web.archive.org/web/20071224023039/http://ez.no/tw/ezpublish/documentation/development/standards/php"><img src="/ezno2005/design/ezno2005/images/chi-TW.gif" width="18" height="12" alt="中文"/></a>        
+        <a title="Norsk" href="https://web.archive.org/web/20071224023039/http://ez.no/no/ezpublish/documentation/development/standards/php"><img src="/ezno2005/design/ezno2005/images/nor-NO.gif" width="18" height="12" alt="Norsk"/></a>        
+    </li>
+</ul>
+<!-- User menu content: END -->
+
+</div>
+
+</div>
+<!-- User menu area: END -->
+
+</div>
+</div>
+<!-- Header area: END --><script type="text/javascript">
+<!--
+var menu = new Array();
+
+menu[0] = ['eZ Publish', '/ezpublish', 'eZ Publish Premium', '/ezpublish/premium', 'eZ Publish Now', '/ezpublish/now', 'eZ Publish On Demand', '/ezpublish/on_demand', 'Proprietary license options', '/products/proprietary_license_options', 'Certified extensions', '/products/certified_extensions', 'eZ Flow', '/ezflow', 'eZ Components', '/ezcomponents', 'eZ Find', '/ezfind', 'eZ Newsletter', '/eznewsletter', 'Expert consulting services', '/products/expert_consulting_services', 'Support', '/products/support'];
+menu[1] = ['Documentation', '/doc', 'Articles', '/community/articles', 'Books', '/store/books', 'Training', '/education/training', 'Certification', '/education/certification'];
+menu[2] = ['Case studies', '/customers/case_studies', 'References', '/customers/references', 'User quotes', '/customers/user_quotes', 'eZ for media', '/customers/ez_for_media'];
+menu[3] = ['Worldwide Partners', '/partner/worldwide_partners', 'eZ Partner program', '/partner/ez_partner_program', 'Knowledge centre', '/partner/knowledge_centre'];
+menu[4] = ['Downloads', '/download', 'Documentation', '/doc', 'News', '/developer/news', 'Developer information', '/developer/developer_information', 'Projects & contributions', '/developer/contribs', 'Forum', '/developer/forum', 'Issue tracker', '/bugs/redirect', 'Open Funding', '/developer/open_funding', 'Security', '/developer/security', 'User groups', '/developer/user_groups'];
+menu[5] = ['Total Product Responsibility from eZ', '/support/total_product_responsibility_from_ez'];
+menu[6] = ['Software solutions', '/store/software', 'Training', '/services/training', 'Certification', '/services/certification', 'Books', '/store/books', 'Services', '/store/services'];
+menu[7] = ['News', '/company/news', 'Media & press', '/company/media_press', 'Events', '/company/events', 'Career', '/company/career', 'eZ Conference & Awards', '/company/ez_conference_awards', 'Board of Directors', '/company/board', 'eZ Crew', '/company/ez_crew', 'Contact', '/company/contact'];
+
+-->
+</script>
+<div id="menuborder">
+
+<!-- Main menu area: START -->
+<div id="menu" onmouseover="menuHover();" onmouseout="tryHideSubMenues();">
+
+<div id="mainmenu" class="float-break">
+<div id="page-width2">
+    <ul id="mainmenulist" class="float-break">
+<li class="current"><a href="https://web.archive.org/web/20071224023039/http://ez.no/products" onmouseover="switchSubMenu( this );">Products &amp; services</a></li>
+<li><a href="https://web.archive.org/web/20071224023039/http://ez.no/education" onmouseover="switchSubMenu( this );">Education</a></li>
+<li><a href="https://web.archive.org/web/20071224023039/http://ez.no/customers" onmouseover="switchSubMenu( this );">Customers</a></li>
+<li><a href="https://web.archive.org/web/20071224023039/http://ez.no/partner" onmouseover="switchSubMenu( this );">Partners</a></li>
+<li><a href="https://web.archive.org/web/20071224023039/http://ez.no/developer" onmouseover="switchSubMenu( this );">Developer</a></li>
+<li><a href="https://web.archive.org/web/20071224023039/http://ez.no/support" onmouseover="switchSubMenu( this );">Support</a></li>
+<li><a href="https://web.archive.org/web/20071224023039/http://ez.no/store" onmouseover="switchSubMenu( this );">Store</a></li>
+<li class="last"><a href="https://web.archive.org/web/20071224023039/http://ez.no/company" onmouseover="switchSubMenu( this );">Company</a></li>
+</ul>
+
+</div>
+</div>
+
+
+<div id="submenu">
+<div id="page-width3">
+    <ul class="float-break">
+                        <li><a href="https://web.archive.org/web/20071224023039/http://ez.no/ezpublish">eZ Publish</a></li>
+                                <li><a href="https://web.archive.org/web/20071224023039/http://ez.no/ezpublish/premium">eZ Publish Premium</a></li>
+                                <li><a href="https://web.archive.org/web/20071224023039/http://ez.no/ezpublish/now">eZ Publish Now</a></li>
+                                <li><a href="https://web.archive.org/web/20071224023039/http://ez.no/ezpublish/on_demand">eZ Publish On Demand</a></li>
+                                <li><a href="https://web.archive.org/web/20071224023039/http://ez.no/products/proprietary_license_options">Proprietary license options</a></li>
+                                <li><a href="https://web.archive.org/web/20071224023039/http://ez.no/products/certified_extensions">Certified extensions</a></li>
+                                <li><a href="https://web.archive.org/web/20071224023039/http://ez.no/ezflow">eZ Flow</a></li>
+                                <li><a href="https://web.archive.org/web/20071224023039/http://ez.no/ezcomponents">eZ Components</a></li>
+                                <li><a href="https://web.archive.org/web/20071224023039/http://ez.no/ezfind">eZ Find</a></li>
+                                <li><a href="https://web.archive.org/web/20071224023039/http://ez.no/eznewsletter">eZ Newsletter</a></li>
+                                <li><a href="https://web.archive.org/web/20071224023039/http://ez.no/products/expert_consulting_services">Expert consulting services</a></li>
+                                <li class="last"><a href="https://web.archive.org/web/20071224023039/http://ez.no/products/support">Support</a></li>
+                </ul>
+</div>
+</div>
+
+<script type="text/javascript"><!--
+    document.getElementById('submenu').style.display = 'none';
+--></script>
+
+</div>
+<!-- Main menu area: END -->
+
+</div>
+
+<hr class="hide"/><!-- Path area: START -->
+<div id="path">
+
+<div id="page-width4">
+<h2 class="hide">Path</h2>
+
+<!-- Path content: START -->
+<p>
+                        <a href="https://web.archive.org/web/20071224023039/http://ez.no/">ez.no</a>
+        
+                        /
+                            <a href="https://web.archive.org/web/20071224023039/http://ez.no/ezpublish">ezpublish</a>
+        
+                        /
+                            <a href="toc.html">documentation</a>
+        
+                        /
+                            <a href="development.html">development</a>
+        
+                        /
+                            <a href="development/standards.html">standards</a>
+        
+                        /
+                            php
+        
+            </p>
+<!-- Path content: END -->
+
+</div>
+
+</div>
+<!-- Path area: END -->
+
+<hr class="hide"/>
+
+<!-- Main area: START -->
+
+<div id="page-width5">
+<div id="main" class="float-break">
+
+<!-- Main area content: START -->
+
+
+
+
+<div class="template-design area-main-normal">
+<div class="template-module content-view-full">
+<div class="template-object class-documentation">
+
+
+<div class="attribute-heading">
+    <h1>PHP</h1>
+</div>
+
+<p><strong>These documentation pages are no longer maintained. Please visit the <a href="https://doc.ezpublishlegacy.se7enx.com">new documentation site.</a></strong></p>
+
+<div class="attribute-long">
+    
+
+<p>
+This document defines how the PHP code in eZ publish is formatted. Naming conventions are also defined in this document. The code in eZ publish must follow this standard to ensure a coherent looking code base.
+</p>
+
+<p>
+For easier comply with this coding standard we recommend using emacs with our configuration files which handles proper indenting and other nice features.
+</p>
+
+<a name="eztoc80797_1" id="eztoc80797_1"></a><h2>Files</h2>
+<p>
+Use lower-case in all file names. PHP files are named .php
+</p>
+
+<a name="eztoc80797_2" id="eztoc80797_2"></a><h2>Headers</h2>
+<p>
+All files must start with the following header:
+</p>
+    <pre class="wordwrap"><span class="line">// Created on: &lt;nn-Mmm-YYYY HH:MM:NN username&gt;</span>
+
+<span class="line">//</span>
+
+<span class="line">// SOFTWARE NAME: eZ publish</span>
+
+<span class="line">// SOFTWARE RELEASE: n.n.n</span>
+
+<span class="line">// BUILD VERSION: nnnnn</span>
+
+<span class="line">// COPYRIGHT NOTICE: Copyright (C) 1999-2006 eZ systems AS</span>
+
+<span class="line">// SOFTWARE LICENSE: GNU General Public License v2.0</span>
+
+<span class="line">// NOTICE: &gt;</span>
+
+<span class="line">//&nbsp;&nbsp;This program is free software; you can redistribute it and/or</span>
+
+<span class="line">//&nbsp;&nbsp;modify it under the terms of version 2.0&nbsp;of the GNU General</span>
+
+<span class="line">//&nbsp;&nbsp;Public License as published by the Free Software Foundation.</span>
+
+<span class="line">//</span>
+
+<span class="line">//&nbsp;&nbsp;This program is distributed in the hope that it will be useful,</span>
+
+<span class="line">//&nbsp;&nbsp;but WITHOUT ANY WARRANTY; without even the implied warranty of</span>
+
+<span class="line">//&nbsp;&nbsp;MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.&nbsp;See the</span>
+
+<span class="line">//&nbsp;&nbsp;GNU General Public License for more details.</span>
+
+<span class="line">//</span>
+
+<span class="line">//&nbsp;&nbsp;You should have received a copy of version 2.0 of the GNU General</span>
+
+<span class="line">//&nbsp;&nbsp;Public License along with this program; if not, write to the Free</span>
+
+<span class="line">//&nbsp;&nbsp;Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,</span>
+
+<span class="line">//&nbsp;&nbsp;MA 02110-1301, USA.</span>
+
+<span class="line">//</span>
+
+<span class="line">//</span></pre>
+    
+<a name="eztoc80797_3" id="eztoc80797_3"></a><h2>Indenting</h2>
+<p>
+Indenting is 4 characters, real tab characters should not be used. Spaces are used for indenting.
+</p>
+
+<a name="eztoc80797_4" id="eztoc80797_4"></a><h2>Placement of brackets</h2>
+<p>
+Start and end brackets should be placed on the same column.
+</p>
+
+<p>
+
+Examples: <br/>
+</p>
+    <pre class="wordwrap"><span class="line">multiply( $x, $y )</span>
+
+<span class="line">{</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;// function body</span>
+
+<span class="line">}</span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">if ( x == y )</span>
+
+<span class="line">{</span>
+
+<span class="line">&nbsp;..</span>
+
+<span class="line">}</span>
+
+<span class="line">else if ( x &gt; y )</span>
+
+<span class="line">{</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;..</span>
+
+<span class="line">}</span>
+
+<span class="line">else</span>
+
+<span class="line">{</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;..</span>
+
+<span class="line">}</span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">class foo</span>
+
+<span class="line">{</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;function foo( )</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;{</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;..</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;}</span>
+
+<span class="line">}</span></pre>
+    
+<a name="eztoc80797_5" id="eztoc80797_5"></a><h2>Parenthesis, brackets and comma</h2>
+<p>
+It should always be a space after a start parenthesis and one space before an end parenthesis. One space is placed after every comma. Square brackets [] should not have space after the start bracket and before the end bracket. It should be a space between each type.
+</p>
+
+<p>
+Empty lines should be used to group variables and code lines which have a connection. Variable names which is grouped should be indented to the same level.
+</p>
+
+<p>
+Empty lines should not only appear empty, but they should also be empty, all tab and space characters should be removed. Unnecessary trailing white-spaces should also be removed.
+</p>
+
+<p>
+Use more parenthesis than necessary if you're not certain in which sequence the expression is executed.
+</p>
+
+<a name="eztoc80797_6" id="eztoc80797_6"></a><h2>Strings</h2>
+<p>
+PHP has many different ways of handling strings. Some are preferred because of speed, others because of readability of code.
+</p>
+
+<p>
+PHP has two different quotes &quot; and '. These are used to define a text string. The difference between the two is that the single quote does not process the string or does variable replacement. I.e. if you write &quot;$myVariable\n&quot; and '$myVariable\n' the first will print the contents of the variable followed by a newline character. The latter will print: $myVariable\n, with no aditional processing. For this reason you should use single quotes rather than double quotes because this will be quicker. If you need to have a combination of text and variables you should use the implode() function. This function should be used instead of the . operator since this does only allocate memory once and is therefore more efficient.
+</p>
+
+<p>
+
+Below is samples of how you should use single quotes in eZ publish. <br/>
+</p>
+    <pre class="wordwrap"><span class="line">$myHash['key'];</span>
+
+<span class="line">$str = 'This is a string';</span>
+
+<span class="line">$combinedString = implode( '', array( 'The color of the ball is ', $color, ' and it costs: ', $price ) );</span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">if ( $variable == 'string' )</span>
+
+<span class="line">{</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;..</span>
+
+<span class="line">}</span></pre>
+    
+<a name="eztoc80797_7" id="eztoc80797_7"></a><h2>Booleans and null</h2>
+<p>
+While PHP supports any case on the boolean types and the null type they should always be written in lowercase.
+</p>
+
+<p>
+
+Example:<br/>
+</p>
+    <pre class="wordwrap"><span class="line">$isSet = true;</span>
+
+<span class="line">$canPrint = false;</span>
+
+<span class="line">$unset = null;</span></pre>
+    
+<a name="eztoc80797_8" id="eztoc80797_8"></a><h2>If and while statements</h2>
+<p>
+Nested if statements should always use {}. If you have a lot of if-else statements these should probably be replaced by case statements, or redesign your code to use object oriented methods. If and while statements should be constructed of logic statements, no assignment or changing of data should occur.
+</p>
+
+<a name="eztoc80797_9" id="eztoc80797_9"></a><h2>Control structures</h2>
+<p>
+
+Below is examples the syntax of the different PHP control structures. Notice the space after the control structure name, this is different from functions which does not have a space after the function name. PHP has different syntax rules for using control structures, the syntax below is preferred. <br/>
+</p>
+    <pre class="wordwrap"><span class="line">// if/else statement</span>
+
+<span class="line">if ( $a == $b )</span>
+
+<span class="line">{</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;...</span>
+
+<span class="line">}</span>
+
+<span class="line">else</span>
+
+<span class="line">{</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;...</span>
+
+<span class="line">}</span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">// nested if/else statement</span>
+
+<span class="line">if ( $a == $b )</span>
+
+<span class="line">{</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;...</span>
+
+<span class="line">}</span>
+
+<span class="line">else if ( $a == $c )</span>
+
+<span class="line">{</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;...</span>
+
+<span class="line">}</span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">// while loop</span>
+
+<span class="line">$i = 0;</span>
+
+<span class="line">while ( $i &lt; 100 )</span>
+
+<span class="line">{</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;...</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;$i++;</span>
+
+<span class="line">}</span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">// do..while loop</span>
+
+<span class="line">$i = 0;</span>
+
+<span class="line">do</span>
+
+<span class="line">{</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;...</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;$i++;</span>
+
+<span class="line">}</span>
+
+<span class="line">while ( $i &lt; 100 );</span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">// for loop</span>
+
+<span class="line">for ( $i = 0; $i &lt; 100; $i++ )</span>
+
+<span class="line">{</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;...</span>
+
+<span class="line">}</span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">// foreach loop</span>
+
+<span class="line">foreach ( $array as $value )</span>
+
+<span class="line">{</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;...</span>
+
+<span class="line">}</span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">// switch</span>
+
+<span class="line">switch ( $value )</span>
+
+<span class="line">{</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;case 0:</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;{</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;}break;</span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;case 'text':</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;{</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;}break;</span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;default:</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;{</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;}break;</span>
+
+<span class="line">}</span></pre>
+    
+<a name="eztoc80797_10" id="eztoc80797_10"></a><h2>Functions</h2>
+<p>
+Functions should be placed inside classes when possible. The syntax of functions are showed in the snipped below.
+</p>
+    <pre class="wordwrap"><span class="line">/*!</span>
+
+<span class="line">&nbsp;This is my function.</span>
+
+<span class="line">*/</span>
+
+<span class="line">function &amp;myFunction( $paramA = 1, $paramB = 2 )</span>
+
+<span class="line">{</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;return 42;</span>
+
+<span class="line">}</span></pre>
+    
+<a name="eztoc80797_11" id="eztoc80797_11"></a><h2>Arrays</h2>
+<p>
+
+When indexing hash arrays you should use single quotes and no spaces. <br/>
+</p>
+    <pre class="wordwrap"><span class="line">$value = $myHashArray['IndexValue'];</span></pre>
+    
+<a name="eztoc80797_12" id="eztoc80797_12"></a><h2>Naming</h2>
+<p>
+All names should be English and grammatically correct. Names like &quot;foo&quot; and &quot;tmp&quot; should be avoided since they do not describe anything. Names should not contain numbers, numbers should be described with letters unless there is a good reason for it.
+</p>
+
+<p>
+Example:
+</p>
+    <pre class="wordwrap"><span class="line">$ValueOne</span></pre>
+    
+<p>
+Function names can be constructed of several words, all words should have lower-case except the first letter which should be an upper-case letter. The exception for this is the first letter which should always be in lower-case. If the first letter is part of an abbreviation the whole abbreviation should be in lower-case. Functions which return booleans should be named as a question (has, is, can ...).
+</p>
+
+<p>
+
+Example: <br/>
+</p>
+    <pre class="wordwrap"><span class="line">setText(..);</span>
+
+<span class="line">id();</span>
+
+<span class="line">setID();</span>
+
+<span class="line">getTheValuesForThis();</span>
+
+<span class="line">hasValue();</span>
+
+<span class="line">isValid();</span>
+
+<span class="line">canProcess();</span></pre>
+    
+<p>
+Constants should be constructed by upper-case only letters, _ should be used to separate words.
+</p>
+
+<p>
+
+Example: <br/>
+</p>
+    <pre class="wordwrap"><span class="line">define( 'MY_CONSTANT', 42 );</span></pre>
+    
+<p>
+Member variables can be constructed of several words, every word is spelled in lower-case with a capital first letter. It should not be too many words, 1-3 is normal, they can be abbreviated as long as it's understandable.
+</p>
+
+<p>
+
+Example: <br/>
+</p>
+    <pre class="wordwrap"><span class="line">$Len;</span>
+
+<span class="line">$X, $Y;</span>
+
+<span class="line">$FirstName;</span></pre>
+    
+<p>
+
+Local variables can also consist of several words in lower-case, the first character of each word is a capital letter except the first word. The number of words should be as few as possible and the words can be abbreviated. <br/>
+</p>
+    <pre class="wordwrap"><span class="line">$index, $x, $y, i;</span>
+
+<span class="line">$xAdd;</span>
+
+<span class="line">$firstName, $lastName;</span></pre>
+    
+<p>
+Parameters are names like local variables.
+</p>
+
+<p>
+Class names can consist of several words, every word should be in lower-case with the first letter in capital. Classes should have a unique string which starts the name, for instance eZ, which is to uniquely identify the class.
+</p>
+
+<p>
+
+Example: <br/>
+</p>
+    <pre class="wordwrap"><span class="line">eZUser</span>
+
+<span class="line">eZContentObject</span>
+
+<span class="line">eZImageVariation</span></pre>
+    
+<p>
+Global variables are to be avoided, place them in a class and make them static.
+</p>
+
+<a name="eztoc80797_13" id="eztoc80797_13"></a><h2>HTTP Post variables</h2>
+<p>
+POST variables should have the following syntax.
+</p>
+    <pre class="wordwrap"><span class="line">Class_FirstName</span>
+
+<span class="line">Class_ValueOne</span>
+
+<span class="line">Content_CategoryID</span>
+
+<span class="line">Content_LongVariable</span>
+
+<span class="line">SearchValue</span></pre>
+    
+<p>
+The Class and Content names are called the base of the variable and should be used for variables which are specific for a certain module, function or page view. Variables such as SearchValue should be used for global values, all though you can also use Global as the base.
+</p>
+
+<a name="eztoc80797_14" id="eztoc80797_14"></a><h2>Global variables</h2>
+<p>
+Global variables should be named uniquely by using the class name as the base of the name. For instance instance variables and global lists for classes.
+</p>
+    <pre class="wordwrap"><span class="line">$instance =&amp; $GLOBALS['eZUserInstance'];</span>
+
+<span class="line">$handlers =&amp; $GLOBALS['eZCodecHandlers'];</span></pre>
+    
+<a name="eztoc80797_15" id="eztoc80797_15"></a><h2>Functions</h2>
+<p>
+All functions should be placed in classes unless there is a good reason not to.
+</p>
+
+<p>
+Functions should be short and do one thing. The length of a function depends on the complexity of the function, the more complex the function is the shorter should the function be. If it gets too complex then divide the function up into helper functions.
+</p>
+
+<p>
+The number of local variables in a function should not be larger than 7. 7 is a known limit to the number of things people can control at one time. Split up the function if it gets too large.
+</p>
+
+<p>
+Default parameters should be used with care.
+</p>
+
+<p>
+You should let the parameter line go over several lines with grouping of the similar parameters, if it gets long.
+</p>
+
+<a name="eztoc80797_16" id="eztoc80797_16"></a><h2>Classes</h2>
+<p>
+Classes should have one responsibility. All member variables are private. Helper functions should also be private. Functions that do not access member variables should be static.
+</p>
+
+<a name="eztoc80797_17" id="eztoc80797_17"></a><h2>Commenting</h2>
+<p>
+The comments used should be written to comply with the syntax of the Doxygen tool. This tool, which is used to generate class reference documentation.
+</p>
+    <pre class="wordwrap"><span class="line">/*! \defgroup eZGroup Grouped classes</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;Use groups to place common classes together.</span>
+
+<span class="line">*/</span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">/*!</span>
+
+<span class="line">&nbsp;\class eZMyClass ezmyclass.php</span>
+
+<span class="line">&nbsp;\brief eZMyClass handles ...</span>
+
+<span class="line">&nbsp;\ingroup eZGroup</span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">&nbsp;This is a more complete description of the class.</span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">&nbsp;Here is an code example:</span>
+
+<span class="line">&nbsp;\code</span>
+
+<span class="line">&nbsp;$myObj = new MyClass();</span>
+
+<span class="line">&nbsp;\endcode</span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">&nbsp;See also these classes:</span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">&nbsp;\sa eZUser, eZContentClass</span>
+
+<span class="line">&nbsp;\todo Add this function..</span>
+
+<span class="line">&nbsp;\bug Does not handle...</span>
+
+<span class="line">*/</span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">class MyClass</span>
+
+<span class="line">{</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;/*!</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This is the contructor of MyClass. It handles....</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;*/</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;function MyClass()</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;{</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;}</span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;/*!</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\private</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This is a private helper function.</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;*/</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;function doSomething()</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;{</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;}</span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;/*!</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&nbsp;\return the value of ...</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;*/</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;function value()</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;{</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;}</span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;/*!</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&nbsp;\static</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&nbsp;This can be called like MyClass::doIt()</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;*/</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;function doIt()</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;{</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;}</span>
+
+<span class="line">&nbsp;</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;//// \privatesection</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;/// This is a variable description.</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;var $MyVar;</span>
+
+<span class="line">}</span></pre>
+    
+<a name="eztoc80797_17_1" id="eztoc80797_17_1"></a><h3>Inline comments</h3>
+<p>
+When to use inline comments and when not to? These are some guidelines on what to do.
+</p>
+
+<p>
+Inline comments are in general a means to explain what is going on in the code, however they have these problems.
+</p>
+
+<ul>
+
+<li>Hidden information. They are commonly hidden for developers who use the API of the system. For instance critical information on what is considered valid input is not publicly available.</li>
+
+<li>The code can get harder to read when comments and code are mixed.</li>
+
+<li>Comments are in many cases excuses for writing bad or hard to read code</li>
+
+</ul>
+
+<p>
+Things which should be considered before writing inline comments.
+</p>
+
+<ul>
+
+<li>Can the class or function be given a better name to reflect what it does?</li>
+
+<li>Can the variable names or the order of execution be changed to better reflect what is happening?</li>
+
+<li>Does the inline comment contain vital information that should be explained in the API (doxygen) doc?</li>
+
+<li>Can the code be simplified or split up to make it easier to read and understand</li>
+
+</ul>
+
+<p>
+In most cases the considerations above will help avoid inline comments. However in some cases they are required. Typical elements that require inline comments.
+</p>
+
+<ul>
+
+<li>Regular expressions, understanding what a RegExp does takes time. A comment will help here.</li>
+
+<li>Internal hacks, for instance due to performance problems or PHP specific issues.</li>
+
+</ul>
+
+<p>
+An inline comment alone is not always sufficient, sometimes it can be wise to also include the same or similar text in the API documentation. For instance to give information that it uses a workaround on a specific PHP version.
+</p>
+
+<p>
+
+All inline comments should be written using end-of-line comments, like this.<br/>
+</p>
+    <pre class="wordwrap"><span class="line">// A workaround for PHP 4.2.2 were the xyz functionality is broken</span>
+
+<span class="line">if ( php_version() == '4.2.2' )</span>
+
+<span class="line">{</span>
+
+<span class="line">&nbsp;&nbsp;&nbsp;...</span>
+
+<span class="line">}</span></pre>
+    </div>
+
+
+<div class="content-view-children">
+<div class="class-comment">
+    <h1 id="comments">Comments</h1>
+
+
+        
+
+<div class="content-view-line">
+<div class="class-comment bglight">
+
+    
+    <div id="msg112692" class="attribute-heading">
+        <h2>Re: Functions returning references</h2>
+    </div>
+
+<div class="attribute-byline float-break">
+    <p class="author">*- pike</p>
+    <p class="date">Monday 30 October 2006 11:14:38 pm</p>
+</div>
+
+
+<div class="attribute-short">
+            Hi Harry<br/>
+<br/>
+I don't know, but I assume this:<br/>
+<br/>
+some functions return variables with deep references, like $object1-&gt;attribute-&gt;object2. If you would retrieve $object2 through a different method afterwards, you want $object2 to refer to the same instance as $object1-&gt;attribute-&gt;object2. If you change an attribute in $object2, you want it to be changed in $object1-&gt;attribute-&gt;object2 as well.<br/>
+<br/>
+if you don't specify you want a reference to the return value, php *may* make a deep copy of the returnvalue, after which you have 2 separate copies of $object2.<br/>
+<br/>
+actually, I'm just guessing, but that would be a valid reason :-)<br/>
+<br/>
+*-pike<br/>
+<br/>
+
+
+    </div>
+
+
+</div>
+</div>
+    
+
+<div class="content-view-line">
+<div class="class-comment bgdark">
+
+    
+    <div id="msg84611" class="attribute-heading">
+        <h2>Functions returning  references</h2>
+    </div>
+
+<div class="attribute-byline float-break">
+    <p class="author">Harry Oosterveen</p>
+    <p class="date">Thursday 06 October 2005 10:58:12 am</p>
+</div>
+
+
+<div class="attribute-short">
+            If I browse through the code of eZ publish, and look in this example, it seems to be a habit to return reference for each function:<br/>
+<br/>
+function &amp;myFunction( $paramA = 1, $paramB = 2 )<br/>
+<br/>
+Why is this? You might say, that this will improve performance, but the PHP manual is quite clear about it:<br/>
+<br/>
+Returning by-reference is useful when you want to use a function to find which variable a reference should be bound to. Do not use return-by-reference to increase performance, the engine is smart enough to optimize this on its own. Only return references when you have a valid technical reason to do it!<br/>
+<br/>
+(<a href="https://web.archive.org/web/20071224023039/http://www.php.net/manual/en/language.references.return.php)" title="http://www.php.net/manual/en/language.references.return.php)">http://www.php.net/manual/en/language.references.return.php)</a>
+
+    </div>
+
+
+</div>
+</div>
+
+
+ 
+
+
+</div>
+</div>
+
+<div class="block float-break">
+            <form method="post" action="/web/20071224023039/http://ez.no/content/action">
+            <input class="button" type="submit" name="NewButton" value="New comment"/>
+            <input type="hidden" name="RedirectURIAfterPublish" value="ezpublish/documentation/development/standards/php#comments"/>
+            <input type="hidden" name="NodeID" value="29303"/>
+                           <input type="hidden" name="ClassIdentifier" value="article_comment"/>
+                        <input type="hidden" name="ContentLanguageCode" value="eng-GB"/>
+        </form>
+    </div>
+
+</div>
+</div>
+</div>
+
+
+<div class="template-design area-sidebar-normal">
+<div class="template-module content-view-sidebar">
+<div class="template-object class-documentation">
+
+<div class="attribute-heading">
+    <h2 class="bullet">Contents</h2>
+</div>
+<h3><a href="development.html">Development</a></h3>
+<p>
+        
+        
+            
+                    <a href="development/extensions.html">Extensions</a><br/>
+          
+	
+            
+                    <a href="development/ez_publish_datamodel.html">eZ publish datamodel</a><br/>
+          
+	
+            
+                    <a href="development/ez_publish_tuning_and_stability.html">eZ publish tuning and stability</a><br/>
+          
+	
+            
+                    <a href="development/importing_attribute_data.html">Importing attribute data</a><br/>
+          
+	
+            
+                    <a href="development/kernel.html">Kernel</a><br/>
+          
+	
+            
+                    <a href="development/libraries.html">Libraries</a><br/>
+          
+	
+            
+                    <a href="development/scripting.html">Scripting</a><br/>
+          
+	
+            
+                    <a href="development/standards.html">Standards</a><br/>
+          
+	
+            &nbsp;&nbsp;&nbsp;
+                    <a href="development/standards/php.html"><b>PHP</b></a><br/>
+          
+	
+            &nbsp;&nbsp;&nbsp;
+                    <a href="development/standards/sql.html">SQL</a><br/>
+          
+	
+            &nbsp;&nbsp;&nbsp;
+                    <a href="development/standards/template.html">Template</a><br/>
+          
+	
+            &nbsp;&nbsp;&nbsp;
+                    <a href="development/standards/user_interface.html">User Interface</a><br/>
+          
+	
+            
+                    <a href="development/system_overview.html">System overview</a><br/>
+          
+	
+            
+                    <a href="development/test_suite.html">Test Suite</a><br/>
+          
+	
+            
+                    <a href="development/using_doxygen_to_create_api_documentation.html">Using Doxygen to create API documenta...</a><br/>
+          
+	
+        </p>
+
+
+<hr class="docsplit"/>
+<h3>Created</h3>
+<p>
+03/07/2003<br/>
+3:58:06 pm<br/>
+by Bård Farstad
+</p>
+<h3>Last updated</h3>
+<p>
+30/08/2007<br/>
+3:01:16 pm<br/>
+by Vidar Langseid
+</p>
+<h3>Authors</h3>
+<p class="rendered">Bård Farstad<br/>Jan Borsodi<br/>Ole Morten Halvorsen<br/>Vidar Langseid<br/></p>
+
+<br/>
+<hr class="docsplit"/>
+
+<p>This page is part of the eZ Publish documentation. The documentation is available under the <a href="https://web.archive.org/web/20071224023039/http://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License.</a> All contributions will be released under the terms of this license.</p>
+
+</div>
+</div>
+</div>
+
+
+
+
+
+<!-- Main area content: END -->
+
+</div>
+</div>
+
+<!-- Main area: END -->
+
+<hr class="hide"/>
+
+<!-- Footer area: START -->
+<div id="footer-design">
+<div id="page-width6">
+<div id="footer">
+
+<address>Powered by eZ Publish&reg; Content Management System.<br/>
+Copyright &copy;1999 - 2024 7x and 2007 eZ Systems AS (except where otherwise noted). All rights reserved.</address>
+
+</div>
+</div>
+</div>
+<!-- Footer area: END -->
+
+</div>
+<!-- Complete page area: END -->
+
+
+    
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TFEDSZJYH0"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-TFEDSZJYH0');
+</script>
+
+
+</body>
+</html>
+
+<!-- th[eZ] 20050804 --><!--
+     FILE ARCHIVED ON 02:30:39 Dec 24, 2007 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 11:20:50 Oct 31, 2024.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  captures_list: 1.226
+  exclusion.robots: 0.022
+  exclusion.robots.policy: 0.01
+  esindex: 0.01
+  cdx.remote: 9.242
+  LoadShardBlock: 59.602 (3)
+  PetaboxLoader3.datanode: 98.418 (4)
+  load_resource: 121.24
+  PetaboxLoader3.resolve: 74.145
+-->
