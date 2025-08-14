@@ -1,4 +1,4 @@
-﻿Copyright © 1999 - 2024 7x and 1999 - 2006, eZ Systems AS. All Rights Reserved.
+﻿Copyright © 1999 - 2025 7x and 1999 - 2006, Exponential. All Rights Reserved.
 
     This file is part of eZ Publish Core Documentation.
 

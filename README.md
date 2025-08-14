@@ -15,7 +15,7 @@ Version
 Copyright
 =========
 
-* eZ Publish Core Documentation is copyright 1999 - 2024 7x and 1999 - 2006 eZ Systems, AS.
+* eZ Publish Core Documentation is copyright 1999 - 2025 7x and 1999 - 2006 Exponential, AS.
 
 * See: [COPYRIGHT.md](COPYRIGHT.md) for more information on the terms of the copyright and license
 
@@ -51,7 +51,7 @@ This repository provides the following features:
 Usage
 =====
 
-Simply visit our publicly hosted mirror of this repository at http://doc.core.ezpublish.se7enx.com
+Simply visit our publicly hosted mirror of this repository at http://doc.core.exponential.earth
 
 
 Troubleshooting
